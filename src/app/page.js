@@ -237,7 +237,7 @@ export default function Home() {
 
                     {/* Stats overlay */}
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                      <div className="grid grid-cols-3 gap-4 text-white">
+                      <div className="grid grid-cols-3 gap-6 text-white">
                         <div className="text-center">
                           <div className="text-2xl font-bold max-sm:text-lg">₹95,000 Cr</div>
                           <div className="text-sm">Investment</div>

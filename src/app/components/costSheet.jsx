@@ -92,7 +92,7 @@ export default function CostSheet() {
 
     img.onload = () => {
       // Add image to PDF (top left corner)
-      doc.addImage(img, "WEBP",  5, 5, 185, 50);
+      doc.addImage(img, "WEBP",  5, 5, 185, 40);
 
       // Project Heading
       doc.setFontSize(16);
