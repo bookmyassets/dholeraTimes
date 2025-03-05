@@ -8,7 +8,7 @@ import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -23,55 +23,58 @@ export default function Home() {
     }));
   };
 
-  const apiKey = process.env.NEXT_PUBLIC_TELECRM_API_KEY
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
+    // Validate form data
+    if (!formData.fullName || !formData.email || !formData.phone) {
+      alert("Please fill in all fields");
+      setIsLoading(false);
+      return;
+    }
 
     try {
-      if (req.method === "POST") {
-        const { fullName, email, phone } = req.body;
+      // TeleCRM API Integration
+      const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Add API key if required
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          source: "Dholera Times Website", // Optional: Add source tracking
+          tags: ["Dholera Investment", "Website Lead"] // Optional: Add tags
+        }),
+      });
 
-        try {
-          const response = await axios.post(
-            "https://api.telecrm.in/enterprise/${enterpriseid}/autoupdatelead",
-            {
-              fullName,
-              email,
-              phone,
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer 0e82fcc0-e982-45bb-819f-1404658ec42e1741159958642:07ea25a2-936c-493e-ad02-df46921ceb20`,
-              },
-            }
-          );
+      const result = await response.json();
 
-          res
-            .status(200)
-            .json({
-              message: "Data submitted successfully",
-              data: response.data,
-            });
-        } catch (error) {
-          console.error("Error submitting data to TeleCRM:", error);
-          res
-            .status(500)
-            .json({
-              message: "Error submitting data to TeleCRM",
-              error: error.message,
-            });
-        }
+      if (response.ok) {
+        // Reset form after successful submission
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+        });
+        
+        // Show success message
+        alert("Thank you! We'll contact you soon.");
       } else {
-        res.status(405).json({ message: "Method not allowed" });
+        // Handle API errors
+        throw new Error(result.message || "Submission failed");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Error submitting form. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
-
   return (
     <>
       <main className="w-full -z-10 h-full pt-4">
@@ -81,7 +84,7 @@ export default function Home() {
             <Image
               src={hero}
               alt="hero image"
-              className="w-full h-[80vh]  object-cover"
+              className="w-full h-[80vh]  object-cover max-sm:justify-start"
             />
             <div className="absolute inset-0 "></div> {/* Dark Overlay */}
           </div>
@@ -93,7 +96,7 @@ export default function Home() {
                 Contact Us
               </h2>
 
-              <form className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Full Name Input */}
                 <div className="relative flex items-center w-full">
                   <FaUser className="absolute left-4 text-gray-500" />
@@ -102,6 +105,7 @@ export default function Home() {
                     placeholder="Full Name"
                     value={formData.fullName}
                     onChange={handleChange}
+                    required
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
                 </div>
@@ -114,6 +118,7 @@ export default function Home() {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                     placeholder="Email"
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
@@ -127,6 +132,7 @@ export default function Home() {
                     type="tel"
                     value={formData.phone}
                     onChange={handleChange}
+                    required
                     placeholder="Phone Number"
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
@@ -135,9 +141,14 @@ export default function Home() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full p-3 bg-blue-500 text-white rounded-lg font-medium shadow-md transition-all duration-300 hover:bg-blue-600 hover:shadow-lg active:scale-95"
+                  disabled={isLoading}
+                  className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
+                    ${isLoading 
+                      ? 'bg-gray-400 cursor-not-allowed' 
+                      : 'bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95'
+                    }`}
                 >
-                  Submit
+                  {isLoading ? 'Submitting...' : 'Submit'}
                 </button>
               </form>
             </div>
@@ -329,4 +340,6 @@ export default function Home() {
       </section>
     </>
   );
-}
+  };
+
+

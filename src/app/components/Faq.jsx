@@ -9,25 +9,40 @@ const faqs = [
   },
   {
     question: "What are the major projects planned in Dholera?",
-    answer:
-      "• Dholera International Airport \n• India’s first semiconductor plant by TATA - ₹91,000 Cr investment \n• Asia’s largest solar park - 500MW\n• ReNew Power solar cell manufacturing unit",
+    answer: [
+      "Dholera International Airport.",
+      "India’s first semiconductor plant by TATA - ₹91,000 Cr investment.",
+      "Asia’s largest solar park - 500MW",
+      "ReNew Power solar cell manufacturing unit",
+    ],
   },
   {
     question: "Why should we invest in Dholera?",
-    answer:
-      "• India’s first fully planned smart city, built from scratch\n• Upcoming expressway to be operational in 4-5 months\n• International airport set for completion by 2026\n• ₹90,000 Cr investment by TATA in India's first semiconductor plant, boosting growth potential",
+    answer: [
+      "India’s first fully planned smart city, built from scratch",
+      "Upcoming expressway to be operational in 4-5 months",
+      "International airport set for completion by 2026",
+      "₹90,000 Cr investment by TATA in India's first semiconductor plant, boosting growth potential",
+    ],
   },
   {
     question: "I live in Delhi NCR. Why should I invest so far away?",
-    answer:
-      "• Helps diversify your investment portfolio\n• Requires a smaller investment amount (low ticket size)\n• Offers potential for high returns",
+    answer: [
+      "Helps diversify your investment portfolio",
+      "Requires a smaller investment amount (low ticket size)",
+      "Offers potential for high returns",
+    ],
   },
   {
     question: "Is my land investment secure?",
-    answer:
-      "• Located in a gated community\n• Registry-ready\n• N.A. (Non-Agricultural) and N.O.C. (No Objection Certificate) approvals",
+    answer: [
+      "Located in a gated community",
+      "Registry-ready",
+      "N.A. (Non-Agricultural) and N.O.C. (No Objection Certificate) approvals",
+    ],
   },
 ];
+
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
