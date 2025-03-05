@@ -45,6 +45,30 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            
+            <div>
+              <h3 className="text-white text-lg font-semibold mb-4">
+                Policy
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Copyright Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Terms Policy
+                  </a>
+                </li>
+                
+              </ul>
+            </div>
             <div>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Connect With Us

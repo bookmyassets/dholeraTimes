@@ -104,7 +104,7 @@ export default function Home() {
           <div className="relative  flex w-full items-center justify-end pr-40 max-md:justify-center max-md:pr-0">
             <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-[500px] max-md:w-[90%] border border-gray-300 backdrop-blur-md">
               <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-                Contact Us
+                Let's Connect
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -159,7 +159,7 @@ export default function Home() {
                       : 'bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95'
                     }`}
                 >
-                  {isLoading ? 'Submitting...' : 'Submit'}
+                  {isLoading ? 'Submitting...' : 'Get a call back from us'}
                 </button>
               </form>
             </div>
@@ -351,6 +351,4 @@ export default function Home() {
       </section>
     </>
   );
-  };
-
-
+};
