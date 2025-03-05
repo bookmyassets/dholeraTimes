@@ -80,6 +80,8 @@ export default function RootLayout({ children }) {
                   <Image src={logo} alt="logo" width={100} height={50} />
                 </Link>
               </div>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
                   <Link
                     href="/pages/about"
                     className="text-white hover:text-orange-200 px-3 py-2"
@@ -92,8 +94,6 @@ export default function RootLayout({ children }) {
                   >
                     Dholera SIR
                   </Link>
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
                   {/* Blogs Dropdown */}
                   <div className="relative ">
                     <button
@@ -200,7 +200,7 @@ export default function RootLayout({ children }) {
                 </Link>
                 <Link
                     href="/pages/dholeraSIR"
-                    className="text-white hover:text-orange-200 px-3 py-2"
+                    className="text-white block px-3 py-2"
                   >
                     Dholera SIR
                   </Link>
