@@ -4,6 +4,7 @@ import expressway from "@/assets/expressway.webp"
 import dia from "@/assets/DIA.webp"
 import dholera from "@/assets/dhoelra.png"
 import Image from "next/image";
+import Link from "next/link";
 
 const DholeraInvestmentGuide = () => {
   return (
@@ -494,12 +495,12 @@ const DholeraInvestmentGuide = () => {
             opportunity in India today.
           </p>
           <div className="inline-flex rounded-md shadow">
-            <a
-              href="#contact"
+            <Link
+              href="/pages/projects"
               className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-gray-50 md:text-lg"
             >
               Explore Investment Options
-            </a>
+            </Link>
           </div>
           <p className="mt-6 text-sm text-blue-200">
             Contact Dholera Times - the most trusted real estate partner for

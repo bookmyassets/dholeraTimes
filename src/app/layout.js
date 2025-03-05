@@ -80,6 +80,18 @@ export default function RootLayout({ children }) {
                   <Image src={logo} alt="logo" width={100} height={50} />
                 </Link>
               </div>
+                  <Link
+                    href="/pages/about"
+                    className="text-white hover:text-orange-200 px-3 py-2"
+                  >
+                    About
+                  </Link>
+                  <Link
+                    href="/pages/dholeraSIR"
+                    className="text-white hover:text-orange-200 px-3 py-2"
+                  >
+                    Dholera SIR
+                  </Link>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   {/* Blogs Dropdown */}
@@ -154,14 +166,7 @@ export default function RootLayout({ children }) {
                         ))}
                       </div>
                     )}
-                  </div>
-
-                  <Link
-                    href="/pages/about"
-                    className="text-white hover:text-orange-200 px-3 py-2"
-                  >
-                    About
-                  </Link>
+                  </div> 
                   <Link
                     href="/pages/contact"
                     className="text-white hover:text-orange-200 px-3 py-2"
@@ -188,6 +193,18 @@ export default function RootLayout({ children }) {
             <div className="md:hidden bg-white/10 backdrop-blur-md">
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <Link
+                  href="/pages/about"
+                  className="text-white block px-3 py-2"
+                >
+                  About
+                </Link>
+                <Link
+                    href="/pages/dholeraSIR"
+                    className="text-white hover:text-orange-200 px-3 py-2"
+                  >
+                    Dholera SIR
+                  </Link>
+                <Link
                   href="/pages/Blogs"
                   className="text-white block px-3 py-2"
                 >
@@ -200,20 +217,11 @@ export default function RootLayout({ children }) {
                   Projects
                 </Link>
                 <Link
-                  href="/pages/about"
-                  className="text-white block px-3 py-2"
-                >
-                  About
-                </Link>
-                <Link
                   href="/pages/contact"
                   className="text-white block px-3 py-2"
                 >
                   Contact
                 </Link>
-                <Button className="w-full bg-[#FF5733] text-white hover:bg-[#ff6b4d]">
-                  Get Started
-                </Button>
               </div>
             </div>
           )}

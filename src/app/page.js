@@ -3,9 +3,10 @@ import Image from "next/image";
 import hero from "@/assets/image.png";
 import dsir from "@/assets/dsir.png";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
+import Link from "next/link";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -14,6 +15,8 @@ export default function Home() {
     email: "",
     phone: "",
   });
+
+  const recaptchaRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,21 +29,37 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-  
+
     // Validate form data
     if (!formData.fullName || !formData.email || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
-  
+
     try {
-      // API Request
+      // Execute reCAPTCHA
+      const captchaToken = await recaptchaRef.current.executeAsync();
+      recaptchaRef.current.reset();
+
+      // Verify reCAPTCHA token directly with Google
+      const verificationResponse = await fetch(
+        `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
+        { method: 'POST' }
+      );
+
+      const verificationData = await verificationResponse.json();
+
+      if (!verificationData.success) {
+        throw new Error('reCAPTCHA verification failed');
+      }
+
+      // Proceed with form submission to TeleCRM
       const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}` // Use environment variable
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`
         },
         body: JSON.stringify({
           fields: {
@@ -49,32 +68,21 @@ export default function Home() {
             phone: formData.phone,
           },
           source: "Dholera Times Website",
-          tags: ["Dholera Investment", "Website Lead"]
+          tags: ["Dholera Investment", "Website Lead"],
+          recaptcha_token: captchaToken
         }),
       });
-  
-      // Store response text before parsing
+
       const responseText = await response.text();
-  
-      // Check response status and handle accordingly
+
       if (response.ok) {
-        // Check for specific success indicators
         if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
           setFormData({ fullName: "", email: "", phone: "" });
           alert("Thank you! We'll contact you soon.");
         } else {
-          // Try parsing as JSON if it's not a simple text response
-          let result;
-          try {
-            result = JSON.parse(responseText);
-            console.log("Parsed Response:", result);
-          } catch {
-            console.log("Response Text:", responseText);
-          }
+          throw new Error(responseText || "Submission failed");
         }
       } else {
-        // Handle error responses
-        console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
       }
     } catch (error) {
@@ -215,12 +223,12 @@ export default function Home() {
                     </p>
 
                     <div className="mt-8">
-                      <a
-                        href="#learn-more"
+                      <Link
+                        href="/pages/dholeraSIR"
                         className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-md transition duration-150 ease-in-out"
                       >
-                        Explore Investment Opportunities
-                      </a>
+                        Explore Dholera SIR
+                      </Link>
                     </div>
                   </div>
 
@@ -238,15 +246,15 @@ export default function Home() {
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                       <div className="grid grid-cols-3 gap-4 text-white">
                         <div className="text-center">
-                          <div className="text-2xl font-bold">₹95,000 Cr</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">₹95,000 Cr</div>
                           <div className="text-sm">Investment</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold">920 km²</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">920 km²</div>
                           <div className="text-sm">Development Area</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold">2042</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">2042</div>
                           <div className="text-sm">Completion</div>
                         </div>
                       </div>
