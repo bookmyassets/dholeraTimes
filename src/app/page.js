@@ -1,29 +1,76 @@
-"use client"
+"use client";
 import Image from "next/image";
 import hero from "@/assets/image.png";
 import dsir from "@/assets/dsir.png";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import {
-  Menu,
-  X,
-  Monitor,
-  ShoppingBag,
-  BarChart3,
-  Paintbrush,
-  Instagram,
-  Video,
-  Search,
-  ChevronDown,
-  ArrowRight,
-} from "lucide-react";
 import { useState } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
-import About from "./pages/about/page";
 import FAQSection from "./components/Faq";
-import Footer from "./components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const apiKey = process.env.NEXT_PUBLIC_TELECRM_API_KEY
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      if (req.method === "POST") {
+        const { fullName, email, phone } = req.body;
+
+        try {
+          const response = await axios.post(
+            "https://api.telecrm.in/enterprise/${enterpriseid}/autoupdatelead",
+            {
+              fullName,
+              email,
+              phone,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer 0e82fcc0-e982-45bb-819f-1404658ec42e1741159958642:07ea25a2-936c-493e-ad02-df46921ceb20`,
+              },
+            }
+          );
+
+          res
+            .status(200)
+            .json({
+              message: "Data submitted successfully",
+              data: response.data,
+            });
+        } catch (error) {
+          console.error("Error submitting data to TeleCRM:", error);
+          res
+            .status(500)
+            .json({
+              message: "Error submitting data to TeleCRM",
+              error: error.message,
+            });
+        }
+      } else {
+        res.status(405).json({ message: "Method not allowed" });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    }
+  };
 
   return (
     <>
@@ -53,6 +100,8 @@ export default function Home() {
                   <input
                     name="fullName"
                     placeholder="Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
                 </div>
@@ -63,6 +112,8 @@ export default function Home() {
                   <input
                     name="email"
                     type="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Email"
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
@@ -74,6 +125,8 @@ export default function Home() {
                   <input
                     name="phone"
                     type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
                     placeholder="Phone Number"
                     className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                   />
@@ -269,9 +322,9 @@ export default function Home() {
           </div>
         </div>
 
-        <div >
-          <DholeraInvestmentGuide/>
-          <FAQSection/>
+        <div>
+          <DholeraInvestmentGuide />
+          <FAQSection />
         </div>
       </section>
     </>
