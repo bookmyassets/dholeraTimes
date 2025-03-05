@@ -16,8 +16,6 @@ export default function Home() {
     phone: "",
   });
 
-  const recaptchaRef = useRef(null);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -29,37 +27,21 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
+  
     // Validate form data
     if (!formData.fullName || !formData.email || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
-
+  
     try {
-      // Execute reCAPTCHA
-      const captchaToken = await recaptchaRef.current.executeAsync();
-      recaptchaRef.current.reset();
-
-      // Verify reCAPTCHA token directly with Google
-      const verificationResponse = await fetch(
-        `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${captchaToken}`,
-        { method: 'POST' }
-      );
-
-      const verificationData = await verificationResponse.json();
-
-      if (!verificationData.success) {
-        throw new Error('reCAPTCHA verification failed');
-      }
-
-      // Proceed with form submission to TeleCRM
+      // API Request
       const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}` // Use environment variable
         },
         body: JSON.stringify({
           fields: {
@@ -68,21 +50,32 @@ export default function Home() {
             phone: formData.phone,
           },
           source: "Dholera Times Website",
-          tags: ["Dholera Investment", "Website Lead"],
-          recaptcha_token: captchaToken
+          tags: ["Dholera Investment", "Website Lead"]
         }),
       });
-
+  
+      // Store response text before parsing
       const responseText = await response.text();
-
+  
+      // Check response status and handle accordingly
       if (response.ok) {
+        // Check for specific success indicators
         if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
           setFormData({ fullName: "", email: "", phone: "" });
           alert("Thank you! We'll contact you soon.");
         } else {
-          throw new Error(responseText || "Submission failed");
+          // Try parsing as JSON if it's not a simple text response
+          let result;
+          try {
+            result = JSON.parse(responseText);
+            console.log("Parsed Response:", result);
+          } catch {
+            console.log("Response Text:", responseText);
+          }
         }
       } else {
+        // Handle error responses
+        console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
       }
     } catch (error) {
