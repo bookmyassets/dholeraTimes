@@ -109,10 +109,10 @@ export default async function Home() {
                 <span
                   className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full"
                   style={{
-                    backgroundColor: getCategoryColor(post.category),
+                    backgroundColor: "blueviolet",
                   }}
                 >
-                  {post.category || "Blog"}
+                  {post.category || "Project"}
                 </span>
               </div>
 
