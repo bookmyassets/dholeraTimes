@@ -26,55 +26,65 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
+  
     // Validate form data
     if (!formData.fullName || !formData.email || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
-
+  
     try {
-      // TeleCRM API Integration
+      // API Request
       const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Add API key if required
-          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`
+          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}` // Use environment variable
         },
         body: JSON.stringify({
-          name: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          source: "Dholera Times Website", // Optional: Add source tracking
-          tags: ["Dholera Investment", "Website Lead"] // Optional: Add tags
+          fields: {
+            name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+          },
+          source: "Dholera Times Website",
+          tags: ["Dholera Investment", "Website Lead"]
         }),
       });
-
-      const result = await response.json();
-
+  
+      // Store response text before parsing
+      const responseText = await response.text();
+  
+      // Check response status and handle accordingly
       if (response.ok) {
-        // Reset form after successful submission
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-        });
-        
-        // Show success message
-        alert("Thank you! We'll contact you soon.");
+        // Check for specific success indicators
+        if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
+          setFormData({ fullName: "", email: "", phone: "" });
+          alert("Thank you! We'll contact you soon.");
+        } else {
+          // Try parsing as JSON if it's not a simple text response
+          let result;
+          try {
+            result = JSON.parse(responseText);
+            console.log("Parsed Response:", result);
+          } catch {
+            console.log("Response Text:", responseText);
+          }
+        }
       } else {
-        // Handle API errors
-        throw new Error(result.message || "Submission failed");
+        // Handle error responses
+        console.error("Server Error:", responseText);
+        throw new Error(responseText || "Submission failed");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Error submitting form. Please try again.");
+      alert(`Error submitting form: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
   };
+  
   return (
     <>
       <main className="w-full -z-10 h-full pt-4">
