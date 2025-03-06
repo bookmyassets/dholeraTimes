@@ -108,12 +108,6 @@ export default function RootLayout({ children }) {
                     Home
                   </Link>
                   <Link
-                    href="/pages/about"
-                    className="text-white hover:text-orange-200 px-3 py-2"
-                  >
-                    About Us
-                  </Link>
-                  <Link
                     href="/pages/dholeraSIR"
                     className="text-white hover:text-orange-200 px-3 py-2"
                   >
@@ -156,7 +150,12 @@ export default function RootLayout({ children }) {
                       </div>
                     )}
                   </div>
-                  {/* Blogs Dropdown */}
+                  <Link
+                    href="#"
+                    className="text-white hover:text-orange-200 px-3 py-2"
+                  >
+                    Gallery
+                  </Link>
                   <div className="relative ">
                     <button
                       onClick={toggleBlogsDropdown}
@@ -194,14 +193,15 @@ export default function RootLayout({ children }) {
                       </div>
                     )}
                   </div>
-
-                  {/* Projects Dropdown */}
                   <Link
-                    href="#"
+                    href="/pages/about"
                     className="text-white hover:text-orange-200 px-3 py-2"
                   >
-                    Gallery
+                    About Us
                   </Link>
+                  {/* Blogs Dropdown */}
+
+                  {/* Projects Dropdown */}
                   <Link
                     href="/pages/contact"
                     className="text-white hover:text-orange-200 px-3 py-2"

@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
-import hero from "@/assets/image.png";
+import hero from "@/assets/hero2.webp";
+import heroM from "@/assets/heroM.webp";
 import dsir from "@/assets/dsir.png";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { useState,useRef } from "react";
@@ -91,17 +92,22 @@ export default function Home() {
       <main className="w-full -z-10 h-full pt-4">
         <div className="relative flex w-full h-[80vh]">
           {/* Hero Image */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 " >
             <Image
               src={hero}
               alt="hero image"
-              className="w-full h-[80vh]  object-cover max-sm:justify-start"
+              className="w-full h-[80vh] object-cover md:hidden"
+            />
+            <Image
+              src={heroM}
+              alt="hero image"
+              className="w-full h-[80vh] object-cover max-sm:hidden"
             />
             <div className="absolute inset-0 "></div> {/* Dark Overlay */}
           </div>
 
           {/* Form Container */}
-          <div className="relative  flex w-full items-center justify-end pr-40 max-md:justify-center max-md:pr-0">
+          <div className="relative max-sm:pt-16 flex w-full items-center justify-end pr-40 max-md:justify-center max-md:pr-0">
             <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-[500px] max-md:w-[90%] border border-gray-300 backdrop-blur-md">
               <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
                 Let's Connect
