@@ -3,6 +3,7 @@ import { urlFor } from "@/sanity/lib/image";
 import { getPostBySlug } from "@/sanity/lib/api";
 import { Calendar, Clock, User } from "lucide-react";
 import CostSheet from "@/app/components/costSheet";
+import Image from "next/image";
 
 export default async function Post({ params }) {
   const post = await getPostBySlug(params.slug);
@@ -74,15 +75,15 @@ export default async function Post({ params }) {
   return (
     <>
       <main className="min-h-screen bg-gray-50 py-12">
-        <article className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+        <article className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
           {post.mainImage && (
-            <div className="relative h-[400px] w-full">
-              <img
-                src={urlFor(post.mainImage).width(1200).height(800).url()}
-                alt={post.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <div className="relative w-full h-auto aspect-[/2] overflow-hidden">
+            <img
+              src={urlFor(post.mainImage).width(1700).url()}
+              alt={post.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
           )}
 
           <div className="px-8 py-10">
@@ -112,13 +113,13 @@ export default async function Post({ params }) {
                   <User size={20} />
                   <div className="flex items-center gap-2">
                     {post.author.image && (
-                      <img
+                      <Image
                         src={urlFor(post.author.image)
-                          .width(32)
-                          .height(32)
+                          .width(800)
+                          .height(600)
                           .url()}
                         alt={post.author.name}
-                        className="w-8 h-8 rounded-full"
+                        className="h-full w-full object-cover"
                       />
                     )}
                     <span>{post.author.name}</span>
@@ -127,13 +128,7 @@ export default async function Post({ params }) {
               )}
               <div className="flex items-center gap-2">
                 <Calendar size={20} />
-                <time>
-                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </time>
+                
               </div>
               <div className="flex items-center gap-2">
                 <Clock size={20} />
