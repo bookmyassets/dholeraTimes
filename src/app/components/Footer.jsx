@@ -18,7 +18,7 @@ export default function Footer() {
                 © 2025 Dholera Times. All rights reserved.
               </p>
             </div>
-            <div className='pl-20'>
+            <div className='md:pl-20'>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Quick Links
               </h3>
@@ -46,7 +46,7 @@ export default function Footer() {
               </ul>
             </div>
             
-            <div className='pl-5'>
+            <div className='md:pl-5'>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Policy
               </h3>
