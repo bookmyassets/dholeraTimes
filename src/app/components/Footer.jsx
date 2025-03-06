@@ -5,7 +5,7 @@ export default function Footer() {
     <>
         <footer className="bg-gray-900 text-gray-400 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-12">
             <div>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Dholera Smart City
@@ -18,7 +18,7 @@ export default function Footer() {
                 © 2025 Dholera Times. All rights reserved.
               </p>
             </div>
-            <div>
+            <div className='pl-20'>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Quick Links
               </h3>
@@ -46,7 +46,7 @@ export default function Footer() {
               </ul>
             </div>
             
-            <div>
+            <div className='pl-5'>
               <h3 className="text-white text-lg font-semibold mb-4">
                 Policy
               </h3>
@@ -64,6 +64,11 @@ export default function Footer() {
                 <li>
                   <a href="#" className="hover:text-white transition">
                     Terms Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition">
+                    Refund and Cancellation Policy
                   </a>
                 </li>
                 
