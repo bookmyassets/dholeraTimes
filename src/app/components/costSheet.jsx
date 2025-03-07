@@ -19,7 +19,7 @@ export default function CostSheet() {
     plotNo: '',
     plc: '',
     plotAreaYards: '',
-    plotPriceYards: 6500,
+    plotPriceYards: 6700,
     plotAreaFeet: '',
     totalPaymentYards: '',
     maintenanceCharge: 0,
