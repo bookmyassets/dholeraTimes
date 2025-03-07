@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import hero from "@/assets/hero2.webp";
+import hero from "@/assets/hero5.webp";
 import heroM from "@/assets/heroM.webp";
 import dsir from "@/assets/dsir.png";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 import Link from "next/link";
@@ -28,40 +28,46 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-  
+
     // Validate form data
     if (!formData.fullName || !formData.email || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
-  
+
     try {
       // API Request
-      const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}` // Use environment variable
-        },
-        body: JSON.stringify({
-          fields: {
-            name: formData.fullName,
-            email: formData.email,
-            phone: formData.phone,
+      const response = await fetch(
+        "https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`, // Use environment variable
           },
-          source: "Dholera Times Website",
-          tags: ["Dholera Investment", "Website Lead"]
-        }),
-      });
-  
+          body: JSON.stringify({
+            fields: {
+              name: formData.fullName,
+              email: formData.email,
+              phone: formData.phone,
+            },
+            source: "Dholera Times Website",
+            tags: ["Dholera Investment", "Website Lead"],
+          }),
+        }
+      );
+
       // Store response text before parsing
       const responseText = await response.text();
-  
+
       // Check response status and handle accordingly
       if (response.ok) {
         // Check for specific success indicators
-        if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
+        if (
+          responseText === "OK" ||
+          responseText.toLowerCase().includes("success")
+        ) {
           setFormData({ fullName: "", email: "", phone: "" });
           alert("Thank you! We'll contact you soon.");
         } else {
@@ -86,29 +92,36 @@ export default function Home() {
       setIsLoading(false);
     }
   };
-  
+
   return (
     <>
       <main className="w-full -z-10 h-full pt-4">
-        <div className="relative flex w-full h-[80vh]">
-          {/* Hero Image */}
-          <div className="absolute inset-0 " >
-            <Image
-              src={hero}
-              alt="hero image"
-              className="w-full h-[80vh] object-cover md:hidden"
-            />
-            <Image
-              src={heroM}
-              alt="hero image"
-              className="w-full h-[80vh] object-cover max-sm:hidden"
-            />
-            <div className="absolute inset-0 "></div> {/* Dark Overlay */}
-          </div>
+        <div className="relative w-full h-[80vh] flex items-center justify-center">
+          {/* Background Image */}
+          <Image
+            src={hero}
+            alt="hero image"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-          {/* Form Container */}
-          <div className="relative max-sm:pt-16 flex w-full items-center justify-end pr-40 max-md:justify-center max-md:pr-0">
-            <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-[500px] max-md:w-[90%] border border-gray-300 backdrop-blur-md">
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
+
+          {/* Content Wrapper */}
+          <div className="absolute w-full flex flex-col items-center px-6 md:flex-row md:justify-around md:px-20">
+            {/* Left Section - Text */}
+            <div className="text-white text-center">
+              <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
+              <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
+                A NEW ERA
+              </p>
+              <p className="text-lg md:text-xl mt-2">
+                GREENFIELD INDUSTRIAL SMART CITY
+              </p>
+            </div>
+
+            {/* Right Section - Form */}
+            <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
               <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
                 Let's Connect
               </h2>
@@ -160,12 +173,13 @@ export default function Home() {
                   type="submit"
                   disabled={isLoading}
                   className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-                    ${isLoading 
-                      ? 'bg-gray-400 cursor-not-allowed' 
-                      : 'bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95'
-                    }`}
+            ${
+              isLoading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95"
+            }`}
                 >
-                  {isLoading ? 'Submitting...' : 'Get a call back from us'}
+                  {isLoading ? "Submitting..." : "Get a call back from us"}
                 </button>
               </form>
             </div>
@@ -245,15 +259,21 @@ export default function Home() {
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
                       <div className="grid grid-cols-3 gap-6 text-white">
                         <div className="text-center">
-                          <div className="text-2xl font-bold max-sm:text-lg">₹95,000 Cr</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">
+                            ₹95,000 Cr
+                          </div>
                           <div className="text-sm">Investment</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold max-sm:text-lg">920 km²</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">
+                            920 km²
+                          </div>
                           <div className="text-sm">Development Area</div>
                         </div>
                         <div className="text-center">
-                          <div className="text-2xl font-bold max-sm:text-lg">2042</div>
+                          <div className="text-2xl font-bold max-sm:text-lg">
+                            2042
+                          </div>
                           <div className="text-sm">Completion</div>
                         </div>
                       </div>
@@ -357,4 +377,4 @@ export default function Home() {
       </section>
     </>
   );
-};
+}
