@@ -8,6 +8,9 @@ import { useState, useRef } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 import Link from "next/link";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import Head from "next/head";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -94,84 +97,115 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <meta name="google-site-verification" content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU" />
+    </Head>
       <main className="w-full -z-10 h-full pt-4">
-        <div className="relative w-full h-[80vh] flex items-center justify-center">
-          {/* Background Image */}
-          <Image
-            src={hero}
-            alt="hero image"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+      <div className="relative w-full h-[80vh] flex items-center justify-center">
+      {/* Background Image */}
+      <Image
+        src={hero}
+        alt="hero image"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
 
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/50"></div>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/50"></div>
 
-          {/* Content Wrapper */}
-          <div className="absolute w-full flex flex-col items-center px-6 md:flex-row md:justify-around md:px-20">
-            {/* Left Section - Text */}
-            <div className="text-white text-center">
-              <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
-              <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
-                A NEW ERA
-              </p>
-              <p className="text-lg md:text-xl mt-2">
-                GREENFIELD INDUSTRIAL SMART CITY
-              </p>
-            </div>
-
-            {/* Right Section - Form */}
-            <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
-              <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-                Let's Connect
-              </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Full Name Input */}
-                <div className="relative flex items-center w-full">
-                  <FaUser className="absolute left-4 text-gray-500" />
-                  <input
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                  />
-                </div>
-
-                {/* Email Input */}
-                
-                {/* Phone Number Input */}
-                <div className="relative flex items-center w-full">
-                  <FaPhoneAlt className="absolute left-4 text-gray-500" />
-                  <input
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="Phone Number"
-                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-            ${
-              isLoading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-[#151f28] hover:bg-blue-600 hover:shadow-lg active:scale-95"
-            }`}
-                >
-                  {isLoading ? "Submitting..." : "Get a call back"}
-                </button>
-              </form>
-            </div>
-          </div>
+      {/* Content Wrapper */}
+      <div className="absolute w-full flex flex-col items-center px-6 md:flex-row md:justify-around md:px-20">
+        {/* Left Section - Text */}
+        <div className="text-white text-center">
+          <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
+          <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
+            A NEW ERA
+          </p>
+          <p className="text-lg md:text-xl mt-2">
+            GREENFIELD INDUSTRIAL SMART CITY
+          </p>
         </div>
+
+        {/* Right Section - Form */}
+        <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
+          <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
+            Let's Connect
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Full Name Input */}
+            <div className="relative flex items-center w-full">
+              <FaUser className="absolute left-4 text-gray-500" />
+              <input
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+              />
+            </div>
+
+            {/* Phone Number Input */}
+            <div className="relative flex items-center w-full">
+              <FaPhoneAlt className="absolute left-4 text-gray-500" />
+              <input
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                placeholder="Phone Number"
+                className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+              />
+            </div>
+
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
+                ${
+                  isLoading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-[#151f28] hover:bg-blue-600 hover:shadow-lg active:scale-95"
+                }`}
+            >
+              {isLoading ? "Submitting..." : "Get a call back"}
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {/* Carousel Section */}
+     {/*  <div className="absolute bottom-0 w-full p-6">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          className="w-full"
+        >
+          <SwiperSlide>
+            <div className="h-[200px] bg-blue-500 text-white flex items-center justify-center">
+              <h3>Slide 1</h3>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-[200px] bg-red-500 text-white flex items-center justify-center">
+              <h3>Slide 2</h3>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="h-[200px] bg-green-500 text-white flex items-center justify-center">
+              <h3>Slide 3</h3>
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </div> */}
+    </div>
       </main>
 
       <section>

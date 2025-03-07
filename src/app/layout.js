@@ -1,18 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Button } from "@/components/ui/button";
+
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
   X,
-  Monitor,
-  ShoppingBag,
-  BarChart3,
-  Paintbrush,
-  Instagram,
-  Video,
-  Search,
   ChevronDown,
   ChevronUp,
 } from "lucide-react";
