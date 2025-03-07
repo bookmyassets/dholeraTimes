@@ -13,7 +13,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
-    email: "",
     phone: "",
   });
 
@@ -30,7 +29,7 @@ export default function Home() {
     setIsLoading(true);
 
     // Validate form data
-    if (!formData.fullName || !formData.email || !formData.phone) {
+    if (!formData.fullName || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
@@ -49,7 +48,7 @@ export default function Home() {
           body: JSON.stringify({
             fields: {
               name: formData.fullName,
-              email: formData.email,
+             
               phone: formData.phone,
             },
             source: "Dholera Times Website",
@@ -141,19 +140,7 @@ export default function Home() {
                 </div>
 
                 {/* Email Input */}
-                <div className="relative flex items-center w-full">
-                  <FaEnvelope className="absolute left-4 text-gray-500" />
-                  <input
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    placeholder="Email"
-                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                  />
-                </div>
-
+                
                 {/* Phone Number Input */}
                 <div className="relative flex items-center w-full">
                   <FaPhoneAlt className="absolute left-4 text-gray-500" />
@@ -176,10 +163,10 @@ export default function Home() {
             ${
               isLoading
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95"
+                : "bg-[#151f28] hover:bg-blue-600 hover:shadow-lg active:scale-95"
             }`}
                 >
-                  {isLoading ? "Submitting..." : "Get a call back from us"}
+                  {isLoading ? "Submitting..." : "Get a call back"}
                 </button>
               </form>
             </div>
@@ -238,7 +225,7 @@ export default function Home() {
                     <div className="mt-8">
                       <Link
                         href="/pages/dholeraSIR"
-                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-md transition duration-150 ease-in-out"
+                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#151f28] hover:bg-blue-700 shadow-md transition duration-150 ease-in-out"
                       >
                         Explore Dholera SIR
                       </Link>

@@ -143,7 +143,7 @@ export default async function Post({ params }) {
           </div>
         </article>
       </main>
-      <div>{isProject && <CostSheet />}</div>
+      <div className="pt-5 pb-5">{isProject && <CostSheet />}</div>
     </>
   );
 }

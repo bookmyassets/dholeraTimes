@@ -22,7 +22,7 @@ export default function Footer() {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!formData.fullName || !formData.email || !formData.phone) {
+    if (!formData.fullName || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
@@ -40,7 +40,6 @@ export default function Footer() {
           body: JSON.stringify({
             fields: {
               name: formData.fullName,
-              email: formData.email,
               phone: formData.phone,
             },
             source: "Dholera Times Website",
@@ -52,7 +51,10 @@ export default function Footer() {
       const responseText = await response.text();
 
       if (response.ok) {
-        if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
+        if (
+          responseText === "OK" ||
+          responseText.toLowerCase().includes("success")
+        ) {
           setFormData({ fullName: "", email: "", phone: "" });
           alert("Thank you! We'll contact you soon.");
         } else {
@@ -71,97 +73,87 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12">
+    <footer className="bg-gray-900 text-gray-400 py-12 ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact form section */}
-          <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
-            <h2 className="text-white text-xl font-semibold mb-6 text-center">Have Questions? Enquire Now</h2>
-            <div className="grid md:grid-cols-2 ">
-              {/* Form column */}
-              <div>
-                {isSubmitted ? (
-                  <div className="bg-green-800 text-white p-4 rounded-md text-center">
-                    <p className="font-medium">Thank you for contacting us!</p>
-                    <p className="text-sm mt-1">We'll get back to you soon.</p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit}>
-                    <div className="mb-4 relative flex items-center w-full">
-                      <FaUser className="absolute left-4 text-gray-500" />
-                      <input
-                        type="text"
-                        id="fullName"
-                        name="fullName"
-                        placeholder="Full Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                        required
-                      />
-                    </div>
-                    <div className="mb-4 relative flex items-center w-full">
-                      <FaEnvelope className="absolute left-4 text-gray-500" />
-                      <input
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                        required
-                      />
-                    </div>
-                    <div className="mb-4 relative flex items-center w-full">
-                      <FaPhoneAlt className="absolute left-4 text-gray-500" />
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="Phone Number"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                        required
-                      />
-                    </div>
-                    
-                    <button
-                      type="submit"
-                      className="w-96 max-sm:w-80 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? "Submitting..." : "Send Message"}
-                    </button>
-                  </form>
-                )}
-              </div>
-              
-              {/* Info column */}
-              
-              <div className="  flex flex-col justify-center  ">
-                <div className="mb-6 py-5 ">
-                  <h3 className="text-white text-xl max-sm:text-center font-semibold mb-3">Why Contact Us?</h3>
-                  <p className="text-gray-300 text-lg md:w-[400px]">
-                    Have questions about Dholera Smart City? Want to explore investment opportunities?
-                    Our team is ready to assist you with any inquiries about properties, development updates,
-                    or investment options.
-                  </p>
+        <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
+          <h2 className="text-white text-xl font-semibold mb-6 text-center">
+            Have Questions? Enquire Now
+          </h2>
+          <div className="grid md:grid-cols-2 ">
+            {/* Form column */}
+            <div>
+              {isSubmitted ? (
+                <div className="bg-green-800 text-white p-4 rounded-md text-center">
+                  <p className="font-medium">Thank you for contacting us!</p>
+                  <p className="text-sm mt-1">We'll get back to you soon.</p>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  <div className="mb-4 relative flex items-center w-full">
+                    <FaUser className="absolute left-4 text-gray-500" />
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="Full Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="mb-4 relative flex items-center w-full">
+                    <FaPhoneAlt className="absolute left-4 text-gray-500" />
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      required
+                    />
+                  </div>
 
+                  <button
+                    type="submit"
+                    className="w-96 max-sm:w-80 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Submitting..." : "Send Message"}
+                  </button>
+                </form>
+              )}
+            </div>
+
+            {/* Info column */}
+
+            <div className="  flex flex-col justify-center  ">
+              <div className="mb-6 py-5 ">
+                <h3 className="text-white text-xl max-sm:text-center font-semibold mb-3">
+                  Why Contact Us?
+                </h3>
+                <p className="text-gray-300 text-lg md:w-[400px]">
+                  Have questions about Dholera Smart City? Want to explore
+                  investment opportunities? Our team is ready to assist you with
+                  any inquiries about properties, development updates, or
+                  investment options.
+                </p>
               </div>
             </div>
           </div>
+        </div>
 
         {/* First 3-column row with company info, links, policy */}
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 md:gap-44 gap-12 mb-12">
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
-            <div>
-            620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India
-            </div>
+            <div>620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India</div>
           </div>
-        <div>
+          <div>
             <h3 className="text-white text-lg font-semibold mb-3">
               Quick Contact
             </h3>
@@ -217,51 +209,24 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="text-sm mb-3">
-              Phone: +91 99589 93549
-            </p>
-            
-            
+            <p className="text-sm mb-3">Phone: +91 99589 93549</p>
           </div>
-          {/* <div>
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Dholera Smart City
-            </h3>
-            <p className="mb-4">
-              India's first Greenfield Smart City, developed along the
-              Delhi-Mumbai Industrial Corridor.
-            </p>
-            <p className="text-sm">
-              © 2025 Dholera Times. All rights reserved.
-            </p>
-          </div> */}
-          
-          <div className="md:pl-20">
-            <h3 className="text-white text-lg font-semibold mb-4">
-              Web Info
-            </h3>
+
+          <div className="">
+            <h3 className="text-white text-lg font-semibold mb-4">Web Info</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/pages/about"
-                  className="hover:text-white transition"
-                >
+                <a href="/pages/about" className="hover:text-white transition">
                   About Us
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition"
-                >
+                <a href="#" className="hover:text-white transition">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="hover:text-white transition"
-                >
+                <a href="#" className="hover:text-white transition">
                   Terms & Conditions
                 </a>
               </li>
@@ -270,14 +235,16 @@ export default function Footer() {
                   href="/pages/contact"
                   className="hover:text-white transition"
                 >
-                  Refund & Cancellation 
+                  Refund & Cancellation
                 </a>
               </li>
             </ul>
           </div>
 
-          <div className="md:pl-5">
-            <h3 className="text-white text-lg font-semibold mb-4">Useful Links</h3>
+          <div className="">
+            <h3 className="text-white text-lg font-semibold mb-4">
+              Useful Links
+            </h3>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="hover:text-white transition">
@@ -302,22 +269,22 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        
+
         {/* Second row for Connect With Us and Map in one row */}
         <div className="">
           {/* Mobile-only map */}
           <div className="md:hidden w-full h-48 rounded overflow-hidden">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3508.9936422630562!2d77.0362407!3d28.4194487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23d440cffedd%3A0x77e4afa67247493e!2sBookMyAssets!5e0!3m2!1sen!2sin!4v1741251280082!5m2!1sen!2sin"
-                className="w-full h-full"
-                style={{ border: 0 }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Location map"
-              ></iframe>
-            </div>
-          
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3508.9936422630562!2d77.0362407!3d28.4194487!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d23d440cffedd%3A0x77e4afa67247493e!2sBookMyAssets!5e0!3m2!1sen!2sin!4v1741251280082!5m2!1sen!2sin"
+              className="w-full h-full"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Location map"
+            ></iframe>
+          </div>
+
           {/* Desktop-only map */}
           <div className="hidden md:block rounded overflow-hidden">
             <iframe
@@ -334,8 +301,8 @@ export default function Footer() {
         </div>
       </div>
       <p className="text-sm text-center pt-5">
-              © 2025 Dholera Times. All rights reserved.
-            </p>
+        © 2025 Dholera Times. All rights reserved.
+      </p>
     </footer>
   );
 }

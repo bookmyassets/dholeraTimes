@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import "./globals.css";
-import logo from "@/assets/dtLogo.png";
+import logo from "@/assets/dt.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
@@ -42,6 +42,10 @@ export default function RootLayout({ children }) {
   const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [projects, setProjects] = useState([]);
+  
+  // Refs for dropdown elements
+  const blogsDropdownRef = useRef(null);
+  const projectsDropdownRef = useRef(null);
 
   const toggleBlogsDropdown = () => {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
@@ -76,6 +80,29 @@ export default function RootLayout({ children }) {
     setIsMobileProjectsOpen(false);
   };
 
+  // Handle clicks outside dropdowns to close them
+  useEffect(() => {
+    function handleClickOutside(event) {
+      // Close blogs dropdown if click is outside
+      if (blogsDropdownRef.current && !blogsDropdownRef.current.contains(event.target)) {
+        setIsBlogsDropdownOpen(false);
+      }
+      
+      // Close projects dropdown if click is outside
+      if (projectsDropdownRef.current && !projectsDropdownRef.current.contains(event.target)) {
+        setIsProjectsDropdownOpen(false);
+      }
+    }
+    
+    // Add event listener
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    // Cleanup event listener
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   useEffect(() => {
     async function fetchData() {
       const blogsData = await getblogs();
@@ -96,7 +123,7 @@ export default function RootLayout({ children }) {
             <div className="flex justify-between h-16 items-center">
               <div className="flex-shrink-0">
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={100} height={50} />
+                  <Image src={logo} alt="logo" width={100} height={100} />
                 </Link>
               </div>
               <div className="hidden md:block">
@@ -113,7 +140,7 @@ export default function RootLayout({ children }) {
                   >
                     Dholera SIR
                   </Link>
-                  <div className="relative">
+                  <div className="relative" ref={projectsDropdownRef}>
                     <button
                       onClick={toggleProjectsDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
@@ -143,6 +170,7 @@ export default function RootLayout({ children }) {
                             key={project._id}
                             href={`/posts/${project.slug.current}`}
                             className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsProjectsDropdownOpen(false)}
                           >
                             {project.title}
                           </Link>
@@ -156,7 +184,7 @@ export default function RootLayout({ children }) {
                   >
                     Gallery
                   </Link>
-                  <div className="relative ">
+                  <div className="relative" ref={blogsDropdownRef}>
                     <button
                       onClick={toggleBlogsDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
@@ -186,6 +214,7 @@ export default function RootLayout({ children }) {
                             key={blog._id}
                             href={`/posts/${blog.slug.current}`}
                             className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsBlogsDropdownOpen(false)}
                           >
                             {blog.title}
                           </Link>
@@ -199,9 +228,6 @@ export default function RootLayout({ children }) {
                   >
                     About Us
                   </Link>
-                  {/* Blogs Dropdown */}
-
-                  {/* Projects Dropdown */}
                   <Link
                     href="/pages/contact"
                     className="text-white hover:text-orange-200 px-3 py-2"
@@ -238,57 +264,60 @@ export default function RootLayout({ children }) {
                   <Image src={logo} alt="logo" width={100} height={50} />
                 </Link>
                 <div className="px-7 pt-20 pb-3 text-lg space-y-4 sm:px-3">
-                  <Link href="/" className="text-white block px-3 py-2">
+                  <Link href="/" className="text-white block px-3 py-2" onClick={toggleMenu}>
                     Home
                   </Link>
                   <Link
                     href="/pages/about"
                     className="text-white block px-3 py-2"
+                    onClick={toggleMenu}
                   >
                     About Us
                   </Link>
                   <Link
                     href="/pages/dholeraSIR"
                     className="text-white block px-3 py-2"
+                    onClick={toggleMenu}
                   >
                     Dholera SIR
                   </Link>
                   
-                        <div>
-                          <div 
-                            className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                            onClick={toggleMobileProjectsDropdown}
-                          >
-                            <Link href="/pages/projects">Projects</Link>
-                            {isMobileProjectsOpen ? (
-                              <ChevronUp className="h-5 w-5" />
-                            ) : (
-                              <ChevronDown className="h-5 w-5" />
-                            )}
-                          </div>
-                          <AnimatePresence>
-                            {isMobileProjectsOpen && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="pl-6 overflow-hidden"
-                              >
-                                {projects.map((project) => (
-                                  <Link
-                                    key={project._id}
-                                    href={`/posts/${project.slug.current}`}
-                                    className="text-gray-300 hover:text-white block px-3 py-2 text-sm"
-                                    onClick={toggleMenu}
-                                  >
-                                    {project.title}
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
+                  <div>
+                    <div 
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+                      onClick={toggleMobileProjectsDropdown}
+                    >
+                      <Link href="/pages/projects">Projects</Link>
+                      {isMobileProjectsOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileProjectsOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {projects.map((project) => (
+                            <Link
+                              key={project._id}
+                              href={`/posts/${project.slug.current}`}
+                              className="text-gray-300 hover:text-white block px-3 py-2 text-sm"
+                              onClick={toggleMenu}
+                            >
+                              {project.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                  
                   {/* Mobile Blogs Dropdown */}
                   <div>
                     <div 
@@ -326,17 +355,17 @@ export default function RootLayout({ children }) {
                     </AnimatePresence>
                   </div>
 
-                  {/* Mobile Projects Dropdown */}
-
                   <Link
                     href="#"
                     className="text-white block px-3 py-2"
+                    onClick={toggleMenu}
                   >
                     Gallery
                   </Link>
                   <Link
                     href="/pages/contact"
                     className="text-white block px-3 py-2"
+                    onClick={toggleMenu}
                   >
                     Contact Us
                   </Link>

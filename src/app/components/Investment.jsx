@@ -10,7 +10,7 @@ const DholeraInvestmentGuide = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-blue-800 text-white">
+      <section className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-[url('/api/placeholder/1200/400')] bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
@@ -222,7 +222,7 @@ const DholeraInvestmentGuide = () => {
       </section>
 
       {/* Key Features */}
-      <section className="bg-blue-800 text-white py-16">
+      <section className="bg-[#151f28] text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-12 text-center">
             Key Features That Make Dholera a Prime Investment
@@ -483,7 +483,7 @@ const DholeraInvestmentGuide = () => {
       </section>
 
       {/* Investment Call to Action */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-16">
+      <section className="bg-[#151f28] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
             Begin Your Investment Journey in Dholera
