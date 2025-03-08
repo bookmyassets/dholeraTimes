@@ -109,9 +109,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
+      <head>
         <meta name="google-site-verification" content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU" />
-      </Head>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

@@ -116,7 +116,7 @@ export default function Home() {
         <div className="text-white text-center">
           <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
           <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
-            A NEW ERA
+            A SMART TIMES
           </p>
           <p className="text-lg md:text-xl mt-2">
             GREENFIELD INDUSTRIAL SMART CITY
