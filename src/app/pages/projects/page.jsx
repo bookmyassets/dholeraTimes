@@ -3,7 +3,8 @@ import { getblogs, getPosts } from "@/sanity/lib/api";
 import { urlFor } from "@/sanity/lib/image";
 import "../projects/project.css";
 import Image from "next/image";
-import { CalendarDays, MessageSquare, User } from "lucide-react"
+import { CalendarDays, MessageSquare, User } from "lucide-react";
+import { PortableText } from "next-sanity";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -18,7 +19,8 @@ export default async function Home() {
             Our <span className="text-[#0e48fe]">Projects</span>
           </h1>
           <p className="text-lg text-center max-w-2xl mx-auto text-gray-200">
-          Discover the latest market insights, expert strategies, and investment opportunities to grow your wealth.
+            Discover the latest market insights, expert strategies, and
+            investment opportunities to grow your wealth.
           </p>
         </div>
       </div>
@@ -35,46 +37,62 @@ export default async function Home() {
                     {post.mainImage && (
                       <div className="relative h-64 md:h-full ">
                         <Image
-                          src={urlFor(post.mainImage).width(800).height(600).url() || "/placeholder.svg"}
+                          src={
+                            urlFor(post.mainImage)
+                              .width(800)
+                              .height(600)
+                              .url() || "/placeholder.svg"
+                          }
                           alt={post.title}
                           fill
                           className="object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-70"></div>
-                        <span className="absolute top-4 left-4 bg-[#0e48fe] text-white text-xs font-bold px-3 py-1 rounded-full">
-                          {post.category || "Projects"}
-                        </span>
+                        {post.categories?.map((category) => (
+                          <span
+                            key={category.title}
+                            className={`px-4 py-2 text-white text-sm font-bold rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 
+      ${category.title === "Sold Out" ? "bg-red-600" : "bg-gradient-to-r from-blue-500 to-purple-600"}`}
+                          >
+                            {category.title}
+                          </span>
+                        ))}
                       </div>
                     )}
                   </div>
                   <div className="md:w-1/2 bg-gray-300 text-[#151f28] p-6 md:p-8 flex flex-col justify-center">
-                    <div className="flex items-center text-xs mb-3">
-                      <CalendarDays className="h-3 w-3 mr-1" />
-                      <span>{new Date().toLocaleDateString()}</span>
-                      <span className="mx-2">•</span>
-                      <MessageSquare className="h-3 w-3 mr-1" />
-                      <span>5 min read</span>
-                    </div>
-
-                    <p className="text-xs font-medium mb-2">{post.hashtags?.join(" ")}</p>
-
-                    <Link href={post.slug?.current ? `/posts/${post.slug.current}` : "#"}>
+                    <Link
+                      href={
+                        post.slug?.current ? `/posts/${post.slug.current}` : "#"
+                      }
+                    >
                       <h2 className="text-2xl font-bold hover:text-[#0e48fe] transition mb-3">
                         {post.title}
+                        <span className="bg-blue-500 rounded-lg ml-3 text-sm text-black  font-thin w-10 h-10">
+                          {" "}
+                          Details Here{" "}
+                        </span>
                       </h2>
-                    </Link>
 
-                    <p className="text-gray-600 mb-4">{post.description}</p>
+                      <p className="text-gray-600 mb-4">{post.description}</p>
+                      <div className=" line-clamp-2 overflow-hidden">
+                        <PortableText value={post.body} />
+                      </div>
 
-                    <div className="flex items-center mt-auto">
+                      {/* <div className="flex items-center mt-auto">
                       <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
-                        <User className="h-5 w-5" />
+                      <User className="h-5 w-5" />
                       </div>
                       <div className="ml-3">
-                        <h3 className="text-sm font-semibold">{post.author.name}</h3>
-                        <p className="text-xs">{post.author.followers || 0} followers</p>
+                      <h3 className="text-sm font-semibold">
+                      {post.author.name}
+                      </h3>
+                      <p className="text-xs">
+                      {post.author.followers || 0} followers
+                      </p>
                       </div>
-                    </div>
+                      </div> */}
+                    </Link>
                   </div>
                 </div>
               </div>

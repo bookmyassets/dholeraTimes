@@ -78,18 +78,19 @@ export default async function Post({ params }) {
         <article className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
           {post.mainImage && (
             <div className="relative w-full h-auto aspect-[/2] overflow-hidden">
-            <img
-              src={urlFor(post.mainImage).width(1700).url()}
-              alt={post.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
+              <img
+                src={urlFor(post.mainImage).width(1700).url()}
+                alt={post.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
           )}
 
           <div className="px-8 py-10">
             {/* Categories */}
             {post.categories && post.categories.length > 0 && (
-              <div className="flex gap-2 mb-6">
+              <div className="flex gap-2 mb-6 justify-end items-center">
+                {/* Categories */}
                 {post.categories.map((category) => (
                   <span
                     key={category.title}
@@ -98,6 +99,13 @@ export default async function Post({ params }) {
                     {category.title}
                   </span>
                 ))}
+
+                {/* "22 Projects Left" Badge */}
+                { isProject && 
+                <span className="px-3 py-1 bg-red-50 text-red-600 text-sm font-semibold rounded-full">
+                  22 Plots Left
+                </span>
+                }
               </div>
             )}
 
@@ -105,36 +113,6 @@ export default async function Post({ params }) {
             <h1 className="text-4xl font-bold text-gray-900 mb-6">
               {post.title}
             </h1>
-
-            {/* Meta information */}
-            <div className="flex flex-wrap items-center gap-6 mb-10 text-gray-600">
-              {post.author && (
-                <div className="flex items-center gap-2">
-                  <User size={20} />
-                  <div className="flex items-center gap-2">
-                    {post.author.image && (
-                      <Image
-                        src={urlFor(post.author.image)
-                          .width(800)
-                          .height(600)
-                          .url()}
-                        alt={post.author.name}
-                        className="h-full w-full object-cover"
-                      />
-                    )}
-                    <span>{post.author.name}</span>
-                  </div>
-                </div>
-              )}
-              <div className="flex items-center gap-2">
-                <Calendar size={20} />
-                
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock size={20} />
-                <span>{readTime} min read</span>
-              </div>
-            </div>
 
             {/* Content */}
             <div className="prose prose-lg max-w-none">

@@ -172,31 +172,6 @@ const DholeraInvestmentGuide = () => {
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <div className="h-48 bg-gray-200 relative">
               <Image
-                src={expressway}
-                alt="Central Spine Road"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-              <h3 className="absolute bottom-0 left-0 text-white text-xl font-bold p-4">
-                Intercity Connectivity
-              </h3>
-            </div>
-            <div className="p-6">
-              <h4 className="font-semibold text-gray-900 mb-2">
-                Central Spine Road
-              </h4>
-              <p className="text-gray-600">
-                A special 109 km long expressway is expected to be completed in
-                the next three months, connecting Dholera and Ahmedabad. This
-                4-lane expressway will reduce travel time to just 40-45 minutes.
-              </p>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="h-48 bg-gray-200 relative">
-              <Image
                 src={dia}
                 alt="International Airport"
                 className="w-full h-full object-cover"
@@ -215,6 +190,33 @@ const DholeraInvestmentGuide = () => {
                 expected to be operational by December 2026. It will handle both
                 passenger and freight operations, connecting Dholera to the
                 world.
+              </p>
+            </div>
+          </div>
+          
+
+          {/* Card 3 */}
+
+          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+            <div className="h-48 bg-gray-200 relative">
+              <Image
+                src={expressway}
+                alt="Central Spine Road"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <h3 className="absolute bottom-0 left-0 text-white text-xl font-bold p-4">
+                Intercity Connectivity
+              </h3>
+            </div>
+            <div className="p-6">
+              <h4 className="font-semibold text-gray-900 mb-2">
+                Central Spine Road
+              </h4>
+              <p className="text-gray-600">
+                A special 109 km long expressway is expected to be completed in
+                the next three months, connecting Dholera and Ahmedabad. This
+                4-lane expressway will reduce travel time to just 40-45 minutes.
               </p>
             </div>
           </div>

@@ -89,7 +89,7 @@ export default function Footer() {
                   <p className="text-sm mt-1">We'll get back to you soon.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} id="footer-form" >
                   <div className="mb-4 relative flex items-center w-full">
                     <FaUser className="absolute left-4 text-gray-500" />
                     <input
@@ -148,7 +148,7 @@ export default function Footer() {
         </div>
 
         {/* First 3-column row with company info, links, policy */}
-        <div className="grid md:grid-cols-4 md:gap-44 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
             <div>620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India</div>
@@ -213,7 +213,7 @@ export default function Footer() {
           </div>
 
           <div className="">
-            <h3 className="text-white text-lg font-semibold mb-4">Web Info</h3>
+            <h3 className="text-white text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
                 <a href="/pages/about" className="hover:text-white transition">
@@ -235,7 +235,12 @@ export default function Footer() {
                   href="/pages/contact"
                   className="hover:text-white transition"
                 >
-                  Refund & Cancellation
+                  Refund & Cancellation policy
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-white transition">
+                  Careers
                 </a>
               </li>
             </ul>
@@ -261,11 +266,7 @@ export default function Footer() {
                   Constructed Properties
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-white transition">
-                  Career
-                </a>
-              </li>
+              
             </ul>
           </div>
         </div>

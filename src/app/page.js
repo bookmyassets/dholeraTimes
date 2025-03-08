@@ -8,12 +8,14 @@ import { useState, useRef } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import Head from "next/head";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: "",
     phone: "",
@@ -51,7 +53,6 @@ export default function Home() {
           body: JSON.stringify({
             fields: {
               name: formData.fullName,
-             
               phone: formData.phone,
             },
             source: "Dholera Times Website",
@@ -65,25 +66,17 @@ export default function Home() {
 
       // Check response status and handle accordingly
       if (response.ok) {
-        // Check for specific success indicators
         if (
           responseText === "OK" ||
           responseText.toLowerCase().includes("success")
         ) {
-          setFormData({ fullName: "", email: "", phone: "" });
-          alert("Thank you! We'll contact you soon.");
+          setFormData({ fullName: "", phone: "" }); // Reset form
+          setShowPopup(true); // Show popup on success
         } else {
-          // Try parsing as JSON if it's not a simple text response
-          let result;
-          try {
-            result = JSON.parse(responseText);
-            console.log("Parsed Response:", result);
-          } catch {
-            console.log("Response Text:", responseText);
-          }
+          // Handle unexpected response
+          console.log("Response Text:", responseText);
         }
       } else {
-        // Handle error responses
         console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
       }
@@ -97,85 +90,145 @@ export default function Home() {
 
   return (
     <>
-    
-      <main className="w-full -z-10 h-full pt-4">
-      <div className="relative w-full h-[80vh] flex items-center justify-center">
-      {/* Background Image */}
-      <Image
-        src={hero}
-        alt="hero image"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      <main className="w-full -z-10 h-full ">
+        <div className="relative w-full max-sm:h-[100vh] h-[80vh] flex md:items-center md:justify-center">
+          {/* Background Image */}
+          <Image
+            src={hero}
+            alt="hero image"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/50"></div>
 
-      {/* Content Wrapper */}
-      <div className="absolute w-full flex flex-col items-center px-6 md:flex-row md:justify-around md:px-20">
-        {/* Left Section - Text */}
-        <div className="text-white text-center">
-          <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
-          <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
-            A SMART TIMES
-          </p>
-          <p className="text-lg md:text-xl mt-2">
-            GREENFIELD INDUSTRIAL SMART CITY
-          </p>
-        </div>
-
-        {/* Right Section - Form */}
-        <div className="bg-white/80 p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
-          <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
-            Let's Connect
-          </h2>
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Full Name Input */}
-            <div className="relative flex items-center w-full">
-              <FaUser className="absolute left-4 text-gray-500" />
-              <input
-                name="fullName"
-                placeholder="Full Name"
-                value={formData.fullName}
-                onChange={handleChange}
-                required
-                className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-              />
+          {/* Content Wrapper */}
+          <div className="absolute w-full flex flex-col max-sm:mt-56 items-center px-6 md:flex-row md:justify-around md:px-20">
+            {/* Left Section - Text */}
+            <div className="text-white text-center">
+              <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
+              <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
+                A SMART CITY
+              </p>
+              <p className="text-lg md:text-xl mt-2">
+                GREENFIELD INDUSTRIAL SMART CITY
+              </p>
             </div>
 
-            {/* Phone Number Input */}
-            <div className="relative flex items-center w-full">
-              <FaPhoneAlt className="absolute left-4 text-gray-500" />
-              <input
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                placeholder="Phone Number"
-                className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-              />
-            </div>
+            {/* Right Section - Form */}
+            <div className=" p-8 bg-transparent rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
+              <h2 className="text-2xl font-semibold text-center text-white mb-6">
+                Let's Connect
+              </h2>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Full Name Input */}
+                <div className="relative flex items-center w-full">
+                  <FaUser className="absolute left-4 text-gray-500" />
+                  <input
+                    name="fullName"
+                    placeholder="Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                  />
+                </div>
+
+                {/* Phone Number Input */}
+                <div className="relative flex items-center w-full">
+                  <FaPhoneAlt className="absolute left-4 text-gray-500" />
+                  <input
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                    placeholder="Phone Number"
+                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
                 ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
                     : "bg-[#151f28] hover:bg-blue-600 hover:shadow-lg active:scale-95"
                 }`}
-            >
-              {isLoading ? "Submitting..." : "Get a call back"}
-            </button>
-          </form>
-        </div>
-      </div>
+                >
+                  {isLoading ? "Submitting..." : "Get a call back"}
+                </button>
+              </form>
+              {showPopup && (
+                <>
+                  {/* Prevent background scrolling */}
+                  <style jsx global>{`
+                    body {
+                      overflow: hidden;
+                    }
+                  `}</style>
 
-      {/* Carousel Section */}
-     {/*  <div className="absolute bottom-0 w-full p-6">
+                  <div
+                    className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+                    style={{ backdropFilter: "blur(5px)" }} // Reduced blur
+                    onClick={(e) => {
+                      if (e.target === e.currentTarget) {
+                        setShowPopup(false);
+                      }
+                    }}
+                  >
+                    <div className="bg-white p-8 rounded-xl w-full max-w-md text-center shadow-2xl transform transition-all scale-100 opacity-100">
+                      <div className="mb-4 flex justify-center">
+                        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="h-8 w-8 text-green-600"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-semibold text-[#151f28] mb-2">
+                        Thank You!
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        You'll get a call back shortly
+                      </p>
+
+                      <div className="space-y-3">
+                        <Link href="/pages/projects" className="block">
+                          <button className="w-full p-3 bg-[#151f28] text-white rounded-lg hover:bg-blue-600 transition-all duration-300 font-medium">
+                            Explore Projects
+                          </button>
+                        </Link>
+                        <button
+                          onClick={() => setShowPopup(false)}
+                          className="w-full p-3 text-[#151f28] border border-gray-300 rounded-lg hover:bg-gray-100 transition-all"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
+          </div>
+
+          {/* Carousel Section */}
+          {/*  <div className="absolute bottom-0 w-full p-6">
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
@@ -203,7 +256,7 @@ export default function Home() {
           </SwiperSlide>
         </Swiper>
       </div> */}
-    </div>
+        </div>
       </main>
 
       <section>

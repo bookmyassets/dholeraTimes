@@ -3,12 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  ChevronUp,
-} from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import "./globals.css";
 import logo from "@/assets/dt.png";
@@ -36,7 +31,7 @@ export default function RootLayout({ children }) {
   const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [projects, setProjects] = useState([]);
-  
+
   // Refs for dropdown elements
   const blogsDropdownRef = useRef(null);
   const projectsDropdownRef = useRef(null);
@@ -78,19 +73,25 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     function handleClickOutside(event) {
       // Close blogs dropdown if click is outside
-      if (blogsDropdownRef.current && !blogsDropdownRef.current.contains(event.target)) {
+      if (
+        blogsDropdownRef.current &&
+        !blogsDropdownRef.current.contains(event.target)
+      ) {
         setIsBlogsDropdownOpen(false);
       }
-      
+
       // Close projects dropdown if click is outside
-      if (projectsDropdownRef.current && !projectsDropdownRef.current.contains(event.target)) {
+      if (
+        projectsDropdownRef.current &&
+        !projectsDropdownRef.current.contains(event.target)
+      ) {
         setIsProjectsDropdownOpen(false);
       }
     }
-    
+
     // Add event listener
     document.addEventListener("mousedown", handleClickOutside);
-    
+
     // Cleanup event listener
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -110,12 +111,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU" />
+        <meta
+          name="google-site-verification"
+          content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="fixed z-40 w-full pt-4 pb-4 bg-[#151f28]">
+        <nav className="fixed z-40 w-full max-sm:pt-2 max-sm:pb-2 pt-4 pb-4 bg-[#151f28]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
               <div className="flex-shrink-0">
@@ -258,10 +262,14 @@ export default function RootLayout({ children }) {
               >
                 <div className="flex justify-end" onClick={toggleMenu}></div>
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={100} height={50} />
+                  <Image src={logo} alt="logo" width={100} height={100} />
                 </Link>
                 <div className="px-7 pt-20 pb-3 text-lg space-y-4 sm:px-3">
-                  <Link href="/" className="text-white block px-3 py-2" onClick={toggleMenu}>
+                  <Link
+                    href="/"
+                    className="text-white block px-3 py-2"
+                    onClick={toggleMenu}
+                  >
                     Home
                   </Link>
                   <Link
@@ -278,9 +286,9 @@ export default function RootLayout({ children }) {
                   >
                     Dholera SIR
                   </Link>
-                  
+
                   <div>
-                    <div 
+                    <div
                       className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
                       onClick={toggleMobileProjectsDropdown}
                     >
@@ -304,7 +312,7 @@ export default function RootLayout({ children }) {
                             <Link
                               key={project._id}
                               href={`/posts/${project.slug.current}`}
-                              className="text-gray-300 hover:text-white block px-3 py-2 text-sm"
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={toggleMenu}
                             >
                               {project.title}
@@ -314,10 +322,10 @@ export default function RootLayout({ children }) {
                       )}
                     </AnimatePresence>
                   </div>
-                  
+
                   {/* Mobile Blogs Dropdown */}
                   <div>
-                    <div 
+                    <div
                       className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
                       onClick={toggleMobileBlogsDropdown}
                     >
@@ -341,7 +349,7 @@ export default function RootLayout({ children }) {
                             <Link
                               key={blog._id}
                               href={`/posts/${blog.slug.current}`}
-                              className="text-gray-300 hover:text-white block px-3 py-2 text-sm"
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={toggleMenu}
                             >
                               {blog.title}

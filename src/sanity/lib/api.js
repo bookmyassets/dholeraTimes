@@ -12,7 +12,7 @@ export async function getPosts() {
     publishedAt,
     body,
     author->{name, image},
-    categories[]->{title}
+    categories->{title}
   }`;
   const posts = await client.fetch(query);
   return posts;
