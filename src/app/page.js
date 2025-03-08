@@ -97,9 +97,7 @@ export default function Home() {
 
   return (
     <>
-    <Head>
-      <meta name="google-site-verification" content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU" />
-    </Head>
+    
       <main className="w-full -z-10 h-full pt-4">
       <div className="relative w-full h-[80vh] flex items-center justify-center">
       {/* Background Image */}

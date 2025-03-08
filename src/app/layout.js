@@ -16,6 +16,7 @@ import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
 import { getPosts, getblogs } from "@/sanity/lib/api";
+import Head from "next/head";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,6 +109,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
+      <Head>
+        <meta name="google-site-verification" content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU" />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -116,7 +120,7 @@ export default function RootLayout({ children }) {
             <div className="flex justify-between h-16 items-center">
               <div className="flex-shrink-0">
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={100} height={100} />
+                  <Image src={logo} alt="logo" width={140} height={140} />
                 </Link>
               </div>
               <div className="hidden md:block">
