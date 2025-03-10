@@ -39,19 +39,25 @@ export default function ContactDetails() {
           {/* Talk to Sales */}
           <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
             <FaPhoneAlt className="text-blue-600 text-3xl mb-4" />
+            <a href="tel:+919958993549">
+
             <h3 className="text-lg font-semibold text-gray-800">Talk to Sales</h3>
             <p className="text-gray-600 mt-2">
               Interested in our services? Just pick up the phone to chat with a member of our sales team.
             </p>
+            </a>
           </div>
 
           {/* Contact Support */}
           <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+
             <FaHeadset className="text-blue-600 text-3xl mb-4" />
+              <a href="https://api.whatsapp.com/send?phone=919958993549">
             <h3 className="text-lg font-semibold text-gray-800">Contact Customer Support</h3>
             <p className="text-gray-600 mt-2">
               Need help? Our support team is here for you. Reach out anytime!
             </p>
+            </a>
           </div>
         </div>
 
@@ -68,16 +74,16 @@ export default function ContactDetails() {
         <div className="mt-10 text-center">
           <h3 className="text-xl font-semibold text-gray-800 mb-4">Follow Us</h3>
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-blue-600 text-3xl hover:text-blue-800">
+            <a href="https://www.facebook.com/profile.php?id=61572970112485" className="text-blue-600 text-3xl hover:text-blue-800">
               <FaFacebook />
             </a>
-            <a href="#" className="text-blue-400 text-3xl hover:text-blue-600">
+            <a href="https://x.com/dholeratimes" className="text-blue-400 text-3xl hover:text-blue-600">
               <FaTwitter />
             </a>
-            <a href="#" className="text-pink-500 text-3xl hover:text-pink-700">
+            <a href="https://www.instagram.com/dholeratimes/" className="text-pink-500 text-3xl hover:text-pink-700">
               <FaInstagram />
             </a>
-            <a href="#" className="text-blue-700 text-3xl hover:text-blue-900">
+            <a href="https://www.linkedin.com/company/bookmyassets/" className="text-blue-700 text-3xl hover:text-blue-900">
               <FaLinkedin />
             </a>
           </div>

@@ -157,7 +157,7 @@ export default function Home() {
                 ${
                   isLoading
                     ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-[#151f28] hover:bg-blue-600 hover:shadow-lg active:scale-95"
+                    : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"
                 }`}
                 >
                   {isLoading ? "Submitting..." : "Get a call back"}

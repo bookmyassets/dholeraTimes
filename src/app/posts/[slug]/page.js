@@ -15,6 +15,10 @@ export default async function Post({ params }) {
     (category) => category.title.toLowerCase() === "project"
   );
 
+  const isSold = post.categories?.some(
+    (category) => category.title === "Sold Out"
+  );
+
   const components = {
     types: {
       image: ({ value }) => {
@@ -101,11 +105,11 @@ export default async function Post({ params }) {
                 ))}
 
                 {/* "22 Projects Left" Badge */}
-                { isProject && 
+                { isProject && !isSold && (
                 <span className="px-3 py-1 bg-red-50 text-red-600 text-sm font-semibold rounded-full">
                   22 Plots Left
                 </span>
-                }
+                )}
               </div>
             )}
 
