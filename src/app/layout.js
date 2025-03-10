@@ -35,6 +35,7 @@ export default function RootLayout({ children }) {
   // Refs for dropdown elements
   const blogsDropdownRef = useRef(null);
   const projectsDropdownRef = useRef(null);
+  const menuOpenRef = useRef(null);
 
   const toggleBlogsDropdown = () => {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
@@ -86,6 +87,11 @@ export default function RootLayout({ children }) {
         !projectsDropdownRef.current.contains(event.target)
       ) {
         setIsProjectsDropdownOpen(false);
+      }
+      if (
+        menuOpenRef.current && !menuOpenRef.current.contains(event.target)
+      ){
+        setIsMenuOpen(false);
       }
     }
 
@@ -252,11 +258,12 @@ export default function RootLayout({ children }) {
 
           {/* Mobile menu */}
           <AnimatePresence>
-            {isMenuOpen && (
+            {isMenuOpen &&  (
               <motion.div
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: "-100%", opacity: 0 }}
+                ref={menuOpenRef}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="md:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
               >
