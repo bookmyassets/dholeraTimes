@@ -262,9 +262,7 @@ export default function Home() {
       <section>
         {/* DHOLERA SIR */}
         <div>
-          <div className="text-center text-[#253559] text-5xl font-semibold pt-5">
-            DHOLERA SIR
-          </div>
+          
           <div>
             <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
               <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
