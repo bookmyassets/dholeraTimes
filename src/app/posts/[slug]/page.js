@@ -6,7 +6,8 @@ import CostSheet from "@/app/components/costSheet";
 import Image from "next/image";
 
 export default async function Post({ params }) {
-  const post = await getPostBySlug(params.slug);
+  const {slug} = await params;
+  const post = await getPostBySlug(slug);
 
   // Calculate read time (rough estimate)
   const wordCount = JSON.stringify(post.body).split(" ").length;
@@ -27,7 +28,7 @@ export default async function Post({ params }) {
         }
         return (
           <figure className="my-8">
-            <img
+            <Image
               alt={value.alt || " "}
               src={urlFor(value).width(800).url()}
               className="w-full rounded-xl shadow-lg"
@@ -82,7 +83,7 @@ export default async function Post({ params }) {
         <article className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
           {post.mainImage && (
             <div className="relative w-full h-auto aspect-[/2] overflow-hidden">
-              <img
+              <Image
                 src={urlFor(post.mainImage).width(1700).url()}
                 alt={post.title}
                 className="w-full h-full object-cover"

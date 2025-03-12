@@ -12,7 +12,7 @@ const DholeraInvestmentGuide = () => {
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-[#151f28] text-white">
-        <div className="absolute inset-0 opacity-20 bg-[url('/api/placeholder/1200/400')] bg-cover bg-center"></div>
+        <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
           <h1 className="text-4xl text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Why Invest in{" "}
