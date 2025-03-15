@@ -128,7 +128,7 @@ export default function RootLayout({ children }) {
             <div className="flex justify-between h-16 items-center">
               <div className="flex-shrink-0">
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={140} height={140} />
+                  <Image src={logo} alt="logo" width={100} height={100} />
                 </Link>
               </div>
               <div className="hidden md:block">
