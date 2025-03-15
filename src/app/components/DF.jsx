@@ -8,7 +8,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -32,7 +32,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -55,7 +55,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -78,7 +78,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -101,7 +101,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -124,7 +124,7 @@ const DholeraFeaturesDark = () => {
         <div className="w-16 h-16 flex items-center justify-center rounded-full bg-yellow-400/20 shadow-lg shadow-yellow-400/10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-8 w-8 text-yellow-400"
+            className="h-8 w-8 text-[#d8b66d]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -245,19 +245,19 @@ const DholeraFeaturesDark = () => {
     <div className="w-full bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <motion.div 
-          className="text-center mb-16"
+          className="md:text-center max-sm:ml-7 mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-yellow-400 mb-6"
+            className="text-3xl md:text-4xl font-bold text-[#d8b66d] mb-6"
             variants={titleVariants}
           >
             Key Features That Make Dholera a Prime Investment
           </motion.h2>
           <motion.div 
-            className="w-24 h-1 bg-yellow-500 mx-auto mb-8"
+            className="w-24 h-1 bg-[#d8b66d] mx-auto mb-8"
             variants={underlineVariants}
           ></motion.div>
           <motion.p 
@@ -293,7 +293,7 @@ const DholeraFeaturesDark = () => {
                 {feature.icon}
               </motion.div>
               <motion.h3 
-                className="text-xl font-bold mb-3 text-yellow-400"
+                className="text-xl font-bold mb-3 text-[#d8b66d]"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -322,7 +322,7 @@ const DholeraFeaturesDark = () => {
                         to skyrocket in the next three years. From November 2022 to
                         March 2024 alone, the land rates saw a{" "}
                         <motion.span 
-                          className="text-yellow-400 font-bold"
+                          className="text-[#d8b66d] font-bold"
                           whileHover={{ scale: 1.1 }}
                         >
                           3X jump
@@ -363,7 +363,7 @@ const DholeraFeaturesDark = () => {
                 {feature.content.length > 180 && (
                   <motion.button 
                     onClick={() => toggleReadMore(index)}
-                    className="mt-2 text-yellow-400 hover:text-yellow-300 font-medium focus:outline-none"
+                    className="mt-2 text-[#d8b66d] hover:text-yellow-300 font-medium focus:outline-none"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

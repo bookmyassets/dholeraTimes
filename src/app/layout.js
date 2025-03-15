@@ -88,9 +88,7 @@ export default function RootLayout({ children }) {
       ) {
         setIsProjectsDropdownOpen(false);
       }
-      if (
-        menuOpenRef.current && !menuOpenRef.current.contains(event.target)
-      ){
+      if (menuOpenRef.current && !menuOpenRef.current.contains(event.target)) {
         setIsMenuOpen(false);
       }
     }
@@ -172,19 +170,27 @@ export default function RootLayout({ children }) {
                     </button>
                     {isProjectsDropdownOpen && (
                       <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                        {projects.map((project) => (
-                          <Link
-                            key={project._id}
-                            href={`/posts/${project.slug.current}`}
-                            className="block px-4 py-2 text-black hover:bg-gray-200"
-                            onClick={() => setIsProjectsDropdownOpen(false)}
-                          >
-                            {project.title}
-                          </Link>
-                        ))}
+                        {projects
+                          .filter(
+                            (project) =>
+                              !(Array.isArray(project.categories)
+                                ? project.categories.includes("Sold Out")
+                                : project.categories === "Sold Out")
+                          )
+                          .map((project) => (
+                            <Link
+                              key={project._id}
+                              href={`/posts/${project.slug.current}`}
+                              className="block px-4 py-2 text-black hover:bg-gray-200"
+                              onClick={() => setIsProjectsDropdownOpen(false)}
+                            >
+                              {project.title}
+                            </Link>
+                          ))}
                       </div>
                     )}
                   </div>
+
                   <Link
                     href="#"
                     className="text-white hover:text-orange-200 px-3 py-2"
@@ -258,7 +264,7 @@ export default function RootLayout({ children }) {
 
           {/* Mobile menu */}
           <AnimatePresence>
-            {isMenuOpen &&  (
+            {isMenuOpen && (
               <motion.div
                 initial={{ x: "-100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}

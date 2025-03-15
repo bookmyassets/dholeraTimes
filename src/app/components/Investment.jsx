@@ -14,11 +14,11 @@ const DholeraInvestmentGuide = () => {
       <section className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-          <h1 className="text-4xl text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          <h1 className="text-4xl max-sm:ml-7 md:text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Why Invest in{" "}
-            <span className="text-yellow-400">Dholera Smart City</span>
+            <span className="text-[#d8b66d]">Dholera Smart City</span>
           </h1>
-          <p className="max-w-7xl text-center text-xl">
+          <p className="max-w-7xl max-sm:ml-7 md:text-center text-xl">
             Every bit of Gujarat’s Dholera smart city has been planned
             meticulously with a futuristic vision. Its foundation stone was set
             by the then Prime Minister, Shri Manmohan Singh. Alongside being
@@ -30,8 +30,8 @@ const DholeraInvestmentGuide = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
+      <section className="max-w-7xl max-sm:ml-7 mx-auto px-4 py-16 sm:px-6 lg:px-8">
+        <div className="md:text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity
           </h2>
@@ -221,15 +221,15 @@ const DholeraInvestmentGuide = () => {
         {/* Historical Context & Future Vision Section */}
 
         {/* Investment Opportunity Section */}
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl shadow-lg p-8 md:p-10 mb-16 border border-amber-100 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl  shadow-lg p-8 md:p-10 mb-16 border border-amber-100 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-400/10 rounded-full -mt-10 -mr-10 blur-2xl"></div>
           <div className="md:flex items-center gap-10 relative z-10">
             <div className="md:w-3/5">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-500 to-yellow-600">
+                <span className="bg-clip-text text-[#d8b66d]">
                   A Golden Investment Opportunity
                 </span>
-                <div className="w-20 h-1 bg-gradient-to-r from-amber-400 to-yellow-500 mt-2 rounded-full"></div>
+                <div className="w-20 h-1 bg-[#d8b66d] mt-2 rounded-full"></div>
               </h2>
               <p className="text-gray-700 text-lg mb-6">
                 Missing out on investing in the Dholera SIR would be missing out
@@ -238,18 +238,18 @@ const DholeraInvestmentGuide = () => {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/pages/projects">
-                  <button className="px-6 py-3 bg-gradient-to-r from-amber-500 to-yellow-500 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+                  <button className="px-6 py-3 bg-[#d8b66d] text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
                     Explore Investment Options
                   </button>
                 </Link>
               </div>
             </div>
             <div className="md:w-2/5 mt-8 md:mt-0">
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-amber-100">
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-[#d8b66d]">
                 <div className="flex items-center mb-4">
                   <div className="w-10 h-10 bg-amber-100 rounded-full flex items-center justify-center mr-3">
                     <svg
-                      className="w-5 h-5 text-amber-600"
+                      className="w-5 h-5 text-[#d8b66d]"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -267,7 +267,7 @@ const DholeraInvestmentGuide = () => {
                 <ul className="space-y-3">
                   <li className="flex items-center text-gray-600">
                     <svg
-                      className="w-5 h-5 text-amber-500 mr-2"
+                      className="w-5 h-5 text-[#d8b66d] mr-2"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -281,7 +281,7 @@ const DholeraInvestmentGuide = () => {
                   </li>
                   <li className="flex items-center text-gray-600">
                     <svg
-                      className="w-5 h-5 text-amber-500 mr-2"
+                      className="w-5 h-5 text-[#d8b66d] mr-2"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -295,7 +295,7 @@ const DholeraInvestmentGuide = () => {
                   </li>
                   <li className="flex items-center text-gray-600">
                     <svg
-                      className="w-5 h-5 text-amber-500 mr-2"
+                      className="w-5 h-5 text-[#d8b66d] mr-2"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -309,7 +309,7 @@ const DholeraInvestmentGuide = () => {
                   </li>
                   <li className="flex items-center text-gray-600">
                     <svg
-                      className="w-5 h-5 text-amber-500 mr-2"
+                      className="w-5 h-5 text-[#d8b66d] mr-2"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -357,116 +357,116 @@ const DholeraInvestmentGuide = () => {
       <section className="bg-[#151f28]">
   <section className="py-5 px-4 text-white">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10 text-center text-[#FDB913]">
+      <h2 className="text-3xl font-bold mb-10 text-center text-[#d8b66d]">
         Major Highlights of Dholera Smart City
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>Massive 920 sq. km. smart city</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>High-return investment</b> in residential, commercial, and industrial plots</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Seamless intracity commute</b> with metro connectivity</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Central Spine Road Expressway</b> linking directly to Ahmedabad</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Strategic location</b> near major ports for global trade</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Dholera International Airport</b> ensuring global connectivity</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Exclusive incentives</b> for industrial projects</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>World-class civic amenities</b> for a futuristic lifestyle</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>India’s largest solar power project,</b> driving renewable energy initiatives</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>PM Modi’s visionary project,</b> shaping India's smart city future</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Emerging semiconductor industry hub</b></div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>An integral part of the Delhi-Mumbai Industrial Corridor (DMIC)</b></div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Fully digitized administration</b> for efficient governance</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>2X</b> the size of Delhi and <b>6X</b> that of Shanghai</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>One of the top 12 fastest-growing cities across the world</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div><b>Proximity to megacities</b> - Ahmedabad, Vadodara, Bhavnagar</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>Close to Gujarat International Finance Tech <b>(GIFT) city</b></div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>Home to one of the largest upcoming 
           <b> semiconductor projects</b></div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>India’s  
           <b> greenfield smart city </b>project</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>Currently ranked as 
           <b> India’s best land investment opportunity</b>with high returns</div>
         </div>
 
         <div className="flex items-start gap-3">
-          <div className="text-[#FDB913] font-bold text-xl">✓</div>
+          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
           <div>Expected to be one of the 
           <b> biggest industrial hubs</b> across the world once complete
           </div>

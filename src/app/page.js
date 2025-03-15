@@ -4,7 +4,7 @@ import hero from "@/assets/hero5.webp";
 import heroM from "@/assets/heroM.webp";
 import dsir from "@/assets/dsir.png";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 import Link from "next/link";
@@ -15,6 +15,9 @@ import Head from "next/head";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [submissionCount, setSubmissionCount] = useState(0);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -32,6 +35,32 @@ export default function Home() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+
+    // Get submission count and last submission timestamp
+    let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
+    let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
+
+    // Check if 24 hours have passed since the last submission
+    if (lastSubmissionTime) {
+      const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
+      const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
+
+      if (hoursPassed >= 24) {
+        // Reset submission count after 24 hours
+        submissionCount = 0;
+        localStorage.setItem("formSubmissionCount", 0);
+        localStorage.setItem("lastSubmissionTime", Date.now().toString());
+      }
+    }
+
+    // Restrict submission after 3 attempts
+    if (submissionCount >= 3) {
+      alert(
+        "You have reached the maximum submission limit. Try again after 24 hours."
+      );
+      setIsLoading(false);
+      return;
+    }
 
     // Validate form data
     if (!formData.fullName || !formData.phone) {
@@ -72,6 +101,11 @@ export default function Home() {
         ) {
           setFormData({ fullName: "", phone: "" }); // Reset form
           setShowPopup(true); // Show popup on success
+
+          // Increment submission count & store time
+          submissionCount++;
+          localStorage.setItem("formSubmissionCount", submissionCount);
+          localStorage.setItem("lastSubmissionTime", Date.now().toString());
         } else {
           // Handle unexpected response
           console.log("Response Text:", responseText);
@@ -116,56 +150,57 @@ export default function Home() {
             </div>
 
             {/* Right Section - Form */}
-            <div className=" p-8 bg-transparent rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
+            <div className="p-8 bg-transparent rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
               <h2 className="text-2xl font-semibold text-center text-white mb-6">
                 Let's Connect
               </h2>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Full Name Input */}
-                <div className="relative flex items-center w-full">
-                  <FaUser className="absolute left-4 text-gray-500" />
-                  <input
-                    name="fullName"
-                    placeholder="Full Name"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                  />
-                </div>
+              {isDisabled ? (
+                <p className="text-center text-red-500 font-semibold">
+                  You have reached the maximum submission limit. Try again after
+                  24 hours.
+                </p>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="relative flex items-center w-full">
+                    <FaUser className="absolute left-4 text-gray-500" />
+                    <input
+                      name="fullName"
+                      placeholder="Full Name"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                    />
+                  </div>
 
-                {/* Phone Number Input */}
-                <div className="relative flex items-center w-full">
-                  <FaPhoneAlt className="absolute left-4 text-gray-500" />
-                  <input
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    required
-                    placeholder="Phone Number"
-                    className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
-                  />
-                </div>
+                  <div className="relative flex items-center w-full">
+                    <FaPhoneAlt className="absolute left-4 text-gray-500" />
+                    <input
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      placeholder="Phone Number"
+                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                    />
+                  </div>
 
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={isLoading}
-                  className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-                ${
-                  isLoading
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"
-                }`}
-                >
-                  {isLoading ? "Submitting..." : "Get a call back"}
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    disabled={isLoading}
+                    className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
+              ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"}
+            `}
+                  >
+                    {isLoading ? "Submitting..." : "Get a call back"}
+                  </button>
+                </form>
+              )}
+
               {showPopup && (
                 <>
-                  {/* Prevent background scrolling */}
                   <style jsx global>{`
                     body {
                       overflow: hidden;
@@ -174,14 +209,12 @@ export default function Home() {
 
                   <div
                     className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-                    style={{ backdropFilter: "blur(5px)" }} // Reduced blur
-                    onClick={(e) => {
-                      if (e.target === e.currentTarget) {
-                        setShowPopup(false);
-                      }
-                    }}
+                    style={{ backdropFilter: "blur(5px)" }}
                   >
-                    <div className="bg-white p-8 rounded-xl w-full max-w-md text-center shadow-2xl transform transition-all scale-100 opacity-100">
+                    <div
+                      className="bg-white p-8 rounded-xl w-full max-w-md text-center shadow-2xl transform transition-all scale-100 opacity-100"
+                      onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+                    >
                       <div className="mb-4 flex justify-center">
                         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
                           <svg
@@ -208,7 +241,7 @@ export default function Home() {
                       </p>
 
                       <div className="space-y-3">
-                        <Link href="/pages/projects" className="block">
+                        <Link href="/pages/projects">
                           <button className="w-full p-3 bg-[#151f28] text-white rounded-lg hover:bg-blue-600 transition-all duration-300 font-medium">
                             Explore Projects
                           </button>
@@ -262,7 +295,6 @@ export default function Home() {
       <section>
         {/* DHOLERA SIR */}
         <div>
-          
           <div>
             <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
               <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -371,24 +403,52 @@ export default function Home() {
                 </p>
 
                 <div className="relative aspect-video w-full bg-gray-100 rounded-lg overflow-hidden">
-                  {isLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 rounded-full border-4 border-gray-200 border-t-red-600 animate-spin"></div>
+                  {isPlaying ? (
+                    <>
+                      {/* Loader while iframe loads */}
+                      {isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                          <div className="w-12 h-12 rounded-full border-4 border-gray-300 border-t-red-600 animate-spin"></div>
+                        </div>
+                      )}
+                      {/* Iframe loads when playing */}
+                      <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/hNbWaEU1d_A?si=rXk2EQPRG65Q3VJ3&autoplay=1"
+                        title="Dholera Smart City: Vision & Development"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        onLoad={() => setIsLoading(false)}
+                      ></iframe>
+                    </>
+                  ) : (
+                    /* Custom thumbnail with play button */
+                    <div
+                      className="relative w-full h-full cursor-pointer"
+                      onClick={() => {
+                        setIsPlaying(true);
+                        setIsLoading(true);
+                      }}
+                    >
+                      <img
+                        src="https://img.youtube.com/vi/hNbWaEU1d_A/hqdefault.jpg"
+                        alt="Video thumbnail"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Play button SVG, sized smaller on mobile */}
+                        <svg
+                          className="w-12 h-12 text-white opacity-80 sm:w-16 sm:h-16"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
                     </div>
                   )}
-
-                  <div className="relative z-10 w-full h-full">
-                    <iframe
-                      className="w-full h-full"
-                      src="https://www.youtube.com/embed/hNbWaEU1d_A?si=rXk2EQPRG65Q3VJ3"
-                      title="Dholera Smart City: Vision & Development"
-                      frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerPolicy="strict-origin-when-cross-origin"
-                      allowFullScreen
-                      onLoad={() => setIsLoading(false)}
-                    ></iframe>
-                  </div>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-3">

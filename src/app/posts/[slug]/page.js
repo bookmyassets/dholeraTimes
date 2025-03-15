@@ -1,7 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
 import { getPostBySlug } from "@/sanity/lib/api";
-import { Calendar, Clock, User } from "lucide-react";
 import CostSheet from "@/app/components/costSheet";
 import Image from "next/image";
 
@@ -28,7 +27,7 @@ export default async function Post({ params }) {
         }
         return (
           <figure className="my-8">
-            <Image
+            <img
               alt={value.alt || " "}
               src={urlFor(value).width(800).url()}
               className="w-full rounded-xl shadow-lg"
@@ -86,6 +85,8 @@ export default async function Post({ params }) {
               <Image
                 src={urlFor(post.mainImage).width(1700).url()}
                 alt={post.title}
+                width={1700}
+                height={1200}
                 className="w-full h-full object-cover"
               />
             </div>
