@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import "./globals.css";
-import logo from "@/assets/dt.png";
+import logo from "@/assets/dt.webp";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
