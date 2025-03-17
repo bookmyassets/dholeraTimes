@@ -342,6 +342,12 @@ export default function RootLayout({ children }) {
                   >
                     Contact Us
                   </Link>
+                  <Link
+                    href="/Infopack"
+                    className="text-white hidden hover:text-orange-200 px-3 py-2"
+                  >
+                    Info Pack
+                  </Link>
                 </div>
               </div>
 

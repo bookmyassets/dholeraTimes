@@ -1,5 +1,5 @@
-import { client } from './client';
-import { NextResponse } from 'next/server';
+import { client } from "./client";
+import { NextResponse } from "next/server";
 
 // Fetch all blog posts
 export async function getPosts() {
@@ -54,39 +54,40 @@ export async function getPostBySlug(slug) {
   return post;
 }
 
-export async function POST(request) {
+export async function Inventory() {
+  const query = `*[_type == "post" && author->name == "Dholera Times" && "Inventory" in categories[]->title] | order(publishedAt desc) [0..9] {
+      _id,
+      title,
+      publishedAt,
+      "pdfUrl": coalesce(pdfFile.asset->url, null),
+      "category": coalesce(categories[]->title, []),
+      "author": coalesce(author->name, "Unknown")
+  }`;
+
   try {
-    const body = await request.json();
-    console.log('Received form data:', body);
-
-    const doc = {
-      _type: 'contact',
-      name: body.name,
-      email: body.email,
-      subject: body.subject,
-      message: body.message,
-      submittedAt: new Date().toISOString()
-    };
-
-    console.log('Creating document:', doc);
-    const result = await client.create(doc);
-    console.log('Document created:', result);
-
-    return NextResponse.json({
-      success: true,
-      message: 'Form submitted successfully',
-      id: result._id
-    });
+      const posts = await client.fetch(query);
+      return posts;
   } catch (error) {
-    console.error('Submission error:', error);
-    return NextResponse.json(
-      { 
-        success: false, 
-        message: 'Failed to submit form'
-      }, 
-      { 
-        status: 500 
-      }
-    );
+      console.error("Error fetching posts:", error);
+      return [];
+  }
+}
+
+export async function Brochure() {
+  const query = `*[_type == "post" && author->name == "Dholera Times" && "Brochure" in categories[]->title] | order(publishedAt desc) [0..9] {
+      _id,
+      title,
+      publishedAt,
+      "pdfUrl": coalesce(pdfFile.asset->url, null),
+      "category": coalesce(categories[]->title, []),
+      "author": coalesce(author->name, "Unknown")
+  }`;
+
+  try {
+      const posts = await client.fetch(query);
+      return posts;
+  } catch (error) {
+      console.error("Error fetching posts:", error);
+      return [];
   }
 }

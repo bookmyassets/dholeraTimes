@@ -48,5 +48,13 @@ export default {
         title: 'Body',
         type: 'blockContent',
       },
+      {
+        name: 'pdfFile',
+        title: 'PDF File',
+        type: 'file',
+        options: {
+          accept: '.pdf', // Ensures only PDFs can be uploaded
+        },
+      },
     ],
   };
