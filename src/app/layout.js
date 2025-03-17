@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
-
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
@@ -11,7 +10,10 @@ import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
 import { getPosts, getblogs } from "@/sanity/lib/api";
-import Head from "next/head";
+import { usePathname } from "next/navigation";
+import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
+
+const FACEBOOK_PIXEL_ID = "619746600964977"; // Replace with your actual Pixel ID
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +33,33 @@ export default function RootLayout({ children }) {
   const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [projects, setProjects] = useState([]);
+  const [isDholeraDropdownOpen, setIsDholeraDropdownOpen] = useState(false);
+  const [isMobileDholeraOpen, setIsMobileDholeraOpen] = useState(false);
+  //PIXEL
+  const pathname = usePathname();
+
+  useEffect(() => {
+    initFacebookPixel(FACEBOOK_PIXEL_ID);
+    trackPageView();
+  }, []);
+
+  useEffect(() => {
+    trackPageView();
+  }, [pathname]);
 
   // Refs for dropdown elements
   const blogsDropdownRef = useRef(null);
   const projectsDropdownRef = useRef(null);
   const menuOpenRef = useRef(null);
+  const dholeraDropdownRef = useRef(null);
+
+  const toggleDholeraDropdown = () => {
+    setIsDholeraDropdownOpen(!isDholeraDropdownOpen);
+  };
+
+  const toggleMobileDholeraDropdown = () => {
+    setIsMobileDholeraOpen(!isMobileDholeraOpen);
+  };
 
   const toggleBlogsDropdown = () => {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
@@ -103,6 +127,19 @@ export default function RootLayout({ children }) {
   }, []);
 
   useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        dholeraDropdownRef.current &&
+        !dholeraDropdownRef.current.contains(event.target)
+      ) {
+        setIsDholeraDropdownOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  useEffect(() => {
     async function fetchData() {
       const blogsData = await getblogs();
       const projectsData = await getPosts();
@@ -139,12 +176,70 @@ export default function RootLayout({ children }) {
                   >
                     Home
                   </Link>
-                  <Link
-                    href="/pages/dholeraSIR"
-                    className="text-white hover:text-orange-200 px-3 py-2"
-                  >
-                    Dholera SIR
-                  </Link>
+                  <div className="relative" ref={dholeraDropdownRef}>
+                    <button
+                      onClick={toggleDholeraDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+                    >
+                      <Link href="/DholeraSIR/About">Dholera SIR</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isDholeraDropdownOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isDholeraDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          {
+                            title: "About Dholera SIR",
+                            path: "/DholeraSIR/About",
+                          },
+                          {
+                            title: "Connectivity",
+                            path: "/DholeraSIR/Connectivity",
+                          },
+                          {
+                            title: "Planning",
+                            path: "/DholeraSIR/Planning",
+                          },
+                          {
+                            title: "Activation Zone",
+                            path: "/DholeraSIR/ActivationZone",
+                          },
+                          {
+                            title: "Infrastructure",
+                            path: "/DholeraSIR/Infrastructure",
+                          },
+                          {
+                            title: "Logistic",
+                            path: "/DholeraSIR/Logistic",
+                          },
+                        ].map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsDholeraDropdownOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
                   <div className="relative" ref={projectsDropdownRef}>
                     <button
                       onClick={toggleProjectsDropdown}
@@ -292,13 +387,60 @@ export default function RootLayout({ children }) {
                   >
                     About Us
                   </Link>
-                  <Link
-                    href="/pages/dholeraSIR"
-                    className="text-white block px-3 py-2"
-                    onClick={toggleMenu}
-                  >
-                    Dholera SIR
-                  </Link>
+                  <div ref={dholeraDropdownRef} className="lg:hidden px-4 py-2">
+                    <div
+                      className="flex items-center justify-between text-white  cursor-pointer"
+                      onClick={toggleMobileDholeraDropdown}
+                    >
+                      <Link href="/DholeraSIR/About">Dholera SIR</Link>
+                      {isMobileDholeraOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileDholeraOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
+                            {
+                              title: "About Dholera SIR",
+                              path: "/DholeraSIR/About",
+                            },
+                            {
+                              title: "Connectivity",
+                              path: "/DholeraSIR/Connectivity",
+                            },
+                            { title: "Planning", path: "/DholeraSIR/Planning" },
+                            {
+                              title: "Activation Zone",
+                              path: "/DholeraSIR/ActivationZone",
+                            },
+                            {
+                              title: "Infrastructure",
+                              path: "/DholeraSIR/Infrastructure",
+                            },
+                            { title: "Logistic", path: "/DholeraSIR/Logistic" },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="block px-4 py-2 text-white"
+                              onClick={() => setIsMobileDholeraOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
 
                   <div>
                     <div
