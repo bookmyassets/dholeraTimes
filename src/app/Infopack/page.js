@@ -125,7 +125,7 @@ export default function Info() {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="md:object-cover max-sm:w-full max-sm:object-contain transition-transform duration-500 group-hover:scale-110"
+                      className=" max-sm:w-full object-contain transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -166,7 +166,7 @@ export default function Info() {
                         src={item.image}
                         alt={item.title}
                         fill
-                        className="object-cover"
+                        className="object-contain"
                       />
                     </div>
                     <div className="ml-6 flex-1">
@@ -178,7 +178,6 @@ export default function Info() {
                           </svg>
                         </span>
                       </div>
-                      <p className="mt-1 text-sm text-gray-600">{item.description}</p>
                     </div>
                   </div>
                 </Link>
