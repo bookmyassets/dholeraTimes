@@ -9,25 +9,25 @@ export default function Info() {
       id: 1, 
       title: "Locations", 
       description: "Explore strategic areas in Dholera Smart City", 
-      link: "/Infopack/locations"
+      link: "/infopack/locations"
     },
     { 
       id: 2, 
       title: "Videos", 
       description: "Watch informative videos about development", 
-      link: "/Infopack/videos"
+      link: "/infopack/videos"
     },
     { 
       id: 3, 
       title: "Brochure", 
       description: "Download detailed project brochures", 
-      link: "/Infopack/Brochure"
+      link: "/infopack/Brochure"
     },
     { 
       id: 4, 
       title: "Inventory", 
       description: "Browse available properties and plots", 
-      link: "/Infopack/Inventory"
+      link: "/infopack/Inventory"
     }
   ]
 
