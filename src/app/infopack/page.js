@@ -48,14 +48,14 @@ export default function Info() {
     },
     { 
       id: 3, 
-      title: "Brochure", 
+      title: "Our Brochure", 
       description: "Download detailed project brochures", 
       link: "/infopack/Brochure",
       image: brochure
     },
     { 
       id: 4, 
-      title: "Inventory", 
+      title: "Available Plots", 
       description: "Browse available properties and plots", 
       link: "/infopack/Inventory",
       image: inventory
