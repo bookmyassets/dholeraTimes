@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import { getPosts } from "@/sanity/lib/api";
+import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isProjects, setIsProjects] = useState([]);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -71,6 +74,14 @@ export default function Footer() {
       setIsLoading(false);
     }
   };
+
+  useEffect(() => {
+    async function fetchData() {
+      const projectData = await getPosts();
+      setIsProjects(projectData);
+    }
+    fetchData()
+  },[]);
 
   return (
     <footer className="bg-gray-900 text-gray-400 py-12 ">
@@ -148,7 +159,7 @@ export default function Footer() {
         </div>
 
         {/* First 3-column row with company info, links, policy */}
-        <div className="grid md:grid-cols-4 md:gap-32 md:left-8 gap-12 mb-12">
+        <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
             <div>
@@ -263,6 +274,27 @@ export default function Footer() {
                   Careers
                 </a>
               </li>
+              <li>
+                <a href="/pages/sitemap" className="hover:text-white transition">
+                  Sitemap
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="">
+            <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
+            <ul className="space-y-2">
+              {isProjects.map((project) => (
+                <li key={project._id}>
+                  <Link
+                    href={`/posts/${project.slug.current}`}
+                    className="hover:text-white transition"
+                  >
+                    {project.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -282,8 +314,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/DholeraSIR" className="hover:text-white transition">
+                  Dholera SIR
+                </a>
+              </li>
+              <li>
                 <a href="#" className="hover:text-white transition">
-                  Constructed Properties
+                  Locations
+                </a>
+              </li>
+              <li>
+                <a href="/pages/contact" className="hover:text-white transition">
+                 Enquire Now
                 </a>
               </li>
             </ul>
