@@ -80,8 +80,8 @@ export default function Footer() {
       const projectData = await getPosts();
       setIsProjects(projectData);
     }
-    fetchData()
-  },[]);
+    fetchData();
+  }, []);
 
   return (
     <footer className="bg-gray-900 text-gray-400 py-12 ">
@@ -242,7 +242,21 @@ export default function Footer() {
             </div>
             <p className="text-sm mb-3">Phone: +91 99589 93549</p>
           </div>
-
+          <div className="">
+            <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
+            <ul className="space-y-2">
+              {isProjects.map((project) => (
+                <li key={project._id}>
+                  <Link
+                    href={`/posts/${project.slug.current}`}
+                    className="hover:text-white transition"
+                  >
+                    {project.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="">
             <h3 className="text-white text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
@@ -262,6 +276,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#" className="hover:text-white transition">
+                  Disclaimer
+                </a>
+              </li>
+              <li>
                 <a
                   href="/pages/contact"
                   className="hover:text-white transition"
@@ -275,26 +294,13 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/pages/sitemap" className="hover:text-white transition">
+                <a
+                  href="/pages/sitemap"
+                  className="hover:text-white transition"
+                >
                   Sitemap
                 </a>
               </li>
-            </ul>
-          </div>
-
-          <div className="">
-            <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
-            <ul className="space-y-2">
-              {isProjects.map((project) => (
-                <li key={project._id}>
-                  <Link
-                    href={`/posts/${project.slug.current}`}
-                    className="hover:text-white transition"
-                  >
-                    {project.title}
-                  </Link>
-                </li>
-              ))}
             </ul>
           </div>
 
@@ -310,7 +316,7 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#" className="hover:text-white transition">
-                  Live Site Progress
+                  Site Progress
                 </a>
               </li>
               <li>
@@ -324,8 +330,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/pages/contact" className="hover:text-white transition">
-                 Enquire Now
+                <a
+                  href="/pages/contact"
+                  className="hover:text-white transition"
+                >
+                  Contact Us
                 </a>
               </li>
             </ul>
