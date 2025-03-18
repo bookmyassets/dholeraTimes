@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react'
 import logo from "@/assets/dt.webp";
 import maps from "@/assets/maps.png";
 import videos from "@/assets/videos.webp"; // Ensure correct path
+import inventory from "@/assets/inventory.webp"; // Ensure correct path
+import brochure from "@/assets/brochure.webp"; // Ensure correct path
 
 export default function Info() {
   const [viewMode, setViewMode] = useState('card');
@@ -49,14 +51,14 @@ export default function Info() {
       title: "Brochure", 
       description: "Download detailed project brochures", 
       link: "/infopack/Brochure",
-      image: maps
+      image: brochure
     },
     { 
       id: 4, 
       title: "Inventory", 
       description: "Browse available properties and plots", 
       link: "/infopack/Inventory",
-      image: maps
+      image: inventory
     }
   ];
 
