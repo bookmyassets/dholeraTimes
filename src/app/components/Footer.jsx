@@ -134,7 +134,7 @@ export default function Footer() {
                     className="w-96 max-sm:w-80 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200"
                     disabled={isLoading}
                   >
-                    {isLoading ? "Submitting..." : "Send Message"}
+                    {isLoading ? "Submitting..." : "Get A Call Back"}
                   </button>
                 </form>
               )}
