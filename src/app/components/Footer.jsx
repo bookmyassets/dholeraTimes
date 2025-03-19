@@ -2,6 +2,8 @@ import { getPosts } from "@/sanity/lib/api";
 import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/assets/dt.webp"
 
 export default function Footer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -161,8 +163,12 @@ export default function Footer() {
         {/* First 3-column row with company info, links, policy */}
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
-            <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
+            <Image
+              src={logo}
+              alt="logo"
+            />
             <div>
+            <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
               India{" "}
             </div>
@@ -240,7 +246,8 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="text-sm mb-3">Phone: +91 99589 93549</p>
+            <p className="text-sm mb-3">Phone: <br/> +91 99589 93549</p>
+            <a  className="text-sm mb-3">Email Id: info@dholeratimes.com</a>
           </div>
           <div className="">
             <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
