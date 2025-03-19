@@ -266,23 +266,23 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/policies/privacy" className="hover:text-white transition">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/policies/termsandconditions" className="hover:text-white transition">
                   Terms & Conditions
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/policies/disclaimer" className="hover:text-white transition">
                   Disclaimer
                 </a>
               </li>
               <li>
                 <a
-                  href="/pages/contact"
+                  href="/policies/refund"
                   className="hover:text-white transition"
                 >
                   Refund & Cancellation policy
