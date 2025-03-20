@@ -17,14 +17,14 @@ export default async function BlogPage() {
 
   if (isLoading) {
     return (
-      <div className="max-w-4xl mx-auto p-6">
+      <div className=" p-6">
         <h1 className="text-2xl font-bold mb-6">Loading Inventory PDFs...</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div key={i} className="p-4 border rounded-lg shadow-sm bg-white">
               <Skeleton className="h-6 w-3/4 mb-2" />
               <Skeleton className="h-4 w-1/2 mb-2" />
-              <Skeleton className="h-4 w-1/3 mb-2" />
+              <Skeleton className="h-4 w-1/3   mb-2" />
               <Skeleton className="h-10 w-24" />
             </div>
           ))}
@@ -48,7 +48,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="max-w-6xl h-screen mx-auto p-6 mt-20">
+    <div className="max-w-7xl h-screen mx-auto p-6 mt-20">
       <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
         Brochure
       </h1>
@@ -56,8 +56,8 @@ export default async function BlogPage() {
       {/* Grid Layout */}
       <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <div key={post._id} className="bg-[#f1cf86] p-6 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
-            <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>
+          <div key={post._id} className="bg-[#f1cf86] p-4 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <h2 className="text-lg font-semibold text-gray-800">{post.title}</h2>
 
             {post.pdfUrl && (
               <div className="space-x-4 mt-4">
@@ -67,7 +67,7 @@ export default async function BlogPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Download ${post.title}`}
-                  className="px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition transform hover:scale-105"
+                  className="px-4 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition transform hover:scale-105"
                 >
                   Download PDF
                 </a>
@@ -78,7 +78,7 @@ export default async function BlogPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${post.title}`}
-                  className="px-6 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md transition transform hover:scale-105"
+                  className="px-4 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md transition transform hover:scale-105"
                 >
                   View PDF
                 </a>

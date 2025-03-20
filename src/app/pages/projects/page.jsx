@@ -1,9 +1,8 @@
 import Link from "next/link";
-import { getblogs, getPosts } from "@/sanity/lib/api";
+import { getPosts } from "@/sanity/lib/api";
 import { urlFor } from "@/sanity/lib/image";
 import "../projects/project.css";
 import Image from "next/image";
-import { CalendarDays, MessageSquare, User } from "lucide-react";
 import { PortableText } from "next-sanity";
 
 export default async function Home() {

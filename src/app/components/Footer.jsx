@@ -339,13 +339,18 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="#" className="hover:text-white transition">
+                  Live Event
+                </a>
+              </li>
+              <li>
                 <a href="/DholeraSIR" className="hover:text-white transition">
                   Dholera SIR
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition">
-                  Locations
+                  Live Location
                 </a>
               </li>
               <li>

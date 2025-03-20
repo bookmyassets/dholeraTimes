@@ -13,7 +13,7 @@ export default function PrivacyPopcy() {
 
         <ol className="pst-decimal ml-6 space-y-4">
           <p>
-          Note: We are currently updating our website(s), the contents of each page, and the project(s) to ensure complete comppance with the Real Estate (Regulation and Development) Act, 2016 and the rules and regulations notified there under ("RERA"), which went into effect on May 1, 2017.  </p>
+          Note: We are currently updating our website(s), the contents of each page, and the project(s) to ensure complete compliance with the Real Estate (Regulation and Development) Act, 2016 and the rules and regulations notified there under ("RERA"), which went into effect on May 1, 2017.  </p>
           <p>
           With a total area of over 920 square kilometers, the Dholera region is India's first greenfield smart city.It is also one of the largest greenfield industrial cities to be built under the Delhi Mumbai Industrial Corridor (DMIC), which is being planned and designed to turn entirely undeveloped land into a smart city.
           </p>

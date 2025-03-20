@@ -37,6 +37,8 @@ export default function RootLayout({ children }) {
   const [projects, setProjects] = useState([]);
   const [isDholeraDropdownOpen, setIsDholeraDropdownOpen] = useState(false);
   const [isMobileDholeraOpen, setIsMobileDholeraOpen] = useState(false);
+  const [isEventOpen, setIsEventOpen] = useState(false);
+  const [isMobileEventOpen, setIsMobileEventOpen] = useState(false);
   //PIXEL
   const pathname = usePathname();
 
@@ -54,13 +56,24 @@ export default function RootLayout({ children }) {
   const projectsDropdownRef = useRef(null);
   const menuOpenRef = useRef(null);
   const dholeraDropdownRef = useRef(null);
+  const eventRef = useRef(null);
 
   const toggleDholeraDropdown = () => {
     setIsDholeraDropdownOpen(!isDholeraDropdownOpen);
   };
 
+  const toggleEvent = () => {
+    setIsEventOpen(!isEventOpen);
+    setIsMobileEventOpen(false); // Ensure mobile dropdown stays closed
+  };
+
   const toggleMobileDholeraDropdown = () => {
     setIsMobileDholeraOpen(!isMobileDholeraOpen);
+  };
+
+  const toggleMobileEvent = () => {
+    setIsMobileEventOpen(!isMobileEventOpen);
+    setIsEventOpen(false); // Ensure desktop dropdown stays closed
   };
 
   const toggleBlogsDropdown = () => {
@@ -149,6 +162,18 @@ export default function RootLayout({ children }) {
       setProjects(projectsData);
     }
     fetchData();
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (eventRef.current && !eventRef.current.contains(event.target)) {
+        setIsEventOpen(false);
+        setIsMobileEventOpen(false);
+      }
+    }
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -312,6 +337,53 @@ export default function RootLayout({ children }) {
                   >
                     Gallery
                   </Link>
+                  <div className="relative" ref={eventRef}>
+                    <button
+                      onClick={toggleEvent}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+                    >
+                      <Link href="/DholeraSIR/About">Event</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isEventOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isEventOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          {
+                            title: "Upcoming Event",
+                            path: "/event/upcomingevent",
+                          },
+                          {
+                            title: "Webinar",
+                            path: "/DholeraSIR/About",
+                          },
+                        ].map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsEventOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                   <div className="relative" ref={blogsDropdownRef}>
                     <button
                       onClick={toggleBlogsDropdown}
@@ -382,7 +454,7 @@ export default function RootLayout({ children }) {
                       alt="call"
                       height={30}
                       width={30}
-                      className=""
+                      className="pt-3"
                     />
                     <p>Call Us</p>
                   </Link>
@@ -564,6 +636,50 @@ export default function RootLayout({ children }) {
                   >
                     Gallery
                   </Link>
+                  <div ref={eventRef} className="lg:hidden px-4 py-2">
+                    <div
+                      className="flex items-center justify-between text-white  cursor-pointer"
+                      onClick={toggleMobileEvent}
+                    >
+                      <Link href="/DholeraSIR/About">Event</Link>
+                      {isMobileEventOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileEventOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
+                            {
+                              title: "Upcoming Event",
+                              path: "/event/upcomingevent",
+                            },
+                            {
+                              title: "Webinar",
+                              path: "/event/webinar",
+                            },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="block px-4 py-2 text-white"
+                              onClick={() => setIsMobileEventOpen(false)}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                   <Link
                     href="/pages/contact"
                     className="text-white block px-3 py-2"

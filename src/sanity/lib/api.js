@@ -94,3 +94,54 @@ export async function Brochure() {
       return [];
   }
 }
+
+export async function getEvents() {
+  const query = `*[_type == "post" && "Events" in categories[]->title && author-> name == "Dholera Times"] | order(publishedAt desc) {
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    "pdfFile": pdfFile.asset->,
+    author->{name, image},
+    categories[]->{title, _id}
+  }`;
+  
+  try {
+    const events = await client.fetch(query);
+    return events;
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    return [];
+  }
+}
+
+// Function to get a single event by slug
+export async function getEventBySlug(slug) {
+  const query = `*[_type == "post" && "Event" in categories[]->title && slug.current == $slug][0]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    "pdfFile": pdfFile.asset->,
+    author->{
+      name,
+      image
+    },
+    categories[]->{
+      title,
+      _id
+    }
+  }`;
+  
+  try {
+    const event = await client.fetch(query, { slug });
+    return event;
+  } catch (error) {
+    console.error("Error fetching event:", error);
+    return null;
+  }
+}
