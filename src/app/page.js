@@ -137,7 +137,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/50"></div>
 
           {/* Content Wrapper */}
-          <div className="absolute w-full flex flex-col max-sm:mt-56 items-center px-6 md:flex-row md:justify-around md:px-20">
+          <div className="absolute w-full flex flex-col max-sm:mt-32 items-center px-6 md:flex-row md:justify-around md:px-20">
             {/* Left Section - Text */}
             <div className="text-white text-center">
               <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
@@ -151,6 +151,7 @@ export default function Home() {
 
             {/* Right Section - Form */}
             <div className="p-8 bg-transparent rounded-2xl shadow-xl w-full max-w-md border border-gray-300 backdrop-blur-md mt-8 md:mt-0">
+            
               <h2 className="text-2xl font-semibold text-center text-white mb-6">
                 Let's Connect
               </h2>
@@ -162,6 +163,7 @@ export default function Home() {
                 </p>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                 
                   <div className="relative flex items-center w-full">
                     <FaUser className="absolute left-4 text-gray-500" />
                     <input
@@ -191,11 +193,16 @@ export default function Home() {
                     type="submit"
                     disabled={isLoading}
                     className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-              ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"}
-            `}
+      ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"}
+    `}
                   >
                     {isLoading ? "Submitting..." : "Get a call back"}
                   </button>
+
+                  {/* Call Us Section */}
+                  
+                 
+               
                 </form>
               )}
 

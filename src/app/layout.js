@@ -12,6 +12,7 @@ import FloatingIcons from "./components/Floating";
 import { getPosts, getblogs } from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
+import call from "@/assets/call.svg";
 
 const FACEBOOK_PIXEL_ID = "619746600964977"; // Replace with your actual Pixel ID
 
@@ -361,7 +362,7 @@ export default function RootLayout({ children }) {
                     Contact Us
                   </Link>
                   <Link
-                    href="/Infopack"
+                    href="/infopack"
                     className="text-white hidden hover:text-orange-200 px-3 py-2"
                   >
                     Info Pack
@@ -369,7 +370,23 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
 
-              <div className="md:hidden">
+              <div className="md:hidden flex items-center  gap-4">
+                <div className=" text-[#d8b66d] animate-bounce duration-2000 flex items-center space-x-2">
+                  <Link
+                    href="tel:+919958993549"
+                    className="flex items-center space-x-2"
+                  >
+                    <Image
+                      src={call}
+                      alt="call"
+                      height={30}
+                      width={30}
+                      className=""
+                    />
+                    <p>Call Us</p>
+                  </Link>
+                </div>
+
                 <button onClick={toggleMenu}>
                   {isMenuOpen ? (
                     <X className="h-6 w-6 text-white" />

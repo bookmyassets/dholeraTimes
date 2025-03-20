@@ -55,7 +55,7 @@ export async function getPostBySlug(slug) {
 }
 
 export async function Inventory() {
-  const query = `*[_type == "post" && author->name == "Dholera Times" && "Inventory" in categories[]->title] | order(publishedAt desc) [0..9] {
+  const query = `*[_type == "post" && author->name == "Dholera Times" && "Project" in categories[]->title] | order(publishedAt desc) [0..9] {
       _id,
       title,
       publishedAt,
@@ -66,12 +66,15 @@ export async function Inventory() {
 
   try {
       const posts = await client.fetch(query);
-      return posts;
+      // Filter out posts with no pdfUrl
+      const filteredPosts = posts.filter(post => post.pdfUrl); 
+      return filteredPosts;
   } catch (error) {
       console.error("Error fetching posts:", error);
       return [];
   }
 }
+
 
 export async function Brochure() {
   const query = `*[_type == "post" && author->name == "Dholera Times" && "Brochure" in categories[]->title] | order(publishedAt desc) [0..9] {

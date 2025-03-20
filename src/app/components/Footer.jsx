@@ -103,7 +103,7 @@ export default function Footer() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} id="footer-form">
-                  <div className="mb-4 relative flex items-center w-full">
+                  <div className="mb-4 relative flex max-sm:justify-center items-center w-full">
                     <FaUser className="absolute left-4 text-gray-500" />
                     <input
                       type="text"
@@ -145,7 +145,7 @@ export default function Footer() {
             {/* Info column */}
 
             <div className="  flex flex-col justify-center  ">
-              <div className="mb-6 py-5 ">
+              <div className="mb-6 max-sm:py-5 ">
                 <h3 className="text-white text-xl max-sm:text-center font-semibold mb-3">
                   Why Contact Us?
                 </h3>
