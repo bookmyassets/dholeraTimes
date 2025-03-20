@@ -49,26 +49,40 @@ export default async function BlogPage() {
 
   return (
     <div className="max-w-6xl h-screen mx-auto p-6 mt-20">
-      <h1 className="text-2xl md:text-5xl font-bold mb-6 text-center">Brochure</h1>
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
+        Brochure
+      </h1>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <div key={post._id} className="p-4 space-y-5 border rounded-lg shadow-sm bg-white">
-            <h2 className="text-lg font-semibold">{post.title}</h2>
-            <p className="text-sm text-gray-500">Author: {post.author}</p>
-            
+          <div key={post._id} className="bg-[#f1cf86] p-6 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+            <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>
 
             {post.pdfUrl && (
-              <a
-                href={post.pdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Download ${post.title}`}
-                className="mt-2 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md inline-block"
-              >
-                Download PDF
-              </a>
+              <div className="space-x-4 mt-4">
+                {/* Download PDF Button */}
+                <a
+                  href={post.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Download ${post.title}`}
+                  className="px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition transform hover:scale-105"
+                >
+                  Download PDF
+                </a>
+
+                {/* View PDF Button */}
+                <a
+                  href={post.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${post.title}`}
+                  className="px-6 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md transition transform hover:scale-105"
+                >
+                  View PDF
+                </a>
+              </div>
             )}
           </div>
         ))}

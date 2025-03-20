@@ -32,7 +32,7 @@ export default function MultiMapComponent() {
         {locations.map((location, index) => (
           <div
             key={index}
-            className="bg-white rounded-lg shadow-lg overflow-hidden"
+            className="bg-[#f1cf86] rounded-lg shadow-lg overflow-hidden"
           >
             <div className="p-4 border-b border-gray-200">
               <h2 className="text-xl text-center font-semibold text-gray-800">
@@ -51,7 +51,7 @@ export default function MultiMapComponent() {
                 />
               </div>
             </div>
-            <div className="p-4 bg-gray-50 flex justify-center items-center">
+            <div className="p-4 bg-[#f1cf86] flex justify-center items-center">
               <a
                 href={location.link}
                 target="_blank"

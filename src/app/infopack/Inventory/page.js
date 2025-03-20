@@ -49,14 +49,14 @@ export default async function BlogPage() {
 
   return (
     <div className="max-w-6xl h-screen mx-auto p-6 mt-20">
-      <h1 className="text-3xl font-extrabold mb-8 text-center text-gray-900">
+      <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
         Inventory PDFs
       </h1>
 
       {/* Grid Layout */}
       <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <div key={post._id} className="bg-[#d8b66d] p-6 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
+          <div key={post._id} className="bg-[#f1cf86] p-6 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
             <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>
 
             {post.pdfUrl && (
