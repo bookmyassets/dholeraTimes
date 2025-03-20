@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import "./globals.css";
 import logo from "@/assets/dt.webp";
+import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
@@ -411,7 +412,7 @@ export default function RootLayout({ children }) {
               >
                 <div className="flex justify-end" onClick={toggleMenu}></div>
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={100} height={100} />
+                  <Image src={logo2} alt="logo2" width={150} height={150} />
                 </Link>
                 <div className="px-7 pt-20 pb-3 text-lg space-y-4 sm:px-3">
                   <Link

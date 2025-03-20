@@ -54,9 +54,9 @@ export default async function BlogPage() {
       </h1>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <div key={post._id} className="p-6 space-y-5 border rounded-lg shadow-lg bg-white transition transform hover:scale-105 hover:shadow-xl">
+          <div key={post._id} className="bg-[#d8b66d] p-6 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
             <h2 className="text-xl font-semibold text-gray-800">{post.title}</h2>
 
             {post.pdfUrl && (

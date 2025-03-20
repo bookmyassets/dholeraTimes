@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/assets/dt.webp"
+import logo from "@/assets/dt.webp";
 
 export default function Footer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -102,9 +102,13 @@ export default function Footer() {
                   <p className="text-sm mt-1">We'll get back to you soon.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} id="footer-form">
-                  <div className="mb-4 relative flex max-sm:justify-center items-center w-full">
-                    <FaUser className="absolute left-4 text-gray-500" />
+                <form
+                  onSubmit={handleSubmit}
+                  id="footer-form"
+                  className="flex flex-col items-center w-full"
+                >
+                  <div className="mb-4 relative w-full max-w-md">
+                    <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                     <input
                       type="text"
                       id="fullName"
@@ -112,13 +116,13 @@ export default function Footer() {
                       placeholder="Full Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                       required
                     />
                   </div>
 
-                  <div className="mb-4 relative flex items-center w-full">
-                    <FaPhoneAlt className="absolute left-4 text-gray-500" />
+                  <div className="mb-4 relative w-full max-w-md">
+                    <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                     <input
                       type="tel"
                       id="phone"
@@ -126,14 +130,14 @@ export default function Footer() {
                       placeholder="Phone Number"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-96 max-sm:w-80 p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-96 max-sm:w-80 py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200"
+                    className="w-full max-w-md py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition duration-200"
                     disabled={isLoading}
                   >
                     {isLoading ? "Submitting..." : "Get A Call Back"}
@@ -163,12 +167,9 @@ export default function Footer() {
         {/* First 3-column row with company info, links, policy */}
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
-            <Image
-              src={logo}
-              alt="logo"
-            />
+            <Image src={logo} alt="logo" />
             <div>
-            <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
+              <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
               India{" "}
             </div>
@@ -246,8 +247,10 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="text-sm mb-3">Phone: <br/> +91 99589 93549</p>
-            <a  className="text-sm mb-3">Email Id: info@dholeratimes.com</a>
+            <p className="text-sm mb-3">
+              Phone: <br /> +91 99589 93549
+            </p>
+            <a className="text-sm mb-3">Email Id: info@dholeratimes.com</a>
           </div>
           <div className="">
             <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
@@ -273,17 +276,26 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/policies/privacy" className="hover:text-white transition">
+                <a
+                  href="/policies/privacy"
+                  className="hover:text-white transition"
+                >
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/policies/termsandconditions" className="hover:text-white transition">
+                <a
+                  href="/policies/termsandconditions"
+                  className="hover:text-white transition"
+                >
                   Terms & Conditions
                 </a>
               </li>
               <li>
-                <a href="/policies/disclaimer" className="hover:text-white transition">
+                <a
+                  href="/policies/disclaimer"
+                  className="hover:text-white transition"
+                >
                   Disclaimer
                 </a>
               </li>
