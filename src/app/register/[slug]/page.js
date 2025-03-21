@@ -9,6 +9,7 @@ import {
 import Form from "./form";
 import Image from "next/image";
 import logo from "@/assets/dtlogobg.png"
+import EventForm from "./form";
 
 // Create a client component
 export default async function EventPage({ params }) {
@@ -160,7 +161,7 @@ export default async function EventPage({ params }) {
 
           {/* Registration form */}
           <div>
-            <Form />
+           <EventForm/>
           </div>
         </div>
       </div>

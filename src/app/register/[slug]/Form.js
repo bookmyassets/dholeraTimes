@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { UserIcon, PhoneIcon, MailIcon } from "lucide-react";
 
-export default function Form() {
+export default function EventForm() {
   const [formData, setFormData] = useState({
     fullName: "",
     emailId: "",
