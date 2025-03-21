@@ -26,8 +26,9 @@ const locations = [
 
 export default function MultiMapComponent() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-12 sm:px-6 lg:px-8">
         <h1 className="md:text-5xl font-bold text-4xl text-center p-5">DHOLERA LOCATIONS</h1>
+        <p className="text-center md:text-xl md:font-medium font-semibold ">Know more about nearby landmarks and our project’s location on Google Maps</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16 pt-16">
         {locations.map((location, index) => (
           <div

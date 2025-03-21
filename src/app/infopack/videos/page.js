@@ -10,11 +10,16 @@ export default async function BlogPage() {
   ]; // YouTube video IDs
 
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-center md:text-5xl text-2xl font-bold mb-10">
+    <div className="container mx-auto px- mt-20 py-10 space-y-4">
+      <h1 className="text-center md:text-5xl text-4xl font-bold mb-10">
         Videos
       </h1>
-      <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+      <p className="text-center md:text-xl md:font-medium font-semibold ">
+        Watch expert insights on why investing in Dholera is a smart financial
+        decision.
+      </p>
+
+      <div className="grid md:grid-cols-3 pt-5 max-sm:p-4 sm:grid-cols-2 grid-cols-1 gap-6">
         {videos.map((videoId, index) => (
           <div key={index} className="rounded-lg overflow-hidden shadow-lg">
             <iframe

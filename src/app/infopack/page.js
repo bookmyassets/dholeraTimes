@@ -35,28 +35,28 @@ export default function Info() {
     { 
       id: 1, 
       title: "Locations", 
-      description: "Explore strategic areas in Dholera Smart City", 
+      description: "Know more about nearby landmarks and our project’s location on Google Maps", 
       link: "/infopack/locations",
       image: maps
     },
     { 
       id: 2, 
       title: "Videos", 
-      description: "Watch informative videos about development", 
+      description: "Watch expert insights on why investing in Dholera is a smart financial decision", 
       link: "/infopack/videos",
       image: videos
     },
     { 
       id: 3, 
-      title: "Our Brochure", 
-      description: "Download detailed project brochures", 
+      title: "Project Brochure", 
+      description: "Learn all about our Dholera residential plots by accessing our comprehensive project brochure", 
       link: "/infopack/Brochure",
       image: brochure
     },
     { 
       id: 4, 
       title: "Available Plots", 
-      description: "Browse available properties and plots", 
+      description: "Check available residential plots in Dholera and book yours before they’re sold out!", 
       link: "/infopack/Inventory",
       image: inventory
     }
@@ -96,9 +96,9 @@ export default function Info() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
-                  <div className="p-6">
+                  <div className="p-6 space-y-3">
                     <h3 className="text-4xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">{item.title}</h3>
-                    
+                    <p>{item.description}</p>
                     <div className="mt-6 flex items-center justify-between">
                       <span className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-800 transition-colors duration-300">
                         View Details
@@ -137,7 +137,11 @@ export default function Info() {
                     </div>
                     <div className="ml-6 flex-1">
                       <div className="flex items-center justify-between">
-                        <h3 className="text-lg font-medium text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">{item.title}</h3>
+                        <div>
+                          <h3 className=" text-gray-900 font-bold text-2xl group-hover:text-[#d8b66d] transition-colors duration-300">{item.title}</h3>
+                          <p>{item.description}</p>
+                        </div>
+                        
                         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-500 group-hover:bg-[#d8b66d] group-hover:text-white transition-all duration-300">
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />

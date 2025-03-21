@@ -48,16 +48,24 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="max-w-7xl h-mx-auto p-6 mt-20">
-      <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
+    <div className="max-w-7xl mx-auto p-6 mt-20 space-y-4">
+      <h1 className="text-4xl font-bold mb-8 text-center text-gray-900">
         Inventory PDFs
       </h1>
+      <p className="text-center md:text-xl md:font-medium font-semibold ">
+      Check available residential plots in Dholera and book yours before they’re sold out!
+      </p>
 
       {/* Grid Layout */}
-      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 pt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <div key={post._id} className="bg-[#f1cf86] p-4 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl">
-            <h2 className="text-lg font-semibold text-gray-800">{post.title}</h2>
+          <div
+            key={post._id}
+            className="bg-[#f1cf86] p-4 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl"
+          >
+            <h2 className="text-lg font-semibold text-gray-800">
+              {post.title}
+            </h2>
 
             {post.pdfUrl && (
               <div className="space-x-4 mt-4">
