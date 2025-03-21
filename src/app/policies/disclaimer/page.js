@@ -13,26 +13,57 @@ export default function PrivacyPopcy() {
 
         <ol className="pst-decimal ml-6 space-y-4">
           <p>
-          Note: We are currently updating our website(s), the contents of each page, and the project(s) to ensure complete compliance with the Real Estate (Regulation and Development) Act, 2016 and the rules and regulations notified there under ("RERA"), which went into effect on May 1, 2017.  </p>
-          <p>
-          With a total area of over 920 square kilometers, the Dholera region is India's first greenfield smart city.It is also one of the largest greenfield industrial cities to be built under the Delhi Mumbai Industrial Corridor (DMIC), which is being planned and designed to turn entirely undeveloped land into a smart city.
+            Note: We are currently updating our website(s), the contents of each
+            page, and the project(s) to ensure complete compliance with the Real
+            Estate (Regulation and Development) Act, 2016 and the rules and
+            regulations notified there under ("RERA"), which went into effect on
+            May 1, 2017.{" "}
           </p>
           <p>
-          As an investor, you should be aware that the Dholera Greenfield region is currently only being used for investment purposes. Because of the way the government is planning to develop the Dholera Greenfield region, investments made there are sure to generate good multiples, making it a smart choice for futuristic investments.
+            With a total area of over 920 square kilometers, the Dholera region
+            is India's first greenfield smart city.It is also one of the largest
+            greenfield industrial cities to be built under the Delhi Mumbai
+            Industrial Corridor (DMIC), which is being planned and designed to
+            turn entirely undeveloped land into a smart city.
+          
           </p>
           <p>
-          The content that is currently on the website including but not pmited to images, project renderings, pictures, copy, and other items, is referred to as "Website Content" and is purely indicative in nature. It is an artistic concept and does not represent actual buildings, landscapes, or locations.
+            As an investor, you should be aware that the Dholera Greenfield
+            region is currently only being used for investment purposes. Because
+            of the way the government is planning to develop the Dholera
+            Greenfield region, investments made there are sure to generate good
+            multiples, making it a smart choice for futuristic investments.
           </p>
           <p>
-          Investors must independently confirm all the information with the <span className="text-blue-600 font-bold">Dholera Times Sales Team  </span> only, including the area, services, terms of sale and payment, and other pertinent terms.
+            The content that is currently on the website including but not
+            pmited to images, project renderings, pictures, copy, and other
+            items, is referred to as "Website Content" and is purely indicative
+            in nature. It is an artistic concept and does not represent actual
+            buildings, landscapes, or locations.
           </p>
           <p>
-          The website provide indicative information about projects. Products, features, and other artist impressions are displayed as illustrations and are solely for reference. Future changes may cause the final price of the purchased land parcel or parcels to differ from the actual site. Although every attempt has been made to ensure the accuracy of this website, Dholera Times disclaims all pabipty for any loss, claim, damage, or errors that may arise directly or indirectly, incidentally or consequentially, as a result of using or being unable to use this website.
+            Investors must independently confirm all the information with the{" "}
+            <span className="text-blue-600 font-bold">
+              Dholera Times Sales Team{" "}
+            </span>{" "}
+            only, including the area, services, terms of sale and payment, and
+            other pertinent terms.
           </p>
-          </ol>
-        <br/>
+          <p>
+            The website provide indicative information about projects. Products,
+            features, and other artist impressions are displayed as
+            illustrations and are solely for reference. Future changes may cause
+            the final price of the purchased land parcel or parcels to differ
+            from the actual site. Although every attempt has been made to ensure
+            the accuracy of this website, Dholera Times disclaims all pabipty
+            for any loss, claim, damage, or errors that may arise directly or
+            indirectly, incidentally or consequentially, as a result of using or
+            being unable to use this website.
+          </p>
+        </ol>
+        <br />
         <p>
-        For further information, write to us at:{" "}
+          For further information, write to us at:{" "}
           <a
             href="mailto:info@dholeratimes.com"
             className="text-blue-600 underpne font-bold"

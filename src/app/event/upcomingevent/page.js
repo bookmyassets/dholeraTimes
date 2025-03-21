@@ -22,17 +22,16 @@ export default async function EventsPage() {
 
   return (
     <>
-      <section className="relative h-[70vh] w-full flex justify-center items-center text-center bg-black">
+      <section className="relative h-[50vh] w-full flex justify-center items-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={hero}
             alt="events bg"
-            className="w-full h-[70vh] object-cover opacity-60"
+            className="w-full h-[50vh] object-cover opacity-60"
           />
         </div>
         <div className="relative text-3xl md:text-5xl text-white font-bold px-4">
           <p>UPCOMING REAL ESTATE EVENTS</p>
-          
         </div>
       </section>
 
@@ -47,7 +46,7 @@ export default async function EventsPage() {
                 {event.mainImage ? (
                   <Image
                     src={urlFor(event.mainImage).width(800).height(600).url()}
-                    alt={event.title}
+                    alt={event.eventName}
                     fill
                     className="object-cover"
                   />
@@ -66,40 +65,41 @@ export default async function EventsPage() {
 
               <div className="p-5">
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  {event.title}
+                  {event.eventName}
                 </h3>
 
                 <div className="flex items-center text-gray-600 mb-2">
                   <CalendarIcon className="h-4 w-4 mr-2" />
                   <span className="text-sm">
-                    {formatDate(event.publishedAt)}
+                    {formatDate(event.dateOfEvent)}
                   </span>
                 </div>
 
-                {/* Venue information - could be extracted from title or added as a custom field */}
                 <div className="flex items-center text-gray-600 mb-2">
                   <MapPinIcon className="h-4 w-4 mr-2" />
                   <span className="text-sm">
-                    {event.title.includes("in")
-                      ? event.title.split("in")[1].trim()
-                      : "Venue Details Available on Registration"}
+                    {event.location || "Venue Details Available on Registration"}
                   </span>
                 </div>
 
                 <div className="flex items-center text-gray-600 mb-4">
                   <ClockIcon className="h-4 w-4 mr-2" />
-                  <span className="text-sm">10:00 AM - 5:00 PM</span>
+                  <span className="text-sm">{event.timeOfEvent}</span>
                 </div>
 
                 <div className="flex justify-between items-center pt-3 border-t border-gray-200">
-                  {event.author && (
+                  {event.organizer && (
                     <span className="text-sm text-gray-600">
-                      Organized by: {event.author.name}
+                      Organized by: {event.organizer}
                     </span>
                   )}
 
                   <Link
-                    href={`/event/${event.slug.current}`}
+                    href={
+                      event.slug?.current
+                        ? `/register/${event.slug.current}`
+                        : "#"
+                    }
                     className="flex items-center text-red-800 font-medium hover:text-red-900"
                   >
                     <span>Details</span>
@@ -107,10 +107,10 @@ export default async function EventsPage() {
                   </Link>
                 </div>
 
-                {event.pdfFile && (
+                {event.eventMaterials && (
                   <div className="mt-4">
                     <a
-                      href={event.pdfFile.asset.url}
+                      href={event.eventMaterials}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full text-center bg-red-800 text-white py-2 rounded hover:bg-red-900 transition"

@@ -443,8 +443,8 @@ export default function RootLayout({ children }) {
                 </div>
               </div>
 
-              <div className="md:hidden flex items-center  gap-4">
-                <div className=" text-[#d8b66d] animate-bounce duration-2000 flex items-center space-x-2">
+              <div className="md:hidden flex items-center gap-4">
+                <div className=" text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
                   <Link
                     href="tel:+919958993549"
                     className="flex items-center space-x-2"
@@ -454,9 +454,9 @@ export default function RootLayout({ children }) {
                       alt="call"
                       height={30}
                       width={30}
-                      className="pt-3"
+                      className=""
                     />
-                    <p>Call Us</p>
+                    <p>Call Now</p>
                   </Link>
                 </div>
 

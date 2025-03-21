@@ -95,19 +95,24 @@ export async function Brochure() {
   }
 }
 
+// Function to get all events
 export async function getEvents() {
-  const query = `*[_type == "post" && "Events" in categories[]->title && author-> name == "Dholera Times"] | order(publishedAt desc) {
+  const query = `*[_type == "event" && author->name == "Dholera Times" && "Upcoming Events" in categories[]->title] | order(publishedAt desc) {
     _id,
-    title,
+    eventName,
     slug,
     mainImage,
     publishedAt,
-    body,
-    "pdfFile": pdfFile.asset->,
-    author->{name, image},
+    description,
+    dateOfEvent,
+    timeOfEvent,
+    location,
+    mapsLink,
+    "eventMaterials": eventMaterials.asset->url,
     categories[]->{title, _id}
   }`;
   
+
   try {
     const events = await client.fetch(query);
     return events;
@@ -118,23 +123,20 @@ export async function getEvents() {
 }
 
 // Function to get a single event by slug
-export async function getEventBySlug(slug) {
-  const query = `*[_type == "post" && "Event" in categories[]->title && slug.current == $slug][0]{
+/* export async function getEventBySlug(slug) {
+  const query = `*[_type == "event" && slug.current == $slug][0]{
     _id,
-    title,
+    eventName,
     slug,
     mainImage,
     publishedAt,
-    body,
-    "pdfFile": pdfFile.asset->,
-    author->{
-      name,
-      image
-    },
-    categories[]->{
-      title,
-      _id
-    }
+    description,
+    dateOfEvent,
+    timeOfEvent,
+    location,
+    mapsLink,
+    "eventMaterials": eventMaterials.asset->url,
+    categories[]->{title, _id}
   }`;
   
   try {
@@ -144,4 +146,23 @@ export async function getEventBySlug(slug) {
     console.error("Error fetching event:", error);
     return null;
   }
+} */
+
+export async function getEventBySlug(slug) {
+  const query = `*[_type == "event" && slug.current == $slug][0]{
+    _id,
+    eventName,
+    slug,
+    mainImage,
+    publishedAt,
+    description,
+    dateOfEvent,
+    timeOfEvent,
+    location,
+    mapsLink,
+    "eventMaterials": eventMaterials.asset->url,
+    categories[]->{title, _id}
+  }`;
+  const post = await client.fetch(query, { slug });
+  return post;
 }

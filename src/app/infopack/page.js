@@ -65,11 +65,11 @@ export default function Info() {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className=" mb-12">
-          <h1 className="text-4xl text-center font-extrabold text-gray-700 sm:text-5xl bg-clip-text">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold text-gray-700 sm:text-5xl bg-clip-text">
             Explore <span className='text-[#d8b66d]'> Dholera </span> 
           </h1>
-          <p className="mt-4 text-left text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
             Discover strategic investment opportunities in India's first planned smart city
           </p>
         </div>

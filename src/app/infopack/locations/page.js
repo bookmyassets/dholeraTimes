@@ -27,15 +27,15 @@ const locations = [
 export default function MultiMapComponent() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <h1 className="md:text-5xl font-semibold text-4xl text-center p-5">DHOLERA LOCATIONS</h1>
+        <h1 className="md:text-5xl font-bold text-4xl text-center p-5">DHOLERA LOCATIONS</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-16 pt-16">
         {locations.map((location, index) => (
           <div
             key={index}
-            className="bg-[#f1cf86] rounded-lg shadow-lg overflow-hidden"
+            className="bg-[#151f28] rounded-lg shadow-lg overflow-hidden"
           >
             <div className="p-4 border-b border-gray-200">
-              <h2 className="text-xl text-center font-semibold text-gray-800">
+              <h2 className="text-xl text-center font-semibold text-[#f1cf86]">
                 {location.name}
               </h2>
             </div>
@@ -51,7 +51,7 @@ export default function MultiMapComponent() {
                 />
               </div>
             </div>
-            <div className="p-4 bg-[#f1cf86] flex justify-center items-center">
+            <div className="p-4 bg-[#151f28] flex justify-center items-center">
               <a
                 href={location.link}
                 target="_blank"

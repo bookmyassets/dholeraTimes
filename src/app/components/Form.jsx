@@ -27,7 +27,7 @@ export default function ContactForm() {
     let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
     let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
 
-    // Check if 24 hours have passed since the last submission
+   /*  // Check if 24 hours have passed since the last submission
     if (lastSubmissionTime) {
       const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
       const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
@@ -41,13 +41,13 @@ export default function ContactForm() {
     }
 
     // Restrict submission after 3 attempts
-    if (submissionCount >= 3) {
+    if (submissionCount >= 20) {
       alert(
         "You have reached the maximum submission limit. Try again after 24 hours."
       );
       setIsLoading(false);
       return;
-    }
+    } */
 
     // Validate form data
     if (!formData.fullName || !formData.phone) {

@@ -35,7 +35,7 @@ export default async function BlogPage() {
 
   if (!posts || posts.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <p className="text-gray-500 text-lg">No PDFs available.</p>
         <button
           onClick={() => window.location.reload()}
@@ -48,7 +48,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="max-w-7xl h-screen mx-auto p-6 mt-20">
+    <div className="max-w-7xl h-mx-auto p-6 mt-20">
       <h1 className="text-4xl font-extrabold mb-8 text-center text-gray-900">
         Inventory PDFs
       </h1>
