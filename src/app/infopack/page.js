@@ -139,7 +139,7 @@ export default function Info() {
                       <div className="flex items-center justify-between">
                         <div>
                           <h3 className=" text-gray-900 font-bold text-2xl group-hover:text-[#d8b66d] transition-colors duration-300">{item.title}</h3>
-                          <p>{item.description}</p>
+                          
                         </div>
                         
                         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-500 group-hover:bg-[#d8b66d] group-hover:text-white transition-all duration-300">
