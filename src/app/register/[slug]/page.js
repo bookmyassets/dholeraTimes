@@ -6,10 +6,9 @@ import {
   MapPinIcon,
   ClockIcon
 } from "lucide-react";
-import Form from "./form";
 import Image from "next/image";
 import logo from "@/assets/dtlogobg.png"
-import EventForm from "./form";
+import EventForm from "./Eventform";
 
 // Create a client component
 export default async function EventPage({ params }) {
