@@ -47,11 +47,7 @@ export default async function BlogPage() {
                 </div>
                 <div className="md:w-1/2 p-6 md:p-8 flex flex-col justify-center">
                   <div className="flex items-center text-xs text-gray-500 mb-3">
-                    <CalendarDays className="h-3 w-3 mr-1" />
-                    <span>{new Date().toLocaleDateString()}</span>
-                    <span className="mx-2">•</span>
-                    <MessageSquare className="h-3 w-3 mr-1" />
-                    <span>5 min read</span>
+                    
                   </div>
 
                   <p className="text-xs text-[#0e48fe] font-medium mb-2">{posts[0].hashtags?.join(" ")}</p>
@@ -64,15 +60,7 @@ export default async function BlogPage() {
 
                   <p className="text-gray-600 mb-4">{posts[0].description}</p>
 
-                  <div className="flex items-center mt-auto">
-                    <div className="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center">
-                      <User className="h-5 w-5 text-gray-500" />
-                    </div>
-                    <div className="ml-3">
-                      <h3 className="text-sm font-semibold text-gray-800">{posts[0].author.name}</h3>
-                      <p className="text-xs text-gray-500">{posts[0].author.followers || 0} followers</p>
-                    </div>
-                  </div>
+                  
                 </div>
               </div>
             </div>

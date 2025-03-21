@@ -100,10 +100,16 @@ export default async function EventsPage() {
                         ? `/register/${event.slug.current}`
                         : "#"
                     }
-                    className="flex items-center text-red-800 font-medium hover:text-red-900"
+                    className="  text-md font-medium"
                   >
-                    <span>Details</span>
+                    <span className="text-[#d8b66d]">Book Your Seat Now. Limited Seats Available</span>
+                    <div className="py-2 text-white">
+                    <button className="bg-[#d8b66d] rounded-lg flex items-center">
+
+                    <span className="ml-2 ">Explore</span>
                     <ArrowRightIcon className="ml-1 h-4 w-4" />
+                    </button>
+                    </div>
                   </Link>
                 </div>
 

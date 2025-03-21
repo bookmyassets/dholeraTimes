@@ -98,7 +98,7 @@ export default function EventForm() {
 
   return (
     <>
-      <div className="bg-white rounded-lg w-[30vw] shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <div className="p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-200">
             Join us
@@ -108,7 +108,7 @@ export default function EventForm() {
             <div className="space-y-5">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Name <span className="text-red-600">*</span>
+                  Name <span className="text-[#151f28]">*</span>
                 </label>
                 <div className="relative">
                   <UserIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
@@ -118,7 +118,7 @@ export default function EventForm() {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-red-800 focus:border-red-800"
+                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-[#151f28] focus:border-[#151f28]"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -136,7 +136,7 @@ export default function EventForm() {
                     value={formData.phoneNumber}
                     onChange={handleChange}
                     required
-                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-red-800 focus:border-red-800"
+                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-[#151f28] focus:border-[#151f28]"
                     placeholder="Enter your phone number"
                     maxLength="15" // Set a reasonable max length
                   />
@@ -155,7 +155,7 @@ export default function EventForm() {
                     value={formData.emailId}
                     onChange={handleChange}
                     required
-                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-red-800 focus:border-red-800"
+                    className="pl-10 block w-full border-gray-300 rounded-md p-3 border focus:ring-[#151f28] focus:border-[#151f28]"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -168,7 +168,7 @@ export default function EventForm() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className={`w-full py-3 text-white bg-red-800 rounded-md hover:bg-red-900 focus:ring-2 focus:ring-offset-2 focus:ring-red-800 ${
+                className={`w-full py-3 text-white bg-[#151f28] rounded-md hover:bg-red-900 focus:ring-2 focus:ring-offset-2 focus:ring-[#151f28] ${
                   isLoading ? "opacity-70 cursor-not-allowed" : ""
                 }`}
               >
