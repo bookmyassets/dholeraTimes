@@ -200,6 +200,9 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.ico"
         ></link>
+        <title>
+          Dholera Times
+        </title>
         <meta
           name="title"
           content="Dholera Smart City Gujarat | High ROI Plots -Dholera Times"
@@ -209,7 +212,7 @@ export default function RootLayout({ children }) {
           content="
 Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!"
         ></meta>
-        
+
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -219,7 +222,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
             <div className="flex justify-between h-16 items-center">
               <div className="flex-shrink-0">
                 <Link href="/">
-                  <Image src={logo} alt="logo" width={100} height={100} />
+                  <Image src={logo} alt="Dholera Times Logo" width={100} height={100} />
                 </Link>
               </div>
               <div className="hidden md:block">
@@ -493,7 +496,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
               >
                 <div className="flex justify-end" onClick={toggleMenu}></div>
                 <Link href="/">
-                  <Image src={logo2} alt="logo2" width={150} height={150} />
+                  <Image src={logo2} alt="Dholera Times Logo" width={150} height={150} />
                 </Link>
                 <div className="px-7 pt-20 pb-3 text-lg space-y-4 sm:px-3">
                   <Link

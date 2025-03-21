@@ -167,7 +167,7 @@ export default function Footer() {
         {/* First 3-column row with company info, links, policy */}
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
-            <Image src={logo} alt="logo" />
+            <Image src={logo} alt="Dholera Times Logo" />
             <div>
               <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,

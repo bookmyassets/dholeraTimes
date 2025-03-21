@@ -129,7 +129,7 @@ export default function Home() {
           {/* Background Image */}
           <Image
             src={hero}
-            alt="hero image"
+            alt="Dholera Smart City Plan"
             className="absolute inset-0 w-full h-full object-cover"
           />
 
@@ -441,7 +441,7 @@ export default function Home() {
                     >
                       <img
                         src="https://img.youtube.com/vi/hNbWaEU1d_A/hqdefault.jpg"
-                        alt="Video thumbnail"
+                        alt="Dholera Smart City Investment Guide Video"
                         className="w-full h-full object-cover"
                       />
                       <div className="absolute inset-0 flex items-center justify-center">
