@@ -171,7 +171,7 @@ export default function RootLayout({ children }) {
         setIsMobileEventOpen(false);
       }
     }
-  
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -200,7 +200,16 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.ico"
         ></link>
-        <link rel="manifest" href="/site.webmanifest"></link>
+        <meta
+          name="title"
+          content="Dholera Smart City Gujarat | High ROI Plots -Dholera Times"
+        ></meta>
+        <meta
+          name="description"
+          content="
+Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!"
+        ></meta>
+        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -342,7 +351,7 @@ export default function RootLayout({ children }) {
                       onClick={toggleEvent}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/DholeraSIR/About">Event</Link>
+                      <Link href="/DholeraSIR/About">Events</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${

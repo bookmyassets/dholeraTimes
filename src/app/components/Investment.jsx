@@ -14,10 +14,10 @@ const DholeraInvestmentGuide = () => {
       <section className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-          <h1 className="text-4xl max-sm:ml-7 md:text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+          <h2 className="text-4xl max-sm:ml-7 md:text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
             Why Invest in{" "}
             <span className="text-[#d8b66d]">Dholera Smart City</span>
-          </h1>
+          </h2>
           <p className="max-w-7xl max-sm:ml-7 md:text-center text-xl">
             Every bit of Gujarat’s Dholera smart city has been planned
             meticulously with a futuristic vision. Its foundation stone was set
@@ -32,9 +32,9 @@ const DholeraInvestmentGuide = () => {
 
       <section className="max-w-7xl max-sm:ml-7 mx-auto px-4 py-16 sm:px-6 lg:px-8">
         <div className="md:text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">
+          <h3 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity
-          </h2>
+          </h3>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
             Strategic connections at every level make Dholera a transportation
             hub of the future
@@ -47,7 +47,7 @@ const DholeraInvestmentGuide = () => {
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={rrt}
-                alt="Metro Train"
+                alt="Dholera Metro Train"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -75,7 +75,7 @@ const DholeraInvestmentGuide = () => {
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={dia}
-                alt="International Airport"
+                alt="Dholera International Airport"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -102,7 +102,7 @@ const DholeraInvestmentGuide = () => {
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={expressway}
-                alt="Central Spine Road"
+                alt="Dholera-Ahmedabad Expressway"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
@@ -149,9 +149,9 @@ const DholeraInvestmentGuide = () => {
                 <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-blue-600 text-white rounded-full px-4 py-1 text-sm font-semibold">
                   Key Project
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                <h4 className="text-xl font-semibold text-gray-900 mb-4">
                   PM Narendra Modi's Dream Project
-                </h3>
+                </h4>
                 <p className="text-gray-600">
                   For PM Modi, Dholera SIR is a dream project. Dholera SIR has
                   the potential to redefine the country’s urban and industrial
@@ -184,7 +184,7 @@ const DholeraInvestmentGuide = () => {
                 <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-blue-400/20 rounded-full blur-xl"></div>
                 <Image
                   src={dholera}
-                  alt="Global Competition"
+                  alt="Dholera Road Connectivity"
                   className="w-full h-auto object-cover rounded-xl shadow-lg relative z-10"
                 />
               </div>
@@ -357,9 +357,9 @@ const DholeraInvestmentGuide = () => {
       <section className="bg-[#151f28]">
   <section className="py-5 px-4 text-white">
     <div className="max-w-7xl mx-auto">
-      <h2 className="text-3xl font-bold mb-10 text-center text-[#d8b66d]">
+      <h5 className="text-3xl font-bold mb-10 text-center text-[#d8b66d]">
         Major Highlights of Dholera Smart City
-      </h2>
+      </h5>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         
         <div className="flex items-start gap-3">

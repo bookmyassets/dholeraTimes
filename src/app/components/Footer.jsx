@@ -320,6 +320,14 @@ export default function Footer() {
                   Sitemap
                 </a>
               </li>
+              <li>
+                <a
+                  href="/sitemap.xml"
+                  className="hidden"
+                >
+                  Sitemap
+                </a>
+              </li>
             </ul>
           </div>
 

@@ -96,9 +96,9 @@ export default function Info() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
                   
-                  <div className="p-6 space-y-3">
+                  <div className="p-6">
                     <h3 className="text-4xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">{item.title}</h3>
-                    <p>{item.description}</p>
+                   
                     <div className="mt-6 flex items-center justify-between">
                       <span className="inline-flex items-center text-sm font-medium text-blue-600 group-hover:text-blue-800 transition-colors duration-300">
                         View Details

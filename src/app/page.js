@@ -140,7 +140,7 @@ export default function Home() {
           <div className="absolute w-full flex flex-col max-sm:mt-32 items-center px-6 md:flex-row md:justify-around md:px-20">
             {/* Left Section - Text */}
             <div className="text-white text-center">
-              <h1 className="text-5xl md:text-6xl font-bold">DHOLERA</h1>
+              <h2 className="text-5xl md:text-6xl font-bold">DHOLERA</h2>
               <p className="text-xl md:text-2xl mt-2 border-t-2 border-b-2 border-white px-4 py-2">
                 A SMART CITY
               </p>
@@ -311,12 +311,12 @@ export default function Home() {
                 <div className="grid md:grid-cols-2 gap-8 p-8">
                   {/* Content section */}
                   <div className="space-y-6">
-                    <h2 className="text-3xl font-bold text-gray-900 leading-tight">
+                    <h1 className="text-3xl font-bold text-gray-900 leading-tight">
                       Dholera Smart City
                       <span className="block text-blue-600">
                         The Future of Gujarat
                       </span>
-                    </h2>
+                    </h1>
 
                     <p className="text-lg leading-relaxed text-gray-700">
                       Dholera Smart City Gujarat is India's first planned smart
@@ -360,7 +360,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-green-300 opacity-20"></div>
                     <Image
                       src={dsir}
-                      alt="Dholera Smart City Aerial View"
+                      alt="Dholera Smart City"
                       className="w-full h-full object-cover"
                     />
 

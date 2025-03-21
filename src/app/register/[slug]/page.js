@@ -83,7 +83,7 @@ export default async function EventPage({ params }) {
       </section>
 
       {/* Main content */}
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-[70vw] py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event details */}
           <div>

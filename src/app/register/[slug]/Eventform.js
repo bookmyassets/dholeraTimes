@@ -98,7 +98,7 @@ export default function EventForm() {
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-white rounded-lg w-[30vw] shadow-md overflow-hidden">
         <div className="p-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-4 border-b border-gray-200">
             Join us
