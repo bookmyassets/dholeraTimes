@@ -119,7 +119,7 @@ export default async function EventsPage() {
                       href={event.eventMaterials}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="block w-full text-center bg-red-800 text-white py-2 rounded hover:bg-red-900 transition"
+                      className="block w-full text-center bg-[#d8b66d] text-white py-2 rounded transition"
                     >
                       Download Brochure
                     </a>

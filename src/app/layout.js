@@ -60,55 +60,78 @@ export default function RootLayout({ children }) {
 
   const toggleDholeraDropdown = () => {
     setIsDholeraDropdownOpen(!isDholeraDropdownOpen);
+    setIsBlogsDropdownOpen(false);
+    setIsEventOpen(false);
+    setIsProjectsDropdownOpen(false);
   };
-
+  
   const toggleEvent = () => {
     setIsEventOpen(!isEventOpen);
-    setIsMobileEventOpen(false); // Ensure mobile dropdown stays closed
+    setIsDholeraDropdownOpen(false);
+    setIsBlogsDropdownOpen(false);
+    setIsProjectsDropdownOpen(false);
+  };
+  
+  const toggleBlogsDropdown = () => {
+    setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
+    setIsProjectsDropdownOpen(false);
+    setIsDholeraDropdownOpen(false);
+    setIsEventOpen(false);
+  };
+  
+  const toggleProjectsDropdown = () => {
+    setIsProjectsDropdownOpen(!isProjectsDropdownOpen);
+    setIsBlogsDropdownOpen(false);
+    setIsDholeraDropdownOpen(false);
+    setIsEventOpen(false);
+  };
+  
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      // Close all dropdowns when the menu opens
+      setIsBlogsDropdownOpen(false);
+      setIsProjectsDropdownOpen(false);
+      setIsDholeraDropdownOpen(false);
+      setIsEventOpen(false);
+    }
   };
 
   const toggleMobileDholeraDropdown = () => {
     setIsMobileDholeraOpen(!isMobileDholeraOpen);
+    setIsMobileProjectsOpen(false);
+    setIsMobileEventOpen(false);
+    setIsMobileBlogsOpen(false);
+    setIsMenuOpen(false);
   };
-
+  
   const toggleMobileEvent = () => {
     setIsMobileEventOpen(!isMobileEventOpen);
-    setIsEventOpen(false); // Ensure desktop dropdown stays closed
-  };
-
-  const toggleBlogsDropdown = () => {
-    setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
-    // Close other dropdowns
-    setIsProjectsDropdownOpen(false);
-  };
-
-  const toggleProjectsDropdown = () => {
-    setIsProjectsDropdownOpen(!isProjectsDropdownOpen);
-    // Close other dropdowns
-    setIsBlogsDropdownOpen(false);
-  };
-
-  const toggleMobileBlogsDropdown = () => {
-    setIsMobileBlogsOpen(!isMobileBlogsOpen);
-    // Close other mobile dropdown
+    setIsMobileDholeraOpen(false);
     setIsMobileProjectsOpen(false);
+    setIsMobileBlogsOpen(false);
+    setIsMenuOpen(false);
   };
 
   const toggleMobileProjectsDropdown = () => {
     setIsMobileProjectsOpen(!isMobileProjectsOpen);
-    // Close other mobile dropdown
+    // Close other mobile dropdowns
+    setIsMobileDholeraOpen(false);
+    setIsMobileEventOpen(false);
     setIsMobileBlogsOpen(false);
+    setIsMenuOpen(false);
   };
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-    // Close dropdowns when main menu is closed
-    setIsBlogsDropdownOpen(false);
-    setIsProjectsDropdownOpen(false);
-    setIsMobileBlogsOpen(false);
+  
+  const toggleMobileBlogsDropdown = () => {
+    setIsMobileBlogsOpen(!isMobileBlogsOpen);
+    // Close other mobile dropdowns
+    setIsMobileDholeraOpen(false);
+    setIsMobileEventOpen(false);
     setIsMobileProjectsOpen(false);
+    setIsMenuOpen(false);
   };
-
+  
+  
   // Handle clicks outside dropdowns to close them
   useEffect(() => {
     function handleClickOutside(event) {
@@ -354,7 +377,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       onClick={toggleEvent}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/DholeraSIR/About">Events</Link>
+                      <Link href="/event">Events</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -381,7 +404,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           },
                           {
                             title: "Webinar",
-                            path: "/DholeraSIR/About",
+                            path: "/event/webinar",
                           },
                         ].map((item) => (
                           <Link
@@ -498,11 +521,11 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                 <Link href="/">
                   <Image src={logo2} alt="Dholera Times Logo" width={150} height={150} />
                 </Link>
-                <div className="px-7 pt-20 pb-3 text-lg space-y-4 sm:px-3">
+                <div className="px-7 pt-10 pb-3 text-lg space-y-4 sm:px-3">
                   <Link
                     href="/"
                     className="text-white block px-3 py-2"
-                    onClick={toggleMenu}
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     Home
                   </Link>
@@ -569,77 +592,79 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                   </div>
 
                   <div>
-                    <div
-                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                      onClick={toggleMobileProjectsDropdown}
-                    >
-                      <Link href="/pages/projects">Projects</Link>
-                      {isMobileProjectsOpen ? (
-                        <ChevronUp className="h-5 w-5" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5" />
-                      )}
-                    </div>
-                    <AnimatePresence>
-                      {isMobileProjectsOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="pl-6 overflow-hidden"
-                        >
-                          {projects.map((project) => (
-                            <Link
-                              key={project._id}
-                              href={`/posts/${project.slug.current}`}
-                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                              onClick={toggleMenu}
-                            >
-                              {project.title}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+  <div
+    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+    onClick={toggleMobileProjectsDropdown} // ✅ Function call
+  >
+    <Link href="/pages/projects">Projects</Link>
+    {isMobileProjectsOpen ? (
+      <ChevronUp className="h-5 w-5" />
+    ) : (
+      <ChevronDown className="h-5 w-5" />
+    )}
+  </div>
+  <AnimatePresence>
+    {isMobileProjectsOpen && (
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "auto", opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="pl-6 overflow-hidden"
+      >
+        {projects.map((project) => (
+          <Link
+            key={project._id}
+            href={`/posts/${project.slug.current}`}
+            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {project.title}
+          </Link>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
                   {/* Mobile Blogs Dropdown */}
                   <div>
-                    <div
-                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                      onClick={toggleMobileBlogsDropdown}
-                    >
-                      <Link href="/pages/Blogs">Blogs</Link>
-                      {isMobileBlogsOpen ? (
-                        <ChevronUp className="h-5 w-5" />
-                      ) : (
-                        <ChevronDown className="h-5 w-5" />
-                      )}
-                    </div>
-                    <AnimatePresence>
-                      {isMobileBlogsOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="pl-6 overflow-hidden"
-                        >
-                          {blogs.map((blog) => (
-                            <Link
-                              key={blog._id}
-                              href={`/posts/${blog.slug.current}`}
-                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                              onClick={toggleMenu}
-                            >
-                              {blog.title}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
+  <div
+    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+    onClick={toggleMobileBlogsDropdown} // ✅ Function call
+  >
+    <Link href="/pages/Blogs">Blogs</Link>
+    {isMobileBlogsOpen ? (
+      <ChevronUp className="h-5 w-5" />
+    ) : (
+      <ChevronDown className="h-5 w-5" />
+    )}
+  </div>
+  <AnimatePresence>
+    {isMobileBlogsOpen && (
+      <motion.div
+        initial={{ height: 0, opacity: 0 }}
+        animate={{ height: "auto", opacity: 1 }}
+        exit={{ height: 0, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        className="pl-6 overflow-hidden"
+      >
+        {blogs.map((blog) => (
+          <Link
+            key={blog._id}
+            href={`/posts/${blog.slug.current}`}
+            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {blog.title}
+          </Link>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
 
                   <Link
                     href="#"
@@ -653,7 +678,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       className="flex items-center justify-between text-white  cursor-pointer"
                       onClick={toggleMobileEvent}
                     >
-                      <Link href="/DholeraSIR/About">Event</Link>
+                      <Link href="/event">Event</Link>
                       {isMobileEventOpen ? (
                         <ChevronUp className="h-5 w-5" />
                       ) : (

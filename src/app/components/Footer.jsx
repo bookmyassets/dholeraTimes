@@ -10,10 +10,10 @@ export default function Footer() {
   const [isLoading, setIsLoading] = useState(false);
   const [isProjects, setIsProjects] = useState([]);
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
+    name: "",
     phone: "",
   });
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ export default function Footer() {
     e.preventDefault();
     setIsLoading(true);
 
-    if (!formData.fullName || !formData.phone) {
+    if (!formData.name || !formData.phone) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
@@ -44,7 +44,7 @@ export default function Footer() {
           },
           body: JSON.stringify({
             fields: {
-              name: formData.fullName,
+              name: formData.name,
               phone: formData.phone,
             },
             source: "Dholera Times Website",
@@ -60,8 +60,8 @@ export default function Footer() {
           responseText === "OK" ||
           responseText.toLowerCase().includes("success")
         ) {
-          setFormData({ fullName: "", email: "", phone: "" });
-          alert("Thank you! We'll contact you soon.");
+          setFormData({ name: "", phone: "" }); // Reset form
+          setShowPopup(true); // Show success popup
         } else {
           console.log("Response Text:", responseText);
         }
@@ -93,30 +93,28 @@ export default function Footer() {
           <h2 className="text-white text-xl font-semibold mb-6 text-center">
             Have Questions? Enquire Now
           </h2>
-          <div className="grid md:grid-cols-2 ">
+          <div className="grid md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto text-white">
             {/* Form column */}
-            <div>
+            <div className="flex flex-col justify-center">
               {isSubmitted ? (
-                <div className="bg-green-800 text-white p-4 rounded-md text-center">
+                <div className="bg-green-700 text-white p-4 rounded-md text-center">
                   <p className="font-medium">Thank you for contacting us!</p>
                   <p className="text-sm mt-1">We'll get back to you soon.</p>
                 </div>
               ) : (
                 <form
                   onSubmit={handleSubmit}
-                  id="footer-form"
-                  className="flex flex-col items-center w-full"
+                  className="flex flex-col w-full items-center"
                 >
                   <div className="mb-4 relative w-full max-w-md">
                     <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                     <input
                       type="text"
-                      id="fullName"
-                      name="fullName"
+                      name="name"
                       placeholder="Full Name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      className="w-full p-3 pl-12 rounded-lg bg-white text-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
@@ -125,12 +123,13 @@ export default function Footer() {
                     <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
                     <input
                       type="tel"
-                      id="phone"
                       name="phone"
                       placeholder="Phone Number"
-                      value={formData.phone}
+                      value={formData.phone || ""}
                       onChange={handleChange}
-                      className="w-full p-3 pl-12 rounded-lg border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm"
+                      pattern="^[6-9]\d{9}$"
+                      title="Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9"
+                      className="w-full p-3 pl-12 rounded-lg bg-white text-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       required
                     />
                   </div>
@@ -144,22 +143,37 @@ export default function Footer() {
                   </button>
                 </form>
               )}
+              {showPopup && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
+                    <h2 className="text-xl font-semibold text-gray-800">
+                      Thank You!
+                    </h2>
+                    <p className="text-gray-600 mt-2">
+                      We will contact you soon.
+                    </p>
+                    <button
+                      onClick={() => setShowPopup(false)}
+                      className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Info column */}
-
-            <div className="  flex flex-col justify-center  ">
-              <div className="mb-6 max-sm:py-5 ">
-                <h3 className="text-white text-xl max-sm:text-center font-semibold mb-3">
-                  Why Contact Us?
-                </h3>
-                <p className="text-gray-300 text-lg md:w-[400px]">
-                  Have questions about Dholera Smart City? Want to explore
-                  investment opportunities? Our team is ready to assist you with
-                  any inquiries about properties, development updates, or
-                  investment options.
-                </p>
-              </div>
+            <div className="flex flex-col justify-center">
+              <h3 className="text-xl font-semibold text-center md:text-left">
+                Why Contact Us?
+              </h3>
+              <p className="text-gray-300 text-lg mt-3">
+                Have questions about Dholera Smart City? Want to explore
+                investment opportunities? Our team is ready to assist you with
+                any inquiries about properties, development updates, or
+                investment options.
+              </p>
             </div>
           </div>
         </div>
@@ -167,12 +181,13 @@ export default function Footer() {
         {/* First 3-column row with company info, links, policy */}
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
-            <Image src={logo} alt="Dholera Times Logo" />
-            <div>
+          <div>
               <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
               India{" "}
             </div>
+           
+            
           </div>
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">
@@ -180,7 +195,7 @@ export default function Footer() {
             </h3>
             <div className="flex space-x-4 mb-3">
               <a
-                href="https://www.facebook.com/profile.php?id=61572970112485"
+                href=""
                 className="text-gray-400 hover:text-white transition"
                 aria-label="Facebook"
               >
@@ -321,10 +336,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href="/sitemap.xml"
-                  className="hidden"
-                >
+                <a href="/sitemap.xml" className="hidden">
                   Sitemap
                 </a>
               </li>

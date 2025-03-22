@@ -93,23 +93,10 @@ export default async function BlogPage() {
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-50"></div>
-                <span
-                  className="absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full"
-                  style={{
-                    backgroundColor: getCategoryColor(post.category),
-                  }}
-                >
-                  {post.category || "Blog"}
-                </span>
               </div>
 
               {/* Blog Content */}
               <div className="p-5 flex flex-col flex-grow">
-                <div className="flex items-center text-xs text-gray-500 mb-2">
-                  <CalendarDays className="h-3 w-3 mr-1" />
-                  <span>{new Date().toLocaleDateString()}</span>
-                </div>
-
                 <p className="text-xs text-[#0e48fe] font-medium mb-2">{post.hashtags?.join(" ")}</p>
 
                 <Link href={post.slug?.current ? `/posts/${post.slug.current}` : "#"} className="group">
@@ -119,17 +106,6 @@ export default async function BlogPage() {
                 </Link>
 
                 <p className="text-gray-600 text-sm line-clamp-2 mb-4">{post.description}</p>
-
-                {/* Author Section */}
-                <div className="flex items-center mt-auto pt-4 border-t border-gray-100">
-                  <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                    <User className="h-4 w-4 text-gray-500" />
-                  </div>
-                  <div className="ml-3">
-                    <h3 className="text-sm font-semibold text-gray-800">{post.author.name}</h3>
-                    <p className="text-xs text-gray-500">{post.author.followers || 0} followers</p>
-                  </div>
-                </div>
               </div>
             </div>
           ))}

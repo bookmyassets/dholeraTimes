@@ -30,7 +30,7 @@ const DholeraInvestmentGuide = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl max-sm:ml-7 mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-3 lg:px-8">
         <div className="md:text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity

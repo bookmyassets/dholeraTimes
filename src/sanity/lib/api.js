@@ -122,6 +122,32 @@ export async function getEvents() {
   }
 }
 
+export async function getWebinar() {
+  const query = `*[_type == "event" && author->name == "Dholera Times" && "Webinar" in categories[]->title] | order(publishedAt desc) {
+    _id,
+    eventName,
+    slug,
+    mainImage,
+    publishedAt,
+    description,
+    dateOfEvent,
+    timeOfEvent,
+    location,
+    mapsLink,
+    "eventMaterials": eventMaterials.asset->url,
+    categories[]->{title, _id}
+  }`;
+  
+
+  try {
+    const events = await client.fetch(query);
+    return events;
+  } catch (error) {
+    console.error("Error fetching events:", error);
+    return [];
+  }
+}
+
 // Function to get a single event by slug
 /* export async function getEventBySlug(slug) {
   const query = `*[_type == "event" && slug.current == $slug][0]{
