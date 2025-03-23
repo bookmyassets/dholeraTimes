@@ -261,7 +261,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       onClick={toggleDholeraDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/DholeraSIR/About">Dholera SIR</Link>
+                      <Link href="/DholeraSIR">Dholera SIR</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -284,7 +284,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                         {[
                           {
                             title: "About Dholera SIR",
-                            path: "/DholeraSIR/About",
+                            path: "/DholeraSIR",
                           },
                           {
                             title: "Connectivity",
@@ -541,7 +541,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       className="flex items-center justify-between text-white  cursor-pointer"
                       onClick={toggleMobileDholeraDropdown}
                     >
-                      <Link href="/DholeraSIR/About">Dholera SIR</Link>
+                      <Link href="/DholeraSIR">Dholera SIR</Link>
                       {isMobileDholeraOpen ? (
                         <ChevronUp className="h-5 w-5" />
                       ) : (
@@ -560,7 +560,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           {[
                             {
                               title: "About Dholera SIR",
-                              path: "/DholeraSIR/About",
+                              path: "/DholeraSIR",
                             },
                             {
                               title: "Connectivity",
