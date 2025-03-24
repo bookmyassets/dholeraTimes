@@ -282,31 +282,45 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                     {isDholeraDropdownOpen && (
                       <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
                         {[
-                          {
-                            title: "About Dholera SIR",
-                            path: "/DholeraSIR",
-                          },
-                          {
-                            title: "Connectivity",
-                            path: "/DholeraSIR/Connectivity",
-                          },
-                          {
-                            title: "Planning",
-                            path: "/DholeraSIR/Planning",
-                          },
-                          {
-                            title: "Activation Zone",
-                            path: "/DholeraSIR/ActivationZone",
-                          },
-                          {
-                            title: "Infrastructure",
-                            path: "/DholeraSIR/Infrastructure",
-                          },
-                          {
-                            title: "Logistic",
-                            path: "/DholeraSIR/Logistic",
-                          },
-                        ].map((item) => (
+                            {
+                              title: "About Dholera SIR",
+                              path: "/DholeraSIR",
+                            },
+                            {
+                              title: "Connectivity",
+                              path: "/DholeraSIR/Connectivity",
+                            },
+                            { title: "Planning", path: "/DholeraSIR/Planning" },
+                            {
+                              title: "Activation Zone",
+                              path: "/DholeraSIR/ActivationZone",
+                            },
+                            {
+                              title: "ABCD Building",
+                              path: "/DholeraSIR/ABCDBuilding",
+                            },
+                            {
+                              title: "Dholera International Airport",
+                              path: "/DholeraSIR/DholeraInternationalAirport",
+                            },
+                            {
+                              title: "Expressway",
+                              path: "/DholeraSIR/Expressway",
+                            },
+                            {
+                              title: "Industrial Park",
+                              path: "/DholeraSIR/Industrial Park",
+                            },
+                            {
+                              title: "Metro Rail",
+                              path: "/DholeraSIR/MetroTrain",
+                            },
+                            {
+                              title: "Solar Power Plant",
+                              path: "/DholeraSIR/SolarPowerPlant",
+                            },
+                            { title: "Logistic", path: "/DholeraSIR/Logistic" },
+                          ].map((item) => (
                           <Link
                             key={item.path}
                             href={item.path}
@@ -572,8 +586,28 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                               path: "/DholeraSIR/ActivationZone",
                             },
                             {
-                              title: "Infrastructure",
-                              path: "/DholeraSIR/Infrastructure",
+                              title: "ABCD Building",
+                              path: "/DholeraSIR/ABCDBuilding",
+                            },
+                            {
+                              title: "Dholera International Airport",
+                              path: "/DholeraSIR/DholeraInternationalAirport",
+                            },
+                            {
+                              title: "Expressway",
+                              path: "/DholeraSIR/Expressway",
+                            },
+                            {
+                              title: "Industrial Park",
+                              path: "/DholeraSIR/Industrial Park",
+                            },
+                            {
+                              title: "Metro Rail",
+                              path: "/DholeraSIR/MetroTrain",
+                            },
+                            {
+                              title: "Solar Power Plant",
+                              path: "/DholeraSIR/SolarPowerPlant",
                             },
                             { title: "Logistic", path: "/DholeraSIR/Logistic" },
                           ].map((item) => (
