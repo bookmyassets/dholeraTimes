@@ -27,7 +27,7 @@ export default function ContactForm() {
     let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
     let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
 
-   /*  // Check if 24 hours have passed since the last submission
+    /*  // Check if 24 hours have passed since the last submission
     if (lastSubmissionTime) {
       const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
       const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
@@ -110,7 +110,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white p-10  shadow-2xl w-[600px] mx-auto border border-gray-200">
+    <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
         Enquire Now
       </h2>
@@ -143,7 +143,6 @@ export default function ContactForm() {
               placeholder="Email Address"
               value={formData.email}
               onChange={handleChange}
-              
               required
               className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
             />
@@ -168,11 +167,11 @@ export default function ContactForm() {
             type="submit"
             disabled={isLoading}
             className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300
-            ${
-              isLoading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95"
-            }`}
+        ${
+          isLoading
+            ? "bg-gray-400 cursor-not-allowed"
+            : "bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95"
+        }`}
           >
             {isLoading ? "Submitting..." : "Get a Call Back"}
           </button>

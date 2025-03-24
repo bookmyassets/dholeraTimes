@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getPosts } from "@/sanity/lib/api";
 import { urlFor } from "@/sanity/lib/image";
-import "../projects/project.css";
+import "./project.css";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 
