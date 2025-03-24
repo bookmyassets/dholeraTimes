@@ -15,7 +15,7 @@ export default function page() {
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
           <h2 className="text-5xl font-extrabold drop-shadow-lg mb-4">
-            Infrastructure
+          Six Lane Expressway
           </h2>
           <p className="text-xl font-light leading-relaxed">
           India's First Greenfield Smart City along the Delhi-Mumbai Industrial
@@ -29,7 +29,7 @@ export default function page() {
         <section className="py-16 ">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              New Six Lane Expressway
+              Six Lane Expressway
             </h2>
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-8 order-2 md:order-1">
