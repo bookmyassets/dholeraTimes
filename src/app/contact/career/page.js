@@ -2,6 +2,7 @@
 import { useState, useRef } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaFileAlt, FaBuilding } from "react-icons/fa";
 
+
 export default function CareerPage() {
   const [currentView, setCurrentView] = useState("jobListings");
   const [selectedJob, setSelectedJob] = useState(null);
