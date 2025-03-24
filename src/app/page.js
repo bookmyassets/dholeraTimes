@@ -193,7 +193,7 @@ export default function Home() {
                     type="submit"
                     disabled={isLoading}
                     className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-      ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-700 hover:bg-blue-400 hover:text-black hover:shadow-lg active:scale-95"}
+      ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-[#be9233] hover:bg-[#dbaf51] hover:text-black hover:shadow-lg active:scale-95"}
     `}
                   >
                     {isLoading ? "Submitting..." : "Get a call back"}
@@ -347,7 +347,7 @@ export default function Home() {
                     <div className="mt-8">
                       <Link
                         href="/pages/dholeraSIR"
-                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#151f28] hover:bg-blue-700 shadow-md transition duration-150 ease-in-out"
+                        className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b98e31] hover:bg-[#dcb86a] shadow-md transition duration-150 ease-in-out"
                       >
                         Explore Dholera SIR
                       </Link>

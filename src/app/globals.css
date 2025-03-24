@@ -70,3 +70,16 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.animate-color-change {
+  animation: colorChange 3s infinite alternate;
+}
+
+@keyframes colorChange {
+  from {
+    color: red;
+  }
+  to {
+    color: orange;
+  }
+}

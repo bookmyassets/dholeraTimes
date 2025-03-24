@@ -13,8 +13,8 @@ const DholeraInvestmentGuide = () => {
       {/* Hero Section */}
       <section className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20 sm:px-6 lg:px-8">
-          <h2 className="text-4xl max-sm:ml-7 md:text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-6">
+        <div className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
+          <h2 className="text-4xl max-sm:ml-7 md:text-center font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-2">
             Why Invest in{" "}
             <span className="text-[#d8b66d]">Dholera Smart City</span>
           </h2>
@@ -30,7 +30,7 @@ const DholeraInvestmentGuide = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-3 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 py-5 sm:px-3 lg:px-8">
         <div className="md:text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity

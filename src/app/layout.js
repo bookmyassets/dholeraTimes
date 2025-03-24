@@ -138,7 +138,7 @@ export default function RootLayout({ children }) {
     setIsMobileProjectsOpen(false);
     setIsMobileBlogsOpen(false);
     setIsMobileGalleryOpen(false);
-   
+
     setIsContactOpen(false);
   };
 
@@ -150,7 +150,6 @@ export default function RootLayout({ children }) {
     setIsMobileBlogsOpen(false);
     setIsMobileGalleryOpen(false);
     setIsContactOpen(false);
-
   };
 
   const toggleMobileBlogsDropdown = () => {
@@ -161,7 +160,6 @@ export default function RootLayout({ children }) {
     setIsMobileProjectsOpen(false);
     setIsMobileGalleryOpen(false);
     setIsContactOpen(false);
-  
   };
 
   const toggleMobileGalleryDropdown = () => {
@@ -172,7 +170,6 @@ export default function RootLayout({ children }) {
     setIsMobileProjectsOpen(false);
     setIsMobileBlogsOpen(false);
     setIsContactOpen(false);
-
   };
 
   const toggleMobileContactDropdown = () => {
@@ -184,7 +181,6 @@ export default function RootLayout({ children }) {
     setIsMobileBlogsOpen(false);
     setIsContactOpen(false);
     setIsMobileGalleryOpen(false);
-    
   };
 
   // Handle clicks outside dropdowns to close them
@@ -605,7 +601,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       onClick={toggleContactDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      Contact Us
+                      <Link href="/contact"> Contact Us</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -627,11 +623,11 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
                         {[
                           {
-                            title: "Video Gallery",
+                            title: "Contact Us",
                             path: "/contact",
                           },
                           {
-                            title: "Image Gallery",
+                            title: "Career",
                             path: "/contact/career",
                           },
                         ].map((item) => (
@@ -657,7 +653,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
               </div>
 
               <div className="md:hidden flex items-center gap-4">
-                <div className=" text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
+                <div className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
                   <Link
                     href="tel:+919958993549"
                     className="flex items-center space-x-2"
@@ -667,9 +663,9 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       alt="call"
                       height={30}
                       width={30}
-                      className=""
+                      className="animate-image-tint" 
                     />
-                    <p>Call Now</p>
+                    <p className="animate-color-change">Call Now</p>
                   </Link>
                 </div>
 
@@ -695,9 +691,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="md:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
               >
-                <div className="flex justify-end">
-                  
-                </div>
+                <div className="flex justify-end"></div>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                   <Image
                     src={logo2}

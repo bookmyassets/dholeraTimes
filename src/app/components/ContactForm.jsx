@@ -170,7 +170,7 @@ export default function ContactForm() {
         ${
           isLoading
             ? "bg-gray-400 cursor-not-allowed"
-            : "bg-blue-500 hover:bg-blue-600 hover:shadow-lg active:scale-95"
+            : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
         }`}
           >
             {isLoading ? "Submitting..." : "Get a Call Back"}

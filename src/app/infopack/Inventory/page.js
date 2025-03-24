@@ -8,9 +8,6 @@ export default async function BlogPage() {
   try {
     posts = await Inventory();
     isLoading = false;
-    // Debugging logs (uncomment if needed)
-    // console.log("Fetched PDFs:", posts);
-    // console.log("Data structure:", JSON.stringify(posts, null, 2));
   } catch (error) {
     console.error("Error fetching PDFs:", error);
     isLoading = false;
@@ -18,17 +15,25 @@ export default async function BlogPage() {
 
   if (isLoading) {
     return (
-      <div className="p-6">
-        <h1 className="text-2xl font-bold mb-6">Loading Inventory PDFs...</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="p-4 border rounded-lg shadow-sm bg-white">
-              <Skeleton className="h-6 w-3/4 mb-2" />
-              <Skeleton className="h-4 w-1/2 mb-2" />
-              <Skeleton className="h-4 w-1/3 mb-2" />
-              <Skeleton className="h-10 w-24" />
-            </div>
-          ))}
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Loading Inventory PDFs...
+          </h1>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((i) => (
+              <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden animate-pulse">
+                <div className="h-48 bg-gray-200"></div>
+                <div className="p-6">
+                  <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+                  <div className="flex space-x-4 mt-6">
+                    <div className="h-10 bg-gray-200 rounded w-1/2"></div>
+                    <div className="h-10 bg-gray-200 rounded w-1/2"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -36,64 +41,71 @@ export default async function BlogPage() {
 
   if (!posts || posts.length === 0) {
     return (
-      <div className="flex items-center justify-center min-h-screen">
-        <p className="text-gray-500 text-lg">No PDFs available.</p>
-        <Link
-          href="/blog"
-          className="ml-4 px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-md"
-        >
-          Retry
-        </Link>
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+        <div className="max-w-md text-center">
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">No PDFs available</h1>
+          <p className="text-gray-600 mb-8">
+            We couldn't find any inventory PDFs at the moment. Please try again later.
+          </p>
+          <Link
+            href="/"
+            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          >
+            Retry
+          </Link>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-6 mt-20 space-y-4">
-      <h1 className="text-4xl font-bold mb-8 text-center text-gray-900">
-        Inventory PDFs
-      </h1>
-      <p className="text-center md:text-xl md:font-medium font-semibold">
-        Check available residential plots in Dholera and book yours before
-        they’re sold out!
-      </p>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+            Inventory PDFs
+          </h1>
+          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
+            Check available residential plots in Dholera and book yours before
+            they're sold out!
+          </p>
+        </div>
 
-      {/* Grid Layout */}
-      <div className="grid grid-cols-1 pt-5 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {posts.map((post) => (
-          <div
-            key={post._id}
-            className="bg-[#f1cf86] p-4 space-y-5 border rounded-lg shadow-lg transition transform hover:scale-105 hover:shadow-xl"
-          >
-            <h2 className="text-lg font-semibold text-gray-800">{post.title}</h2>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <div key={post._id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="p-6">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                  {post.title}
+                </h2>
+                
+                {post.pdfUrl && (
+                  <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
+                    {/* Download PDF Button */}
+                    <Link
+                      href={post.pdfUrl}
+                      download
+                      className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#bc9849] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      Download PDF
+                    </Link>
 
-            {post.pdfUrl && (
-              <div className="space-x-4 mt-4">
-                {/* Download PDF Button */}
-                <a
-                  href={post.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Download ${post.title}`}
-                  className="px-4 py-3 text-white bg-blue-600 hover:bg-blue-700 rounded-lg shadow-md transition transform hover:scale-105"
-                >
-                  Download PDF
-                </a>
-
-                {/* View PDF Button */}
-                <a
-                  href={post.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${post.title}`}
-                  className="px-4 py-3 text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md transition transform hover:scale-105"
-                >
-                  View PDF
-                </a>
+                    {/* View PDF Button */}
+                    <Link
+                      href={post.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                      View PDF
+                    </Link>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -178,7 +178,7 @@ export default function Info() {
           </div>
         )}
 
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 max-sm:hidden">
           <div className="inline-flex rounded-md shadow-sm" role="group">
             <button
               type="button"
