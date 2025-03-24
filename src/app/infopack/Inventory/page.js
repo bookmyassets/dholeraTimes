@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Inventory } from "@/sanity/lib/api";
+import Image from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { Download, Eye } from "lucide-react";
 
 export default async function BlogPage() {
   let posts = [];
@@ -15,20 +18,24 @@ export default async function BlogPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 mb-8 text-center">
             Loading Inventory PDFs...
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[1, 2, 3, 4, 5, 6].map((i) => (
-              <div key={i} className="bg-white rounded-lg shadow-md overflow-hidden animate-pulse">
-                <div className="h-48 bg-gray-200"></div>
-                <div className="p-6">
-                  <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-                  <div className="flex space-x-4 mt-6">
-                    <div className="h-10 bg-gray-200 rounded w-1/2"></div>
-                    <div className="h-10 bg-gray-200 rounded w-1/2"></div>
+              <div 
+                key={i} 
+                className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:scale-105 animate-pulse"
+              >
+                <div className="h-60 bg-gray-200"></div>
+                <div className="p-6 space-y-4">
+                  <div className="h-8 bg-gray-200 rounded w-3/4"></div>
+                  <div className="h-4 bg-gray-200 rounded w-1/2"></div>
+                  <div className="flex space-x-4 pt-4">
+                    <div className="h-12 bg-gray-200 rounded-lg w-1/2"></div>
+                    <div className="h-12 bg-gray-200 rounded-lg w-1/2"></div>
                   </div>
                 </div>
               </div>
@@ -41,17 +48,19 @@ export default async function BlogPage() {
 
   if (!posts || posts.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
-        <div className="max-w-md text-center">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">No PDFs available</h1>
-          <p className="text-gray-600 mb-8">
-            We couldn't find any inventory PDFs at the moment. Please try again later.
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-4 py-12">
+        <div className="max-w-md text-center bg-white p-10 rounded-2xl shadow-2xl">
+          <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 mb-6">
+            No PDFs Available
+          </h1>
+          <p className="text-gray-600 mb-8 text-lg">
+            We couldn't find any inventory PDFs at the moment. Please check back later.
           </p>
           <Link
             href="/"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-[#bc9849] to-[#d4b06c] text-white rounded-full shadow-lg hover:scale-105 transition-transform"
           >
-            Retry
+            Back to Home
           </Link>
         </div>
       </div>
@@ -59,45 +68,61 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Inventory PDFs
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 mb-6">
+            Available Plots
           </h1>
-          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            Check available residential plots in Dholera and book yours before
-            they're sold out!
+          <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
+            Explore our collection of residential plot details in Dholera. Find your perfect investment opportunity!
           </p>
         </div>
 
-        {/* Grid Layout */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div key={post._id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div 
+              key={post._id} 
+              className="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:scale-105"
+            >
+              <div className="relative h-64 w-full">
+                {post.mainImage ? (
+                  <Image
+                    src={urlFor(post.mainImage).width(800).height(600).url() || "/placeholder.svg"}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="h-full w-full bg-gray-200 flex items-center justify-center">
+                    <span className="text-gray-500">No Image</span>
+                  </div>
+                )}
+              </div>
+              
               <div className="p-6">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4 line-clamp-2">
                   {post.title}
                 </h2>
                 
                 {post.pdfUrl && (
-                  <div className="mt-6 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-                    {/* Download PDF Button */}
+                  <div className="mt-6 flex space-x-4">
                     <Link
                       href={post.pdfUrl}
                       download
-                      className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#bc9849] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-[#bc9849] text-white rounded-lg hover:bg-[#d4b06c] transition-colors"
                     >
-                      Download PDF
+                      <Download className="mr-2" size={20} />
+                      Download
                     </Link>
 
-                    {/* View PDF Button */}
                     <Link
                       href={post.pdfUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                      className="flex-1 inline-flex items-center justify-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
                     >
+                      <Eye className="mr-2" size={20} />
                       View PDF
                     </Link>
                   </div>

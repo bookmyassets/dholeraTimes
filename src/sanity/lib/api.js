@@ -83,6 +83,7 @@ export async function getPostBySlug(slug) {
         _id,
         title,
         publishedAt,
+        mainImage,
         "pdfUrl": coalesce(pdfFile.asset->url, null),
         "category": coalesce(categories[]->title, []),
         "author": coalesce(author->name, "Unknown")
