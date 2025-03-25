@@ -6,11 +6,19 @@ import dholera from "@/assets/dhoelra.png";
 import Image from "next/image";
 import Link from "next/link";
 import DholeraFeatures from "./DF";
+import bg from "@/assets/pexels2.jpg";
 
 const DholeraInvestmentGuide = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
       {/* Hero Section */}
+      <Image
+        src={bg}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 -z-10 opacity-30"
+      />
       <section className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>
         <div className="relative max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
@@ -31,7 +39,14 @@ const DholeraInvestmentGuide = () => {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 py-6 sm:px-3 lg:px-8">
-        <div className="md:text-center mb-12">
+        <div className="md:text-center relative mb-12">
+        <Image
+          src={bg}
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 -z-10 opacity-30"
+        />
           <h3 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity
           </h3>
@@ -129,6 +144,13 @@ const DholeraInvestmentGuide = () => {
       <DholeraFeatures />
 
       {/* Overview Section */}
+      <Image
+              src={bg}
+              alt="Background Image"
+              layout="fill"
+              objectFit="cover"
+              className="absolute inset-0 -z-10 opacity-30"
+            />
       <section className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
@@ -355,128 +377,174 @@ const DholeraInvestmentGuide = () => {
         </div>
       </section>
       <section className="bg-[#151f28]">
-  <section className="py-5 px-4 text-white">
-    <div className="max-w-7xl mx-auto">
-      <h5 className="text-3xl font-bold mb-10 text-center text-[#d8b66d]">
-        Major Highlights of Dholera Smart City
-      </h5>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>Massive 920 sq. km. smart city</div>
-        </div>
+        <section className="py-5 px-4 text-white">
+          <div className="max-w-7xl mx-auto">
+            <h5 className="text-3xl font-bold mb-10 text-center text-[#d8b66d]">
+              Major Highlights of Dholera Smart City
+            </h5>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>Massive 920 sq. km. smart city</div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>High-return investment</b> in residential, commercial, and industrial plots</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>High-return investment</b> in residential, commercial, and
+                  industrial plots
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Seamless intracity commute</b> with metro connectivity</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Seamless intracity commute</b> with metro connectivity
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Central Spine Road Expressway</b> linking directly to Ahmedabad</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Central Spine Road Expressway</b> linking directly to
+                  Ahmedabad
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Strategic location</b> near major ports for global trade</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Strategic location</b> near major ports for global trade
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Dholera International Airport</b> ensuring global connectivity</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Dholera International Airport</b> ensuring global
+                  connectivity
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Exclusive incentives</b> for industrial projects</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Exclusive incentives</b> for industrial projects
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>World-class civic amenities</b> for a futuristic lifestyle</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>World-class civic amenities</b> for a futuristic lifestyle
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>India’s largest solar power project,</b> driving renewable energy initiatives</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>India’s largest solar power project,</b> driving renewable
+                  energy initiatives
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>PM Modi’s visionary project,</b> shaping India's smart city future</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>PM Modi’s visionary project,</b> shaping India's smart city
+                  future
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Emerging semiconductor industry hub</b></div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Emerging semiconductor industry hub</b>
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>An integral part of the Delhi-Mumbai Industrial Corridor (DMIC)</b></div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>
+                    An integral part of the Delhi-Mumbai Industrial Corridor
+                    (DMIC)
+                  </b>
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Fully digitized administration</b> for efficient governance</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Fully digitized administration</b> for efficient governance
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>2X</b> the size of Delhi and <b>6X</b> that of Shanghai</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>2X</b> the size of Delhi and <b>6X</b> that of Shanghai
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>One of the top 12 fastest-growing cities across the world</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  One of the top 12 fastest-growing cities across the world
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div><b>Proximity to megacities</b> - Ahmedabad, Vadodara, Bhavnagar</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  <b>Proximity to megacities</b> - Ahmedabad, Vadodara,
+                  Bhavnagar
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>Close to Gujarat International Finance Tech <b>(GIFT) city</b></div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  Close to Gujarat International Finance Tech <b>(GIFT) city</b>
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>Home to one of the largest upcoming 
-          <b> semiconductor projects</b></div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  Home to one of the largest upcoming
+                  <b> semiconductor projects</b>
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>India’s  
-          <b> greenfield smart city </b>project</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  India’s
+                  <b> greenfield smart city </b>project
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>Currently ranked as 
-          <b> India’s best land investment opportunity</b>with high returns</div>
-        </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  Currently ranked as
+                  <b> India’s best land investment opportunity</b>with high
+                  returns
+                </div>
+              </div>
 
-        <div className="flex items-start gap-3">
-          <div className="text-[#d8b66d] font-bold text-xl">✓</div>
-          <div>Expected to be one of the 
-          <b> biggest industrial hubs</b> across the world once complete
+              <div className="flex items-start gap-3">
+                <div className="text-[#d8b66d] font-bold text-xl">✓</div>
+                <div>
+                  Expected to be one of the
+                  <b> biggest industrial hubs</b> across the world once complete
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-</section>
-
+        </section>
+      </section>
 
       {/* Footer */}
     </div>

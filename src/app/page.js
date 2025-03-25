@@ -10,6 +10,7 @@ import FAQSection from "./components/Faq";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import bg from "@/assets/pexels2.jpg"
 import Head from "next/head";
 
 export default function Home() {
@@ -299,7 +300,14 @@ export default function Home() {
         </div>
         <FAQSection />
 
-        <div>
+        <div className="relative">
+        <Image
+        src={bg}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 -z-10 opacity-30"
+      />
           <div className="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden">
               {/* Decorative elements */}
@@ -420,8 +428,15 @@ export default function Home() {
       <section>
         {/* DHOLERA SIR */}
         <div>
-          <div>
-            <div className="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+        <Image
+        src={bg}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 -z-40 opacity-30"
+      />
+            <div className=" max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
               <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                 {/* Decorative top accent */}
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-green-400"></div>

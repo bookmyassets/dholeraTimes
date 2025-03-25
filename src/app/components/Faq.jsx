@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import bg from "@/assets/pexels2.jpg"; // Replace with the actual path to your background image
 
 const faqs = [
   {
@@ -52,17 +54,25 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="relative  p-6">
+      <Image
+        src={bg}
+        alt="Background Image"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 -z-10 opacity-30"
+      />
+    <div className="max-w-7xl mx-auto">
       <h2 className="text-5xl font-bold text-center mb-6">
         Frequently Asked Questions
       </h2>
-      <div className="space-y-4">
+      <div className="space-y-4 relative">
         {faqs.map((faq, index) => (
           <motion.div
             key={index}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="border rounded-lg p-4 shadow-md bg-gray-900"
+            className="border rounded-lg p-4 shadow-md bg-gray-900 bg-opacity-80"
           >
             <button
               className="w-full flex justify-between items-center text-[#edc46b] text-left text-xl font-bold"
@@ -95,6 +105,7 @@ export default function FAQSection() {
           </motion.div>
         ))}
       </div>
+    </div>
     </div>
   );
 }
