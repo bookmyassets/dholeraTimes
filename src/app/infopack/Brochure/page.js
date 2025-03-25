@@ -69,11 +69,10 @@ export default async function BlogPage() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Inventory PDFs
+            Brochure
           </h1>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            Check available residential plots in Dholera and book yours before
-            they're sold out!
+          Learn all about our Dholera residential plots by accessing our comprehensive project brochure
           </p>
         </div>
 

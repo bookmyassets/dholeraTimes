@@ -259,7 +259,7 @@ const DholeraInvestmentGuide = () => {
                 investing in the right place at the right time!
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link href="/pages/projects">
+                <Link href="/projects">
                   <button className="px-6 py-3 bg-[#d8b66d] text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
                     Explore Investment Options
                   </button>

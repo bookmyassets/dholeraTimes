@@ -286,7 +286,7 @@ export default function Footer() {
             <h3 className="text-white text-lg font-semibold mb-4">Support</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/pages/about" className="hover:text-white transition">
+                <a href="/about" className="hover:text-white transition">
                   About Us
                 </a>
               </li>
@@ -329,7 +329,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/pages/sitemap"
+                  href="/sitemap"
                   className="hover:text-white transition"
                 >
                   Sitemap
@@ -375,7 +375,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/pages/contact"
+                  href="/contact"
                   className="hover:text-white transition"
                 >
                   Contact Us

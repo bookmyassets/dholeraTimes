@@ -378,10 +378,10 @@ export default function Home() {
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                     #SmartCityGujarat
                   </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
                     #DholeraInvestment
                   </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
                     #DholeraDevelopment
                   </span>
                 </div>
@@ -479,7 +479,7 @@ export default function Home() {
 
                     <div className="mt-8">
                       <Link
-                        href="/pages/dholeraSIR"
+                        href="/DholeraSIR"
                         className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#b98e31] hover:bg-[#dcb86a] shadow-md transition duration-150 ease-in-out"
                       >
                         Explore Dholera SIR
