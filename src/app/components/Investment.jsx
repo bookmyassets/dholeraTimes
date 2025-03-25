@@ -18,7 +18,7 @@ const DholeraInvestmentGuide = () => {
             Why Invest in{" "}
             <span className="text-[#d8b66d]">Dholera Smart City</span>
           </h2>
-          <p className="max-w-7xl max-sm:ml-7 md:text-center text-xl">
+          <p className="max-w-7xl mt-5 max-sm:ml-7 md:text-center text-xl">
             Every bit of Gujarat’s Dholera smart city has been planned
             meticulously with a futuristic vision. Its foundation stone was set
             by the then Prime Minister, Shri Manmohan Singh. Alongside being
@@ -30,20 +30,20 @@ const DholeraInvestmentGuide = () => {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 py-5 sm:px-3 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 py-6 sm:px-3 lg:px-8">
         <div className="md:text-center mb-12">
           <h3 className="text-3xl font-bold text-gray-900">
             Unparalleled Connectivity
           </h3>
           <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
             Strategic connections at every level make Dholera a transportation
-            hub of the future
+            hub of the future.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Card 1 */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={rrt}
@@ -71,7 +71,7 @@ const DholeraInvestmentGuide = () => {
           </div>
 
           {/* Card 2 */}
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={dia}
@@ -98,7 +98,7 @@ const DholeraInvestmentGuide = () => {
 
           {/* Card 3 */}
 
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
             <div className="h-48 bg-gray-200 relative">
               <Image
                 src={expressway}
@@ -129,14 +129,14 @@ const DholeraInvestmentGuide = () => {
       <DholeraFeatures />
 
       {/* Overview Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-8 md:p-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
                 Strategic Location
               </h2>
-              <p className="text-gray-700 mb-6">
+              <p className="text-gray-700 text-lg mb-6">
                 Dholera City Gujarat is located near the Gulf of Khambhat which
                 gives it easy port access. This has skyrocketed its chances of
                 becoming one of the largest trading and manufacturing hubs in
@@ -152,7 +152,7 @@ const DholeraInvestmentGuide = () => {
                 <h4 className="text-xl font-semibold text-gray-900 mb-4">
                   PM Narendra Modi's Dream Project
                 </h4>
-                <p className="text-gray-600">
+                <p className="text-gray-600 text-md">
                   For PM Modi, Dholera SIR is a dream project. Dholera SIR has
                   the potential to redefine the country’s urban and industrial
                   landscape alongside setting a benchmark for all other cities
@@ -174,9 +174,9 @@ const DholeraInvestmentGuide = () => {
       {/* Key Features */}
 
       {/* Global Competition */}
-      <section className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
         {/* Heritage and Global Competition Section */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-lg p-8 md:p-10 mb-16 border border-blue-100">
+        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl shadow-2xl p-8 md:p-10 mb-16 border border-blue-100">
           <div className="md:flex items-center gap-10">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <div className="relative">
@@ -221,7 +221,7 @@ const DholeraInvestmentGuide = () => {
         {/* Historical Context & Future Vision Section */}
 
         {/* Investment Opportunity Section */}
-        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl  shadow-lg p-8 md:p-10 mb-16 border border-amber-100 relative overflow-hidden">
+        <div className="bg-gradient-to-r from-amber-50 to-yellow-50 rounded-2xl py-6 shadow-2xl p-8 md:p-10 mb-16 border border-amber-100 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-40 h-40 bg-yellow-400/10 rounded-full -mt-10 -mr-10 blur-2xl"></div>
           <div className="md:flex items-center gap-10 relative z-10">
             <div className="md:w-3/5">

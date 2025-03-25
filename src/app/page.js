@@ -3,7 +3,7 @@ import Image from "next/image";
 import hero from "@/assets/hero5.webp";
 import heroM from "@/assets/heroM.webp";
 import dsir from "@/assets/dsir.png";
-import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaUser, FaEnvelope, FaPhoneAlt, FaArrowAltCircleRight } from "react-icons/fa";
 import { useState, useRef, useEffect } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
@@ -130,7 +130,7 @@ export default function Home() {
           <Image
             src={hero}
             alt="Dholera Smart City Plan"
-            className="absolute inset-0 w-full h-full max-sm:h-[100vh] object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
 
           {/* Dark Overlay */}
@@ -266,6 +266,7 @@ export default function Home() {
               )}
             </div>
           </div>
+
           {/* Carousel Section */}
           {/*  <div className="absolute bottom-0 w-full p-6">
         <Swiper
@@ -298,14 +299,130 @@ export default function Home() {
         </div>
         <FAQSection />
 
+        <div>
+          <div className="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div className="relative bg-white rounded-xl shadow-2xl overflow-hidden">
+              {/* Decorative elements */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
+
+              <div className="p-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  Dholera Smart City: Vision & Development
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Explore the future of Gujarat's premier planned urban
+                  development project
+                </p>
+
+                <div className="relative aspect-video w-full bg-gray-100 rounded-lg overflow-hidden">
+                  {isPlaying ? (
+                    <>
+                      {/* Loader while iframe loads */}
+                      {isLoading && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                          <div className="w-12 h-12 rounded-full border-4 border-gray-300 border-t-red-600 animate-spin"></div>
+                        </div>
+                      )}
+                      {/* Iframe loads when playing */}
+                      <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/hNbWaEU1d_A?si=rXk2EQPRG65Q3VJ3&autoplay=1"
+                        title="Dholera Smart City: Vision & Development"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                        onLoad={() => setIsLoading(false)}
+                      ></iframe>
+                    </>
+                  ) : (
+                    /* Custom thumbnail with play button */
+                    <div
+                      className="relative w-full h-full cursor-pointer"
+                      onClick={() => {
+                        setIsPlaying(true);
+                        setIsLoading(true);
+                      }}
+                    >
+                      <img
+                        src="https://img.youtube.com/vi/hNbWaEU1d_A/hqdefault.jpg"
+                        alt="Dholera Smart City Investment Guide Video"
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        {/* Play button SVG, sized smaller on mobile */}
+                        <svg
+                          className="w-12 h-12 text-white opacity-80 sm:w-16 sm:h-16"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                <div className="mt-6 flex flex-wrap gap-3 ">
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    #DholeraSmartCity
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
+                    #SmartCityGujarat
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+                    #DholeraInvestment
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
+                    #DholeraDevelopment
+                  </span>
+                </div>
+                  <a href="/infopack/videos" className="inline-flex my-5 items-center px-3 py-1 rounded-full text-lg font-semibold bg-[#d8b66d] text-white">
+                    Know More <FaArrowAltCircleRight className="mx-3"/>
+                  </a>
+              </div>
+
+              <div className="bg-gray-50 px-6 py-4 flex justify-between items-center border-t border-gray-100">
+                <div className="text-sm text-gray-500">
+                  Presented by Dholera Times
+                </div>
+                <div className="flex space-x-4">
+                  <button className="text-gray-500 hover:text-red-600 transition">
+                    <span className="sr-only">Share</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
+                    </svg>
+                  </button>
+                  <button className="text-gray-500 hover:text-red-600 transition">
+                    <span className="sr-only">Save</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </main>
 
       <section>
         {/* DHOLERA SIR */}
         <div>
           <div>
-            <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-              <div className="relative bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="max-w-screen-xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden">
                 {/* Decorative top accent */}
                 <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 to-green-400"></div>
 
@@ -395,118 +512,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
-          <div className="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-white rounded-xl shadow-lg overflow-hidden">
-              {/* Decorative elements */}
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
-
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Dholera Smart City: Vision & Development
-                </h2>
-                <p className="text-gray-600 mb-6">
-                  Explore the future of Gujarat's premier planned urban
-                  development project
-                </p>
-
-                <div className="relative aspect-video w-full bg-gray-100 rounded-lg overflow-hidden">
-                  {isPlaying ? (
-                    <>
-                      {/* Loader while iframe loads */}
-                      {isLoading && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-                          <div className="w-12 h-12 rounded-full border-4 border-gray-300 border-t-red-600 animate-spin"></div>
-                        </div>
-                      )}
-                      {/* Iframe loads when playing */}
-                      <iframe
-                        className="w-full h-full"
-                        src="https://www.youtube.com/embed/hNbWaEU1d_A?si=rXk2EQPRG65Q3VJ3&autoplay=1"
-                        title="Dholera Smart City: Vision & Development"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                        onLoad={() => setIsLoading(false)}
-                      ></iframe>
-                    </>
-                  ) : (
-                    /* Custom thumbnail with play button */
-                    <div
-                      className="relative w-full h-full cursor-pointer"
-                      onClick={() => {
-                        setIsPlaying(true);
-                        setIsLoading(true);
-                      }}
-                    >
-                      <img
-                        src="https://img.youtube.com/vi/hNbWaEU1d_A/hqdefault.jpg"
-                        alt="Dholera Smart City Investment Guide Video"
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        {/* Play button SVG, sized smaller on mobile */}
-                        <svg
-                          className="w-12 h-12 text-white opacity-80 sm:w-16 sm:h-16"
-                          fill="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
-                    </div>
-                  )}
-                </div>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                    #SmartCity
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                    #Gujarat
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
-                    #Investment
-                  </span>
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-100 text-orange-800">
-                    #Development
-                  </span>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 px-6 py-4 flex justify-between items-center border-t border-gray-100">
-                <div className="text-sm text-gray-500">
-                  Presented by Dholera Times
-                </div>
-                <div className="flex space-x-4">
-                  <button className="text-gray-500 hover:text-red-600 transition">
-                    <span className="sr-only">Share</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z" />
-                    </svg>
-                  </button>
-                  <button className="text-gray-500 hover:text-red-600 transition">
-                    <span className="sr-only">Save</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path d="M5 4a2 2 0 012-2h6a2 2 0 012 2v14l-5-2.5L5 18V4z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        
 
         <div>
           <DholeraInvestmentGuide />

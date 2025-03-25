@@ -58,7 +58,12 @@ export default function FAQSection() {
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="border rounded-lg p-4 shadow-md bg-gray-900">
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 200 }}
+            className="border rounded-lg p-4 shadow-md bg-gray-900"
+          >
             <button
               className="w-full flex justify-between items-center text-[#edc46b] text-left text-xl font-bold"
               onClick={() => toggleFAQ(index)}
@@ -87,7 +92,7 @@ export default function FAQSection() {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

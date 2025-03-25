@@ -262,10 +262,10 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <p className="text-sm mb-3">
-              Phone: <br /> +91 99589 93549
+            <p className="text-md mb-3">
+              Phone: <br /> <span className="">+91 99589 93549</span> 
             </p>
-            <a className="text-sm mb-3">Email Id: info@dholeratimes.com</a>
+            <a className="text-md mb-3">Email Id: info@dholeratimes.com</a>
           </div>
           <div className="">
             <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
@@ -323,7 +323,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/contact/career" className="hover:text-white transition">
                   Careers
                 </a>
               </li>
@@ -349,17 +349,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/infopack/Inventory" className="hover:text-white transition">
                   Live Booking Status
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/gallery/siteprogress" className="hover:text-white transition">
                   Site Progress
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/event/upcomingevent" className="hover:text-white transition">
                   Live Event
                 </a>
               </li>
@@ -369,7 +369,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <a href="/infopack/locations" className="hover:text-white transition">
                   Live Location
                 </a>
               </li>
