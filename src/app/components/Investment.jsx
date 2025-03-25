@@ -363,7 +363,7 @@ const DholeraInvestmentGuide = () => {
           </p>
           <div className="inline-flex rounded-md shadow">
             <Link
-              href="/pages/projects"
+              href="/projects"
               className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-md text-blue-700 bg-white hover:bg-gray-50 md:text-lg"
             >
               Explore Investment Options

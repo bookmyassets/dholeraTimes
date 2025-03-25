@@ -41,9 +41,9 @@ export default function ContactDetails() {
       <div className="bg-white py-12 mt-10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10">
           {/* Talk to Sales */}
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+          <div >
+            <a href="tel:+919958993549" className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
             <FaPhoneAlt className="text-gray-800 text-3xl mb-4" />
-            <a href="tel:+919958993549">
               <h3 className="text-lg font-semibold text-gray-800">
                 Talk to Sales
               </h3>
@@ -55,13 +55,14 @@ export default function ContactDetails() {
           </div>
 
           {/* Contact Support */}
-          <div className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-            <FaHeadset className="text-gray-800 text-3xl mb-4" />
+          <div>
             <a
               href="https://api.whatsapp.com/send?phone=919958993549"
               target="_blank"
               rel="noopener noreferrer"
+              className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center"
             >
+            <FaHeadset className="text-gray-800 text-3xl mb-4" />
               <h3 className="text-lg font-semibold text-gray-800">
                 Contact Customer Support
               </h3>
@@ -73,17 +74,7 @@ export default function ContactDetails() {
         </div>
 
         {/* Address Section */}
-        <div className="mt-10 text-center">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Head Office Address
-          </h3>
-          <div className="flex justify-center items-center space-x-4 text-gray-700">
-            <FaMapMarkerAlt className="text-gray-800 text-3xl max-sm:hidden" />
-            <p className="text-lg max-sm:p-3">
-              620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India
-            </p>
-          </div>
-        </div>
+        
 
         {/* Social Media Links */}
         <div className="mt-10 space-y-5 text-center">
@@ -150,6 +141,18 @@ export default function ContactDetails() {
               <ContactForm />
             </div>
           </div>
+
+          <div className="mt-10 text-center">
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            Head Office Address
+          </h3>
+          <div className="flex justify-center items-center space-x-4 text-gray-700">
+            <FaMapMarkerAlt className="text-gray-800 text-3xl max-sm:hidden" />
+            <p className="text-lg max-sm:p-3">
+              620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India
+            </p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
