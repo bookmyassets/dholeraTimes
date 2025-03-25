@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -43,7 +44,6 @@ const faqs = [
   },
 ];
 
-
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -52,33 +52,41 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6">
-      <h2 className="text-2xl font-bold text-center mb-6">
+    <div className="max-w-7xl mx-auto p-6">
+      <h2 className="text-5xl font-bold text-center mb-6">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
-          <div key={index} className="border rounded-lg p-4 shadow-md bg-white">
+          <div key={index} className="border rounded-lg p-4 shadow-md bg-gray-900">
             <button
-              className="w-full flex justify-between items-center text-left text-lg font-medium"
+              className="w-full flex justify-between items-center text-[#edc46b] text-left text-xl font-bold"
               onClick={() => toggleFAQ(index)}
             >
               {faq.question}
               {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
             </button>
-            {openIndex === index && (
-              <div className="mt-2 text-gray-600">
-                {Array.isArray(faq.answer) ? (
-                  <ul className="list-disc pl-5">
-                    {faq.answer.map((point, i) => (
-                      <li key={i}>{point}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p>{faq.answer}</p>
-                )}
-              </div>
-            )}
+            <AnimatePresence>
+              {openIndex === index && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-6 text-lg text-[#f6d99a] overflow-hidden"
+                >
+                  {Array.isArray(faq.answer) ? (
+                    <ul className="list-disc pl-5">
+                      {faq.answer.map((point, i) => (
+                        <li key={i}>{point}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p>{faq.answer}</p>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         ))}
       </div>

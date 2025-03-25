@@ -125,12 +125,12 @@ export default function Home() {
   return (
     <>
       <main className="w-full -z-10 h-full ">
-        <div className="relative w-full max-sm:h-[100vh] h-[80vh] flex md:items-center md:justify-center">
+        <div className="relative w-full max-sm:h-[80vh] h-[80vh] flex md:items-center md:justify-center">
           {/* Background Image */}
           <Image
             src={hero}
             alt="Dholera Smart City Plan"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full max-sm:h-[80vh] object-cover"
           />
 
           {/* Dark Overlay */}
