@@ -266,7 +266,6 @@ export default function Home() {
               )}
             </div>
           </div>
-
           {/* Carousel Section */}
           {/*  <div className="absolute bottom-0 w-full p-6">
         <Swiper
@@ -297,6 +296,8 @@ export default function Home() {
         </Swiper>
       </div> */}
         </div>
+        <FAQSection />
+
       </main>
 
       <section>
@@ -509,7 +510,6 @@ export default function Home() {
 
         <div>
           <DholeraInvestmentGuide />
-          <FAQSection />
         </div>
       </section>
     </>
