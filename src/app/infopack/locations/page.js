@@ -74,14 +74,14 @@ export default function LocationsComponent() {
   // List view for mobile
   const renderListView = () => {
     return (
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+      <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {locations.map((location, index) => (
           <div key={index} className="border-b last:border-b-0 border-gray-300">
             <div 
               className="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors duration-300"
               onClick={() => toggleLocation(index)}
             >
-              <h2 className="text-xl font-semibold text-gray-900 transition-colors duration-300">
+              <h2 className="text-2xl font-semibold text-gray-900 transition-colors duration-300">
                 {location.name}
               </h2>
               <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-500 ${
@@ -185,7 +185,7 @@ export default function LocationsComponent() {
 
   return (
     <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="md:text-5xl font-bold text-4xl text-center p-4 animate-fadeIn">DHOLERA LOCATIONS</h1>
+      <h1 className="md:text-5xl font-bold text-3xl text-center p-4 animate-fadeIn">DHOLERA LOCATIONS</h1>
       <p className="text-center md:text-xl md:font-medium font-semibold mb-6 animate-fadeIn">
         Know more about nearby landmarks and our project's location on Google Maps
       </p>

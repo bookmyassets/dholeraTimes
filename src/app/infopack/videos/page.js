@@ -10,11 +10,11 @@ export default async function BlogPage() {
   ]; // YouTube video IDs
 
   return (
-    <div className="container mx-auto px- mt-20 py-10 space-y-4">
+    <div className="container mx-auto px- mt-10 py-10 pl-2 pr-2 space-y-4">
       <h1 className="text-center md:text-5xl text-4xl font-bold mb-10">
         Videos
       </h1>
-      <p className="text-center md:text-xl md:font-medium font-semibold ">
+      <p className="text-center md:text-xl pl-2 pr-2 md:font-medium font-semibold ">
         Watch expert insights on why investing in Dholera is a smart financial
         decision.
       </p>

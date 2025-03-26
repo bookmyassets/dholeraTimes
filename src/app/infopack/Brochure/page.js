@@ -68,7 +68,7 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+          <h1 className="text-3xl font-extrabold text-gray-900 md:text-5xl sm:tracking-tight lg:text-6xl">
             Brochure
           </h1>
           <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
@@ -84,7 +84,7 @@ export default async function BlogPage() {
               className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="p-6">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-3 line-clamp-2">
+                <h2 className="text-4xl font-semibold text-gray-800 mb-3 line-clamp-2">
                   {post.title}
                 </h2>
                 {post.mainImage && (
