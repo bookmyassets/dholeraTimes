@@ -3,6 +3,7 @@ import { Brochure } from "@/sanity/lib/api";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Download, Eye } from "lucide-react";
+import bg from "@/assets/pexels2.jpg"
 
 export default async function BlogPage() {
   let posts = [];
@@ -68,12 +69,16 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className=" bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className=" bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8 relative">
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30 -z-10"
+        style={{ backgroundImage: `url(${bg.src})` }}
+      ></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="md:text-5xl text-3xl font-extrabold text-gray-500 bg-clip-text mb-6">
+          {/* <h1 className="md:text-5xl text-3xl font-extrabold text-gray-500 bg-clip-text mb-6">
             Brochure
-          </h1>
+          </h1> */}
           <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">
             Explore our collection of residential plot details in Dholera. Find your perfect investment opportunity!
           </p>
@@ -96,7 +101,7 @@ export default async function BlogPage() {
                         href={post.pdfUrl}
                         download
                         className="inline-flex items-center justify-center px-4 py-3 bg-[#bc9849] text-white rounded-lg hover:bg-[#d4b06c] transition-colors flex-1 text-center"
-                      >
+                        >
                         <Download className="mr-2" size={20} />
                         Download PDF
                       </Link>
@@ -106,7 +111,7 @@ export default async function BlogPage() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center px-4 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex-1 text-center"
-                      >
+                        >
                         <Eye className="mr-2" size={20} />
                         View PDF
                       </Link>
@@ -119,5 +124,6 @@ export default async function BlogPage() {
         </div>
       </div>
     </div>
+       
   );
 }

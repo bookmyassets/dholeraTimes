@@ -185,7 +185,7 @@ export default function LocationsComponent() {
 
   return (
     <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-8 sm:px-6 lg:px-8">
-      <h1 className="md:text-5xl font-bold text-3xl text-center text-gray-500 p-4 animate-fadeIn">DHOLERA LOCATIONS</h1>
+     {/*  <h1 className="md:text-5xl font-bold text-3xl text-center text-gray-500 p-4 animate-fadeIn">DHOLERA LOCATIONS</h1> */}
       <p className="text-center md:text-xl md:font-medium font-semibold mb-6 animate-fadeIn">
         Know more about nearby landmarks and our project's location on Google Maps
       </p>
