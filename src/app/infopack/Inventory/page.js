@@ -71,7 +71,7 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="md:text-5xl text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-700 to-gray-900 mb-6">
+          <h1 className="md:text-5xl text-3xl font-extrabold text-gray-500 text-transparent bg-clip-text mb-6">
             Available Plots
           </h1>
           <p className="max-w-2xl mx-auto text-xl text-gray-600 leading-relaxed">

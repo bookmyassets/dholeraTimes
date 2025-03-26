@@ -11,7 +11,7 @@ export default async function BlogPage() {
 
   return (
     <div className="container mx-auto px- mt-10 py-10 pl-2 pr-2 space-y-4">
-      <h1 className="text-center md:text-5xl text-4xl font-bold mb-10">
+      <h1 className="text-center md:text-5xl text-gray-500 text-4xl font-bold mb-10">
         Videos
       </h1>
       <p className="text-center md:text-xl pl-2 pr-2 md:font-medium font-semibold ">
@@ -21,7 +21,7 @@ export default async function BlogPage() {
 
       <div className="grid md:grid-cols-3 pt-5 max-sm:p-4 sm:grid-cols-2 grid-cols-1 gap-6">
         {videos.map((videoId, index) => (
-          <div key={index} className="rounded-lg overflow-hidden shadow-lg">
+          <div key={index} className="rounded-lg overflow-hidden shadow-2xl">
             <iframe
               className="w-full aspect-video"
               src={`https://www.youtube.com/embed/${videoId}`}
