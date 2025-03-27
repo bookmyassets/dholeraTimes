@@ -11,7 +11,7 @@ export default function page() {
             src={hero}
             alt="Dholera SIR Aerial View"
             className="w-full h-[70vh] object-cover opacity-60"
-          />
+          />  
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
           <h2 className="text-5xl font-extrabold drop-shadow-lg mb-4">
