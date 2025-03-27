@@ -4,7 +4,7 @@ export default async function BlogPage() {
   // Agar YouTube video links Sanity ya kisi aur source se fetch karne hain, to yahan fetch karo
   const videos = [
     "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
-    "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
+    "TwsGjPP-wPg?si=9zL4ChmD54Iun750",
     "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
     "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
   ]; // YouTube video IDs

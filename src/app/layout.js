@@ -308,6 +308,8 @@ export default function RootLayout({ children }) {
           content="
 Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!"
         ></meta>
+
+        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
