@@ -282,8 +282,8 @@ export default function RootLayout({ children }) {
           src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"
         ></script>
         <script>
-          window.dataLayer = window.dataLayer || []; function gtag()
-          {dataLayer.push(arguments)}
+          window.dataLayer = window.dataLayer || []; 
+          function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-7TB2TDXYX0');
         </script>
         <meta
