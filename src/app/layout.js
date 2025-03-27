@@ -277,14 +277,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7TB2TDXYX0');
-</script>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"
+        ></script>
+        <script>
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-7TB2TDXYX0');
+        </script>
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
@@ -316,8 +317,6 @@ export default function RootLayout({ children }) {
           content="
 Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!"
         ></meta>
-
-        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -673,7 +672,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       alt="call"
                       height={30}
                       width={30}
-                      className="animate-image-tint" 
+                      className="animate-image-tint"
                     />
                     <p className="animate-color-change">Call Now</p>
                   </Link>
