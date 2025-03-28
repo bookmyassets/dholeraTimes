@@ -315,16 +315,6 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-NLL6M3PL');
           `}
         </Script>
-
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NLL6M3PL"
-            height="0"
-            width="0"
-            style="display:none;visibility:hidden"
-          ></iframe>
-        </noscript>
-
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
