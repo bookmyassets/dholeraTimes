@@ -278,7 +278,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <Script
+        <Script
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"
         />
@@ -292,7 +292,18 @@ export default function RootLayout({ children }) {
               gtag('js', new Date());
               gtag('config', 'G-7TB2TDXYX0'); 
             `,
-          }}/>
+          }}
+        />
+
+<Script 
+  src="https://cdn.taboola.com/libtrc/unip/1829100/tfa.js" 
+  strategy="afterInteractive"
+/>
+<Script id="taboola-pixel">
+  {`_tfa.push({notify: 'event', name: 'taboola-pixel', id: 1829100});`}
+</Script>
+
+
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
