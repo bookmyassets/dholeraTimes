@@ -365,7 +365,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
             src="https://www.googletagmanager.com/ns.html?id=GTM-NLL6M3PL"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
+            style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
 
