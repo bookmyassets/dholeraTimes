@@ -15,7 +15,6 @@ import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
 import Script from "next/script";
-import TaboolaPixel from "./components/Taboola";
 
 const FACEBOOK_PIXEL_ID = "619746600964977"; // Replace with your actual Pixel ID
 
@@ -296,8 +295,16 @@ export default function RootLayout({ children }) {
           }}
         />
 
-          <TaboolaPixel/>
-
+        <Script
+          id="taboola-pixel-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+            window._tfa = window._tfa || [];
+            window._tfa.push({notify: 'event', name: 'page_view', id: 1829100});
+          `,
+          }}
+        />
 
         <meta
           name="google-site-verification"
