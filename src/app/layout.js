@@ -315,6 +315,18 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-NLL6M3PL');
           `}
         </Script>
+
+        <Script type="text/javascript">
+        {`
+              (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "qvr31wn09g");
+        `}
+
+</Script>
+
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
