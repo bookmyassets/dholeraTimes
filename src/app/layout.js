@@ -823,7 +823,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           },
                           {
                             title: "Industrial Park",
-                            path: "/DholeraSIR/Industrial Park",
+                            path: "/DholeraSIR/IndustrialPark",
                           },
                           {
                             title: "Metro Rail",
