@@ -317,15 +317,14 @@ export default function RootLayout({ children }) {
         </Script>
 
         <Script type="text/javascript">
-        {`
+          {`
               (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "qvr31wn09g");
         `}
-
-</Script>
+        </Script>
 
         <meta
           name="google-site-verification"
@@ -370,202 +369,278 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
-      </body>
 
-      <nav className="fixed z-40 w-full max-sm:pt-2 max-sm:pb-2 pt-4 pb-4 bg-[#151f28]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-14 max-sm:h-16 items-center">
-            <div className="flex-shrink-0">
-              <Link href="/">
-                <Image
-                  src={logo}
-                  alt="Dholera Times Logo"
-                  width={100}
-                  height={100}
-                />
-              </Link>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link
-                  href="/"
-                  className="text-white hover:text-orange-200 px-3 py-2"
-                >
-                  Home
+        <nav className="fixed z-40 w-full max-sm:pt-2 max-sm:pb-2 pt-4 pb-4 bg-[#151f28]">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between h-14 max-sm:h-16 items-center">
+              <div className="flex-shrink-0">
+                <Link href="/">
+                  <Image
+                    src={logo}
+                    alt="Dholera Times Logo"
+                    width={100}
+                    height={100}
+                  />
                 </Link>
-                <div className="relative" ref={dholeraDropdownRef}>
-                  <button
-                    onClick={toggleDholeraDropdown}
-                    className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+              </div>
+              <div className="hidden md:block">
+                <div className="ml-10 flex items-baseline space-x-4">
+                  <Link
+                    href="/"
+                    className="text-white hover:text-orange-200 px-3 py-2"
                   >
-                    <Link href="/DholeraSIR">Dholera SIR</Link>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 text-white transition-transform duration-300 ${
-                        isDholeraDropdownOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                    Home
+                  </Link>
+                  <div className="relative" ref={dholeraDropdownRef}>
+                    <button
+                      onClick={toggleDholeraDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isDholeraDropdownOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {[
-                        {
-                          title: "About Dholera SIR",
-                          path: "/DholeraSIR",
-                        },
-                        {
-                          title: "Connectivity",
-                          path: "/DholeraSIR/Connectivity",
-                        },
-                        { title: "Planning", path: "/DholeraSIR/Planning" },
-                        {
-                          title: "Activation Zone",
-                          path: "/DholeraSIR/ActivationZone",
-                        },
-                        {
-                          title: "ABCD Building",
-                          path: "/DholeraSIR/ABCDBuilding",
-                        },
-                        {
-                          title: "Dholera International Airport",
-                          path: "/DholeraSIR/DholeraInternationalAirport",
-                        },
-                        {
-                          title: "Expressway",
-                          path: "/DholeraSIR/Expressway",
-                        },
-                        {
-                          title: "Industrial Park",
-                          path: "/DholeraSIR/IndustrialPark",
-                        },
-                        {
-                          title: "Metro Rail",
-                          path: "/DholeraSIR/MetroTrain",
-                        },
-                        {
-                          title: "Solar Power Plant",
-                          path: "/DholeraSIR/SolarPowerPlant",
-                        },
-                        { title: "Logistic", path: "/DholeraSIR/Logistic" },
-                      ].map((item) => (
-                        <Link
-                          key={item.path}
-                          href={item.path}
-                          className="block px-4 py-2 text-black hover:bg-gray-200"
-                          onClick={() => setIsDholeraDropdownOpen(false)}
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                      <Link href="/DholeraSIR">Dholera SIR</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isDholeraDropdownOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isDholeraDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          {
+                            title: "Dholera SIR",
+                            path: "/DholeraSIR",
+                          },
+                          {
+                            title: "Dholera Connectivity",
+                            path: "/DholeraSIR/Dholera-Connectivity",
+                          },
+                          {
+                            title: "Mega Industries Presence",
+                            path: "/DholeraSIR/Mega-Industries-Presence",
+                          },
+                          {
+                            title: "Running and Completed Projects",
+                            path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
+                          },
+                          {
+                            title: "Dholera SIR Current Status",
+                            path: "/DholeraSIR/Dholera-SIR-current-Status",
+                          },
+                          {
+                            title: "Dholera International Airport",
+                            path: "/DholeraSIR/Dholera-International-Airport",
+                          },
+                          {
+                            title: "Dholera Expressway Six Lane",
+                            path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
+                          },
+                          {
+                            title: "Dholera High Speed Metro",
+                            path: "/DholeraSIR/Dholera-High-Speed-Metro",
+                          },
+                          {
+                            title: "DMIC Project",
+                            path: "/DholeraSIR/DMIC-Project",
+                          },
+                          {
+                            title: "DFC Project",
+                            path: "/DholeraSIR/DFC-Project",
+                          },
 
-                <div className="relative" ref={projectsDropdownRef}>
-                  <button
-                    onClick={toggleProjectsDropdown}
-                    className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
-                  >
-                    <Link href="/projects">Projects</Link>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 text-white transition-transform duration-300 ${
-                        isProjectsDropdownOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isProjectsDropdownOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {projects
-                        .filter(
-                          (project) =>
-                            !(Array.isArray(project.categories)
-                              ? project.categories.includes("Sold Out")
-                              : project.categories === "Sold Out")
-                        )
-                        .map((project) => (
+                          {
+                            title: "Dholera Solar Power Plant",
+                            path: "/DholeraSIR/Dholera-Solar-Power-Plant",
+                          },
+                          {
+                            title: "Dholera Mega Industrial Park",
+                            path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
+                          },
+
+                          {
+                            title: "Dholera ABCD Building",
+                            path: "/DholeraSIR/Dholera-ABCD-Building",
+                          },
+
+                          {
+                            title: "Dholera Activation Zone",
+                            path: "/DholeraSIR/Dholera-Activation-Zone",
+                          },
+                         
+                        ].map((item) => (
                           <Link
-                            key={project._id}
-                            href={`/posts/${project.slug.current}`}
+                            key={item.path}
+                            href={item.path}
                             className="block px-4 py-2 text-black hover:bg-gray-200"
-                            onClick={() => setIsProjectsDropdownOpen(false)}
+                            onClick={() => setIsDholeraDropdownOpen(false)}
                           >
-                            {project.title}
+                            {item.title}
                           </Link>
                         ))}
-                    </div>
-                  )}
-                </div>
+                      </div>
+                    )}
+                  </div>
 
-                <div className="relative" ref={galleryRef}>
-                  <button
-                    onClick={toggleGalleryDropdown}
-                    className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
-                  >
-                    Gallery
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 text-white transition-transform duration-300 ${
-                        isGalleryOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                  <div className="relative" ref={projectsDropdownRef}>
+                    <button
+                      onClick={toggleProjectsDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isGalleryOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {[
-                        {
-                          title: "Video Gallery",
-                          path: "/gallery/video",
-                        },
-                        {
-                          title: "Image Gallery",
-                          path: "/gallery/image",
-                        },
-                      ].map((item) => (
-                        <Link
-                          key={item.path}
-                          href={item.path}
-                          className="block px-4 py-2 text-black hover:bg-gray-200"
-                          onClick={() => setIsGalleryOpen(false)}
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <div className="relative" ref={eventRef}>
+                      <Link href="/projects">Projects</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isProjectsDropdownOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isProjectsDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {projects
+                          .filter(
+                            (project) =>
+                              !(Array.isArray(project.categories)
+                                ? project.categories.includes("Sold Out")
+                                : project.categories === "Sold Out")
+                          )
+                          .map((project) => (
+                            <Link
+                              key={project._id}
+                              href={`/posts/${project.slug.current}`}
+                              className="block px-4 py-2 text-black hover:bg-gray-200"
+                              onClick={() => setIsProjectsDropdownOpen(false)}
+                            >
+                              {project.title}
+                            </Link>
+                          ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="relative" ref={blogsDropdownRef}>
+                    <button
+                      onClick={toggleBlogsDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+                    >
+                      <Link href="/Dholera-Updates">Dholera Update</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isBlogsDropdownOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isBlogsDropdownOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          { title: "Blogs", path: "/Dholera-Updates/Blogs" },
+                          {
+                            title: "News",
+                            path: "/Dholera-Updates/news",
+                          },
+                          {
+                            title: "Latest Updates",
+                            path: "/Dholera-Updates/Latest-Updates",
+                          },
+                        ].map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsDholeraDropdownOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="relative" ref={galleryRef}>
+                    <button
+                      onClick={toggleGalleryDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+                    >
+                      Gallery
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isGalleryOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isGalleryOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          {
+                            title: "Dholera SIR Progress",
+                            path: "/gallery/Dholera-SIR-progress",
+                          },
+                          {
+                            title: "Site Progress",
+                            path: "/gallery/siteprogress",
+                          },
+                          {
+                            title: "Dholera Smart City Video",
+                            path: "/gallery/dholera-smart-city-videos",
+                          },
+                          {
+                            title: "Dholera Smart City Photos",
+                            path: "/gallery/dholera-photos",
+                          },
+                        ].map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsGalleryOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  {/* Events */}
+                  {/* <div className="relative" ref={eventRef}>
                   <button
                     onClick={toggleEvent}
                     className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
@@ -611,372 +686,380 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       ))}
                     </div>
                   )}
-                </div>
-                <div className="relative" ref={blogsDropdownRef}>
-                  <button
-                    onClick={toggleBlogsDropdown}
-                    className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
+                </div> */}
+
+                  <Link
+                    href="/about"
+                    className="text-white hover:text-orange-200 px-3 py-2"
                   >
-                    <Link href="/Blogs">Blogs</Link>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 text-white transition-transform duration-300 ${
-                        isBlogsDropdownOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                    About Us
+                  </Link>
+                  <div className="relative" ref={contactRef}>
+                    <button
+                      onClick={toggleContactDropdown}
+                      className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isBlogsDropdownOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {blogs.map((blog) => (
-                        <Link
-                          key={blog._id}
-                          href={`/posts/${blog.slug.current}`}
-                          className="block px-4 py-2 text-black hover:bg-gray-200"
-                          onClick={() => setIsBlogsDropdownOpen(false)}
-                        >
-                          {blog.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <Link
-                  href="/about"
-                  className="text-white hover:text-orange-200 px-3 py-2"
-                >
-                  About Us
-                </Link>
-                <div className="relative" ref={contactRef}>
-                  <button
-                    onClick={toggleContactDropdown}
-                    className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
-                  >
-                    <Link href="/contact"> Contact Us</Link>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className={`h-4 w-4 text-white transition-transform duration-300 ${
-                        isContactOpen ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </button>
-                  {isContactOpen && (
-                    <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
-                      {[
-                        {
-                          title: "Contact Us",
-                          path: "/contact",
-                        },
-                        {
-                          title: "Career",
-                          path: "/contact/career",
-                        },
-                      ].map((item) => (
-                        <Link
-                          key={item.path}
-                          href={item.path}
-                          className="block px-4 py-2 text-black hover:bg-gray-200"
-                          onClick={() => setIsContactOpen(false)}
-                        >
-                          {item.title}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-                <Link
-                  href="/infopack"
-                  className="text-white hidden hover:text-orange-200 px-3 py-2"
-                >
-                  Info Pack
-                </Link>
-              </div>
-            </div>
-
-            <div className="md:hidden flex items-center gap-4">
-              <div className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
-                <Link
-                  href="tel:+919958993549"
-                  className="flex items-center space-x-2"
-                >
-                  <Image
-                    src={call}
-                    alt="call"
-                    height={30}
-                    width={30}
-                    className="animate-image-tint"
-                  />
-                  <p className="animate-color-change">Call Now</p>
-                </Link>
-              </div>
-
-              <button onClick={toggleMenu}>
-                {isMenuOpen ? (
-                  <X className="h-6 w-6 text-white" />
-                ) : (
-                  <Menu className="h-6 w-6 text-white" />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile menu */}
-        <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div
-              initial={{ x: "-100%", opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: "-100%", opacity: 0 }}
-              ref={menuOpenRef}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
-            >
-              <div className="flex justify-end"></div>
-              <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                <Image
-                  src={logo2}
-                  alt="Dholera Times Logo"
-                  width={150}
-                  height={150}
-                />
-              </Link>
-              <div className="px-7 pt-10 pb-3 text-lg space-y-4 sm:px-3">
-                <Link
-                  href="/"
-                  className="text-white block px-3 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-white block px-3 py-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  About Us
-                </Link>
-
-                {/* Dholera SIR Dropdown */}
-                <div ref={dholeraDropdownRef} className="lg:hidden px-4 py-2">
-                  <div
-                    className="flex items-center justify-between text-white cursor-pointer"
-                    onClick={toggleMobileDholeraDropdown}
-                  >
-                    <span>Dholera SIR</span>
-                    {isMobileDholeraOpen ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
+                      <Link href="/contact/inquiry"> Contact Us</Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className={`h-4 w-4 text-white transition-transform duration-300 ${
+                          isContactOpen ? "rotate-180" : ""
+                        }`}
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                    {isContactOpen && (
+                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                        {[
+                          {
+                            title: "Inquiry",
+                            path: "/contact/inquiry",
+                          },
+                          {
+                            title: "Career",
+                            path: "/contact/career",
+                          },
+                          {
+                            title: "Site Visit",
+                            path: "/contact/sitevisit",
+                          },
+                        ].map((item) => (
+                          <Link
+                            key={item.path}
+                            href={item.path}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsContactOpen(false)}
+                          >
+                            {item.title}
+                          </Link>
+                        ))}
+                      </div>
                     )}
                   </div>
-                  <AnimatePresence>
-                    {isMobileDholeraOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 overflow-hidden"
-                      >
-                        {[
-                          { title: "About Dholera SIR", path: "/DholeraSIR" },
+                  <Link
+                    href="/infopack"
+                    className="text-white hidden hover:text-orange-200 px-3 py-2"
+                  >
+                    Info Pack
+                  </Link>
+                </div>
+              </div>
+
+              <div className="md:hidden flex items-center gap-4">
+                <div className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
+                  <Link
+                    href="tel:+919958993549"
+                    className="flex items-center space-x-2"
+                  >
+                    <Image
+                      src={call}
+                      alt="call"
+                      height={30}
+                      width={30}
+                      className="animate-image-tint"
+                    />
+                    <p className="animate-color-change">Call Now</p>
+                  </Link>
+                </div>
+
+                <button onClick={toggleMenu}>
+                  {isMenuOpen ? (
+                    <X className="h-6 w-6 text-white" />
+                  ) : (
+                    <Menu className="h-6 w-6 text-white" />
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile menu */}
+          <AnimatePresence>
+            {isMenuOpen && (
+              <motion.div
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "-100%", opacity: 0 }}
+                ref={menuOpenRef}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="md:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
+              >
+                <div className="flex justify-end"></div>
+                <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                  <Image
+                    src={logo2}
+                    alt="Dholera Times Logo"
+                    width={150}
+                    height={150}
+                  />
+                </Link>
+                <div className="px-7 pt-10 pb-3 text-lg space-y-4 sm:px-3">
+                  <Link
+                    href="/"
+                    className="text-white block px-3 py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+
+                  {/* Dholera SIR Dropdown */}
+                  <div ref={dholeraDropdownRef} className="lg:hidden px-4 py-2">
+                    <div
+                      className="flex items-center justify-between text-white cursor-pointer"
+                      onClick={toggleMobileDholeraDropdown}
+                    >
+                      <span>Dholera SIR</span>
+                      {isMobileDholeraOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileDholeraOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
                           {
-                            title: "Connectivity",
-                            path: "/DholeraSIR/Connectivity",
+                            title: "Dholera SIR",
+                            path: "/DholeraSIR",
                           },
-                          { title: "Planning", path: "/DholeraSIR/Planning" },
                           {
-                            title: "Activation Zone",
-                            path: "/DholeraSIR/ActivationZone",
+                            title: "Dholera Connectivity",
+                            path: "/DholeraSIR/Dholera-Connectivity",
                           },
                           {
-                            title: "ABCD Building",
-                            path: "/DholeraSIR/ABCDBuilding",
+                            title: "Mega Industries Presence",
+                            path: "/DholeraSIR/Mega-Industries-Presence",
+                          },
+                          {
+                            title: "Running and Completed Projects",
+                            path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
+                          },
+                          {
+                            title: "Dholera SIR Current Status",
+                            path: "/DholeraSIR/Dholera-SIR-current-Status",
                           },
                           {
                             title: "Dholera International Airport",
-                            path: "/DholeraSIR/DholeraInternationalAirport",
+                            path: "/DholeraSIR/Dholera-International-Airport",
                           },
                           {
-                            title: "Expressway",
-                            path: "/DholeraSIR/Expressway",
+                            title: "Dholera Expressway Six Lane",
+                            path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
                           },
                           {
-                            title: "Industrial Park",
-                            path: "/DholeraSIR/IndustrialPark",
+                            title: "Dholera High Speed Metro",
+                            path: "/DholeraSIR/Dholera-High-Speed-Metro",
                           },
                           {
-                            title: "Metro Rail",
-                            path: "/DholeraSIR/MetroTrain",
+                            title: "DMIC Project",
+                            path: "/DholeraSIR/DMIC-Project",
                           },
                           {
-                            title: "Solar Power Plant",
-                            path: "/DholeraSIR/SolarPowerPlant",
+                            title: "DFC Project",
+                            path: "/DholeraSIR/DFC-Project",
                           },
-                          { title: "Logistic", path: "/DholeraSIR/Logistic" },
-                        ].map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            className="block px-4 py-2 text-white"
-                            onClick={() => {
-                              setIsMobileDholeraOpen(false);
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                {/* Projects Dropdown */}
-                <div>
-                  <div
-                    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                    onClick={toggleMobileProjectsDropdown}
-                  >
-                    <span>Projects</span>
-                    {isMobileProjectsOpen ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
-                    )}
+                          {
+                            title: "Dholera Solar Power Plant",
+                            path: "/DholeraSIR/Dholera-Solar-Power-Plant",
+                          },
+                          {
+                            title: "Dholera Mega Industrial Park",
+                            path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
+                          },
+
+                          {
+                            title: "Dholera ABCD Building",
+                            path: "/DholeraSIR/Dholera-ABCD-Building",
+                          },
+
+                          {
+                            title: "Dholera Activation Zone",
+                            path: "/DholeraSIR/Dholera-Activation-Zone",
+                          },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="block px-4 py-2 text-white"
+                              onClick={() => {
+                                setIsMobileDholeraOpen(false);
+                                setIsMenuOpen(false);
+                              }}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <AnimatePresence>
-                    {isMobileProjectsOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 overflow-hidden"
-                      >
-                        {projects.map((project) => (
-                          <Link
-                            key={project._id}
-                            href={`/posts/${project.slug.current}`}
-                            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                            onClick={() => {
-                              setIsMobileProjectsOpen(false);
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {project.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                {/* Blogs Dropdown */}
-                <div>
-                  <div
-                    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                    onClick={toggleMobileBlogsDropdown}
-                  >
-                    <span>Blogs</span>
-                    {isMobileBlogsOpen ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
-                    )}
+                  {/* Projects Dropdown */}
+                  <div>
+                    <div
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+                      onClick={toggleMobileProjectsDropdown}
+                    >
+                      <span>Projects</span>
+                      {isMobileProjectsOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileProjectsOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {projects.map((project) => (
+                            <Link
+                              key={project._id}
+                              href={`/posts/${project.slug.current}`}
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+                              onClick={() => {
+                                setIsMobileProjectsOpen(false);
+                                setIsMenuOpen(false);
+                              }}
+                            >
+                              {project.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <AnimatePresence>
-                    {isMobileBlogsOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 overflow-hidden"
-                      >
-                        {blogs.map((blog) => (
-                          <Link
-                            key={blog._id}
-                            href={`/posts/${blog.slug.current}`}
-                            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                            onClick={() => {
-                              setIsMobileBlogsOpen(false);
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {blog.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                {/* Gallery Dropdown */}
-                <div ref={galleryRef}>
-                  <div
-                    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                    onClick={toggleMobileGalleryDropdown}
-                  >
-                    <span>Gallery</span>
-                    {isMobileGalleryOpen ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
-                    )}
+                  {/* Blogs Dropdown */}
+                  <div>
+                    <div
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+                      onClick={toggleMobileBlogsDropdown}
+                    >
+                      <span>Dholera Updates</span>
+                      {isMobileBlogsOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileBlogsOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
+                            { title: "Blogs", path: "/Dholera-Updates/Blogs" },
+                            {
+                              title: "News",
+                              path: "/Dholera-Updates/news",
+                            },
+                            {
+                              title: "Latest Updates",
+                              path: "/Dholera-Updates/Latest-Updates",
+                            },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+                              onClick={() => {
+                                setIsMobileGalleryOpen(false);
+                                setIsMenuOpen(false);
+                              }}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <AnimatePresence>
-                    {isMobileGalleryOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 overflow-hidden"
-                      >
-                        {[
-                          { title: "Video Gallery", path: "/gallery/video" },
-                          { title: "Image Gallery", path: "/gallery/image" },
-                        ].map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                            onClick={() => {
-                              setIsMobileGalleryOpen(false);
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                {/* Events Dropdown */}
-                <div ref={eventRef} className="lg:hidden px-4 py-2">
+                  {/* Gallery Dropdown */}
+                  <div ref={galleryRef}>
+                    <div
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+                      onClick={toggleMobileGalleryDropdown}
+                    >
+                      <span>Gallery</span>
+                      {isMobileGalleryOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileGalleryOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
+                            {
+                              title: "Dholera SIR Progress",
+                              path: "/gallery/Dholera-SIR-progress",
+                            },
+                            {
+                              title: "Site Progress",
+                              path: "/gallery/siteprogress",
+                            },
+                            {
+                              title: "Dholera Smart City Video",
+                              path: "/gallery/dholera-smart-city-videos",
+                            },
+                            {
+                              title: "Dholera Smart City Photos",
+                              path: "/gallery/dholera-photos",
+                            },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+                              onClick={() => {
+                                setIsMobileGalleryOpen(false);
+                                setIsMenuOpen(false);
+                              }}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Events Dropdown */}
+                  {/*   <div ref={eventRef} className="lg:hidden px-4 py-2">
                   <div
                     className="flex items-center justify-between text-white cursor-pointer"
                     onClick={toggleMobileEvent}
@@ -1019,59 +1102,67 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
-
-                {/* Contact Dropdown */}
-                <div ref={contactRef}>
-                  <div
-                    className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
-                    onClick={toggleMobileContactDropdown}
+                </div> */}
+                  <Link
+                    href="/about"
+                    className="text-white block px-3 py-2"
+                    onClick={() => setIsMenuOpen(false)}
                   >
-                    <span>Contact Us</span>
-                    {isMobileContactOpen ? (
-                      <ChevronUp className="h-5 w-5" />
-                    ) : (
-                      <ChevronDown className="h-5 w-5" />
-                    )}
+                    About Us
+                  </Link>
+                  {/* Contact Dropdown */}
+                  <div ref={contactRef}>
+                    <div
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
+                      onClick={toggleMobileContactDropdown}
+                    >
+                      <span>Contact Us</span>
+                      {isMobileContactOpen ? (
+                        <ChevronUp className="h-5 w-5" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5" />
+                      )}
+                    </div>
+                    <AnimatePresence>
+                      {isMobileContactOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="pl-6 overflow-hidden"
+                        >
+                          {[
+                            { title: "Inquiry", path: "/contact/inquiry" },
+                            { title: "Career", path: "/contact/career" },
+                            { title: "Site Visit", path: "/contact/sitevisit" },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+                              onClick={() => {
+                                setIsMobileContactOpen(false);
+                                setIsMenuOpen(false);
+                              }}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-                  <AnimatePresence>
-                    {isMobileContactOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="pl-6 overflow-hidden"
-                      >
-                        {[
-                          { title: "Contact Us", path: "/contact" },
-                          { title: "Career", path: "/contact/career" },
-                        ].map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
-                            onClick={() => {
-                              setIsMobileContactOpen(false);
-                              setIsMenuOpen(false);
-                            }}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </nav>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </nav>
 
-      <div className="pt-20">{children}</div>
-      <FloatingIcons />
-      <Footer />
+        <div className="pt-20">{children}</div>
+        <FloatingIcons />
+        <Footer />
+      </body>
     </html>
   );
 }

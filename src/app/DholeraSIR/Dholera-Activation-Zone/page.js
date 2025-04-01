@@ -6,17 +6,17 @@ export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center bg-black">
+      <section className="relative h-[50vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={hero}
             alt="Dholera SIR Aerial View"
-            className="w-full h-[70vh] object-cover opacity-60"
+            className="w-full h-[50vh] object-cover opacity-60"
           />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
           <h2 className="text-5xl font-extrabold drop-shadow-lg mb-4">
-            Planning
+            Activation Zone
           </h2>
           <p className="text-xl font-light leading-relaxed">
           India's First Greenfield Smart City along the Delhi-Mumbai Industrial
@@ -32,7 +32,7 @@ export default function About() {
       >
         <div className="container mx-auto px-8 lg:px-20">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
-            Planning
+            Activation Zone
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative shadow-xl rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
@@ -45,23 +45,20 @@ export default function About() {
             </div>
             <div className="text-gray-700 space-y-6 bg-white p-8 rounded-xl shadow-lg">
               <p className="text-lg leading-relaxed">
-                The Indian Government aims to develop Dholera SIR as the next
-                global industrial hub in the world, competing with Dubai and
-                China.
+                In Dholera SIR, the "Activation Zone" is a strategically
+                planned, 22.5 sq km industrial park designed to attract
+                industries and investments with ready-to-use infrastructure,
+                aiming to transform Dholera into a global manufacturing hub. All
+                the transport and public amenities for this area are in full
+                swing. Everything from residential spaces, recreational
+                activities, tourism, to community facilities, has been
+                meticulously planned and is in the making.
               </p>
               <p className="text-lg leading-relaxed">
-                The Draft Development Plan focuses on creating a modern city
-                with global infrastructure and a high standard of living.
-                Dedicated residential, commercial, and industrial zones have
-                been planned for a sustainable layout. While being economically
-                and socially balanced, the planning lays special focus on using
-                sustainable systems in all sectors including transportation,
-                waste management, resource efficiency, and overall urban form.
-                Dholera Industrial City will be self-sustaining consisting of
-                industrialization, utility & logistic infrastructure, social
-                infrastructure, and various public amenities. TATA-led
-                semiconductor hub is set to position India as a leader in chip
-                manufacturing.
+                The Town Planning (TP) in the Dholera SIR project has been
+                divided into schemes to ensure fast and focused development,
+                while the industrial region in the Activation Zone offers one of
+                India's most promising real estate opportunities today.
               </p>
             </div>
           </div>

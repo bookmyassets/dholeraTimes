@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import bg from "@/assets/pexels2.jpg"
 import Head from "next/head";
+import TestimonialPagination from "./components/Testimonials";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
@@ -532,6 +533,9 @@ export default function Home() {
 
         <div>
           <DholeraInvestmentGuide />
+        </div>
+        <div>
+          <TestimonialPagination/>
         </div>
       </section>
     </>

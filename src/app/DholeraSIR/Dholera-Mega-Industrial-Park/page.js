@@ -5,17 +5,17 @@ import hero from "@/assets/hero5.webp";
 export default function page() {
   return (
     <>
-      <section className="relative h-[70vh] flex items-center justify-center text-center bg-black">
+      <section className="relative h-[50vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={hero}
             alt="Dholera SIR Aerial View"
-            className="w-full h-[70vh] object-cover opacity-60"
-          />  
+            className="w-full h-[50vh] object-cover opacity-60"
+          />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
           <h2 className="text-5xl font-extrabold drop-shadow-lg mb-4">
-          Six Lane Expressway
+          Mega Industrial Park 
           </h2>
           <p className="text-xl font-light leading-relaxed">
           India's First Greenfield Smart City along the Delhi-Mumbai Industrial
@@ -25,25 +25,27 @@ export default function page() {
       </section>
       <div>
         
-
-        <section className="py-16 ">
+        <section className="py-16 bg-gray-100">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Six Lane Expressway
+              Mega Industrial Park - Global Business Hub
             </h2>
             <div className="flex flex-col md:flex-row items-center">
               <div className="md:w-1/2 md:pr-8 order-2 md:order-1">
                 <p className="mb-4">
-                  A 109-km long six-lane expressway extends from Ahmedabad to
-                  Dholera. This is known as the Central Spine Road and is aimed
-                  at enhancing Dholera SIR’s connectivity with nearby regions.
-                  This expressway is expected to significantly reduce travel
-                  time.
+                  A mega industrial park is being developed as a key component
+                  of the Dholera infrastructure project. Companies from across
+                  the world are showing interest in setting up offices here and
+                  Foreign Direct Investment (FDI) has also started pouring in.
                 </p>
                 <p>
-                  90 metre wide, this highway will be built by the National
-                  Highways Authority of India (NHAI) and is expected to become
-                  fully functional by the end of 2025.
+                  Corporate interest from renowned firms, including TATA &
+                  Vedanta, has positioned the region as a major industrial
+                  powerhouse. TATA and Vedanta have already commenced their
+                  operations here. Dedicated zones have been made for
+                  industries, residences, and commercial outlets. This
+                  industrial hub once complete will give tough competition to
+                  the world’s largest industrial hubs like China and Dubai.
                 </p>
               </div>
               <div className="md:w-1/2 mb-8 md:mb-0 order-1 md:order-2">
@@ -56,7 +58,6 @@ export default function page() {
             </div>
           </div>
         </section>
-        
       </div>
     </>
   );
