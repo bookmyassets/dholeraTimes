@@ -251,7 +251,7 @@ export default function Home() {
                       </p>
 
                       <div className="space-y-3">
-                        <Link href="/pages/projects">
+                        <Link href="/projects">
                           <button className="w-full p-3 bg-[#151f28] text-white rounded-lg hover:bg-blue-600 transition-all duration-300 font-medium">
                             Explore Projects
                           </button>

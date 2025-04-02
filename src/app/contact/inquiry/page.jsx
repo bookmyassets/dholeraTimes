@@ -81,12 +81,14 @@ export default function ContactDetails() {
         {/* Social Media Links */}
         <div className="mt-10 ">
           {/* Why Choose Us & Contact Form */}
-          <div className="flex flex-col md:flex-row justify-center items-center  gap-12 p-6">
+          <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
             {/* Contact Info Section */}
-            <div className="max-w-2xl space-y-2">
-              <h3 className="font-bold text-xl">Our Contact Info</h3>
+            <div className="max-w-2xl text-center   space-y-4">
+              <h3 className="font-bold text-2xl">Our Contact Info</h3>
+              <div className="text-lg">
+
               <p>
-                <strong>Phone no:</strong> +91 99589 93549
+                <strong >Phone no:</strong> +91 99589 93549
               </p>
               <p>
                 <strong>Email ID:</strong> info@dholeratimes.com
@@ -96,7 +98,7 @@ export default function ContactDetails() {
                 Road, Gurugram - 122018, India
               </p>
 
-              <h3 className="font-bold text-xl mt-4">Why Choose Us</h3>
+              <h3 className="font-bold text-2xl mt-4">Why Choose Us</h3>
               <p>
                 <strong>Transparent Process:</strong> No hidden fees, no
                 surprises — just honest real estate services.
@@ -109,6 +111,7 @@ export default function ContactDetails() {
                 <strong>Trusted by Investors:</strong> Join a growing community
                 of satisfied investors benefiting from Dholera’s growth.
               </p>
+              </div>
             </div>
 
             {/* Contact Form Section */}
