@@ -83,34 +83,42 @@ export default function ContactDetails() {
           {/* Why Choose Us & Contact Form */}
           <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
             {/* Contact Info Section */}
-            <div className="max-w-2xl text-center   space-y-4">
-              <h3 className="font-bold text-2xl">Our Contact Info</h3>
-              <div className="text-lg">
-
-              <p>
-                <strong >Phone no:</strong> +91 99589 93549
-              </p>
-              <p>
-                <strong>Email ID:</strong> info@dholeratimes.com
-              </p>
-              <p>
-                <strong>Address:</strong> 620, JMD Megapolis, Sector-48, Sohna
-                Road, Gurugram - 122018, India
-              </p>
-
-              <h3 className="font-bold text-2xl mt-4">Why Choose Us</h3>
-              <p>
-                <strong>Transparent Process:</strong> No hidden fees, no
-                surprises — just honest real estate services.
-              </p>
-              <p>
-                <strong>End-to-End Support:</strong> Our dedicated team provides
-                complete assistance, from selecting plots to registration.
-              </p>
-              <p>
-                <strong>Trusted by Investors:</strong> Join a growing community
-                of satisfied investors benefiting from Dholera’s growth.
-              </p>
+            <div className="max-w-2xl text-center">
+              <div className="space-y-8">
+                <div>
+                  <h3 className="font-bold text-2xl">Our Contact Info</h3>
+                  <div className="mt-4 text-lg">
+                    <p>
+                      <strong>Phone no:</strong> +91 99589 93549
+                    </p>
+                    <p>
+                      <strong>Email ID:</strong> info@dholeratimes.com
+                    </p>
+                    <p>
+                      <strong>Address:</strong> 620, JMD Megapolis, Sector-48,
+                      Sohna Road, Gurugram - 122018, India
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-bold text-2xl mt-4">Why Choose Us</h3>
+                  <div className="mt-4">
+                    <p>
+                      <strong>Transparent Process:</strong> No hidden fees, no
+                      surprises — just honest real estate services.
+                    </p>
+                    <p>
+                      <strong>End-to-End Support:</strong> Our dedicated team
+                      provides complete assistance, from selecting plots to
+                      registration.
+                    </p>
+                    <p>
+                      <strong>Trusted by Investors:</strong> Join a growing
+                      community of satisfied investors benefiting from Dholera’s
+                      growth.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
 
