@@ -1,17 +1,17 @@
 import React from "react";
-import hero from "@/assets/hero5.webp";
+import hero from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
 
 export default function About() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center bg-black">
+      <section className="relative h-[50vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={hero}
             alt="Dholera SIR Aerial View"
-            className="w-full h-[70vh] object-cover opacity-60"
+            className="w-full h-[50vh] object-cover"
           />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">

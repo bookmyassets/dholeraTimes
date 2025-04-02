@@ -107,7 +107,7 @@ const TestimonialPagination = () => {
         <h3
           className={`text-center text-3xl font-semibold text-[#b98e31] mb-10`}
         >
-          Testimonials
+          What our customers says 
         </h3>
         <motion.div
           key={currentPage}

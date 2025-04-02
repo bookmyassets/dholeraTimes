@@ -415,7 +415,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       </svg>
                     </button>
                     {isDholeraDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-64 bg-white shadow-lg rounded-md z-50">
+                      <div className="absolute left-0 mt-6 w-64 bg-white shadow-lg rounded-md z-50">
                         {[
                           {
                             title: "Dholera SIR",
@@ -435,7 +435,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           },
                           {
                             title: "Dholera SIR Current Status",
-                            path: "/DholeraSIR/Dholera-SIR-current-Status",
+                            path: "/DholeraSIR/Dholera-SIR-current-status",
                           },
                           {
                             title: "Dholera International Airport",
@@ -515,7 +515,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       </svg>
                     </button>
                     {isProjectsDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                      <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
                         {projects
                           .filter(
                             (project) =>
@@ -560,7 +560,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       </svg>
                     </button>
                     {isBlogsDropdownOpen && (
-                      <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                      <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
                         {[
                           { title: "Blogs", path: "/Dholera-Updates/Blogs" },
                           {
@@ -852,7 +852,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           },
                           {
                             title: "Dholera SIR Current Status",
-                            path: "/DholeraSIR/Dholera-SIR-current-Status",
+                            path: "/DholeraSIR/Dholera-SIR-current-status",
                           },
                           {
                             title: "Dholera International Airport",
