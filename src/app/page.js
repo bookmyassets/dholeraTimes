@@ -195,8 +195,8 @@ export default function Home() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 
-      ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-[#be9233] hover:bg-[#dbaf51] hover:text-black hover:shadow-lg active:scale-95"}
+                    className={`w-full p-3 text-white rounded-lg font-medium shadow-md transition-all duration-300 click
+      ${isLoading ? "bg-gray-400 cursor-not-allowed" : "bg-[#be9233] hover:bg-[#dbaf51] hover:text-black hover:shadow-lg active:scale-95 "}
     `}
                   >
                     {isLoading ? "Submitting..." : "Get a call back"}
