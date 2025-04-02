@@ -326,6 +326,20 @@ export default function RootLayout({ children }) {
         `}
         </Script>
 
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16970030484"
+        ></Script>
+        <Script>
+                  {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-16970030484');
+          `}
+        </Script>
+
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
@@ -476,7 +490,6 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                             title: "Dholera Activation Zone",
                             path: "/DholeraSIR/Dholera-Activation-Zone",
                           },
-                         
                         ].map((item) => (
                           <Link
                             key={item.path}
@@ -834,65 +847,65 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           className="pl-6 overflow-hidden"
                         >
                           {[
-                          {
-                            title: "Dholera SIR",
-                            path: "/DholeraSIR",
-                          },
-                          {
-                            title: "Dholera Connectivity",
-                            path: "/DholeraSIR/Dholera-Connectivity",
-                          },
-                          {
-                            title: "Mega Industries Presence",
-                            path: "/DholeraSIR/Mega-Industries-Presence",
-                          },
-                          {
-                            title: "Running and Completed Projects",
-                            path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
-                          },
-                          {
-                            title: "Dholera SIR Current Status",
-                            path: "/DholeraSIR/Dholera-SIR-current-status",
-                          },
-                          {
-                            title: "Dholera International Airport",
-                            path: "/DholeraSIR/Dholera-International-Airport",
-                          },
-                          {
-                            title: "Dholera Expressway Six Lane",
-                            path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
-                          },
-                          {
-                            title: "Dholera High Speed Metro",
-                            path: "/DholeraSIR/Dholera-High-Speed-Metro",
-                          },
-                          {
-                            title: "DMIC Project",
-                            path: "/DholeraSIR/DMIC-Project",
-                          },
-                          {
-                            title: "DFC Project",
-                            path: "/DholeraSIR/DFC-Project",
-                          },
+                            {
+                              title: "Dholera SIR",
+                              path: "/DholeraSIR",
+                            },
+                            {
+                              title: "Dholera Connectivity",
+                              path: "/DholeraSIR/Dholera-Connectivity",
+                            },
+                            {
+                              title: "Mega Industries Presence",
+                              path: "/DholeraSIR/Mega-Industries-Presence",
+                            },
+                            {
+                              title: "Running and Completed Projects",
+                              path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
+                            },
+                            {
+                              title: "Dholera SIR Current Status",
+                              path: "/DholeraSIR/Dholera-SIR-current-status",
+                            },
+                            {
+                              title: "Dholera International Airport",
+                              path: "/DholeraSIR/Dholera-International-Airport",
+                            },
+                            {
+                              title: "Dholera Expressway Six Lane",
+                              path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
+                            },
+                            {
+                              title: "Dholera High Speed Metro",
+                              path: "/DholeraSIR/Dholera-High-Speed-Metro",
+                            },
+                            {
+                              title: "DMIC Project",
+                              path: "/DholeraSIR/DMIC-Project",
+                            },
+                            {
+                              title: "DFC Project",
+                              path: "/DholeraSIR/DFC-Project",
+                            },
 
-                          {
-                            title: "Dholera Solar Power Plant",
-                            path: "/DholeraSIR/Dholera-Solar-Power-Plant",
-                          },
-                          {
-                            title: "Dholera Mega Industrial Park",
-                            path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
-                          },
+                            {
+                              title: "Dholera Solar Power Plant",
+                              path: "/DholeraSIR/Dholera-Solar-Power-Plant",
+                            },
+                            {
+                              title: "Dholera Mega Industrial Park",
+                              path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
+                            },
 
-                          {
-                            title: "Dholera ABCD Building",
-                            path: "/DholeraSIR/Dholera-ABCD-Building",
-                          },
+                            {
+                              title: "Dholera ABCD Building",
+                              path: "/DholeraSIR/Dholera-ABCD-Building",
+                            },
 
-                          {
-                            title: "Dholera Activation Zone",
-                            path: "/DholeraSIR/Dholera-Activation-Zone",
-                          },
+                            {
+                              title: "Dholera Activation Zone",
+                              path: "/DholeraSIR/Dholera-Activation-Zone",
+                            },
                           ].map((item) => (
                             <Link
                               key={item.path}
