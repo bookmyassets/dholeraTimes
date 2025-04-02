@@ -41,9 +41,12 @@ export default function ContactDetails() {
       <div className="bg-white py-12 mt-10">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10">
           {/* Talk to Sales */}
-          <div >
-            <a href="tel:+919958993549" className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center">
-            <FaPhoneAlt className="text-gray-800 text-3xl mb-4" />
+          <div>
+            <a
+              href="tel:+919958993549"
+              className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center"
+            >
+              <FaPhoneAlt className="text-gray-800 text-3xl mb-4" />
               <h3 className="text-lg font-semibold text-gray-800">
                 Talk to Sales
               </h3>
@@ -62,7 +65,7 @@ export default function ContactDetails() {
               rel="noopener noreferrer"
               className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center"
             >
-            <FaHeadset className="text-gray-800 text-3xl mb-4" />
+              <FaHeadset className="text-gray-800 text-3xl mb-4" />
               <h3 className="text-lg font-semibold text-gray-800">
                 Contact Customer Support
               </h3>
@@ -74,85 +77,96 @@ export default function ContactDetails() {
         </div>
 
         {/* Address Section */}
-        
 
         {/* Social Media Links */}
-        <div className="mt-10 space-y-5 text-center">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Follow Us
-          </h3>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://www.facebook.com/dholeratimes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 text-3xl hover:text-blue-800"
-            >
-              <FaFacebook />
-            </a>
-            <a
-              href="https://x.com/dholeratimes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 text-3xl hover:text-blue-600"
-            >
-              <FaTwitter />
-            </a>
-            <a
-              href="https://www.instagram.com/dholeratimes/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-pink-500 text-3xl hover:text-pink-700"
-            >
-              <FaInstagram />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-700 text-3xl hover:text-blue-900"
-            >
-              <FaLinkedin />
-            </a>
-          </div>
-
+        <div className="mt-10 ">
           {/* Why Choose Us & Contact Form */}
-          <div className="flex flex-col md:flex-row justify-evenly pt-20 items-center">
-            <div className="max-sm:ml-3 max-sm:mr-3 ">
-              <h3 className="font-bold text-3xl">Why Choose Us</h3>
-              <div className="pt-5 space-y-5 max-w-xl text-left">
-                <p className="text-xl">
-                  <span className="font-semibold">Transparent Process:</span> No
-                  hidden fees, no surprises — just honest real estate services.
-                </p>
-                <p className="text-xl">
-                  <span className="font-semibold">End-to-End Support:</span> Our
-                  dedicated team provides complete assistance, from selecting
-                  plots to registration.
-                </p>
-                <p className="text-xl">
-                  <span className="font-semibold">Trusted by Investors:</span>{" "}
-                  Join a growing community of satisfied investors benefiting
-                  from Dholera’s growth.
-                </p>
-              </div>
+          <div className="flex flex-col md:flex-row justify-center items-center  gap-12 p-6">
+            {/* Contact Info Section */}
+            <div className="max-w-2xl space-y-2">
+              <h3 className="font-bold text-xl">Our Contact Info</h3>
+              <p>
+                <strong>Phone no:</strong> +91 99589 93549
+              </p>
+              <p>
+                <strong>Email ID:</strong> info@dholeratimes.com
+              </p>
+              <p>
+                <strong>Address:</strong> 620, JMD Megapolis, Sector-48, Sohna
+                Road, Gurugram - 122018, India
+              </p>
+
+              <h3 className="font-bold text-xl mt-4">Why Choose Us</h3>
+              <p>
+                <strong>Transparent Process:</strong> No hidden fees, no
+                surprises — just honest real estate services.
+              </p>
+              <p>
+                <strong>End-to-End Support:</strong> Our dedicated team provides
+                complete assistance, from selecting plots to registration.
+              </p>
+              <p>
+                <strong>Trusted by Investors:</strong> Join a growing community
+                of satisfied investors benefiting from Dholera’s growth.
+              </p>
             </div>
-            <div className="max-w-2xl mt-8 md:mt-0">
+
+            {/* Contact Form Section */}
+            <div className="mt-6 md:mt-0">
               <ContactForm />
+            </div>
+          </div>
+          <div className="space-y-5 text-center">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              Follow Us
+            </h3>
+            <div className="flex justify-center space-x-6">
+              <a
+                href="https://www.facebook.com/dholeratimes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 text-3xl hover:text-blue-800"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://x.com/dholeratimes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 text-3xl hover:text-blue-600"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://www.instagram.com/dholeratimes/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-500 text-3xl hover:text-pink-700"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 text-3xl hover:text-blue-900"
+              >
+                <FaLinkedin />
+              </a>
             </div>
           </div>
 
           <div className="mt-10 text-center">
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">
-            Head Office Address
-          </h3>
-          <div className="flex justify-center items-center space-x-4 text-gray-700">
-            <FaMapMarkerAlt className="text-gray-800 text-3xl max-sm:hidden" />
-            <p className="text-lg max-sm:p-3">
-              620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India
-            </p>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              Head Office Address
+            </h3>
+            <div className="flex justify-center items-center space-x-4 text-gray-700">
+              <FaMapMarkerAlt className="text-gray-800 text-3xl max-sm:hidden" />
+              <p className="text-lg max-sm:p-3">
+                620 JMD Megapolis, Sector-48, Sohna Road, Gurugram, India
+              </p>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </div>

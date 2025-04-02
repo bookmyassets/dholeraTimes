@@ -111,7 +111,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
+    <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full h-auto max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
         Enquire Now
       </h2>
@@ -166,8 +166,9 @@ export default function ContactForm() {
           {/* Submit Button */}
           <button
             type="submit"
+            
             disabled={isLoading}
-            className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300
+            className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 click
         ${
           isLoading
             ? "bg-gray-400 cursor-not-allowed"
