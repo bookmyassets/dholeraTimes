@@ -137,7 +137,7 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="w-full max-w-md py-2 px-4 bg-[#be9233] hover:bg-[#dbaf51] text-white font-medium rounded-md transition duration-200"
+                    className="w-full max-w-md py-2 px-4 bg-[#be9233] hover:bg-[#dbaf51] text-white font-medium rounded-md click transition duration-200"
                     disabled={isLoading}
                   >
                     {isLoading ? "Submitting..." : "Get A Call Back"}
