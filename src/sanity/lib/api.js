@@ -2,6 +2,7 @@ import { client } from "./client";
 import { NextResponse } from "next/server";
 
 // Fetch all blog posts
+/* Projects */
 export async function getPosts() {
   const query = `*[_type == "post" && "Project" in categories[]->title && author-> name == "Dholera Times" ]{
     _id,
@@ -17,8 +18,41 @@ export async function getPosts() {
   return posts;
 }
 
+/* Blogs */
 export async function getblogs() {
   const query = `*[_type == "post" && "Blog" in categories[]->title && author-> name == "Dholera Times" ]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    author->{name, image},
+    categories[]->{title, _id}
+  }`;
+  const posts = await client.fetch(query);
+  return posts;
+}
+
+/* News */
+export async function getNews() {
+  const query = `*[_type == "post" && "News" in categories[]->title && author-> name == "Dholera Times" ]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    author->{name, image},
+    categories[]->{title, _id}
+  }`;
+  const posts = await client.fetch(query);
+  return posts;
+}
+
+/* Newspaper */
+export async function getUpdates() {
+  const query = `*[_type == "post" && "Updates" in categories[]->title && author-> name == "Dholera Times" ]{
     _id,
     title,
     slug,
@@ -54,8 +88,9 @@ export async function getPostBySlug(slug) {
   return post;
 }
 
-  export async function Inventory() {
-    const query = `*[_type == "post" && author->name == "Dholera Times" && "Project" in categories[]->title] | order(publishedAt desc) [0..9] {
+/* Inventory & Brochure */
+export async function Inventory() {
+  const query = `*[_type == "post" && author->name == "Dholera Times" && "Project" in categories[]->title] | order(publishedAt desc) [0..9] {
         _id,
         title,
         publishedAt,
@@ -64,23 +99,22 @@ export async function getPostBySlug(slug) {
         "category": coalesce(categories[]->title, []),
         "author": coalesce(author->name, "Unknown")
     }`;
-  
-    const url = `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/${process.env.NEXT_PUBLIC_SANITY_DATASET}?query=${encodeURIComponent(query)}`;
-  
-    try {
-        const response = await fetch(url, { cache: 'no-store' }); // ✅ Cache disabled
-        const json = await response.json();
-        const posts = json.result || [];
-  
-        // Filter out posts with no pdfUrl
-        const filteredPosts = posts.filter(post => post.pdfUrl);
-        return filteredPosts;
-    } catch (error) {
-        console.error("Error fetching posts:", error);
-        return [];
-    }
+
+  const url = `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/${process.env.NEXT_PUBLIC_SANITY_DATASET}?query=${encodeURIComponent(query)}`;
+
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    const json = await response.json();
+    const posts = json.result || [];
+
+    // Filter out posts with no pdfUrl
+    const filteredPosts = posts.filter((post) => post.pdfUrl);
+    return filteredPosts;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return [];
   }
-  
+}
 
 export async function Brochure() {
   const query = `*[_type == "post" && author->name == "Dholera Times" && "Brochure" in categories[]->title] | order(publishedAt desc) [0..9] {
@@ -96,20 +130,20 @@ export async function Brochure() {
   const url = `https://${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}.api.sanity.io/v2021-06-07/data/query/${process.env.NEXT_PUBLIC_SANITY_DATASET}?query=${encodeURIComponent(query)}`;
 
   try {
-      const response = await fetch(url, { cache: 'no-store' }); // ✅ Cache disabled
-      const json = await response.json();
-      const posts = json.result || [];
+    const response = await fetch(url, { cache: "no-store" }); // ✅ Cache disabled
+    const json = await response.json();
+    const posts = json.result || [];
 
-      // Filter out posts with no pdfUrl
-      const filteredPosts = posts.filter(post => post.pdfUrl);
-      return filteredPosts;
+    // Filter out posts with no pdfUrl
+    const filteredPosts = posts.filter((post) => post.pdfUrl);
+    return filteredPosts;
   } catch (error) {
-      console.error("Error fetching posts:", error);
-      return [];
+    console.error("Error fetching posts:", error);
+    return [];
   }
 }
 
-// Function to get all events
+/* EVENTS & WEBINAR */
 export async function getEvents() {
   const query = `*[_type == "event" && author->name == "Dholera Times" && "Upcoming Events" in categories[]->title] | order(publishedAt desc) {
     _id,
@@ -125,7 +159,6 @@ export async function getEvents() {
     "eventMaterials": eventMaterials.asset->url,
     categories[]->{title, _id}
   }`;
-  
 
   try {
     const events = await client.fetch(query);
@@ -151,7 +184,6 @@ export async function getWebinar() {
     "eventMaterials": eventMaterials.asset->url,
     categories[]->{title, _id}
   }`;
-  
 
   try {
     const events = await client.fetch(query);

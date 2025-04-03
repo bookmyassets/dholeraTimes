@@ -32,8 +32,8 @@ export default function CareerPage() {
     },
     {
       id: 2,
-      title: "Sales Executive (Portfolio Manager)",
-      description: "About the company: Dholera Times is a leading investment advisory firm specializing in Dholera SIR investments.",
+      title: "Senior Sales Executive (Portfolio Manager)",
+      description: "We are looking for an experienced Portfolio Manager to join our team.",
       skills: ["Sales", "Financial products", "Client acquisition", "Investment advisory"],
       experience: "3+ years",
       location: "Gurugram"
@@ -340,10 +340,7 @@ export default function CareerPage() {
       </div>
       
       {/* Footer */}
-      <div className="bg-gray-800 text-white p-4 text-center text-sm">
-        <p>© 2025 Dholera Times. All rights reserved.</p>
-        <p>Ref. Link: https://www.dholeratimes.com/career</p>
-      </div>
+      
     </div>
   );
 }

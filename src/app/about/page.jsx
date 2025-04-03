@@ -105,12 +105,12 @@ export default function AboutUs() {
             Join us in shaping the future of urban development in India. Our experts are ready to guide you through investment opportunities in Dholera Smart City.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/pages/contact">
+            <Link href="/contact/inquiry">
               <button className="bg-black text-white px-8 py-4 rounded-lg shadow-lg hover:bg-gray-800 transition-colors">
                 Contact Our Team
               </button>
             </Link>
-            <Link href="/pages/projects">
+            <Link href="/projects">
               <button className="bg-white text-black border-2 border-black px-8 py-4 rounded-lg shadow-lg hover:bg-gray-100 transition-colors">
                 Explore Opportunities
               </button>

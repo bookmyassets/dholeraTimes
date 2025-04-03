@@ -575,14 +575,14 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                     {isBlogsDropdownOpen && (
                       <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
                         {[
-                          { title: "Blogs", path: "/Dholera-Updates/Blogs" },
                           {
-                            title: "News",
-                            path: "/Dholera-Updates/news",
+                            title: "Latest News",
+                            path: "/Dholera-Updates/latest-news",
                           },
+                          { title: "Blogs", path: "/Dholera-Updates/blogs" },
                           {
-                            title: "Latest Updates",
-                            path: "/Dholera-Updates/Latest-Updates",
+                            title: "NewsPaper",
+                            path: "/Dholera-Updates/newspaper",
                           },
                         ].map((item) => (
                           <Link
@@ -738,12 +738,12 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                             path: "/contact/inquiry",
                           },
                           {
-                            title: "Career",
-                            path: "/contact/career",
-                          },
-                          {
                             title: "Site Visit",
                             path: "/contact/sitevisit",
+                          },
+                          {
+                            title: "Career",
+                            path: "/contact/career",
                           },
                         ].map((item) => (
                           <Link
@@ -1147,8 +1147,8 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                         >
                           {[
                             { title: "Inquiry", path: "/contact/inquiry" },
-                            { title: "Career", path: "/contact/career" },
                             { title: "Site Visit", path: "/contact/sitevisit" },
+                            { title: "Career", path: "/contact/career" },
                           ].map((item) => (
                             <Link
                               key={item.path}

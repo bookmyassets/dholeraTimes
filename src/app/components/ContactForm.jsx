@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
-export default function ContactForm() {
+export default function ContactForm({title, buttonName}) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -113,7 +113,7 @@ export default function ContactForm() {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full h-auto max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-        Enquire Now
+        {title}
       </h2>
       {isDisabled ? (
         <p className="text-center text-red-500 font-semibold">
@@ -175,7 +175,7 @@ export default function ContactForm() {
             : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
         }`}
           >
-            {isLoading ? "Submitting..." : "Get a Call Back"}
+            {isLoading ? "Submitting..." : buttonName}
           </button>
         </form>
       )}
