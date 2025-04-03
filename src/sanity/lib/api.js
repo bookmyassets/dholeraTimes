@@ -14,7 +14,7 @@ export async function getPosts() {
     author->{name, image},
     categories[]->{title, _id}
   }`;
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
   return posts;
 }
 
@@ -30,7 +30,7 @@ export async function getblogs() {
     author->{name, image},
     categories[]->{title, _id}
   }`;
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
   return posts;
 }
 
@@ -46,11 +46,11 @@ export async function getNews() {
     author->{name, image},
     categories[]->{title, _id}
   }`;
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
   return posts;
 }
 
-/* Newspaper */
+/* Updates */
 export async function getUpdates() {
   const query = `*[_type == "post" && "Updates" in categories[]->title && author-> name == "Dholera Times" ]{
     _id,
@@ -62,11 +62,11 @@ export async function getUpdates() {
     author->{name, image},
     categories[]->{title, _id}
   }`;
-  const posts = await client.fetch(query);
+  const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
   return posts;
 }
 
-// Fetch a single blog post by slug
+// Fetch a single blog post by slug (No Cache)
 export async function getPostBySlug(slug) {
   const query = `*[_type == "post" && slug.current == $slug][0]{
     _id,
@@ -84,7 +84,7 @@ export async function getPostBySlug(slug) {
       _id
     }
   }`;
-  const post = await client.fetch(query, { slug });
+  const post = await client.fetch(query, { slug }, { cache: 'no-store' }); // Disables caching
   return post;
 }
 
@@ -161,7 +161,7 @@ export async function getEvents() {
   }`;
 
   try {
-    const events = await client.fetch(query);
+    const events = await client.fetch(query, { slug }, { cache: 'no-store' });
     return events;
   } catch (error) {
     console.error("Error fetching events:", error);
@@ -186,7 +186,7 @@ export async function getWebinar() {
   }`;
 
   try {
-    const events = await client.fetch(query);
+    const events = await client.fetch(query, { slug }, { cache: 'no-store' });
     return events;
   } catch (error) {
     console.error("Error fetching events:", error);
@@ -209,6 +209,6 @@ export async function getEventBySlug(slug) {
     "eventMaterials": eventMaterials.asset->url,
     categories[]->{title, _id}
   }`;
-  const post = await client.fetch(query, { slug });
+  const post = await client.fetch(query, { slug }, { cache: 'no-store' });
   return post;
 }
