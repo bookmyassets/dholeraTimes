@@ -54,18 +54,20 @@ export default async function Home() {
                         {/* Position categories in the top-left corner of the image */}
                         <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
                           {post.categories && Array.isArray(post.categories) ? (
-                            post.categories.map((category, index) => (
-                              <span
-                                key={index}
-                                className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
-                                  category.title === "Sold Out"
-                                    ? "bg-red-600 text-white"
-                                    : "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
-                                }`}
-                              >
-                                {category.title}
-                              </span>
-                            ))
+                            post.categories
+                              .slice(0, 2) 
+                              .map((category, index) => (
+                                <span
+                                  key={index}
+                                  className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
+                                    category.title === "Sold Out"
+                                      ? "bg-red-600 text-white"
+                                      : "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                                  }`}
+                                >
+                                  {category.title}
+                                </span>
+                              ))
                           ) : post.categories ? (
                             <span
                               className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
@@ -93,8 +95,9 @@ export default async function Home() {
                           post.slug?.current
                             ? `/posts/${post.slug.current}`
                             : "#"
-                        }>
-                      {post.title}
+                        }
+                      >
+                        {post.title}
                         <span className="bg-blue-500 rounded-lg ml-3 text-sm text-black  font-thin w-10 h-10">
                           {" "}
                           Details Here{" "}
