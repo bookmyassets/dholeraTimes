@@ -55,6 +55,7 @@ export default async function Home() {
                         <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
                           {post.categories && Array.isArray(post.categories) ? (
                             post.categories
+                              .filter(category => category.title !== "Sub-Project") // Filter out Subproject
                               .slice(0, 2) 
                               .map((category, index) => (
                                 <span
@@ -69,16 +70,18 @@ export default async function Home() {
                                 </span>
                               ))
                           ) : post.categories ? (
-                            <span
-                              className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
-                                post.categories.title.toLowerCase() ===
-                                "soldout"
-                                  ? "bg-red-600 text-white"
-                                  : "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
-                              }`}
-                            >
-                              {post.categories.title}
-                            </span>
+                            post.categories.title !== "Subproject" && (
+                              <span
+                                className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
+                                  post.categories.title.toLowerCase() ===
+                                  "soldout"
+                                    ? "bg-red-600 text-white"
+                                    : "bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+                                }`}
+                              >
+                                {post.categories.title}
+                              </span>
+                            )
                           ) : (
                             <span className="px-3 py-1 text-white text-sm font-bold rounded-full shadow-lg bg-gradient-to-r from-blue-500 to-purple-600">
                               Project
