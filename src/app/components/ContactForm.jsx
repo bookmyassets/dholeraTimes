@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
-export default function ContactForm({title, buttonName}) {
+export default function ContactForm({ title, buttonName }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -27,7 +28,7 @@ export default function ContactForm({title, buttonName}) {
     let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
     let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
 
-    /*  // Check if 24 hours have passed since the last submission
+    // Check if 24 hours have passed since the last submission
     if (lastSubmissionTime) {
       const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
       const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
@@ -40,17 +41,18 @@ export default function ContactForm({title, buttonName}) {
       }
     }
 
-    // Restrict submission after 3 attempts
+    // Restrict submission after 20 attempts
     if (submissionCount >= 20) {
       alert(
         "You have reached the maximum submission limit. Try again after 24 hours."
       );
       setIsLoading(false);
+      setIsDisabled(true);
       return;
-    } */
+    }
 
     // Validate form data
-    if (!formData.fullName || !formData.phone) {
+    if (!formData.fullName || !formData.phone || !formData.email) {
       alert("Please fill in all fields");
       setIsLoading(false);
       return;
@@ -64,13 +66,14 @@ export default function ContactForm({title, buttonName}) {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`, // Use environment variable
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`,
           },
           body: JSON.stringify({
             fields: {
               name: formData.fullName,
               phone: formData.phone,
-              source:"Dholera Times"
+              email: formData.email,
+              source: "Dholera Times",
             },
             source: "Dholera Times Website",
             tags: ["Dholera Investment", "Website Lead"],
@@ -87,16 +90,18 @@ export default function ContactForm({title, buttonName}) {
           responseText === "OK" ||
           responseText.toLowerCase().includes("success")
         ) {
-          setFormData({ fullName: "", phone: "" }); // Reset form
+          setFormData({ fullName: "", email: "", phone: "" }); // Reset all form fields
           setShowPopup(true); // Show popup on success
 
           // Increment submission count & store time
           submissionCount++;
+          setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
           localStorage.setItem("lastSubmissionTime", Date.now().toString());
         } else {
           // Handle unexpected response
           console.log("Response Text:", responseText);
+          alert("Submission received but with unexpected response");
         }
       } else {
         console.error("Server Error:", responseText);
@@ -111,73 +116,94 @@ export default function ContactForm({title, buttonName}) {
   };
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full h-auto max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-        {title}
-      </h2>
-      {isDisabled ? (
-        <p className="text-center text-red-500 font-semibold">
-          You have reached the maximum submission limit. Try again after 24
-          hours.
-        </p>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Full Name Input */}
-          <div className="relative">
-            <FaUser className="absolute left-4 top-4 text-gray-500" />
-            <input
-              name="fullName"
-              placeholder="Full Name"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-            />
-          </div>
+    <div className="relative">
+      <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full h-auto max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+          {title}
+        </h2>
+        {isDisabled ? (
+          <p className="text-center text-red-500 font-semibold">
+            You have reached the maximum submission limit. Try again after 24
+            hours.
+          </p>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Full Name Input */}
+            <div className="relative">
+              <FaUser className="absolute left-4 top-4 text-gray-500" />
+              <input
+                name="fullName"
+                placeholder="Full Name"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              />
+            </div>
 
-          {/* Email Input */}
-          <div className="relative">
-            <FaEnvelope className="absolute left-4 top-4 text-gray-500" />
-            <input
-              name="email"
-              type="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-            />
-          </div>
+            {/* Email Input */}
+            <div className="relative">
+              <FaEnvelope className="absolute left-4 top-4 text-gray-500" />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              />
+            </div>
 
-          {/* Phone Number Input */}
-          <div className="relative">
-            <FaPhoneAlt className="absolute left-4 top-4 text-gray-500" />
-            <input
-              name="phone"
-              type="tel"
-              placeholder="Phone Number"
-              value={formData.phone}
-              onChange={handleChange}
-              required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-            />
-          </div>
+            {/* Phone Number Input */}
+            <div className="relative">
+              <FaPhoneAlt className="absolute left-4 top-4 text-gray-500" />
+              <input
+                name="phone"
+                type="tel"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              />
+            </div>
 
-          {/* Submit Button */}
-          <button
-            type="submit"
-            
-            disabled={isLoading}
-            className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 click
-        ${
-          isLoading
-            ? "bg-gray-400 cursor-not-allowed"
-            : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
-        }`}
-          >
-            {isLoading ? "Submitting..." : buttonName}
-          </button>
-        </form>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              disabled={isLoading || isDisabled}
+              className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
+                isLoading || isDisabled
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
+              }`}
+            >
+              {isLoading ? "Submitting..." : buttonName}
+            </button>
+          </form>
+        )}
+      </div>
+
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white p-8 rounded-xl max-w-md w-full shadow-lg">
+            <h3 className="text-2xl font-bold text-center text-gray-800 mb-4">
+              Thank You!
+            </h3>
+            <p className="text-center text-gray-600 mb-6">
+              Your form has been submitted successfully. We'll get back to you
+              soon.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="w-full bg-[#be9233] hover:bg-[#dbaf51] text-white font-semibold py-3 px-4 rounded-xl transition duration-300"
+            >
+              Close
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );
