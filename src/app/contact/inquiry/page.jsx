@@ -161,7 +161,7 @@ export default function ContactDetails() {
                   <FaInstagram />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/dholera-times"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-700 text-3xl hover:text-blue-900"

@@ -247,7 +247,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://www.linkedin.com"
+                href="https://www.linkedin.com/company/dholera-times"
                 className="text-gray-400 hover:text-white transition"
                 aria-label="LinkedIn"
               >
