@@ -32,7 +32,7 @@ export default async function BlogsPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-6 py-10 ">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-              Dholera Smart City News Paper Archive
+              Dholera Smart City on News Paper Headlines
             </h1>
           </div>
         </div>
@@ -40,6 +40,7 @@ export default async function BlogsPage() {
 
       {/* Main Content */}
       <div className="max-w-8xl mx-auto px-4 py-8 md:py-12 ml-4 md:ml-12 mr-4 md:mr-12">
+      <h2 className="text-4xl font-bold text-center mb-8 max-sm:text-left max-sm:text-3xl"> News Paper and Magazine Pages </h2>
         <div className="flex flex-col max-sm:flex-col-reverse lg:flex-row gap-6">
           {/* Trending Section - Left Sidebar */}
           

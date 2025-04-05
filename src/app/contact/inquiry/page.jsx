@@ -41,10 +41,12 @@ export default function ContactDetails() {
         {/* Header Section */}
 
         {/* Contact Cards Section */}
-        <div className="bg-white py-12 md:mt-10">
+        <div className="bg-white py-12">
+        <h1 className="text-center mb-10 font-bold text-4xl max-sm:ml-4 max-sm:text-left">Get Expert Guidance on Dholera Smart City</h1>  
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10">
+            
             {/* Talk to Sales */}
-            <div>
+            <div className="hover:scale-105 shadow-2xl">
               <a
                 href="tel:+919958993549"
                 className="bg-gray-100 p-6 rounded-lg shadow-md flex flex-col items-center text-center"
@@ -61,7 +63,7 @@ export default function ContactDetails() {
             </div>
 
             {/* Contact Support */}
-            <div>
+            <div className="hover:scale-105 shadow-2xl">
               <a
                 href="https://api.whatsapp.com/send?phone=919958993549"
                 target="_blank"
