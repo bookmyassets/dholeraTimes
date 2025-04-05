@@ -70,7 +70,7 @@ export default async function Home() {
                                 </span>
                               ))
                           ) : post.categories ? (
-                            post.categories.title !== "Subproject" && (
+                            post.categories.title !== "Sub-Project" && (
                               <span
                                 className={`px-3 py-1 text-sm font-bold rounded-full shadow-lg ${
                                   post.categories.title.toLowerCase() ===
