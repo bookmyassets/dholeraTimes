@@ -46,27 +46,30 @@ export default function DholeraProgressPage() {
         </div>
 
         {/* Gallery Grid with Hover Effects */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+              className=" group relative overflow-hidden rounded-xl transition-all duration-300 shadow-2xl h-80"
             >
               <Image
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 priority={image.id <= 3}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <p className="text-white p-4 font-medium">{image.alt}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0  transition-opacity duration-300 flex flex-col justify-end p-6">
+                <h3 className="text-white text-xl font-bold mb-2">
+                  {image.alt}
+                </h3>
+                <p className="text-white/80 text-sm">{image.caption}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Call to Action */}
-       {/*  <div className="mt-16 text-center">
+        {/*  <div className="mt-16 text-center">
           <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded-full transition-colors duration-300 shadow-md hover:shadow-lg">
             View Full Gallery
           </button>
