@@ -6,6 +6,7 @@ export default async function BlogPage() {
     "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
     "rYv0f3BPhkg?si=AMWq3AMNQKwAW9Q_",
     "RhQ1EdoQthc?si=E0gr-_r2za9T5TRU",
+    "d_OATHg69UE?si=zPAeMlms8__JRZZH",
   ]; // YouTube video IDs
 
   return (
