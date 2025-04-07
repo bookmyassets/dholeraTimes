@@ -5,7 +5,7 @@ export default async function BlogPage() {
   const videos = [
     "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
     "rYv0f3BPhkg?si=AMWq3AMNQKwAW9Q_",
-    "X9KfO7Z5Fc8?si=D1bLdeT_aleAv1cH",
+    "RhQ1EdoQthc?si=E0gr-_r2za9T5TRU",
   ]; // YouTube video IDs
 
   return (
