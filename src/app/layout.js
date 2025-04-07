@@ -331,7 +331,7 @@ export default function RootLayout({ children }) {
           src="https://www.googletagmanager.com/gtag/js?id=AW-16970030484"
         ></Script>
         <Script>
-                  {`
+          {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
@@ -375,7 +375,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <noscript>
+        .2<noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NLL6M3PL"
             height="0"
