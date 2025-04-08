@@ -122,6 +122,7 @@ export async function Inventory() {
   try {
     const response = await fetch(url, { cache: "no-store" });
     const json = await response.json();
+    
     const posts = json.result || [];
 
     // Filter out posts with no pdfUrl
