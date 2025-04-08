@@ -1,6 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
-import { getblogs, getNews, getPostBySlug } from "@/sanity/lib/api";
+import { getblogs, getNews, getPostBySlug, getPosts, getProjects } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -26,6 +26,42 @@ const TrendingBlogItem = ({ post }) => {
           </h4>
           <p className="text-sm text-gray-500 line-clamp-1 mt-1">
             {post.description}
+          </p>
+        </div>
+      </div>
+    </Link>
+  );
+};
+
+const Projects = ({ post }) => {
+  // Check if post exists and has required properties
+  if (!post || !post.slug?.current) return null;
+
+  // Check if category is "sold out" (case insensitive)
+  if (post.category && post.category.toLowerCase().trim() === "sold out") {
+    return null;
+  }
+
+  return (
+    <Link href={`/projects/${post.slug.current}`}>
+      <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
+        {post.mainImage && (
+          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
+            <Image
+              src={urlFor(post.mainImage).width(80).height(80).url()}
+              alt={post.title || "Project image"}
+              width={80}
+              height={80}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        <div>
+          <h4 className="font-semibold text-gray-900 line-clamp-2">
+            {post.title || "Untitled Project"}
+          </h4>
+          <p className="text-sm text-gray-500 line-clamp-1 mt-1">
+            {post.description || ""}
           </p>
         </div>
       </div>
@@ -112,10 +148,11 @@ export default async function BlogDetail({ params }) {
   }
 
   try {
-    const [post, trendingBlogs, relatedBlogs] = await Promise.all([
+    const [post, trendingBlogs, relatedBlogs, getPro] = await Promise.all([
       getPostBySlug(slug),
       getNews(4), // Get top 4 trending news
       getblogs(slug, 3), // Get 3 related blogs based on categories or tags
+      getProjects(slug),
     ]);
 
     if (!post) {
@@ -371,8 +408,34 @@ export default async function BlogDetail({ params }) {
 
             {/* Sidebar */}
             <aside className="lg:w-1/3">
-              <div className="sticky top-24">
+              <div className="sticky space-y-4 top-24">
                 {/* Trending posts */}
+                <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
+                  <h3 className="text-xl font-bold mb-4 text-[#d7b56d]">
+                    Dholera Projects
+                  </h3>
+                  <div className="">
+                    {getPro && getPro.length > 0 ? (
+                      getPro.map((post) => (
+                        <div key={post._id} className="mb-3">
+                          <Projects post={post} />
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-gray-400">
+                        No trending articles found.
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex items-center justify-center mt-6">
+                    <Link href="/projects">
+                      <button className="text-center rounded-xl text-white font-semibold bg-[#d7b56d] hover:bg-[#c6a45d] p-3 transition-colors">
+                        Explore Projects
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-[#d7b56d]">
                     Latest News
@@ -393,7 +456,7 @@ export default async function BlogDetail({ params }) {
                   <div className="flex items-center justify-center mt-6">
                     <Link href="/Dholera-Updates/latest-news">
                       <button className="text-center rounded-xl text-white font-semibold bg-[#d7b56d] hover:bg-[#c6a45d] p-3 transition-colors">
-                       Explore More
+                        Explore More
                       </button>
                     </Link>
                   </div>

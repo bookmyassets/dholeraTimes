@@ -96,7 +96,7 @@ export default async function Home() {
                       <Link
                         href={
                           post.slug?.current
-                            ? `/posts/${post.slug.current}`
+                            ? `/projects/${post.slug.current}`
                             : "#"
                         }
                       >

@@ -18,6 +18,23 @@ export async function getPosts() {
   return posts;
 }
 
+export async function getProjects() {
+  const query = `*[_type == "post" && "Project" in categories[]->title && !("Sold Out" in categories[]->title) && author->name == "Dholera Times"]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    description,
+    author->{name, image},
+    categories[]->{title, _id},
+    "category": categories[0]->title // Get the first category for easy access
+  }`;
+  
+  const posts = await client.fetch(query, {}, { cache: 'no-store' });
+  return posts;
+}
 /* Blogs */
 export async function getblogs() {
   const query = `*[_type == "post" && "Blog" in categories[]->title && author-> name == "Dholera Times" ]{

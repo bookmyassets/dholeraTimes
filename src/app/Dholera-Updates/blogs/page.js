@@ -42,7 +42,7 @@ export default async function BlogsPage() {
       {/* Main Content */}
       <div className="max-w-8xl mx-auto px-4 py-8 md:py-12 ml-4 md:ml-12 mr-4 md:mr-12">
         <h2 className="text-4xl font-bold text-center mb-8 max-sm:text-left max-sm:text-3xl"> Explore Dholera SIR Growth and Updates</h2>
-        <div className="flex flex-col max-sm:flex-col-reverse lg:flex-row gap-6">
+        <div className="flex flex-col lg:flex-row gap-6">
           {/* Trending Section - Left Sidebar */}
           
 
