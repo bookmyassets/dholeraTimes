@@ -107,7 +107,7 @@ export default function ContactDetails() {
             </h3>
             <div className="flex justify-center space-x-6">
               <a
-                href="https://www.facebook.com/dholeratimes"
+                href="https://www.facebook.com/profile.php?id=61573763438050"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 text-3xl hover:text-blue-800"

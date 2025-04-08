@@ -196,7 +196,7 @@ export default function Footer() {
             </h3>
             <div className="flex space-x-4 mb-3">
               <a
-                href=""
+                href="https://www.facebook.com/profile.php?id=61573763438050"
                 className="text-gray-400 hover:text-white transition"
                 aria-label="Facebook"
               >
