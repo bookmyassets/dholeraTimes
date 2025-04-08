@@ -16,7 +16,7 @@ import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
 import Script from "next/script";
 
-const FACEBOOK_PIXEL_ID = "619746600964977"; // Replace with your actual Pixel ID
+const FACEBOOK_PIXEL_ID = "1147887730461644"; // Replace with your actual Pixel ID
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,4 +1,4 @@
-/* export async function POST(req) {
+export async function POST(req) {
   const { event_name, event_id, event_time, user_data } = await req.json();
 
   const accessToken =
@@ -28,4 +28,4 @@
 
   const responseData = await response.json();
   return new Response(JSON.stringify(responseData), { status: 200 });
-} */
+}
