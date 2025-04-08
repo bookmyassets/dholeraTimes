@@ -33,7 +33,7 @@ export default async function BlogsPage() {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-6 py-10 ">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-              Latest News on Dholera Smart City
+              Latest News
             </h1>
           </div>
         </div>

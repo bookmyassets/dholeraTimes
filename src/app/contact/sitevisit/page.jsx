@@ -36,7 +36,7 @@ export default function ContactDetails() {
         {/* Header Section */}
 
         {/* Contact Cards Section */}
-        <div className="bg-white md:mt-10">
+        <div className="bg-white ">
           {/* Address Section */}
 
           {/* Social Media Links */}
@@ -44,7 +44,7 @@ export default function ContactDetails() {
           <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
             {/* Contact Info Section */}
 
-            <div className="mt-6 md:mt-0">
+            <div className="">
             <ContactForm title="Book A Free Site Visit" buttonName="Submit" />
             </div>
 

@@ -118,8 +118,6 @@ export default async function Post({ params }) {
             {post.title}
           </h1>
 
-          {/* Meta information */}
-
           {/* Content */}
           <div className="prose prose-lg max-w-none">
             <PortableText value={post.body} components={components} />

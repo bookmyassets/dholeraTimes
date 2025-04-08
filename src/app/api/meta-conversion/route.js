@@ -1,10 +1,10 @@
 export async function POST(req) {
   const { event_name, event_id, event_time, user_data } = await req.json();
 
-  const accessToken =
+  /* const accessToken =
     "EEAAXvat5j8awBO9LPRMctZBygzBIIzLcZCX2pKxQ65SEdphZAHy5kqJ1DZA9AsZBbko2BAB1iqGWx8wZCuyjft1j2QVdtW9EDMWKkIpDuH2ByeNydMptochpEakg7opdlAh9Doxc3lJfvixfvL3xDmtTwSULKVH6NCCKlhrcFHPOYgBUmu6uGZCkXdC8LZCN6xe7JgAZDZD"; // Replace with your actual token
   const pixelId = "1147887730461644"; // Replace with your actual Pixel ID
-
+ */
   const eventData = {
     data: [
       {

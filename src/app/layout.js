@@ -993,7 +993,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                             },
                             { title: "Blogs", path: "/Dholera-Updates/blogs" },
                             {
-                              title: "Latest Updates",
+                              title: "NewsPaper",
                               path: "/Dholera-Updates/newspaper",
                             },
                           ].map((item) => (
