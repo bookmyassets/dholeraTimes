@@ -42,9 +42,10 @@ export default function ContactDetails() {
 
         {/* Contact Cards Section */}
         <div className="bg-white py-12">
-        <h1 className="text-center mb-10 font-bold text-4xl max-sm:ml-4 max-sm:text-left">Get Expert Guidance on Dholera Smart City</h1>  
+          <h1 className="text-center mb-10 font-bold text-4xl max-sm:ml-4 max-sm:text-left">
+            Get Expert Guidance on Dholera Smart City
+          </h1>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10">
-            
             {/* Talk to Sales */}
             <div className="hover:scale-105 shadow-2xl">
               <a
@@ -92,45 +93,61 @@ export default function ContactDetails() {
               <div className="max-w-2xl text-left">
                 <div className="space-y-8">
                   <div>
-                    <h3 className="font-bold text-2xl">Our Contact Info</h3>
-                    <div className="mt-4 text-lg">
-                      <p>
-                        <strong>Phone no:</strong> +91 99589 93549
-                      </p>
-                      <p>
-                        <strong>Email ID:</strong> info@dholeratimes.com
-                      </p>
-                      <p>
-                        <strong>Address:</strong> 620, JMD Megapolis, Sector-48,
-                        Sohna Road, Gurugram - 122018, India
-                      </p>
+                    <h3 className="font-bold text-2xl md:text-3xl">
+                      Our Contact Info
+                    </h3>
+                    <div className="mt-4 text-lg space-y-2">
+                      <div>
+                        <p>
+                          <strong>Phone no:</strong> +91 99589 93549
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          <strong>Email ID:</strong> info@dholeratimes.com
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          <strong>Address:</strong> 620, JMD Megapolis,
+                          Sector-48, Sohna Road, Gurugram - 122018, India
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="font-bold text-2xl mt-4">Why Choose Us</h3>
-                    <div className="mt-4">
-                      <p>
-                        <strong>Transparent Process:</strong> No hidden fees, no
-                        surprises — just honest real estate services.
-                      </p>
-                      <p>
-                        <strong>End-to-End Support:</strong> Our dedicated team
-                        provides complete assistance, from selecting plots to
-                        registration.
-                      </p>
-                      <p>
-                        <strong>Trusted by Investors:</strong> Join a growing
-                        community of satisfied investors benefiting from
-                        Dholera’s growth.
-                      </p>
+                  <div className="space-y-4">
+                    <h3 className="font-bold text-2xl md:text-3xl mt-4">
+                      Why Choose Us
+                    </h3>
+                    <div className="mt-4 text-lg space-y-2">
+                      <div>
+                        <p>
+                          <strong>Transparent Process:</strong> No hidden fees,
+                          no surprises — just honest real estate services.
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          <strong>End-to-End Support:</strong> Our dedicated
+                          team provides complete assistance, from selecting
+                          plots to registration.
+                        </p>
+                      </div>
+                      <div>
+                        <p>
+                          <strong>Trusted by Investors:</strong> Join a growing
+                          community of satisfied investors benefiting from
+                          Dholera’s growth.
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Contact Form Section */}
-              <div className="mt-6 md:mt-0">
-              <ContactForm title="Enquire Now" buttonName="Get A Call Back" />
+              <div className=" ">
+                <ContactForm title="Enquire Now" buttonName="Get A Call Back" />
               </div>
             </div>
             <div className="space-y-5 text-center">
@@ -172,8 +189,6 @@ export default function ContactDetails() {
                 </a>
               </div>
             </div>
-
-            
           </div>
         </div>
       </div>

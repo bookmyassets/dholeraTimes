@@ -91,7 +91,7 @@ const RelatedBlogCard = ({ blog }) => {
           {blog.categories && blog.categories.length > 0 && (
             <div className="absolute top-2 left-2">
               <span className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full bg-opacity-90">
-                News Headlines
+               Blogs
               </span>
             </div>
           )}
@@ -112,22 +112,9 @@ const RelatedBlogCard = ({ blog }) => {
           </h3>
           <p className="text-gray-700 mb-4 line-clamp-3">{blog.description}</p>
           <div className="flex items-center justify-between mt-auto">
-            <span className="text-[#C69C21] hover:text-[#FDB913] font-medium inline-flex items-center">
+            <span className="hover:text-[#C69C21] text-[#FDB913] p-1 rounded-xl font-semibold bg-gray-800 inline-flex items-center">
               Read more
-              <svg
-                className="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                ></path>
-              </svg>
+             
             </span>
           </div>
         </div>
@@ -312,7 +299,7 @@ export default async function BlogDetail({ params }) {
                         key={category._id || category.title}
                         className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
                       >
-                        News Headlines
+                        Blogs
                       </span>
                     ))}
                   </div>
@@ -411,8 +398,8 @@ export default async function BlogDetail({ params }) {
               <div className="sticky space-y-4 top-24">
                 {/* Trending posts */}
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-[#d7b56d]">
-                    Dholera Projects
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">
+                    Our Projects
                   </h3>
                   <div className="">
                     {getPro && getPro.length > 0 ? (
@@ -437,7 +424,7 @@ export default async function BlogDetail({ params }) {
                 </div>
 
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-[#d7b56d]">
+                  <h3 className="text-xl font-bold mb-4 text-blue-300">
                     Latest News
                   </h3>
                   <div className="">
@@ -467,7 +454,7 @@ export default async function BlogDetail({ params }) {
         </main>
 
         {/* Related blog posts - Properly fetched from API */}
-        <section className="bg-gray-50 py-12 mt-16">
+        <section className="bg-gray-50 py-12 mt-4">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-2xl font-bold text-gray-900">
@@ -475,9 +462,9 @@ export default async function BlogDetail({ params }) {
               </h2>
               <Link
                 href="/Dholera-Updates/latest-news"
-                className="text-[#C69C21] hover:text-[#FDB913] font-medium"
+                className="rounded-xl text-gray-800 max-sm:text-center font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d] "
               >
-                View all Blogs →
+                View all
               </Link>
             </div>
 
