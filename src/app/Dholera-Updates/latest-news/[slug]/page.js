@@ -461,7 +461,7 @@ export default async function BlogDetail({ params }) {
                 You might also like
               </h2>
               <Link
-                href="/Dholera-Updates/latest-news"
+                href="/Dholera-Updates/blogs"
                 className="rounded-xl text-gray-800 max-sm:text-center font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d] "
               >
                 View all
