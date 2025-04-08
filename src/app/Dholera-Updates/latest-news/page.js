@@ -60,7 +60,7 @@ export default async function BlogsPage() {
           <div className="lg:w-1/4 ">
             <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FDB913] sticky top-4">
               <h2 className="text-2xl text-red-500 font-bold mb-6">
-                Dholera Breaking News
+                Latest News
               </h2>
               <div className="space-y-6">
                 {trendingBlogs.map((post) => (

@@ -21,7 +21,7 @@ export default function TrendingBlogItem({ post }) {
               })}
             </time></span>
           <br />
-          Posted By {typeof post.author === 'object' ? post.author.name : post.author}
+          
 
         </p>
       </Link>

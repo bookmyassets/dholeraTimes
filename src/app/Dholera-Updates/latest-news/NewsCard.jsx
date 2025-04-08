@@ -45,9 +45,6 @@ export default function BlogCard({ post }) {
               })}
             </time>
           </div>
-          <div className="text-sm text-gray-600  mt-8">
-            Posted By <span>{authorName}</span>
-          </div>
 
           {/* Excerpt */}
           {/* <p className="text-gray-700 line-clamp-3 mb-4 flex-grow">
