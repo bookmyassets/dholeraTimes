@@ -2,14 +2,15 @@
 import { useState } from "react";
 import Image from "next/image";
 import hero from "@/assets/news.webp";
-import sample from "@/assets/sample.jpg";
+import sample from "@/assets/abcdbuilding.webp";
+import sample2 from "@/assets/abcd2.webp";
 
 export default function ImageGallery() {
   // Sample image data - replace with your actual images
   const images = [
     { id: 1, src: hero, alt: "Image 1" },
     { id: 2, src: sample, alt: "Image 2" },
-    { id: 3, src: hero, alt: "Image 3" },
+    { id: 3, src: sample2, alt: "Image 3" },
     { id: 4, src: hero, alt: "Image 4" },
     { id: 5, src: hero, alt: "Image 5" },
     { id: 6, src: hero, alt: "Image 6" },
