@@ -539,7 +539,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           .map((project) => (
                             <Link
                               key={project._id}
-                              href={`/posts/${project.slug.current}`}
+                              href={`/projects/${project.slug.current}`}
                               className="block px-4 py-2 text-black hover:bg-gray-200"
                               onClick={() => setIsProjectsDropdownOpen(false)}
                             >
@@ -949,7 +949,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                           {projects.map((project) => (
                             <Link
                               key={project._id}
-                              href={`/posts/${project.slug.current}`}
+                              href={`/projects/${project.slug.current}`}
                               className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={() => {
                                 setIsMobileProjectsOpen(false);
