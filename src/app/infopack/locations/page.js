@@ -6,22 +6,36 @@ const locations = [
     name: "Orchid Township",
     coordinates: "22°21'50.2\"N 72°11'18.8\"E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3689.7267443410783!2d72.1885556!3d22.363944399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDIxJzUwLjIiTiA3MsKwMTEnMTguOCJF!5e0!3m2!1sen!2sin!4v1742204914354!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4419.985248834462!2d72.18597707529447!3d22.36394167964078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjLCsDIxJzUwLjIiTiA3MsKwMTEnMTguOCJF!5e1!3m2!1sen!2sin!4v1744287582830!5m2!1sen!2sin",
     link: "https://maps.app.goo.gl/WkCLTWstRABSY6jA7?g_st=iw",
   },
   {
     name: "Dholera International Airport",
     coordinates: "22°31'50.2\"N 72°02'18.8\"E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57812.81960503426!2d72.29363084274443!3d22.343902600491873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f210061a11ded%3A0xd9b68d7064988291!2sYashnand%20Engineers%20and%20Contractors%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1742205039372!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4420.349690016662!2d72.30066889999551!3d22.35245658219883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f210061a11ded%3A0xd9b68d7064988291!2sYashnand%20Engineers%20and%20Contractors%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1744287663714!5m2!1sen!2sin",
     link: "https://maps.app.goo.gl/zmuKb7sAwUt1cimp9",
   },
   {
     name: "TATA Semiconductor",
     coordinates: "22°41'50.2\"N 72°21'18.8\"E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.300263675601!2d72.1980051!3d22.2286835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f25005f33eaa3%3A0x15756b95b1ebde4a!2sTata%20Electronics%20Private%20Limited!5e0!3m2!1sen!2sin!4v1742205122068!5m2!1sen!2sin",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4424.265940861396!2d72.1980051!3d22.2286835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f25005f33eaa3%3A0x15756b95b1ebde4a!2sTata%20Electronics%20Private%20Limited!5e1!3m2!1sen!2sin!4v1744287710047!5m2!1sen!2sin",
     link: "https://maps.app.goo.gl/j7QTwgdeFNBF4Fer9",
+  },
+  {
+    name: "ReNew Solar Plant",
+    coordinates: "22°41'50.2\"N 72°21'18.8\"E",
+    mapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10523.298366847725!2d72.2001527342238!3d22.221203952366253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f252fd5610c47%3A0x40c757ece7a9838f!2sReNew%20Solar%20Cell!5e1!3m2!1sen!2sin!4v1744287385226!5m2!1sen!2sin",
+    link: "https://maps.app.goo.gl/UajRzCGCj1cNbW9T8",
+  },
+  {
+    name: "Maritime Park",
+    coordinates: "22°41'50.2\"N 72°21'18.8\"E",
+    mapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4424.504206549407!2d72.19462990000001!3d22.221132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f25ad3a2d92bd%3A0x5ebb4b680f8bdeb7!2sMaritime%20Park%20Dholera!5e1!3m2!1sen!2sin!4v1744287754083!5m2!1sen!2sin",
+    link: "https://maps.app.goo.gl/ZN7qNLW7rAy7ArZU7",
   },
 ];
 

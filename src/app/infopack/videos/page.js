@@ -11,22 +11,22 @@ export default async function VideosPage() {
     },
     {
       id: "rYv0f3BPhkg?si=AMWq3AMNQKwAW9Q_",
-      title: "Investment Opportunities in Dholera",
+      title: "Ahmedabad to Dholera in 45 Mins!",
       duration: "7:18"
     },
     {
       id: "RhQ1EdoQthc?si=E0gr-_r2za9T5TRU",
-      title: "Dholera Infrastructure Development",
+      title: "Dholera International Airport: Latest On-Ground Updates",
       duration: "4:55"
     },
     {
       id: "d_OATHg69UE?si=zPAeMlms8__JRZZH",
-      title: "Expert Analysis: Why Invest in Dholera",
+      title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
       duration: "6:30"
     },
     {
       id: "eugms9FsV1M?si=xDcpLcq4EfM-hsUW",
-      title: "Future of Dholera Smart City",
+      title: "Dholera Now: City Progress You Must See!",
       duration: "8:12"
     },
   ];
@@ -61,7 +61,7 @@ export default async function VideosPage() {
         <div className="text-center mb-16 relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
           
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className=" text-lg font-semibold max-w-2xl mx-auto leading-relaxed">
             Watch expert insights on why investing in Dholera is a smart financial decision and learn about the city's development.
           </p>
         </div>

@@ -88,7 +88,7 @@ export default async function BrochurePage() {
         <div className="text-center mb-16 relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
           
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="font-semibold text-lg max-w-2xl mx-auto leading-relaxed">
             Learn all about our Dholera residential plots by accessing our comprehensive project brochures.
           </p>
         </div>
