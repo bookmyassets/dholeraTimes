@@ -2,23 +2,25 @@
 import { useState } from "react";
 import Image from "next/image";
 import hero from "@/assets/news.webp";
-import sample from "@/assets/abcdbuilding.webp";
-import sample2 from "@/assets/abcd2.webp";
+
+import sample from "@/assets/Dholera SIR Semiconductor Work Begin.webp";
+import sample2 from "@/assets/Dholera Smart City Development.webp";
 import sample3 from "@/assets/Dholera Mega Smart City.webp";
 import sample4 from "@/assets/Dholera SIR Chip  Manufacturing.webp";
 import sample5 from "@/assets/Dholera SIR Defence Industry.webp";
 import sample6 from "@/assets/Dholera SIR Semiconductor Industry.webp";
 
+
 export default function ImageGallery() {
   // Sample image data - replace with your actual images
   const images = [
-    { id: 1, src: hero, alt: "Image 1" },
-    { id: 2, src: sample, alt: "Image 2" },
-    { id: 3, src: sample2, alt: "Image 3" },
-    { id: 4, src: sample3, alt: "Image 4" },
-    { id: 5, src: sample4, alt: "Image 5" },
-    { id: 6, src: sample5, alt: "Image 6" },
-    { id: 7, src: sample6, alt: "Image 6" },
+    
+    { id: 1, src: sample, alt: "Image 1" },
+    { id: 2, src: sample2, alt: "Image 2" },
+    { id: 3, src: sample3, alt: "Image 3" },
+    { id: 4, src: sample4, alt: "Image 4" },
+    { id: 5, src: sample5, alt: "Image 5" },
+    { id: 6, src: sample6, alt: "Image 6" },
     // Add more images as needed
   ];
 
