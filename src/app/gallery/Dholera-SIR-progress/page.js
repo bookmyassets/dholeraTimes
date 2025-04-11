@@ -52,7 +52,7 @@ export default function DholeraProgressPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-200">
       {/* Hero Section with Enhanced Overlay */}
-      <div className="relative h-[70vh] overflow-hidden">
+      <div className="relative h-[50vh] overflow-hidden">
         <Image
           src={hero}
           alt="Dholera SIR Progress"
@@ -100,12 +100,12 @@ export default function DholeraProgressPage() {
         </div>
 
         {/* Navigation with Category Tags */}
-        <div className="mt-16 flex flex-wrap justify-center gap-3">
+        {/* <div className="mt-16 flex flex-wrap justify-center gap-3">
           <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full cursor-pointer hover:bg-blue-200 transition-colors font-medium">All Images</span>
           <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Infrastructure</span>
           <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Transportation</span>
           <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Urban Planning</span>
-        </div>
+        </div> */}
       </div>
 
       {/* Image Popup */}
