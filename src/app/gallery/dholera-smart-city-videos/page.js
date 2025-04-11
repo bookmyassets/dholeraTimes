@@ -113,7 +113,7 @@ export default async function VideosPage() {
                   </h3>
                 )}
 
-                <div className="mt-4 flex justify-end">
+                {/* <div className="mt-4 flex justify-end">
                   <a
                     href={`https://www.youtube.com/watch?v=${video.id}`}
                     target="_blank"
@@ -123,7 +123,7 @@ export default async function VideosPage() {
                     Watch on YouTube
                     <ChevronRight className="ml-1 h-4 w-4" />
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
