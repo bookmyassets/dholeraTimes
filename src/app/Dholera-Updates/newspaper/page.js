@@ -10,9 +10,8 @@ import sample4 from "@/assets/Dholera SIR Chip  Manufacturing.webp";
 import sample5 from "@/assets/Dholera SIR Defence Industry.webp";
 import sample6 from "@/assets/Dholera SIR Semiconductor Industry.webp";
 
-
 export default function ImageGallery() {
-  // Sample image data - replace with your actual images
+ 
   const images = [
     
     { id: 1, src: sample, alt: "Image 1" },

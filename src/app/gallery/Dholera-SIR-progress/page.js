@@ -1,22 +1,53 @@
-import React from "react";
-import hero from "@/assets/news.webp";
-import ABCD from "@/assets/abcd.webp";
-import dholeraMap from "@/assets/dholeraMap.webp";
-import expressway from "@/assets/expressway.webp";
-import dholeraSIR from "@/assets/dholeraSIR.webp";
-import DIA from "@/assets/DIA.webp";
-import abt from "@/assets/abt.webp";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
+import hero from "@/assets/news.webp";
+import sample1 from "@/assets/gallery/sir/Dholera Abcd building.webp";
+import sample2 from "@/assets/gallery/sir/Dholera Abcd building auditorium.webp";
+import sample3 from "@/assets/gallery/sir/Dholera Abcd building  inside.webp";
+import sample4 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway After & Before Contruction (1).webp";
+import sample5 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway After & Before Contruction (2).webp";
+import sample6 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway Final.webp";
+import sample7 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway Night view.webp";
+import sample8 from "@/assets/gallery/sir/Dholera Canal Front Final View.webp";
+import sample9 from "@/assets/gallery/sir/Dholera Cannel front view daytime & nighttime.webp";
+import sample10 from "@/assets/gallery/sir/Dholera Common Effluent Treatement Plant 1.webp";
+import sample11 from "@/assets/gallery/sir/Dholera Common Effluent Treatment Plant.webp";
+import sample12 from "@/assets/gallery/sir/Dholera Sewage Treatment Plant outer view.webp";
+import sample13 from "@/assets/gallery/sir/Dholera Sewage Treatment Plant.webp";
+import sample14 from "@/assets/gallery/sir/Dholera Solar Power Plant 2.webp";
+import sample15 from "@/assets/gallery/sir/Dholera Solar Power Project.webp";
+
 
 export default function DholeraProgressPage() {
   const galleryImages = [
-    { id: 1, src: ABCD, alt: "Dholera Infrastructure Development", caption: "State-of-the-art infrastructure development in progress" },
-    { id: 2, src: dholeraMap, alt: "Dholera Smart City Project", caption: "Master plan of India's first greenfield smart city" },
-    { id: 3, src: expressway, alt: "Dholera Expressway", caption: "High-speed connectivity via the Ahmedabad-Dholera Expressway" },
-    { id: 4, src: dholeraSIR, alt: "Dholera SIR Overview", caption: "Aerial view of the Special Investment Region" },
-    { id: 5, src: DIA, alt: "Dholera International Airport", caption: "Upcoming international airport boosting connectivity" },
-    { id: 6, src: abt, alt: "Dholera Smart City Vision", caption: "Sustainable urban planning with smart technology" },
+    { id: 1, src: sample1, alt: "Dholera Abcd building", caption: "Dholera Abcd building" },
+    { id: 2, src: sample2, alt: "Dholera Abcd building auditorium", caption: "Dholera Abcd building auditorium" },
+    { id: 3, src: sample3, alt: "Dholera Abcd building  inside", caption: "Dholera Abcd building  inside" },
+    { id: 4, src: sample4, alt: "Dholera Ahmedabad Expressway After & Before Contruction (1)", caption: "Dholera Ahmedabad Expressway After & Before Contruction (1)" },
+    { id: 5, src: sample5, alt: "Dholera Ahmedabad Expressway After & Before Contruction (2)", caption: "Dholera Ahmedabad Expressway After & Before Contruction (2)" },
+    { id: 6, src: sample6, alt: "Dholera Ahmedabad Expressway Final", caption: "Dholera Ahmedabad Expressway Final" },
+    { id: 7, src: sample7, alt: "Dholera Ahmedabad Expressway Night view", caption: "Dholera Ahmedabad Expressway Night view" },
+    { id: 8, src: sample8, alt: "Dholera Canal Front Final View", caption: "Dholera Canal Front Final View" },
+    { id: 9, src: sample9, alt: "Dholera Cannel front view daytime & nighttime", caption: "Dholera Cannel front view daytime & nighttime" },
+    { id: 10, src: sample10, alt: "Dholera Common Effluent Treatement Plant 1", caption: "Dholera Common Effluent Treatement Plant 1" },
+    { id: 11, src: sample11, alt: "Dholera Common Effluent Treatement Plant", caption: "Dholera Common Effluent Treatement Plant 1" },
+    { id: 12, src: sample12, alt: "Dholera Sewage Treatment Plant outer view", caption: "Dholera Sewage Treatment Plant outer view" },
+    { id: 13, src: sample13, alt: "Dholera Sewage Treatment Plant", caption: "Dholera Sewage Treatment Plant" },
+    { id: 15, src: sample15, alt: "Dholera Solar Power Plant", caption: "Dholera Solar Power Plant" },
+    { id: 14, src: sample14, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
+   
   ];
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const openPopup = (image) => {
+    setSelectedImage(image);
+  };
+
+  const closePopup = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-200">
@@ -24,17 +55,16 @@ export default function DholeraProgressPage() {
       <div className="relative h-[70vh] overflow-hidden">
         <Image
           src={hero}
-          alt="Dholera Skyline"
-          className="w-full h-full object-cover"
+          alt="Dholera SIR Progress"
+          fill
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex items-center justify-center">
           <div className="text-center px-6 py-10 max-w-4xl">
-           
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
               Dholera SIR Progress in Every Frame
             </h1>
-            
           </div>
         </div>
       </div>
@@ -45,25 +75,25 @@ export default function DholeraProgressPage() {
           <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 text-center">
             Explore Dholera Growth through Images
           </h2>
-          
         </div>
 
         {/* Gallery Grid with Enhanced Hover Effects */}
-        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className=" group relative overflow-hidden rounded-xl transition-all duration-300 shadow-2xl h-80"
+              className="group relative overflow-hidden rounded-xl transition-all duration-300 shadow-2xl h-80 cursor-pointer"
+              onClick={() => openPopup(image)}
             >
               <Image
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                priority={image.id <= 3}
+                fill
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0  transition-opacity duration-300 flex flex-col justify-end p-6">
-                <h3 className="text-white text-xl font-bold mb-2">{image.alt}</h3>
-                <p className="text-white/80 text-sm">{image.caption}</p>
+              <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                {/* <h3 className="text-black text-xl font-bold mb-2">{image.alt}</h3> */}
+                
               </div>
             </div>
           ))}
@@ -77,6 +107,37 @@ export default function DholeraProgressPage() {
           <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Urban Planning</span>
         </div>
       </div>
+
+      {/* Image Popup */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" 
+          onClick={closePopup}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] mx-4">
+            <button
+              onClick={closePopup}
+              className="absolute top-4 right-4 bg-white rounded-full w-8 h-8 flex items-center justify-center text-black font-bold z-10"
+            >
+              ×
+            </button>
+            <div className="relative w-full h-full">
+              <Image
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                width={1200}
+                height={800}
+                className="max-h-[90vh] w-auto object-contain"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+            <div className="bg-white p-4 text-center">
+              <h3 className="text-lg font-bold">{selectedImage.alt}</h3>
+              <p className="text-gray-600">{selectedImage.caption}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
