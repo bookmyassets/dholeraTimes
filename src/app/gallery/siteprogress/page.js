@@ -2,8 +2,8 @@ import React from "react";
 import hero from "@/assets/news.webp";
 import project1 from "@/assets/siteprogress/Project site view 1.webp";
 import project2 from "@/assets/siteprogress/Project site view 2.webp";
-import project3 from "@/assets/siteprogress/Project site view 3.webp";
-import project4 from "@/assets/siteprogress/Project site view 4.webp";
+import project3 from "@/assets/siteprogress/Project Site view 3.webp";
+import project4 from "@/assets/siteprogress/Project Site view 4.webp";
 import project5 from "@/assets/siteprogress/Project site view 5.webp";
 import Image from "next/image";
 

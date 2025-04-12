@@ -81,7 +81,7 @@ export default function CostSheet() {
   const generatePDF = () => {
     const doc = new jsPDF();
 
-    const { name, phone, email, plc, plotAreaYards, plotAreaFeet, plotPriceYards, totalPaymentYards, maintenanceCharge, totalCharges, plotTotalPayment } = formData;
+    const { name, phone, email, plc, plotNo, plotAreaYards, plotAreaFeet, plotPriceYards, totalPaymentYards, maintenanceCharge, totalCharges, plotTotalPayment } = formData;
 
     let startY = 60;
 
@@ -120,6 +120,7 @@ export default function CostSheet() {
           ['Name', name],
           ['Phone', phone],
           ['Email', email],
+          ['PlotNo', plotNo],
           ['Preffered Location Charges (PLC)', `Rs. ${formattedplc}`],
           ['Plot Area (Yards)', plotAreaYards],
           ['Plot Area (Feet)', plotAreaFeet],
