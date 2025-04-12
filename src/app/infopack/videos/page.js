@@ -98,18 +98,6 @@ export default async function VideosPage() {
                     {video.title}
                   </h3>
                 )}
-                
-                {/* <div className="mt-4 flex justify-end">
-                  <a 
-                    href={`https://www.youtube.com/watch?v=${video.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-[#d8b66d] hover:text-[#bc9849]"
-                  >
-                    Watch on YouTube
-                    <ChevronRight className="ml-1 h-4 w-4" />
-                  </a>
-                </div> */}
               </div>
             </div>
           ))}

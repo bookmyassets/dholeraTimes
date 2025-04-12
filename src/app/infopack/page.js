@@ -78,21 +78,10 @@ export default function Info() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-blue-50 h-[87vh] to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header with decorative elements */}
         <div className="text-center mb-16 relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
-          <h1 className="mt-6 text-4xl font-extrabold text-gray-800 sm:text-5xl tracking-tight">
-            Explore <span className="text-[#d8b66d] relative inline-block">
-              Dholera
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-[#d8b66d]"></span>
-            </span>
-          </h1>
-          <p className="mt-6 text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Discover strategic investment opportunities in India's first planned smart city and be part of the future.
-          </p>
-          
           {/* View toggle for non-mobile devices */}
           <div className="flex justify-center mt-10 max-sm:hidden">
             <div className="inline-flex rounded-md shadow-sm p-1 bg-white border border-gray-200" role="group">

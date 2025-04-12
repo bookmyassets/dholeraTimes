@@ -1,27 +1,25 @@
 import React from "react";
 import hero from "@/assets/news.webp";
-import ABCD from "@/assets/abcd.webp";
-import dholeraMap from "@/assets/dholeraMap.webp";
-import expressway from "@/assets/expressway.webp";
-import dholeraSIR from "@/assets/dholeraSIR.webp";
-import DIA from "@/assets/DIA.webp";
-import abt from "@/assets/abt.webp";
+import project1 from "@/assets/siteprogress/Project site view 1.webp";
+import project2 from "@/assets/siteprogress/Project site view 2.webp";
+import project3 from "@/assets/siteprogress/Project site view 3.webp";
+import project4 from "@/assets/siteprogress/Project site view 4.webp";
+import project5 from "@/assets/siteprogress/Project site view 5.webp";
 import Image from "next/image";
 
 export default function DholeraProgressPage() {
   const galleryImages = [
-    { id: 1, src: ABCD, alt: "Dholera Infrastructure Development" },
-    { id: 2, src: dholeraMap, alt: "Dholera Smart City Project" },
-    { id: 3, src: expressway, alt: "Dholera Industrial Zone" },
-    { id: 4, src: dholeraSIR, alt: "Dholera Transportation Network" },
-    { id: 5, src: DIA, alt: "Dholera Residential Area" },
-    { id: 6, src: abt, alt: "Dholera Green Spaces" },
+    { id: 1, src: project1, alt: "Dholera Infrastructure Development" },
+    { id: 2, src: project2, alt: "Dholera Smart City Project" },
+    { id: 3, src: project3, alt: "Dholera Industrial Zone" },
+    { id: 4, src: project4, alt: "Dholera Transportation Network" },
+    { id: 5, src: project5, alt: "Dholera Residential Area" },
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       {/* Hero Section with Overlay */}
-      <div className="relative h-[60vh] overflow-hidden">
+      <div className="relative h-[50vh] overflow-hidden">
         <Image
           src={hero}
           alt="Dholera Skyline"
