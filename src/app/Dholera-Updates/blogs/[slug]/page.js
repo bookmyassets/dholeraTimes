@@ -225,6 +225,17 @@ export default async function BlogDetail({ params }) {
     });
 
     return (
+      <html lang="en">
+ <head>
+          <title>{post.metaTitle || post.title}</title>
+          <meta
+            name="description"
+            content={post.metaDescription || post.title}
+          />
+          {post.keywords && Array.isArray(post.keywords) && (
+            <meta name="keywords" content={post.keywords.join(", ")} />
+          )}
+        </head>
       <div className="bg-white min-h-screen">
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
@@ -242,7 +253,7 @@ export default async function BlogDetail({ params }) {
                       <Link
                         href="/"
                         className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700"
-                      >
+                        >
                         Home
                       </Link>
                     </li>
@@ -253,12 +264,12 @@ export default async function BlogDetail({ params }) {
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
-                        >
+                          >
                           <path
                             fillRule="evenodd"
                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                             clipRule="evenodd"
-                          ></path>
+                            ></path>
                         </svg>
                         <Link
                           href="/Dholera-Updates/blogs"
@@ -275,7 +286,7 @@ export default async function BlogDetail({ params }) {
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
-                        >
+                          >
                           <path
                             fillRule="evenodd"
                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
@@ -299,7 +310,7 @@ export default async function BlogDetail({ params }) {
                       <span
                         key={category._id || category.title}
                         className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
-                      >
+                        >
                         Blogs
                       </span>
                     ))}
@@ -319,13 +330,13 @@ export default async function BlogDetail({ params }) {
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
-                    >
+                      >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth="2"
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      ></path>
+                        ></path>
                     </svg>
                     <time className="text-gray-500">{formattedDate}</time>
                   </div>
@@ -338,13 +349,13 @@ export default async function BlogDetail({ params }) {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
-                      >
+                        >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           strokeWidth="2"
                           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
+                          ></path>
                       </svg>
                       <span>{post.readingTime} min read</span>
                     </div>
@@ -381,9 +392,9 @@ export default async function BlogDetail({ params }) {
                     <div className="flex flex-wrap gap-2">
                       {post.tags.map((tag) => (
                         <Link
-                          key={tag}
-                          href={`/Dholera-Updates/blogs/tag/${tag}`}
-                          className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition"
+                        key={tag}
+                        href={`/Dholera-Updates/blogs/tag/${tag}`}
+                        className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition"
                         >
                           #{tag}
                         </Link>
@@ -464,7 +475,7 @@ export default async function BlogDetail({ params }) {
               <Link
                 href="/Dholera-Updates/latest-news"
                 className="rounded-xl text-gray-800 font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d]"
-              >
+                >
                 View all
               </Link>
             </div>
@@ -472,16 +483,16 @@ export default async function BlogDetail({ params }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedBlogs && relatedBlogs.length > 0
                 ? relatedBlogs.map((blog) => (
-                    <RelatedBlogCard key={blog._id} blog={blog} />
-                  ))
+                  <RelatedBlogCard key={blog._id} blog={blog} />
+                ))
                 : // Fallback content if no related blogs are found
-                  Array(3)
-                    .fill(0)
-                    .map((_, i) => (
-                      <div
-                        key={i}
-                        className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
-                      >
+                Array(3)
+                .fill(0)
+                .map((_, i) => (
+                  <div
+                  key={i}
+                  className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
+                  >
                         <div className="h-48 bg-gradient-to-r from-gray-100 to-gray-200"></div>
                         <div className="p-6">
                           <div className="h-4 bg-gray-200 rounded w-1/4 mb-3"></div>
@@ -495,6 +506,7 @@ export default async function BlogDetail({ params }) {
           </div>
         </section>
       </div>
+    </html>
     );
   } catch (error) {
     console.error("Error loading blog post:", slug, error);
@@ -506,7 +518,7 @@ export default async function BlogDetail({ params }) {
           <Link
             href="/Dholera-Updates/blogs"
             className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
-          >
+            >
             ← Back to News
           </Link>
         </div>
