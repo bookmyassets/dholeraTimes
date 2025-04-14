@@ -249,7 +249,7 @@ export default function CostSheet() {
               <td className="p-2 font-semibold">Plot No</td>
               <td className="p-2">
                 <input
-                  type="number"
+                  type="text"
                   name="plotNo"
                   value={formData.plotNo}
                   onChange={handleChange}
