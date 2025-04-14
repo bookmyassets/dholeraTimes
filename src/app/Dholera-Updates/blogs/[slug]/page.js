@@ -225,8 +225,8 @@ export default async function BlogDetail({ params }) {
     });
 
     return (
-      <html lang="en">
- <head>
+      <div>
+         <head>
           <title>{post.metaTitle || post.title}</title>
           <meta
             name="description"
@@ -236,6 +236,7 @@ export default async function BlogDetail({ params }) {
             <meta name="keywords" content={post.keywords.join(", ")} />
           )}
         </head>
+
       <div className="bg-white min-h-screen">
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
@@ -274,7 +275,7 @@ export default async function BlogDetail({ params }) {
                         <Link
                           href="/Dholera-Updates/blogs"
                           className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 md:ml-2"
-                        >
+                          >
                           Blogs
                         </Link>
                       </div>
@@ -291,7 +292,7 @@ export default async function BlogDetail({ params }) {
                             fillRule="evenodd"
                             d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
                             clipRule="evenodd"
-                          ></path>
+                            ></path>
                         </svg>
                         <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2 line-clamp-1">
                           {post.title}
@@ -373,7 +374,7 @@ export default async function BlogDetail({ params }) {
                     height={675}
                     className="w-full h-auto"
                     priority
-                  />
+                    />
                 </div>
               )}
 
@@ -475,7 +476,7 @@ export default async function BlogDetail({ params }) {
               <Link
                 href="/Dholera-Updates/latest-news"
                 className="rounded-xl text-gray-800 font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d]"
-                >
+              >
                 View all
               </Link>
             </div>
@@ -506,7 +507,7 @@ export default async function BlogDetail({ params }) {
           </div>
         </section>
       </div>
-    </html>
+                    </div>
     );
   } catch (error) {
     console.error("Error loading blog post:", slug, error);
@@ -518,7 +519,7 @@ export default async function BlogDetail({ params }) {
           <Link
             href="/Dholera-Updates/blogs"
             className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
-            >
+          >
             ← Back to News
           </Link>
         </div>
