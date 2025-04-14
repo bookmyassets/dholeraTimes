@@ -88,9 +88,13 @@ export async function getPostBySlug(slug) {
   const query = `*[_type == "post" && slug.current == $slug][0]{
     _id,
     title,
+    metaTitle,
+    metaDescription,
+    "keywords": keywords[]->title,  // Added this line to fetch keywords
     slug,
     mainImage,
     publishedAt,
+    _createdAt,
     body,
     author->{
       name,
@@ -99,9 +103,10 @@ export async function getPostBySlug(slug) {
     categories[]->{
       title,
       _id
-    }
+    },
+    readingTime  // Added this line if you're using it
   }`;
-  const post = await client.fetch(query, { slug }, { cache: 'no-store' }); // Disables caching
+  const post = await client.fetch(query, { slug });
   return post;
 }
 
