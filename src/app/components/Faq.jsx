@@ -15,7 +15,7 @@ const faqs = [
     answer: [
       "Dholera International Airport.",
       "India’s first semiconductor plant by TATA - ₹91,000 Cr investment.",
-      "Asia’s largest solar park - 500MW",
+      "Asia’s largest solar park - 5,000MW",
       "ReNew Power solar cell manufacturing unit",
     ],
   },
@@ -23,7 +23,7 @@ const faqs = [
     question: "Why should we invest in Dholera?",
     answer: [
       "India’s first fully planned smart city, built from scratch",
-      "Upcoming expressway to be operational in 4-5 months",
+      "Upcoming expressway to be operational in 1-2 months",
       "International airport set for completion by 2026",
       "₹90,000 Cr investment by TATA in India's first semiconductor plant, boosting growth potential",
     ],
