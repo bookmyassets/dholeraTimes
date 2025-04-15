@@ -79,7 +79,7 @@ export default async function BrochurePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8 relative">
+    <div className="min-h-[87vh] bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8 relative">
       <div
         className="absolute inset-0 bg-cover bg-center opacity-10 -z-10"
         style={{ backgroundImage: `url(${bg.src})` }}

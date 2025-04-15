@@ -1,9 +1,9 @@
 "use client"
 import React from 'react';
 import { useState } from 'react';
-import { Phone, Mail, MapPin, User, Check, ChevronDown, ChevronUp, Globe, BookOpen, DollarSign, Building, FileText, Home } from 'lucide-react';
+import { User, ChevronDown, ChevronUp, Globe, BookOpen, DollarSign, Building, FileText} from 'lucide-react';
 import Image from "next/image";
-import hero from "@/assets/hero5.webp";
+import Link from 'next/link';
 
 export default function NRIInvestmentGuide() {
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -72,9 +72,9 @@ export default function NRIInvestmentGuide() {
             <button className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
               Get Free Consultation
             </button>
-            <button className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
+            <Link href="/projects" className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
               Explore Projects
-            </button>
+            </Link>
           </div>
         </div>
       </div>

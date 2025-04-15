@@ -158,7 +158,7 @@ export default function LocationsComponent() {
   // Grid view for desktop
   const renderGridView = () => {
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 pt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pb-8 pt-8 ">
         {locations.map((location, index) => (
           <div
             key={index}

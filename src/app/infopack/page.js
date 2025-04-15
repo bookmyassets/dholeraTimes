@@ -78,12 +78,12 @@ export default function Info() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 h-[87vh] to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8 min-h-[87vh] overflow-auto">
       <div className="max-w-7xl mx-auto">
         {/* Header with decorative elements */}
         <div className="text-center mb-16 relative">
           {/* View toggle for non-mobile devices */}
-          <div className="flex justify-center mt-10 max-sm:hidden">
+          <div className="flex justify-center max-sm:hidden">
             <div className="inline-flex rounded-md shadow-sm p-1 bg-white border border-gray-200" role="group">
               <button
                 type="button"
@@ -135,27 +135,25 @@ export default function Info() {
 
         {/* Card View */}
         {viewMode === "card" && (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 pb-8">
             {items.map((item) => (
               <Link href={item.link} key={item.id} className="group">
-                <div className="bg-white rounded-xl overflow-hidden shadow-2xl border border-gray-100 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
-                  <div className="relative h-64 w-full overflow-hidden">
+                <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative">
+                  <div className="relative h-64 w-full">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                    {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                     */}
                   </div>
 
                   <div className="p-6">
                     <div className="flex items-center mb-4">
-                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-3">
+                      <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-3 flex-shrink-0">
                         {item.icon}
                       </div>
-                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
                         {item.title}
                       </h3>
                     </div>
@@ -181,8 +179,8 @@ export default function Info() {
                     </div>
                   </div>
 
-                  {/* Decorative corner */}
-                  <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-amber-400 to-amber-600 transform rotate-45 translate-x-6 -translate-y-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Decorative corner - made smaller and positioned properly to avoid overflow */}
+                  <div className="absolute top-0 right-0 w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 transform rotate-45 translate-x-4 -translate-y-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
               </Link>
             ))}
