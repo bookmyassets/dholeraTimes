@@ -397,7 +397,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                   />
                 </Link>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden lg:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <Link
                     href="/"
@@ -707,6 +707,12 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                   >
                     About Us
                   </Link>
+                  <Link
+                    href="/nri-investment-guide-dholera"
+                    className="text-white block px-3 py-2"
+                  >
+                    NRI Guide
+                  </Link>
                   <div className="relative" ref={contactRef}>
                     <button
                       onClick={toggleContactDropdown}
@@ -767,7 +773,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                 </div>
               </div>
 
-              <div className="md:hidden flex items-center gap-4">
+              <div className="lg:hidden flex items-center gap-4">
                 <div className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
                   <Link
                     href="tel:+919958993549"
@@ -804,7 +810,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                 exit={{ x: "-100%", opacity: 0 }}
                 ref={menuOpenRef}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="md:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
+                className="lg:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
               >
                 <div className="flex justify-end"></div>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
@@ -825,9 +831,9 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                   </Link>
 
                   {/* Dholera SIR Dropdown */}
-                  <div ref={dholeraDropdownRef} className="lg:hidden px-4 py-2">
+                  <div ref={dholeraDropdownRef} className="lg:hidden  py-2">
                     <div
-                      className="flex items-center justify-between text-white cursor-pointer"
+                      className="flex items-center justify-between text-white px-3 py-2 cursor-pointer"
                       onClick={toggleMobileDholeraDropdown}
                     >
                       <span>Dholera SIR</span>
@@ -910,7 +916,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                             <Link
                               key={item.path}
                               href={item.path}
-                              className="block px-4 py-2 text-white"
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={() => {
                                 setIsMobileDholeraOpen(false);
                                 setIsMenuOpen(false);
@@ -1166,6 +1172,13 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       )}
                     </AnimatePresence>
                   </div>
+                  <Link
+                    href="/nri-investment-guide-dholera"
+                    className="text-white block px-3 py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    NRI Guide
+                  </Link>
                 </div>
               </motion.div>
             )}

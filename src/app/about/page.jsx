@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import hero from "@/assets/hero5.webp";
 import TestimonialPagination from "../components/Testimonials";
-
+import Link from "next/link";
 export default function AboutUs() {
   const [activeTab, setActiveTab] = useState("CompanyProfile");
 
@@ -577,9 +577,9 @@ export default function AboutUs() {
             we're here to help.
           </p>
           <div className="flex justify-center gap-4">
-            <button className="px-8 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors">
+            <Link href="/contact/inquiry" className="px-8 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors">
               Contact Us
-            </button>
+            </Link>
             <button className="px-8 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors">
               Book a Free Site Visit
             </button>
