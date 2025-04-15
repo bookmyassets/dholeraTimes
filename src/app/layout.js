@@ -1129,6 +1129,13 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                   >
                     About Us
                   </Link>
+                  <Link
+                    href="/nri-investment-guide-dholera"
+                    className="text-white block px-3 py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    NRI Guide
+                  </Link>
                   {/* Contact Dropdown */}
                   <div ref={contactRef}>
                     <div
@@ -1172,13 +1179,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                       )}
                     </AnimatePresence>
                   </div>
-                  <Link
-                    href="/nri-investment-guide-dholera"
-                    className="text-white block px-3 py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    NRI Guide
-                  </Link>
+                  
                 </div>
               </motion.div>
             )}

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { X } from "lucide-react"; // Import the X icon from lucide-react
 
-export default function ContactForm({ title, buttonName, onClose }) {
+export default function PopupForm({ title, buttonName, onClose }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -19,8 +20,6 @@ export default function ContactForm({ title, buttonName, onClose }) {
       [name]: value,
     }));
   };
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,7 +118,16 @@ export default function ContactForm({ title, buttonName, onClose }) {
 
   return (
     <div className="relative">
-      <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl">
+      <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl relative">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition"
+          aria-label="Close form"
+        >
+          <X size={24} />
+        </button>
+        
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {title}
         </h2>

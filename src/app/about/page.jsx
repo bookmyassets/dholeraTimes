@@ -26,7 +26,7 @@ export default function AboutUs() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative md:h-96 w-full h-[50vh] overflow-hidden">
+      <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
         <Image
           src={hero}
           alt="Dholera Skyline"
@@ -43,7 +43,7 @@ export default function AboutUs() {
       </div>
 
       {/* Introduction Section */}
-      <section className="py-12 bg-white">
+      <section className="py-4 bg-white">
         <div className="container max-w-5xl mx-auto px-4">
           <p className="text-center md:text-4xl font-semibold ">
             Your Trusted Partner in Dholera Smart City Real Estate
@@ -52,7 +52,7 @@ export default function AboutUs() {
       </section>
 
       {/* Navigation Tabs */}
-      <div className="sticky top-20 z-20 bg-white shadow-2xl py-4">
+      <div className="sticky top-20 z-20 bg-white shadow-2xl py-4 max-sm:hidden">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center gap-4 overflow-x-auto pb-2 flex-wrap md:flex-nowrap">
             <button
@@ -102,7 +102,7 @@ export default function AboutUs() {
       </div>
 
       {/* Content Sections */}
-      <section className="py-16 leading-relaxed bg-gray-50">
+      <section className="py-4 leading-relaxed bg-gray-50">
         {/* Company Profile Section */}
         <div id="CompanyProfile" className="container mx-auto px-4 mb-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
@@ -152,8 +152,8 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="mt-12">
-            <h3 className="text-2xl font-bold mb-6">What We Do</h3>
+          <div className="mt-6">
+            <h3 className="text-2xl font-bold mb-4">What We Do</h3>
             <p className="text-gray-700 text-lg mb-4">
               We specialize in <strong>residential plots in Dholera SIR</strong>
               , offering end-to-end services including:
@@ -188,8 +188,8 @@ export default function AboutUs() {
         </div>
 
         {/* Mission Section */}
-        <div id="Mission" className="container mx-auto px-4 mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+        <div id="Mission" className="container mx-auto px-4 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Our Mission & Vision
             </span>
@@ -228,7 +228,7 @@ export default function AboutUs() {
         {/* Why Choose Us Section */}
         <div
           id="WhyChooseUs"
-          className="container mx-auto px-4 py-16 mb-20 bg-gray-900 rounded-lg"
+          className="container mx-auto px-4 py-4 mb-20 bg-gray-900 rounded-lg"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative text-white after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
@@ -316,8 +316,8 @@ export default function AboutUs() {
         </div>
 
         {/* Location Advantage Section */}
-        <div id="LocationAdvantage" className="container mx-auto px-4 mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
+        <div id="LocationAdvantage" className="container mx-auto px-4 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Location Advantage
             </span>
@@ -580,9 +580,9 @@ export default function AboutUs() {
             <Link href="/contact/inquiry" className="px-8 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors">
               Contact Us
             </Link>
-            <button className="px-8 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors">
+            <Link href="/contact/sitevisit" className="px-8 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors">
               Book a Free Site Visit
-            </button>
+            </Link>
           </div>
         </div>
       </section>

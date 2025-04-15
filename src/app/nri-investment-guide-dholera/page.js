@@ -4,10 +4,22 @@ import { useState } from 'react';
 import { User, ChevronDown, ChevronUp, Globe, BookOpen, DollarSign, Building, FileText} from 'lucide-react';
 import Image from "next/image";
 import Link from 'next/link';
+import { AnimatePresence } from 'framer-motion';
+import PopupForm from '../components/PopupForm';
+
 
 export default function NRIInvestmentGuide() {
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [activeTab, setActiveTab] = useState("WhyInvest");
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
 
   const toggleAccordion = (index) => {
     if (activeAccordion === index) {
@@ -62,17 +74,17 @@ export default function NRIInvestmentGuide() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative bg-[#151f28] text-white py-16 px-6">
+      <div className="relative bg-[#151f28] text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Your Gateway to Property Investment in India's 1st Greenfield Smart City!</h1>
-          <h2 className="text-2xl md:text-3xl text-[#d3b469] mb-8">Invest in India's No.1 Smart City from Anywhere in the World</h2>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Your Gateway to Property Investment in India's 1st Greenfield Smart City!</h1>
+          <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8">Invest in India's No.1 Smart City from Anywhere in the World</h2>
           <p className="text-lg mb-8">Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal, AUDA-Approved Plots with Virtual Support.</p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <button className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
+            <button onClick={openContactForm} className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
               Get Free Consultation
             </button>
-            <Link href="/projects" className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
+            <Link href="/projects" className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all">
               Explore Projects
             </Link>
           </div>
@@ -80,7 +92,7 @@ export default function NRIInvestmentGuide() {
       </div>
 
       {/* Navigation Tabs */}
-      <div className="sticky top-0 z-20 bg-white shadow-md py-4">
+      <div className="sticky top-0 z-20 bg-white shadow-md py-4 max-sm:hidden">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center gap-4 overflow-x-auto pb-2 flex-wrap md:flex-nowrap">
             <button
@@ -132,7 +144,7 @@ export default function NRIInvestmentGuide() {
       </section>
 
       {/* Content Sections */}
-      <section className="py-16 leading-relaxed bg-gray-50">
+      <section className="py-8 leading-relaxed bg-gray-50">
         {/* Why Invest Section */}
         <div id="WhyInvest" className="container mx-auto px-4 mb-20">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
@@ -146,7 +158,7 @@ export default function NRIInvestmentGuide() {
                 The real estate market in India is now a top investment option for Indians who are not residents (NRIs) with the highest returns, stability in the economy and a long-term potential for growth. In the midst of emerging intelligent cities Dholera Smart City stands out as a futuristic urban center that offers top-of-the-line infrastructure, strategically connected, and a government-backed investment environment.
               </p>
               
-              <blockquote className="border-l-4 border-[#d8b66d] pl-4 italic text-xl mb-8 text-gray-700">
+              <blockquote className="border-l-4 border-[#d8b66d] pl-4 italic text-xl mb-8 text-[#151f28]">
                 "Dholera is not just a city, it's the future of smart living in India."
               </blockquote>
               
@@ -232,7 +244,7 @@ export default function NRIInvestmentGuide() {
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center relative">
               <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-                Why Choose Dholera Times as Your Investment Partner?
+                Why Choose <span className='text-[#151f28]'> Dholera Times</span>  as Your Investment Partner?
               </span>
             </h3>
             
@@ -578,6 +590,13 @@ export default function NRIInvestmentGuide() {
           </div>
         </div>
       </section>
+      <AnimatePresence className="p-3">
+          {isContactFormOpen && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+              <PopupForm title="Book A Free Conslutation Today" buttonName="Get A Call Back" X onClose={closeContactForm} />
+            </div>
+          )}
+        </AnimatePresence>
     </>
   );
 }
