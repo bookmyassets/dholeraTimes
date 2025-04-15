@@ -812,7 +812,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="lg:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
               >
-                <div className="flex justify-end"></div>
+                {/* <div className="flex justify-end"></div> */}
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
                   <Image
                     src={logo2}
@@ -821,7 +821,7 @@ Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR 
                     height={150}
                   />
                 </Link>
-                <div className="px-7 pt-10 pb-3 text-lg space-y-4 sm:px-3">
+                <div className="px-7 text-lg space-y-4 sm:px-3">
                   <Link
                     href="/"
                     className="text-white block px-3 py-2"
