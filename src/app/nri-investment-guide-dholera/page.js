@@ -177,7 +177,7 @@ export default function NRIInvestmentGuide() {
       {/* Introduction Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-5xl mx-auto px-4">
-          <p className="text-black text-center text-4xl max-sm:text-2xl font-semibold pb-4">
+          <p className="text-black text-center text-4xl max-sm:text-2xl font-semibold mb-4">
             Looking to invest in India from abroad?
           </p>
           <p className="text-center text-lg md:text-xl font-medium text-gray-700">
@@ -193,9 +193,9 @@ export default function NRIInvestmentGuide() {
       </section>
 
       {/* Content Sections */}
-      <section className="py-8 leading-relaxed bg-gray-50">
+      <section className="py-4 leading-relaxed bg-gray-50">
         {/* Why Invest Section */}
-        <div id="WhyInvest" className="container mx-auto px-4 mb-20">
+        <div id="WhyInvest" className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Why NRIs Should Invest In India, Especially In Dholera Smart City
@@ -281,7 +281,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Why Dholera Section */}
-        <div id="WhyDholera" className="container mx-auto px-4 mb-20">
+        <div id="WhyDholera" className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Why Dholera is a Smart Choice for NRIs
@@ -333,7 +333,7 @@ export default function NRIInvestmentGuide() {
             </div>
           </div>
 
-          <p className="text-[#d8b66d] font-semibold text-lg">
+          <p className="text-[#d8b66d] text-center font-semibold text-lg">
             Dholera Smart City is planned within the Delhi-Mumbai Industrial
             Corridor (DMIC), and is the largest planned smart city covering an
             area of 920 square km.
@@ -341,7 +341,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Why Choose Dholera Times */}
-        <div id="WhyChoose" className="container mx-auto px-4 mb-20">
+        <div id="WhyChoose" className="container mx-auto px-4 mb-4">
           <div className="bg-white p-8 rounded-lg shadow-sm">
             <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center relative">
               <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
@@ -426,7 +426,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Step-by-Step Guide */}
-        <div id="InvestmentGuide" className="container mx-auto px-4 mb-20">
+        <div id="InvestmentGuide" className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Step-by-Step Guide for NRIs to Buy Plots
@@ -537,7 +537,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Our Services */}
-        <div className="container mx-auto px-4 mb-20">
+        <div className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Our Services for NRIs
@@ -608,7 +608,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Benefits for NRI Investors */}
-        <div className="container mx-auto px-4 mb-20">
+        <div className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Benefits for Non-Resident Indian Investors
@@ -653,7 +653,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Financial Guidelines */}
-        <div id="FinancialGuidelines" className="container mx-auto px-4 mb-20">
+        <div id="FinancialGuidelines" className="container mx-auto px-4 mb-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Financial Guidelines: Loan & Funding for NRIs
@@ -757,7 +757,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* Testimonials */}
-        <div className="container mx-auto px-4 mb-20">
+        <div className="container mx-auto px-4 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Testimonials from NRI Clients

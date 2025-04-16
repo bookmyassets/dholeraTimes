@@ -34,7 +34,7 @@ export default function AboutUs() {
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center px-6 py-10 ">
+          <div className="text-center px-6 py-10">
             <h1 className="text-5xl md:text-5xl font-bold text-white mb-2">
               About Us
             </h1>
@@ -43,17 +43,17 @@ export default function AboutUs() {
       </div>
 
       {/* Introduction Section */}
-      <section className="py-4 bg-white">
-        <div className="container max-w-5xl mx-auto px-4">
-          <p className="text-center md:text-4xl font-semibold ">
-            Your Trusted Partner in Dholera Smart City Real Estate
+      <section className="py-12 bg-white">
+        <div className="container max-w-5xl mx-auto px-6">
+          <p className="text-center md:text-4xl text-2xl font-semibold">
+            Your Trusted Partner in<br/> Dholera Smart City Real Estate
           </p>
         </div>
       </section>
 
       {/* Navigation Tabs */}
-      <div className="sticky top-20 z-20 bg-white shadow-2xl py-4 max-sm:hidden">
-        <div className="container mx-auto px-4">
+      <div className="sticky top-20 z-20 bg-white shadow-2xl py-6 max-sm:hidden">
+        <div className="container mx-auto px-6">
           <div className="flex justify-center items-center gap-4 overflow-x-auto pb-2 flex-wrap md:flex-nowrap">
             <button
               className={buttonStyle("CompanyProfile")}
@@ -102,9 +102,9 @@ export default function AboutUs() {
       </div>
 
       {/* Content Sections */}
-      <section className="py-4 leading-relaxed bg-gray-50">
+      <section className="py-12 leading-relaxed bg-gray-50">
         {/* Company Profile Section */}
-        <div id="CompanyProfile" className="container mx-auto px-4 mb-20">
+        <div id="CompanyProfile" className="container mx-auto px-6 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Who We Are
@@ -152,7 +152,7 @@ export default function AboutUs() {
             </div>
           </div>
 
-          <div className="mt-6">
+          <div className="mt-8">
             <h3 className="text-2xl font-bold mb-4">What We Do</h3>
             <p className="text-gray-700 text-lg mb-4">
               We specialize in <strong>residential plots in Dholera SIR</strong>
@@ -188,8 +188,8 @@ export default function AboutUs() {
         </div>
 
         {/* Mission Section */}
-        <div id="Mission" className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center relative">
+        <div id="Mission" className="container mx-auto px-6 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Our Mission & Vision
             </span>
@@ -228,7 +228,7 @@ export default function AboutUs() {
         {/* Why Choose Us Section */}
         <div
           id="WhyChooseUs"
-          className="container mx-auto px-4 py-4 mb-20 bg-gray-900 rounded-lg"
+          className="container mx-auto px-6 py-12 mb-8 bg-gray-900 rounded-lg"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative text-white after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
@@ -236,7 +236,7 @@ export default function AboutUs() {
             </span>
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
               <span className="text-[#d8b66d] mr-2 text-xl">●</span>
               <span className="text-white text-lg font-semibold">
@@ -316,8 +316,8 @@ export default function AboutUs() {
         </div>
 
         {/* Location Advantage Section */}
-        <div id="LocationAdvantage" className="container mx-auto px-4 mb-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center relative">
+        <div id="LocationAdvantage" className="container mx-auto px-6 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Location Advantage
             </span>
@@ -388,7 +388,7 @@ export default function AboutUs() {
         </div>
 
         {/* Investment Benefits Section */}
-        <div id="InvestmentBenefits" className="container mx-auto px-4 mb-20">
+        <div id="InvestmentBenefits" className="container mx-auto px-6 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Benefits of Investing In Dholera Smart City
@@ -402,7 +402,7 @@ export default function AboutUs() {
             it is highly self-sustaining.
           </p>
 
-          <div className="space-y-12">
+          <div className="space-y-8">
             {/* Benefit 1 */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
@@ -468,7 +468,7 @@ export default function AboutUs() {
                 Global Connectivity - Dholera International Airport
               </h3>
               <p className="text-gray-700 text-lg">
-                Dholera Smart City Gujarat’s own international airport is also
+                Dholera Smart City Gujarat's own international airport is also
                 being developed and is expected to commence operations by
                 December 2026. It will be equipped to handle cargo as well as
                 passenger airplanes, both domestic and international.
@@ -481,7 +481,7 @@ export default function AboutUs() {
               </h3>
               <p className="text-gray-700 text-lg">
                 Developing the Delhi-Mumbai Industrial Corridor (DMIC) is
-                India’s biggest project to be undertaken today. Dholera Smart
+                India's biggest project to be undertaken today. Dholera Smart
                 City Gujarat has been declared as a Special Economic Zone (SEZ),
                 meaning companies have been offered special benefits for setting
                 up base here. Companies are being given special incentives
@@ -491,7 +491,7 @@ export default function AboutUs() {
                 administrative processes. Companies like TATA and Vedanta have
                 already marked their presence in this Gujarat smart city. TATA
                 will set up their semiconductor manufacturing plant here which
-                is expected to change the industry’s dynamics across the world.
+                is expected to change the industry's dynamics across the world.
                 The Dholera City Gujarat is expected to generate more than 8
                 lakh jobs.
               </p>
@@ -504,7 +504,7 @@ export default function AboutUs() {
                 Sustainable and cost-effective civic amenities will be an
                 integral part of this smart city. While planning each amenity,
                 inspiration has been taken from successful cities across the
-                world like Singapore and Dubai. The Dholera smart city’s
+                world like Singapore and Dubai. The Dholera smart city's
                 global-level infrastructure will include a central cooling
                 system for the city which will eliminate the need for individual
                 air conditioners.
@@ -524,13 +524,13 @@ export default function AboutUs() {
             </div>
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                India’s Largest Solar Power Project
+                India's Largest Solar Power Project
               </h3>
               <p className="text-gray-700 text-lg">
                 In the Dholera SIR project, a special focus has been laid on
-                renewable energies. The construction of India’s largest solar
+                renewable energies. The construction of India's largest solar
                 project has already begun here, and it will boost not just the
-                region’s sustainable power consumption but that of many regions
+                region's sustainable power consumption but that of many regions
                 around it. This 4,400 MegaWatt solar power plant is said to
                 change how energy production will look in this region. Dholera
                 smart city is a platinum-rated green city meaning sustainability
@@ -554,11 +554,9 @@ export default function AboutUs() {
                 loves!
               </p>
             </div>
-
-            {/* More benefits would follow the same pattern */}
           </div>
         </div>
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Let's Connect
@@ -572,24 +570,22 @@ export default function AboutUs() {
           <div className="flex justify-center gap-4">
             <Link
               href="/contact/inquiry"
-              className="px-4 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors"
+              className="px-6 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors"
             >
               Contact Us
             </Link>
             <Link
               href="/contact/sitevisit"
-              className="px-4 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors"
+              className="px-6 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors"
             >
               Book a Free Site Visit
             </Link>
           </div>
         </div>
         {/* Testimonial Section */}
-        <div id="Testimonials">
+        <div id="Testimonials" className="mb-4">
           <TestimonialPagination />
         </div>
-
-        {/* Contact Section */}
       </section>
     </>
   );

@@ -17,12 +17,12 @@ import ContactForm from "@/app/components/ContactForm";
 export default function ContactDetails() {
   return (
     <>
-      <section className="relative h-[30vh] flex items-center justify-center text-center bg-black">
+      <section className="relative h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={get}
             alt="Site Visit"
-            className="w-full h-[30vh] object-cover opacity-60"
+            className="w-full h-[50vh] max-sm:h-[30vh] object-cover opacity-60"
           />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
