@@ -339,6 +339,19 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-16970030484');
           `}
         </Script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17011995425"
+        ></Script>
+        <Script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-17011995425');
+          `}
+        </Script>
 
         <meta
           name="google-site-verification"
@@ -361,13 +374,7 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.ico"
         ></link>
-        <title>Dholera Smart City Gujarat | High ROI Plots -Dholera Times</title>
         
-        <meta
-          name="description"
-          content="
-Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!"
-        ></meta>
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

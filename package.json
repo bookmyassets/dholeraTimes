@@ -24,6 +24,7 @@
     "motion": "^12.4.10",
     "next": "15.1.6",
     "next-sanity": "^9.8.43",
+    "next-seo": "^6.6.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-facebook-pixel": "^1.0.4",
