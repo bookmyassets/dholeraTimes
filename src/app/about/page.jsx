@@ -323,7 +323,7 @@ export default function AboutUs() {
             </span>
           </h2>
           <div className="flex flex-col text-lg md:flex-row items-center gap-12">
-            <div className="md:w-1/2 order-2 md:order-1">
+            <div className="md:w-1/2 font-semibold order-2 md:order-1">
               <ul className="space-y-4">
                 <li className="flex items-start">
                   <span className="text-[#d8b66d] mr-2 text-xl">●</span>
@@ -558,33 +558,38 @@ export default function AboutUs() {
             {/* More benefits would follow the same pattern */}
           </div>
         </div>
-
-        {/* Testimonial Section */}
-        <div id="Testimonials">
-          <TestimonialPagination />
-        </div>
-
-        {/* Contact Section */}
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Let's Connect
             </span>
           </h2>
-          <p className="text-gray-700 text-center mb-8">
+          <p className="text-gray-700 font-semibold text-lg text-center mb-8">
             Whether you're looking to buy your first plot, explore investment
             options, or simply want to understand how Dholera Smart City works —
             we're here to help.
           </p>
           <div className="flex justify-center gap-4">
-            <Link href="/contact/inquiry" className="px-8 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors">
+            <Link
+              href="/contact/inquiry"
+              className="px-4 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors"
+            >
               Contact Us
             </Link>
-            <Link href="/contact/sitevisit" className="px-8 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors">
+            <Link
+              href="/contact/sitevisit"
+              className="px-4 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors"
+            >
               Book a Free Site Visit
             </Link>
           </div>
         </div>
+        {/* Testimonial Section */}
+        <div id="Testimonials">
+          <TestimonialPagination />
+        </div>
+
+        {/* Contact Section */}
       </section>
     </>
   );
