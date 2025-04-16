@@ -361,11 +361,8 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.ico"
         ></link>
-        <title>Dholera Times</title>
-        <meta
-          name="title"
-          content="Dholera Smart City Gujarat | High ROI Plots -Dholera Times"
-        ></meta>
+        <title>Dholera Smart City Gujarat | High ROI Plots -Dholera Times</title>
+        
         <meta
           name="description"
           content="
