@@ -135,7 +135,7 @@ export default function Info() {
 
         {/* Card View */}
         {viewMode === "card" && (
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 pb-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2 pb-8 max-sm:hidden">
             {items.map((item) => (
               <Link href={item.link} key={item.id} className="group">
                 <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 relative">
@@ -153,7 +153,7 @@ export default function Info() {
                       <div className="w-10 h-10 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mr-3 flex-shrink-0">
                         {item.icon}
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
                         {item.title}
                       </h3>
                     </div>
@@ -204,7 +204,7 @@ export default function Info() {
                     </div>
                     
                     <div className="flex-1">
-                      <h3 className="text-3xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-gray-900 group-hover:text-[#d8b66d] transition-colors duration-300">
                         {item.title}
                       </h3>
                     </div>
