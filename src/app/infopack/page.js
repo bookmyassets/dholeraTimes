@@ -87,7 +87,7 @@ export default function Info() {
         backgroundRepeat: 'no-repeat'
       }}>
       {/* Semi-transparent overlay for better readability */}
-      <div className="absolute inset-0 bg-white bg-opacity-85 z-0"></div>
+      <div className="absolute inset-0 bg-white bg-opacity-50 z-0"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header with decorative elements */}

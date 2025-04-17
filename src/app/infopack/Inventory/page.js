@@ -3,6 +3,7 @@ import { Inventory } from "@/sanity/lib/api";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import { Download, Eye, MapPin, Grid, Info } from "lucide-react";
+import bg from "@/assets/bg-image.webp"
 
 export default async function InventoryPage() {
   let posts = [];
@@ -18,7 +19,12 @@ export default async function InventoryPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8"style={{
+              backgroundImage: `url(${bg.src})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}>
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
@@ -84,7 +90,13 @@ export default async function InventoryPage() {
   }
 
   return (
-    <div className="min-h-[87vh] bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-[87vh] bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8"style={{
+      backgroundImage: `url(${bg.src})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat'
+    }}>
+      
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>

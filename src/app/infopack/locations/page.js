@@ -1,5 +1,6 @@
 "use client"
 import React, { useState, useEffect, useRef } from "react";
+import bg from "@/assets/bg-image.webp"
 
 const locations = [
   {
