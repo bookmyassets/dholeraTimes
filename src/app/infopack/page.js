@@ -7,6 +7,7 @@ import maps from "@/assets/maps.png";
 import videos from "@/assets/videos.webp";
 import inventory from "@/assets/inventory.webp";
 import brochure from "@/assets/brochure.webp";
+import bg from "@/assets/bg-image.webp"
 
 export default function Info() {
   const [viewMode, setViewMode] = useState("card");
@@ -78,8 +79,17 @@ export default function Info() {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-blue-50 to-gray-100 py-16 px-4 sm:px-6 lg:px-8 min-h-[87vh] overflow-auto">
-      <div className="max-w-7xl mx-auto">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 min-h-[87vh] overflow-auto relative" 
+      style={{
+        backgroundImage: `url(${bg.src})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
+      {/* Semi-transparent overlay for better readability */}
+      <div className="absolute inset-0 bg-white bg-opacity-85 z-0"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header with decorative elements */}
         <div className="text-center mb-16 relative">
           {/* View toggle for non-mobile devices */}
