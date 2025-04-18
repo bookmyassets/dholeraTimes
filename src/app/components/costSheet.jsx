@@ -19,13 +19,16 @@ export default function CostSheet() {
     plotNo: '',
     plc: '',
     plotAreaYards: '',
-    plotPriceYards: 6700,
+    basePlotPriceYards: 6700, // Base price without PLC
     plotAreaFeet: '',
     totalPaymentYards: '',
     maintenanceCharge: 0,
     totalCharges: 0,
     plotTotalPayment: 0,
   });
+
+  // Calculate the final plot price including PLC
+  const plotPriceWithPLC = parseFloat(formData.basePlotPriceYards) + (parseFloat(formData.plc) || 0);
 
   // Handle field changes
   const handleChange = (e) => {
@@ -36,31 +39,10 @@ export default function CostSheet() {
     });
   };
 
-  // Calculate total payment, charges, and convert yards to feet
-  const calculateTotalPayment = () => {
-    const { plotAreaYards, plc } = formData;
-
-    const totalPayment = plotAreaYards * formData.plotPriceYards;
-    const maintenance = plotAreaYards * 100;
-    const totalCharges = maintenance + 15000; // Legal Fee is Rs15000
-    const plotTotalPayment = totalPayment + totalCharges;
-
-    // Convert plot area from yards to feet (1 yard = 9 sq. feet)
-    const plotAreaFeet = plotAreaYards * 9;
-
-    setFormData({
-      ...formData,
-      plotAreaFeet,
-      totalPaymentYards: totalPayment.toFixed(2),
-      maintenanceCharge: maintenance.toFixed(2),
-      totalCharges: totalCharges.toFixed(2),
-      plotTotalPayment: plotTotalPayment.toFixed(2),
-    });
-  };
-
   useEffect(() => {
-    if (formData.plotAreaYards && formData.plotPriceYards) {
-      const totalPayment = formData.plotAreaYards * formData.plotPriceYards;
+    if (formData.plotAreaYards && formData.basePlotPriceYards) {
+      const plotPrice = plotPriceWithPLC;
+      const totalPayment = formData.plotAreaYards * plotPrice;
       const maintenance = formData.plotAreaYards * 100;
       const totalCharges = maintenance + 15000; // Legal Fee is Rs15000
       const plotTotalPayment = totalPayment + totalCharges;
@@ -75,15 +57,15 @@ export default function CostSheet() {
         plotTotalPayment: plotTotalPayment.toFixed(2),
       }));
     }
-  }, [formData.plotAreaYards, formData.plotPriceYards, formData.plc]);
+  }, [formData.plotAreaYards, formData.basePlotPriceYards, formData.plc]);
 
   // Function to generate the PDF
   const generatePDF = () => {
     const doc = new jsPDF();
 
-    const { name, phone, email, plc, plotNo, plotAreaYards, plotAreaFeet, plotPriceYards, totalPaymentYards, maintenanceCharge, totalCharges, plotTotalPayment } = formData;
+    const { name, phone, email, plc, plotNo, plotAreaYards, plotAreaFeet, totalPaymentYards, maintenanceCharge, totalCharges, plotTotalPayment } = formData;
 
-    let startY = 60;
+    let startY = 40;
 
     // Load image and draw it before adding text
     const img = new Image();
@@ -92,7 +74,7 @@ export default function CostSheet() {
 
     img.onload = () => {
       // Add image to PDF (top left corner)
-      doc.addImage(img, "WEBP",  5, 5, 185, 40);
+      doc.addImage(img, "WEBP",  5, 5, 185, 38);
 
       // Project Heading
       doc.setFontSize(16);
@@ -101,13 +83,13 @@ export default function CostSheet() {
       const head = document.querySelector("h1")?.innerText || "Cost Sheet";
       let text = doc.getTextWidth(head);
       let xPosition = (pageWidth - text) / 2;
-      doc.text(head, xPosition, 52);
+      doc.text(head, xPosition, 48);
 
       startY += 10;
 
       // Format Indian Numbers
       const formattedplc = formatIndianNumber(plc);
-      const formattedPricePerYard = formatIndianNumber(plotPriceYards);
+      const formattedPricePerYard = formatIndianNumber(plotPriceWithPLC);
       const formattedTotalPaymentYards = formatIndianNumber(totalPaymentYards);
       const formattedMaintenanceCharge = formatIndianNumber(maintenanceCharge);
       const formattedTotalCharges = formatIndianNumber(totalCharges);
@@ -121,10 +103,11 @@ export default function CostSheet() {
           ['Phone', phone],
           ['Email', email],
           ['PlotNo', plotNo],
-          ['Preffered Location Charges (PLC)', `Rs. ${formattedplc}`],
           ['Plot Area (Yards)', plotAreaYards],
           ['Plot Area (Feet)', plotAreaFeet],
-          ['Plot Price per Yard', `Rs. ${formattedPricePerYard}`],
+          ['Base Plot Price per Yard', 'Rs. 6,700.00'],
+          ['Preffered Location Charges (PLC)', `Rs. ${formattedplc}`],
+          ['Final Plot Price per Yard', `Rs. ${formattedPricePerYard}`],
           ['Total Payment', `Rs. ${formattedTotalPaymentYards}`],
         ],
         theme: 'grid',
@@ -134,10 +117,10 @@ export default function CostSheet() {
         columnStyles: {
           0: { halign: 'left', cellWidth: 'auto' },
           1: { halign: 'right', cellWidth: 80 }
-      }
+        }
       });
 
-      let finalY = doc.lastAutoTable.finalY + 7;
+      let finalY = doc.lastAutoTable.finalY + 6;
 
       // Additional Charges Heading
       doc.setFontSize(14);
@@ -166,7 +149,7 @@ export default function CostSheet() {
 
       // Terms & Conditions Section
       doc.setFontSize(10);
-      doc.text('Terms & Conditions:', 15, finalY + 12);
+      doc.text('Terms & Conditions:', 15, finalY + 8);
       doc.setFontSize(9);
       const terms = [
         "1. The booking amount is Rs. 50,000.",
@@ -296,16 +279,28 @@ export default function CostSheet() {
                 />
               </td>
             </tr>
-            {/* Plot Price per Yard */}
+            {/* Base Plot Price per Yard */}
             <tr className="border-b">
-              <td className="p-2 font-semibold">Plot Price per Yard</td>
+              <td className="p-2 font-semibold">Base Plot Price per Yard</td>
               <td className="p-2">
                 <input
                   type="number"
-                  name="plotPriceYards"
-                  value={formData.plotPriceYards}
+                  name="basePlotPriceYards"
+                  value={formData.basePlotPriceYards}
                   onChange={handleChange}
                   className="border p-2 w-full rounded"
+                />
+              </td>
+            </tr>
+            {/* Final Plot Price per Yard (calculated) */}
+            <tr className="border-b">
+              <td className="p-2 font-semibold">Final Plot Price per Yard (Base + PLC)</td>
+              <td className="p-2">
+                <input
+                  type="text"
+                  value={plotPriceWithPLC.toFixed(2)}
+                  className="border p-2 w-full rounded"
+                  readOnly
                 />
               </td>
             </tr>

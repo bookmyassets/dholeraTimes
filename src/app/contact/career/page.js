@@ -8,8 +8,12 @@ export default function CareerPage() {
   const [selectedJob, setSelectedJob] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [status, setStatus] = useState({ type: "", message: "" });
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState("");
+  
+  // Replace with your deployed Google Apps Script URL
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw8zO4FlKmxTM1DW0EQTivcxKbNwZ8IFhL0dse0D67Zp_TCUu-EZ1Fknha0ug9yTUMVUQ/exec";
   
   const [formData, setFormData] = useState({
     fullName: "",
@@ -67,9 +71,10 @@ export default function CareerPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatus({ type: "", message: "" });
 
     try {
-      // Create FormData object to handle file upload
+      // Create FormData object to handle submission
       const submitData = new FormData();
       
       // Add all form fields
@@ -82,30 +87,37 @@ export default function CareerPage() {
       // Add job details
       submitData.append('jobTitle', selectedJob.title);
       submitData.append('jobId', selectedJob.id);
+      submitData.append('timestamp', new Date().toISOString());
       
       // Add the resume file
       if (formData.resume) {
         submitData.append('resume', formData.resume);
       }
 
-      // In a real application, you would send this to your backend
-      // const response = await fetch('/api/job-applications', {
-      //   method: 'POST',
-      //   body: submitData
-      // });
+      // Use no-cors mode and form data instead of JSON
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: submitData
+      });
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Reset form after successful submission
+      // Since we're using no-cors, we won't get a proper response
+      // We'll assume success if no error is thrown
       setSubmitSuccess(true);
+      setStatus({
+        type: "success",
+        message: "Thank you for your application! We'll get back to you soon."
+      });
       
       // Log the data (for demonstration purposes)
       console.log("Form submitted with data:", Object.fromEntries(submitData));
       
     } catch (error) {
       console.error("Error submitting application:", error);
-      alert("There was an error submitting your application. Please try again.");
+      setStatus({
+        type: "error",
+        message: "Something went wrong. Please try again later."
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -115,6 +127,7 @@ export default function CareerPage() {
     setCurrentView("jobListings");
     setSelectedJob(null);
     setSubmitSuccess(false);
+    setStatus({ type: "", message: "" });
     setFormData({
       fullName: "",
       email: "",
@@ -126,6 +139,7 @@ export default function CareerPage() {
     });
     setFileName("");
   };
+
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -294,6 +308,12 @@ export default function CareerPage() {
                   )}
                 </div>
                 
+                {status.type === "error" && (
+                  <div className="p-4 bg-red-50 text-red-700 rounded-lg">
+                    {status.message}
+                  </div>
+                )}
+                
                 <div className="flex space-x-4">
                   <button
                     type="button"
@@ -327,7 +347,7 @@ export default function CareerPage() {
             </div>
             
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Application Submitted Successfully!</h2>
-            <p className="text-gray-600 mb-6">Thank you for applying. We will review your application and contact you soon.</p>
+            <p className="text-gray-600 mb-6">{status.message}</p>
             
             <button
               onClick={handleBackToJobs}
