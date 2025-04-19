@@ -230,7 +230,7 @@ export default function DholeraLandingPage() {
     <div className="font-sans text-gray-800">
       {/* HERO SECTION - DHOLERA FOCUS */}
       <div className="bg-gradient-to-r from-[#151f28] to-[#1a2a3a] text-white py-16 relative">
-        <div className="absolute inset-0 bg-[url('')] bg-cover opacity-20"></div>
+        
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="flex flex-col md:flex-row justify-center items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
