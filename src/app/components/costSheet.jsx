@@ -103,11 +103,11 @@ export default function CostSheet() {
           ['Phone', phone],
           ['Email', email],
           ['PlotNo', plotNo],
-          ['Plot Area (Yards)', plotAreaYards],
-          ['Plot Area (Feet)', plotAreaFeet],
-          ['Base Plot Price per Yard', 'Rs. 6,700.00'],
+          ['Plot Area (Sq. Yards)', plotAreaYards],
+          ['Plot Area (Sq. Feet)', plotAreaFeet],
+          ['Base Plot Price per Sq. Yard', 'Rs. 6,700.00'],
           ['Preffered Location Charges (PLC)', `Rs. ${formattedplc}`],
-          ['Final Plot Price per Yard', `Rs. ${formattedPricePerYard}`],
+          ['Final Plot Price per Sq. Yard', `Rs. ${formattedPricePerYard}`],
           ['Total Payment', `Rs. ${formattedTotalPaymentYards}`],
         ],
         theme: 'grid',
@@ -255,7 +255,7 @@ export default function CostSheet() {
             </tr>
             {/* Plot Area */}
             <tr className="border-b">
-              <td className="p-2 font-semibold">Plot Area (Yards)</td>
+              <td className="p-2 font-semibold">Plot Area (Sq. Yards)</td>
               <td className="p-2">
                 <input
                   type="number"
@@ -268,7 +268,7 @@ export default function CostSheet() {
             </tr>
             {/* Plot Area (Feet) */}
             <tr className="border-b">
-              <td className="p-2 font-semibold">Plot Area (Feet)</td>
+              <td className="p-2 font-semibold">Plot Area (Sq. Feet)</td>
               <td className="p-2">
                 <input
                   type="number"
@@ -281,7 +281,7 @@ export default function CostSheet() {
             </tr>
             {/* Base Plot Price per Yard */}
             <tr className="border-b">
-              <td className="p-2 font-semibold">Base Plot Price per Yard</td>
+              <td className="p-2 font-semibold">Base Plot Price per Sq. Yard</td>
               <td className="p-2">
                 <input
                   type="number"
@@ -294,7 +294,7 @@ export default function CostSheet() {
             </tr>
             {/* Final Plot Price per Yard (calculated) */}
             <tr className="border-b">
-              <td className="p-2 font-semibold">Final Plot Price per Yard (Base + PLC)</td>
+              <td className="p-2 font-semibold">Final Plot Price per Sq. Yard (Base + PLC)</td>
               <td className="p-2">
                 <input
                   type="text"
