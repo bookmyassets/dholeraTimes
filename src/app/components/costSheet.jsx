@@ -105,7 +105,7 @@ export default function CostSheet() {
           ['PlotNo', plotNo],
           ['Plot Area (Sq. Yards)', plotAreaYards],
           ['Plot Area (Sq. Feet)', plotAreaFeet],
-          ['Base Plot Price per Sq. Yard', 'Rs. 6,700.00'],
+          ['Plot Price per Sq. Yard', `Rs. ${formatIndianNumber(formData.basePlotPriceYards)}`],
           ['Preffered Location Charges (PLC)', `Rs. ${formattedplc}`],
           ['Final Plot Price per Sq. Yard', `Rs. ${formattedPricePerYard}`],
           ['Total Payment', `Rs. ${formattedTotalPaymentYards}`],
