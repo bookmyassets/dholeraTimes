@@ -10,6 +10,9 @@ import TestimonialPagination from "../components/Testimonials";
 import FAQSection from "../components/Faq";
 import PopupForm from "../components/PopupForm";
 import { AnimatePresence } from "framer-motion";
+import semiconductor from "@/assets/tata_semiconductor_plant.webp"
+import rail from "@/assets/mono_rail_connectivity.webp"
+import airport from "@/assets/dholera_international_airport.webp"
 
 const colors = [
   { bg: "#ffffff", text: "#d7b36c" },
@@ -99,96 +102,123 @@ export default function New() {
 
         {/* Infrastructure Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {/* Tata Semiconductor Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d7b36c] p-2 rounded-full">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 className="ml-3 text-xl font-bold text-gray-800">
-                  Tata Semiconductor
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Tata Group's $10 billion semiconductor plant coming to Dholera,
-                creating massive employment and boosting local real estate.
-              </p>
-            </div>
-          </div>
-
-          {/* Monorail Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d7b36c] p-2 rounded-full">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 className="ml-3 text-xl font-bold text-gray-800">
-                  Monorail Project
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Proposed 22 km monorail connecting Dholera to Ahmedabad,
-                drastically improving connectivity and accessibility.
-              </p>
-            </div>
-          </div>
-
-          {/* Dholera Airport Card */}
-          <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-            <div className="p-6">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d7b36c] p-2 rounded-full">
-                  <svg
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 className="ml-3 text-xl font-bold text-gray-800">
-                  International Airport
-                </h3>
-              </div>
-              <p className="text-gray-600">
-                Dholera International Airport (Phase 1) operational by 2025-26,
-                boosting business and tourism in the region.
-              </p>
-            </div>
-          </div>
+  {/* Tata Semiconductor Card */}
+  <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <div className="h-48 overflow-hidden">
+      <Image
+        src={semiconductor} // Replace with your actual image path
+        alt="Tata Semiconductor Plant"
+        width={400}
+        height={250}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="p-6">
+      <div className="flex items-center mb-4">
+        <div className="bg-[#d7b36c] p-2 rounded-full">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M13 10V3L4 14h7v7l9-11h-7z"
+            ></path>
+          </svg>
         </div>
+        <h3 className="ml-3 text-xl font-bold text-gray-800">
+          Tata Semiconductor
+        </h3>
+      </div>
+      <p className="text-gray-600">
+        Tata Group's $10 billion semiconductor plant coming to Dholera,
+        creating massive employment and boosting local real estate.
+      </p>
+    </div>
+  </div>
+
+  {/* Monorail Card */}
+  <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <div className="h-48 overflow-hidden">
+      <Image
+        src={rail}// Replace with your actual image path
+        alt="Monorail Project"
+        width={400}
+        height={250}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="p-6">
+      <div className="flex items-center mb-4">
+        <div className="bg-[#d7b36c] p-2 rounded-full">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+            ></path>
+          </svg>
+        </div>
+        <h3 className="ml-3 text-xl font-bold text-gray-800">
+          Monorail Project
+        </h3>
+      </div>
+      <p className="text-gray-600">
+        Proposed 22 km monorail connecting Dholera to Ahmedabad,
+        drastically improving connectivity and accessibility.
+      </p>
+    </div>
+  </div>
+
+  {/* Dholera Airport Card */}
+  <div className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+    <div className="h-48 overflow-hidden">
+      <Image
+        src={airport} // Replace with your actual image path
+        alt="Dholera International Airport"
+        width={400}
+        height={250}
+        className="w-full h-full object-cover"
+      />
+    </div>
+    <div className="p-6">
+      <div className="flex items-center mb-4">
+        <div className="bg-[#d7b36c] p-2 rounded-full">
+          <svg
+            className="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+            ></path>
+          </svg>
+        </div>
+        <h3 className="ml-3 text-xl font-bold text-gray-800">
+          International Airport
+        </h3>
+      </div>
+      <p className="text-gray-600">
+        Dholera International Airport (Phase 1) operational by 2025-26,
+        boosting business and tourism in the region.
+      </p>
+    </div>
+  </div>
+</div>
 
         <div className="bg-white rounded-xl shadow-lg p-8 mb-12 max-w-4xl mx-auto">
           <ul className="space-y-8">
