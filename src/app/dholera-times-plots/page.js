@@ -79,14 +79,7 @@ export default function New() {
               Secure premium plots in Dholera SIR before prices surge -
               projected 5x growth by 2030
             </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/infopack/videos"
-                className="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded shadow-lg hover:bg-white hover:text-[#151f28] transition cursor-pointer transform hover:scale-105 duration-300"
-              >
-                Watch Project Video
-              </Link>
-            </div>
+            
           </div>
           <div className="md:w-1/2 w-full max-w-md">
             <div>
@@ -322,7 +315,7 @@ export default function New() {
                 </p>
                 <div className="flex flex-col md:text-xl sm:flex-row gap-4">
                   <Link
-                    href="/brochure"
+                    href="https://shorturl.at/tncCM"
                     className="inline-flex items-center px-6 py-3 bg-[#d7b36c] hover:bg-[#c2a05e] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-md"
                   >
                     <svg
