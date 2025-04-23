@@ -84,8 +84,8 @@ export default function New() {
           <div className="md:w-1/2 w-full max-w-md">
             <div>
               <ContactForm
-                title="Reserve Your Plot Today"
-                buttonName="GET PLOT DETAILS NOW"
+                title="ENQUIRE NOW"
+                buttonName="GET A FREE CONSULTATION"
               />
             </div>
           </div>
