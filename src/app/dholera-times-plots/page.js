@@ -7,7 +7,7 @@ import ContactForm from "../components/ContactForm";
 import banner from "@/assets/dtLanding.webp";
 import bannerMobile from "@/assets/dtLandingmobile.webp";
 import TestimonialPagination from "../components/Testimonials";
-import FAQSection from "../components/Faq";
+import FAQSection from "./Faq";
 import PopupForm from "../components/PopupForm";
 import { AnimatePresence } from "framer-motion";
 import semiconductor from "@/assets/tata_semiconductor_plant.webp";
@@ -29,6 +29,9 @@ const colors = [
 export default function New() {
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [projectCount, setProjectCount] = useState(0);
+  const [customerCount, setCustomerCount] = useState(0);
+  const [nriCount, setNriCount] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -36,6 +39,29 @@ export default function New() {
     }, 1000);
 
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const animateValue = (setter, end, duration) => {
+      let start = 0;
+      const incrementTime = 20;
+      const totalIncrements = (duration * 1000) / incrementTime;
+      const increment = end / totalIncrements;
+
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= end) {
+          setter(end);
+          clearInterval(timer);
+        } else {
+          setter(Math.ceil(start));
+        }
+      }, incrementTime);
+    };
+
+    animateValue(setProjectCount, 7, 1);
+    animateValue(setCustomerCount, 500, 2);
+    animateValue(setNriCount, 300, 2);
   }, []);
 
   const currentColor = colors[currentColorIndex];
@@ -79,7 +105,6 @@ export default function New() {
               Secure premium plots in Dholera SIR before prices surge -
               projected 5x growth by 2030
             </h2>
-            
           </div>
           <div className="md:w-1/2 w-full max-w-md">
             <div>
@@ -99,19 +124,15 @@ export default function New() {
             <h2 className="text-3xl md:text-5xl font-bold leading-tight font-poppins tracking-tight mb-4">
               WHY INVEST IN{" "}
               <span className="text-[#d7b36c] relative inline-block">
-                DHOLERA TIMES
-                <span className="absolute -bottom-1 left-0 w-full h-1 bg-[#d7b36c]/30"></span>
+                DHOLERA SMART CITY
+               
               </span>
-              's
-              <span className="block mt-2">RESIDENTIAL PLOTS</span>
             </h2>
             <div className="w-24 h-1 bg-[#d7b36c] mx-auto mt-4"></div>
           </div>
 
           {/* Image and Features Section */}
-          <div className="flex flex-col items-center gap-12 mb-16">
-            {/* Image Section */}
-            <div className="w-full md:w-3/4 lg:w-2/3 rounded-xl overflow-hidden shadow-xl">
+            {/*             <div className="w-full md:w-3/4 lg:w-2/3 rounded-xl overflow-hidden shadow-xl">
               <div className="relative">
                 <Image
                   src={whyDholera}
@@ -127,58 +148,8 @@ export default function New() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
               </div>
-            </div>
-
-            {/* Features Grid */}
-            <div className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Feature 1 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={nanoc}
-                      alt="NA/NOC Plots"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    NA/NOC Plots
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={residential}
-                      alt="Residential Plots"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    Residential Plots
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={hidden}
-                      alt="No Hidden Charges"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    Transparent Pricing
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            </div> */}
+          
 
           {/* Infrastructure Cards with Enhanced Design */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
@@ -212,10 +183,6 @@ export default function New() {
                     Tata Semiconductor
                   </h3>
                 </div>
-                <p className="text-gray-600 text-lg">
-                  Tata Group's $10 billion semiconductor plant coming to Dholera,
-                  creating massive employment and boosting local real estate.
-                </p>
               </div>
             </div>
 
@@ -249,10 +216,6 @@ export default function New() {
                     Monorail Project
                   </h3>
                 </div>
-                <p className="text-gray-600 text-lg">
-                  Proposed 22 km monorail connecting Dholera to Ahmedabad,
-                  drastically improving connectivity and accessibility.
-                </p>
               </div>
             </div>
 
@@ -286,10 +249,6 @@ export default function New() {
                     International Airport
                   </h3>
                 </div>
-                <p className="text-gray-600 text-lg">
-                  Dholera International Airport (Phase 1) operational by 2025-26,
-                  boosting business and tourism in the region.
-                </p>
               </div>
             </div>
           </div>
@@ -356,7 +315,9 @@ export default function New() {
                   </div>
                   <div className="grid grid-cols-2 gap-6">
                     <div className="bg-gray-100 p-4 rounded-lg shadow-sm">
-                      <div className="text-sm text-gray-600 mb-1">Starting From</div>
+                      <div className="text-sm text-gray-600 mb-1">
+                        Starting From
+                      </div>
                       <div className="text-xl font-bold text-gray-800">
                         ₹6,700/sq.ft
                       </div>
@@ -374,74 +335,167 @@ export default function New() {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Call to Action Section */}
-          <div className="bg-[#151f28] rounded-xl shadow-xl p-10 mb-16 text-center text-white">
-            <h3 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
-              Are You Interested To Invest In Future?
-            </h3>
-            <p className="text-xl font-light mb-8 max-w-3xl mx-auto">
-              We have something very special for you.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <button
-                onClick={openContactForm}
-                className="bg-[#d3b469] text-xl md:text-2xl hover:bg-[#c0a355] text-[#151f28] font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg"
-              >
-                Get Free Consultation
-              </button>
-              <Link
-                href="tel:+919958993549"
-                className="inline-block text-xl md:text-2xl px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-[#151f28] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-lg"
-              >
-                Call Now
-              </Link>
+        {/* Call to Action Section */}
+      </section>
+      <section className="max-w-7xl mx-auto pb-12">
+  <h1 className="text-center text-6xl font-bold ">
+    Why DHOLERA TIMES?
+  </h1>
+  <div className="flex flex-col items-center gap-12 mb-16">
+            {/* Image Section */}
+
+            {/* Features Grid */}
+            <div className="w-full">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Feature 1 */}
+                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                    <Image
+                      src={nanoc}
+                      alt="NA/NOC Plots"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    NA/NOC Plots
+                  </h3>
+                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+                </div>
+
+                {/* Feature 2 */}
+                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                    <Image
+                      src={residential}
+                      alt="Residential Plots"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Residential Plots
+                  </h3>
+                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+                </div>
+
+                {/* Feature 3 */}
+                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                    <Image
+                      src={hidden}
+                      alt="No Hidden Charges"
+                      className="h-full w-auto object-contain"
+                    />
+                  </div>
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                    Transparent Pricing
+                  </h3>
+                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Responsive Banner */}
-          <div className="w-full relative mt-12">
-            <div className="hidden sm:block relative">
-              <Image
-                src={banner}
-                alt="Dholera Times Banner"
-                className="w-full h-auto rounded-lg shadow-md"
-                width={1200}
-                height={400}
-              />
-              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-                <Link
-                  href="tel:+919958993549"
-                  className="inline-block px-8 py-4 text-3xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
-                  style={{
-                    backgroundColor: currentColor.bg,
-                    color: currentColor.text,
-                  }}
-                >
-                  CALL NOW
-                </Link>
-              </div>
+</section>
+      <section className="bg-[#151f28] shadow-xl text-center text-[#d3b469]">
+        
+
+      <div className="py-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-8">Our Achievements</h2>
+          <div className="flex flex-wrap justify-center gap-10">
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-[#d3b469]">
+                {projectCount}+
+              </h3>
+              <p className="text-xl mt-2">Projects</p>
             </div>
-            <div className="sm:hidden relative">
-              <Image
-                src={bannerMobile}
-                alt="Dholera Times Banner"
-                className="w-full h-auto rounded-lg shadow-md"
-                width={600}
-                height={800}
-              />
-              <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
-                <Link
-                  href="tel:+919958993549"
-                  className="inline-block px-6 py-3 text-xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
-                  style={{
-                    backgroundColor: currentColor.bg,
-                    color: currentColor.text,
-                  }}
-                >
-                  CALL NOW
-                </Link>
-              </div>
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-[#d3b469]">
+                {customerCount}+
+              </h3>
+              <p className="text-xl mt-2">Happy Customers</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-5xl font-bold text-[#d3b469]">
+                {nriCount}+
+              </h3>
+              <p className="text-xl mt-2">NRI</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section className="bg-[#151f28] shadow-xl p-10 mb-16 text-center text-[#d3b469]">
+        
+
+        <h3 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
+          Are You Interested To Invest In Future?
+        </h3>
+        <p className="text-xl font-light mb-8 max-w-3xl mx-auto">
+          We have something very special for you.
+        </p>
+        <div className="flex flex-col sm:flex-row justify-center gap-6">
+          <button
+            onClick={openContactForm}
+            className="bg-[#d3b469] text-xl md:text-2xl hover:bg-[#c0a355] text-[#151f28] font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+          >
+            Get Free Consultation
+          </button>
+          <Link
+            href="tel:+919958993549"
+            className="inline-block text-xl md:text-2xl px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-[#151f28] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-lg"
+          >
+            Call Now
+          </Link>
+        </div>
+      </section>
+
+      <section>
+        {/* Responsive Banner */}
+        <div className="w-full relative mt-12">
+          <div className="hidden sm:block relative">
+            <Image
+              src={banner}
+              alt="Dholera Times Banner"
+              className="w-full h-auto rounded-lg shadow-md"
+              width={1200}
+              height={400}
+            />
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <Link
+                href="tel:+919958993549"
+                className="inline-block px-8 py-4 text-3xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
+                style={{
+                  backgroundColor: currentColor.bg,
+                  color: currentColor.text,
+                }}
+              >
+                CALL NOW
+              </Link>
+            </div>
+          </div>
+          <div className="sm:hidden relative">
+            <Image
+              src={bannerMobile}
+              alt="Dholera Times Banner"
+              className="w-full h-auto rounded-lg shadow-md"
+              width={600}
+              height={800}
+            />
+            <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+              <Link
+                href="tel:+919958993549"
+                className="inline-block px-6 py-3 text-xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
+                style={{
+                  backgroundColor: currentColor.bg,
+                  color: currentColor.text,
+                }}
+              >
+                CALL NOW
+              </Link>
             </div>
           </div>
         </div>
