@@ -13,12 +13,16 @@ import { AnimatePresence } from "framer-motion";
 import semiconductor from "@/assets/tata_semiconductor_plant.webp";
 import rail from "@/assets/mono_rail_connectivity.webp";
 import airport from "@/assets/dholera_international_airport.webp";
+import expressway from "@/assets/expressway_landing.webp";
+import solar from "@/assets/renewable_solar.webp";
+import mega from "@/assets/mega_industrial_park.webp";
 import whyDholera from "@/assets/why_invest_in_dholera.webp";
 import whyDholeraMobile from "@/assets/why_invest_in_dholera_mobile.webp";
 import nanoc from "@/assets/naNoc.webp";
 import residential from "@/assets/residentialPlot.webp";
 import hidden from "@/assets/hiddenCharges.webp";
 import Gallery from "./Gallery";
+import BrochureForm from "../components/BrochureForm";
 
 const colors = [
   { bg: "#ffffff", text: "#d7b36c" },
@@ -27,12 +31,161 @@ const colors = [
   { bg: "#d7b36c", text: "#ffffff" },
 ];
 
+const cardsData = [
+  {
+    image: semiconductor,
+    title: "Tata Semiconductor",
+    backTitle: "Tata Semiconductor Plant",
+    description:
+      "A state-of-the-art semiconductor manufacturing facility bringing thousands of jobs and cutting-edge technology to the region, boosting economic growth.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: rail,
+    title: "Monorail Project",
+    backTitle: "Advanced Monorail System",
+    description:
+      "A modern transportation network connecting Dholera with major cities, enhancing accessibility and reducing travel time for residents and businesses.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: airport,
+    title: "International Airport",
+    backTitle: "International Airport",
+    description:
+      "A world-class international airport facilitating global connectivity for businesses and residents, making Dholera a gateway to international markets.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: expressway,
+    title: "Dholera - Ahmedabad Expressway",
+    backTitle: "Dholera - Ahmedabad Expressway",
+    description:
+      "A high-speed expressway connecting Dholera to Ahmedabad, reducing travel time significantly and improving regional connectivity for commerce and tourism.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: solar,
+    title: "Dholera Solar Power Plant",
+    backTitle: "Dholera Solar Power Plant",
+    description:
+      "A massive renewable energy project providing clean power to the city and industries, establishing Dholera as a sustainable smart city of the future.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: mega,
+    title: "Dholera Mega Industrial Park",
+    backTitle: "Dholera Mega Industrial Park",
+    description:
+      "A vast industrial development zone attracting global manufacturers with world-class infrastructure and business-friendly policies.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+        />
+      </svg>
+    ),
+  },
+];
+
 export default function New() {
   const [currentColorIndex, setCurrentColorIndex] = useState(0);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [projectCount, setProjectCount] = useState(0);
   const [customerCount, setCustomerCount] = useState(0);
   const [nriCount, setNriCount] = useState(0);
+  const [isVisible, setIsVisible] = useState({});
+
+  const downloadBrochure = () => {
+    // Replace with your actual brochure URL
+    const brochureUrl = "https://shorturl.at/t7uyU";
+    const link = document.createElement("a");
+    link.href = brochureUrl;
+    link.download = "Dholera-Smart-City-Brochure.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -65,6 +218,29 @@ export default function New() {
     animateValue(setNriCount, 300, 2);
   }, []);
 
+  // New effect for scroll animations
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll(".animate-on-scroll");
+
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if (sectionTop < windowHeight * 0.8) {
+          section.classList.add("animate-visible");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const currentColor = colors[currentColorIndex];
 
   const openContactForm = () => {
@@ -75,6 +251,14 @@ export default function New() {
     setIsContactFormOpen(false);
   };
 
+  const openBrochureForm = () => {
+    setIsBrochureFormOpen(true);
+  };
+
+  const closeBrochureForm = () => {
+    setIsBrochureFormOpen(false);
+  };
+
   return (
     <>
       <style jsx global>{`
@@ -83,10 +267,272 @@ export default function New() {
         body {
           font-family: "Poppins", sans-serif;
         }
+
+        /* Flip Card Styles */
+        .perspective-1000 {
+          perspective: 1000px;
+        }
+
+        .transform-style-preserve-3d {
+          transform-style: preserve-3d;
+        }
+
+        .backface-hidden {
+          backface-visibility: hidden;
+        }
+
+        .transform-rotate-y-180 {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-inner {
+          transition: transform 0.7s;
+        }
+
+        /* Remove conflicting styles */
+        .group:hover .group-hover\:opacity-0,
+        .group:hover .group-hover\:opacity-100 {
+          opacity: 1 !important;
+        }
+
+        /* Reveal from Bottom Animation */
+        @keyframes revealFromBottom {
+          0% {
+            opacity: 0;
+            transform: translateY(40px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        /* Reveal from Left Animation */
+        @keyframes revealFromLeft {
+          0% {
+            opacity: 0;
+            transform: translateX(-40px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        /* Reveal from Right Animation */
+        @keyframes revealFromRight {
+          0% {
+            opacity: 0;
+            transform: translateX(40px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        /* Fade In Animation */
+        @keyframes fadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        /* Rotate and Scale Animation */
+        @keyframes rotateAndScale {
+          0% {
+            transform: rotate(0deg) scale(0.8);
+          }
+          100% {
+            transform: rotate(360deg) scale(1);
+          }
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+          from {
+            width: 0;
+          }
+          to {
+            width: 100%;
+          }
+        }
+
+        .animate-typing {
+          overflow: hidden;
+          white-space: nowrap;
+          animation: typing 4s steps(50, end) forwards;
+          border-right: 3px solid #d7b36c;
+        }
+
+        /* Shimmer Animation */
+        @keyframes shimmer {
+          0% {
+            background-position: -100px 0;
+          }
+          100% {
+            background-position: 100px 0;
+          }
+        }
+
+        .animate-shimmer {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          background-size: 200px 100%;
+          animation: shimmer 2s infinite;
+        }
+
+        /* Pulse Animation for CTA */
+        @keyframes ctaPulse {
+          0% {
+            box-shadow: 0 0 0 0 rgba(215, 179, 108, 0.7);
+          }
+          70% {
+            box-shadow: 0 0 0 12px rgba(215, 179, 108, 0);
+          }
+          100% {
+            box-shadow: 0 0 0 0 rgba(215, 179, 108, 0);
+          }
+        }
+
+        .animate-pulse-cta {
+          animation: ctaPulse 2s infinite;
+        }
+
+        /* Animations for scroll reveal */
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition:
+            opacity 0.8s ease,
+            transform 0.8s ease;
+        }
+
+        .animate-on-scroll.from-left {
+          transform: translateX(-15px);
+        }
+
+        .animate-on-scroll.from-right {
+          transform: translateX(15px);
+        }
+
+        @media (max-width: 640px) {
+          .animate-on-scroll.from-left,
+          .animate-on-scroll.from-right {
+            transform: translateY(20px); /* Change to vertical animation */
+          }
+        }
+
+        /* Animation when visible */
+        .animate-visible {
+          opacity: 1;
+          transform: translate(0, 0) !important; /* Override all transforms */
+        }
+
+        .animate-visible {
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+
+        /* Staggered children animation */
+        .stagger-children > * {
+          opacity: 0;
+          transform: translateY(15px);
+          transition:
+            opacity 0.4s ease,
+            transform 0.4s ease;
+        }
+
+        .stagger-children.animate-visible > *:nth-child(1) {
+          transition-delay: 0.1s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .stagger-children.animate-visible > *:nth-child(2) {
+          transition-delay: 0.2s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .stagger-children.animate-visible > *:nth-child(3) {
+          transition-delay: 0.3s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .stagger-children.animate-visible > *:nth-child(4) {
+          transition-delay: 0.4s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Flip card animation */
+        .flip-card {
+          perspective: 1000px;
+        }
+
+        .flip-card-inner {
+          transition: transform 0.8s;
+          transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+          transform: rotateY(180deg);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          text-align: center;
+          padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
 
       {/* Hero Section with Enhanced Design */}
-      <section className="relative h-[60vh] sm:h-[50vh] w-full overflow-hidden">
+      <section className="relative h-[80vh] w-full overflow-hidden">
         <Image
           src={abcd}
           alt="Dholera Skyline"
@@ -96,18 +542,42 @@ export default function New() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-[1]"></div>
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-center items-center h-full px-4 sm:px-8">
           <div className="md:w-1/2 mb-8 md:mb-0">
+            {/* Badge with pulse animation */}
             <div className="bg-[#d7b36c] text-white text-sm font-bold py-1 px-3 rounded-full inline-block mb-4 animate-pulse">
               LIMITED PLOTS AVAILABLE
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 font-poppins leading-tight">
+
+            {/* Main heading with fade-in animation instead of typing */}
+            <h1
+              className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 font-poppins leading-tight"
+              style={{
+                animation: "fadeIn 1s ease-out forwards",
+                textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
+              }}
+            >
               Invest in India's First Smart City
             </h1>
-            <h2 className="text-xl md:text-2xl text-white/90 mb-6 font-poppins font-light">
+
+            {/* Subheading with reliable slide-up animation */}
+            <h2
+              className="text-xl md:text-2xl text-white/90 mb-6 font-poppins font-light"
+              style={{
+                animation: "slideUp 1.2s ease-out 0.3s forwards",
+                opacity: "0",
+                transform: "translateY(20px)",
+              }}
+            >
               Secure premium plots in Dholera SIR before prices surge -
               projected 5x growth by 2030
             </h2>
           </div>
-          <div className="md:w-1/2 w-full max-w-md">
+          <div
+            className="md:w-1/2 w-full max-w-md"
+            style={{
+              animation: "fadeIn 1s ease-out 0.8s forwards",
+              opacity: 0,
+            }}
+          >
             <div>
               <ContactForm
                 title="ENQUIRE NOW"
@@ -126,143 +596,60 @@ export default function New() {
               WHY INVEST IN{" "}
               <span className="text-[#d7b36c] relative inline-block">
                 DHOLERA SMART CITY
-               
               </span>
             </h2>
             <div className="w-24 h-1 bg-[#d7b36c] mx-auto mt-4"></div>
           </div>
 
-          {/* Image and Features Section */}
-            {/*             <div className="w-full md:w-3/4 lg:w-2/3 rounded-xl overflow-hidden shadow-xl">
-              <div className="relative">
-                <Image
-                  src={whyDholera}
-                  alt="Dholera Smart City Development"
-                  className="w-full h-full object-cover hidden md:block"
-                  priority
-                />
-                <Image
-                  src={whyDholeraMobile}
-                  alt="Dholera Smart City Development"
-                  className="w-full h-full block md:hidden"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              </div>
-            </div> */}
-          
-
-          {/* Infrastructure Cards with Enhanced Design */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            {/* Tata Semiconductor Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden">
-                <Image
-                  src={semiconductor}
-                  alt="Tata Semiconductor Plant"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-[#d7b36c] p-2 rounded-full">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13 10V3L4 14h7v7l9-11h-7z"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {cardsData.map((card, index) => (
+              <div
+                key={index}
+                className="flip-card h-96 max-sm:h-80 w-full perspective-1000" // Added perspective here
+              >
+                <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d">
+                  {/* Front Side */}
+                  <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg border border-gray-200 p-6 flex flex-col">
+                    <div className="h-48 relative flex-shrink-0">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover rounded-t-lg"
                       />
-                    </svg>
+                    </div>
+                    <div className="mt-4">
+                      <div className="flex items-center mb-4">
+                        <div className="bg-[#d7b36c] p-2 rounded-full">
+                          {card.icon}
+                        </div>
+                        <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
+                          {card.title}
+                        </h3>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
-                    Tata Semiconductor
-                  </h3>
+
+                  {/* Back Side */}
+                  <div className="flip-card-back absolute w-full h-full backface-hidden bg-[#d7b36c] text-white rounded-lg p-6 flex flex-col justify-center transform-rotate-y-180">
+                    <h3 className="text-2xl font-bold mb-4">
+                      {card.backTitle}
+                    </h3>
+                    <p className="text-lg">{card.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Monorail Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden">
-                <Image
-                  src={rail}
-                  alt="Monorail Project"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-[#d7b36c] p-2 rounded-full">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
-                    Monorail Project
-                  </h3>
-                </div>
-              </div>
-            </div>
-
-            {/* Dholera Airport Card */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-56 overflow-hidden">
-                <Image
-                  src={airport}
-                  alt="Dholera International Airport"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center mb-4">
-                  <div className="bg-[#d7b36c] p-2 rounded-full">
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
-                    International Airport
-                  </h3>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-
       {/* Investment and CTA Sections with Improved Design */}
-      <section className="px-4 py-16 bg-white">
+      <section className=" py-16 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Investment Returns Section */}
-          <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl shadow-lg p-8 mb-16">
+          <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl shadow-lg p-8 mb-16 animate-on-scroll">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 animate-on-scroll from-left">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 font-poppins mb-4">
                   Investment Returns
                 </h3>
@@ -274,9 +661,19 @@ export default function New() {
                   just a home but a future full of possibilities.
                 </p>
                 <div className="flex flex-col md:text-xl sm:flex-row gap-4">
-                  <Link
-                    href="https://shorturl.at/tncCM"
-                    className="inline-flex items-center px-6 py-3 bg-[#d7b36c] hover:bg-[#c2a05e] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-md"
+                  <button
+                    onClick={() => {
+                      if (isFormSubmitted) {
+                        downloadBrochure();
+                      } else {
+                        openBrochureForm();
+                      }
+                    }}
+                    className={`inline-flex items-center px-6 py-3 ${
+                      isFormSubmitted
+                        ? "bg-green-600 hover:bg-green-700"
+                        : "bg-[#d7b36c] hover:bg-[#c2a05e]"
+                    } text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-md animate-float`}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -289,14 +686,18 @@ export default function New() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                        d={
+                          isFormSubmitted
+                            ? "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                            : "M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+                        }
                       />
                     </svg>
-                    Download Brochure
-                  </Link>
+                    {isFormSubmitted ? "Download Brochure" : "Get Brochure"}
+                  </button>
                 </div>
               </div>
-              <div className="md:w-1/2">
+              <div className="md:w-1/2 animate-on-scroll from-right">
                 <div className="bg-white rounded-lg p-8 shadow-md">
                   <div className="flex justify-between items-center mb-4">
                     <div className="text-2xl font-semibold text-gray-800">
@@ -306,7 +707,7 @@ export default function New() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
                     <div
-                      className="bg-[#d7b36c] h-3 rounded-full transition-all duration-1000"
+                      className="bg-[#d7b36c] h-3 rounded-full transition-all duration-1000 animate-shimmer"
                       style={{ width: "80%" }}
                     ></div>
                   </div>
@@ -340,70 +741,75 @@ export default function New() {
 
         {/* Call to Action Section */}
       </section>
+
       <section className="max-w-7xl mx-auto pb-12">
-  <h1 className="text-center text-6xl font-bold ">
-    Why DHOLERA TIMES?
-  </h1>
-  <div className="flex flex-col items-center gap-12 mb-16">
-            {/* Image Section */}
-
-            {/* Features Grid */}
-            <div className="w-full">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {/* Feature 1 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={nanoc}
-                      alt="NA/NOC Plots"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    NA/NOC Plots
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
-                  <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={residential}
-                      alt="Residential Plots"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    Residential Plots
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center">
+        <h1 className="text-center text-6xl font-bold animate-on-scroll">
+          Why DHOLERA TIMES?
+        </h1>
+        <div className="flex flex-col items-center gap-12 mb-16">
+          {/* Features Grid */}
+          <div className="w-full">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-children animate-on-scroll">
+              {/* Feature 1 */}
+              <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float">
                 <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
-                    <Image
-                      src={hidden}
-                      alt="No Hidden Charges"
-                      className="h-full w-auto object-contain"
-                    />
-                  </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
-                    Transparent Pricing
-                  </h3>
-                  <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+                  <Image
+                    src={nanoc}
+                    alt="NA/NOC Plots"
+                    className="h-full w-auto object-contain"
+                  />
                 </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  NA/NOC Plots
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+              </div>
+
+              {/* Feature 2 */}
+              <div
+                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float"
+                style={{ animationDelay: "1s" }}
+              >
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                  <Image
+                    src={residential}
+                    alt="Residential Plots"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  Residential Plots
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+              </div>
+
+              {/* Feature 3 */}
+              <div
+                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float"
+                style={{ animationDelay: "2s" }}
+              >
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                  <Image
+                    src={hidden}
+                    alt="No Hidden Charges"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  Transparent Pricing
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-</section>
-      <section className="bg-[#151f28] shadow-xl text-center text-[#d3b469]">
-        
-
-      <div className="py-4 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-8">Our Achievements</h2>
+      <section className="bg-[#151f28] shadow-xl text-center text-[#d3b469] animate-on-scroll">
+        <div className="py-4 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-8">
+            Our Achievements
+          </h2>
           <div className="flex flex-wrap justify-center gap-10">
             <div className="text-center">
               <h3 className="text-5xl font-bold text-[#d3b469]">
@@ -418,20 +824,14 @@ export default function New() {
               <p className="text-xl mt-2">Happy Customers</p>
             </div>
             <div className="text-center">
-              <h3 className="text-5xl font-bold text-[#d3b469]">
-                {nriCount}+
-              </h3>
+              <h3 className="text-5xl font-bold text-[#d3b469]">{nriCount}+</h3>
               <p className="text-xl mt-2">NRI</p>
             </div>
           </div>
         </div>
       </section>
 
-
-
-      <section className="bg-[#151f28] shadow-xl p-10 mb-16 text-center text-[#d3b469]">
-        
-
+      <section className="bg-[#151f28] shadow-xl p-10 mb-16 text-center text-[#d3b469] animate-on-scroll">
         <h3 className="text-3xl md:text-4xl font-bold font-poppins mb-3">
           Are You Interested To Invest In Future?
         </h3>
@@ -441,13 +841,13 @@ export default function New() {
         <div className="flex flex-col sm:flex-row justify-center gap-6">
           <button
             onClick={openContactForm}
-            className="bg-[#d3b469] text-xl md:text-2xl hover:bg-[#c0a355] text-[#151f28] font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg"
+            className="bg-[#d3b469] text-xl md:text-2xl hover:bg-[#c0a355] text-[#151f28] font-bold py-4 px-8 rounded-lg transition-all transform hover:scale-105 shadow-lg animate-pulse-cta"
           >
             Get Free Consultation
           </button>
           <Link
             href="tel:+919958993549"
-            className="inline-block text-xl md:text-2xl px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-[#151f28] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-lg"
+            className="inline-block text-xl md:text-2xl px-8 py-4 bg-transparent border-2 border-white hover:bg-white hover:text-[#151f28] text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-lg animate-float"
           >
             Call Now
           </Link>
@@ -456,7 +856,7 @@ export default function New() {
 
       <section>
         {/* Responsive Banner */}
-        <div className="w-full relative mt-12">
+        <div className="w-full relative mt-12 animate-on-scroll">
           <div className="hidden sm:block relative">
             <Image
               src={banner}
@@ -468,7 +868,7 @@ export default function New() {
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
               <Link
                 href="tel:+919958993549"
-                className="inline-block px-8 py-4 text-3xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
+                className="inline-block px-8 py-4 text-3xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl animate-pulse-cta"
                 style={{
                   backgroundColor: currentColor.bg,
                   color: currentColor.text,
@@ -489,7 +889,7 @@ export default function New() {
             <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
               <Link
                 href="tel:+919958993549"
-                className="inline-block px-6 py-3 text-xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl"
+                className="inline-block px-6 py-3 text-xl font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-xl animate-pulse-cta"
                 style={{
                   backgroundColor: currentColor.bg,
                   color: currentColor.text,
@@ -502,10 +902,18 @@ export default function New() {
         </div>
       </section>
 
-      {/* Testimonials and FAQ */}
-      <Gallery/>
-      <TestimonialPagination />
-      <FAQSection />
+      {/* Testimonials and FAQ with animations */}
+      <section className="animate-on-scroll">
+        <Gallery />
+      </section>
+
+      <section className="animate-on-scroll">
+        <TestimonialPagination />
+      </section>
+
+      <section className="animate-on-scroll">
+        <FAQSection />
+      </section>
 
       {/* Contact Form Popup */}
       <AnimatePresence>
@@ -515,6 +923,18 @@ export default function New() {
               title="Book A Free Consultation Today"
               buttonName="Get A Call Back"
               onClose={closeContactForm}
+            />
+          </div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {isBrochureFormOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-[1000]">
+            <BrochureForm
+              title="Get "
+              buttonName="Download Now"
+              onClose={closeBrochureForm}
+              onSuccess={() => setIsFormSubmitted(true)}
             />
           </div>
         )}
