@@ -18,6 +18,7 @@ import whyDholeraMobile from "@/assets/why_invest_in_dholera_mobile.webp";
 import nanoc from "@/assets/naNoc.webp";
 import residential from "@/assets/residentialPlot.webp";
 import hidden from "@/assets/hiddenCharges.webp";
+import Gallery from "./Gallery";
 
 const colors = [
   { bg: "#ffffff", text: "#d7b36c" },
@@ -502,6 +503,7 @@ export default function New() {
       </section>
 
       {/* Testimonials and FAQ */}
+      <Gallery/>
       <TestimonialPagination />
       <FAQSection />
 
