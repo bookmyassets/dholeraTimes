@@ -90,7 +90,7 @@ export default function Info() {
               />
               <p>Videos</p>
             </Link>
-            <Link href="/infopack/inventory" className="space-y-4">
+            <Link href="/infopack/inventory"  className="space-y-4">
               <Image
                 src={inventory}
                 alt="inventory"
