@@ -46,7 +46,7 @@ export default function Footer() {
             fields: {
               name: formData.name,
               phone: formData.phone,
-              source:"Dholera Times"
+              source: "Dholera Times",
             },
             source: "Dholera Times Website",
             tags: ["Dholera Investment", "Website Lead"],
@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Contact form section */}
         <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
           <h2 className="text-white text-xl font-semibold mb-6 text-center">
-            Have Questions? Enquire Now
+            Need Help Choosing a Plot?
           </h2>
           <div className="grid md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto text-white">
             {/* Form column */}
@@ -182,13 +182,11 @@ export default function Footer() {
         {/* First 3-column row with company info, links, policy */}
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
-          <div>
+            <div>
               <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
               India{" "}
             </div>
-           
-            
           </div>
           <div>
             <h3 className="text-white text-lg font-semibold mb-3">
@@ -264,7 +262,7 @@ export default function Footer() {
               </a>
             </div>
             <p className="text-md mb-3">
-              Phone: <br /> <span className="">+91 99589 93549</span> 
+              Phone: <br /> <span className="">+91 99589 93549</span>
             </p>
             <a className="text-md mb-3">Email Id: info@dholeratimes.com</a>
           </div>
@@ -324,15 +322,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/contact/career" className="hover:text-white transition">
+                <a
+                  href="/contact/career"
+                  className="hover:text-white transition"
+                >
                   Careers
                 </a>
               </li>
               <li>
-                <a
-                  href="/sitemap"
-                  className="hover:text-white transition"
-                >
+                <a href="/sitemap" className="hover:text-white transition">
                   Sitemap
                 </a>
               </li>
@@ -350,17 +348,26 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/infopack/Inventory" className="hover:text-white transition">
+                <a
+                  href="/infopack/Inventory"
+                  className="hover:text-white transition"
+                >
                   Live Booking Status
                 </a>
               </li>
               <li>
-                <a href="/gallery/siteprogress" className="hover:text-white transition">
+                <a
+                  href="/gallery/siteprogress"
+                  className="hover:text-white transition"
+                >
                   Site Progress
                 </a>
               </li>
               <li>
-                <a href="/event/upcomingevent" className="hover:text-white transition">
+                <a
+                  href="/event/upcomingevent"
+                  className="hover:text-white transition"
+                >
                   Live Event
                 </a>
               </li>
@@ -370,15 +377,15 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/infopack/locations" className="hover:text-white transition">
+                <a
+                  href="/infopack/locations"
+                  className="hover:text-white transition"
+                >
                   Live Location
                 </a>
               </li>
               <li>
-                <a
-                  href="/contact"
-                  className="hover:text-white transition"
-                >
+                <a href="/contact" className="hover:text-white transition">
                   Contact Us
                 </a>
               </li>
