@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
   const [isMobileGalleryOpen, setIsMobileGalleryOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
-
+  
   //PIXEL
   const pathname = usePathname();
 
@@ -1197,7 +1197,10 @@ export default function RootLayout({ children }) {
           </AnimatePresence>
         </nav>
 
-        <div className="pt-20">{children}</div>
+        <div className="pt-20">
+        
+        {children}
+        </div>
         <FloatingIcons />
         <Footer />
       </body>
