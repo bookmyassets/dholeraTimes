@@ -69,20 +69,13 @@ export default function Info() {
                   openBrochureForm();
                 }
               }}
-              className={`inline-flex items-center px-6 py-3 ${
-                isFormSubmitted
-                  ? "bg-gray-800 hover:bg-gray-900"
-                  : "bg-[#d7b36c] hover:bg-[#c2a05e]"
-              } text-white font-bold rounded-lg transition duration-300 transform hover:scale-105 font-poppins shadow-md animate-float`}
-            
+              className="bg-gray-800 text-[#e6b751] font-semibold flex gap-4 items-center p-4 rounded-md md:text-xl"
           >
             <FaDownload className="text-white" /> Download Dholera Times
             Brochure
           </button>
         </div>
-        <div className="text-center text-2xl md:text-4xl font-semibold pt-8">
-          <p>Explore Prime Locations and See Dholera Come Alive </p>
-        </div>
+       
         <div>
           <div className="grid grid-cols-3 font-semibold gap-4 pt-8 text-center md:text-2xl">
             <Link href="/infopack/locations" className="space-y-4">

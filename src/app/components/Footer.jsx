@@ -92,7 +92,7 @@ export default function Footer() {
         {/* Contact form section */}
         <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
           <h2 className="text-white text-xl font-semibold mb-6 text-center">
-            Need Help Choosing a Plot?
+            Need Help Choosing a Plot? <br className="space-y-4" /> Talk to a Certified Dholera Investment Advisor
           </h2>
           <div className="grid md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto text-white">
             {/* Form column */}
