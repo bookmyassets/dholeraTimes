@@ -71,7 +71,7 @@ export default function Info() {
               }}
               className="bg-gray-800 text-[#e6b751] font-semibold flex gap-4 items-center p-4 rounded-md md:text-xl"
           >
-            <FaDownload className="text-white" /> Download Dholera Times
+            <FaDownload className="text-[#e6b751]" /> Download Dholera Times
             Brochure
           </button>
         </div>
@@ -79,14 +79,14 @@ export default function Info() {
         <div>
           <div className="grid grid-cols-3 font-semibold gap-4 pt-8 text-center md:text-2xl">
             <Link href="/infopack/locations" className="space-y-4">
-              <Image src={maps} alt="maps" className="rounded-lg h-40 md:h-60 w-auto mx-auto object-cover" />
+              <Image src={maps} alt="maps" className="shadow-2xl rounded-lg h-40 md:h-60 w-auto mx-auto object-cover" />
               <p>Locations</p>
             </Link>
             <Link href="/infopack/videos" className="space-y-4">
               <Image
                 src={videos}
                 alt="videos"
-                className="rounded-lg h-40 md:h-60 w-auto mx-auto object-cover"
+                className="shadow-2xl rounded-lg h-40 md:h-60 w-auto mx-auto object-cover"
               />
               <p>Videos</p>
             </Link>
@@ -94,7 +94,7 @@ export default function Info() {
               <Image
                 src={inventory}
                 alt="inventory"
-                className="rounded-lg h-40 md:h-60 w-auto mx-auto object-cover"
+                className="shadow-2xl rounded-lg h-40 md:h-60 w-auto mx-auto object-cover"
               />
               <p>Available Plots</p>
             </Link>
