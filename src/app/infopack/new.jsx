@@ -34,13 +34,13 @@ export default function Info() {
           </p>
         </div>
         <div className="flex justify-center">
-          <button
+          <Link
             href="https://shorturl.at/q7Yh3"
               className="bg-gray-800 text-[#e6b751] font-semibold flex gap-4 items-center p-4 rounded-md md:text-xl"
           >
             <FaDownload className="text-[#e6b751]" /> Download Dholera Times
             Brochure
-          </button>
+          </Link>
         </div>
        
         <div>
