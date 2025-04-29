@@ -2,40 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import logo from "@/assets/dt.webp";
 import maps from "@/assets/locations.webp";
 import videos from "@/assets/videos.webp";
 import inventory from "@/assets/plot.webp";
-import brochure from "@/assets/brouchure.webp";
 import bg from "@/assets/bg-image.webp";
-import { FaDownload, FaFacebookMessenger } from "react-icons/fa";
-import { AnimatePresence } from "framer-motion";
-import BrochureForm from "../components/BrochureForm";
+import { FaDownload } from "react-icons/fa";
 
 export default function Info() {
-
-    const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
-    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-    
-    const downloadBrochure = () => {
-        // Replace with your actual brochure URL
-        const brochureUrl = "https://shorturl.at/t7uyU";
-        const link = document.createElement("a");
-        link.href = brochureUrl;
-        link.download = "Dholera-Smart-City-Brochure.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
-
-      const openBrochureForm = () => {
-        setIsBrochureFormOpen(true);
-      };
-    
-      const closeBrochureForm = () => {
-        setIsBrochureFormOpen(false);
-      };
-    
 
   return (
     <div
@@ -62,13 +35,7 @@ export default function Info() {
         </div>
         <div className="flex justify-center">
           <button
-            onClick={() => {
-                if (isFormSubmitted) {
-                  downloadBrochure();
-                } else {
-                  openBrochureForm();
-                }
-              }}
+            href="https://shorturl.at/q7Yh3"
               className="bg-gray-800 text-[#e6b751] font-semibold flex gap-4 items-center p-4 rounded-md md:text-xl"
           >
             <FaDownload className="text-[#e6b751]" /> Download Dholera Times
@@ -102,18 +69,6 @@ export default function Info() {
           </div>
         </div>
       </div>
-      <AnimatePresence>
-        {isBrochureFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-[1000]">
-            <BrochureForm
-              title="Get Quote"
-              buttonName="Download Now"
-              onClose={closeBrochureForm}
-              onSuccess={() => setIsFormSubmitted(true)}
-            />
-          </div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
