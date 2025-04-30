@@ -12,6 +12,9 @@ import inventory from "@/assets/plot.webp";
 import bg from "@/assets/bg-image.webp";
 import dholeraSIRprogress from "@/assets/dholeraSIRprogress.webp";
 import dholeraSite from "@/assets/dholeraSite.webp";
+import expressway from "@/assets/expressway2.webp";
+import semiconductor from "@/assets/semiconductor2.webp";
+import airport from "@/assets/airport.webp";
 
 // Feature card component for better reusability
 const FeatureCard = ({ href, image, alt, title }) => (
@@ -137,7 +140,6 @@ export default function Info() {
         </section>
 
         {/* Photo Gallery Section */}
-       
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
@@ -155,7 +157,6 @@ export default function Info() {
                 loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
               />
-              
             </div>
           </Link>
           <Link
@@ -173,11 +174,60 @@ export default function Info() {
                 loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
               />
-              
             </div>
           </Link>
-          
         </section>
+        <section className="py-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* First Feature */}
+        <div className="flex flex-col">
+          <Image 
+            src={expressway} 
+            alt="expressway" 
+            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
+            width={400}
+            height={300}
+          />
+          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+              Ahmedabad Dholera Expressway within 6km
+            </p>
+          </div>
+        </div>
+        
+        {/* Second Feature */}
+        <div className="flex flex-col">
+          <Image 
+            src={airport} 
+            alt="airport" 
+            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
+            width={400}
+            height={300}
+          />
+          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+            Dholera international Airport within 14km
+            </p>
+          </div>
+        </div>
+        
+        {/* Third Feature */}
+        <div className="flex flex-col">
+          <Image 
+            src={semiconductor} 
+            alt="semiconductor" 
+            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
+            width={400}
+            height={300}
+          />
+          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+              TATA Semiconductor Plant within 10km
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
       </div>
     </main>
   );
