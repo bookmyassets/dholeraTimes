@@ -10,7 +10,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import ContactForm from "@/app/components/ContactForm";
+import ContactForm from "@/app/(main)/components/ContactForm";
 
 export default function ContactDetails() {
   return (

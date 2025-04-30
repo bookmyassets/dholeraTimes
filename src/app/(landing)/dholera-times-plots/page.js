@@ -1,28 +1,33 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import abcd from "@/assets/ABCD-Building-3.webp";
 import Image from "next/image";
 import Link from "next/link";
-import ContactForm from "../components/ContactForm";
+import ContactForm from "./components/ContactForm";
 import banner from "@/assets/dtLanding.webp";
 import bannerMobile from "@/assets/dtLandingmobile.webp";
-import TestimonialPagination from "../components/Testimonials";
+import TestimonialPagination from "./components/Testimonials";
 import FAQSection from "./Faq";
-import PopupForm from "../components/PopupForm";
-import { AnimatePresence } from "framer-motion";
+import PopupForm from "./components/PopupForm";
+import { AnimatePresence, motion } from "framer-motion";
 import semiconductor from "@/assets/tata_semiconductor_plant.webp";
 import rail from "@/assets/mono_rail_connectivity.webp";
 import airport from "@/assets/dholera_international_airport.webp";
 import expressway from "@/assets/expressway_landing.webp";
 import solar from "@/assets/renewable_solar.webp";
 import mega from "@/assets/mega_industrial_park.webp";
-import whyDholera from "@/assets/why_invest_in_dholera.webp";
-import whyDholeraMobile from "@/assets/why_invest_in_dholera_mobile.webp";
 import nanoc from "@/assets/naNoc.webp";
 import residential from "@/assets/residentialPlot.webp";
 import hidden from "@/assets/hiddenCharges.webp";
-import Gallery from "./Gallery";
-import BrochureForm from "../components/BrochureForm";
+import Gallery from "./components/Gallery";
+import BrochureForm from "./components/BrochureForm";
+import logo from "@/assets/dt.webp";
+import logo2 from "@/assets/dtlogobg.png";
+import call from "@/assets/call.svg";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
+import govtApprovedProject from "@/assets/govt-approved-project.webp";
+import salesDeed from "@/assets/immediate-sale-deed.webp";
+import afterSales from "@/assets/after-sales.webp" 
 
 const colors = [
   { bg: "#ffffff", text: "#d7b36c" },
@@ -32,50 +37,6 @@ const colors = [
 ];
 
 const cardsData = [
-  {
-    image: semiconductor,
-    title: "Tata Semiconductor",
-    backTitle: "Tata Semiconductor Plant",
-    description:
-      "A state-of-the-art semiconductor manufacturing facility bringing thousands of jobs and cutting-edge technology to the region, boosting economic growth.",
-    icon: (
-      <svg
-        className="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M13 10V3L4 14h7v7l9-11h-7z"
-        />
-      </svg>
-    ),
-  },
-  {
-    image: rail,
-    title: "Monorail Project",
-    backTitle: "Advanced Monorail System",
-    description:
-      "A modern transportation network connecting Dholera with major cities, enhancing accessibility and reducing travel time for residents and businesses.",
-    icon: (
-      <svg
-        className="w-6 h-6 text-white"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-        />
-      </svg>
-    ),
-  },
   {
     image: airport,
     title: "International Airport",
@@ -120,6 +81,51 @@ const cardsData = [
       </svg>
     ),
   },
+  {
+    image: rail,
+    title: "Monorail Project",
+    backTitle: "Advanced Monorail System",
+    description:
+      "A modern transportation network connecting Dholera with major cities, enhancing accessibility and reducing travel time for residents and businesses.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+        />
+      </svg>
+    ),
+  },
+  {
+    image: semiconductor,
+    title: "Tata Semiconductor",
+    backTitle: "Tata Semiconductor Plant",
+    description:
+      "A state-of-the-art semiconductor manufacturing facility bringing thousands of jobs and cutting-edge technology to the region, boosting economic growth.",
+    icon: (
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    ),
+  },
+
   {
     image: solar,
     title: "Dholera Solar Power Plant",
@@ -175,6 +181,28 @@ export default function New() {
   const [customerCount, setCustomerCount] = useState(0);
   const [nriCount, setNriCount] = useState(0);
   const [isVisible, setIsVisible] = useState({});
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuOpenRef = useRef(null);
+
+  // Function to handle smooth scrolling
+  const scrollToSection = (elementId) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      // Adding offset for fixed header
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition =
+        elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+
+      // Close mobile menu after clicking
+      setIsMenuOpen(false);
+    }
+  };
 
   const downloadBrochure = () => {
     // Replace with your actual brochure URL
@@ -185,6 +213,10 @@ export default function New() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   useEffect(() => {
@@ -218,7 +250,7 @@ export default function New() {
     animateValue(setNriCount, 300, 2);
   }, []);
 
-  // New effect for scroll animations
+  // Effect for scroll animations
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll(".animate-on-scroll");
@@ -241,6 +273,24 @@ export default function New() {
     };
   }, []);
 
+  // Click outside handler for mobile menu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuOpenRef.current &&
+        !menuOpenRef.current.contains(event.target) &&
+        isMenuOpen
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const currentColor = colors[currentColorIndex];
 
   const openContactForm = () => {
@@ -261,6 +311,196 @@ export default function New() {
 
   return (
     <>
+      <nav className="fixed z-40 w-full bg-[#151f28] pt-4 pb-4 max-sm:pt-2 max-sm:pb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-14 max-sm:h-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/dholera-times-plots">
+                <Image
+                  src={logo}
+                  alt="Dholera Times Logo"
+                  width={100}
+                  height={100}
+                />
+              </Link>
+            </div>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center space-x-8 text-white text-lg">
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("home");
+                }}
+              >
+                Home
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("why-invest");
+                }}
+              >
+                Why Invest
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("investment-benefits");
+                }}
+              >
+                Investment Benefits
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("why-us");
+                }}
+              >
+                Why Us
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("testimonials");
+                }}
+              >
+                Testimonials
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("faqs");
+                }}
+              >
+                FAQs
+              </a>
+            </div>
+
+            {/* Call Now and Mobile Menu Button */}
+            <div className="flex items-center gap-4 lg:hidden">
+              <div className="text-[#d8b66d] mt-3 animate-bounce flex items-center space-x-2">
+                <Link
+                  href="tel:+919958993549"
+                  className="flex items-center space-x-2"
+                >
+                  <Image
+                    src={call}
+                    alt="call"
+                    height={30}
+                    width={30}
+                    className="animate-image-tint"
+                  />
+                  <p className="animate-color-change">Call Now</p>
+                </Link>
+              </div>
+
+              <button onClick={toggleMenu}>
+                {isMenuOpen ? (
+                  <X className="h-6 w-6 text-white" />
+                ) : (
+                  <Menu className="h-6 w-6 text-white" />
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "-100%", opacity: 0 }}
+              ref={menuOpenRef}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="lg:hidden bg-black/30 backdrop-blur-md fixed top-0 left-0 w-3/4 h-full z-50 p-5 overflow-y-auto"
+            >
+              <div className="flex flex-col space-y-6">
+                <Link href="/dholera-times-plots" onClick={() => setIsMenuOpen(false)}>
+                  <Image
+                    src={logo2}
+                    alt="Dholera Times Logo"
+                    width={150}
+                    height={150}
+                  />
+                </Link>
+
+                {/* Mobile Menu Links */}
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("home");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Home
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("why-invest");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Why Invest
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("investment-benefits");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Investment Benefits
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("why-us");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Why Us
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("testimonials");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Testimonials
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("faqs");
+                  }}
+                  className="text-white text-xl"
+                >
+                  FAQs
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
@@ -478,6 +718,18 @@ export default function New() {
           transform: translateY(0);
         }
 
+        .stagger-children.animate-visible > *:nth-child(5) {
+          transition-delay: 0.4s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        .stagger-children.animate-visible > *:nth-child(6) {
+          transition-delay: 0.4s;
+          opacity: 1;
+          transform: translateY(0);
+        }
+
         /* Flip card animation */
         .flip-card {
           perspective: 1000px;
@@ -532,7 +784,10 @@ export default function New() {
       `}</style>
 
       {/* Hero Section with Enhanced Design */}
-      <section className="relative h-[80vh] w-full overflow-hidden">
+      <section
+        id="home"
+        className="relative h-[100vh] pt-20 w-full overflow-hidden"
+      >
         <Image
           src={abcd}
           alt="Dholera Skyline"
@@ -541,7 +796,7 @@ export default function New() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-[1]"></div>
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-center items-center h-full px-4 sm:px-8">
-          <div className="md:w-1/2 mb-8 md:mb-0">
+          <div className="md:w-1/2 w-full mb-8 md:mb-0">
             {/* Badge with pulse animation */}
             <div className="bg-[#d7b36c] text-white text-sm font-bold py-1 px-3 rounded-full inline-block mb-4 animate-pulse">
               LIMITED PLOTS AVAILABLE
@@ -572,7 +827,7 @@ export default function New() {
             </h2>
           </div>
           <div
-            className="md:w-1/2 w-full max-w-md"
+            className="md:w-1/2 "
             style={{
               animation: "fadeIn 1s ease-out 0.8s forwards",
               opacity: 0,
@@ -588,66 +843,11 @@ export default function New() {
         </div>
       </section>
 
-      {/* Why Invest Section with Improved Layout */}
-      <section className="px-4 py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold leading-tight font-poppins tracking-tight mb-4">
-              WHY INVEST IN{" "}
-              <span className="text-[#d7b36c] relative inline-block">
-                DHOLERA SMART CITY
-              </span>
-            </h2>
-            <div className="w-24 h-1 bg-[#d7b36c] mx-auto mt-4"></div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-            {cardsData.map((card, index) => (
-              <div
-                key={index}
-                className="flip-card h-96 max-sm:h-80 w-full perspective-1000" // Added perspective here
-              >
-                <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d">
-                  {/* Front Side */}
-                  <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg border border-gray-200 p-6 flex flex-col">
-                    <div className="h-48 relative flex-shrink-0">
-                      <Image
-                        src={card.image}
-                        alt={card.title}
-                        fill
-                        className="object-cover rounded-t-lg"
-                      />
-                    </div>
-                    <div className="mt-4">
-                      <div className="flex items-center mb-4">
-                        <div className="bg-[#d7b36c] p-2 rounded-full">
-                          {card.icon}
-                        </div>
-                        <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
-                          {card.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Back Side */}
-                  <div className="flip-card-back absolute w-full h-full backface-hidden bg-[#d7b36c] text-white rounded-lg p-6 flex flex-col justify-center transform-rotate-y-180">
-                    <h3 className="text-2xl font-bold mb-4">
-                      {card.backTitle}
-                    </h3>
-                    <p className="text-lg">{card.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
       {/* Investment and CTA Sections with Improved Design */}
-      <section className=" py-16 bg-white">
+      <section id="investment-benefits" className=" py-8 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Investment Returns Section */}
-          <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl shadow-lg p-8 mb-16 animate-on-scroll">
+          <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl shadow-lg p-8 animate-on-scroll">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2 animate-on-scroll from-left">
                 <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 font-poppins mb-4">
@@ -705,7 +905,7 @@ export default function New() {
                     </div>
                     <div className="text-[#d7b36c] font-bold text-3xl">5x</div>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
+                  <div className="w-full bg-[#d7b36c] rounded-full h-3 mb-4">
                     <div
                       className="bg-[#d7b36c] h-3 rounded-full transition-all duration-1000 animate-shimmer"
                       style={{ width: "80%" }}
@@ -738,12 +938,10 @@ export default function New() {
             </div>
           </div>
         </div>
-
-        {/* Call to Action Section */}
       </section>
 
-      <section className="max-w-7xl mx-auto pb-12">
-        <h1 className="text-center text-6xl font-bold animate-on-scroll">
+      <section id="why-us" className="max-w-7xl mx-auto pb-12 max-sm:pl-8 max-sm:pr-8">
+        <h1 className="text-center text-4xl mb-8 md:text-6xl font-bold ">
           Why DHOLERA TIMES?
         </h1>
         <div className="flex flex-col items-center gap-12 mb-16">
@@ -800,12 +998,66 @@ export default function New() {
                 </h3>
                 <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
               </div>
+              {/* Feature 4 */}
+              <div
+                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float"
+                style={{ animationDelay: "2s" }}
+              >
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                  <Image
+                    src={govtApprovedProject}
+                    alt="govt-approved-project"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  Govt Approved Projects
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+              </div>
+              {/* Feature 5 */}
+              <div
+                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float"
+                style={{ animationDelay: "3s" }}
+              >
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                  <Image
+                    src={salesDeed}
+                    alt="Sales Deed"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  Sales Deed
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+              </div>
+                        {/* Feature 6 */}
+              <div
+                className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 text-center animate-float"
+                style={{ animationDelay: "3s" }}
+              >
+                <div className="h-52 md:h-80 mb-4 mx-auto flex items-center justify-center">
+                  <Image
+                    src={afterSales}
+                    alt="After Sales Support"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                  After Sales Support
+                </h3>
+                <div className="w-12 h-1 bg-[#d7b36c] mx-auto"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#151f28] shadow-xl text-center text-[#d3b469] animate-on-scroll">
+      <section
+        id=""
+        className="bg-[#151f28] shadow-xl text-center text-[#d3b469] animate-on-scroll"
+      >
         <div className="py-4 text-center">
           <h2 className="text-3xl md:text-5xl font-bold mt-4 mb-8">
             Our Achievements
@@ -827,6 +1079,62 @@ export default function New() {
               <h3 className="text-5xl font-bold text-[#d3b469]">{nriCount}+</h3>
               <p className="text-xl mt-2">NRI</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Invest Section with Improved Layout */}
+      <section id="why-invest" className="px-4 py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold leading-tight font-poppins tracking-tight mb-4">
+              WHY INVEST IN{" "}
+              <span className="text-[#d7b36c] relative inline-block">
+                DHOLERA SMART CITY
+              </span>
+            </h2>
+            <div className="w-24 h-1 bg-[#d7b36c] mx-auto mt-4"></div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {cardsData.map((card, index) => (
+              <div
+                key={index}
+                className="flip-card h-96 max-sm:h-80 w-full perspective-1000" // Added perspective here
+              >
+                <div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-preserve-3d">
+                  {/* Front Side */}
+                  <div className="flip-card-front absolute w-full h-full backface-hidden bg-white rounded-lg shadow-lg border border-gray-200 p-6 flex flex-col">
+                    <div className="h-48 relative flex-shrink-0">
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover rounded-t-lg"
+                      />
+                    </div>
+                    <div className="mt-4">
+                      <div className="flex items-center mb-4">
+                        <div className="bg-[#d7b36c] p-2 rounded-full">
+                          {card.icon}
+                        </div>
+                        <h3 className="ml-3 text-2xl md:text-3xl font-bold text-gray-800">
+                          {card.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Back Side */}
+                  <div className="flip-card-back absolute w-full h-full backface-hidden bg-[#d7b36c] text-white rounded-lg p-6 flex flex-col justify-center transform-rotate-y-180">
+                    <h3 className="text-2xl font-bold mb-4">
+                      {card.backTitle}
+                    </h3>
+                    <p className="text-lg">{card.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -903,7 +1211,10 @@ export default function New() {
       </section>
 
       {/* Testimonials and FAQ with animations */}
-      <section className="animate-on-scroll">
+      <section className="animate-on-scroll overflow-hidden">
+        <p className="text-6xl font-semibold text-center pb-8 pt-8">
+          Dholera Gallery
+        </p>
         <Gallery />
       </section>
 
@@ -931,7 +1242,7 @@ export default function New() {
         {isBrochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-[1000]">
             <BrochureForm
-              title="Get "
+              title="Get Instant Access to Our Brochure"
               buttonName="Download Now"
               onClose={closeBrochureForm}
               onSuccess={() => setIsFormSubmitted(true)}

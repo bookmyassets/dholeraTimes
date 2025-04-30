@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
 import { getPostBySlug } from "@/sanity/lib/api";
-import CostSheet from "@/app/components/costSheet";
+import CostSheet from "@/app/(main)/components/costSheet";
 import Image from "next/image";
 
 export async function generateMetadata({ params }) {
