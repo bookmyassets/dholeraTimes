@@ -311,9 +311,9 @@ export default function New() {
 
   return (
     <>
-      <nav className="fixed z-40 w-full bg-[#151f28] pt-4 pb-4 max-sm:pt-0 max-sm:pb-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
-          <div className="flex justify-between items-center h-14 max-sm:h-16 ">
+      <nav className="fixed z-40 w-full bg-[#151f28] pt-4 pb-4 max-sm:pt-2 max-sm:pb-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-14 max-sm:h-16">
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/dholera-times-plots">
@@ -327,7 +327,7 @@ export default function New() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center mb-20 space-x-8 text-white text-lg">
+            <div className="hidden lg:flex items-center space-x-8 text-white text-lg">
               <a
                 href="#"
                 onClick={(e) => {
@@ -809,7 +809,7 @@ export default function New() {
       {/* Hero Section with Enhanced Design */}
       <section
         id="home"
-        className="relative h-screen w-full overflow-hidden"
+        className="relative h-[100vh] pt-20 w-full overflow-hidden"
       >
         <Image
           src={abcd}
@@ -819,7 +819,7 @@ export default function New() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-[1]"></div>
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row justify-center items-center h-full px-4 sm:px-8">
-          <div className="md:w-1/2 w-full md:mb-0">
+          <div className="md:w-1/2 w-full mb-8 md:mb-0">
             {/* Badge with pulse animation */}
             <div className="bg-[#d7b36c] text-white text-sm font-bold py-1 px-3 rounded-full inline-block mb-4 animate-pulse">
               LIMITED PLOTS AVAILABLE
@@ -827,7 +827,7 @@ export default function New() {
 
             {/* Main heading with fade-in animation instead of typing */}
             <h1
-              className="text-2xl md:text-5xl lg:text-6xl text-white font-bold font-poppins leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-4 font-poppins leading-tight"
               style={{
                 animation: "fadeIn 1s ease-out forwards",
                 textShadow: "1px 1px 3px rgba(0,0,0,0.3)",
@@ -838,7 +838,7 @@ export default function New() {
 
             {/* Subheading with reliable slide-up animation */}
             <h2
-              className="text-lg md:text-2xl text-white/90 mb-6 font-poppins font-light"
+              className="text-xl md:text-2xl text-white/90 mb-6 font-poppins font-light"
               style={{
                 animation: "slideUp 1.2s ease-out 0.3s forwards",
                 opacity: "0",
