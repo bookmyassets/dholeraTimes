@@ -341,15 +341,6 @@ export default function New() {
                 href="#"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection("why-invest");
-                }}
-              >
-                Why Invest
-              </a>
-              <a
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
                   scrollToSection("investment-benefits");
                 }}
               >
@@ -363,6 +354,26 @@ export default function New() {
                 }}
               >
                 Why Us
+              </a>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("why-invest");
+                }}
+              >
+                Why Invest
+              </a>
+              
+              
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("gallery");
+                }}
+              >
+                Gallery
               </a>
               <a
                 href="#"
@@ -449,16 +460,6 @@ export default function New() {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection("why-invest");
-                  }}
-                  className="text-white text-xl"
-                >
-                  Why Invest
-                </a>
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
                     scrollToSection("investment-benefits");
                   }}
                   className="text-white text-xl"
@@ -474,6 +475,28 @@ export default function New() {
                   className="text-white text-xl"
                 >
                   Why Us
+                </a>
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("why-invest");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Why Invest
+                </a>
+
+                
+                <a
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection("gallery");
+                  }}
+                  className="text-white text-xl"
+                >
+                  Gallery
                 </a>
                 <a
                   href="#"
@@ -1211,18 +1234,18 @@ export default function New() {
       </section>
 
       {/* Testimonials and FAQ with animations */}
-      <section className="animate-on-scroll overflow-hidden">
+      <section id="gallery" className="animate-on-scroll overflow-hidden">
         <p className="text-6xl font-semibold text-center pb-8 pt-8">
           Dholera Gallery
         </p>
         <Gallery />
       </section>
 
-      <section className="animate-on-scroll">
+      <section id="testimonials" className="animate-on-scroll">
         <TestimonialPagination />
       </section>
 
-      <section className="animate-on-scroll">
+      <section id="faqs" className="animate-on-scroll">
         <FAQSection />
       </section>
 
