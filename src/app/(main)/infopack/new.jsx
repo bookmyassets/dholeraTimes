@@ -177,57 +177,68 @@ export default function Info() {
             </div>
           </Link>
         </section>
+
+        <section aria-labelledby="updates-heading" className="pt-8">
+          <h2
+            id="updates-heading"
+            className="bg-amber-300 text-gray-900 text-xl md:text-3xl lg:text-4xl text-center p-3 md:p-5 font-semibold mx-auto rounded-md mb-8"
+          >
+            Our Project Location
+          </h2>
+        
+        </section>
+
         <section className="py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* First Feature */}
-        <div className="flex flex-col">
-          <Image 
-            src={expressway} 
-            alt="expressway" 
-            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
-            width={400}
-            height={300}
-          />
-          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
-              Ahmedabad Dholera Expressway within 6km
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* First Feature */}
+            <div className="flex flex-col">
+              <Image
+                src={expressway}
+                alt="expressway"
+                className="w-full h-48 md:h-64 object-cover rounded-t-lg"
+                width={400}
+                height={300}
+              />
+              <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+                  Ahmedabad Dholera Expressway within 6km
+                </p>
+              </div>
+            </div>
+
+            {/* Second Feature */}
+            <div className="flex flex-col">
+              <Image
+                src={airport}
+                alt="airport"
+                className="w-full h-48 md:h-64 object-cover rounded-t-lg"
+                width={400}
+                height={300}
+              />
+              <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+                  Dholera international Airport within 14km
+                </p>
+              </div>
+            </div>
+
+            {/* Third Feature */}
+            <div className="flex flex-col">
+              <Image
+                src={semiconductor}
+                alt="semiconductor"
+                className="w-full h-48 md:h-64 object-cover rounded-t-lg"
+                width={400}
+                height={300}
+              />
+              <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
+                  TATA Semiconductor Plant within 10km
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        {/* Second Feature */}
-        <div className="flex flex-col">
-          <Image 
-            src={airport} 
-            alt="airport" 
-            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
-            width={400}
-            height={300}
-          />
-          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
-            Dholera international Airport within 14km
-            </p>
-          </div>
-        </div>
-        
-        {/* Third Feature */}
-        <div className="flex flex-col">
-          <Image 
-            src={semiconductor} 
-            alt="semiconductor" 
-            className="w-full h-48 md:h-64 object-cover rounded-t-lg" 
-            width={400}
-            height={300}
-          />
-          <div className="px-4 py-3 bg-gray-900 hover:bg-amber-400 text-amber-400 hover:text-gray-900 transition-all rounded-b-lg">
-            <p className="text-sm sm:text-base md:text-lg lg:text-xl font-light">
-              TATA Semiconductor Plant within 10km
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
       </div>
     </main>
   );

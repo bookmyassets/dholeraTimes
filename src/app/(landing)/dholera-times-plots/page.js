@@ -845,7 +845,7 @@ export default function New() {
                 transform: "translateY(20px)",
               }}
             >
-              Secure premium plots in Dholera SIR before prices surge -
+              Secure premium plots in Dholera S.I.R. before prices surge -
               projected 5x growth by 2030
             </h2>
           </div>

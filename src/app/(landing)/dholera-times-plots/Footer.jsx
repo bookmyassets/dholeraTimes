@@ -206,7 +206,7 @@ export default function Footer() {
                   href="/policies/refund"
                   className="hover:text-white transition"
                 >
-                  Refund & Cancellation popcy
+                  Refund & Cancellation Policy
                 </a>
               </p>
             </div>
