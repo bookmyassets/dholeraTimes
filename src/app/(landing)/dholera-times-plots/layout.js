@@ -197,7 +197,7 @@ twq('config','oxi2l');
         </noscript> */}
 
         <div>{children}</div>
-        <FloatingIcons  id="whatsapp" />
+        <FloatingIcons  id="whatsapp-button" />
         <Footer />
       </body>
     </html>
