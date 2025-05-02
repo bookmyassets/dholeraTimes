@@ -20,7 +20,8 @@ export default function Whatsapp() {
               </defs>
               <text fill="black" fontSize="12" fontWeight="bold">
                 <textPath href="#circlePath" startOffset="50%" textAnchor="middle">
-                  Let's Connect &nbsp;  ●  We're Online ●
+          {/*         Let's Connect &nbsp;  ●  We're Online ● */}
+          We're Online Let's Connect
                 </textPath>
               </text>
             </svg>
