@@ -8,8 +8,8 @@ export default function Whatsapp() {
   return (
     <>
       <div className="max-w-7xl mx-auto">
-        <div id="whatsapp-button"> 
-          <Link href="https://wa.link/bvb3dt">
+        <div> 
+          <button href="https://wa.link/bvb3dt" id="whatsapp-button">
             <div className="fixed bottom-5 right-5 z-10">
               <div className="relative h-20 w-20 rounded-full bg-white shadow-lg flex items-center justify-center">
                 {/* Rotating Circular Text using SVG */}
@@ -41,7 +41,7 @@ export default function Whatsapp() {
                 </div>
               </div>
             </div>
-          </Link>
+          </button>
         </div>
       </div>
     </>
