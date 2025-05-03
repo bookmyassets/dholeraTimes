@@ -398,7 +398,7 @@ export default function New() {
             {/* Call Now and Mobile Menu Button */}
             <div className="flex items-center gap-4 lg:hidden">
               <div className="text-[#d8b66d] mt-3 animate-bounce flex items-center space-x-2">
-                <Link
+                <a
                   href="tel:+919958993549"
                   className="flex items-center space-x-2"
                 >
@@ -410,7 +410,7 @@ export default function New() {
                     className="animate-image-tint"
                   />
                   <p className="animate-color-change">Call Now</p>
-                </Link>
+                </a>
               </div>
 
               <button onClick={toggleMenu}>
