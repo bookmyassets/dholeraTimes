@@ -1,7 +1,6 @@
 import React from "react";
 import Avaada from "@/assets/Avaada.webp";
 import Chiripal from "@/assets/Chiripal.webp";
-import Cubic from "@/assets/Cubic Pv.webp";
 import Dawat from "@/assets/Dawat.webp";
 import HP from "@/assets/HP.webp";
 import Polycab from "@/assets/Polyacab.webp";
@@ -11,6 +10,7 @@ import Torrent from "@/assets/Torrent.webp";
 import Vedanta from "@/assets/Vedanta.webp";
 import Image from "next/image";
 import bg from "@/assets/pexels2.jpg";
+import Cubic from "@/assets/Cubic Pv.webp";
 
 export default function MegaIndustries() {
   const companies = [
