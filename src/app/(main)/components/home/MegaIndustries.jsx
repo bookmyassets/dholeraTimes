@@ -10,13 +10,13 @@ import Torrent from "@/assets/Torrent.webp";
 import Vedanta from "@/assets/Vedanta.webp";
 import Image from "next/image";
 import bg from "@/assets/pexels2.jpg";
-import Cubic from "@/assets/Cubic Pv.webp";
+import Cubic from "@/assets/Cubic.webp";
 
 export default function MegaIndustries() {
   const companies = [
     { name: "Avaada", logo: Avaada },
     { name: "Chiripal", logo: Chiripal },
-    { name: "Cubic PV", logo: Cubic },
+    { name: "Cubic", logo: Cubic },
     { name: "Dawat", logo: Dawat },
     { name: "HP", logo: HP },
     { name: "Polycab", logo: Polycab },
