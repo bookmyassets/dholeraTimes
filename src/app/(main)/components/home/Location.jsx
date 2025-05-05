@@ -26,6 +26,7 @@ export default function Location() {
     setIsContactFormOpen(true);
   };
 
+  
   const closeContactForm = () => {
     setIsContactFormOpen(false);
   };
