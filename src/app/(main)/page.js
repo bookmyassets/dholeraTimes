@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './Home'
+import NewHome from './NewHome'
 
 export const metadata = {
   title: 'Dholera Smart City Gujarat | High ROI Plots -Dholera Times',
@@ -25,7 +25,7 @@ export default function page() {
   return (
     <>
         <div>
-            <Home/>
+            <NewHome/>
         </div>
     </>
   )
