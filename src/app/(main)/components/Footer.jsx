@@ -272,7 +272,7 @@ export default function Footer() {
               {isProjects.map((project) => (
                 <li key={project._id}>
                   <Link
-                    href={`/posts/${project.slug.current}`}
+                    href={`/projects/${project.slug.current}`}
                     className="hover:text-white transition"
                   >
                     {project.title}
