@@ -96,7 +96,7 @@ export default function Info() {
               aria-label="Download Dholera Times Brochure"
             >
               <FaDownload aria-hidden="true" />
-              Download Dholera Times Brochure
+              Download Westwyn County Brochure
             </Link>
           </div>
         </section>
