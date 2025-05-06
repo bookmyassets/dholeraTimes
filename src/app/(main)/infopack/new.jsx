@@ -91,7 +91,7 @@ export default function Info() {
 
           <div className="pt-4">
             <Link
-              href="https://shorturl.at/q7Yh3"
+              href="https://shorturl.at/boB0O"
               className="bg-gray-800 text-amber-400 font-semibold flex gap-4 items-center p-4 rounded-md md:text-xl hover:bg-gray-700 transition-colors"
               aria-label="Download Dholera Times Brochure"
             >
