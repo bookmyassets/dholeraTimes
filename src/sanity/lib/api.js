@@ -112,7 +112,7 @@ export async function getPostBySlug(slug) {
 
 /* Inventory & Brochure */
 export async function Inventory() {
-  const query = `*[_type == "post" && author->name == "Dholera Times" && "Project" in categories[]->title && !("Sold Out" in categories[]->title)] | order(publishedAt desc)[0..9] {
+  const query = `*[_type == "post" && author->name == "Dholera Times" && "Project" in categories[]->title] | order(publishedAt desc) {
     _id,
     title,
     publishedAt,
@@ -129,7 +129,7 @@ export async function Inventory() {
     const json = await response.json();
     const posts = json.result || [];
 
-    // Filter out posts with no pdfUrl
+    // Filter to return only posts that have a PDF URL
     const filteredPosts = posts.filter(post => post.pdfUrl);
     return filteredPosts;
   } catch (error) {
@@ -137,6 +137,7 @@ export async function Inventory() {
     return [];
   }
 }
+
 
 export async function Brochure() {
   const query = `*[_type == "post" && author->name == "Dholera Times" && "Brochure" in categories[]->title] | order(publishedAt desc) [0..9] {
