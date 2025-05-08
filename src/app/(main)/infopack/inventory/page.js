@@ -55,9 +55,6 @@ export default async function InventoryPage() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
-          <h1 className="mt-6 text-4xl font-extrabold text-gray-800 sm:text-5xl tracking-tight">
-            Available <span className="text-[#d8b66d] relative inline-block">Plots</span>
-          </h1>
           <p className="font-semibold text-lg max-w-2xl mx-auto leading-relaxed">
             Explore our collection of premium residential plots in Dholera Smart City. Find your perfect investment opportunity!
           </p>
@@ -126,7 +123,7 @@ export default async function InventoryPage() {
                         }`}
                       >
                         <Download className="mr-2" size={20} />
-                        {post.isSoldOut ? "Download Details (Sold Out)" : "Download Details"}
+                        {post.isSoldOut ? "Download (Sold Out)" : "Download"}
                       </Link>
 
                       <Link
