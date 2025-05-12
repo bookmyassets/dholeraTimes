@@ -542,10 +542,10 @@ export default function NRIInvestmentGuide() {
       />
       <div className="relative bg-[#151f28] text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
             Your Gateway to Property Investment in India's 1st Greenfield Smart
             City!
-          </h1>
+          </h2>
           <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8">
             Invest in India's No.1 Smart City from Anywhere in the World
           </h2>
@@ -1078,7 +1078,7 @@ export default function NRIInvestmentGuide() {
               <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                 <Image
                   src="/api/placeholder/600/400"
-                  alt="Dholera Smart City – India's emerging global investment hub"
+                  alt="Projected return on investment for NRI real estate in Dholera"
                   width={600}
                   height={400}
                   className="w-full h-auto"
