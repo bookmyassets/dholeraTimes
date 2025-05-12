@@ -212,7 +212,7 @@ export default function ContactDetails() {
 
               {/* Contact Form Section */}
               <div className=" ">
-                <ContactForm title="Enquire Now" buttonName="Get A Call Back" />
+                <ContactForm title="Enquire Now" headline="" buttonName="Get A Call Back" />
               </div>
             </div>
             <div className="space-y-5 text-center">

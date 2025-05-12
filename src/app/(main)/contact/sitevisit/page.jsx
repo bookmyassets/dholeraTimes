@@ -92,7 +92,7 @@ insights, and investment opportunities on the ground. Limited slots!"
             {/* Contact Info Section */}
 
             <div className="">
-              <ContactForm title="Book A Free Site Visit" buttonName="Submit" />
+              <ContactForm title="Book A Free Site Visit" headline="" buttonName="Submit" />
             </div>
 
             <div className="max-w-2xl text-left">

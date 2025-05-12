@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { X } from "lucide-react"; // Import the X icon from lucide-react
 
-export default function PopupForm({ title, buttonName, onClose, onSuccess }) {
+export default function PopupForm({ title, headline, buttonName, onClose, onSuccess }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -136,6 +136,9 @@ export default function PopupForm({ title, buttonName, onClose, onSuccess }) {
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {title}
         </h2>
+        <h2 className="text-sm font-medium text-center text-gray-800 mb-6">
+          {headline}
+        </h2>
         {isDisabled ? (
           <p className="text-center text-red-500 font-semibold">
             You have reached the maximum submission limit. Try again after 24
@@ -148,7 +151,7 @@ export default function PopupForm({ title, buttonName, onClose, onSuccess }) {
               <FaUser className="absolute left-4 top-4 text-gray-500" />
               <input
                 name="fullName"
-                placeholder="Full Name"
+                placeholder="Full Name *"
                 value={formData.fullName}
                 onChange={handleChange}
                 required
@@ -165,7 +168,6 @@ export default function PopupForm({ title, buttonName, onClose, onSuccess }) {
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
-                required
                 className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
               />
             </div>
@@ -176,7 +178,7 @@ export default function PopupForm({ title, buttonName, onClose, onSuccess }) {
               <input
                 name="phone"
                 type="tel"
-                placeholder="Phone Number"
+                placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={handleChange}
                 required

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { X } from "lucide-react"; // Import the X icon from lucide-react
 
-export default function PopupForm({ title, buttonName, onClose }) {
+export default function PopupForm({ title, headline, buttonName, onClose }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -130,6 +130,9 @@ export default function PopupForm({ title, buttonName, onClose }) {
         
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {title}
+        </h2>
+        <h2 className="font-medium text-center text-gray-800 mb-6">
+          {headline}
         </h2>
         {isDisabled ? (
           <p className="text-center text-red-500 font-semibold">
