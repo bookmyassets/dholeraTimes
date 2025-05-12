@@ -107,7 +107,7 @@ export default function Footer() {
     <>
     
     <footer className="bg-gray-900 text-gray-400 space-y-8">
-      <div className="flex justify-center items-center pt-4">
+      <div className="flex justify-center items-center max-sm:gap-y-4 max-sm:grid max-sm:grid-cols-2">
         <ButtonsSection/>
       </div>
 

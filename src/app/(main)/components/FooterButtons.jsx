@@ -53,7 +53,7 @@ export default function ButtonsSection() {
   ];
 
   return (
-    <div className="buttons-container">
+    <div className="buttons-container flex justify-center items-center pt-4 max-sm:max-w-2xl mx-auto">
       {buttons.map((button) => (
         <button 
           key={button.id}
