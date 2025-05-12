@@ -174,7 +174,7 @@ export default function ContactDetails() {
                     <div className="mt-4 text-lg space-y-2">
                       <div>
                         
-                          <strong> <h3>Transparent </h3> Process:</strong> <p>No hidden fees,
+                          <strong> <h3>Transparent Process: </h3> </strong> <p>No hidden fees,
                           no surprises — just honest real estate services.
                         </p>
                       </div>
