@@ -53,47 +53,48 @@ export default function ButtonsSection() {
   ];
 
   return (
-    <div className="buttons-container flex justify-center items-center pt-4 max-sm:max-w-2xl mx-auto">
-      {buttons.map((button) => (
-        <button 
-          key={button.id}
-          onClick={() => {
-            if (button.id === 1) {
-              openContactForm("Download Brochure", "Download Now", "brochure");
-            } else if (button.id === 2) {
-              openContactForm("Schedule Free Site Visit", "Submit", "schedule");
-            }
-          }}
-          className="btn btn-primary mr-2 px-4 py-2 bg-[#be9233] hover:bg-[#dbaf51] text-white font-semibold rounded-xl transition duration-300"
-        >
-          {button.title}
-        </button>
-      ))}
+    <div className="buttons-container flex flex-wrap gap-4 md:gap-12 justify-center w-full py-4 md:text-xl">
+  {buttons.map((button) => (
+    <button 
+      key={button.id}
+      onClick={() => {
+        if (button.id === 1) {
+          openContactForm("Download Brochure", "Download Now", "brochure");
+        } else if (button.id === 2) {
+          openContactForm("Schedule Free Site Visit", "Submit", "schedule");
+        }
+      }}
+      className="btn btn-primary px-6 py-3 bg-[#be9233] hover:bg-[#dbaf51] text-white font-semibold rounded-xl transition duration-300 w-full sm:w-auto max-w-xs"
+    >
+      {button.title}
+    </button>
+  ))}
 
-      <AnimatePresence>
-        {isContactFormOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-            >
-              <PopupForm
-                title={formTitle} 
-                buttonName={buttonName} 
-                onClose={closeContactForm}
-                onSuccess={handleAfterSubmit}
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
+  <AnimatePresence>
+    {isContactFormOpen && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-40 p-4"
+      >
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.9, opacity: 0 }}
+          transition={{ type: "spring", damping: 25 }}
+          className="w-full max-w-lg mx-auto"
+        >
+          <PopupForm
+            title={formTitle} 
+            buttonName={buttonName} 
+            onClose={closeContactForm}
+            onSuccess={handleAfterSubmit}
+          />
+        </motion.div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
   );
 }
