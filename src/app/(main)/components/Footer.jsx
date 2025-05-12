@@ -394,7 +394,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/ nri-investment-guide-dholera"
+                  href="/nri-investment-guide-dholera"
                   className="hover:text-white transition"
                 >
                   NRI Investment
