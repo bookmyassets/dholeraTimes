@@ -4,6 +4,9 @@ import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/assets/dt.webp";
+import { AnimatePresence, motion } from "framer-motion";
+import PopupForm from "./PopupForm";
+import ButtonsSection from "./FooterButtons";
 
 export default function Footer() {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -14,6 +17,20 @@ export default function Footer() {
     phone: "",
   });
   const [showPopup, setShowPopup] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+
+  const openContactForm = () => {
+    setIsContactFormOpen(true);
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
+
+  const buttons = [
+    { id: 1, title: "Download Brochure" },
+    { id: 2, title: " Schedule Free Site visit" },
+  ];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -87,12 +104,18 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12 ">
+    <>
+    
+    <footer className="bg-gray-900 text-gray-400 space-y-8">
+      <div className="flex justify-center items-center pt-4">
+        <ButtonsSection/>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Contact form section */}
         <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
           <h2 className="text-white text-xl font-semibold mb-6 text-center">
-            Need Help Choosing a Plot? <br className="space-y-4" /> Talk to a Certified Dholera Investment Advisor
+            Need help or query ? Talk to our Dholera Expert Advisor
           </h2>
           <div className="grid md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto text-white">
             {/* Form column */}
@@ -183,15 +206,15 @@ export default function Footer() {
         <div className="grid md:grid-cols-5 md:gap-32 md:left-8 gap-12 mb-12">
           <div>
             <div>
-              <h3 className="text-white text-lg font-semibold mb-3">Address</h3>
+              <h2 className="text-white text-lg font-semibold mb-3">Address</h2>
               620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
               India{" "}
             </div>
           </div>
           <div>
-            <h3 className="text-white text-lg font-semibold mb-3">
+            <h2 className="text-white text-lg font-semibold mb-3">
               Quick Contact
-            </h3>
+            </h2>
             <div className="flex space-x-4 mb-3">
               <a
                 href="https://www.facebook.com/profile.php?id=61573763438050"
@@ -267,7 +290,7 @@ export default function Footer() {
             <a className="text-md mb-3">Email Id: info@dholeratimes.com</a>
           </div>
           <div className="">
-            <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
+            <h2 className="text-white text-lg font-semibold mb-4">Projects</h2>
             <ul className="space-y-2">
               {isProjects.map((project) => (
                 <li key={project._id}>
@@ -282,7 +305,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="">
-            <h3 className="text-white text-lg font-semibold mb-4">Support</h3>
+            <h2 className="text-white text-lg font-semibold mb-4">Support</h2>
             <ul className="space-y-2">
               <li>
                 <a href="/about" className="hover:text-white transition">
@@ -343,9 +366,9 @@ export default function Footer() {
           </div>
 
           <div className="">
-            <h3 className="text-white text-lg font-semibold mb-4">
+            <h2 className="text-white text-lg font-semibold mb-4">
               Useful Links
-            </h3>
+            </h2>
             <ul className="space-y-2">
               <li>
                 <a
@@ -427,5 +450,6 @@ export default function Footer() {
         © 2025 Dholera Times. All rights reserved.
       </p>
     </footer>
+    </>
   );
 }
