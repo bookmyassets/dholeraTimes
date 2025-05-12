@@ -1311,9 +1311,9 @@ export default function NRIInvestmentGuide() {
                     {faq.question}
                   </h3>
                   {activeAccordion === index ? (
-                    <ChevronUp className="text-[#d8b66d]" size={20} />
+                    <ChevronUp className="text-[#d8b66d]"  size={40} />
                   ) : (
-                    <ChevronDown className="text-[#d8b66d]" size={20} />
+                    <ChevronDown className="text-[#d8b66d]"  size={40} />
                   )}
                 </button>
 
