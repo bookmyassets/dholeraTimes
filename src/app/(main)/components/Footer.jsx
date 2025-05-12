@@ -330,26 +330,19 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="/policies/disclaimer"
+                  href="/contact/inquiry"
                   className="hover:text-white transition"
                 >
-                  Disclaimer
+                  Contact Us
                 </a>
               </li>
+              
               <li>
                 <a
-                  href="/policies/refund"
+                  href="/infopack/locations"
                   className="hover:text-white transition"
                 >
-                  Refund & Cancellation policy
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/contact/career"
-                  className="hover:text-white transition"
-                >
-                  Careers
+                  Live Location
                 </a>
               </li>
               <li>
@@ -372,44 +365,44 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/infopack/Inventory"
+                  href="/DholeraSIR"
                   className="hover:text-white transition"
                 >
-                  Live Booking Status
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/gallery/siteprogress"
-                  className="hover:text-white transition"
-                >
-                  Site Progress
-                </a>
-              </li>
-              <li>
-                <a
-                  href="/event/upcomingevent"
-                  className="hover:text-white transition"
-                >
-                  Live Event
-                </a>
-              </li>
-              <li>
-                <a href="/DholeraSIR" className="hover:text-white transition">
                   Dholera SIR
                 </a>
               </li>
               <li>
                 <a
-                  href="/infopack/locations"
+                  href="/Dholera-Updates/latest-news"
                   className="hover:text-white transition"
                 >
-                  Live Location
+                  Latest News
                 </a>
               </li>
               <li>
-                <a href="/contact" className="hover:text-white transition">
-                  Contact Us
+                <a
+                  href="/Dholera-Updates/blogs"
+                  className="hover:text-white transition"
+                >
+                  Blogs
+                </a>
+              </li>
+              <li>
+                <a href="/gallery/dholera-photos" className="hover:text-white transition">
+                  Dholera Photos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/ nri-investment-guide-dholera"
+                  className="hover:text-white transition"
+                >
+                  NRI Investment
+                </a>
+              </li>
+              <li>
+                <a href="/" className="hover:text-white transition">
+                  Why Dholera
                 </a>
               </li>
             </ul>
