@@ -13,61 +13,65 @@ import {
 import ContactForm from "@/app/(main)/components/ContactForm";
 
 export default function ContactDetails() {
-
- const schemaData = {
-   "@context": "https://schema.org",
-      "@type": "RealEstateAgent",
-      name: "Dholera Times",
-      image: "",
-      "@id": "",
-      url: "https://www.dholeratimes.com/",
-      telephone: "+91 99589 93549",
-      priceRange: "7Lac",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "JMD MEGAPOLIS, 620, Badshahpur Sohna Rd Hwy, Sector 48",
-        addressLocality: "Gurugram",
-        postalCode: "122018",
-        addressCountry: "IN",
-      },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 28.4195542,
-        longitude: 77.0386216,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "10:30",
-        closes: "19:30",
-      },
-      sameAs: [
-        "https://www.facebook.com/people/Dholera-Times",
-        "https://x.com/dholeratimes/",
-        "https://www.instagram.com/p/DJVtydWBCoK/",
-        "https://www.youtube.com/@dholeratimes",
-        "https://www.linkedin.com/company/dholera-times",
-        "https://www.dholeratimes.com/",
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    name: "Dholera Times",
+    image: "",
+    "@id": "",
+    url: "https://www.dholeratimes.com/",
+    telephone: "+91 99589 93549",
+    priceRange: "7Lac",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "JMD MEGAPOLIS, 620, Badshahpur Sohna Rd Hwy, Sector 48",
+      addressLocality: "Gurugram",
+      postalCode: "122018",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 28.4195542,
+      longitude: 77.0386216,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
       ],
- }
+      opens: "10:30",
+      closes: "19:30",
+    },
+    sameAs: [
+      "https://www.facebook.com/people/Dholera-Times",
+      "https://x.com/dholeratimes/",
+      "https://www.instagram.com/p/DJVtydWBCoK/",
+      "https://www.youtube.com/@dholeratimes",
+      "https://www.linkedin.com/company/dholera-times",
+      "https://www.dholeratimes.com/",
+    ],
+  };
 
   return (
     <>
-    <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
-        />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
       <div className="bg-gray-900 w-full">
-        <title>Contact Us | Dholera Times – Real Estate Experts in Dholera Smart City</title>
-        <meta name="description" content="Get in touch with our team for plot bookings, site visits, or investment advice in Dholera Smart City. Call, WhatsApp or visit us." />
+        <title>
+          Contact Us | Dholera Times – Real Estate Experts in Dholera Smart City
+        </title>
+        <meta
+          name="description"
+          content="Get in touch with our team for plot bookings, site visits, or investment advice in Dholera Smart City. Call, WhatsApp or visit us."
+        />
         <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
           <div className="md:w-1/2 text-center">
@@ -94,7 +98,7 @@ export default function ContactDetails() {
 
         {/* Contact Cards Section */}
         <div className="bg-white py-12">
-          <h1 className="text-center mb-10 font-bold text-4xl max-sm:ml-4 max-sm:text-left">
+          <h1 className="text-center mb-10 font-bold text-4xl max-sm:text-3xl max-sm:ml-4 max-sm:text-left">
             Get Expert Guidance on Dholera Smart City
           </h1>
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10">
@@ -140,7 +144,7 @@ export default function ContactDetails() {
           {/* Social Media Links */}
           <div className="mt-10 ">
             {/* Why Choose Us & Contact Form */}
-            <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
+            <div className="flex flex-col max-sm:flex-col-reverse md:flex-row justify-center items-center  gap-16 p-6">
               {/* Contact Info Section */}
               <div className="max-w-2xl text-left">
                 <div className="space-y-8">
@@ -173,29 +177,32 @@ export default function ContactDetails() {
                     </h2>
                     <div className="mt-4 text-lg space-y-2">
                       <div>
-                        
-                          <strong> <h3>Transparent Process: </h3> </strong> <p>No hidden fees,
-                          no surprises — just honest real estate services.
+                        <strong>
+                          {" "}
+                          <h3>Transparent Process: </h3>{" "}
+                        </strong>{" "}
+                        <p>
+                          No hidden fees, no surprises — just honest real estate
+                          services.
                         </p>
                       </div>
                       <div>
-                       
-                          <h3>
-
-                        
-                          <strong>End-to-End Support:</strong>   </h3>  <p>Our dedicated
-                          team provides complete assistance, from selecting
-                          plots to registration.
+                        <h3>
+                          <strong>End-to-End Support:</strong>{" "}
+                        </h3>{" "}
+                        <p>
+                          Our dedicated team provides complete assistance, from
+                          selecting plots to registration.
                         </p>
                       </div>
                       <div>
-                        
-                          <h3>
-
-                          
-                          <strong>Trusted by Investors:</strong> </h3> <p> Join a growing
-                          community of satisfied investors benefiting from
-                          Dholera’s growth.
+                        <h3>
+                          <strong>Trusted by Investors:</strong>{" "}
+                        </h3>{" "}
+                        <p>
+                          {" "}
+                          Join a growing community of satisfied investors
+                          benefiting from Dholera’s growth.
                         </p>
                       </div>
                     </div>
