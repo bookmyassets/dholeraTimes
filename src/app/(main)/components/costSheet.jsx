@@ -132,7 +132,7 @@ export default function CostSheet() {
         startY: finalY + 4,
         body: [
           [`Maintenance Charge (${maintenanceRate} x Size)`, `Rs. ${formattedMaintenanceCharge}`],
-          ['Legal Fee (Per Sale Deed)', 'Rs. 15,000.00'],
+          ['Legal Fee (Per Sale Deed)', 'Rs. 20,000.00'],
           ['Total Charges', `Rs. ${formattedTotalCharges}`],
           ['Plot Total Payment', `Rs. ${formattedPlotTotalPayment}`],
         ],
