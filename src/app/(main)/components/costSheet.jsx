@@ -45,7 +45,7 @@ export default function CostSheet() {
       const plotPrice = plotPriceWithPLC;
       const totalPayment = formData.plotAreaYards * plotPrice;
       const maintenance = formData.plotAreaYards * formData.maintenanceRate; // Use selected maintenance rate
-      const totalCharges = maintenance + 20000; // Legal Fee is Rs15000
+      const totalCharges = maintenance + 20000 + 50000; // Legal Fee is Rs20000 + Maintenance(for 3 years) 50,000
       const plotTotalPayment = totalPayment + totalCharges;
       const plotAreaFeet = formData.plotAreaYards * 9;
   
@@ -131,8 +131,9 @@ export default function CostSheet() {
       autoTable(doc,{
         startY: finalY + 4,
         body: [
-          [`Maintenance Charge (${maintenanceRate} x Size)`, `Rs. ${formattedMaintenanceCharge}`],
+          [`Development Charge (${maintenanceRate} x Size)`, `Rs. ${formattedMaintenanceCharge}`],
           ['Legal Fee (Per Sale Deed)', 'Rs. 20,000.00'],
+          ['Maintenance For 3 years', 'Rs. 50,000.00'],
           ['Total Charges', `Rs. ${formattedTotalCharges}`],
           ['Plot Total Payment', `Rs. ${formattedPlotTotalPayment}`],
         ],
@@ -360,6 +361,18 @@ export default function CostSheet() {
                 <input
                   type="text"
                   value="20000.00"
+                  className="border p-2 w-full rounded"
+                  readOnly
+                />
+              </td>
+            </tr>
+
+            <tr className="border-b">
+              <td className="p-2 font-semibold">One Time Maintenance(for 3 years)</td>
+              <td className="p-2">
+                <input
+                  type="text"
+                  value="50000.00"
                   className="border p-2 w-full rounded"
                   readOnly
                 />
