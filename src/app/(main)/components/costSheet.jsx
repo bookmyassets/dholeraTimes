@@ -45,7 +45,7 @@ export default function CostSheet() {
       const plotPrice = plotPriceWithPLC;
       const totalPayment = formData.plotAreaYards * plotPrice;
       const maintenance = formData.plotAreaYards * formData.maintenanceRate; // Use selected maintenance rate
-      const totalCharges = maintenance + 15000; // Legal Fee is Rs15000
+      const totalCharges = maintenance + 20000; // Legal Fee is Rs15000
       const plotTotalPayment = totalPayment + totalCharges;
       const plotAreaFeet = formData.plotAreaYards * 9;
   
@@ -359,7 +359,7 @@ export default function CostSheet() {
               <td className="p-2">
                 <input
                   type="text"
-                  value="15000.00"
+                  value="20000.00"
                   className="border p-2 w-full rounded"
                   readOnly
                 />
