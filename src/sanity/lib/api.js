@@ -236,3 +236,18 @@ export async function getEventBySlug(slug) {
   const post = await client.fetch(query, { slug }, { cache: 'no-store' });
   return post;
 }
+
+export async function getProjectInfo() {
+  const query = `*[_type == "post" && "project-Info" in categories[]->title && author-> name == "Dholera Times" ]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    author->{name, image},
+    categories[]->{title, _id}
+  }`;
+  const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
+  return posts;
+}
