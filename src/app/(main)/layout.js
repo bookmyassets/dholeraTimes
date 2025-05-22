@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, use } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
@@ -10,7 +10,7 @@ import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
-import { getPosts, getblogs } from "@/sanity/lib/api";
+import { getPosts, getProjectInfo, getblogs } from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
@@ -44,6 +44,7 @@ export default function RootLayout({ children }) {
   const [isMobileGalleryOpen, setIsMobileGalleryOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
+  const [dholera, setDholera] = useState([]);
   
   //PIXEL
   const pathname = usePathname();
@@ -233,11 +234,14 @@ export default function RootLayout({ children }) {
     async function fetchData() {
       const blogsData = await getblogs();
       const projectsData = await getPosts();
+      const dholeraData = await getProjectInfo();
       setBlogs(blogsData);
       setProjects(projectsData);
+      setDholera(dholeraData);
     }
     fetchData();
   }, []);
+  
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -440,77 +444,18 @@ export default function RootLayout({ children }) {
                       </svg>
                     </button>
                     {isDholeraDropdownOpen && (
-                      <div className="absolute left-0 mt-6 w-64 bg-white shadow-lg rounded-md z-50">
-                        {[
-                          {
-                            title: "Dholera SIR",
-                            path: "/DholeraSIR",
-                          },
-                          {
-                            title: "Dholera Connectivity",
-                            path: "/DholeraSIR/Dholera-Connectivity",
-                          },
-                          {
-                            title: "Mega Industries Presence",
-                            path: "/DholeraSIR/Mega-Industries-Presence",
-                          },
-                          {
-                            title: "Running and Completed Projects",
-                            path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
-                          },
-                          {
-                            title: "Dholera SIR Current Status",
-                            path: "/DholeraSIR/Dholera-SIR-current-status",
-                          },
-                          {
-                            title: "Dholera International Airport",
-                            path: "/DholeraSIR/Dholera-International-Airport",
-                          },
-                          {
-                            title: "Dholera Expressway Six Lane",
-                            path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
-                          },
-                          {
-                            title: "Dholera High Speed Metro",
-                            path: "/DholeraSIR/Dholera-High-Speed-Metro",
-                          },
-                          {
-                            title: "DMIC Project",
-                            path: "/DholeraSIR/DMIC-Project",
-                          },
-                          {
-                            title: "DFC Project",
-                            path: "/DholeraSIR/DFC-Project",
-                          },
-
-                          {
-                            title: "Dholera Solar Power Plant",
-                            path: "/DholeraSIR/Dholera-Solar-Power-Plant",
-                          },
-                          {
-                            title: "Dholera Mega Industrial Park",
-                            path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
-                          },
-
-                          {
-                            title: "Dholera ABCD Building",
-                            path: "/DholeraSIR/Dholera-ABCD-Building",
-                          },
-
-                          {
-                            title: "Dholera Activation Zone",
-                            path: "/DholeraSIR/Dholera-Activation-Zone",
-                          },
-                        ].map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            className="block px-4 py-2 text-black hover:bg-gray-200"
-                            onClick={() => setIsDholeraDropdownOpen(false)}
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
+                      <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
+                        {dholera
+                          .map((dhol) => (
+                            <Link
+                              key={dhol._id}
+                              href={`/DholeraSIR/${dhol.slug.current}`}
+                              className="block px-4 py-2 text-black hover:bg-gray-200"
+                              onClick={() => setIsDholeraDropdownOpen(false)}
+                            >
+                              {dhol.title}
+                            </Link>
+                          ))}
                       </div>
                     )}
                   </div>
@@ -863,79 +808,25 @@ export default function RootLayout({ children }) {
                           transition={{ duration: 0.2 }}
                           className="pl-6 overflow-hidden"
                         >
-                          {[
-                            {
-                              title: "Dholera SIR",
-                              path: "/DholeraSIR",
-                            },
-                            {
-                              title: "Dholera Connectivity",
-                              path: "/DholeraSIR/Dholera-Connectivity",
-                            },
-                            {
-                              title: "Mega Industries Presence",
-                              path: "/DholeraSIR/Mega-Industries-Presence",
-                            },
-                            {
-                              title: "Running and Completed Projects",
-                              path: "/DholeraSIR/Dholera-SIR-Running-and-Completed-Projects",
-                            },
-                            {
-                              title: "Dholera SIR Current Status",
-                              path: "/DholeraSIR/Dholera-SIR-current-status",
-                            },
-                            {
-                              title: "Dholera International Airport",
-                              path: "/DholeraSIR/Dholera-International-Airport",
-                            },
-                            {
-                              title: "Dholera Expressway Six Lane",
-                              path: "/DholeraSIR/Dholera-Expressway-Six-Lane",
-                            },
-                            {
-                              title: "Dholera High Speed Metro",
-                              path: "/DholeraSIR/Dholera-High-Speed-Metro",
-                            },
-                            {
-                              title: "DMIC Project",
-                              path: "/DholeraSIR/DMIC-Project",
-                            },
-                            {
-                              title: "DFC Project",
-                              path: "/DholeraSIR/DFC-Project",
-                            },
-
-                            {
-                              title: "Dholera Solar Power Plant",
-                              path: "/DholeraSIR/Dholera-Solar-Power-Plant",
-                            },
-                            {
-                              title: "Dholera Mega Industrial Park",
-                              path: "/DholeraSIR/Dholera-Mega-Industrial-Park",
-                            },
-
-                            {
-                              title: "Dholera ABCD Building",
-                              path: "/DholeraSIR/Dholera-ABCD-Building",
-                            },
-
-                            {
-                              title: "Dholera Activation Zone",
-                              path: "/DholeraSIR/Dholera-Activation-Zone",
-                            },
-                          ].map((item) => (
+                         {isDholeraDropdownOpen && (
+                      <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
+                        {dholera
+                          .map((dhol) => (
                             <Link
-                              key={item.path}
-                              href={item.path}
-                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
+                              key={dhol._id}
+                              href={`/DholeraSIR/${dhol.slug.current}`}
+                              className="block px-4 py-2 text-black hover:bg-gray-200"
                               onClick={() => {
                                 setIsMobileDholeraOpen(false);
                                 setIsMenuOpen(false);
                               }}
                             >
-                              {item.title}
+                              {dhol.title}
                             </Link>
                           ))}
+                      </div>
+                    )}
+                          
                         </motion.div>
                       )}
                     </AnimatePresence>
