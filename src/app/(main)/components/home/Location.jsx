@@ -232,8 +232,8 @@ export default function Location() {
             >
               <BrochureForm
                 title="Book free consultation"
+                subTitle=" Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory"
                 buttonName="Book Now"
-                subTitle="Fill out the form to book Free Consultation with our Dholera Expert Advisor."
                 onClose={closeContactForm}
                 onSuccess={() => setIsFormSubmitted(true)}
               />

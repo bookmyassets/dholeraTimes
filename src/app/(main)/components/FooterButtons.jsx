@@ -51,7 +51,7 @@ export default function ButtonsSection() {
 
   const buttons = [
     {id: 1, title: "Download Brochure"},
-    {id: 2, title: "Schedule Free Site visit"} 
+    {id: 2, title: "Book Free site Visit"} 
   ];
 
   return (

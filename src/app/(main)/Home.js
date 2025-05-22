@@ -1,21 +1,15 @@
 "use client";
 import Image from "next/image";
 import hero from "@/assets/hero5.webp";
-import heroM from "@/assets/heroM.webp";
 import dsir from "@/assets/dsir.png";
-import { FaUser, FaEnvelope, FaPhoneAlt, FaArrowAltCircleRight } from "react-icons/fa";
-import { useState, useRef, useEffect } from "react";
+import { FaUser, FaPhoneAlt, FaArrowAltCircleRight } from "react-icons/fa";
+import { useState } from "react";
 import DholeraInvestmentGuide from "./components/Investment";
 import FAQSection from "./components/Faq";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import bg from "@/assets/pexels2.jpg"
-import Head from "next/head";
 import TestimonialPagination from "./components/Testimonials";
-import { NextSeo } from "next-seo";
-
-
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);

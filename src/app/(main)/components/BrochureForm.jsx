@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { X } from "lucide-react"; // Import the X icon from lucide-react
 
-export default function BrochureForm({ title,headline, buttonName, onClose, onSuccess }) {
+export default function BrochureForm({ title, subTitle, buttonName, onClose, onSuccess }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -131,8 +131,8 @@ export default function BrochureForm({ title,headline, buttonName, onClose, onSu
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           {title}
         </h2>
-        <h2 className="text-sm font-medium text-center text-gray-800 mb-6">
-          {headline}
+        <h2 className="text-sm text-center text-gray-800 mb-6">
+          {subTitle}
         </h2>
         {isDisabled ? (
           <p className="text-center text-red-500 font-semibold">

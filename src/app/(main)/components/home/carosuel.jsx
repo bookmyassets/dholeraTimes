@@ -53,7 +53,7 @@ export default function HOME2() {
       text: "Book free consultation",
       formHead: "Book free consultation",
       subTitle:
-        "Fill out the form to book Free Consultation with our Dholera Expert Advisor.",
+        "Book your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory.",
       buttonText: "Book Now",
     },
   ];
@@ -252,8 +252,8 @@ export default function HOME2() {
             >
               <BrochureForm
                 title={formData.title}
-                buttonName={formData.buttonText}
                 subTitle={formData.subTitle}
+                buttonName={formData.buttonText}
                 onClose={closeContactForm}
                 onSuccess={() => setIsFormSubmitted(true)}
               />
