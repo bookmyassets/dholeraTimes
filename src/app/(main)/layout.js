@@ -10,7 +10,7 @@ import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
-import { getPosts, getProjectInfo, getblogs } from "@/sanity/lib/api";
+import { getAllProjects, getPosts, getProjectInfo, getblogs } from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
@@ -233,7 +233,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     async function fetchData() {
       const blogsData = await getblogs();
-      const projectsData = await getPosts();
+      const projectsData = await getAllProjects();
       const dholeraData = await getProjectInfo();
       setBlogs(blogsData);
       setProjects(projectsData);
@@ -808,14 +808,14 @@ export default function RootLayout({ children }) {
                           transition={{ duration: 0.2 }}
                           className="pl-6 overflow-hidden"
                         >
-                         {isDholeraDropdownOpen && (
-                      <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
+                        
+                    
                         {dholera
                           .map((dhol) => (
                             <Link
                               key={dhol._id}
                               href={`/DholeraSIR/${dhol.slug.current}`}
-                              className="block px-4 py-2 text-black hover:bg-gray-200"
+                              className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={() => {
                                 setIsMobileDholeraOpen(false);
                                 setIsMenuOpen(false);
@@ -824,8 +824,8 @@ export default function RootLayout({ children }) {
                               {dhol.title}
                             </Link>
                           ))}
-                      </div>
-                    )}
+                      
+                  
                           
                         </motion.div>
                       )}
