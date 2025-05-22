@@ -2,14 +2,15 @@ import React from "react";
 import hero from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
 import { getProjectInfo } from "@/sanity/lib/api";
+import Link from "next/link";
 
 export default async function About() {
-  const slug = await getProjectInfo();
+  const dholeraSlug = await getProjectInfo();
 
   return (
     <div className="bg-white">
       {/* Hero Section - Enhanced with overlay gradient and better typography */}
-      <section className="relative h-[70vh] flex items-center justify-center text-center">
+      <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0">
           <Image
             src={hero}
@@ -17,7 +18,7 @@ export default async function About() {
             className="w-full h-full object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/10"></div>
+          <div className="absolute inset-0 "></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
           <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-lg mb-6 tracking-tight">
@@ -115,18 +116,21 @@ export default async function About() {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {slug && slug.length > 0 ? (
-              slug.map((item) => (
-                <div
+            {dholeraSlug && dholeraSlug.length > 0 ? (
+              dholeraSlug.map((item) => (
+                <Link 
                   key={item._id}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-100"
+                  href={`/DholeraSIR/${item.slug?.current || '#'}`} 
+                  className="group"
                 >
-                  <div className="bg-blue-600 h-2"></div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-3 text-gray-800">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
+                  <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 border border-gray-100">
+                    <div className="bg-blue-600 h-2"></div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-3 text-gray-800">{item.title}</h3>
+                      <p className="text-gray-600">{item.description}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))
             ) : (
               <div className="col-span-full text-center p-8">

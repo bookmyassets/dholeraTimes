@@ -72,6 +72,10 @@ export default function ContactDetails() {
           name="description"
           content="Get in touch with our team for plot bookings, site visits, or investment advice in Dholera Smart City. Call, WhatsApp or visit us."
         />
+        <meta
+          name="keywords"
+          content="Expert guidance on dholera Smart City, Contact dholera times , Dholera investment consultation, Book plot in dholera , Dholera inquiry, Dholera Investment "
+        />
         <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
           <div className="md:w-1/2 text-center">

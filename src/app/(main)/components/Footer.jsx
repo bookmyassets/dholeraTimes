@@ -1,4 +1,4 @@
-import { getPosts } from "@/sanity/lib/api";
+import { getAllProjects } from "@/sanity/lib/api";
 import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
 import Link from "next/link";
@@ -96,12 +96,12 @@ export default function Footer() {
   };
 
   useEffect(() => {
-    async function fetchData() {
-      const projectData = await getPosts();
-      setIsProjects(projectData);
-    }
-    fetchData();
-  }, []);
+  async function fetchData() {
+    const projectData = await getAllProjects();
+    setIsProjects(projectData);
+  }
+  fetchData();
+}, []);
 
   return (
     <>

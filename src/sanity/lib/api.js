@@ -251,3 +251,46 @@ export async function getProjectInfo() {
   const posts = await client.fetch(query, {}, { cache: 'no-store' }); // Disables caching
   return posts;
 }
+
+
+export async function getAllProjects() {
+  const query = `*[_type == "post" && "Project" in categories[]->title && author->name == "Dholera Times"]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    description,
+    author->{name, image},
+    categories[]->{title, _id},
+    "category": categories[0]->title,
+    "isSoldOut": "Sold Out" in categories[]->title
+  }`;
+  
+  const posts = await client.fetch(query, {}, { cache: 'no-store' });
+  
+  // Sort by category, with Sold Out category at the end
+  const sortedPosts = posts.sort((a, b) => {
+    // First, separate sold out projects to the end
+    if (a.isSoldOut && !b.isSoldOut) return 1;
+    if (!a.isSoldOut && b.isSoldOut) return -1;
+    
+    // If both have same sold out status, sort by category name
+    if (a.isSoldOut === b.isSoldOut) {
+      const categoryA = a.category || '';
+      const categoryB = b.category || '';
+      
+      // Sort categories alphabetically
+      if (categoryA < categoryB) return -1;
+      if (categoryA > categoryB) return 1;
+      
+      // If same category, sort by publishedAt (newest first)
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    }
+    
+    return 0;
+  });
+  
+  return sortedPosts;
+}
