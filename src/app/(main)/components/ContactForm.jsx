@@ -152,7 +152,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
               <input
                 name="email"
                 type="email"
-                placeholder="Email Address *"
+                placeholder="Email Address "
                 value={formData.email}
                 onChange={handleChange}
                 className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
