@@ -72,7 +72,7 @@ export default function ContactDetails() {
 insights, and investment opportunities on the ground. Limited slots!"
       />
       <meta
-        name="keyword"
+        name="keywords"
         content="Book site visit dholera,Free site visit dholera,Dholera SIR visit,Dholera smart city site visit,Dholera Smart city Visit,Dholera Project visit "
       />
       <section className="relative h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
