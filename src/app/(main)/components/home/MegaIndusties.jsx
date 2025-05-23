@@ -82,7 +82,7 @@ export default function MegaIndustries() {
               global manufacturing and semiconductor hub 
             </span>
             <span className="text-blue-600">
-              <a href="/DholeraSIR/Mega-Industries-Presence"> Read More</a>
+              <a href="/DholeraSIR/mega-industries"> Read More</a>
             </span>
           </p>
         </div>

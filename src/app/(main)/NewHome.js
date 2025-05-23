@@ -11,11 +11,11 @@ import Location from "./components/home/Location";
 import About from "./components/home/About";
 import WhyUs from "./components/home/WhyUs";
 import Imagegallery from "./components/home/Imagegallery";
-import MegaIndustries from "./components/home/MegaIndustries";
 import BrowseUpdates from "./components/home/BrowseUpdates";
 import TestimonialPagination from "./components/Testimonials";
 import { AnimatePresence } from "framer-motion";
 import BrochureForm from "./components/BrochureForm";
+import MegaIndustries from "./components/home/MegaIndusties";
 
 export default function NewHome() {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
