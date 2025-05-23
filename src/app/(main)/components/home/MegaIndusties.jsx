@@ -81,9 +81,9 @@ export default function MegaIndustries() {
             <span className="font-semibold">
               global manufacturing and semiconductor hub 
             </span>
-            <span className="text-blue-600">
+           {/*  <span className="text-blue-600">
               <a href="/DholeraSIR/mega-industries"> Read More</a>
-            </span>
+            </span> */}
           </p>
         </div>
 
