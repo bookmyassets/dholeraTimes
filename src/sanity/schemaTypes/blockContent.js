@@ -21,7 +21,7 @@ export default {
         { title: "Right Align", value: "rightAlign" },
         { title: "Justify", value: "justify" },
       ],
-      size: [
+      sizes: [
         { title: "Small", value: "small" },
         { title: "Medium", value: "medium" },
         { title: "Large", value: "large" },
