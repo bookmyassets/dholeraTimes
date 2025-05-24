@@ -1,5 +1,6 @@
 'use client'
-
+import { table } from '@sanity/table'
+import { codeInput } from '@sanity/code-input'
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `\src\app\studio\[[...tool]]\page.jsx` route
  */
@@ -24,5 +25,7 @@ export default defineConfig({
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
+     table(),
+    codeInput()
   ],
 })
