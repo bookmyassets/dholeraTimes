@@ -20,9 +20,7 @@ export default {
         { title: "Center Align", value: "centerAlign" },
         { title: "Right Align", value: "rightAlign" },
         { title: "Justify", value: "justify" },
-      ],
-      sizes: [
-        { title: "Small", value: "small" },
+         { title: "Small", value: "small" },
         { title: "Medium", value: "medium" },
         { title: "Large", value: "large" },
         { title: "Extra Large", value: "xlarge" },
