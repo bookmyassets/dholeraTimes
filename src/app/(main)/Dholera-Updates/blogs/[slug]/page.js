@@ -6,16 +6,14 @@ import Image from "next/image";
 
 
 export async function generateMetadata({ params }) {
-  // Ensure the slug is properly resolved before using it
-  const { slug } = params; // params is already available, but use destructuring
+ 
+  const { slug } = params; 
   
-  // Fetch the post using the slug
   const post = await getPostBySlug(slug); 
 
   return {
-    title: post.title,  // Use the fetched post's title for dynamic title
-    description: post.metaDescription, // Same for description
-    
+    title: post.title,  
+    description: post.metaDescription, 
   };
 }
 
@@ -218,6 +216,21 @@ export default async function BlogDetail({ params }) {
           <h3 className="text-2xl font-semibold mt-8 mb-4 text-black">
             {children}
           </h3>
+        ),
+        h4: ({ children }) => (
+          <h4 className="text-2xl font-semibold mt-8 mb-4 text-black">
+            {children}
+          </h4>
+        ),
+        h5: ({ children }) => (
+          <h5 className="text-2xl font-semibold mt-8 mb-4 text-black">
+            {children}
+          </h5>
+        ),
+        h6: ({ children }) => (
+          <h6 className="text-2xl font-semibold mt-8 mb-4 text-black">
+            {children}
+          </h6>
         ),
         normal: ({ children }) => (
           <p className="mb-6 text-gray-700 leading-relaxed">{children}</p>
