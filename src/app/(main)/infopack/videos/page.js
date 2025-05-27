@@ -30,6 +30,31 @@ export default async function VideosPage() {
       title: "Dholera Now: City Progress You Must See!",
       duration: "8:12",
     },
+    {
+      id: "HbB5WatmHD4?si=Of_TaIOcdfyuNdtV",
+      title: "Dholera Water Treatment Plant",
+      duration: "8:12",
+    },
+    {
+      id: "_r3Mn5MWhJg?si=JNqD1KxKzXOvLFV9",
+      title: "Ahmedabad Dholera Expressway",
+      duration: "8:12",
+    },
+    {
+      id: "_8xDR8tsIj8?si=LGPakhs5et01FH9X",
+      title: "Dholera International Airport",
+      duration: "8:12",
+    },
+    {
+      id: "3KpfdlcFmLQ?si=WWvNkS21ENXkcuau",
+      title: "TATA SEMICON",
+      duration: "8:12",
+    },
+    {
+      id: "e-k_LKudNM0?si=LT_Om9yr-KQbs_Fw",
+      title: "Dholera Activation Area",
+      duration: "8:12",
+    },
   ];
 
   if (videos.length === 0) {

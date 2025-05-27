@@ -1,3 +1,16 @@
+// Custom decorator components for color and background
+const TextColorDecorator = (props) => (
+  <span style={{ color: props.value?.color || "inherit" }}>
+    {props.children}
+  </span>
+);
+
+const TextBackgroundDecorator = (props) => (
+  <span style={{ backgroundColor: props.value?.color || "transparent" }}>
+    {props.children}
+  </span>
+);
+
 export default {
   name: "blockContent",
   title: "Block Content",
@@ -134,15 +147,3 @@ export default {
   ],
 };
 
-// Custom decorator components for color and background
-const TextColorDecorator = (props) => (
-  <span style={{ color: props.value?.color || "inherit" }}>
-    {props.children}
-  </span>
-);
-
-const TextBackgroundDecorator = (props) => (
-  <span style={{ backgroundColor: props.value?.color || "transparent" }}>
-    {props.children}
-  </span>
-);
