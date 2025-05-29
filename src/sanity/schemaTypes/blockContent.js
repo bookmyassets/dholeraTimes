@@ -1,4 +1,3 @@
-// Custom decorator components for color and background
 const TextColorDecorator = (props) => (
   <span style={{ color: props.value?.color || "inherit" }}>
     {props.children}
