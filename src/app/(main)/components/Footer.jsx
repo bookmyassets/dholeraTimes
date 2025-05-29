@@ -29,7 +29,7 @@ export default function Footer() {
 
   const buttons = [
     { id: 1, title: "Download Brochure" },
-    { id: 2, title: " Schedule Free Site visit" },
+    { id: 2, title: "Book Free Site visit" },
   ];
 
   const handleChange = (e) => {
@@ -355,6 +355,7 @@ export default function Footer() {
                   Sitemap
                 </a>
               </li>
+              
             </ul>
           </div>
 
@@ -403,6 +404,11 @@ export default function Footer() {
               <li>
                 <a href="/" className="hover:text-white transition">
                   Why Dholera
+                </a>
+              </li>
+              <li>
+                <a href="/infopack/inventory">
+                  Live Booking status
                 </a>
               </li>
             </ul>

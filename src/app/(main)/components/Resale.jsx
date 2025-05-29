@@ -70,7 +70,7 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
   };
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 flex items-center justify-center p-4">
+    <div className="relative flex items-center justify-center p-4">
       <div className="bg-white p-8 shadow-2xl w-full max-w-2xl mx-auto border border-gray-200 rounded-2xl">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
           {title}
@@ -98,19 +98,6 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               />
             </div>
 
-            {/* Email Input */}
-            <div className="relative">
-              <Mail className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
-              <input
-                name="email"
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
-              />
-            </div>
-
             {/* Mobile Number Input - Required */}
             <div className="relative">
               <Phone className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
@@ -125,38 +112,12 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               />
             </div>
 
-            {/* Project Name Input - Required */}
-            <div className="relative">
-              <Building className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
-              <input
-                name="projectName"
-                placeholder="Project Name *"
-                value={formData.projectName}
-                onChange={handleChange}
-                required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
-              />
-            </div>
-
-            {/* Plot No Input - Required */}
-            <div className="relative">
-              <MapPin className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
-              <input
-                name="plotNo"
-                placeholder="Plot No *"
-                value={formData.plotNo}
-                onChange={handleChange}
-                required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
-              />
-            </div>
-
             {/* Message Input */}
             <div className="relative">
               <MessageCircle className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
               <textarea
-                name="message"
-                placeholder="Message"
+                name="Plot Details"
+                placeholder="Plot details"
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}

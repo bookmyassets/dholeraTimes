@@ -63,7 +63,7 @@ export default function ButtonsSection() {
         if (button.id === 1) {
           openContactForm("Download Brochure", "Please fill out the form to download our brochure. Fields marked with * are mandatory." , "Download Now");
         } else if (button.id === 2) {
-          openContactForm("Schedule Free Site Visit", "Fill the form below to schedule a site visit . Fields marked with * are mandatory.", "Schedule A Call Now");
+          openContactForm("Book Free Site Visit", "Fill the form below to schedule a site visit . Fields marked with * are mandatory.", "Submit");
         }
       }}
       className="btn btn-primary px-6 py-3 bg-[#be9233] hover:bg-[#dbaf51] text-white font-semibold rounded-xl transition duration-300 w-full sm:w-auto max-w-xs"

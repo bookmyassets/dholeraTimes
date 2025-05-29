@@ -10,7 +10,12 @@ import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
-import { getAllProjects, getPosts, getProjectInfo, getblogs } from "@/sanity/lib/api";
+import {
+  getAllProjects,
+  getPosts,
+  getProjectInfo,
+  getblogs,
+} from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
@@ -45,7 +50,7 @@ export default function RootLayout({ children }) {
   const [isContactOpen, setIsContactOpen] = useState(false);
   const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
   const [dholera, setDholera] = useState([]);
-  
+
   //PIXEL
   const pathname = usePathname();
 
@@ -241,7 +246,6 @@ export default function RootLayout({ children }) {
     }
     fetchData();
   }, []);
-  
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -385,7 +389,6 @@ export default function RootLayout({ children }) {
           sizes="16x16"
           href="/favicon-16x16.ico"
         ></link>
-        
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -445,17 +448,16 @@ export default function RootLayout({ children }) {
                     </button>
                     {isDholeraDropdownOpen && (
                       <div className="absolute left-0 mt-6 w-48 bg-white shadow-lg rounded-md z-50">
-                        {dholera
-                          .map((dhol) => (
-                            <Link
-                              key={dhol._id}
-                              href={`/DholeraSIR/${dhol.slug.current}`}
-                              className="block px-4 py-2 text-black hover:bg-gray-200"
-                              onClick={() => setIsDholeraDropdownOpen(false)}
-                            >
-                              {dhol.title}
-                            </Link>
-                          ))}
+                        {dholera.map((dhol) => (
+                          <Link
+                            key={dhol._id}
+                            href={`/DholeraSIR/${dhol.slug.current}`}
+                            className="block px-4 py-2 text-black hover:bg-gray-200"
+                            onClick={() => setIsDholeraDropdownOpen(false)}
+                          >
+                            {dhol.title}
+                          </Link>
+                        ))}
                       </div>
                     )}
                   </div>
@@ -707,6 +709,10 @@ export default function RootLayout({ children }) {
                             title: "Career",
                             path: "/contact/career",
                           },
+                          {
+                            title: "Resale Support",
+                            path: "/contact/resale-support",
+                          },
                         ].map((item) => (
                           <Link
                             key={item.path}
@@ -808,10 +814,7 @@ export default function RootLayout({ children }) {
                           transition={{ duration: 0.2 }}
                           className="pl-6 overflow-hidden"
                         >
-                        
-                    
-                        {dholera
-                          .map((dhol) => (
+                          {dholera.map((dhol) => (
                             <Link
                               key={dhol._id}
                               href={`/DholeraSIR/${dhol.slug.current}`}
@@ -824,9 +827,6 @@ export default function RootLayout({ children }) {
                               {dhol.title}
                             </Link>
                           ))}
-                      
-                  
-                          
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -1064,6 +1064,7 @@ export default function RootLayout({ children }) {
                             { title: "Inquiry", path: "/contact/inquiry" },
                             { title: "Site Visit", path: "/contact/sitevisit" },
                             { title: "Career", path: "/contact/career" },
+                            { title: "Resale Support", path: "/contact/resale-support"},
                           ].map((item) => (
                             <Link
                               key={item.path}
@@ -1081,17 +1082,13 @@ export default function RootLayout({ children }) {
                       )}
                     </AnimatePresence>
                   </div>
-                  
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
         </nav>
 
-        <div className="pt-20">
-        
-        {children}
-        </div>
+        <div className="pt-20">{children}</div>
         <FloatingIcons />
         <Footer />
       </body>
