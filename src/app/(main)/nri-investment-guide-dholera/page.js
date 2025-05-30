@@ -15,6 +15,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/PopupForm";
+import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp"
+import priceBanner from "@/assets/price-cut-banner.webp"
+import priceBannerMobile from "@/assets/Price-cut-mobile-banner.webp"
+import projectedNRI from "@/assets/Projected-NRI.webp"
 
 export default function NRIInvestmentGuide() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
@@ -716,7 +720,7 @@ export default function NRIInvestmentGuide() {
             <div className="md:w-1/2 order-1 md:order-2">
               <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/api/placeholder/600/400"
+                  src={dholeraSmartCity}
                   alt="Dholera Smart City – India’s emerging global investment hub"
                   width={600}
                   height={400}
@@ -966,7 +970,7 @@ export default function NRIInvestmentGuide() {
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm md:col-span-2">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm md:col-span-2 mb-8">
               <div className="flex items-center mb-4">
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   7
@@ -980,18 +984,38 @@ export default function NRIInvestmentGuide() {
                 the property handover process.
               </p>
             </div>
-            <div className="w-full h-64">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src="/path-to-your-image.jpg"
-                  alt="NRI property buying process in Dholera explained step-by-step"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
+
+        <section>
+        <div className="relative mb-8">
+          {/* Desktop Image */}
+          <div className="hidden lg:block relative">
+            <Image
+              src={priceBanner}
+              alt="Investment Opportunity"
+              className="w-full"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-20"></div>
+            
+          </div>
+
+          {/* Mobile Image */}
+          <div className="block lg:hidden relative h-[300px]"> 
+            <Image
+              src={priceBannerMobile}
+              alt="Investment Opportunity Mobile"
+              fill
+              className="object-contain w-full"
+              priority
+            />
+            <div className="absolute inset-0"></div>
+           
+          </div>
+        </div>
+      </section>
 
         {/* Our Services */}
         <div className="container mx-auto px-4 mb-4">
@@ -1077,7 +1101,7 @@ export default function NRIInvestmentGuide() {
             <div className="md:w-1/2 order-1 md:order-2">
               <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                 <Image
-                  src="/api/placeholder/600/400"
+                  src={projectedNRI}
                   alt="Projected return on investment for NRI real estate in Dholera"
                   width={600}
                   height={400}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { User, Mail, Phone, Building, MapPin, MessageCircle } from "lucide-react";
+import { User, Phone, MessageCircle } from "lucide-react";
 
 export default function ContactForm({ title = "Contact Us", headline = "Fill out the form below and we'll get back to you soon", buttonName = "Submit Form" }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,10 +45,8 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
     }
 
     try {
-      // Simulate API call (replace with actual API endpoint)
       await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Reset form on success
+
       setFormData({ 
         name: "", 
         email: "", 

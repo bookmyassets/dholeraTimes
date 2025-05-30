@@ -1,19 +1,16 @@
 "use client";
 import Image from "next/image";
 import get from "@/assets/siteVisit.webp";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Resale from "../../components/Resale";
 import resaleD from "@/assets/ResaleDesktop2.webp";
-import buyBack from "@/assets/hassle.webp"
-import freeListing from "@/assets/Free-Listing.webp"
-import resaleIcons from "@/assets/resale-icons.webp"
-import strong from "@/assets/strong.webp"
-import hassle from "@/assets/hassle.webp"
+import buyBack from "@/assets/hassle.webp";
+import freeListing from "@/assets/Free-Listing.webp";
+import resaleIcons from "@/assets/resale-icons.webp";
+import strong from "@/assets/strong.webp";
+import hassle from "@/assets/hassle.webp";
+import ct1 from "@/assets/Customer-testimonial-1.webp"
+import ct2 from "@/assets/Customer-testimonial-2.webp"
 
 export default function ContactDetails() {
   const schemaData = {
@@ -114,15 +111,15 @@ export default function ContactDetails() {
               </div>
 
               {/* Image Section */}
-              <div className="w-full lg:w-1/2 pt-8">
-                <div className="text-center text-xl md:text-3xl pt-8 mb-4">
+              <div className="w-full lg:w-1/2 md:pt-8">
+                <div className="text-center text-xl md:text-3xl pt-8 ">
                   <h2>How Our Resale Support Works</h2>
                 </div>
                 <div>
                   <Image
                     src={resaleD}
                     alt="re-sale"
-                    className="max-sm:hidden w-full"
+                    className=" w-full"
                   />
                 </div>
               </div>
@@ -130,91 +127,94 @@ export default function ContactDetails() {
           </div>
         </div>
 
-        <div className="py-12 px-6 w-full bg-[#151f28]">
+        <div className="py-8 px-6 w-full bg-[#151f28]">
           <div className="flex justify-center items-center">
             <ul className="space-y-4">
+              <p className="text-xl md:text-4xl font-semibold text-center text-white pb-4">
+                Why Choose Our Resale Support ?
+              </p>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl "><Image src={buyBack} alt="buyBack" className="h-12 w-12 rounded" /></span>
+                <span className="mr-3 text-xl ">
+                  <Image
+                    src={buyBack}
+                    alt="buyBack"
+                    className="h-12 w-12 rounded"
+                  />
+                </span>
                 Guaranteed Buyback Option
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl "><Image src={strong} alt="strong" className="h-12 w-12 rounded" /></span>
+                <span className="mr-3 text-xl ">
+                  <Image
+                    src={strong}
+                    alt="strong"
+                    className="h-12 w-12 rounded"
+                  />
+                </span>
                 Strong Buyer Network (Local + NRI)
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl "><Image src={hassle} alt="hassle" className="h-12 w-12 rounded" /></span>
+                <span className="mr-3 text-xl ">
+                  <Image
+                    src={hassle}
+                    alt="hassle"
+                    className="h-12 w-12 rounded"
+                  />
+                </span>
                 Hassle-Free Documentation
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl "><Image src={freeListing} alt="freeListing" className="h-12 w-12 rounded" /></span>
+                <span className="mr-3 text-xl ">
+                  <Image
+                    src={freeListing}
+                    alt="freeListing"
+                    className="h-12 w-12 rounded"
+                  />
+                </span>
                 Free Listing on Dholera Times
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl "><Image src={resaleIcons} alt="resaleIcons" className="h-12 w-12 rounded" /></span>
+                <span className="mr-3 text-xl ">
+                  <Image
+                    src={resaleIcons}
+                    alt="resaleIcons"
+                    className="h-12 w-12 rounded"
+                  />
+                </span>
                 Dedicated Resale Specialist
               </li>
             </ul>
           </div>
         </div>
 
-        <div>
-          <div className="max-w-7xl mx-auto">
-            {/* Social Media Section */}
-            <div className="space-y-5 mb-5 text-center mt-12">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">
-                Follow Us
-              </h2>
-              <div className="flex justify-center space-x-6">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61573763438050"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 text-3xl hover:text-blue-800"
-                >
-                  <FaFacebook />
-                </a>
-                <a
-                  href="https://x.com/dholeratimes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 text-3xl hover:text-blue-600"
-                >
-                  <FaTwitter />
-                </a>
-                <a
-                  href="https://www.instagram.com/dholeratimes/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-pink-500 text-3xl hover:text-pink-700"
-                >
-                  <FaInstagram />
-                </a>
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-700 text-3xl hover:text-blue-900"
-                >
-                  <FaLinkedin />
-                </a>
-              </div>
+       
+<div>
+<p className="text-center text-xl md:text-4xl font-semibold">Customer Testimonials</p>
+        <div className="md:grid md:grid-cols-2 ">
+          <Image
+            src={ct1}
+            alt="Customer-testimonial"
+            />
+          <Image
+            src={ct2}
+            alt="Customer-testimonial"
+            />
             </div>
-          </div>
         </div>
       </div>
     </>
