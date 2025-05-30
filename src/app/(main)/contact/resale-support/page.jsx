@@ -93,7 +93,7 @@ export default function ContactDetails() {
           </div>
         </section>
 
-        <div className="text-center max-w-7xl mx-auto md:text-2xl text-xl p-8 font-semibold">
+        <div className="text-center max-w-7xl mx-auto md:text-2xl text-xl  md:p-8 font-semibold">
           <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg mb-8">
             Need Help with Resale? <br /> We're Here to Support You
           </h1>
