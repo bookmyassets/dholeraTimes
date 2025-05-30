@@ -143,9 +143,6 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               )}
             </button>
             
-            <p className="text-center text-sm text-gray-500 mt-4">
-              Fields marked with * are required
-            </p>
             <p className="font-normal text-sm text-center text-gray-600">
               🔒 100% Privacy | ⚡ Fast Response | 👥 Personalized Support
             </p>

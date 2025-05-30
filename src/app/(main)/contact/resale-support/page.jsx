@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import get from "@/assets/siteVisit.webp";
+import get from "@/assets/resaleHero.webp";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Resale from "../../components/Resale";
 import resaleD from "@/assets/ResaleDesktop2.webp";
@@ -9,7 +9,7 @@ import freeListing from "@/assets/Free-Listing.webp";
 import resaleIcons from "@/assets/resale-icons.webp";
 import strong from "@/assets/strong.webp";
 import hassle from "@/assets/hassle.webp";
-import ct1 from "@/assets/Customer-testimonial-1.webp"
+import ct1 from "@/assets/customer-testimonial-1.webp"
 import ct2 from "@/assets/Customer-testimonial-2.webp"
 
 export default function ContactDetails() {
