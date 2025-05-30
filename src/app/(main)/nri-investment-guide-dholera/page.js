@@ -1003,7 +1003,7 @@ export default function NRIInvestmentGuide() {
           </div>
 
           {/* Mobile Image */}
-          <div className="block lg:hidden relative h-[300px]"> 
+          <div className="block lg:hidden relative"> 
             <Image
               src={priceBannerMobile}
               alt="Investment Opportunity Mobile"
