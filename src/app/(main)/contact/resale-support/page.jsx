@@ -12,6 +12,7 @@ import hassle from "@/assets/hassle.webp";
 import ct1 from "@/assets/customer-testimonial-1.webp"
 import ct2 from "@/assets/Customer-testimonial-2.webp"
 
+
 export default function ContactDetails() {
   const schemaData = {
     "@context": "https://schema.org",
