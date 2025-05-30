@@ -2,19 +2,18 @@
 import Image from "next/image";
 import get from "@/assets/siteVisit.webp";
 import {
-  FaPhoneAlt,
-  FaHeadset,
   FaFacebook,
   FaTwitter,
   FaInstagram,
   FaLinkedin,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
-import { CiMail } from "react-icons/ci";
-import ContactForm from "@/app/(main)/components/ContactForm";
 import Resale from "../../components/Resale";
-import resale from "@/assets/resale-support.webp";
 import resaleD from "@/assets/ResaleDesktop2.webp";
+import buyBack from "@/assets/hassle.webp"
+import freeListing from "@/assets/Free-Listing.webp"
+import resaleIcons from "@/assets/resale-icons.webp"
+import strong from "@/assets/strong.webp"
+import hassle from "@/assets/hassle.webp"
 
 export default function ContactDetails() {
   const schemaData = {
@@ -121,11 +120,6 @@ export default function ContactDetails() {
                 </div>
                 <div>
                   <Image
-                    src={resale}
-                    alt="re-sale"
-                    className="md:hidden w-full"
-                  />
-                  <Image
                     src={resaleD}
                     alt="re-sale"
                     className="max-sm:hidden w-full"
@@ -143,35 +137,35 @@ export default function ContactDetails() {
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl">✅</span>
+                <span className="mr-3 text-xl "><Image src={buyBack} alt="buyBack" className="h-12 w-12 rounded" /></span>
                 Guaranteed Buyback Option
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl">✅</span>
+                <span className="mr-3 text-xl "><Image src={strong} alt="strong" className="h-12 w-12 rounded" /></span>
                 Strong Buyer Network (Local + NRI)
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl">✅</span>
+                <span className="mr-3 text-xl "><Image src={hassle} alt="hassle" className="h-12 w-12 rounded" /></span>
                 Hassle-Free Documentation
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl">✅</span>
+                <span className="mr-3 text-xl "><Image src={freeListing} alt="freeListing" className="h-12 w-12 rounded" /></span>
                 Free Listing on Dholera Times
               </li>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
               >
-                <span className="mr-3 text-xl">✅</span>
+                <span className="mr-3 text-xl "><Image src={resaleIcons} alt="resaleIcons" className="h-12 w-12 rounded" /></span>
                 Dedicated Resale Specialist
               </li>
             </ul>
