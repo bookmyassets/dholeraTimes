@@ -111,21 +111,24 @@ export default {
       },
     },
     {
-      type: "image",
-      options: { hotspot: true },
+      type: 'image',
       fields: [
         {
-          name: "alt",
-          type: "string",
-          title: "Alternative Text",
+          name: 'alt',
+          type: 'string',
+          title: 'Alternative Text'
         },
         {
-          name: "url",
-          type: "url",
-          title: "Image Link URL",
-          description: "Where this image should link to when clicked",
+          name: 'caption',
+          type: 'string',
+          title: 'Caption'
         },
-      ],
+        {
+          name: 'url',  // Add this new field
+          type: 'url',
+          title: 'Link URL'
+        }
+      ]
     },
     // Code block
     {

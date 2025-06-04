@@ -1,19 +1,22 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
-import { getblogs, getNews, getPostBySlug, getProjects } from "@/sanity/lib/api";
+import {
+  getblogs,
+  getNews,
+  getPostBySlug,
+  getProjects,
+} from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
 
-
 export async function generateMetadata({ params }) {
- 
-  const { slug } = params; 
-  
-  const post = await getPostBySlug(slug); 
+  const { slug } = params;
+
+  const post = await getPostBySlug(slug);
 
   return {
-    title: post.title,  
-    description: post.metaDescription, 
+    title: post.title,
+    description: post.metaDescription,
   };
 }
 
@@ -82,7 +85,6 @@ const Projects = ({ post }) => {
   );
 };
 
-
 // Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
@@ -128,7 +130,6 @@ const RelatedBlogCard = ({ blog }) => {
           <div className="flex items-center justify-between mt-auto">
             <span className="hover:text-[#C69C21] text-[#FDB913] p-1 rounded-xl font-semibold bg-gray-800 inline-flex items-center">
               Read more
-              
             </span>
           </div>
         </div>
@@ -153,7 +154,7 @@ export default async function BlogDetail({ params }) {
       getPostBySlug(slug),
       getblogs(4), // Get top 4 trending news
       getNews(slug, 3), // Get 3 related blogs based on categories or tags
-      getProjects(slug)
+      getProjects(slug),
     ]);
 
     if (!post) {
@@ -173,73 +174,46 @@ export default async function BlogDetail({ params }) {
     }
 
     const components = {
-      types: {
-        image: ({ value }) => {
-          if (!value?.asset?._ref) {
-            return null;
-          }
-          return (
-            <figure className="my-12">
-              <div className="overflow-hidden rounded-xl shadow-xl">
-                <img
-                  alt={value.alt || " "}
-                  src={urlFor(value).width(1200).url()}
-                  width={1200}
-                  height={800}
-                  className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              {value.caption && (
-                <figcaption className="mt-3 text-center text-sm italic text-gray-500">
-                  {value.caption}
-                </figcaption>
+      image: ({ value }) => {
+        if (!value?.asset?._ref) {
+          return null;
+        }
+
+        // Create the image element
+        const imageElement = (
+          <img
+            alt={value.alt || " "}
+            src={urlFor(value).width(1200).url()}
+            width={1200}
+            height={800}
+            className="w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
+        );
+
+        return (
+          <figure className="my-12">
+            <div className="overflow-hidden rounded-xl shadow-xl">
+              {/* Wrap image with anchor tag if URL exists */}
+              {value.url ? (
+                <a
+                  href={value.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {imageElement}
+                </a>
+              ) : (
+                imageElement
               )}
-            </figure>
-          );
-        },
-
-        // Fixed table component
-        table: ({ value }) => {
-          if (!value?.rows || !Array.isArray(value.rows)) {
-            return null;
-          }
-
-          return (
-            <div className="overflow-x-auto my-8">
-              <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-                <tbody>
-                  {value.rows.map((row, i) => {
-                    if (!row?.cells || !Array.isArray(row.cells)) {
-                      return null;
-                    }
-
-                    return (
-                      <tr
-                        key={i}
-                        className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}
-                      >
-                        {row.cells.map((cell, j) => (
-                          <td
-                            key={j}
-                            className="px-4 py-3 border border-gray-200 text-gray-700"
-                          >
-                            {cell || ""}
-                          </td>
-                        ))}
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
             </div>
-          );
-        },
-
-        code: ({ value }) => (
-          <pre className="bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto my-6">
-            <code className="font-mono text-sm">{value.code}</code>
-          </pre>
-        ),
+            {value.caption && (
+              <figcaption className="mt-3 text-center text-sm italic text-gray-500">
+                {value.caption}
+              </figcaption>
+            )}
+          </figure>
+        );
       },
 
       marks: {
@@ -589,8 +563,7 @@ export default async function BlogDetail({ params }) {
             {/* Sidebar */}
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
-                
-              <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
+                <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-blue-300">
                     Our Projects
                   </h3>
@@ -636,7 +609,7 @@ export default async function BlogDetail({ params }) {
                   <div className="flex items-center justify-center mt-6">
                     <Link href="/Dholera-Updates/blogs">
                       <button className="text-center rounded-xl text-white font-semibold bg-[#d7b56d] hover:bg-[#c6a45d] p-3 transition-colors">
-                       Explore More
+                        Explore More
                       </button>
                     </Link>
                   </div>

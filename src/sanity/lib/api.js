@@ -90,12 +90,46 @@ export async function getPostBySlug(slug) {
     title,
     metaTitle,
     metaDescription,
-    "keywords": keywords[]->title,  // Added this line to fetch keywords
+    "keywords": keywords[]->title,
     slug,
-    mainImage,
+    mainImage {
+      asset->{
+        _id,
+        _ref,
+        url,
+        metadata {
+          dimensions,
+          lqip
+        }
+      },
+      alt,
+      caption,
+      url
+    },
     publishedAt,
     _createdAt,
-    body,
+    body[]{
+      ...,
+      _type == "image" => {
+        ...,
+        asset->{
+          _id,
+          _ref,
+          url,
+          metadata {
+            dimensions,
+            lqip
+          }
+        },
+        "url": url  // This makes body images clickable
+      },
+      markDefs[]{
+        ...,
+        _type == "link" => {
+          "href": @.href
+        }
+      }
+    },
     author->{
       name,
       image
@@ -104,8 +138,9 @@ export async function getPostBySlug(slug) {
       title,
       _id
     },
-    readingTime  // Added this line if you're using it
+    readingTime
   }`;
+
   const post = await client.fetch(query, { slug });
   return post;
 }
