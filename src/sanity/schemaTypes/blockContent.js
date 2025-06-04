@@ -32,7 +32,7 @@ export default {
         { title: "Center Align", value: "centerAlign" },
         { title: "Right Align", value: "rightAlign" },
         { title: "Justify", value: "justify" },
-         { title: "Small", value: "small" },
+        { title: "Small", value: "small" },
         { title: "Medium", value: "medium" },
         { title: "Large", value: "large" },
         { title: "Extra Large", value: "xlarge" },
@@ -119,6 +119,12 @@ export default {
           type: "string",
           title: "Alternative Text",
         },
+        {
+          name: "url",
+          type: "url",
+          title: "Image Link URL",
+          description: "Where this image should link to when clicked",
+        },
       ],
     },
     // Code block
@@ -145,4 +151,3 @@ export default {
     },
   ],
 };
-

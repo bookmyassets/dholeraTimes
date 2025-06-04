@@ -101,15 +101,12 @@ export default function CareerPage() {
         body: submitData
       });
       
-      // Since we're using no-cors, we won't get a proper response
-      // We'll assume success if no error is thrown
       setSubmitSuccess(true);
       setStatus({
         type: "success",
         message: "Thank you for your application! We'll get back to you soon."
       });
-      
-      // Log the data (for demonstration purposes)
+
       console.log("Form submitted with data:", Object.fromEntries(submitData));
       
     } catch (error) {
@@ -143,10 +140,7 @@ export default function CareerPage() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      {/* Header */}
-      
-      
-      {/* Banner */}
+  
       <div className="relative h-48 md:h-72 bg-cover bg-center" 
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
