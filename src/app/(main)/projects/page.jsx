@@ -8,8 +8,27 @@ import { PortableText } from "next-sanity";
 export default async function Home() {
   const posts = await getPosts();
 
-  // For debugging purposes only
-  console.log("Posts data:", JSON.stringify(posts, null, 2));
+  const sortedPosts = posts.sort((a, b) => {
+    const aIsSoldOut = checkIfSoldOut(a);
+    const bIsSoldOut = checkIfSoldOut(b);
+    
+    if (aIsSoldOut && !bIsSoldOut) return 1;
+    if (!aIsSoldOut && bIsSoldOut) return -1;
+    
+    return 0;
+  });
+
+  function checkIfSoldOut(post) {
+    if (!post.categories) return false;
+    
+    if (Array.isArray(post.categories)) {
+      return post.categories.some(category => 
+        category.title && category.title.toLowerCase() === "sold out"
+      );
+    } else {
+      return post.categories.title && post.categories.title.toLowerCase() === "sold out";
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
@@ -30,8 +49,8 @@ export default async function Home() {
       {/* Content Section */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Featured Posts */}
-        {posts.length > 0 &&
-          posts.map((post) => (
+        {sortedPosts.length > 0 &&
+          sortedPosts.map((post) => (
             <div key={post._id} className="mb-12">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
                 <div className="md:flex">
