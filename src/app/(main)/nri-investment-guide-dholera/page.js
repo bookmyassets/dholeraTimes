@@ -15,16 +15,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/PopupForm";
-import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp"
-import priceBanner from "@/assets/price-cut-banner.webp"
-import priceBannerMobile from "@/assets/Price-cut-mobile-banner.webp"
-import projectedNRI from "@/assets/Projected-NRI.webp"
+import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp";
+import priceBanner from "@/assets/price-cut-banner.webp";
+import priceBannerMobile from "@/assets/Price-cut-mobile-banner.webp";
+import projectedNRI from "@/assets/Projected-NRI.webp";
 
 export default function NRIInvestmentGuide() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("WhyInvest");
   const [activeAccordion, setActiveAccordion] = useState(null);
-  const [visibleFAQs, setVisibleFAQs] = useState(6); // Initially show 3 FAQs
+  const [visibleFAQs, setVisibleFAQs] = useState(6);
 
   const toggleAccordion = (index) => {
     if (activeAccordion === index) {
@@ -249,7 +249,6 @@ export default function NRIInvestmentGuide() {
     },
   ];
 
-  const SchemaMarkup = () => {
     // BlogPosting Schema
     const blogSchema = {
       "@context": "https://schema.org",
@@ -528,21 +527,107 @@ export default function NRIInvestmentGuide() {
         },
       ],
     };
-  };
+
+    const localBusiness = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      name: "Dholera Times",
+      image: "",
+      "@id": "",
+      url: "https://www.dholeratimes.com/",
+      telephone: "+91 99589 93549",
+      priceRange: "10 Lac +",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "620,JMD Megapolis, sector-48, Sohna Road",
+        addressLocality: "Gurugram",
+        postalCode: "1220018",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 28.4195542,
+        longitude: 77.0386216,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday",
+        ],
+        opens: "10:00",
+        closes: "19:30",
+      },
+      sameAs: [
+        "https://www.facebook.com/people/Dholera-Times/61573763438050/",
+        "https://x.com/dholeratimes",
+        "https://www.instagram.com/dholeratimes/",
+        "https://www.youtube.com/@dholeratimes",
+        "https://www.linkedin.com/company/dholera-times",
+        "https://www.dholeratimes.com/",
+      ],
+    };
+
+    const articleNRI = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
+      },
+      headline: "Complete Guide to NRI Investment in Dholera Smart City",
+      description:
+        "NRI investment in Dholera has emerged as one of the most promising real estate opportunities in India. With AUDA-approved residential plots, simplified buying processes, and strong resale potential, Dholera Smart City offers unmatched value for NRIs looking to invest in a futuristic smart city.Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you are in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
+      image: [
+        "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDholera-Smart-City.a696428d.webp&w=640&q=75",
+        "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FProjected-NRI.1b752d49.webp&w=640&q=75",
+      ],
+      author: {
+        "@type": "Organization",
+        name: "Dholera times team",
+        url: "https://www.dholeratimes.com/",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Dholera times",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
+        },
+      },
+      datePublished: "2025-06-02",
+      dateModified: "2025-06-04",
+    };
+  
 
   return (
     <>
       {/* Hero Section */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SchemaMarkup) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <title>
-        NRI Investment in Dholera Smart City | Legal & Trusted Guide
-      </title>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleNRI) }}
+      />
+      <title>NRI Investment in Dholera | AUDA Approved Residential Plots</title>
       <meta
         name="description"
-        content="Step-by-step NRI investment guide for Dholera Smart City. 100% legal plots, virtual tours, and expert help. Invest safely from USA, UK, UAE, or Canada today."
+        content="Looking for secure NRI investment in Dholera? Explore AUDA-approved plots with high ROI, legal support & resale assistance. Trusted by 500+ NRIs."
+      />
+      <meta
+        name="keywords"
+        content="NRI property investment in Dholera, Buy plots in Dholera for NRIs, Dholera Smart City NRI guide, NRI investment in Dholera, NRI investment Guide, Buy Plots in Dholera Smart city, Real Estate Investment for NRI, Real estate investment in India "
       />
       <div className="relative bg-[#151f28] text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
@@ -628,18 +713,37 @@ export default function NRIInvestmentGuide() {
       {/* Introduction Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-5xl mx-auto px-4">
-          <p className="text-black text-center text-4xl max-sm:text-2xl font-semibold mb-4">
-            Looking to invest in India from abroad?
+          <h1 className="text-black text-center text-4xl max-sm:text-xl font-semibold mb-4">
+            Complete Guide to NRI Investment in Dholera Smart City
+          </h1>
+          <p className="text-center text-lg md:text-xl font-medium text-gray-700">
+            <strong>NRI investment in Dholera</strong> has emerged as one of the
+            most promising
+            <strong>real estate opportunities</strong> in India. With
+            AUDA-approved{" "}
+            <strong>residential plots, simplified buying processes</strong>, and{" "}
+            <strong>
+              {" "}
+              <a href="/contact/resale-support" className="text-blue-500">
+                {" "}
+                strong resale potential
+              </a>
+              ,
+            </strong>
+            <strong>Dholera Smart City</strong> offers unmatched value for NRIs
+            looking to invest in a futuristic smart city.
           </p>
-          <h1 className="text-center text-lg md:text-xl font-medium text-gray-700">
-            Our <strong>NRI Investment Guide for Dholera Smart City</strong>{" "}
-            gives you a complete step-by-step path to{" "}
+          <br />
+          <p className="text-center text-lg md:text-xl font-medium text-gray-700">
+            Looking to invest in India from abroad? Our{" "}
+            <strong>NRI Investment Guide for Dholera Smart City</strong> gives
+            you a complete step-by-step path to{" "}
             <strong>buy plots in India</strong> — legally, securely and entirely
             online. Whether you're in the USA, UK, UAE, or Canada, start your
             smart investment journey in <strong>Dholera Smart City</strong>,
             India's first greenfield smart city backed by massive government
             infrastructure projects.
-          </h1>
+          </p>
         </div>
       </section>
 
@@ -984,38 +1088,35 @@ export default function NRIInvestmentGuide() {
                 the property handover process.
               </p>
             </div>
-            
           </div>
         </div>
 
         <section>
-        <div className="relative mb-8">
-          {/* Desktop Image */}
-          <div className="hidden lg:block relative">
-            <Image
-              src={priceBanner}
-              alt="Investment Opportunity"
-              className="w-full"
-              priority
-            />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-            
-          </div>
+          <div className="relative mb-8">
+            {/* Desktop Image */}
+            <div className="hidden lg:block relative">
+              <Image
+                src={priceBanner}
+                alt="Investment Opportunity"
+                className="w-full"
+                priority
+              />
+              <div className="absolute inset-0 bg-black opacity-20"></div>
+            </div>
 
-          {/* Mobile Image */}
-          <div className="block lg:hidden relative"> 
-            <Image
-              src={priceBannerMobile}
-              alt="Investment Opportunity Mobile"
-              fill
-              className="object-contain w-full"
-              priority
-            />
-            <div className="absolute inset-0"></div>
-           
+            {/* Mobile Image */}
+            <div className="block lg:hidden relative">
+              <Image
+                src={priceBannerMobile}
+                alt="Investment Opportunity Mobile"
+                fill
+                className="object-contain w-full"
+                priority
+              />
+              <div className="absolute inset-0"></div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
         {/* Our Services */}
         <div className="container mx-auto px-4 mb-4">
@@ -1335,9 +1436,9 @@ export default function NRIInvestmentGuide() {
                     {faq.question}
                   </h3>
                   {activeAccordion === index ? (
-                    <ChevronUp className="text-[#d8b66d]"  size={40} />
+                    <ChevronUp className="text-[#d8b66d]" size={40} />
                   ) : (
-                    <ChevronDown className="text-[#d8b66d]"  size={40} />
+                    <ChevronDown className="text-[#d8b66d]" size={40} />
                   )}
                 </button>
 
@@ -1366,9 +1467,10 @@ export default function NRIInvestmentGuide() {
         {isContactFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <PopupForm
-              title="Book A Free Conslutation Today"
+              title="Book A Free Consultation Today"
               headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory."
               buttonName="Get A Call Back"
+              trustBadge="500+ NRI Clients Served & AUDA-Approved Projects"
               X
               onClose={closeContactForm}
             />

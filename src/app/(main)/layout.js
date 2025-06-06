@@ -428,7 +428,7 @@ export default function RootLayout({ children }) {
                       onClick={toggleDholeraDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/DholeraSIR">Dholera SIR</Link>
+                      <Link href="/Dholera-SIR">Dholera SIR</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -587,7 +587,7 @@ export default function RootLayout({ children }) {
                           },
                           {
                             title: "Site Progress",
-                            path: "/gallery/siteprogress",
+                            path: "/gallery/site-progress",
                           },
                           {
                             title: "Dholera Smart City Video",
@@ -703,7 +703,7 @@ export default function RootLayout({ children }) {
                           },
                           {
                             title: "Site Visit",
-                            path: "/contact/sitevisit",
+                            path: "/contact/site-visit",
                           },
                           {
                             title: "Career",
@@ -817,7 +817,7 @@ export default function RootLayout({ children }) {
                           {dholera.map((dhol) => (
                             <Link
                               key={dhol._id}
-                              href={`/DholeraSIR/${dhol.slug.current}`}
+                              href={`/Dholera-SIR/${dhol.slug.current}`}
                               className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={() => {
                                 setIsMobileDholeraOpen(false);
@@ -951,7 +951,7 @@ export default function RootLayout({ children }) {
                             },
                             {
                               title: "Site Progress",
-                              path: "/gallery/siteprogress",
+                              path: "/gallery/site-progress",
                             },
                             {
                               title: "Dholera Smart City Video",
@@ -1062,7 +1062,7 @@ export default function RootLayout({ children }) {
                         >
                           {[
                             { title: "Inquiry", path: "/contact/inquiry" },
-                            { title: "Site Visit", path: "/contact/sitevisit" },
+                            { title: "Site Visit", path: "/contact/site-visit" },
                             { title: "Career", path: "/contact/career" },
                             { title: "Resale Support", path: "/contact/resale-support"},
                           ].map((item) => (

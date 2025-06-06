@@ -6,23 +6,21 @@ import Image from "next/image";
 
 
 export async function generateMetadata({ params }) {
-  // Ensure the slug is properly resolved before using it
-  const { slug } = params; // params is already available, but use destructuring
+ 
+  const { slug } = params; 
   
-  // Fetch the post using the slug
   const post = await getPostBySlug(slug); 
 
   return {
-    title: post.title,  // Use the fetched post's title for dynamic title
-    description: post.metaDescription, // Same for description
+    title: post.title,  
+    description: post.metaDescription,
     
   };
 }
 
-// Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
   return (
-    <Link href={`/Dholera-Updates/blogs/${post.slug.current}`}>
+    <Link href={`/Dholera-SIR/${post.slug.current}`}>
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
@@ -49,10 +47,9 @@ const TrendingBlogItem = ({ post }) => {
 };
 
 const Projects = ({ post }) => {
-  // Check if post exists and has required properties
+
   if (!post || !post.slug?.current) return null;
 
-  // Check if category is "sold out" (case insensitive)
   if (post.category && post.category.toLowerCase().trim() === "sold out") {
     return null;
   }

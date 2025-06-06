@@ -366,7 +366,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="/DholeraSIR"
+                  href="/Dholera-SIR"
                   className="hover:text-white transition"
                 >
                   Dholera SIR

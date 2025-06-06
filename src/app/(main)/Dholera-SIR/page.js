@@ -1,4 +1,4 @@
-import { getblogs, getProjectInfo } from "@/sanity/lib/api";
+import { getblogs, getProjectInfo, getUpdates } from "@/sanity/lib/api";
 import hero from "@/assets/dholeraSIR.webp";
 import herom from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
@@ -29,7 +29,7 @@ export default async function BlogsPage() {
   // Fetch trending blogs
   let trendingBlogs = [];
   try {
-    const updatesData = await getblogs();
+    const updatesData = await getUpdates();
     trendingBlogs = Array.isArray(updatesData) ? updatesData.slice(0, 3) : [];
   } catch (error) {
     console.error("Error fetching updates:", error);

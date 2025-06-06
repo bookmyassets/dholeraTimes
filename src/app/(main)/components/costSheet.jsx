@@ -19,19 +19,19 @@ export default function CostSheet() {
     plotNo: '',
     plc: '',
     plotAreaYards: '',
-    basePlotPriceYards: 6700, // Base price without PLC
+    basePlotPriceYards: 9250, 
     plotAreaFeet: '',
     totalPaymentYards: '',
-    maintenanceRate: 500, // Default maintenance rate
+    maintenanceRate: 500, 
     maintenanceCharge: 0,
+    legalFees: 20000,
+    oneTimeMaintenance: 50000, 
     totalCharges: 0,
     plotTotalPayment: 0,
   });
 
-  // Calculate the final plot price including PLC
   const plotPriceWithPLC = parseFloat(formData.basePlotPriceYards) + (parseFloat(formData.plc) || 0);
 
-  // Handle field changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -44,8 +44,10 @@ export default function CostSheet() {
     if (formData.plotAreaYards && formData.basePlotPriceYards) {
       const plotPrice = plotPriceWithPLC;
       const totalPayment = formData.plotAreaYards * plotPrice;
-      const maintenance = formData.plotAreaYards * formData.maintenanceRate; // Use selected maintenance rate
-      const totalCharges = maintenance + 20000 + 50000; // Legal Fee is Rs20000 + Maintenance(for 3 years) 50,000
+      const legalFees = parseFloat(formData.legalFees) || 0;
+      const oneTimeMaintenance = parseFloat(formData.oneTimeMaintenance) || 0;
+      const maintenance = formData.plotAreaYards * formData.maintenanceRate; 
+      const totalCharges = maintenance + legalFees + oneTimeMaintenance;
       const plotTotalPayment = totalPayment + totalCharges;
       const plotAreaFeet = formData.plotAreaYards * 9;
   
@@ -58,26 +60,22 @@ export default function CostSheet() {
         plotTotalPayment: plotTotalPayment.toFixed(2),
       }));
     }
-  }, [formData.plotAreaYards, formData.basePlotPriceYards, formData.plc, formData.maintenanceRate]);
+  }, [formData.plotAreaYards, formData.basePlotPriceYards, formData.plc, formData.maintenanceRate, formData.legalFees, formData.oneTimeMaintenance]);
 
-  // Function to generate the PDF
   const generatePDF = () => {
     const doc = new jsPDF();
 
-    const { name, phone, email, plc, plotNo, plotAreaYards, plotAreaFeet, totalPaymentYards, maintenanceRate, maintenanceCharge, totalCharges, plotTotalPayment } = formData;
+    const { name, phone, email, plc, plotNo, plotAreaYards, plotAreaFeet, totalPaymentYards, maintenanceRate, maintenanceCharge, legalFees, oneTimeMaintenance, totalCharges, plotTotalPayment } = formData;
 
     let startY = 40;
 
-    // Load image and draw it before adding text
     const img = new Image();
     img.src = icon.src;
     img.crossOrigin = "anonymous";
 
     img.onload = () => {
-      // Add image to PDF (top left corner)
       doc.addImage(img, "WEBP",  5, 5, 185, 38);
 
-      // Project Heading
       doc.setFontSize(16);
       doc.setFont('helvetica', 'bold');
       let pageWidth = doc.internal.pageSize.getWidth();
@@ -93,6 +91,8 @@ export default function CostSheet() {
       const formattedPricePerYard = formatIndianNumber(plotPriceWithPLC);
       const formattedTotalPaymentYards = formatIndianNumber(totalPaymentYards);
       const formattedMaintenanceCharge = formatIndianNumber(maintenanceCharge);
+      const formattedLegalFees = formatIndianNumber(legalFees);
+      const formattedOneTimeMaintenance = formatIndianNumber(oneTimeMaintenance);
       const formattedTotalCharges = formatIndianNumber(totalCharges);
       const formattedPlotTotalPayment = formatIndianNumber(plotTotalPayment);
 
@@ -132,8 +132,8 @@ export default function CostSheet() {
         startY: finalY + 4,
         body: [
           [`Development Charge (${maintenanceRate} x Size)`, `Rs. ${formattedMaintenanceCharge}`],
-          ['Legal Fee (Per Sale Deed)', 'Rs. 20,000.00'],
-          ['Maintenance For 3 years', 'Rs. 50,000.00'],
+          ['Legal Fee (Per Sale Deed)', `Rs. ${formattedLegalFees}`],
+          ['Maintenance For 3 years', `Rs. ${formattedOneTimeMaintenance}`],
           ['Total Charges', `Rs. ${formattedTotalCharges}`],
           ['Plot Total Payment', `Rs. ${formattedPlotTotalPayment}`],
         ],
@@ -354,27 +354,30 @@ export default function CostSheet() {
               </td>
             </tr>
 
-            {/* Legal Fee */}
+            {/* Legal Fee - Now Editable */}
             <tr className="border-b">
               <td className="p-2 font-semibold">Legal Fee (Per Sale Deed)</td>
               <td className="p-2">
                 <input
-                  type="text"
-                  value="20000.00"
+                  type="number"
+                  name="legalFees"
+                  value={formData.legalFees}
+                  onChange={handleChange}
                   className="border p-2 w-full rounded"
-                  readOnly
                 />
               </td>
             </tr>
 
+            {/* One Time Maintenance - Now Editable */}
             <tr className="border-b">
               <td className="p-2 font-semibold">One Time Maintenance(for 3 years)</td>
               <td className="p-2">
                 <input
-                  type="text"
-                  value="50000.00"
+                  type="number"
+                  name="oneTimeMaintenance"
+                  value={formData.oneTimeMaintenance}
+                  onChange={handleChange}
                   className="border p-2 w-full rounded"
-                  readOnly
                 />
               </td>
             </tr>
@@ -400,7 +403,7 @@ export default function CostSheet() {
                   type="text"
                   value={formData.plotTotalPayment}
                   className="border p-2 w-full rounded"
-                  
+                  readOnly
                 />
               </td>
             </tr>

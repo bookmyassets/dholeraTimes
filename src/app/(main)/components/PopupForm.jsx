@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { X } from "lucide-react"; // Import the X icon from lucide-react
 
-export default function PopupForm({ title, headline, buttonName, onClose }) {
+export default function PopupForm({ title, headline, buttonName, onClose, trustBadge }) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
@@ -194,6 +194,7 @@ export default function PopupForm({ title, headline, buttonName, onClose }) {
             >
               {isLoading ? "Submitting..." : buttonName}
             </button>
+            <p className="font-normal text-lg text-center text-blue-500">{trustBadge}</p>
           </form>
         )}
       </div>

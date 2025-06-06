@@ -9,8 +9,8 @@ import freeListing from "@/assets/Free-Listing.webp";
 import resaleIcons from "@/assets/resale-icons.webp";
 import strong from "@/assets/strong.webp";
 import hassle from "@/assets/hassle.webp";
-import ct1 from "@/assets/customer-testimonial.webp"
-import ct2 from "@/assets/Customer-testimonial-2.webp"
+import ct1 from "@/assets/customer-testimonial.webp";
+import ct2 from "@/assets/Customer-testimonial-2.webp";
 
 export default function ContactDetails() {
   const schemaData = {
@@ -94,7 +94,7 @@ export default function ContactDetails() {
             Need Help with Resale? <br /> We're Here to Support You
           </h1>
           <p>
-            We offer buyback & smooth & full resale support for our residential
+            We offer buyback & smooth full resale support for our residential
             plots in Dholera smart city,we are committed to helping our
             investors get maximum value.
           </p>
@@ -116,11 +116,7 @@ export default function ContactDetails() {
                   <h2>How Our Resale Support Works</h2>
                 </div>
                 <div>
-                  <Image
-                    src={resaleD}
-                    alt="re-sale"
-                    className=" w-full"
-                  />
+                  <Image src={resaleD} alt="re-sale" className=" w-full" />
                 </div>
               </div>
             </div>
@@ -130,9 +126,9 @@ export default function ContactDetails() {
         <div className="py-8 px-6 w-full bg-[#151f28]">
           <div className="flex justify-center items-center">
             <ul className="space-y-4">
-              <p className="text-xl md:text-4xl font-semibold text-center text-white pb-4">
+              <h2 className="text-xl md:text-4xl font-semibold text-center text-white pb-4">
                 Why Choose Our Resale Support ?
-              </p>
+              </h2>
               <li
                 className="flex items-center text-lg md:text-2xl md:font-semibold"
                 style={{ color: "#d8b66d" }}
@@ -202,19 +198,14 @@ export default function ContactDetails() {
           </div>
         </div>
 
-       
-<div>
-<p className="text-center text-xl md:text-4xl font-semibold">Customer Testimonials</p>
-        <div className="md:grid md:grid-cols-2 ">
-          <Image
-            src={ct1}
-            alt="Customer-testimonial"
-            />
-          <Image
-            src={ct2}
-            alt="Customer-testimonial"
-            />
-            </div>
+        <div>
+          <h2 className="text-center text-xl md:text-4xl font-semibold">
+            Customer Testimonials
+          </h2>
+          <div className="md:grid md:grid-cols-2 ">
+            <Image src={ct1} alt="Customer-testimonial" />
+            <Image src={ct2} alt="Customer-testimonial" />
+          </div>
         </div>
       </div>
     </>
