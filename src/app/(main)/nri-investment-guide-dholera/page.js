@@ -713,10 +713,10 @@ export default function NRIInvestmentGuide() {
       {/* Introduction Section */}
       <section className="py-12 bg-white">
         <div className="container max-w-5xl mx-auto px-4">
-          <h1 className="text-black text-center text-4xl max-sm:text-xl font-semibold mb-4">
+          <h1 className="text-black text-center text-3xl max-sm:text-xl font-semibold mb-4">
             Complete Guide to NRI Investment in Dholera Smart City
           </h1>
-          <p className="text-center text-lg md:text-xl font-medium text-gray-700">
+          <p className="text-left text-lg md:text-xl font-medium text-gray-700">
             <strong>NRI investment in Dholera</strong> has emerged as one of the
             most promising
             <strong>real estate opportunities</strong> in India. With
@@ -734,7 +734,7 @@ export default function NRIInvestmentGuide() {
             looking to invest in a futuristic smart city.
           </p>
           <br />
-          <p className="text-center text-lg md:text-xl font-medium text-gray-700">
+          <p className="text-left text-lg md:text-xl font-medium text-gray-700">
             Looking to invest in India from abroad? Our{" "}
             <strong>NRI Investment Guide for Dholera Smart City</strong> gives
             you a complete step-by-step path to{" "}
