@@ -44,6 +44,7 @@ export default function NewHome() {
   return (
     <>
       {/* Carosuel */}
+       <link rel="canonical" href="https://www.dholeratimes.com/" />
       <div>
         <HOME2 />
       </div>

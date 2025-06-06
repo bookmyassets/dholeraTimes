@@ -84,6 +84,8 @@ export default async function VideosPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-100 ">
+             <link rel="canonical" href="https://www.dholeratimes.com/gallery/dholera-smart-city-videos" />
+
       <div className="relative h-[60vh] overflow-hidden">
         <Image
           src={hero}

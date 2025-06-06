@@ -629,6 +629,8 @@ export default function NRIInvestmentGuide() {
         name="keywords"
         content="NRI property investment in Dholera, Buy plots in Dholera for NRIs, Dholera Smart City NRI guide, NRI investment in Dholera, NRI investment Guide, Buy Plots in Dholera Smart city, Real Estate Investment for NRI, Real estate investment in India "
       />
+                   <link rel="canonical" href="https://www.dholeratimes.com/nri-investment-guide-dholera" />
+
       <div className="relative bg-[#151f28] text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">

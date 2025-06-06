@@ -32,6 +32,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+       <link rel="canonical" href="https://www.dholeratimes.com/projects" />
       {/* Hero Section */}
       <div className="relative bg-[#151f28] text-white">
         <div className="absolute inset-0 opacity-20 bg-cover bg-center"></div>

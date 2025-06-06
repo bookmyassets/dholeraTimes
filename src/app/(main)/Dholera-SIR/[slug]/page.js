@@ -386,6 +386,8 @@ export default async function BlogDetail({ params }) {
 
     return (
       <div className="bg-white min-h-screen">
+                     <link rel="canonical" href={`https://www.dholeratimes.com/Dholera-SIR/${post.slug.current}`} />
+
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
 

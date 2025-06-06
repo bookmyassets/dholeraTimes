@@ -76,6 +76,8 @@ export default function ContactDetails() {
           name="keywords"
           content="Expert guidance on dholera Smart City, Contact dholera times , Dholera investment consultation, Book plot in dholera , Dholera inquiry, Dholera Investment "
         />
+                     <link rel="canonical" href="https://www.dholeratimes.com/contact/inquiry" />
+
         <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
           <div className="md:w-1/2 text-center">

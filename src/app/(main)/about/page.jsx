@@ -25,6 +25,8 @@ export default function AboutUs() {
 
   return (
     <>
+             <link rel="canonical" href="https://www.dholeratimes.com/about" />
+
       {/* Hero Section */}
       <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
         <Image

@@ -44,11 +44,11 @@ export default async function BlogsPage() {
     }
   }
 
-  const canonicalUrl = `https://www.dholeratimes.com/dholera-sir`;
-
   return (
     <>
       {/* Hero Section with Black Background */}
+                     <link rel="canonical" href="https://www.dholeratimes.com/dholera-sir" />
+
       <div className="bg-black text-white">
         <section className="relative h-[50vh] flex items-center justify-center text-center">
         <div className="absolute inset-0">

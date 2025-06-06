@@ -75,6 +75,8 @@ insights, and investment opportunities on the ground. Limited slots!"
         name="keywords"
         content="Book site visit dholera,Free site visit dholera,Dholera SIR visit,Dholera smart city site visit,Dholera Smart city Visit,Dholera Project visit "
       />
+                     <link rel="canonical" href="https://www.dholeratimes.com/contact/site-visit" />
+
       <section className="relative h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image

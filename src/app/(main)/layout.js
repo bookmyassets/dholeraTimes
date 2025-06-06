@@ -451,7 +451,7 @@ export default function RootLayout({ children }) {
                         {dholera.map((dhol) => (
                           <Link
                             key={dhol._id}
-                            href={`/DholeraSIR/${dhol.slug.current}`}
+                            href={`/Dholera-SIR/${dhol.slug.current}`}
                             className="block px-4 py-2 text-black hover:bg-gray-200"
                             onClick={() => setIsDholeraDropdownOpen(false)}
                           >

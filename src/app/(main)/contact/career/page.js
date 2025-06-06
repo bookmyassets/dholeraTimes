@@ -140,6 +140,7 @@ export default function CareerPage() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
+                     <link rel="canonical" href="https://www.dholeratimes.com/contact/career" />
   
       <div className="relative h-48 md:h-72 bg-cover bg-center" 
         style={{ backgroundImage: "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')" }}>
