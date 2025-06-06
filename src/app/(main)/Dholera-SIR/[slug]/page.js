@@ -586,7 +586,7 @@ export default async function BlogDetail({ params }) {
                 {/* Trending posts */}
                 <div className="bg-[#151f28] rounded-xl shadow-2xl shadow-gray-500 p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-blue-300">
-                    Latest Blogs
+                    Explore Dholera SIR
                   </h3>
                   <div className="">
                     {trendingBlogs && trendingBlogs.length > 0 ? (

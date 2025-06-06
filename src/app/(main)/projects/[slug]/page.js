@@ -59,7 +59,7 @@ const Projects = ({ post }) => {
   }
 
   return (
-    <Link href={`/Dhoelra-SIR/${post.slug.current}`}>
+    <Link href={`/Dholera-SIR/${post.slug.current}`}>
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
@@ -538,7 +538,7 @@ export default async function Post({ params }) {
 
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-blue-300">
-                    Dholera SIR
+                    Explore Dholera SIR
                   </h3>
                   <div className="">
                     {projects && projects.length > 0 ? (
