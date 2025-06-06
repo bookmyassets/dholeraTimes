@@ -1,6 +1,6 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
-import { getblogs, getNews, getPostBySlug, getProjects } from "@/sanity/lib/api";
+import { getblogs, getNews, getPostBySlug, getProjectInfo, getProjects, getUpdates } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -81,8 +81,6 @@ const Projects = ({ post }) => {
   );
 };
 
-
-// Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
     <Link href={`/Dholera-Updates/blogs/${blog.slug.current}`}>
@@ -148,10 +146,9 @@ export default async function BlogDetail({ params }) {
   }
 
   try {
-    const [post, trendingBlogs, relatedBlogs, getPro] = await Promise.all([
+    const [post, trendingBlogs, getPro] = await Promise.all([
       getPostBySlug(slug),
-      getblogs(4), // Get top 4 trending news
-      getNews(slug, 3), // Get 3 related blogs based on categories or tags
+      getProjectInfo(), 
       getProjects(slug)
     ]);
 

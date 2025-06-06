@@ -121,7 +121,6 @@ export default function HOME2() {
           ))}
         </div>
 
-        {/* Tablet Slides container - visible only on medium screens */}
         <div
           className="hidden md:flex lg:hidden w-full transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -133,7 +132,7 @@ export default function HOME2() {
             >
               <div className="relative w-full h-[60vh]">
                 <Image
-                  src={slide.desktop} // Using desktop image for tablets
+                  src={slide.desktop} 
                   alt={`hero slide ${index + 1}`}
                   fill
                   priority={index === 0}
@@ -141,7 +140,6 @@ export default function HOME2() {
                   sizes="100vw"
                 />
 
-                {/* Text overlay for tablet */}
                 {currentSlide === index && (
                   <motion.div
                     className="absolute bottom-20 left-10 right-0 flex"
@@ -163,7 +161,6 @@ export default function HOME2() {
           ))}
         </div>
 
-        {/* Mobile Slides container - visible only on small screens */}
         <div
           className="flex md:hidden w-full transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -183,7 +180,6 @@ export default function HOME2() {
                   sizes="100vw"
                 />
 
-                {/* Text overlay with animation - only visible for the current slide */}
                 {currentSlide === index && (
                   <motion.div
                     className="absolute bottom-4 left-0 right-0 flex justify-center items-center"

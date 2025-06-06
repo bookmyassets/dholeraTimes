@@ -1,4 +1,4 @@
-import { getblogs, getProjectInfo, getUpdates } from "@/sanity/lib/api";
+import { getblogs, getProjectInfo, getUpdates, getNews } from "@/sanity/lib/api";
 import hero from "@/assets/dholeraSIR.webp";
 import herom from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
@@ -26,13 +26,22 @@ export default async function BlogsPage() {
     slug: post.slug?.current ? { current: post.slug.current } : { current: "#" },
   }));
 
-  // Fetch trending blogs
+  // Fetch news for sidebar (changed from getUpdates to getnews)
   let trendingBlogs = [];
   try {
-    const updatesData = await getUpdates();
-    trendingBlogs = Array.isArray(updatesData) ? updatesData.slice(0, 3) : [];
+    const newsData = await getNews();
+    trendingBlogs = Array.isArray(newsData) ? newsData.slice(0, 5) : [];
+    console.log("News data fetched:", trendingBlogs.length);
   } catch (error) {
-    console.error("Error fetching updates:", error);
+    console.error("Error fetching news:", error);
+    // Fallback to getUpdates if getnews fails
+    try {
+      const updatesData = await getUpdates();
+      trendingBlogs = Array.isArray(updatesData) ? updatesData.slice(0, 5) : [];
+      console.log("Fallback to updates data:", trendingBlogs.length);
+    } catch (fallbackError) {
+      console.error("Error fetching updates as fallback:", fallbackError);
+    }
   }
 
   const canonicalUrl = `https://www.dholeratimes.com/dholera-sir`;
@@ -71,8 +80,8 @@ export default async function BlogsPage() {
           <div className="lg:w-1/4">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] sticky top-4">
               <h2 className="text-2xl font-bold mb-6 text-gray-800">
-                Latest Updates on Dholera
-              </h2>
+                Latest News on Dholera
+              </h2> 
               {trendingBlogs.length > 0 ? (
                 <div className="space-y-6">
                   {trendingBlogs.map((post) => (
@@ -80,7 +89,7 @@ export default async function BlogsPage() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500">No updates available at the moment.</p>
+                <p className="text-gray-500">No news available at the moment.</p>
               )}
             </div>
           </div>

@@ -718,7 +718,7 @@ export default function NRIInvestmentGuide() {
           </h1>
           <p className="text-left text-lg md:text-xl font-medium text-gray-700">
             <strong>NRI investment in Dholera</strong> has emerged as one of the
-            most promising
+            most promising{" "}
             <strong>real estate opportunities</strong> in India. With
             AUDA-approved{" "}
             <strong>residential plots, simplified buying processes</strong>, and{" "}
