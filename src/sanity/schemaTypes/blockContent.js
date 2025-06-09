@@ -18,7 +18,6 @@ export default {
     {
       title: "Block",
       type: "block",
-      // Styles including text alignment and font sizes
       styles: [
         { title: "Normal", value: "normal" },
         { title: "H1", value: "h1" },
@@ -48,7 +47,6 @@ export default {
           { title: "Underline", value: "underline" },
           { title: "Code", value: "code" },
           { title: "Strike-through", value: "strike-through" },
-          // Text color and background
           {
             title: "Text Color",
             value: "textColor",
@@ -70,10 +68,18 @@ export default {
                 name: "href",
                 title: "URL",
                 type: "url",
+                validation: Rule => Rule.uri({
+                  scheme: ['http', 'https', 'mailto', 'tel']
+                })
               },
-            ],
+              {
+                name: "anchor",
+                title: "Anchor link (e.g., #section-id)",
+                type: "string",
+                description: "Link to a section on the same page"
+              }
+            ]
           },
-          // Button annotation
           {
             name: "button",
             title: "Button",
@@ -105,7 +111,6 @@ export default {
           },
         ],
       },
-      // Enable spell checker
       options: {
         spellCheck: true,
       },
@@ -124,13 +129,12 @@ export default {
           title: 'Caption'
         },
         {
-          name: 'url',  // Add this new field
+          name: 'url',
           type: 'url',
           title: 'Link URL'
         }
       ]
     },
-    // Code block
     {
       type: "code",
       title: "Code Block",
@@ -144,13 +148,93 @@ export default {
         withFilename: true,
       },
     },
-    // Table block
     {
       type: "table",
       title: "Table",
       options: {
         spellCheck: true,
       },
+      fields: [
+        {
+          name: 'rows',
+          type: 'array',
+          of: [
+            {
+              type: 'array',
+              of: [
+                {
+                  type: 'block',
+                  marks: {
+                    annotations: [
+                      {
+                        name: "link",
+                        type: "object",
+                        title: "Link",
+                        fields: [
+                          {
+                            name: "href",
+                            type: "url",
+                            title: "URL"
+                          },
+                          {
+                            name: "anchor",
+                            title: "Anchor link (e.g., #section-id)",
+                            type: "string"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
+    // Table of Contents block
+    {
+      type: "object",
+      name: "toc",
+      title: "Table of Contents",
+      fields: [
+        {
+          name: "title",
+          type: "string",
+          title: "Title",
+          initialValue: "Table of Contents"
+        },
+        {
+          name: "depth",
+          type: "number",
+          title: "Heading Depth",
+          description: "Maximum heading level to include (e.g., 2 for h1 and h2)",
+          initialValue: 2,
+          options: {
+            list: [1, 2, 3, 4, 5, 6]
+          }
+        }
+      ],
+      preview: {
+        select: {
+          title: "title",
+          depth: "depth"
+        },
+        prepare({ title, depth }) {
+          return {
+            title: title || "Table of Contents",
+            subtitle: `Includes headings up to h${depth}`
+          }
+        }
+      }
+    },
+    // Mux video integration
+    {
+      type: "mux.video",
+      title: "Mux Video",
+      options: {
+        hotspot: true
+      }
+    }
   ],
 };

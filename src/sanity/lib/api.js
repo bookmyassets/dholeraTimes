@@ -121,7 +121,7 @@ export async function getPostBySlug(slug) {
             lqip
           }
         },
-        "url": url  // This makes body images clickable
+        "url": url  
       },
       markDefs[]{
         ...,
