@@ -1,6 +1,7 @@
 'use client'
 import { table } from '@sanity/table'
 import { codeInput } from '@sanity/code-input'
+import { muxInput } from '@sanity/mux-input'
 /**
  * This configuration is used to for the Sanity Studio that’s mounted on the `\src\app\studio\[[...tool]]\page.jsx` route
  */
@@ -26,6 +27,7 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
      table(),
-    codeInput()
+    codeInput(),
+    muxInput()
   ],
 })
