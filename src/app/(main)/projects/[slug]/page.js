@@ -12,7 +12,7 @@ import { urlFor } from "@/sanity/lib/image";
 import CommonForm from "../../components/FormSection";
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   return {
@@ -518,6 +518,10 @@ export default async function Post({ params }) {
               </div>
             </article>
 
+            <div className="md:hidden pt-4">
+          <CommonForm title="Still Have Questions? Contact Us Now" />
+        </div>
+
             {/* Sidebar */}
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
@@ -564,7 +568,7 @@ export default async function Post({ params }) {
 
         {/* Cost Sheet */}
         {isProject && <CostSheet />}
-        <div className="pt-4">
+        <div className="max-sm:hidden pt-4">
           <CommonForm title="Still Have Questions? Contact Us Now" />
         </div>
 

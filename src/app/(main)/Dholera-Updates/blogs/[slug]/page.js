@@ -558,6 +558,9 @@ export default async function BlogDetail({ params }) {
                 )}
               </div>
             </article>
+            <div className="md:hidden pt-4">
+              <CommonForm title="Still Have Questions? Contact Us Now" />
+            </div>
 
             {/* Sidebar */}
             <aside className="lg:w-1/3">
