@@ -9,6 +9,7 @@ import CostSheet from "@/app/(main)/components/costSheet";
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
+import CommonForm from "../../components/FormSection";
 
 export async function generateMetadata({ params }) {
   const { slug } = params;
@@ -563,6 +564,10 @@ export default async function Post({ params }) {
 
         {/* Cost Sheet */}
         {isProject && <CostSheet />}
+        <div className="pt-4">
+          <CommonForm title="Still Have Questions? Contact Us Now" />
+        </div>
+
       </div>
     );
   } catch (error) {

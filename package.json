@@ -34,6 +34,7 @@
     "react-is": "^19.0.0",
     "react-pdf": "^9.2.1",
     "sanity": "^3.71.2",
+    "sanity-plugin-mux-input": "^2.8.0",
     "styled-components": "^6.1.14",
     "swiper": "^11.2.5",
     "tailwind-merge": "^2.6.0",

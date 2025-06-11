@@ -159,15 +159,16 @@ export default function CareerPage() {
     <div className="bg-gray-100 min-h-screen">
       <link
         rel="canonical"
-        href="https://www.dholeratimes.com/contact/career"
+        href="https://www.dholeratimes.com/contact/channel-partner"
       />
 
       <title>
-        Career at Dholera Times | Join a Trusted Real Estate Brand
+        Become a Channel Partner in Dholera – Dholera Times
       </title>
 
-      <meta name="description" content="Explore exciting career opportunities with Dholera Times. Join a trusted real estate group creating value in Dholera Smart City. Apply now." />
-
+      <meta name="description" content="Partner with Dholera Times. Get high-margin commissions, exclusive access to premium plots & full sales support. Limited city-wise seats open." />
+        <meta name="keywords" content="Dholera smart city, channel partner, Broker opportunities, High commissions, estate partnership, strategic investments, Gujarat smart city, collaboration, real estate network, Channel Partner dholera ahmedadad, Channel partner Contact number" />
+        
       <div
         className="relative h-48 md:h-72 bg-cover bg-center"
         style={{

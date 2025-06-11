@@ -107,7 +107,7 @@ export default function Footer() {
     <>
     
     <footer className="bg-gray-900 text-gray-400 space-y-8">
-      <div>
+      <div className="pt-4 md:pt-4">
         <ButtonsSection/>
       </div>
 
@@ -160,7 +160,7 @@ export default function Footer() {
 
                   <button
                     type="submit"
-                    className="w-full max-w-md py-2 px-4 bg-[#be9233] hover:bg-[#dbaf51] text-white font-medium rounded-md click transition duration-200"
+                    className="w-full max-w-md py-2 px-4 bg-[#d8b66d] hover:bg-[#cba64f] text-gray-700 font-medium rounded-md click transition duration-200"
                     disabled={isLoading}
                   >
                     {isLoading ? "Submitting..." : "Get A Call Back"}
