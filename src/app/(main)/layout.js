@@ -706,12 +706,16 @@ export default function RootLayout({ children }) {
                             path: "/contact/site-visit",
                           },
                           {
-                            title: "Career",
-                            path: "/contact/career",
-                          },
-                          {
                             title: "Resale Support",
                             path: "/contact/resale-support",
+                          },
+                          {
+                            title: "Channel Partner",
+                            path: "/contact/channel-partner",
+                          },
+                          {
+                            title: "Career",
+                            path: "/contact/career",
                           },
                         ].map((item) => (
                           <Link
@@ -1062,9 +1066,19 @@ export default function RootLayout({ children }) {
                         >
                           {[
                             { title: "Inquiry", path: "/contact/inquiry" },
-                            { title: "Site Visit", path: "/contact/site-visit" },
+                            {
+                              title: "Site Visit",
+                              path: "/contact/site-visit",
+                            },
+                            {
+                              title: "Resale Support",
+                              path: "/contact/resale-support",
+                            },
+                            {
+                              title: "Channel Partner",
+                              path: "/contact/channel-partner",
+                            },
                             { title: "Career", path: "/contact/career" },
-                            { title: "Resale Support", path: "/contact/resale-support"},
                           ].map((item) => (
                             <Link
                               key={item.path}

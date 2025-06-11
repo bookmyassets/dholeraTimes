@@ -76,7 +76,10 @@ export default function ContactDetails() {
           name="keywords"
           content="Expert guidance on dholera Smart City, Contact dholera times , Dholera investment consultation, Book plot in dholera , Dholera inquiry, Dholera Investment "
         />
-                     <link rel="canonical" href="https://www.dholeratimes.com/contact/inquiry" />
+        <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/contact/inquiry"
+        />
 
         <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
@@ -149,12 +152,15 @@ export default function ContactDetails() {
 
           {/* Social Media Links */}
           <div className="mt-10 ">
-            {/* Why Choose Us & Contact Form */}
+            {/* Contact Info & Contact Form */}
             <div className="flex flex-col max-sm:flex-col-reverse md:flex-row justify-center items-center  gap-16 p-6">
               {/* Contact Info Section */}
               <div className="max-w-2xl text-left">
                 <div className="space-y-8">
                   <div>
+                    <h2 className="font-bold text-4xl text-[#2863e5]">
+                    Head Office{" "}
+                  </h2>
                     <h2 className="font-bold text-2xl md:text-3xl">
                       Our Contact Info
                     </h2>
@@ -177,48 +183,29 @@ export default function ContactDetails() {
                       </div>
                     </div>
                   </div>
-                  <div className="space-y-4">
-                    <h2 className="font-bold text-2xl md:text-3xl mt-4">
-                      Why Choose Us
-                    </h2>
-                    <div className="mt-4 text-lg space-y-2">
-                      <div>
-                        <strong>
-                          {" "}
-                          <h3>Transparent Process: </h3>{" "}
-                        </strong>{" "}
-                        <p>
-                          No hidden fees, no surprises — just honest real estate
-                          services.
-                        </p>
-                      </div>
-                      <div>
-                        <h3>
-                          <strong>End-to-End Support:</strong>{" "}
-                        </h3>{" "}
-                        <p>
-                          Our dedicated team provides complete assistance, from
-                          selecting plots to registration.
-                        </p>
-                      </div>
-                      <div>
-                        <h3>
-                          <strong>Trusted by Investors:</strong>{" "}
-                        </h3>{" "}
-                        <p>
-                          {" "}
-                          Join a growing community of satisfied investors
-                          benefiting from Dholera’s growth.
-                        </p>
-                      </div>
-                    </div>
+                  
+                  {/* Map for mobile devices */}
+                  <div className=" w-full h-48 rounded overflow-hidden">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4203.4823453415875!2d77.03488882442701!3d28.41943917746384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ed979cce195a67%3A0xa6ea8ada5da2aaf5!2sDholera%20Times!5e1!3m2!1sen!2sin!4v1744797963851!5m2!1sen!2sin"
+                      className="w-full h-full"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Location map"
+                    ></iframe>
                   </div>
                 </div>
               </div>
 
               {/* Contact Form Section */}
               <div className=" ">
-                <ContactForm title="Enquire Now" headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory." buttonName="Get A Call Back" />
+                <ContactForm
+                  title="Enquire Now"
+                  headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory."
+                  buttonName="Get A Call Back"
+                />
               </div>
             </div>
             <div className="space-y-5 text-center">
