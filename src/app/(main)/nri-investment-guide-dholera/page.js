@@ -22,6 +22,7 @@ import projectedNRI from "@/assets/Projected-NRI.webp";
 
 export default function NRIInvestmentGuide() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
+  const [isFormOpen, setIsFormOpen] = useState(false);
   const [activeTab, setActiveTab] = useState("WhyInvest");
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [visibleFAQs, setVisibleFAQs] = useState(6);
@@ -45,6 +46,14 @@ export default function NRIInvestmentGuide() {
 
   const closeContactForm = () => {
     setIsContactFormOpen(false);
+  };
+
+  const openForm = () => {
+    setIsFormOpen(true);
+  };
+
+  const closeForm = () => {
+    setIsFormOpen(false);
   };
 
   const handleScroll = (id) => {
@@ -249,361 +258,360 @@ export default function NRIInvestmentGuide() {
     },
   ];
 
-    // BlogPosting Schema
-    const blogSchema = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
-      },
-      headline:
-        "Our NRI Investment guide for Dholera Smart City give you a complete step by step path to buy plots in india",
-      description:
-        "Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you're in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
-      image: "",
-      author: {
-        "@type": "Organization",
-        name: "Dholera Times",
-        url: "https://www.dholeratimes.com/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Dholera",
-        logo: {
-          "@type": "ImageObject",
-          url: "",
-        },
-      },
-      datePublished: "2025-05-12",
-      dateModified: "2025-05-12",
-    };
-
-    // FAQPage Schema with all questions
-    const faqSchema = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Who can purchase immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Under general permission available to them, these categories of people can buy real property in India: (i) Non-Resident Indian (NRI). (ii) Person of Indian Origin (PIO). The general permission covers only residential and commercial property purchases in India; agricultural land/plantation property/farmhouses cannot be included under its purview.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can NRI/PIO acquire agricultural land/plantation property/farm house in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Are any documents required to be filed with the Reserve Bank after the purchase?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No, an NRI/PIO who purchased property through general permission does not need to submit any reports or files with the Reserve Bank.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How many residential/commercial properties may NRI/PIO purchase under general permission?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Under general permission there are no limitations or restrictions placed upon how many properties an NRI or PIO may purchase under its general permit.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can an Indian national who does not belong to India become the second owner in immovable property purchased by an NRI/PIO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a foreign national of non-Indian origin resident outside India purchase immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "No, a non-Indian national resident outside India who wishes to acquire immovable property cannot do so unless such acquisition comes as part of an inheritance from someone residing within India; however they can acquire or transfer immovable properties on lease agreements that last not exceeding five years; in these instances there is no requirement for getting permission or reporting back to the Reserve Bank.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a foreign national who is a person resident in India purchase immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, foreign nationals residing in India under Section 2(v) of FEMA 1999 may purchase immovable property, however approval and compliance with requirements prescribed by other authorities such as State Governments would also need to be met - the burden to demonstrate residential status will ultimately lie with each individual if necessary; whereas any citizen from Pakistan, Bangladesh, Sri Lanka Afghanistan China Iran Nepal Bhutan would require prior approval of Reserve Bank prior to purchasing property in India.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can the branch/liaison office of a foreign company purchase immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Foreign companies which have established a Branch Office or other place of business in India in accordance with the Foreign Exchange Management (Establishment in India of Branch or Office or Other Place of Business) Regulations 2000 may acquire any immovable property necessary or incidental to the conduct of such activity in India. Payment should be made using foreign inward remittance through appropriate banking channels and within 90 days from the date of acquisition a Form IPI should be filed with the Reserve Bank. Such property can be mortgaged to an Authorised Dealer as security for borrowings and only repatriated upon closing down of business with prior approval from the Reserve Bank. Acquisition of immovable property by entities from Pakistan, Bangladesh, Sri Lanka, Afghanistan, China Iran Nepal or Bhutan who have established Branch Offices within India would also need prior approval of the Reserve Bank.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a NRI/PIO acquire immovable property in India by way of gift? Can a foreign national acquire immovable property in India by way of gift?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "(a) Yes, NRIs and PIOs can freely acquire immovable property by way of gift from either (i) a resident in India; or (ii) an NRI/PIO living abroad. However, these properties must only be commercial or residential properties and cannot include agricultural lands/plantation property/farm house in India that cannot be acquired via gift. (b) A foreign national of non-Indian origin resident outside India cannot acquire any immovable property in India by way of gift.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a non-resident inherit immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, anyone living outside India such as an NRI; PIO; and foreign national of non-Indian origin can inherit and hold immovable property located within India from someone who was resident there at one point in time.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "From whom can a non-resident person inherit immovable property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "An individual residing outside India (NRI, PIO or foreign national of non-Indian origin) can inherit immovable property from occupant (a) resident in India. However, any property inherited must have been acquired according to applicable foreign exchange regulations or FEMA regulations when acquired by its heir.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can an NRI/PIO/foreign national sell his residential/commercial property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "(a) NRI can sell property in India to i) a person resident in India; or ii) an NRI; or iii) a PIO. (b) PIO can sell property in India to i) a person resident in India; or ii) an NRI; or iii) a PIO – with the prior approval of the Reserve Bank. (c) Foreign national of non-Indian origin including a citizen of Pakistan or Bangladesh or Sri Lanka or Afghanistan or China or Iran or Nepal or Bhutan can sell property in India with prior approval of the Reserve Bank to i) a person resident in India ii) an NRI iii) a PIO",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a non-resident gift his residential/commercial property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. (a) NRI / PIO may gift residential / commercial property to (i) person resident in India or (ii) an NRI or (iii) PIO. (b) A foreign national of non-Indian origin requires the prior approval of the Reserve Bank for gifting the residential / commercial property.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can an NRI/PIO/foreign national holding an agricultural land/a plantation property/a farm house in India, gift the same?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "(a) NRI / PIO can gift an agricultural land / a plantation property / a farm house in India only to a person resident in India who is a citizen of India. (b) A foreign national of non-Indian origin would require the prior approval of the Reserve Bank to gift an agricultural land / a plantation property / a farm house in India.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can residential/commercial property be mortgaged by NRI/PIO?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "(i) NRI / PIO can mortgage a residential / commercial property to: (a) an Authorised Dealer / the housing finance institution in India without the approval of Reserve Bank (b) a bank abroad, with the prior approval of the Reserve Bank. (ii) A foreign national of non-Indian origin can mortgage a residential / commercial property only with prior approval of the Reserve Bank. (iii) A foreign company which has established a Branch Office or other place of business in accordance with FERA/FEMA regulations has general permission to mortgage the property with an Authorised Dealer in India.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How can an NRI/PIO make payment for purchase of residential/commercial property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Payment can be made by NRI / PIO out of: (a) funds remitted to India through normal banking channels or (b) funds held in NRE / FCNR (B) / NRO account maintained in India. No payment can be made either by traveller's cheque or by foreign currency notes or by other mode except those specifically mentioned above.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is repatriation of application money for booking of flat/payment made to the builder by NRI/PIO allowed when the flat or plot is not allotted or the booking/contract is cancelled?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The Authorised Dealers can allow NRIs / PIOs to credit refund of application/ earnest money/ purchase consideration made by the house building agencies/ seller on account of non-allotment of flat/ plot/ cancellation of bookings/ deals for purchase of residential, commercial property, together with interest, if any, net of income tax payable thereon, to NRE/FCNR account, provided, the original payment was made out of NRE/FCNR account of the account holder or remittance from outside India through normal banking channels and the Authorised Dealer is satisfied about the genuineness of the transaction.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can NRI/PIO avail of loan from an authorised dealer for acquiring flat/house in India for his own residential use against the security of funds held in his NRE Fixed Deposit account/FCNR (B) account? How the loan can be repaid?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, such loans are permitted subject to the terms and conditions laid down in Schedules 1 and 2 to the Notification No. FEMA 5/2000-RB dated May 3, 2000 viz. Foreign Exchange Management (Deposit) Regulations, 2000, as amended from time to time. Banks cannot grant fresh loans or renew existing loans in excess of Rs. 100 lakhs against NRE and FCNR (B) deposits, either to the depositors or to third parties. The banks should also not undertake artificial slicing of the loan amount to circumvent the ceiling of Rs. 100 lakh. Such loans can be repaid in the following manner: (a) by way of inward remittance through normal banking channel or (b) by debit to the NRE / FCNR (B) / NRO account of the NRI/ PIO or (c) out of rental income from such property (d) by the borrower's close relatives, as defined in section 6 of the Companies Act, 1956, through their account in India by crediting the borrower's loan account.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can NRI/PIO, avail of housing loan in Rupees from an Authorised Dealer or a Housing Finance Institution in India approved by the National Housing Bank for purchase of residential accommodation or for the purpose of repairs/renovation/improvement of residential accommodation? How can such loan be repaid?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, NRI/PIO can avail of housing loan in Rupees from an Authorised Dealer or a Housing Finance Institution subject to certain terms and conditions laid down in Regulation 8 of Notification No. FEMA 4/2000-RB dated May 3, 2000 viz. Foreign Exchange Management (Borrowing and lending in rupees) Regulations, 2000, as amended from time to time. Authorised Dealers/ Housing Finance Institutions can also lend to the NRIs/ PIOs for the purpose of repairs/renovation/ improvement of residential accommodation owned by them in India. Such a loan can be repaid (a) by way of inward remittance through normal banking channel or (b) by debit to the NRE / FCNR (B) / NRO account of the NRI / PIO or (c) out of rental income from such property; or (d) by the borrower's close relatives, as defined in section 6 of the Companies Act, 1956, through their account in India by crediting the borrower's loan account.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can NRI/PIO avail of housing loan in Rupees from his employer in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, subject to certain terms and conditions given in Regulation 8A of Notification No. FEMA 4/2000-RB dated May 3, 2000 and A.P. (DIR Series) Circular No.27 dated October 10, 2003, i.e., (i) The loan shall be granted only for personal purposes including purchase of housing property in India; (ii) The loan shall be granted in accordance with the lender's Staff Welfare Scheme/Staff Housing Loan Scheme and subject to other terms and conditions applicable to its staff resident in India; (iii) The lender shall ensure that the loan amount is not used for the purposes specified in sub-clauses (i) to (iv) of clause (1) and in clause (2) of Regulation 6 of Notification No.FEMA.4/2000-RB dated May 3, 2000. (iv) The lender shall credit the loan amount to the borrower's NRO account in India or shall ensure credit to such account by specific indication on the payment instrument; (v) The loan agreement shall specify that the repayment of loan shall be by way of remittance from outside India or by debit to NRE/NRO/FCNR Account of the borrower and the lender shall not accept repayment by any other means.",
-          },
-        },
-
-        {
-          "@type": "Question",
-          name: "Can an NRI/PIO repatriate the proceeds in case the sale proceeds were deposited in the NRO account?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "NRI/PIO may repatriate up to USD one million per financial year (April-March) from their NRO account which would also include the sale proceeds of immovable property. There is no lock in period for sale of immovable property and repatriation of sale proceeds outside India.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "If a Rupee loan was taken by the NRI/PIO from an Authorised Dealer or a Housing Finance Institution for purchase of residential property can the NRI/PIO repatriate the sale proceeds of such property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, Authorised Dealers have been authorised to allow repatriation of sale proceeds of residential accommodation purchased by NRIs/ PIOs out of funds raised by them by way of loans from the authorised dealers/ housing finance institutions to the extent such loan/s repaid by them are out of the foreign inward remittances received through normal banking channel or by debit to their NRE/FCNR accounts. The balance amount, if any, can be credited to their NRO account and the NRI/PIO may repatriate up to USD one million per financial year (April-March) subject to payment of applicable taxes from their NRO account balances which would also include the sale proceeds of the immovable property.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "If the immovable property was acquired by way of gift by the NRI/PIO, can he repatriate abroad the funds from sale of such property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "The sale proceeds of immovable property acquired by way of gift should be credited to NRO account only. From the balance in the NRO account, NRI/PIO may remit up to USD one million, per financial year, subject to the satisfaction of Authorised Dealer and payment of applicable taxes.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "If the immovable property was received as inheritance by the NRI/PIO can he repatriate the sale proceeds?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, general permission is available to the NRIs/PIO to repatriate the sale proceeds of the immovable property inherited from a person resident in India subject to the following conditions: (i) The amount should not exceed USD one million, per financial year (ii) This is subject to production of documentary evidence in support of acquisition / inheritance of assets and an undertaking by the remitter and certificate by a Chartered Accountant in the formats prescribed by the Central Board of Direct Taxes vide their Circular No.4/2009 dated June 29, 2009 (iii) In cases of deed of settlement made by either of his parents or a close relative (as defined in section 6 of the Companies Act, 1956) and the settlement taking effect on the death of the settler (iv) the original deed of settlement and a tax clearance / No Objection Certificate from the Income-Tax Authority should be produced for the remittance (v) Where the remittance as above is made in more than one installment, the remittance of all such installments shall be made through the same Authorised Dealer (vi) In case of a foreign national, sale proceeds can be repatriated if the property is inherited from a person resident outside India with the prior approval of the Reserve Bank. The foreign national has to approach the Reserve Bank with documentary evidence in support of inheritance of the immovable property and the undertaking and the C.A. Certificate mentioned above. The general permission for repatriation of sale proceeds of immovable property is not available to a citizen of Pakistan, Bangladesh, Sri Lanka, China, Afghanistan and Iran and he has to seek specific approval of the Reserve Bank. As FEMA, 1999 specifically permits transactions only in Indian Rupees with citizens of Nepal and Bhutan. Therefore, the question of repatriation of the sale proceeds in foreign exchange to Nepal and Bhutan would not arise.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can Foreign Embassies/Diplomats/Consulates General purchase/sell immovable property in India?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "In terms of Regulation 5A of the Foreign Exchange Management (Acquisition and Transfer of Immovable Property in India) Regulations 2000, Foreign Embassies/ Diplomats/ Consulates General, may purchase/ sell immovable property (other than agricultural land/ plantation property/ farm house) in India provided – (i) Clearance from the Government of India, Ministry of External Affairs has been obtained for such purchase/sale; and (ii) The consideration for acquisition of immovable property in India is paid out of funds remitted from abroad through the normal banking channels.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can NRI/PIO rent out the residential/commercial property purchased out of foreign exchange/rupee funds?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, NRI/PIO can rent out the property without the approval of the Reserve Bank. The rent received can be credited to NRO / NRE account or remitted abroad. Powers have been delegated to the Authorised Dealers to allow repatriation of current income like rent, dividend, pension, interest, etc. of NRIs/PIO who do not maintain an NRO account in India based on an appropriate certification by a Chartered Accountant, certifying that the amount proposed to be remitted is eligible for remittance and that applicable taxes have been paid/provided for.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can a person who had bought immovable property, when he was a resident, continue to hold such property even after becoming an NRI/PIO? In which account can the sale proceeds of such immovable property be credited?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, a person who had bought the residential / commercial property / agricultural land/ plantation property / farm house in India when he was a resident, continue to hold the immovable property without the approval of the Reserve Bank even after becoming an NRI/PIO. The sale proceeds may be credited to NRO account of the NRI /PIO.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can the sale proceeds of the immovable property referred to in Q.No. 29 be remitted abroad?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, From the balance in the NRO account, NRI/PIO may remit up to USD one million, per financial year, subject to the satisfaction of Authorised Dealer and payment of applicable taxes.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can foreign nationals of non-Indian origin resident in India or outside India who had earlier acquired immovable property under FERA with specific approval of the Reserve Bank continue to hold the same? Can they transfer such property?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, they may continue to hold the immovable property under holding license obtained from the Reserve Bank. However, they can transfer the property only with the prior approval of the Reserve Bank.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is a resident in India governed by the provisions of the Foreign Exchange Management (Acquisition and transfer of immovable property in India) Regulations, 2000?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "A person resident in India who is a citizen of Pakistan or Bangladesh or Sri Lanka or Afghanistan or China or Iran or Nepal or Bhutan is governed by the provisions of Foreign Exchange Management (Acquisition and Transfer of Immovable Property in India) Regulations, 2000, as amended from time to time, i.e. she/he would require prior approval of the Reserve Bank for acquisition and transfer of immovable property in India even though she/he is resident in India. Such requests are considered by the Reserve Bank in consultation with the Government in India. The citizens of countries other than those listed above can be PIOs who are covered under the general permission. The provisions relating to foreign national of non-Indian origin are covered in detail in Q Nos. 6 and 7.",
-          },
-        },
-      ],
-    };
-
-    const localBusiness = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+  // BlogPosting Schema
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
+    },
+    headline:
+      "Our NRI Investment guide for Dholera Smart City give you a complete step by step path to buy plots in india",
+    description:
+      "Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you're in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
+    image: "",
+    author: {
+      "@type": "Organization",
       name: "Dholera Times",
-      image: "",
-      "@id": "",
       url: "https://www.dholeratimes.com/",
-      telephone: "+91 99589 93549",
-      priceRange: "10 Lac +",
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: "620,JMD Megapolis, sector-48, Sohna Road",
-        addressLocality: "Gurugram",
-        postalCode: "1220018",
-        addressCountry: "IN",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Dholera",
+      logo: {
+        "@type": "ImageObject",
+        url: "",
       },
-      geo: {
-        "@type": "GeoCoordinates",
-        latitude: 28.4195542,
-        longitude: 77.0386216,
-      },
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday",
-        ],
-        opens: "10:00",
-        closes: "19:30",
-      },
-      sameAs: [
-        "https://www.facebook.com/people/Dholera-Times/61573763438050/",
-        "https://x.com/dholeratimes",
-        "https://www.instagram.com/dholeratimes/",
-        "https://www.youtube.com/@dholeratimes",
-        "https://www.linkedin.com/company/dholera-times",
-        "https://www.dholeratimes.com/",
-      ],
-    };
+    },
+    datePublished: "2025-05-12",
+    dateModified: "2025-05-12",
+  };
 
-    const articleNRI = {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
-      },
-      headline: "Complete Guide to NRI Investment in Dholera Smart City",
-      description:
-        "NRI investment in Dholera has emerged as one of the most promising real estate opportunities in India. With AUDA-approved residential plots, simplified buying processes, and strong resale potential, Dholera Smart City offers unmatched value for NRIs looking to invest in a futuristic smart city.Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you are in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
-      image: [
-        "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDholera-Smart-City.a696428d.webp&w=640&q=75",
-        "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FProjected-NRI.1b752d49.webp&w=640&q=75",
-      ],
-      author: {
-        "@type": "Organization",
-        name: "Dholera times team",
-        url: "https://www.dholeratimes.com/",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Dholera times",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
+  // FAQPage Schema with all questions
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Who can purchase immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Under general permission available to them, these categories of people can buy real property in India: (i) Non-Resident Indian (NRI). (ii) Person of Indian Origin (PIO). The general permission covers only residential and commercial property purchases in India; agricultural land/plantation property/farmhouses cannot be included under its purview.",
         },
       },
-      datePublished: "2025-06-02",
-      dateModified: "2025-06-04",
-    };
-  
+      {
+        "@type": "Question",
+        name: "Can NRI/PIO acquire agricultural land/plantation property/farm house in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Are any documents required to be filed with the Reserve Bank after the purchase?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No, an NRI/PIO who purchased property through general permission does not need to submit any reports or files with the Reserve Bank.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How many residential/commercial properties may NRI/PIO purchase under general permission?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Under general permission there are no limitations or restrictions placed upon how many properties an NRI or PIO may purchase under its general permit.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can an Indian national who does not belong to India become the second owner in immovable property purchased by an NRI/PIO?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a foreign national of non-Indian origin resident outside India purchase immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No, a non-Indian national resident outside India who wishes to acquire immovable property cannot do so unless such acquisition comes as part of an inheritance from someone residing within India; however they can acquire or transfer immovable properties on lease agreements that last not exceeding five years; in these instances there is no requirement for getting permission or reporting back to the Reserve Bank.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a foreign national who is a person resident in India purchase immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, foreign nationals residing in India under Section 2(v) of FEMA 1999 may purchase immovable property, however approval and compliance with requirements prescribed by other authorities such as State Governments would also need to be met - the burden to demonstrate residential status will ultimately lie with each individual if necessary; whereas any citizen from Pakistan, Bangladesh, Sri Lanka Afghanistan China Iran Nepal Bhutan would require prior approval of Reserve Bank prior to purchasing property in India.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can the branch/liaison office of a foreign company purchase immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Foreign companies which have established a Branch Office or other place of business in India in accordance with the Foreign Exchange Management (Establishment in India of Branch or Office or Other Place of Business) Regulations 2000 may acquire any immovable property necessary or incidental to the conduct of such activity in India. Payment should be made using foreign inward remittance through appropriate banking channels and within 90 days from the date of acquisition a Form IPI should be filed with the Reserve Bank. Such property can be mortgaged to an Authorised Dealer as security for borrowings and only repatriated upon closing down of business with prior approval from the Reserve Bank. Acquisition of immovable property by entities from Pakistan, Bangladesh, Sri Lanka, Afghanistan, China Iran Nepal or Bhutan who have established Branch Offices within India would also need prior approval of the Reserve Bank.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a NRI/PIO acquire immovable property in India by way of gift? Can a foreign national acquire immovable property in India by way of gift?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "(a) Yes, NRIs and PIOs can freely acquire immovable property by way of gift from either (i) a resident in India; or (ii) an NRI/PIO living abroad. However, these properties must only be commercial or residential properties and cannot include agricultural lands/plantation property/farm house in India that cannot be acquired via gift. (b) A foreign national of non-Indian origin resident outside India cannot acquire any immovable property in India by way of gift.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a non-resident inherit immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, anyone living outside India such as an NRI; PIO; and foreign national of non-Indian origin can inherit and hold immovable property located within India from someone who was resident there at one point in time.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "From whom can a non-resident person inherit immovable property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "An individual residing outside India (NRI, PIO or foreign national of non-Indian origin) can inherit immovable property from occupant (a) resident in India. However, any property inherited must have been acquired according to applicable foreign exchange regulations or FEMA regulations when acquired by its heir.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can an NRI/PIO/foreign national sell his residential/commercial property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "(a) NRI can sell property in India to i) a person resident in India; or ii) an NRI; or iii) a PIO. (b) PIO can sell property in India to i) a person resident in India; or ii) an NRI; or iii) a PIO – with the prior approval of the Reserve Bank. (c) Foreign national of non-Indian origin including a citizen of Pakistan or Bangladesh or Sri Lanka or Afghanistan or China or Iran or Nepal or Bhutan can sell property in India with prior approval of the Reserve Bank to i) a person resident in India ii) an NRI iii) a PIO",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a non-resident gift his residential/commercial property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. (a) NRI / PIO may gift residential / commercial property to (i) person resident in India or (ii) an NRI or (iii) PIO. (b) A foreign national of non-Indian origin requires the prior approval of the Reserve Bank for gifting the residential / commercial property.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can an NRI/PIO/foreign national holding an agricultural land/a plantation property/a farm house in India, gift the same?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "(a) NRI / PIO can gift an agricultural land / a plantation property / a farm house in India only to a person resident in India who is a citizen of India. (b) A foreign national of non-Indian origin would require the prior approval of the Reserve Bank to gift an agricultural land / a plantation property / a farm house in India.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can residential/commercial property be mortgaged by NRI/PIO?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "(i) NRI / PIO can mortgage a residential / commercial property to: (a) an Authorised Dealer / the housing finance institution in India without the approval of Reserve Bank (b) a bank abroad, with the prior approval of the Reserve Bank. (ii) A foreign national of non-Indian origin can mortgage a residential / commercial property only with prior approval of the Reserve Bank. (iii) A foreign company which has established a Branch Office or other place of business in accordance with FERA/FEMA regulations has general permission to mortgage the property with an Authorised Dealer in India.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can an NRI/PIO make payment for purchase of residential/commercial property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Payment can be made by NRI / PIO out of: (a) funds remitted to India through normal banking channels or (b) funds held in NRE / FCNR (B) / NRO account maintained in India. No payment can be made either by traveller's cheque or by foreign currency notes or by other mode except those specifically mentioned above.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is repatriation of application money for booking of flat/payment made to the builder by NRI/PIO allowed when the flat or plot is not allotted or the booking/contract is cancelled?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The Authorised Dealers can allow NRIs / PIOs to credit refund of application/ earnest money/ purchase consideration made by the house building agencies/ seller on account of non-allotment of flat/ plot/ cancellation of bookings/ deals for purchase of residential, commercial property, together with interest, if any, net of income tax payable thereon, to NRE/FCNR account, provided, the original payment was made out of NRE/FCNR account of the account holder or remittance from outside India through normal banking channels and the Authorised Dealer is satisfied about the genuineness of the transaction.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can NRI/PIO avail of loan from an authorised dealer for acquiring flat/house in India for his own residential use against the security of funds held in his NRE Fixed Deposit account/FCNR (B) account? How the loan can be repaid?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, such loans are permitted subject to the terms and conditions laid down in Schedules 1 and 2 to the Notification No. FEMA 5/2000-RB dated May 3, 2000 viz. Foreign Exchange Management (Deposit) Regulations, 2000, as amended from time to time. Banks cannot grant fresh loans or renew existing loans in excess of Rs. 100 lakhs against NRE and FCNR (B) deposits, either to the depositors or to third parties. The banks should also not undertake artificial slicing of the loan amount to circumvent the ceiling of Rs. 100 lakh. Such loans can be repaid in the following manner: (a) by way of inward remittance through normal banking channel or (b) by debit to the NRE / FCNR (B) / NRO account of the NRI/ PIO or (c) out of rental income from such property (d) by the borrower's close relatives, as defined in section 6 of the Companies Act, 1956, through their account in India by crediting the borrower's loan account.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can NRI/PIO, avail of housing loan in Rupees from an Authorised Dealer or a Housing Finance Institution in India approved by the National Housing Bank for purchase of residential accommodation or for the purpose of repairs/renovation/improvement of residential accommodation? How can such loan be repaid?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, NRI/PIO can avail of housing loan in Rupees from an Authorised Dealer or a Housing Finance Institution subject to certain terms and conditions laid down in Regulation 8 of Notification No. FEMA 4/2000-RB dated May 3, 2000 viz. Foreign Exchange Management (Borrowing and lending in rupees) Regulations, 2000, as amended from time to time. Authorised Dealers/ Housing Finance Institutions can also lend to the NRIs/ PIOs for the purpose of repairs/renovation/ improvement of residential accommodation owned by them in India. Such a loan can be repaid (a) by way of inward remittance through normal banking channel or (b) by debit to the NRE / FCNR (B) / NRO account of the NRI / PIO or (c) out of rental income from such property; or (d) by the borrower's close relatives, as defined in section 6 of the Companies Act, 1956, through their account in India by crediting the borrower's loan account.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can NRI/PIO avail of housing loan in Rupees from his employer in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, subject to certain terms and conditions given in Regulation 8A of Notification No. FEMA 4/2000-RB dated May 3, 2000 and A.P. (DIR Series) Circular No.27 dated October 10, 2003, i.e., (i) The loan shall be granted only for personal purposes including purchase of housing property in India; (ii) The loan shall be granted in accordance with the lender's Staff Welfare Scheme/Staff Housing Loan Scheme and subject to other terms and conditions applicable to its staff resident in India; (iii) The lender shall ensure that the loan amount is not used for the purposes specified in sub-clauses (i) to (iv) of clause (1) and in clause (2) of Regulation 6 of Notification No.FEMA.4/2000-RB dated May 3, 2000. (iv) The lender shall credit the loan amount to the borrower's NRO account in India or shall ensure credit to such account by specific indication on the payment instrument; (v) The loan agreement shall specify that the repayment of loan shall be by way of remittance from outside India or by debit to NRE/NRO/FCNR Account of the borrower and the lender shall not accept repayment by any other means.",
+        },
+      },
+
+      {
+        "@type": "Question",
+        name: "Can an NRI/PIO repatriate the proceeds in case the sale proceeds were deposited in the NRO account?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "NRI/PIO may repatriate up to USD one million per financial year (April-March) from their NRO account which would also include the sale proceeds of immovable property. There is no lock in period for sale of immovable property and repatriation of sale proceeds outside India.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "If a Rupee loan was taken by the NRI/PIO from an Authorised Dealer or a Housing Finance Institution for purchase of residential property can the NRI/PIO repatriate the sale proceeds of such property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, Authorised Dealers have been authorised to allow repatriation of sale proceeds of residential accommodation purchased by NRIs/ PIOs out of funds raised by them by way of loans from the authorised dealers/ housing finance institutions to the extent such loan/s repaid by them are out of the foreign inward remittances received through normal banking channel or by debit to their NRE/FCNR accounts. The balance amount, if any, can be credited to their NRO account and the NRI/PIO may repatriate up to USD one million per financial year (April-March) subject to payment of applicable taxes from their NRO account balances which would also include the sale proceeds of the immovable property.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "If the immovable property was acquired by way of gift by the NRI/PIO, can he repatriate abroad the funds from sale of such property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The sale proceeds of immovable property acquired by way of gift should be credited to NRO account only. From the balance in the NRO account, NRI/PIO may remit up to USD one million, per financial year, subject to the satisfaction of Authorised Dealer and payment of applicable taxes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "If the immovable property was received as inheritance by the NRI/PIO can he repatriate the sale proceeds?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, general permission is available to the NRIs/PIO to repatriate the sale proceeds of the immovable property inherited from a person resident in India subject to the following conditions: (i) The amount should not exceed USD one million, per financial year (ii) This is subject to production of documentary evidence in support of acquisition / inheritance of assets and an undertaking by the remitter and certificate by a Chartered Accountant in the formats prescribed by the Central Board of Direct Taxes vide their Circular No.4/2009 dated June 29, 2009 (iii) In cases of deed of settlement made by either of his parents or a close relative (as defined in section 6 of the Companies Act, 1956) and the settlement taking effect on the death of the settler (iv) the original deed of settlement and a tax clearance / No Objection Certificate from the Income-Tax Authority should be produced for the remittance (v) Where the remittance as above is made in more than one installment, the remittance of all such installments shall be made through the same Authorised Dealer (vi) In case of a foreign national, sale proceeds can be repatriated if the property is inherited from a person resident outside India with the prior approval of the Reserve Bank. The foreign national has to approach the Reserve Bank with documentary evidence in support of inheritance of the immovable property and the undertaking and the C.A. Certificate mentioned above. The general permission for repatriation of sale proceeds of immovable property is not available to a citizen of Pakistan, Bangladesh, Sri Lanka, China, Afghanistan and Iran and he has to seek specific approval of the Reserve Bank. As FEMA, 1999 specifically permits transactions only in Indian Rupees with citizens of Nepal and Bhutan. Therefore, the question of repatriation of the sale proceeds in foreign exchange to Nepal and Bhutan would not arise.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can Foreign Embassies/Diplomats/Consulates General purchase/sell immovable property in India?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "In terms of Regulation 5A of the Foreign Exchange Management (Acquisition and Transfer of Immovable Property in India) Regulations 2000, Foreign Embassies/ Diplomats/ Consulates General, may purchase/ sell immovable property (other than agricultural land/ plantation property/ farm house) in India provided – (i) Clearance from the Government of India, Ministry of External Affairs has been obtained for such purchase/sale; and (ii) The consideration for acquisition of immovable property in India is paid out of funds remitted from abroad through the normal banking channels.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can NRI/PIO rent out the residential/commercial property purchased out of foreign exchange/rupee funds?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, NRI/PIO can rent out the property without the approval of the Reserve Bank. The rent received can be credited to NRO / NRE account or remitted abroad. Powers have been delegated to the Authorised Dealers to allow repatriation of current income like rent, dividend, pension, interest, etc. of NRIs/PIO who do not maintain an NRO account in India based on an appropriate certification by a Chartered Accountant, certifying that the amount proposed to be remitted is eligible for remittance and that applicable taxes have been paid/provided for.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can a person who had bought immovable property, when he was a resident, continue to hold such property even after becoming an NRI/PIO? In which account can the sale proceeds of such immovable property be credited?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, a person who had bought the residential / commercial property / agricultural land/ plantation property / farm house in India when he was a resident, continue to hold the immovable property without the approval of the Reserve Bank even after becoming an NRI/PIO. The sale proceeds may be credited to NRO account of the NRI /PIO.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can the sale proceeds of the immovable property referred to in Q.No. 29 be remitted abroad?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, From the balance in the NRO account, NRI/PIO may remit up to USD one million, per financial year, subject to the satisfaction of Authorised Dealer and payment of applicable taxes.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can foreign nationals of non-Indian origin resident in India or outside India who had earlier acquired immovable property under FERA with specific approval of the Reserve Bank continue to hold the same? Can they transfer such property?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, they may continue to hold the immovable property under holding license obtained from the Reserve Bank. However, they can transfer the property only with the prior approval of the Reserve Bank.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is a resident in India governed by the provisions of the Foreign Exchange Management (Acquisition and transfer of immovable property in India) Regulations, 2000?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "A person resident in India who is a citizen of Pakistan or Bangladesh or Sri Lanka or Afghanistan or China or Iran or Nepal or Bhutan is governed by the provisions of Foreign Exchange Management (Acquisition and Transfer of Immovable Property in India) Regulations, 2000, as amended from time to time, i.e. she/he would require prior approval of the Reserve Bank for acquisition and transfer of immovable property in India even though she/he is resident in India. Such requests are considered by the Reserve Bank in consultation with the Government in India. The citizens of countries other than those listed above can be PIOs who are covered under the general permission. The provisions relating to foreign national of non-Indian origin are covered in detail in Q Nos. 6 and 7.",
+        },
+      },
+    ],
+  };
+
+  const localBusiness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Dholera Times",
+    image: "",
+    "@id": "",
+    url: "https://www.dholeratimes.com/",
+    telephone: "+91 99589 93549",
+    priceRange: "10 Lac +",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "620,JMD Megapolis, sector-48, Sohna Road",
+      addressLocality: "Gurugram",
+      postalCode: "1220018",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 28.4195542,
+      longitude: 77.0386216,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "10:00",
+      closes: "19:30",
+    },
+    sameAs: [
+      "https://www.facebook.com/people/Dholera-Times/61573763438050/",
+      "https://x.com/dholeratimes",
+      "https://www.instagram.com/dholeratimes/",
+      "https://www.youtube.com/@dholeratimes",
+      "https://www.linkedin.com/company/dholera-times",
+      "https://www.dholeratimes.com/",
+    ],
+  };
+
+  const articleNRI = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
+    },
+    headline: "Complete Guide to NRI Investment in Dholera Smart City",
+    description:
+      "NRI investment in Dholera has emerged as one of the most promising real estate opportunities in India. With AUDA-approved residential plots, simplified buying processes, and strong resale potential, Dholera Smart City offers unmatched value for NRIs looking to invest in a futuristic smart city.Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you are in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
+    image: [
+      "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDholera-Smart-City.a696428d.webp&w=640&q=75",
+      "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FProjected-NRI.1b752d49.webp&w=640&q=75",
+    ],
+    author: {
+      "@type": "Organization",
+      name: "Dholera times team",
+      url: "https://www.dholeratimes.com/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Dholera times",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
+      },
+    },
+    datePublished: "2025-06-02",
+    dateModified: "2025-06-04",
+  };
 
   return (
     <>
@@ -629,7 +637,10 @@ export default function NRIInvestmentGuide() {
         name="keywords"
         content="NRI property investment in Dholera, Buy plots in Dholera for NRIs, Dholera Smart City NRI guide, NRI investment in Dholera, NRI investment Guide, Buy Plots in Dholera Smart city, Real Estate Investment for NRI, Real estate investment in India "
       />
-                   <link rel="canonical" href="https://www.dholeratimes.com/nri-investment-guide-dholera" />
+      <link
+        rel="canonical"
+        href="https://www.dholeratimes.com/nri-investment-guide-dholera"
+      />
 
       <div className="relative bg-[#151f28] text-white py-12 px-6">
         <div className="max-w-6xl mx-auto">
@@ -720,9 +731,8 @@ export default function NRIInvestmentGuide() {
           </h1>
           <p className="text-left text-lg md:text-xl font-medium text-gray-700">
             <strong>NRI investment in Dholera</strong> has emerged as one of the
-            most promising{" "}
-            <strong>real estate opportunities</strong> in India. With
-            AUDA-approved{" "}
+            most promising <strong>real estate opportunities</strong> in India.
+            With AUDA-approved{" "}
             <strong>residential plots, simplified buying processes</strong>, and{" "}
             <strong>
               {" "}
@@ -1093,29 +1103,40 @@ export default function NRIInvestmentGuide() {
           </div>
         </div>
 
-        <section>
-          <div className="relative mb-8">
-            {/* Desktop Image */}
-            <div className="hidden lg:block relative">
-              <Image
-                src={priceBanner}
-                alt="Investment Opportunity"
-                className="w-full"
-                priority
-              />
-              <div className="absolute inset-0 bg-black opacity-20"></div>
-            </div>
+        <section className="relative mb-8">
+          {/* Desktop Image */}
+          <div className="max-sm:hidden relative">
+            <Image
+              src={priceBanner}
+              alt="Investment Opportunity"
+              className="w-full"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-20"></div>
 
-            {/* Mobile Image */}
-            <div className="block lg:hidden relative">
-              <Image
-                src={priceBannerMobile}
-                alt="Investment Opportunity Mobile"
-                fill
-                className="object-contain w-full"
-                priority
-              />
-              <div className="absolute inset-0"></div>
+            {/* Button positioned on desktop image */}
+            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+              <button onClick={openForm} className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+                Talk To An Expert
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Image */}
+          <div className="lg:hidden relative">
+            <Image
+              src={priceBannerMobile}
+              alt="Investment Opportunity Mobile"
+              className="w-full"
+              priority
+            />
+            <div className="absolute inset-0 bg-black opacity-20"></div>
+
+            {/* Button positioned on mobile image (centered) */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <button onClick={openForm} className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md text-sm">
+                Talk To An Expert
+              </button>
             </div>
           </div>
         </section>
@@ -1475,6 +1496,20 @@ export default function NRIInvestmentGuide() {
               trustBadge="500+ NRI Clients Served & AUDA-Approved Projects"
               X
               onClose={closeContactForm}
+            />
+          </div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence className="p-3">
+        {isFormOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
+            <PopupForm
+              title="Book A Free Consultation Today"
+              headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory."
+              buttonName="Get A Call Back"
+              trustBadge="500+ NRI Clients Served & AUDA-Approved Projects"
+              X
+              onClose={closeForm}
             />
           </div>
         )}

@@ -81,11 +81,11 @@ export default function ContactDetails() {
           href="https://www.dholeratimes.com/contact/inquiry"
         />
 
-        <div className="max-w-7xl mx-auto  flex flex-col md:flex-row items-center text-white px-6 md:px-10">
+        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
           <div className="md:w-1/2 text-center">
-            <h2 className="text-4xl font-bold">Have Some Questions?</h2>
-            <p className="text-gray-300 text-lg mt-3">
+            <h2 className="text-4xl font-bold max-sm:pt-4">Have Some Questions?</h2>
+            <p className="text-gray-300 text-lg mt-3 max-sm:pt-4">
               Let us know, we will be more than happy to connect.
             </p>
           </div>
@@ -96,7 +96,7 @@ export default function ContactDetails() {
               alt="Contact"
               width={400}
               height={300}
-              className="rounded-lg p-5"
+              className="w-full h-[50vh] max-sm:h-[30vh] object-cover opacity-60 rounded-lg p-5"
             />
           </div>
         </div>
@@ -159,8 +159,8 @@ export default function ContactDetails() {
                 <div className="space-y-8">
                   <div>
                     <h2 className="font-bold text-4xl text-[#2863e5]">
-                    Head Office{" "}
-                  </h2>
+                       Registered Office {" "}
+                    </h2>
                     <h2 className="font-bold text-2xl md:text-3xl">
                       Our Contact Info
                     </h2>
@@ -183,7 +183,7 @@ export default function ContactDetails() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {/* Map for mobile devices */}
                   <div className=" w-full h-48 rounded overflow-hidden">
                     <iframe

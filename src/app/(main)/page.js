@@ -1,32 +1,25 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import NewHome from './NewHome'
-
-export const metadata = {
-  title: 'Dholera Smart City Gujarat | High ROI Plots -Dholera Times',
-  description: 'Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!',
-  /* keywords: ['Next.js', 'App Router', 'SEO', 'Naman'],
-  openGraph: {
-    title: 'Home | Naman’s App',
-    description: 'Welcome to the homepage of Naman’s awesome app.',
-    url: 'https://yourdomain.com',
-    siteName: 'Naman’s Site',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-      },
-    ],
-        type: 'website',
-  } */
-}
+import Popup from './components/Pop';
 
 export default function page() {
+  const [showForm, setShowForm] = useState(false);
   return (
     <>
+      <title>Dholera Smart City Gujarat | High ROI Plots -Dholera Times</title>
+      <meta name='description' content='Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!' />
         <div>
-            <NewHome/>
+            <NewHome openForm={() => setShowForm(true)} />
         </div>
+        {showForm && (
+        <Popup
+          onClose={() => setShowForm(false)}
+          title={`Exclusive Deal: Own a plot at ₹9,250/sq. yard — hurry, limited units! –  left`}
+          buttonName="Speak with a Plot Specialist"
+          className="font-medium"
+        />
+      )}
     </>
   )
 }

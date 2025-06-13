@@ -82,7 +82,7 @@ insights, and investment opportunities on the ground. Limited slots!"
           <Image
             src={get}
             alt="Site Visit"
-            className="w-full h-[50vh] max-sm:h-[30vh] object-cover opacity-60"
+            className="w-full object-cover opacity-60"
           />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
@@ -105,7 +105,7 @@ insights, and investment opportunities on the ground. Limited slots!"
               <div className="space-y-8">
                 <div>
                   <h2 className="font-bold text-4xl text-[#2863e5]">
-                    Head Office{" "}
+                    Registered Office{" "}
                   </h2>
                   <h3 className="font-bold text-2xl">Dholera Times </h3>
                   <div className=" mt-4 text-lg space-y-2">

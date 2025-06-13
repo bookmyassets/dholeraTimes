@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 /* image import */
 import hero1 from "@/assets/DTbanner1.webp";
@@ -17,10 +17,42 @@ import { AnimatePresence } from "framer-motion";
 import BrochureForm from "./components/BrochureForm";
 import MegaIndustries from "./components/home/MegaIndusties";
 
-export default function NewHome() {
+export default function NewHome({openForm}) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
-    
+  
+  useEffect(() => {
+    // Only run on client side
+    if (typeof window !== 'undefined') {
+      // Check localStorage to see if popup was already shown
+      const popupShown = localStorage.getItem('popupShown');
+      
+      if (!popupShown) {
+        const timer = setTimeout(() => {
+          openForm();
+          localStorage.setItem('popupShown', 'true');
+        }, 2000); // 5 seconds
+
+        const handleScroll = () => {
+          if (window.scrollY > window.innerHeight * 0.05) {
+            openForm();
+            localStorage.setItem('popupShown', 'true');
+            window.removeEventListener('scroll', handleScroll);
+            clearTimeout(timer);
+          }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+          clearTimeout(timer);
+        };
+      }
+    }
+  }, [openForm]);
+
+
   const downloadBrochure = () => {
     
     const brochureUrl = "https://shorturl.at/t7uyU";

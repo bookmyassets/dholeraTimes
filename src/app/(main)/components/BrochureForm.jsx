@@ -94,7 +94,7 @@ export default function BrochureForm({ title, subTitle, buttonName, onClose, onS
           setFormData({ fullName: "", email: "", phone: "" }); // Reset all form fields
           setShowPopup(true);
           onSuccess();
-          // Increment submission count & store time
+          
           submissionCount++;
           setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
