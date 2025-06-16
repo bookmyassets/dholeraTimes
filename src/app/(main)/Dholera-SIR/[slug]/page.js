@@ -212,6 +212,60 @@ export default async function BlogDetail({ params }) {
         },
       },
 
+       htmlTable: ({ value }) => {
+      if (!value?.html) return null;
+
+      return (
+        <div className="my-8 overflow-x-auto">
+          <div 
+            className="html-table-container"
+            dangerouslySetInnerHTML={{ __html: value.html }}
+            style={{
+              // Add some basic styling to ensure tables look good
+              '--table-border-color': '#e5e7eb',
+              '--table-header-bg': '#f9fafb',
+              '--table-row-hover': '#f3f4f6'
+            }}
+          />
+          <style jsx>{`
+            .html-table-container table {
+              width: 100%;
+              border-collapse: collapse;
+              margin: 0;
+              font-size: 0.875rem;
+              background: white;
+              border-radius: 0.5rem;
+              overflow: hidden;
+              box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            }
+            .html-table-container th,
+            .html-table-container td {
+              padding: 0.75rem 1rem;
+              text-align: left;
+              border-bottom: 1px solid var(--table-border-color);
+            }
+            .html-table-container th {
+              background-color: var(--table-header-bg);
+              font-weight: 600;
+              color: #374151;
+              text-transform: uppercase;
+              font-size: 0.75rem;
+              letter-spacing: 0.05em;
+            }
+            .html-table-container tr:hover {
+              background-color: var(--table-row-hover);
+            }
+            .html-table-container tr:last-child td {
+              border-bottom: none;
+            }
+            .html-table-container td {
+              color: #6b7280;
+            }
+          `}</style>
+        </div>
+      );
+    },
+
       marks: {
         link: ({ children, value }) => {
           return (
