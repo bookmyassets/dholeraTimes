@@ -152,6 +152,9 @@ export default {
         spellCheck: true,
       },
     },
-    
+    {
+      type: "htmlTable",
+      title: "HTML Table"
+    }
   ],
 };

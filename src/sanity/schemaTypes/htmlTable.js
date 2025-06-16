@@ -6,11 +6,12 @@ export default {
   fields: [
     {
       name: 'html',
-      title: 'HTML Code',
+      title: 'HTML Table Code',
       type: 'text',
       rows: 10,
-      description: 'Paste your raw HTML table code here',
-    },
+      description: 'Paste your complete HTML table code including <table>, <tr>, <td> tags',
+      validation: Rule => Rule.required()
+    }
   ],
   preview: {
     select: {
@@ -20,7 +21,7 @@ export default {
       const {html} = selection
       return {
         title: 'HTML Table',
-        subtitle: html ? html.substring(0, 30) + '...' : 'No HTML provided'
+        subtitle: html ? `Table: ${html.substring(0, 30)}...` : 'No HTML provided'
       }
     }
   }
