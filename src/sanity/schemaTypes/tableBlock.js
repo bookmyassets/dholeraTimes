@@ -1,4 +1,4 @@
-// schemas/tableBlock.js
+// schemas/htmlTable.js
 export default {
   name: 'htmlTable',
   title: 'HTML Table',
