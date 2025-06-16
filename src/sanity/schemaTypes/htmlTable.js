@@ -12,4 +12,16 @@ export default {
       description: 'Paste your raw HTML table code here',
     },
   ],
-};
+  preview: {
+    select: {
+      html: 'html'
+    },
+    prepare(selection) {
+      const {html} = selection
+      return {
+        title: 'HTML Table',
+        subtitle: html ? html.substring(0, 30) + '...' : 'No HTML provided'
+      }
+    }
+  }
+}
