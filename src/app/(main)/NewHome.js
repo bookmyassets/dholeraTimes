@@ -154,7 +154,7 @@ export default function NewHome({openForm}) {
                         ROI Projection
                       </div>
                       <div className="text-[#d7b36c] font-bold text-3xl">
-                        5x
+                        10x
                       </div>
                     </div>
                     <div className="w-full bg-[#d7b36c] rounded-full h-3 mb-4">

@@ -111,24 +111,24 @@ export default {
       },
     },
     {
-      type: 'image',
+      type: "image",
       fields: [
         {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text'
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
         },
         {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption'
+          name: "caption",
+          type: "string",
+          title: "Caption",
         },
         {
-          name: 'url',  // Add this new field
-          type: 'url',
-          title: 'Link URL'
-        }
-      ]
+          name: "url", // Add this new field
+          type: "url",
+          title: "Link URL",
+        },
+      ],
     },
     // Code block
     {
@@ -151,6 +151,15 @@ export default {
       options: {
         spellCheck: true,
       },
+    },
+    {
+      name: "content",
+      title: "Content",
+      type: "array",
+      of: [
+        { type: "block" },
+        { type: "htmlTable" }, // custom object
+      ],
     },
   ],
 };
