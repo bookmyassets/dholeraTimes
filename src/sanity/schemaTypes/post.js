@@ -47,6 +47,20 @@ export default {
         options: {
           hotspot: true,
         },
+        fields: [
+          {
+            name: 'alt',
+            title: 'Alt Text',
+            type: 'string',
+            description: 'Alternative text for the image (for accessibility)',
+          },
+          {
+            name: 'link',
+            title: 'Image Link',
+            type: 'url',
+            description: 'Optional link that the image should redirect to when clicked',
+          },
+        ],
       },
       {
         name: 'categories',
@@ -74,7 +88,7 @@ export default {
         title: 'PDF File',
         type: 'file',
         options: {
-          accept: '.pdf', // Ensures only PDFs can be uploaded
+          accept: '.pdf', 
         },
       },
     ],
