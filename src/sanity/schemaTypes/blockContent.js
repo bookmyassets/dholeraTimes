@@ -10,35 +10,6 @@ const TextBackgroundDecorator = (props) => (
   </span>
 );
 
-// Define the htmlTable schema inline or import it properly
-/* const htmlTable = {
-  name: 'htmlTable',
-  title: 'HTML Table',
-  type: 'object',
-  fields: [
-    {
-      name: 'html',
-      title: 'HTML Table Code',
-      type: 'text',
-      rows: 10,
-      description: 'Paste your complete HTML table code including <table>, <tr>, <td> tags',
-      validation: Rule => Rule.required()
-    }
-  ],
-  preview: {
-    select: {
-      html: 'html'
-    },
-    prepare(selection) {
-      const {html} = selection
-      return {
-        title: 'HTML Table',
-        subtitle: html ? `Table: ${html.substring(0, 30)}...` : 'No HTML provided'
-      }
-    }
-  }
-}; */
-
 export default {
   name: "blockContent",
   title: "Block Content",
@@ -153,7 +124,7 @@ export default {
           title: 'Caption'
         },
         {
-          name: 'url',  // Add this new field
+          name: 'url',
           type: 'url',
           title: 'Link URL'
         }
