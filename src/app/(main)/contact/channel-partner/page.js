@@ -107,15 +107,15 @@ export default function ChannelPartnerPage() {
             "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <h1 className="text-white text-4xl md:text-5xl font-bold">Become a Dholera Times Channel Partner in Dholera Smart City </h1>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h2 className="text-white text-4xl md:text-5xl font-bold">Channel Partner</h2>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8">
         {/* How to Get Started Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">How to Get Started</h2>
+          <h1 className="text-3xl font-bold mb-6 text-center">How to become Channel partner of Dholera Times ?</h1>
           <p className="text-lg mb-6 text-center">
             Joining the Dholera Times as a Channel Partner is quick, straightforward, and beginner-friendly. 
             No matter who you are: an individual, broker or real estate agency--you can start earning commissions 

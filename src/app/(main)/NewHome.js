@@ -172,7 +172,7 @@ export default function NewHome({openForm}) {
                         <div className="text-sm text-gray-600 mb-1">
                           Starting From
                         </div>
-                        <div className="text-xl font-bold text-gray-800">
+                        <div className="text-lg md:text-xl font-bold text-gray-800">
                           ₹6,700/sq.ft
                         </div>
                       </div>
@@ -180,7 +180,7 @@ export default function NewHome({openForm}) {
                         <div className="text-sm text-gray-600 mb-1">
                           Investment Period
                         </div>
-                        <div className="text-xl font-bold text-gray-800">
+                        <div className="text-lg md:text-xl font-bold text-gray-800">
                           5-7 Years
                         </div>
                       </div>

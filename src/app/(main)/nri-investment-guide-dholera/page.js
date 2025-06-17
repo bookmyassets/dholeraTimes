@@ -1125,7 +1125,7 @@ export default function NRIInvestmentGuide() {
           {/* Mobile Image */}
           <div className="lg:hidden relative">
             <Image
-              src={priceBannerMobile}
+              src={priceBanner}
               alt="Investment Opportunity Mobile"
               className="w-full"
               priority

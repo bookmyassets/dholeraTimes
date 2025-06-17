@@ -175,7 +175,7 @@ export default function CareerPage() {
             "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center">
           <h2 className="text-white text-4xl md:text-5xl font-bold">Career</h2>
         </div>
       </div>

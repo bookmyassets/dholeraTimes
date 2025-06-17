@@ -96,7 +96,7 @@ export default function ContactDetails() {
               alt="Contact"
               width={400}
               height={300}
-              className="w-full h-[50vh] max-sm:h-[30vh] object-cover opacity-60 rounded-lg p-5"
+              className="w-full h-[50vh] max-sm:h-[30vh] object-cover rounded-lg p-5"
             />
           </div>
         </div>

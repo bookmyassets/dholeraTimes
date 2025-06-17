@@ -146,7 +146,7 @@ export default function PopupForm({ title, headline, buttonName, onClose, trustB
               <FaUser className="absolute left-4 top-4 text-gray-500" />
               <input
                 name="fullName"
-                placeholder="Full Name"
+                placeholder="Full Name *"
                 value={formData.fullName}
                 onChange={handleChange}
                 required
@@ -174,7 +174,7 @@ export default function PopupForm({ title, headline, buttonName, onClose, trustB
               <input
                 name="phone"
                 type="tel"
-                placeholder="Phone Number"
+                placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={handleChange}
                 required

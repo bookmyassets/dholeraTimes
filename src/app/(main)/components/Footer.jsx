@@ -287,10 +287,10 @@ export default function Footer() {
               </div>
 
               {/* Phone and Email */}
-              <div className="space-y-3">
+              <div className="space-y-3 text-blue-500">
                 <a
                   href="tel:+919958993549"
-                  className="flex items-center text-gray-300 hover:text-white transition-colors duration-300"
+                  className="flex items-center  transition-colors duration-300"
                 >
                   <FaPhoneAlt className="mr-2" />
                   <span>+91 99589 93549</span>
@@ -298,7 +298,7 @@ export default function Footer() {
 
                 <a
                   href="mailto:info@dholeratimes.com"
-                  className="flex items-center text-gray-300 hover:text-white transition-colors duration-300"
+                  className="flex items-center  transition-colors duration-300"
                 >
                   <FaEnvelope className="" /> &nbsp;
                   <span>info@dholeratimes.com</span>

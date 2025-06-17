@@ -76,13 +76,15 @@ insights, and investment opportunities on the ground. Limited slots!"
         content="Book site visit dholera,Free site visit dholera,Dholera SIR visit,Dholera smart city site visit,Dholera Smart city Visit,Dholera Project visit "
       />
                      <link rel="canonical" href="https://www.dholeratimes.com/contact/site-visit" />
+      <div>
 
-      <section className="relative h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
+
+      <section className="relative md:h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
         <div className="absolute inset-0">
           <Image
             src={get}
             alt="Site Visit"
-            className="w-full object-cover opacity-60"
+            className="w-full h-[50vh] max-sm:h-[30vh] object-cover  "
           />
         </div>
         <div className="relative z-10 max-w-3xl text-white px-6">
@@ -153,7 +155,7 @@ insights, and investment opportunities on the ground. Limited slots!"
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
                       title="Location map"
-                    ></iframe>
+                      ></iframe>
                   </div>
                 </div>
               </div>
@@ -171,7 +173,7 @@ insights, and investment opportunities on the ground. Limited slots!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-600 text-3xl hover:text-blue-800"
-              >
+                >
                 <FaFacebook />
               </a>
               <a
@@ -179,7 +181,7 @@ insights, and investment opportunities on the ground. Limited slots!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 text-3xl hover:text-blue-600"
-              >
+                >
                 <FaTwitter />
               </a>
               <a
@@ -187,7 +189,7 @@ insights, and investment opportunities on the ground. Limited slots!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-pink-500 text-3xl hover:text-pink-700"
-              >
+                >
                 <FaInstagram />
               </a>
               <a
@@ -195,13 +197,14 @@ insights, and investment opportunities on the ground. Limited slots!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-700 text-3xl hover:text-blue-900"
-              >
+                >
                 <FaLinkedin />
               </a>
             </div>
           </div>
         </div>
       </div>
+                </div>
     </>
   );
 }
