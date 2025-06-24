@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import React from "react";
-import { motion } from "framer-motion"; // Add this import
+import { motion } from "framer-motion";
 import "../about/about.css";
 
 export default function CommonForm({ title }) {
