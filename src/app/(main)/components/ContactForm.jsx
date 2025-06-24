@@ -143,8 +143,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
         name: formData.fullName,
         phone: cleanPhone,
         email: formData.email || "",
-        source: "BookMyAssets",
-        recaptchaToken: token,
+        source: "Dholera Times",
         timestamp: now
       };
 
