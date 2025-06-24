@@ -142,9 +142,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
       const payload = {
         name: formData.fullName,
         phone: cleanPhone,
-        email: formData.email || "",
         source: "Dholera Times",
-        timestamp: now
       };
 
       console.log("Submitting payload:", payload);
