@@ -80,30 +80,31 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
       setErrorMessage("Please fill in all fields");
       return false;
     }
-
+    
     // Simple phone validation
     if (!/^\d{10,15}$/.test(formData.phone)) {
       setErrorMessage("Please enter a valid phone number (10-15 digits)");
       return false;
     }
-
+    
     // Check submission limits
     const now = Date.now();
     const hoursPassed = (now - lastSubmissionTime) / (1000 * 60 * 60);
-
+    
     if (hoursPassed >= 24) {
-      // Reset counter if 24 hours have passed
       setSubmissionCount(0);
       localStorage.setItem("formSubmissionCount", "0");
       localStorage.setItem("lastSubmissionTime", now.toString());
+      
     } else if (submissionCount >= 3) {
       setErrorMessage("You have reached the maximum submission limit. Try again after 24 hours.");
       return false;
     }
-
+    
     return true;
   };
-
+  
+  const isDisabled = submissionCount >= 3 && (Date.now() - lastSubmissionTime) / (1000 * 60 * 60) < 24;
   const onRecaptchaSuccess = async (token) => {
     try {
       const now = Date.now();
