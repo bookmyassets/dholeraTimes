@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
 export default function ContactForm({ title, headline, buttonName, onClose }) {
