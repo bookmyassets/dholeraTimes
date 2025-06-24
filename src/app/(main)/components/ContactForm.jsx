@@ -1,5 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+"use client";
+import { useState, useEffect, useRef } from "react";
+import { FaUser, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import logo from "@/assests/Bmalogo.png";
 
 export default function ContactForm({ title, headline, buttonName, onClose }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +14,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const [recaptchaRendered, setRecaptchaRendered] = useState(false);
   const recaptchaRef = useRef(null);
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY; // Fixed env variable name
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -136,21 +140,21 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
       
       // Prepare the payload - match the API expectations
       const payload = {
-        name: formData.fullName, // Changed from fullName to name
+        name: formData.fullName,
         phone: cleanPhone,
-        email: formData.email || "", // Include email even if empty
-        source: "Dholera Times",
+        email: formData.email || "",
+        source: "BookMyAssets",
         recaptchaToken: token,
         timestamp: now
       };
 
       console.log("Submitting payload:", payload);
 
-      // Use the correct endpoint
-      const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", { // Use a proxy endpoint
+      const response = await fetch("https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead", { // Use your API endpoint here
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`,
         },
         body: JSON.stringify(payload),
       });
@@ -226,7 +230,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
       window.grecaptcha.render(recaptchaRef.current, {
         sitekey: siteKey,
         callback: onRecaptchaSuccess,
-        theme: "light", 
+        theme: "dark", 
         size: "normal"
       });
       
@@ -278,113 +282,173 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
   };
 
   return (
-    <div className="relative">
-      <div 
+    <div
+      className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 p-4 z-[1000]"
+      onClick={onClose}
+    >
+      <motion.div
         id="contact-form-container"
-        className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full max-w-lg md:min-w-[600px] mx-auto border border-gray-200 rounded-xl"
+        initial={{ scale: 0.9, y: 50 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 50 }}
+        className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl shadow-2xl border border-gray-700 max-w-md w-full relative"
+        onClick={(e) => e.stopPropagation()}
       >
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
-          {title || "Contact Us"}
-        </h2>
-        <h2 className="text-sm font-medium text-center text-gray-800 mb-6">
-          {headline || "Get in touch with us"}
-        </h2>
-        
-        {errorMessage && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg">
-            {errorMessage}
-          </div>
-        )}
-        
-        {isDisabled ? (
-          <p className="text-center text-red-500 font-semibold">
-            You have reached the maximum submission limit. Try again after 24 hours.
+        {/* Close Button */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onClose?.();
+          }}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none"
+          aria-label="Close form"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="h-6 w-6" 
+            fill="none" 
+            viewBox="0 0 24 24" 
+            stroke="currentColor"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M6 18L18 6M6 6l12 12" 
+            />
+          </svg>
+        </button>
+
+        {/* Logo */}
+        <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="bg-black p-2 shadow-lg"
+          >
+            <Image
+              src={logo}
+              alt="Logo"
+              width={60}
+              height={60}
+              className=""
+            />
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="text-center mb-6"
+        >
+          <h2 className="text-3xl font-bold text-white mb-2">
+            {title || "Contact Us"}
+          </h2>
+          <p className="text-gray-300 text-sm">
+            {headline || "Get Expert Guidance on Dholera Investment"}
           </p>
+        </motion.div>
+
+        {showPopup ? (
+          <div className="text-center py-8">
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              className="mb-4 inline-block"
+            >
+              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-10 w-10 text-white"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+              </div>
+            </motion.div>
+            <h3 className="text-2xl font-bold text-white mb-2">Thank You!</h3>
+            <p className="text-gray-300">
+              Your request has been submitted successfully. We'll contact you
+              shortly.
+            </p>
+          </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Full Name Input */}
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {errorMessage && (
+              <div className="p-3 bg-red-500 bg-opacity-20 border border-red-400 text-red-100 rounded-lg text-sm">
+                {errorMessage}
+              </div>
+            )}
+            
             <div className="relative">
-              <FaUser className="absolute left-4 top-4 text-gray-500" />
+              <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400" />
               <input
                 name="fullName"
                 placeholder="Full Name *"
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                aria-label="Full Name (required)"
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
               />
             </div>
 
-            {/* Email Input */}
             <div className="relative">
-              <FaEnvelope className="absolute left-4 top-4 text-gray-500" />
+              <FaEnvelope className="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400" />
               <input
                 name="email"
                 type="email"
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
-                aria-label="Email Address (optional)"
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
               />
             </div>
 
-            {/* Phone Number Input */}
             <div className="relative">
-              <FaPhoneAlt className="absolute left-4 top-4 text-gray-500" />
+              <FaPhoneAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400" />
               <input
                 name="phone"
                 type="tel"
                 placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={handleChange}
+                minLength="10"
+                maxLength="15"
                 required
-                aria-label="Phone Number (required)"
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
               />
             </div>
 
-            {/* reCAPTCHA Container */}
+            {/* reCAPTCHA container */}
             <div className="flex justify-center">
               <div ref={recaptchaRef} className="min-h-[78px]"></div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isLoading || !recaptchaLoaded || isDisabled}
-              className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
+              className={`w-full py-3 px-6 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all shadow-lg hover:shadow-yellow-500/20 font-semibold ${
                 isLoading || isDisabled || !recaptchaLoaded
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
+                  ? "opacity-70 cursor-not-allowed"
+                  : ""
               }`}
             >
-              {isLoading ? "Submitting..." : (buttonName || "Submit")}
+              {isLoading ? "Submitting..." : (buttonName || "Book Consultation")}
             </button>
           </form>
         )}
-      </div>
-
-      {/* Success Popup */}
-      {showPopup && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white p-8 rounded-xl max-w-md w-full shadow-lg">
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-4">
-              Thank You!
-            </h3>
-            <p className="text-center text-gray-600 mb-6">
-              Your form has been submitted successfully. We'll get back to you soon.
-            </p>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="w-full bg-[#be9233] hover:bg-[#dbaf51] text-white font-semibold py-3 px-4 rounded-xl transition duration-300"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      </motion.div>
     </div>
   );
 }
