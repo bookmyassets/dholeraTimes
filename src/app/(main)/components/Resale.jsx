@@ -166,6 +166,7 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               <MessageCircle className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
               <textarea
                 name="Plot Details"
+                type="text"
                 placeholder="Plot details"
                 rows="4"
                 value={formData.message}
