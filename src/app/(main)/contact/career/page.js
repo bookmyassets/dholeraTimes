@@ -176,7 +176,7 @@ export default function CareerPage() {
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-white text-4xl md:text-5xl font-bold">Career</h2>
+          <h1 className="text-white text-4xl md:text-5xl font-bold">Career</h1>
         </div>
       </div>
 

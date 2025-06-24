@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { jsPDF } from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import icon from "@/assests/pdfIcon.webp"
+import icon from "@/assets/pdfIcon.webp"
 
 function formatIndianNumber(value) {
   return parseFloat(value).toLocaleString('en-IN', {
