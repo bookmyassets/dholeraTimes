@@ -42,8 +42,8 @@ export default function BrochureForm({ title, subTitle, buttonName, onClose, onS
       }
     }
 
-    // Restrict submission after 20 attempts
-    if (submissionCount >= 20) {
+    // Restrict submission after 3 attempts
+    if (submissionCount >= 3) {
       alert(
         "You have reached the maximum submission limit. Try again after 24 hours."
       );

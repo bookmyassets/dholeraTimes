@@ -27,38 +27,89 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
     e.preventDefault();
     setIsLoading(true);
 
-    // Get submission count from memory (since localStorage isn't available)
-    const currentTime = Date.now();
-    
-    // Validate required fields
-    if (!formData.name || !formData.mobileNumber || !formData.projectName || !formData.plotNo) {
-      alert("Please fill in all required fields marked with *");
+    // Get submission count and last submission timestamp
+    let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
+    let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
+
+    // Check if 24 hours have passed since the last submission
+    if (lastSubmissionTime) {
+      const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
+      const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
+
+      if (hoursPassed >= 24) {
+        // Reset submission count after 24 hours
+        submissionCount = 0;
+        localStorage.setItem("formSubmissionCount", 0);
+        localStorage.setItem("lastSubmissionTime", Date.now().toString());
+      }
+    }
+
+    // Restrict submission after 20 attempts
+    if (submissionCount >= 3) {
+      alert(
+        "You have reached the maximum submission limit. Try again after 24 hours."
+      );
       setIsLoading(false);
+      setIsDisabled(true);
       return;
     }
 
-    // Email validation if provided
-    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      alert("Please enter a valid email address");
+    // Validate form data
+    if (!formData.fullName || !formData.phone || !formData.email) {
+      alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // API Request
+      const response = await fetch(
+        "https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_TELECRM_API_KEY}`,
+          },
+          body: JSON.stringify({
+            fields: {
+              name: formData.fullName,
+              phone: formData.phone,
+              email: formData.email,
+              source: "Dholera Times Resale",
+            },
+            source: "Dholera Times Website",
+            tags: ["Dholera Investment", "Website Lead"],
+          }),
+        }
+      );
 
-      setFormData({ 
-        name: "", 
-        email: "", 
-        mobileNumber: "", 
-        projectName: "", 
-        plotNo: "", 
-        message: "" 
-      });
-      setShowPopup(true);
-      
-      console.log("Form submitted:", formData);
-      
+      // Store response text before parsing
+      const responseText = await response.text();
+
+      // Check response status and handle accordingly
+      if (response.ok) {
+        if (
+          responseText === "OK" ||
+          responseText.toLowerCase().includes("success")
+        ) {
+          setFormData({ fullName: "", email: "", phone: "" }); // Reset all form fields
+          setShowPopup(true); // Show popup on success
+
+          // Increment submission count & store time
+          submissionCount++;
+          setSubmissionCount(submissionCount);
+          localStorage.setItem("formSubmissionCount", submissionCount);
+          localStorage.setItem("lastSubmissionTime", Date.now().toString());
+        } else {
+          // Handle unexpected response
+          console.log("Response Text:", responseText);
+          alert("Submission received but with unexpected response");
+        }
+      } else {
+        console.error("Server Error:", responseText);
+        throw new Error(responseText || "Submission failed");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       alert(`Error submitting form: ${error.message}`);

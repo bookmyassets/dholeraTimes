@@ -17,7 +17,7 @@ import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/PopupForm";
 import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp";
 import priceBanner from "@/assets/price-cut-banner.webp";
-import priceBannerMobile from "@/assets/Price-cut-mobile-banner.webp";
+import priceBannerM from "@/assets/priceBannerM.webp";
 import projectedNRI from "@/assets/Projected-NRI.webp";
 
 export default function NRIInvestmentGuide() {
@@ -1125,7 +1125,7 @@ export default function NRIInvestmentGuide() {
           {/* Mobile Image */}
           <div className="lg:hidden relative">
             <Image
-              src={priceBanner}
+              src={priceBannerM}
               alt="Investment Opportunity Mobile"
               className="w-full"
               priority

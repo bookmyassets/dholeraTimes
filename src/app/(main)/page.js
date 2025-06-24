@@ -11,7 +11,7 @@ export default function page() {
       <meta name='description' content='Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!' />
         <div>
             <NewHome openForm={() => setShowForm(true)} />
-        </div>
+        </div>  
         {showForm && (
         <Popup
           onClose={() => setShowForm(false)}
