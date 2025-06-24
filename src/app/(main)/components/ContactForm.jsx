@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaUser, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logo from "@/assests/Bmalogo.png";
+import logo from "@/assets/dt.webp";
 
 export default function ContactForm({ title, headline, buttonName, onClose }) {
   const [isLoading, setIsLoading] = useState(false);
