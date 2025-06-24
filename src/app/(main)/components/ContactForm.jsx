@@ -9,7 +9,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
   const [errorMessage, setErrorMessage] = useState("");
   const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
   const recaptchaRef = useRef(null);
-  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  const siteKey = process.env.RECAPTCHA_PROJECT_ID;
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
