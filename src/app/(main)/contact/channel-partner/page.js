@@ -1,20 +1,11 @@
 "use client";
-import { useState, useRef } from "react";
-import {
-  FaUser,
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { useState } from "react";
+import { FaUser, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ChannelPartnerPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [status, setStatus] = useState({ type: "", message: "" });
-
-  // Replace with your deployed Google Apps Script URL
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbw8zO4FlKmxTM1DW0EQTivcxKbNwZ8IFhL0dse0D67Zp_TCUu-EZ1Fknha0ug9yTUMVUQ/exec";
 
   const [formData, setFormData] = useState({
     name: "",
@@ -30,31 +21,95 @@ export default function ChannelPartnerPage() {
       ...prev,
       [name]: value,
     }));
+    setStatus({ type: "", message: "" });
   };
 
+  const validateForm = () => {
+    if (!formData.name || !formData.phone) {
+      setStatus({
+        type: "error",
+        message: "Please fill in all required fields",
+      });
+      return false;
+    }
+
+    if (!/^\d{10,15}$/.test(formData.phone.replace(/\D/g, ""))) {
+      setStatus({
+        type: "error",
+        message: "Please enter a valid phone number (10-15 digits)",
+      });
+      return false;
+    }
+
+    if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      setStatus({
+        type: "error",
+        message: "Please enter a valid email address",
+      });
+      return false;
+    }
+
+    return true;
+  };
+
+  // Enhanced handleSubmit function with better error handling
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setStatus({ type: "", message: "" });
 
+    if (!validateForm()) {
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      // Create FormData object to handle submission
-      const submitData = new FormData();
+      // Prepare data for Google Sheets
+      const timestamp = new Date().toISOString();
+      const sheetData = {
+        timestamp,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        type: formData.type,
+        message: formData.message,
+        source: "Channel Partner Page",
+      };
 
-      // Add all form fields
-      Object.keys(formData).forEach((key) => {
-        submitData.append(key, formData[key]);
-      });
+      console.log("Submitting data:", sheetData); // Debug log
 
-      // Add timestamp
-      submitData.append("timestamp", new Date().toISOString());
-
-      // Use no-cors mode and form data instead of JSON
-      await fetch(SCRIPT_URL, {
+      // Send to Google Sheets via API route
+      const response = await fetch("/api/submit-channel-partner", {
         method: "POST",
-        mode: "no-cors",
-        body: submitData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(sheetData),
       });
+
+      console.log("Response status:", response.status); // Debug log
+      console.log("Response ok:", response.ok); // Debug log
+
+      // Get response text/json for better error handling
+      let responseData;
+      const contentType = response.headers.get("content-type");
+
+      if (contentType && contentType.includes("application/json")) {
+        responseData = await response.json();
+      } else {
+        responseData = { message: await response.text() };
+      }
+
+      console.log("Response data:", responseData); // Debug log
+
+      if (!response.ok) {
+        // Provide more specific error message
+        const errorMessage =
+          responseData?.message ||
+          responseData?.error ||
+          `Server error: ${response.status} ${response.statusText}`;
+        throw new Error(errorMessage);
+      }
 
       setSubmitSuccess(true);
       setStatus({
@@ -62,44 +117,73 @@ export default function ChannelPartnerPage() {
         message: "Thank you for your interest! We'll contact you soon.",
       });
 
-      console.log("Form submitted with data:", Object.fromEntries(submitData));
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        type: "Individual",
+        message: "",
+      });
     } catch (error) {
       console.error("Error submitting form:", error);
+
+      // More detailed error handling
+      let errorMessage = "Something went wrong. Please try again later.";
+
+      if (error.name === "TypeError" && error.message.includes("fetch")) {
+        errorMessage = "Network error. Please check your internet connection.";
+      } else if (error.message.includes("404")) {
+        errorMessage = "API endpoint not found. Please contact support.";
+      } else if (error.message.includes("500")) {
+        errorMessage = "Server error. Please try again later.";
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
       setStatus({
         type: "error",
-        message: "Something went wrong. Please try again later.",
+        message: errorMessage,
       });
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  const handleResetForm = () => {
-    setSubmitSuccess(false);
-    setStatus({ type: "", message: "" });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      type: "Individual",
-      message: "",
-    });
-  };
+  const breadcrumb = {
+     "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Home",
+    "item": "https://www.dholeratimes.com/"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "Contact Us",
+    "item": "https://www.dholeratimes.com/contact"  
+  },{
+    "@type": "ListItem", 
+    "position": 3, 
+    "name": "Channel Partner",
+    "item": "https://www.dholeratimes.com/contact/channel-partner"  
+  }]
+
+  }
 
   return (
     <div className="bg-gray-100 min-h-screen">
-      <link
-        rel="canonical"
-        href="https://www.dholeratimes.com/contact/channel-partner"
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <title>Become a Channel Partner in Dholera – Dholera Times</title>
+      <meta
+        name="description"
+        content="Join Dholera Times as a Channel Partner in Dholera Smart City. Earn high commissions, get full support & grow with India's first Greenfield Smart City."
       />
 
-      <title>
-        Become a Channel Partner in Dholera – Dholera Times
-      </title>
-
-      <meta name="description" content="Join Dholera Times as a Channel Partner in Dholera Smart City. Earn high commissions, get full support & grow with India’s first Greenfield Smart City." />
-      <meta name="keywords" content="Dholera smart city, channel partner, Broker opportunities, High commissions, estate partnership, strategic investments, Gujarat smart city, collaboration, real estate network, Channel Partner dholera ahmedadad, Channel partner Contact number" />
-        
       <div
         className="relative h-[50vh] max-sm:h-[30vh] bg-cover bg-center"
         style={{
@@ -108,22 +192,27 @@ export default function ChannelPartnerPage() {
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center">
-          <h2 className="text-white text-4xl md:text-5xl font-bold">Channel Partner</h2>
+          <h2 className="text-white text-4xl md:text-5xl font-bold">
+            Channel Partner
+          </h2>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-8">
-        {/* How to Get Started Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-          <h1 className="text-3xl font-bold mb-6 text-center">How to become Channel partner of Dholera Times ?</h1>
+          <h1 className="text-3xl font-bold mb-6 text-center">
+            How to become Channel partner of Dholera Times ?
+          </h1>
           <p className="text-lg mb-6 text-center">
-            Joining the Dholera Times as a Channel Partner is quick, straightforward, and beginner-friendly. 
-            No matter who you are: an individual, broker or real estate agency--you can start earning commissions 
-            immediately by following these easy steps:
+            Joining the Dholera Times as a Channel Partner is quick,
+            straightforward, and beginner-friendly.
           </p>
-          
+
           {!submitSuccess ? (
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-2xl mx-auto space-y-6"
+            >
               <div className="relative">
                 <FaUser className="absolute left-4 top-4 text-gray-500" />
                 <input
@@ -131,7 +220,7 @@ export default function ChannelPartnerPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Name"
+                  placeholder="Name *"
                   required
                   className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                 />
@@ -144,7 +233,7 @@ export default function ChannelPartnerPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone No."
+                  placeholder="Phone No. *"
                   required
                   className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                 />
@@ -158,7 +247,6 @@ export default function ChannelPartnerPage() {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email ID"
-                  required
                   className="w-full p-4 pl-12 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
                 />
               </div>
@@ -231,7 +319,7 @@ export default function ChannelPartnerPage() {
               <p className="text-gray-600 mb-6">{status.message}</p>
 
               <button
-                onClick={handleResetForm}
+                onClick={() => setSubmitSuccess(false)}
                 className="px-6 py-3 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 transition"
               >
                 Apply Again
@@ -242,30 +330,43 @@ export default function ChannelPartnerPage() {
 
         {/* Why Partner with Us Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">Why Partner with Us in Dholera?</h2>
-          
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Why Partner with Us in Dholera?
+          </h2>
+
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Earn Big with High Commissions</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Earn Big with High Commissions
+              </h3>
               <p>
-                Be part of a powerful real estate network and promote Dholera smart city — India's first greenfield smart city. 
-                We offer high commissions, simple process, and full support to help you grow your earnings.
+                Be part of a powerful real estate network and promote Dholera
+                smart city — India's first greenfield smart city. We offer high
+                commissions, simple process, and full support to help you grow
+                your earnings.
               </p>
             </div>
-            
+
             <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Strategic Location Advantage</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Strategic Location Advantage
+              </h3>
               <p>
-                Dholera is located along the Delhi–Mumbai Industrial Corridor. Its location makes it one of the most exciting 
-                spots for real estate growth in Gujarat & in India.
+                Dholera is located along the Delhi–Mumbai Industrial Corridor.
+                Its location makes it one of the most exciting spots for real
+                estate growth in Gujarat & in India.
               </p>
             </div>
-            
+
             <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Government-Driven Growth</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Government-Driven Growth
+              </h3>
               <p>
-                Dholera Smart City that is being built with full support from the Government of India. It brings top infrastructure, 
-                planned zones, and future-ready amenities — perfect for long-term success.
+                Dholera Smart City that is being built with full support from
+                the Government of India. It brings top infrastructure, planned
+                zones, and future-ready amenities — perfect for long-term
+                success.
               </p>
             </div>
           </div>
@@ -274,29 +375,36 @@ export default function ChannelPartnerPage() {
         {/* Why Dholera Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
           <h2 className="text-3xl font-bold mb-6 text-center">Why Dholera?</h2>
-          
+
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">India's Smart City of the Future</h3>
+              <h3 className="text-xl font-bold mb-3">
+                India's Smart City of the Future
+              </h3>
               <p>
-                Dholera smart city is designed with world-class infrastructure like an international airport, 
-                8-lane expressways, and a planned metro network.
+                Dholera smart city is designed with world-class infrastructure
+                like an international airport, 8-lane expressways, and a planned
+                metro network.
               </p>
             </div>
-            
+
             <div className="bg-green-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">Massive Growth Ahead</h3>
               <p>
-                As a key part of the DMIC project, Dholera offers one of the strongest strategic investments in Gujarat. 
-                The appreciation potential here is unmatched.
+                As a key part of the DMIC project, Dholera offers one of the
+                strongest strategic investments in Gujarat. The appreciation
+                potential here is unmatched.
               </p>
             </div>
-            
+
             <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Start Early. Grow Faster</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Start Early. Grow Faster
+              </h3>
               <p>
-                Get in early while Dholera is still growing. Enjoy first-mover advantage and build strong returns 
-                for yourself and your clients.
+                Get in early while Dholera is still growing. Enjoy first-mover
+                advantage and build strong returns for yourself and your
+                clients.
               </p>
             </div>
           </div>
@@ -304,36 +412,61 @@ export default function ChannelPartnerPage() {
 
         {/* Benefits Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">Benefits of Partnering with Dholera Times</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Benefits of Partnering with Dholera Times
+          </h2>
           <p className="text-lg mb-6 text-center">
-            Working with Dholera Times is more than just a collaboration — it's a full estate partnership built on trust, 
-            growth, and results. Whether you're a first-time agent or a seasoned broker, our platform helps you earn without 
-            upfront cost or risk.
+            Working with Dholera Times is more than just a collaboration — it's
+            a full estate partnership built on trust, growth, and results.
+            Whether you're a first-time agent or a seasoned broker, our platform
+            helps you earn without upfront cost or risk.
           </p>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">High Commissions & Incentives</h3>
-              <p>We reward your efforts with attractive commissions on every sale. More sales, more income.</p>
+              <h3 className="text-xl font-bold mb-3">
+                High Commissions & Incentives
+              </h3>
+              <p>
+                We reward your efforts with attractive commissions on every
+                sale. More sales, more income.
+              </p>
             </div>
-            
+
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">All-Inclusive Sales Support</h3>
-              <p>Get access to brochures, sales scripts and training sessions. Everything you need to close deals with confidence.</p>
+              <h3 className="text-xl font-bold mb-3">
+                All-Inclusive Sales Support
+              </h3>
+              <p>
+                Get access to brochures, sales scripts and training sessions.
+                Everything you need to close deals with confidence.
+              </p>
             </div>
-            
+
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Zero Investment to Start</h3>
-              <p>You don't need to pay anything to get started. No joining fee. No franchise cost. Just your time and our full backing.</p>
+              <h3 className="text-xl font-bold mb-3">
+                Zero Investment to Start
+              </h3>
+              <p>
+                You don't need to pay anything to get started. No joining fee.
+                No franchise cost. Just your time and our full backing.
+              </p>
             </div>
-            
+
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Site Visits, Webinars & Events</h3>
-              <p>We offer help with site visits in Dholera, online events with industry experts, and tools to keep you updated.</p>
+              <h3 className="text-xl font-bold mb-3">
+                Site Visits, Webinars & Events
+              </h3>
+              <p>
+                We offer help with site visits in Dholera, online events with
+                industry experts, and tools to keep you updated.
+              </p>
             </div>
-            
+
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Grow Your Network Nationwide</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Grow Your Network Nationwide
+              </h3>
               <p>Join a wide real estate network & grow your reach.</p>
             </div>
           </div>
@@ -341,40 +474,52 @@ export default function ChannelPartnerPage() {
 
         {/* Who Can Join Section */}
         <section className="mb-12 bg-white rounded-lg shadow-lg p-6">
-          <h2 className="text-3xl font-bold mb-6 text-center">Who Can Join Dholera Times?</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">
+            Who Can Join Dholera Times?
+          </h2>
           <p className="text-lg mb-6 text-center">
-            We welcome all motivated individuals and professionals who want to be part of the Dholera smart city success story. 
-            No matter your experience, we'll help you succeed.
+            We welcome all motivated individuals and professionals who want to
+            be part of the Dholera smart city success story. No matter your
+            experience, we'll help you succeed.
           </p>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-purple-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3">First-Time Agents</h3>
               <p>
-                New to real estate? No problem. We'll help you start earning from premium properties in Dholera 
-                without pressure or heavy targets.
+                New to real estate? No problem. We'll help you start earning
+                from premium properties in Dholera without pressure or heavy
+                targets.
               </p>
             </div>
-            
+
             <div className="bg-purple-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Real Estate Brokers & Agents</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Real Estate Brokers & Agents
+              </h3>
               <p>
-                Add top-selling, AUDA-approved Dholera plots to your portfolio. Enjoy high commissions and fast-moving inventory.
+                Add top-selling, AUDA-approved Dholera plots to your portfolio.
+                Enjoy high commissions and fast-moving inventory.
               </p>
             </div>
-            
+
             <div className="bg-purple-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">NRIs & Remote Professionals</h3>
+              <h3 className="text-xl font-bold mb-3">
+                NRIs & Remote Professionals
+              </h3>
               <p>
-                If you live abroad or outside Gujarat, our remote sales support allows you to earn from Dholera sales 
-                without being on-site.
+                If you live abroad or outside Gujarat, our remote sales support
+                allows you to earn from Dholera sales without being on-site.
               </p>
             </div>
-            
+
             <div className="bg-purple-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3">Channel Sales Agencies & Consultants</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Channel Sales Agencies & Consultants
+              </h3>
               <p>
-                Work with a reliable partner in the Gujarat smart city region. Get full back-end support and grow your reach faster.
+                Work with a reliable partner in the Gujarat smart city region.
+                Get full back-end support and grow your reach faster.
               </p>
             </div>
           </div>
@@ -383,19 +528,24 @@ export default function ChannelPartnerPage() {
         {/* Testimonials Section */}
         <section className="bg-white rounded-lg shadow-lg p-6">
           <h2 className="text-3xl font-bold mb-6 text-center">Testimonials</h2>
-          <h3 className="text-xl font-semibold mb-6 text-center">What Our Partners Say</h3>
-          
+          <h3 className="text-xl font-semibold mb-6 text-center">
+            What Our Partners Say
+          </h3>
+
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-gray-50 p-6 rounded-lg">
               <blockquote className="italic mb-4">
-                "Dholera Times has truly boosted my real estate income. The high commissions and smooth process make it a great experience."
+                "Dholera Times has truly boosted my real estate income. The high
+                commissions and smooth process make it a great experience."
               </blockquote>
               <p className="font-bold">– Harpreet Singh, Chandigarh</p>
             </div>
-            
+
             <div className="bg-gray-50 p-6 rounded-lg">
               <blockquote className="italic mb-4">
-                "Partnering on Dholera projects is a smart move. The location and government planning make selling easier. Plus, their team is always helpful."
+                "Partnering on Dholera projects is a smart move. The location
+                and government planning make selling easier. Plus, their team is
+                always helpful."
               </blockquote>
               <p className="font-bold">– Kuldeep Ahuja, Delhi</p>
             </div>

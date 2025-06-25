@@ -329,3 +329,16 @@ export async function getAllProjects() {
   
   return sortedPosts;
 }
+
+export async function getAllSubProjects() {
+  const query = `
+    *[_type == "post" && "Sub-Project" in categories[]->title] {
+      title,
+      "slug": slug.current,
+      mainImage,
+      categories[]->{title}
+    }
+  `;
+  const posts = await client.fetch(query, {}, { cache: 'no-store' });
+  return posts;
+}

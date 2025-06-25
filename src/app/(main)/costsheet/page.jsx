@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
-import icon from "@/assests/pdfIcon.webp";
+import icon from "@/assets/pdfIcon.webp";
 import { getAllSubProjects } from "@/sanity/lib/api";
 
 function formatIndianNumber(value) {
@@ -477,6 +477,7 @@ export default function CostSheet() {
               <td className="p-2 font-semibold">Legal Fee (Per Sale Deed)</td>
               <td className="p-2">
                 <input
+                name="legalFee"
                   type="text"
                   value="20000.00"
                   className="border p-2 w-full rounded"

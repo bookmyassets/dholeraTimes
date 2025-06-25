@@ -58,11 +58,40 @@ export default function ContactDetails() {
     ],
   };
 
+  const breadcumb = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dholeratimes.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: "https://www.dholeratimes.com/contact",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Inquiry",
+        item: "https://www.dholeratimes.com/contact/inquiry",
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <div className="bg-gray-900 w-full">
         <title>
@@ -84,7 +113,9 @@ export default function ContactDetails() {
         <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center text-white px-6 md:px-10">
           {/* Left Text Section */}
           <div className="md:w-1/2 text-center">
-            <h2 className="text-4xl font-bold max-sm:pt-4">Have Some Questions?</h2>
+            <h2 className="text-4xl font-bold max-sm:pt-4">
+              Have Some Questions?
+            </h2>
             <p className="text-gray-300 text-lg mt-3 max-sm:pt-4">
               Let us know, we will be more than happy to connect.
             </p>
@@ -159,7 +190,7 @@ export default function ContactDetails() {
                 <div className="space-y-8">
                   <div>
                     <h2 className="font-bold text-4xl text-[#2863e5]">
-                       Registered Office {" "}
+                      Registered Office{" "}
                     </h2>
                     <h2 className="font-bold text-2xl md:text-3xl">
                       Our Contact Info

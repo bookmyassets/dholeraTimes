@@ -322,60 +322,7 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="">
-              <h2 className="text-white text-lg font-semibold mb-4">Support</h2>
-              <ul className="space-y-2">
-                <li>
-                  <a href="/about" className="hover:text-white transition">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/policies/privacy"
-                    className="hover:text-white transition"
-                  >
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/policies/termsandconditions"
-                    className="hover:text-white transition"
-                  >
-                    Terms & Conditions
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/contact/inquiry"
-                    className="hover:text-white transition"
-                  >
-                    Contact Us
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="/infopack/locations"
-                    className="hover:text-white transition"
-                  >
-                    Live Location
-                  </a>
-                </li>
-                <li>
-                  <a href="/sitemap" className="hover:text-white transition">
-                    Sitemap
-                  </a>
-                </li>
-                <li>
-                  <a href="/sitemap.xml" className="hidden">
-                    Sitemap
-                  </a>
-                </li>
-              </ul>
-            </div>
-
+            
             <div className="">
               <h2 className="text-white text-lg font-semibold mb-4">
                 Useful Links
@@ -428,6 +375,60 @@ export default function Footer() {
                 </li>
                 <li>
                   <a href="/infopack/inventory">Live Booking status</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="">
+              <h2 className="text-white text-lg font-semibold mb-4">Support</h2>
+              <ul className="space-y-2">
+                <li>
+                  <a href="/about" className="hover:text-white transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/policies/privacy"
+                    className="hover:text-white transition"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/policies/termsandconditions"
+                    className="hover:text-white transition"
+                  >
+                    Terms & Conditions
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/contact/inquiry"
+                    className="hover:text-white transition"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="/infopack/locations"
+                    className="hover:text-white transition"
+                  >
+                    Live Location
+                  </a>
+                </li>
+                <li>
+                  <a href="/sitemap" className="hover:text-white transition">
+                    Sitemap
+                  </a>
+                </li>
+                <li>
+                  <a href="/sitemap.xml" className="hidden">
+                    Sitemap
+                  </a>
                 </li>
               </ul>
             </div>

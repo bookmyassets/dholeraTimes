@@ -155,18 +155,182 @@ export default function CareerPage() {
     setFileName("");
   };
 
+  const breadcrumb = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dholeratimes.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: "https://www.dholeratimes.com/contact",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Career",
+        item: "https://www.dholeratimes.com/contact/career",
+      },
+    ],
+  };
+
+  const localBuisness = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Dholera Times",
+    image: "",
+    "@id": "",
+    url: "https://www.dholeratimes.com/",
+    telephone: "+91 99589 93549",
+    priceRange: "10 Lac +",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "620,JMD Megapolis, sector-48, Sohna Road",
+      addressLocality: "Gurugram",
+      postalCode: "1220018",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 28.4195542,
+      longitude: 77.0386216,
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "10:00",
+      closes: "19:30",
+    },
+    sameAs: [
+      "https://www.facebook.com/people/Dholera-Times/61573763438050/",
+      "https://x.com/dholeratimes",
+      "https://www.instagram.com/dholeratimes/",
+      "https://www.youtube.com/@dholeratimes",
+      "https://www.linkedin.com/company/dholera-times",
+      "https://www.dholeratimes.com/",
+    ],
+  };
+
+  const organisation = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Dholera Times",
+    alternateName: "DT",
+    url: "https://www.dholeratimes.com/",
+    logo: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
+    sameAs: [
+      "https://www.facebook.com/people/Dholera-Times/61573763438050/",
+      "https://x.com/dholeratimes",
+      "https://www.instagram.com/dholeratimes/",
+      "https://www.youtube.com/channel/UCNyUMTmsaZ4VCOzBGnS0Zgw",
+      "https://www.linkedin.com/company/dholera-times",
+    ],
+  };
+
+  const jobPosting = {
+    "@context": "https://schema.org/",
+    "@type": "JobPosting",
+    title: "Portfolio Manager (Sr. Sales Executive)",
+    description: `What’s the role?
+You’ll be selling high-growth real estate projects to investors across Delhi-NCR.
+You’ll be helping them make smart, scalable investment decisions — not just transactions.
+
+• Should have the experience with higher ticket size (e.g - 10Lakh - 20Lakh)
+• 2 years of experience in rejection handling (Sales is a plus)
+• Should be able to handle 100 to 150 calls a day (Outbound Calls)
+• Addressing inquiries and resolving issues within specific timeline
+• Quickly assess the situation
+• Should have good knowledge of Call handling
+• Deliver world-class customer experience`,
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "Dholera Times",
+      sameAs: "https://www.dholeratimes.com/",
+      logo: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
+    },
+    industry: "Real Estate",
+    employmentType: "FULL_TIME",
+    workHours: "10:30am–7:30pm",
+    datePosted: "2025-06-21",
+    validThrough: "2025-07-31", // You can update this as needed
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "620, JMD Megapolis, Sector-48, Sohna Road",
+        addressLocality: "Gurugram",
+        postalCode: "122018",
+        addressCountry: "IN",
+      },
+    },
+    baseSalary: {
+      "@type": "MonetaryAmount",
+      currency: "INR",
+      value: {
+        "@type": "QuantitativeValue",
+        value: 15000,
+        unitText: "MONTH",
+      },
+    },
+    responsibilities:
+      "Selling high-growth real estate projects to investors across Delhi-NCR.",
+    skills: [
+      "Experience with high-ticket size sales (10L - 20L)",
+      "2+ years of rejection handling in sales",
+      "Ability to handle 100–150 outbound calls per day",
+      "Issue resolution within defined timelines",
+      "Strong call handling knowledge",
+      "Quick situational assessment",
+      "Customer experience delivery",
+    ],
+    qualifications: "Graduate",
+    educationRequirements: "Graduate",
+    experienceRequirements: "Minimum 2 years",
+  };
+
   return (
     <div className="bg-gray-100 min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organisation) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBuisness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPosting) }}
+      />
       <link
         rel="canonical"
         href="https://www.dholeratimes.com/contact/career"
       />
 
-      <title>
-        Career at Dholera Times | Join a Trusted Real Estate Brand
-      </title>
+      <title>Career at Dholera Times | Join a Trusted Real Estate Brand</title>
 
-      <meta name="description" content="Explore exciting career opportunities with Dholera Times. Join a trusted real estate group creating value in Dholera Smart City. Apply now." />
+      <meta
+        name="description"
+        content="Explore exciting career opportunities with Dholera Times. Join a trusted real estate group creating value in Dholera Smart City. Apply now."
+      />
 
       <div
         className="relative h-[50vh] max-sm:h-[30vh] bg-cover bg-center"

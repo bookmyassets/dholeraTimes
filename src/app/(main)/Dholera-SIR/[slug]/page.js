@@ -637,7 +637,6 @@ export default async function BlogDetail({ params }) {
             </aside>
           </div>
         </main>
-        <CommonForm title="Still Have Questions? Contact Us Now" />
       </div>
     );
   } catch (error) {

@@ -1,19 +1,58 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { User, Phone, MessageCircle } from "lucide-react";
 
-export default function ContactForm({ title = "Contact Us", headline = "Fill out the form below and we'll get back to you soon", buttonName = "Submit Form" }) {
+export default function ContactForm({ 
+  title = "Contact Us", 
+  headline = "Fill out the form below and we'll get back to you soon", 
+  buttonName = "Submit Form" 
+}) {
   const [isLoading, setIsLoading] = useState(false);
   const [submissionCount, setSubmissionCount] = useState(0);
   const [isDisabled, setIsDisabled] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
+  const recaptchaRef = useRef(null);
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+  
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
-    mobileNumber: "",
-    projectName: "",
-    plotNo: "",
+    phone: "",
     message: "",
   });
+
+  useEffect(() => {
+    // Load reCAPTCHA script
+    const loadRecaptcha = () => {
+      if (typeof window !== "undefined" && !window.grecaptcha) {
+        const script = document.createElement("script");
+        script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+        script.async = true;
+        script.defer = true;
+        script.onload = () => setRecaptchaLoaded(true);
+        script.onerror = () => {
+          console.error("Failed to load reCAPTCHA script");
+          setRecaptchaLoaded(false);
+        };
+        document.head.appendChild(script);
+      } else if (window.grecaptcha) {
+        setRecaptchaLoaded(true);
+      }
+    };
+
+    loadRecaptcha();
+
+    return () => {
+      // Cleanup reCAPTCHA
+      if (window.grecaptcha && recaptchaRef.current) {
+        try {
+          window.grecaptcha.reset();
+        } catch (e) {
+          console.log("reCAPTCHA cleanup error:", e);
+        }
+      }
+    };
+  }, [siteKey]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,47 +60,74 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
       ...prevData,
       [name]: value,
     }));
+    setErrorMessage("");
+  };
+
+  const validateForm = () => {
+    if (!formData.name || !formData.phone) {
+      setErrorMessage("Please fill in all required fields");
+      return false;
+    }
+
+    if (!/^\d{10,15}$/.test(formData.phone.replace(/\D/g, ''))) {
+      setErrorMessage("Please enter a valid phone number (10-15 digits)");
+      return false;
+    }
+
+    return true;
+  };
+
+  const handleRecaptchaVerification = async () => {
+    if (!window.grecaptcha || !recaptchaLoaded) {
+      throw new Error("reCAPTCHA not loaded");
+    }
+
+    return new Promise((resolve, reject) => {
+      window.grecaptcha.ready(() => {
+        window.grecaptcha.execute(siteKey, { action: 'submit' })
+          .then(resolve)
+          .catch(reject);
+      });
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMessage("");
 
-    // Get submission count and last submission timestamp
+    // Validate form
+    if (!validateForm()) {
+      setIsLoading(false);
+      return;
+    }
+
+    // Check submission limits
     let submissionCount = localStorage.getItem("formSubmissionCount") || 0;
     let lastSubmissionTime = localStorage.getItem("lastSubmissionTime");
 
-    // Check if 24 hours have passed since the last submission
     if (lastSubmissionTime) {
       const timeDifference = Date.now() - parseInt(lastSubmissionTime, 10);
-      const hoursPassed = timeDifference / (1000 * 60 * 60); // Convert ms to hours
+      const hoursPassed = timeDifference / (1000 * 60 * 60);
 
       if (hoursPassed >= 24) {
-        // Reset submission count after 24 hours
         submissionCount = 0;
         localStorage.setItem("formSubmissionCount", 0);
         localStorage.setItem("lastSubmissionTime", Date.now().toString());
       }
     }
 
-    // Restrict submission after 20 attempts
     if (submissionCount >= 3) {
-      alert(
-        "You have reached the maximum submission limit. Try again after 24 hours."
-      );
-      setIsLoading(false);
+      setErrorMessage("You have reached the maximum submission limit. Try again after 24 hours.");
       setIsDisabled(true);
-      return;
-    }
-
-    // Validate form data
-    if (!formData.fullName || !formData.phone || !formData.email) {
-      alert("Please fill in all fields");
       setIsLoading(false);
       return;
     }
 
     try {
+      // Verify reCAPTCHA
+      const token = await handleRecaptchaVerification();
+
       // API Request
       const response = await fetch(
         "https://api.telecrm.in/enterprise/67a30ac2989f94384137c2ff/autoupdatelead",
@@ -73,46 +139,39 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
           },
           body: JSON.stringify({
             fields: {
-              name: formData.fullName,
+              name: formData.name,
               phone: formData.phone,
-              email: formData.email,
+              message: formData.message,
               source: "Dholera Times Resale",
             },
             source: "Dholera Times Website",
             tags: ["Dholera Investment", "Website Lead"],
+            recaptchaToken: token,
           }),
         }
       );
 
-      // Store response text before parsing
       const responseText = await response.text();
 
-      // Check response status and handle accordingly
       if (response.ok) {
-        if (
-          responseText === "OK" ||
-          responseText.toLowerCase().includes("success")
-        ) {
-          setFormData({ fullName: "", email: "", phone: "" }); // Reset all form fields
-          setShowPopup(true); // Show popup on success
+        if (responseText === "OK" || responseText.toLowerCase().includes("success")) {
+          setFormData({ name: "", phone: "", message: "" });
+          setShowPopup(true);
 
-          // Increment submission count & store time
           submissionCount++;
           setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
           localStorage.setItem("lastSubmissionTime", Date.now().toString());
         } else {
-          // Handle unexpected response
           console.log("Response Text:", responseText);
-          alert("Submission received but with unexpected response");
+          setErrorMessage("Submission received but with unexpected response");
         }
       } else {
-        console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert(`Error submitting form: ${error.message}`);
+      setErrorMessage(`Error submitting form: ${error.message}`);
     } finally {
       setIsLoading(false);
     }
@@ -128,13 +187,19 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
           {headline}
         </p>
         
+        {errorMessage && (
+          <div className="mb-6 p-3 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
+            {errorMessage}
+          </div>
+        )}
+
         {isDisabled ? (
           <p className="text-center text-red-500 font-semibold">
             You have reached the maximum submission limit. Try again after 24 hours.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name Input - Required */}
+            {/* Name Input */}
             <div className="relative">
               <User className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
               <input
@@ -147,14 +212,14 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               />
             </div>
 
-            {/* Mobile Number Input - Required */}
+            {/* Mobile Number Input */}
             <div className="relative">
               <Phone className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
               <input
-                name="mobileNumber"
+                name="phone"
                 type="tel"
                 placeholder="Mobile Number *"
-                value={formData.mobileNumber}
+                value={formData.phone}
                 onChange={handleChange}
                 required
                 className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
@@ -165,22 +230,29 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
             <div className="relative">
               <MessageCircle className="absolute left-4 top-4 text-gray-500 w-5 h-5" />
               <textarea
-                name="Plot Details"
-                type="text"
+                name="message"
                 placeholder="Plot details"
-                rows="4"
                 value={formData.message}
                 onChange={handleChange}
                 className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white resize-none"
+                rows="4"
               ></textarea>
             </div>
+
+            {/* reCAPTCHA - invisible */}
+            <div 
+              ref={recaptchaRef} 
+              className="g-recaptcha" 
+              data-sitekey={siteKey} 
+              data-size="invisible"
+            ></div>
 
             {/* Submit Button */}
             <button
               type="submit"
-              disabled={isLoading || isDisabled}
+              disabled={isLoading || isDisabled || !recaptchaLoaded}
               className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-lg transition-all duration-300 ${
-                isLoading || isDisabled
+                isLoading || isDisabled || !recaptchaLoaded
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 hover:shadow-xl active:scale-95 transform"
               }`}
@@ -215,18 +287,17 @@ export default function ContactForm({ title = "Contact Us", headline = "Fill out
               <h3 className="text-2xl font-bold text-gray-800 mb-4">
                 Thank You!
               </h3>
-               <p className="text-center text-gray-600 mb-6">
-              Your form has been submitted successfully. We'll get back to you
-              soon.
-            </p>
-            <button
-              onClick={() => setShowPopup(false)}
-              className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-300"
-            >
-              Close
-            </button>
+              <p className="text-center text-gray-600 mb-6">
+                Your form has been submitted successfully. We'll get back to you soon.
+              </p>
+              <button
+                onClick={() => setShowPopup(false)}
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-300"
+              >
+                Close
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       )}
     </div>

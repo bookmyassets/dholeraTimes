@@ -58,11 +58,40 @@ export default function ContactDetails() {
     ],
   };
 
+  const breadcrumb = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dholeratimes.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: "https://www.dholeratimes.com/contact",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Resale Support",
+        item: "https://www.dholeratimes.com/contact/resale-support",
+      },
+    ],
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <title>Resale Support | Dholera Plot Buyback & Assistance</title>
       <meta
@@ -73,7 +102,10 @@ export default function ContactDetails() {
         name="keywords"
         content="Dholera Plot Buyback ,Dholera Plot Resale Support & Assistance ,Expert Support for Resale ,Dholera Smart City Residential Plot Resale Support "
       />
-                     <link rel="canonical" href="https://www.dholeratimes.com/contact/resale-support" />
+      <link
+        rel="canonical"
+        href="https://www.dholeratimes.com/contact/resale-support"
+      />
 
       <div className="space-y-8">
         <section className="relative h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">

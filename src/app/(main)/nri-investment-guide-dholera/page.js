@@ -613,9 +613,30 @@ export default function NRIInvestmentGuide() {
     dateModified: "2025-06-04",
   };
 
+  const breadcrumb = {
+      "@context": "https://schema.org/", 
+  "@type": "BreadcrumbList", 
+  "itemListElement": [{
+    "@type": "ListItem", 
+    "position": 1, 
+    "name": "Home",
+    "item": "https://www.dholeratimes.com/"  
+  },{
+    "@type": "ListItem", 
+    "position": 2, 
+    "name": "NRI Guide",
+    "item": "https://www.dholeratimes.com/nri-investment-guide-dholera"  
+  }]
+
+  }
+
   return (
     <>
       {/* Hero Section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
