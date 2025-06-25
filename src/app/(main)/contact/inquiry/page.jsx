@@ -58,7 +58,7 @@ export default function ContactDetails() {
     ],
   };
 
-  const breadcumb = {
+  const breadcrumb = {
     "@context": "https://schema.org/",
     "@type": "BreadcrumbList",
     itemListElement: [
