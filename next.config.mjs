@@ -21,11 +21,6 @@ const nextConfig = {
   permanent: true,
 },
 {
-  source: '/infopack/Inventory',
-  destination: '/infopack/inventory',
-  permanent: true,
-},
-{
   source: '/Dholera-Updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment',
   destination: '/Dholera-Updates/latest-news/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment',
   permanent: true,
