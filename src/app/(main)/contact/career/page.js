@@ -40,9 +40,12 @@ export default function CareerPage() {
       description:
         "We are looking for an experienced Portfolio Manager to join our team.",
       skills: [
-        "Financial analysis",
-        "Investment management",
+        "Good Communication",
+        "Presentable",
+        "Negotiation Skills",
         "Client relations",
+        "Quick Adaptability",
+        "Convincing Skill",
       ],
       experience: "5+ years",
       location: "Gurugram",
@@ -53,10 +56,12 @@ export default function CareerPage() {
       description:
         "We are looking for an experienced Portfolio Manager to join our team.",
       skills: [
-        "Sales",
-        "Financial products",
-        "Client acquisition",
-        "Investment advisory",
+        "Good Communication",
+        "Presentable",
+        "Negotiation Skills",
+        "Client relations",
+        "Quick Adaptability",
+        "Convincing Skill",
       ],
       experience: "3+ years",
       location: "Gurugram",
