@@ -38,7 +38,7 @@ export default function CareerPage() {
       id: 1,
       title: "Real Estate Sales Manager",
       description:
-        "We are looking for an experienced Portfolio Manager to join our team.",
+        "We are looking for an experienced Real Estate Sales Manager to join our team.",
       skills: [
         "Good Communication",
         "Presentable",
@@ -54,7 +54,7 @@ export default function CareerPage() {
       id: 2,
       title: "Senior Sales Executive",
       description:
-        "We are looking for an experienced Portfolio Manager to join our team.",
+        "We are looking for an experienced Senior Sales Executive to join our team.",
       skills: [
         "Good Communication",
         "Presentable",
