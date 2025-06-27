@@ -205,9 +205,17 @@ export default function Footer() {
             <div className="text-white">
               <div className="mb-6">
                 <h2 className="text-lg font-semibold mb-3">Contact Us</h2>
+                <p className="font-semibold text-blue-400">Head Office</p>
+               
                 <p className="text-gray-300">
-                  620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
+                   620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
                   India
+                </p>
+                <br />
+                <p className="font-semibold text-blue-400">Branch Office</p>
+             
+                <p className="text-gray-300">
+                Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015
                 </p>
               </div>
 

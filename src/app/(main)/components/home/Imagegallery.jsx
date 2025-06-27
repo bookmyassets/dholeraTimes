@@ -36,7 +36,7 @@ export default function Imagegallery() {
           </div>
         </Link>
         <Link
-          href="/gallery/siteprogress"
+          href="/gallery/site-progress"
           className="block bg-white rounded-lg shadow-2xl overflow-hidden transition-transform duration-300 hover:scale-105"
           aria-label="View photo gallery"
         >
