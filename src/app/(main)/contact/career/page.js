@@ -36,7 +36,7 @@ export default function CareerPage() {
   const jobListings = [
     {
       id: 1,
-      title: "Portfolio Manager",
+      title: "Real Estate Sales Manager",
       description:
         "We are looking for an experienced Portfolio Manager to join our team.",
       skills: [
@@ -52,7 +52,7 @@ export default function CareerPage() {
     },
     {
       id: 2,
-      title: "Senior Sales Executive (Portfolio Manager)",
+      title: "Senior Sales Executive",
       description:
         "We are looking for an experienced Portfolio Manager to join our team.",
       skills: [
