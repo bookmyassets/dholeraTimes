@@ -10,6 +10,7 @@ import {
   FaLinkedin,
   FaMapMarkerAlt,
 } from "react-icons/fa";
+import { CiMail } from "react-icons/ci";
 import ContactForm from "@/app/(main)/components/ContactForm";
 
 export default function ContactDetails() {
@@ -186,49 +187,106 @@ export default function ContactDetails() {
             {/* Contact Info & Contact Form */}
             <div className="flex flex-col max-sm:flex-col-reverse md:flex-row justify-center items-center  gap-16 p-6">
               {/* Contact Info Section */}
-              <div className="max-w-2xl text-left">
-                <div className="space-y-8">
-                  <div>
-                    <h2 className="font-bold text-4xl text-[#2863e5]">
-                      Registered Office{" "}
-                    </h2>
-                    <h2 className="font-bold text-2xl md:text-3xl">
-                      Our Contact Info
-                    </h2>
-                    <div className="mt-4 text-lg space-y-2">
-                      <div>
-                        <h3>
-                          <strong>Phone no:</strong> +91 99589 93549
-                        </h3>
-                      </div>
-                      <div>
-                        <h3>
-                          <strong>Email ID:</strong> info@dholeratimes.com
-                        </h3>
-                      </div>
-                      <div>
-                        <h3>
-                          <strong>Address:</strong> 620, JMD Megapolis,
-                          Sector-48, Sohna Road, Gurugram - 122018, India
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Map for mobile devices */}
-                  <div className=" w-full h-48 rounded overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4203.4823453415875!2d77.03488882442701!3d28.41943917746384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ed979cce195a67%3A0xa6ea8ada5da2aaf5!2sDholera%20Times!5e1!3m2!1sen!2sin!4v1744797963851!5m2!1sen!2sin"
-                      className="w-full h-full"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Location map"
-                    ></iframe>
-                  </div>
-                </div>
-              </div>
+             <div className="max-w-2xl text-left">
+                             <div className="space-y-8">
+                               <div>
+                                 <h2 className="font-bold text-4xl text-[#2863e5]">
+                                   Registered Office{" "}
+                                 </h2>
+                                 <h3 className="font-bold text-2xl">Dholera Times </h3>
+                                 <div className=" mt-4 text-lg space-y-2">
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <FaPhoneAlt />
+                                         </strong>{" "}
+                                         +91 99589 93549
+                                       </p>
+                                     </h3>
+                                   </div>
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <CiMail />
+                                         </strong>{" "}
+                                         info@dholeratimes.com
+                                       </p>
+                                     </h3>
+                                   </div>
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <FaMapMarkerAlt />
+                                         </strong>{" "}
+                                         620, JMD Megapolis, Sector-48, Sohna Road, Gurugram
+                                         - 122018, India
+                                       </p>
+                                     </h3>
+                                   </div>
+             
+                                   <div className="space-y-4">
+                                 <div className=" w-full h-48 rounded overflow-hidden">
+                                   <iframe
+                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4203.4823453415875!2d77.03488882442701!3d28.41943917746384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ed979cce195a67%3A0xa6ea8ada5da2aaf5!2sDholera%20Times!5e1!3m2!1sen!2sin!4v1744797963851!5m2!1sen!2sin"
+                                     className="w-full h-full"
+                                     style={{ border: 0 }}
+                                     allowFullScreen=""
+                                     loading="lazy"
+                                     referrerPolicy="no-referrer-when-downgrade"
+                                     title="Location map"
+                                   ></iframe>
+                                 </div>
+                               </div>
+                                 </div>
+                               </div>
+             
+                               {/* Branch Office Section */}
+                               <div>
+                                 <h2 className="font-bold text-4xl text-[#2863e5]">
+                                   Branch Office{" "}
+                                 </h2>
+                                 <h3 className="font-bold text-2xl">Dholera Times </h3>
+                                 <div className=" mt-4 text-lg space-y-2">
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <FaPhoneAlt />
+                                         </strong>{" "}
+                                         +91 99589 93549
+                                       </p>
+                                     </h3>
+                                   </div>
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <CiMail />
+                                         </strong>{" "}
+                                         info@dholeratimes.com
+                                       </p>
+                                     </h3>
+                                   </div>
+                                   <div>
+                                     <h3>
+                                       <p className="flex justify-start items-center gap-4">
+                                         <strong>
+                                           <FaMapMarkerAlt />
+                                         </strong>{" "}
+                                         Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015
+                                       </p>
+                                     </h3>
+                                   </div>
+                                 </div>
+                               </div>
+             
+                               
+                             </div>
+                           </div>
+             
 
               {/* Contact Form Section */}
               <div className=" ">

@@ -59,28 +59,30 @@ export default function ContactDetails() {
     ],
   };
 
-  const breadcrumb = 
-{
-  "@context": "https://schema.org/", 
-  "@type": "BreadcrumbList", 
-  "itemListElement": [{
-    "@type": "ListItem", 
-    "position": 1, 
-    "name": "Home",
-    "item": "https://www.dholeratimes.com/"  
-  },{
-    "@type": "ListItem", 
-    "position": 2, 
-    "name": "Contact Us",
-    "item": "https://www.dholeratimes.com/contact"  
-  },{
-    "@type": "ListItem", 
-    "position": 3, 
-    "name": "Site visit",
-    "item": "https://www.dholeratimes.com/contact/site-visit"  
-  }]
-}
-
+  const breadcrumb = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dholeratimes.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Contact Us",
+        item: "https://www.dholeratimes.com/contact",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Site visit",
+        item: "https://www.dholeratimes.com/contact/site-visit",
+      },
+    ],
+  };
 
   return (
     <>
@@ -102,136 +104,183 @@ insights, and investment opportunities on the ground. Limited slots!"
         name="keywords"
         content="Book site visit dholera,Free site visit dholera,Dholera SIR visit,Dholera smart city site visit,Dholera Smart city Visit,Dholera Project visit "
       />
-                     <link rel="canonical" href="https://www.dholeratimes.com/contact/site-visit" />
+      <link
+        rel="canonical"
+        href="https://www.dholeratimes.com/contact/site-visit"
+      />
       <div>
+        <section className="relative md:h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
+          <div className="absolute inset-0">
+            <Image
+              src={get}
+              alt="Site Visit"
+              className="w-full h-[50vh] max-sm:h-[30vh] object-cover  "
+            />
+          </div>
+          <div className="relative z-10 max-w-3xl text-white px-6">
+            <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg mb-4">
+              Book A Free Site Visit
+            </h1>
+          </div>
+        </section>
 
+        <div className="">
+          <div className="bg-white ">
+            <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
+              {/* Contact Info Section */}
 
-      <section className="relative md:h-[50vh] max-sm:h-[30vh] flex items-center justify-center text-center bg-black">
-        <div className="absolute inset-0">
-          <Image
-            src={get}
-            alt="Site Visit"
-            className="w-full h-[50vh] max-sm:h-[30vh] object-cover  "
-          />
-        </div>
-        <div className="relative z-10 max-w-3xl text-white px-6">
-          <h1 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg mb-4">
-            Book A Free Site Visit
-          </h1>
-        </div>
-      </section>
+              <div className="">
+                <ContactForm
+                  title="Book A Free Site Visit"
+                  headline="Fill the form below to schedule a site visit . Fields marked with * are mandatory."
+                  buttonName="Submit"
+                />
+              </div>
 
-      <div className="">
-        <div className="bg-white ">
-          <div className="flex flex-col md:flex-row justify-center items-center  gap-16 p-6">
-            {/* Contact Info Section */}
+              <div className="max-w-2xl text-left">
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="font-bold text-4xl text-[#2863e5]">
+                      Registered Office{" "}
+                    </h2>
+                    <h3 className="font-bold text-2xl">Dholera Times </h3>
+                    <div className=" mt-4 text-lg space-y-2">
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <FaPhoneAlt />
+                            </strong>{" "}
+                            +91 99589 93549
+                          </p>
+                        </h3>
+                      </div>
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <CiMail />
+                            </strong>{" "}
+                            info@dholeratimes.com
+                          </p>
+                        </h3>
+                      </div>
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <FaMapMarkerAlt />
+                            </strong>{" "}
+                            620, JMD Megapolis, Sector-48, Sohna Road, Gurugram
+                            - 122018, India
+                          </p>
+                        </h3>
+                      </div>
 
-            <div className="">
-              <ContactForm title="Book A Free Site Visit" headline="Fill the form below to schedule a site visit . Fields marked with * are mandatory." buttonName="Submit" />
-            </div>
-
-            <div className="max-w-2xl text-left">
-              <div className="space-y-8">
-                <div>
-                  <h2 className="font-bold text-4xl text-[#2863e5]">
-                    Registered Office{" "}
-                  </h2>
-                  <h3 className="font-bold text-2xl">Dholera Times </h3>
-                  <div className=" mt-4 text-lg space-y-2">
-                    <div>
-                      <h3>
-                        <p className="flex justify-start items-center gap-4">
-                          <strong>
-                            <FaPhoneAlt />
-                          </strong>{" "}
-                          +91 99589 93549
-                        </p>
-                      </h3>
-                    </div>
-                    <div>
-                      <h3>
-                        <p className="flex justify-start items-center gap-4">
-                          <strong>
-                            <CiMail />
-                          </strong>{" "}
-                          info@dholeratimes.com
-                        </p>
-                      </h3>
-                    </div>
-                    <div>
-                      <h3>
-                        <p className="flex justify-start items-center gap-4">
-                          <strong>
-                            <FaMapMarkerAlt />
-                          </strong>{" "}
-                          620, JMD Megapolis, Sector-48, Sohna Road, Gurugram -
-                          122018, India
-                        </p>
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  
-                  <div className=" w-full h-48 rounded overflow-hidden">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4203.4823453415875!2d77.03488882442701!3d28.41943917746384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ed979cce195a67%3A0xa6ea8ada5da2aaf5!2sDholera%20Times!5e1!3m2!1sen!2sin!4v1744797963851!5m2!1sen!2sin"
-                      className="w-full h-full"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Location map"
+                      <div className="space-y-4">
+                    <div className=" w-full h-48 rounded overflow-hidden">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4203.4823453415875!2d77.03488882442701!3d28.41943917746384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87ed979cce195a67%3A0xa6ea8ada5da2aaf5!2sDholera%20Times!5e1!3m2!1sen!2sin!4v1744797963851!5m2!1sen!2sin"
+                        className="w-full h-full"
+                        style={{ border: 0 }}
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Location map"
                       ></iframe>
+                    </div>
                   </div>
+                    </div>
+                  </div>
+
+                  {/* Branch Office Section */}
+                  <div>
+                    <h2 className="font-bold text-4xl text-[#2863e5]">
+                      Branch Office{" "}
+                    </h2>
+                    <h3 className="font-bold text-2xl">Dholera Times </h3>
+                    <div className=" mt-4 text-lg space-y-2">
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <FaPhoneAlt />
+                            </strong>{" "}
+                            +91 99589 93549
+                          </p>
+                        </h3>
+                      </div>
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <CiMail />
+                            </strong>{" "}
+                            info@dholeratimes.com
+                          </p>
+                        </h3>
+                      </div>
+                      <div>
+                        <h3>
+                          <p className="flex justify-start items-center gap-4">
+                            <strong>
+                              <FaMapMarkerAlt />
+                            </strong>{" "}
+                            Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015
+                          </p>
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+
+                  
                 </div>
               </div>
-            </div>
 
-            {/* Contact Form Section */}
-          </div>
-          <div className="space-y-5  mb-5 text-center">
-            <h2 className="text-xl font-semibold text-gray-800 mb-4">
-              Follow Us
-            </h2>
-            <div className="flex justify-center space-x-6">
-              <a
-                href="https://www.facebook.com/profile.php?id=61573763438050"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 text-3xl hover:text-blue-800"
+              {/* Contact Form Section */}
+            </div>
+            <div className="space-y-5  mb-5 text-center">
+              <h2 className="text-xl font-semibold text-gray-800 mb-4">
+                Follow Us
+              </h2>
+              <div className="flex justify-center space-x-6">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61573763438050"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 text-3xl hover:text-blue-800"
                 >
-                <FaFacebook />
-              </a>
-              <a
-                href="https://x.com/dholeratimes"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 text-3xl hover:text-blue-600"
+                  <FaFacebook />
+                </a>
+                <a
+                  href="https://x.com/dholeratimes"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 text-3xl hover:text-blue-600"
                 >
-                <FaTwitter />
-              </a>
-              <a
-                href="https://www.instagram.com/dholeratimes/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-pink-500 text-3xl hover:text-pink-700"
+                  <FaTwitter />
+                </a>
+                <a
+                  href="https://www.instagram.com/dholeratimes/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-pink-500 text-3xl hover:text-pink-700"
                 >
-                <FaInstagram />
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-700 text-3xl hover:text-blue-900"
+                  <FaInstagram />
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-700 text-3xl hover:text-blue-900"
                 >
-                <FaLinkedin />
-              </a>
+                  <FaLinkedin />
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-                </div>
     </>
   );
 }
