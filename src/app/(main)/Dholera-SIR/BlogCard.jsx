@@ -30,7 +30,7 @@ export default function BlogCard({ post }) {
       {/* Content */}
       <div className="flex flex-col flex-grow">
         <Link
-          href={`/Dholera-SIR/${post.slug.current}`}
+          href={`/dholera-sir/${post.slug.current}`}
           className="w-full px-4 py-2 transition-all font-semibold border-white  hover:bg-[#d6b873] bg-[#151f28] hover:text-[#151f28] text-lg md:text-base text-[#d6b873] mt-auto space-y-3"
         >
           {/* Title */}

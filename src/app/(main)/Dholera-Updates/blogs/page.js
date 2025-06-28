@@ -20,7 +20,7 @@ export default async function BlogsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-       <link rel="canonical" href="https://www.dholeratimes.com/Dholera-Updates/blogs" />
+       <link rel="canonical" href="https://www.dholeratimes.com/dholera-updates/blogs" />
       {/* Navigation */}
 
       {/* Hero Section */}

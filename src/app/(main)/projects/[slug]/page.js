@@ -60,7 +60,7 @@ const Projects = ({ post }) => {
   }
 
   return (
-    <Link href={`/Dholera-SIR/${post.slug.current}`}>
+    <Link href={`/dholera-sir/${post.slug.current}`}>
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">

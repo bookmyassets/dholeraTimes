@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
   return (
-    <Link href={`/Dholera-Updates/blogs/${post.slug.current}`}>
+    <Link href={`/dholera-updates/blogs/${post.slug.current}`}>
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
@@ -89,7 +89,7 @@ const Projects = ({ post }) => {
 // Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
-    <Link href={`/Dholera-Updates/blogs/${blog.slug.current}`}>
+    <Link href={`/dholera-updates/blogs/${blog.slug.current}`}>
       <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
         <div className="relative h-48 overflow-hidden">
           {blog.mainImage ? (
@@ -164,7 +164,7 @@ export default async function BlogDetail({ params }) {
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-2">Blog post not found</h1>
             <Link
-              href="/Dholera-Updates/latest-news"
+              href="/dholera-updates/latest-news"
               className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
             >
               ← Back to News
@@ -389,7 +389,7 @@ export default async function BlogDetail({ params }) {
       year: "numeric",
     });
 
-  const canonicalUrl = `https://www.dholeratimes.com/Dholera-Updates/blogs/${post.slug.current}`;
+  const canonicalUrl = `https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`;
 
     return (
       <div className="bg-white min-h-screen">
@@ -430,7 +430,7 @@ export default async function BlogDetail({ params }) {
                           ></path>
                         </svg>
                         <Link
-                          href="/Dholera-Updates/blogs"
+                          href="/dholera-updates/blogs"
                           className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 md:ml-2"
                         >
                           Blogs
@@ -551,7 +551,7 @@ export default async function BlogDetail({ params }) {
                       {post.tags.map((tag) => (
                         <Link
                           key={tag}
-                          href={`/Dholera-Updates/blogs/tag/${tag}`}
+                          href={`/dholera-updates/blogs/tag/${tag}`}
                           className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition"
                         >
                           #{tag}
@@ -613,7 +613,7 @@ export default async function BlogDetail({ params }) {
                     )}
                   </div>
                   <div className="flex items-center justify-center mt-6">
-                    <Link href="/Dholera-Updates/blogs">
+                    <Link href="/dholera-updates/blogs">
                       <button className="text-center rounded-xl text-white font-semibold bg-[#d7b56d] hover:bg-[#c6a45d] p-3 transition-colors">
                         Explore More
                       </button>
@@ -633,7 +633,7 @@ export default async function BlogDetail({ params }) {
                 You might also like
               </h2>
               <Link
-                href="/Dholera-Updates/latest-news"
+                href="/dholera-updates/latest-news"
                 className="rounded-xl text-gray-800 font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d]"
               >
                 View all
@@ -679,7 +679,7 @@ export default async function BlogDetail({ params }) {
           <h1 className="text-2xl font-bold mb-2">Error loading blog post</h1>
           <p className="text-gray-600">Please try again later</p>
           <Link
-            href="/Dholera-Updates/blogs"
+            href="/dholera-updates/blogs"
             className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
           >
             ← Back to News
