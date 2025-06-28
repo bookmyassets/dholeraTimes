@@ -428,7 +428,7 @@ export default function RootLayout({ children }) {
                       onClick={toggleDholeraDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/Dholera-SIR">Dholera SIR</Link>
+                      <Link href="/dholera-sir">Dholera SIR</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -451,7 +451,7 @@ export default function RootLayout({ children }) {
                         {dholera.map((dhol) => (
                           <Link
                             key={dhol._id}
-                            href={`/Dholera-SIR/${dhol.slug.current}`}
+                            href={`/dholera-sir/${dhol.slug.current}`}
                             className="block px-4 py-2 text-black hover:bg-gray-200"
                             onClick={() => setIsDholeraDropdownOpen(false)}
                           >
@@ -512,7 +512,7 @@ export default function RootLayout({ children }) {
                       onClick={toggleBlogsDropdown}
                       className="text-white hover:text-orange-200 px-3 py-2 flex items-center gap-1"
                     >
-                      <Link href="/Dholera-Updates/blogs">Dholera Update</Link>
+                      <Link href="/dholera-updates/blogs">Dholera Update</Link>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
@@ -535,12 +535,12 @@ export default function RootLayout({ children }) {
                         {[
                           {
                             title: "Latest News",
-                            path: "/Dholera-Updates/latest-news",
+                            path: "/dholera-updates/latest-news",
                           },
-                          { title: "Blogs", path: "/Dholera-Updates/blogs" },
+                          { title: "Blogs", path: "/dholera-updates/blogs" },
                           {
                             title: "NewsPaper",
-                            path: "/Dholera-Updates/newspaper",
+                            path: "/dholera-updates/newspaper",
                           },
                         ].map((item) => (
                           <Link
@@ -583,7 +583,7 @@ export default function RootLayout({ children }) {
                         {[
                           {
                             title: "Dholera SIR Progress",
-                            path: "/gallery/Dholera-SIR-progress",
+                            path: "/gallery/dholera-sir-progress",
                           },
                           {
                             title: "Site Progress",
@@ -821,7 +821,7 @@ export default function RootLayout({ children }) {
                           {dholera.map((dhol) => (
                             <Link
                               key={dhol._id}
-                              href={`/Dholera-SIR/${dhol.slug.current}`}
+                              href={`/dholera-sir/${dhol.slug.current}`}
                               className="text-white font-bold hover:text-white block px-3 py-2 text-sm"
                               onClick={() => {
                                 setIsMobileDholeraOpen(false);
@@ -901,12 +901,12 @@ export default function RootLayout({ children }) {
                           {[
                             {
                               title: "Latest News",
-                              path: "/Dholera-Updates/latest-news",
+                              path: "/dholera-updates/latest-news",
                             },
-                            { title: "Blogs", path: "/Dholera-Updates/blogs" },
+                            { title: "Blogs", path: "/dholera-updates/blogs" },
                             {
                               title: "NewsPaper",
-                              path: "/Dholera-Updates/newspaper",
+                              path: "/dholera-updates/newspaper",
                             },
                           ].map((item) => (
                             <Link
@@ -951,7 +951,7 @@ export default function RootLayout({ children }) {
                           {[
                             {
                               title: "Dholera SIR Progress",
-                              path: "/gallery/Dholera-SIR-progress",
+                              path: "/gallery/dholera-sir-progress",
                             },
                             {
                               title: "Site Progress",
