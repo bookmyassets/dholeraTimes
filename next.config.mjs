@@ -116,40 +116,11 @@ const nextConfig = {
   permanent: true,
 },
 {
-  source: '/Dholera-SIR/Abcd-building',
-  destination: '/dholera-sir/abcd-building',
-  permanent: true,
-},
-{
   source: '/DholeraSIR/Dholera-International-Airport',
   destination: '/dholera-sir/dholera-international-airport',
   permanent: true,
 },
-  {
-    source: '/Dholera-SIR-progress',
-    destination: '/dholera-sir-progress',
-    permanent: true,
-  },
-  {
-    source: '/Dholera-Updates/latest-news',
-    destination: '/dholera-updates/latest-news',
-    permanent: true,
-  },
-  {
-    source: '/Dholera-Updates/newspaper',
-    destination: '/dholera-updates/newspaper',
-    permanent: true,
-  },
-  {
-    source: '/Dholera-Updates/blogs',
-    destination: '/dholera-updates/blogs',
-    permanent: true,
-  },
-  {
-    source: '/Dholera-SIR',
-    destination: '/dholera-sir',
-    permanent: true,
-  },
+
 
 
       ]
