@@ -27,13 +27,13 @@ export default function Popup({
   const pathname = usePathname();
   const [showForm, setShowForm] = useState(false);
 
-  const [timeLeft, setTimeLeft] = useState(1800);
+  const [timeLeft, setTimeLeft] = useState(10000);
 
   useEffect(() => {
     let timer;
 
     if (showForm) {
-      setTimeLeft(1800);
+      setTimeLeft(10000);
 
       timer = setInterval(() => {
         setTimeLeft((prev) => {

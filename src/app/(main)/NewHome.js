@@ -16,6 +16,7 @@ import TestimonialPagination from "./components/Testimonials";
 import { AnimatePresence } from "framer-motion";
 import BrochureForm from "./components/BrochureForm";
 import MegaIndustries from "./components/home/MegaIndusties";
+import Notifications from "./components/Notifications";
 
 export default function NewHome({openForm}) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -147,6 +148,7 @@ export default function NewHome({openForm}) {
                     </button>
                   </div>
                 </div>
+                <Notifications/>
                 <div className="md:w-1/2 animate-on-scroll from-right">
                   <div className="bg-white rounded-lg p-8 shadow-md">
                     <div className="flex justify-between items-center mb-4">
