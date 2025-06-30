@@ -72,6 +72,7 @@ export default function Info() {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <link rel="canonical" href="https://www.dholeratimes.com/infopack" />
       <div className="max-w-7xl mx-auto relative z-10 space-y-12">
         {/* Hero Section */}
         <section
