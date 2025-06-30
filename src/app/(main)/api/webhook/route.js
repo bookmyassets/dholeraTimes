@@ -1,6 +1,6 @@
 // api/webhook/sanity/route.js
 import { NextResponse } from 'next/server';
-import { GoogleSpreadsheet } from 'google-spreadsheet';
+import { google } from 'googleapis';
 import { JWT } from 'google-auth-library';
 
 // WhatsApp API configuration
@@ -76,30 +76,48 @@ Stay informed about Dholera Smart City updates!`;
 // Function to get subscribers from Google Sheets
 async function getSubscribers() {
   try {
-    const serviceAccountAuth = new JWT({
+    const auth = new google.auth.JWT({
       email: GOOGLE_CLIENT_EMAIL_DAILY_NOTIFICATION,
       key: GOOGLE_CLIENT_PRIVATE_KEY_NOTIFICATION,
-      scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+      scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
     });
 
-    const doc = new GoogleSpreadsheet(GOOGLE_CLIENT_SHEET_ID_NOTIFICATION, serviceAccountAuth);
-    await doc.loadInfo();
+    const sheets = google.sheets({ version: 'v4', auth });
     
-    const sheet = doc.sheetsByIndex[0]; // First sheet
-    const rows = await sheet.getRows();
-    
+    // Get all data from the sheet
+    const response = await sheets.spreadsheets.values.get({
+      spreadsheetId: GOOGLE_CLIENT_SHEET_ID_NOTIFICATION,
+      range: 'A:Z', // Get all columns
+    });
+
+    const rows = response.data.values;
+    if (!rows || rows.length === 0) {
+      return [];
+    }
+
+    const headers = rows[0];
+    const nameIndex = headers.indexOf('name');
+    const phoneIndex = headers.indexOf('phone');
+    const statusIndex = headers.indexOf('Status');
+
+    if (nameIndex === -1 || phoneIndex === -1 || statusIndex === -1) {
+      throw new Error('Required columns (name, phone, Status) not found');
+    }
+
     // Filter subscribers who have received welcome message
-    const activeSubscribers = rows.filter(row => 
-      row.get('Status') === 'SENT' && 
-      row.get('phone') && 
-      row.get('name')
-    );
+    const activeSubscribers = [];
+    for (let i = 1; i < rows.length; i++) {
+      const row = rows[i];
+      if (row[statusIndex] === 'SENT' && row[phoneIndex] && row[nameIndex]) {
+        activeSubscribers.push({
+          name: row[nameIndex],
+          phone: row[phoneIndex],
+          rowIndex: i + 1 // 1-based index for Google Sheets
+        });
+      }
+    }
     
-    return activeSubscribers.map(row => ({
-      name: row.get('name'),
-      phone: row.get('phone'),
-      rowIndex: row.rowIndex
-    }));
+    return activeSubscribers;
   } catch (error) {
     console.error('❌ Error fetching subscribers:', error);
     throw error;
@@ -109,33 +127,56 @@ async function getSubscribers() {
 // Function to update delivery status in sheets
 async function updateDeliveryStatus(subscribers, contentType, contentId) {
   try {
-    const serviceAccountAuth = new JWT({
+    const auth = new google.auth.JWT({
       email: GOOGLE_CLIENT_EMAIL_DAILY_NOTIFICATION,
       key: GOOGLE_CLIENT_PRIVATE_KEY_NOTIFICATION,
       scopes: ['https://www.googleapis.com/auth/spreadsheets'],
     });
 
-    const doc = new GoogleSpreadsheet(GOOGLE_CLIENT_SHEET_ID_NOTIFICATION, serviceAccountAuth);
-    await doc.loadInfo();
-    
-    const sheet = doc.sheetsByIndex[0];
+    const sheets = google.sheets({ version: 'v4', auth });
     const statusColumn = `${contentType}_${contentId}`;
     
+    // First, get current headers
+    const headerResponse = await sheets.spreadsheets.values.get({
+      spreadsheetId: GOOGLE_CLIENT_SHEET_ID_NOTIFICATION,
+      range: '1:1',
+    });
+
+    const headers = headerResponse.data.values?.[0] || [];
+    let statusColumnIndex = headers.indexOf(statusColumn);
+    
     // Add status column header if it doesn't exist
-    const headers = await sheet.loadHeaderRow();
-    if (!headers.includes(statusColumn)) {
-      await sheet.resize({ columnCount: headers.length + 1 });
-      await sheet.setHeaderRow([...headers, statusColumn]);
+    if (statusColumnIndex === -1) {
+      statusColumnIndex = headers.length;
+      const columnLetter = String.fromCharCode(65 + statusColumnIndex); // A=65
+      
+      await sheets.spreadsheets.values.update({
+        spreadsheetId: GOOGLE_CLIENT_SHEET_ID_NOTIFICATION,
+        range: `${columnLetter}1`,
+        valueInputOption: 'RAW',
+        requestBody: {
+          values: [[statusColumn]]
+        }
+      });
     }
     
     // Update status for each subscriber
-    const rows = await sheet.getRows();
-    for (const subscriber of subscribers) {
-      const row = rows.find(r => r.rowIndex === subscriber.rowIndex);
-      if (row) {
-        row.set(statusColumn, 'SENT');
-        await row.save();
-      }
+    const updates = subscribers.map(subscriber => {
+      const columnLetter = String.fromCharCode(65 + statusColumnIndex);
+      return {
+        range: `${columnLetter}${subscriber.rowIndex}`,
+        values: [['SENT']]
+      };
+    });
+
+    if (updates.length > 0) {
+      await sheets.spreadsheets.values.batchUpdate({
+        spreadsheetId: GOOGLE_CLIENT_SHEET_ID_NOTIFICATION,
+        requestBody: {
+          valueInputOption: 'RAW',
+          data: updates
+        }
+      });
     }
   } catch (error) {
     console.error('❌ Error updating delivery status:', error);
