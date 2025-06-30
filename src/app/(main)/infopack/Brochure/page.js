@@ -25,6 +25,8 @@ export default async function BrochurePage() {
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
           }}>
+      <meta name="robots" content="index, dofollow"/>
+
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 top-0 w-24 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>

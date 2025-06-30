@@ -37,6 +37,8 @@ export default function ImageGallery() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
        <link rel="canonical" href="https://www.dholeratimes.com/dholera-updates/newspaper" />
+      <meta name="robots" content="index, dofollow"/>
+
       <div className="relative md:h-96 w-full h-[50vh] overflow-hidden">
         <Image
           src={hero}

@@ -397,6 +397,7 @@ export default async function BlogDetail({ params }) {
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
         <link rel="canonical" href={canonicalUrl} />
+      <meta name="robots" content="index, dofollow"/>
 
         {/* Main content */}
         <main className="max-w-7xl mx-auto px-4 py-8">

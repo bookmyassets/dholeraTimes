@@ -19,6 +19,7 @@ export default function DholeraProgressPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
              <link rel="canonical" href="https://www.dholeratimes.com/gallery/site-progress" />
+      <meta name="robots" content="index, dofollow"/>
 
       {/* Hero Section with Overlay */}
       <div className="relative h-[50vh] overflow-hidden">

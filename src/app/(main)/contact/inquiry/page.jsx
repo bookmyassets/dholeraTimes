@@ -86,6 +86,8 @@ export default function ContactDetails() {
 
   return (
     <>
+      <meta name="robots" content="index, dofollow"/>
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}

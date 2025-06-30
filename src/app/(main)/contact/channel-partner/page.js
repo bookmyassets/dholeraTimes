@@ -174,6 +174,8 @@ export default function ChannelPartnerPage() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
+      <meta name="robots" content="index, dofollow"/>
+
         <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
