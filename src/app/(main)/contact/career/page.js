@@ -331,6 +331,7 @@ You’ll be helping them make smart, scalable investment decisions — not just 
       />
 
       <title>Career at Dholera Times | Join a Trusted Real Estate Brand</title>
+      <meta name="robots" content="noindex, dofollow"/>
 
       <meta
         name="description"
