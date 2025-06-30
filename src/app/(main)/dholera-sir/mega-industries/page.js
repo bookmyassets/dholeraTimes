@@ -52,7 +52,7 @@ export default function MegaIndustries() {
         }
       `}</style>
       <div className="relative">
-        <link ref='canonical' href="https://www.dholeratimes.com/dholera-sir/mega-industries" />
+        <link rel='canonical' href="https://www.dholeratimes.com/dholera-sir/mega-industries" />
       <Image
         src={bg}
         alt="Background Image"
