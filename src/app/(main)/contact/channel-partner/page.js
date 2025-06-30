@@ -175,7 +175,7 @@ export default function ChannelPartnerPage() {
   return (
     <div className="bg-gray-100 min-h-screen">
       <meta name="robots" content="index, dofollow"/>
-
+        <link ref='canonical' href="https://www.dholeratimes.com/contact/channel-partner" />
         <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}

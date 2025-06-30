@@ -6,6 +6,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <meta name="robots" content="noindex, dofollow"/>
+      <link ref="canonical" href="https://www.dholeratimes.com/policies/termsandconditions" />
 
       <div className="relative w-full h-[40vh]">
         <Image src={hero} alt="hero" layout="fill" objectFit="cover" priority />
