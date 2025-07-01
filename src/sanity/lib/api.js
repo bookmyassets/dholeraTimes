@@ -84,8 +84,12 @@ export async function getUpdates() {
 }
 
 // Fetch a single blog post by slug (No Cache)
-export async function getPostBySlug(slug) {
-  const query = `*[_type == "post" && slug.current == $slug][0]{
+export async function getPostBySlug(slug, site) {
+  const query = `*[
+    _type == "post" &&
+    slug.current == $slug &&
+    site == $site
+  ][0]{
     _id,
     title,
     metaTitle,
@@ -93,15 +97,7 @@ export async function getPostBySlug(slug) {
     "keywords": keywords[]->title,
     slug,
     mainImage {
-      asset->{
-        _id,
-        _ref,
-        url,
-        metadata {
-          dimensions,
-          lqip
-        }
-      },
+      asset->{ _id, _ref, url, metadata { dimensions, lqip } },
       alt,
       caption,
       url
@@ -112,38 +108,19 @@ export async function getPostBySlug(slug) {
       ...,
       _type == "image" => {
         ...,
-        asset->{
-          _id,
-          _ref,
-          url,
-          metadata {
-            dimensions,
-            lqip
-          }
-        },
-        "url": url  
+        asset->{ _id, _ref, url, metadata { dimensions, lqip } },
+        "url": url
       },
-      markDefs[]{
-        ...,
-        _type == "link" => {
-          "href": @.href
-        }
-      }
+      markDefs[]{ ..., _type == "link" => { "href": @.href } }
     },
-    author->{
-      name,
-      image
-    },
-    categories[]->{
-      title,
-      _id
-    },
+    author->{ name, image },
+    categories[]->{ title, _id },
     readingTime
   }`;
 
-  const post = await client.fetch(query, { slug });
-  return post;
+  return await client.fetch(query, { slug, site });
 }
+
 
 /* Inventory & Brochure */
 export async function Inventory() {

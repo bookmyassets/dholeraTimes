@@ -15,11 +15,13 @@ import CommonForm from "../../components/FormSection";
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const post = await getPostBySlug(slug);
+  const site = 'dholera-times'; // or read from env if multi-deploy
+const post = await getPostBySlug(slug, site);
+
 
   return {
-    title: post.title,
-    description: post.metaDescription,
+   /*  title: post.title, */
+    /* description: post.metaDescription, */
   };
 }
 
@@ -139,6 +141,7 @@ const RelatedBlogCard = ({ blog }) => {
 
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
+  const site = 'dholera-times';
 
   if (!slug) {
     return (
@@ -150,7 +153,7 @@ export default async function BlogDetail({ params }) {
 
   try {
     const [post, trendingBlogs, getPro] = await Promise.all([
-      getPostBySlug(slug),
+      getPostBySlug(slug, site),
       getProjectInfo(),
       getProjects(slug),
     ]);

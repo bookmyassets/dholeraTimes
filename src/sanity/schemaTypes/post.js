@@ -40,6 +40,20 @@ export default {
         type: 'reference',
         to: [{ type: 'author' }],
       },
+       {
+      name: 'site',
+      title: 'Site',
+      type: 'string',
+      description: 'Which website this post belongs to',
+      options: {
+        list: [
+          { title: 'Dholera Times', value: 'dholera-times' },
+          { title: 'BookMyAssets', value: 'bookmyassets' },
+          { title: 'Dholera Insider', value: 'dholera-insider' },
+        ],
+      },
+      validation: Rule => Rule.required(),
+    },
       {
         name: 'mainImage',
         title: 'Main Image',
