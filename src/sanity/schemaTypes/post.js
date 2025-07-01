@@ -1,95 +1,110 @@
 // sanity/schemaTypes/post.js
 export default {
-    name: 'post',
-    title: 'Post',
-    type: 'document',
-    fields: [
-      {
-        name: 'title',
-        title: 'Title',
-        type: 'string',
+  name: "post",
+  title: "Post",
+  type: "document",
+  fields: [
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
+      name: "metaTitle",
+      title: "Meta Title",
+      type: "string",
+    },
+    {
+      name: "metaDescription",
+      title: "Meta Description",
+      type: "string",
+    },
+    {
+      name: "keywords",
+      title: "Meta Keywords",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+        maxLength: 96,
       },
-      {
-        name: 'metaTitle',
-        title: 'Meta Title',
-        type: 'string',
+    },
+    {
+      name: "author",
+      title: "Author",
+      type: "reference",
+      to: [{ type: "author" }],
+    },
+    {
+      name: "mainImage",
+      title: "Main Image",
+      type: "image",
+      options: {
+        hotspot: true,
       },
-      {
-        name: 'metaDescription',
-        title: 'Meta Description',
-        type: 'string',
-      },
-      {
-        name: 'keywords',
-        title: 'Meta Keywords',
-        type: 'array',
-        of: [{ type: 'string' }],
-      },
-      {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'title',
-          maxLength: 96,
+      fields: [
+        {
+          name: "alt",
+          title: "Alt Text",
+          type: "string",
+          description: "Alternative text for the image (for accessibility)",
         },
-      },
-      {
-        name: 'author',
-        title: 'Author',
-        type: 'reference',
-        to: [{ type: 'author' }],
-      },
-      {
-        name: 'mainImage',
-        title: 'Main Image',
-        type: 'image',
-        options: {
-          hotspot: true,
+        {
+          name: "link",
+          title: "Image Link",
+          type: "url",
+          description:
+            "Optional link that the image should redirect to when clicked",
         },
-        fields: [
-          {
-            name: 'alt',
-            title: 'Alt Text',
-            type: 'string',
-            description: 'Alternative text for the image (for accessibility)',
-          },
-          {
-            name: 'link',
-            title: 'Image Link',
-            type: 'url',
-            description: 'Optional link that the image should redirect to when clicked',
-          },
+      ],
+    },
+    {
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    },
+    {
+      name: "website",
+      title: "Website",
+      type: "string",
+      options: {
+        list: [
+          { title: "Dholera Times", value: "dholera-times" },
+          { title: "BookMyAssets", value: "bookmyassets" },
+          { title: "Dholera Insider", value: "dholera-insider" },
         ],
+        layout: "radio",
       },
-      {
-        name: 'categories',
-        title: 'Categories',
-        type: 'array',
-        of: [{ type: 'reference', to: { type: 'category' } }],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "publishedAt",
+      title: "Published At",
+      type: "datetime",
+    },
+    {
+      name: "Location",
+      title: "Location",
+      type: "string",
+    },
+    {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
+    {
+      name: "pdfFile",
+      title: "PDF File",
+      type: "file",
+      options: {
+        accept: ".pdf",
       },
-      {
-        name: 'publishedAt',
-        title: 'Published At',
-        type: 'datetime',
-      },
-      {
-        name: 'Location',
-        title: 'Location',
-        type: 'string',
-      },
-      {
-        name: 'body',
-        title: 'Body',
-        type: 'blockContent',
-      },
-      {
-        name: 'pdfFile',
-        title: 'PDF File',
-        type: 'file',
-        options: {
-          accept: '.pdf', 
-        },
-      },
-    ],
-  };
+    },
+  ],
+};
