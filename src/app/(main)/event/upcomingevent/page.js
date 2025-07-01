@@ -22,6 +22,8 @@ export default async function EventsPage() {
 
   return (
     <>
+      <meta name="robots" content="noindex, follow"/>
+
       <section className="relative h-[50vh] w-full flex justify-center items-center text-center bg-black">
         <div className="absolute inset-0">
           <Image

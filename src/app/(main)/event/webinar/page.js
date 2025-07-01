@@ -45,6 +45,7 @@ export default async function PropertyPromotion() {
 
   return (
     <>
+      <meta name="robots" content="noindex, follow"/>
       <div className="pt-10 pb-10">
         <h1 className="font-bold text-5xl text-center pt-10 pb-10">Webinars</h1>
 
