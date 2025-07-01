@@ -12,8 +12,9 @@ import { urlFor } from "@/sanity/lib/image";
 import CommonForm from "../../components/FormSection";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+   const { slug } = await params;
+  const site = 'dholera-times';
+  const post = await getPostBySlug(slug, site);
 
   return {
     title: post.title,
@@ -90,7 +91,8 @@ const Projects = ({ post }) => {
 };
 
 export default async function Post({ params }) {
-  const { slug } = params;
+   const { slug } = await params;
+  const site = 'dholera-times';
 
   if (!slug) {
     return (
@@ -102,7 +104,7 @@ export default async function Post({ params }) {
 
   try {
     const [post, trendingBlogs, projects, projectInfo] = await Promise.all([
-      getPostBySlug(slug),
+      getPostBySlug(slug, site),
       getProjects(4),
       getProjectInfo(),
     ]);

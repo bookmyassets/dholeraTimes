@@ -11,9 +11,10 @@ import Image from "next/image";
 import CommonForm from "@/app/(main)/components/FormSection";
 
 export async function generateMetadata({ params }) {
-  const { slug } = await params;
+   const { slug } = await params;
+  const site = 'dholera-times';
 
-  const post = await getPostBySlug(slug);
+  const post = await getPostBySlug(slug,site);
 
   return {
     title: post.title,
@@ -145,7 +146,8 @@ const RelatedBlogCard = ({ blog }) => {
 };
 
 export default async function BlogDetail({ params }) {
-  const { slug } = await params;
+   const { slug } = await params;
+  const site = 'dholera-times';
 
   if (!slug) {
     return (
@@ -157,7 +159,7 @@ export default async function BlogDetail({ params }) {
 
   try {
     const [post, trendingBlogs, relatedBlogs, getPro] = await Promise.all([
-      getPostBySlug(slug),
+      getPostBySlug(slug, site),
       getblogs(4), // Get top 4 trending news
       getNews(slug, 3), // Get 3 related blogs based on categories or tags
       getProjects(slug),

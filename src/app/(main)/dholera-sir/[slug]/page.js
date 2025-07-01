@@ -15,7 +15,7 @@ import CommonForm from "../../components/FormSection";
 export async function generateMetadata({ params }) {
   const { slug } = await params;
 
-  const site = 'dholera-times'; // or read from env if multi-deploy
+  const site = 'dholera-times'; 
 const post = await getPostBySlug(slug, site);
 
 

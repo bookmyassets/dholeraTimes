@@ -7,10 +7,11 @@ import TrendingBlogItem from "../TrendingNP";
 
 export async function generateMetadata({ params }) {
   // Ensure the slug is properly resolved before using it
-  const { slug } = params; // params is already available, but use destructuring
+   const { slug } = await params;
+  const site = 'dholera-times';
   
   // Fetch the post using the slug
-  const post = await getPostBySlug(slug); 
+  const post = await getPostBySlug(slug,site); 
 
   return {
     title: post.title,  // Use the fetched post's title for dynamic title
