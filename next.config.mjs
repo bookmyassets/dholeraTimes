@@ -133,11 +133,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/Dholera-SIR/Abcd-building",
-        destination: "/dholera-sir/abcd-building",
-        permanent: true,
-      },
-      {
         source: "/Blogs",
         destination: "/dholera-updates/blogs",
         permanent: true,
@@ -208,13 +203,6 @@ const nextConfig = {
           "/Dholera-SIR/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         destination:
           "/dholera-updates/latest-news/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        permanent: true,
-      },
-      {
-        source:
-          "/dholera-sir/latest-updates/sitemap.html",
-        destination:
-          "/sitemap.html",
         permanent: true,
       },
     ];
