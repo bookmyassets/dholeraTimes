@@ -210,6 +210,13 @@ const nextConfig = {
           "/dholera-updates/latest-news/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         permanent: true,
       },
+      {
+        source:
+          "/dholera-sir/latest-updates/sitemap.html",
+        destination:
+          "/sitemap.html",
+        permanent: true,
+      },
     ];
   },
 };
