@@ -1,5 +1,4 @@
 import { client } from "./client";
-import { NextResponse } from "next/server";
 
 // Fetch all blog posts
 /* Projects */

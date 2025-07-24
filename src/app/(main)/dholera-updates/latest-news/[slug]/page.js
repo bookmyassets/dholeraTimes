@@ -109,7 +109,7 @@ const RelatedBlogCard = ({ blog }) => {
           {blog.categories && blog.categories.length > 0 && (
             <div className="absolute top-2 left-2">
               <span className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full bg-opacity-90">
-                Blogs
+                
               </span>
             </div>
           )}
@@ -472,7 +472,7 @@ export default async function BlogDetail({ params }) {
                         key={category._id || category.title}
                         className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
                       >
-                        Blogs
+                        Latest News
                       </span>
                     ))}
                   </div>

@@ -1,32 +1,13 @@
-"use client";
-
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import hero from "@/assets/hero5.webp";
-import TestimonialPagination from "../components/Testimonials";
-import Link from "next/link";
+
 export default function AboutUs() {
-  const [activeTab, setActiveTab] = useState("CompanyProfile");
-
-  const handleScroll = (id) => {
-    setActiveTab(id);
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const buttonStyle = (id) =>
-    `px-6 py-4 rounded-lg font-semibold transition-all duration-300 shadow ${
-      activeTab === id
-        ? "bg-[#d8b66d] text-white"
-        : "bg-white text-gray-800 hover:bg-gray-100"
-    }`;
 
   return (
     <>
-             <link rel="canonical" href="https://www.dholeratimes.com/about" />
-      <meta name="robots" content="index, dofollow"/>
+      <link rel="canonical" href="https://www.dholeratimes.com/about" />
+      <meta name="robots" content="index, dofollow" />
 
       {/* Hero Section */}
       <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
@@ -49,63 +30,14 @@ export default function AboutUs() {
       <section className="py-12 bg-white">
         <div className="container max-w-5xl mx-auto px-6">
           <p className="text-center md:text-4xl text-2xl font-semibold">
-            Your Trusted Partner in<br/> Dholera Smart City Real Estate
+            Your Real Estate Partner in
+            <br /> Dholera Smart City
           </p>
         </div>
       </section>
 
-      {/* Navigation Tabs */}
-      <div className="sticky top-20 z-20 bg-white shadow-2xl py-6 max-sm:hidden">
-        <div className="container mx-auto px-6">
-          <div className="flex justify-center items-center gap-4 overflow-x-auto pb-2 flex-wrap md:flex-nowrap">
-            <button
-              className={buttonStyle("CompanyProfile")}
-              onClick={() => handleScroll("CompanyProfile")}
-              aria-label="Company Profile"
-            >
-              Company Profile
-            </button>
-            <button
-              className={buttonStyle("Mission")}
-              onClick={() => handleScroll("Mission")}
-              aria-label="Our Mission"
-            >
-              Vision & Mission
-            </button>
-            <button
-              className={buttonStyle("WhyChooseUs")}
-              onClick={() => handleScroll("WhyChooseUs")}
-              aria-label="Why Choose DholeraTimes"
-            >
-              Why Choose Us
-            </button>
-            <button
-              className={buttonStyle("LocationAdvantage")}
-              onClick={() => handleScroll("LocationAdvantage")}
-              aria-label="Location Advantage"
-            >
-              Location Advantage
-            </button>
-            <button
-              className={buttonStyle("InvestmentBenefits")}
-              onClick={() => handleScroll("InvestmentBenefits")}
-              aria-label="Investment Benefits"
-            >
-              Why Invest
-            </button>
-            <button
-              className={buttonStyle("Testimonials")}
-              onClick={() => handleScroll("Testimonials")}
-              aria-label="Testimonials"
-            >
-              Customer Testimonial
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Content Sections */}
-      <section className="py-12 leading-relaxed bg-gray-50">
+      <section className="py-12 top-40 leading-relaxed bg-gray-50">
         {/* Company Profile Section */}
         <div id="CompanyProfile" className="container mx-auto px-6 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
@@ -116,29 +48,33 @@ export default function AboutUs() {
           <div className="flex flex-col text-lg md:flex-row items-center gap-12">
             <div className="md:w-1/2 order-2 md:order-1">
               <p className="text-gray-700 mb-4">
-                At <strong>Dholera Times</strong>, we are your trusted real
-                estate partners, helping you discover the best investment
-                opportunities in the upcoming{" "}
-                <strong>Dholera Smart City</strong> -- India's first planned
-                smart city.
-              </p>
-              <p className="text-gray-700 mb-4">
-                With deep roots in the region and a passion for smart real
-                estate, we aim to make property buying simple, transparent, and
-                rewarding.
+                At <strong>Dholera Times</strong>, we specialize in helping
+                <strong> investors, NRIs, and professionals</strong> discover
+                the best opportunities in <strong>Dholera Smart City</strong> —
+                India's first planned greenfield smart city under the DMIC
+                initiative.
               </p>
               <p className="text-gray-700 mb-4">
                 With over{" "}
-                <strong>8 years of real estate consulting experience</strong>,
-                we specialize in guiding individual investors, NRIs, and
-                professionals to make smart, secure investments in{" "}
-                <strong>government-approved projects</strong>.
+                <strong>
+                  8 years of experience in Dholera real estate consulting
+                </strong>
+                , our team provides{" "}
+                <strong>transparent, end-to-end services</strong> to make
+                property buying simple, transparent, and rewarding.
+              </p>
+              <p className="text-gray-700 mb-4">
+                We are your trusted real estate partners, helping you discover
+                the best investment opportunities in{" "}
+                <strong>verified, government-approved projects</strong>
+                within Dholera Smart City by offering complete support from
+                consultation to registration.
               </p>
               <p className="text-gray-700">
                 <strong>DholeraTimes</strong> is a proud{" "}
                 <strong>subsidiary of BMA</strong>, a reputed real estate group
-                that primarily deals in{" "}
-                <strong>Dholera Smart City development projects</strong>,
+                that primarily deals in
+                <strong> Dholera Smart City development projects</strong>,
                 ensuring trust, transparency, and timely service.
               </p>
             </div>
@@ -159,13 +95,13 @@ export default function AboutUs() {
             <h3 className="text-2xl font-bold mb-4">What We Do</h3>
             <p className="text-gray-700 text-lg mb-4">
               We specialize in <strong>residential plots in Dholera SIR</strong>
-              , offering end-to-end services including:
+              , offering comprehensive services including:
             </p>
             <ul className="space-y-4 text-lg">
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  Site visits & personalized consultations
+                  Free site visits & personalized consultation
                 </span>
               </li>
               <li className="flex items-start">
@@ -201,17 +137,10 @@ export default function AboutUs() {
             <div className="md:w-1/2">
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-gray-700 text-lg mb-8">
-                Our mission is simple — to help you{" "}
-                <strong>invest with confidence</strong> in one of India's
-                fastest-growing smart cities. From verified land documents to
-                on-ground project visits, we support you every step of the way.
-              </p>
-
-              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-gray-700 text-lg">
-                As Dholera transforms into a global smart city with world-class
-                infrastructure, we envision a future where our clients grow
-                alongside this development.
+                To help individuals <strong>invest with confidence</strong> in
+                <strong> verified, government-approved projects</strong> within
+                Dholera Smart City by offering complete support from
+                consultation to registration.
               </p>
             </div>
             <div className="md:w-1/2">
@@ -235,7 +164,7 @@ export default function AboutUs() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative text-white after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Why Choose DholeraTimes
+              What Sets Us Apart
             </span>
           </h2>
 
@@ -243,60 +172,36 @@ export default function AboutUs() {
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
               <span className="text-[#d8b66d] mr-2 text-xl">●</span>
               <span className="text-white text-lg font-semibold">
-                100% AUDA-Approved & Verified Projects
+                100% AUDA-approved, NA, NOC, and Title-Clear projects
               </span>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
               <span className="text-[#d8b66d] mr-2 text-xl">●</span>
               <span className="text-white text-lg font-semibold">
-                NA, NOC, Title Clear Project
+                Prime location plots near Dholera Airport, Expressway, and Metro
               </span>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
               <span className="text-[#d8b66d] mr-2 text-xl">●</span>
               <span className="text-white text-lg font-semibold">
-                Prime & Strategic Location
+                Dedicated on-ground team with resale & buyback assistance
               </span>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
               <span className="text-[#d8b66d] mr-2 text-xl">●</span>
               <span className="text-white text-lg font-semibold">
-                Re-sale Support Team
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Dedicated On-Ground Team in Dholera
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Personalized Guidance by Our Sales Experts
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Free Site Visits & Plot Booking Support
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Transparent Process with No Hidden Charges
+                No hidden charges, transparent process
               </span>
             </div>
           </div>
 
           <div className="bg-gray-800 p-8 rounded-lg">
             <h3 className="text-3xl font-bold text-[#d8b66d] text-center mb-8">
-              Timely Project Deliveries with Proven Success
+              Proven delivery track record with sold-out projects
             </h3>
             <p className="text-gray-300 text-lg text-center mb-8">
-              Investing with us in the Dholera project will not disappoint you,
-              as we have delivered projects timely with guaranteed success.
+              Paradise, Pride, Marina, Maple & Orchid - delivered with
+              guaranteed success.
             </p>
             <div className="flex flex-wrap text-lg justify-center gap-4">
               <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
@@ -394,200 +299,58 @@ export default function AboutUs() {
         <div id="InvestmentBenefits" className="container mx-auto px-6 mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
             <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Benefits of Investing In Dholera Smart City
+              Why Dholera Smart City?
             </span>
           </h2>
           <p className="text-gray-700 text-lg text-center mb-12">
-            Every bit of Gujarat's Dholera smart city has been planned
-            meticulously with a futuristic vision. Its foundation stone was set
-            by the then Prime Minister, Shri Manmohan Singh. Alongside being
-            spread across an area of 920 sq.km., it will be developed such that
-            it is highly self-sustaining.
+            Dholera Smart City is a{" "}
+            <strong>dream project of PM Narendra Modi</strong>, designed as a{" "}
+            <strong>global manufacturing, trading, and living hub</strong>. With
+            strong infrastructure, an international airport, metro & expressway
+            connectivity, SEZ recognition, and India's largest solar power
+            plant, Dholera is set to generate over <strong>8 lakh jobs</strong>{" "}
+            and attract massive global investment.
           </p>
 
           <div className="space-y-8">
-            {/* Benefit 1 */}
+            {/* Key Benefits */}
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Dholera Smart City - India's PM, Shri Narendra Modi's Dream
-                Project
+                PM Modi's Dream Project & Global Investment Hub
               </h3>
               <p className="text-gray-700 text-lg">
-                For PM Modi, Dholera SIR is a dream project. Dholera SIR has the
-                potential to redefine the country's urban and industrial
-                landscape alongside setting a benchmark for all other cities not
-                just pan-India but also globally. Dholera Smart City Gujarat is
-                a symbol of PM Modi's ambitious vision for India's future.
-                Modiji has taken a personal interest in the planning, investment
-                and technological integration of the Dholera Smart City Gujarat
-                project. Smart city Dholera is a key part of the government's
-                'Make in India' initiative.
-              </p>
-            </div>
-
-            {/* Benefit 2 */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Strategic Location- Sea Port
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Dholera City Gujarat is located near the Gulf of Khambhat which
-                gives it easy port access. This has skyrocketed its chances of
-                becoming one of the largest trading and manufacturing hubs in
-                the world in the near future. Alongside Ahmedabad, its closest
-                cities include Surat, Vadodara, Rajkot, and Gandhinagar.
-              </p>
-            </div>
-
-            {/* Benefit 3 */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Intracity Connectivity - Dholera Metro Train
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Dholera SIR project is well-connected both internally and
-                externally. The region is planned to include all modern
-                transport facilities like black-top roads, metro rails, smart
-                buses, and more. The high-speed metro rail lines planned
-                throughout the region are expected to fast-track the city's
-                daily commute.
+                Dholera Smart City is a key part of the government's 'Make in
+                India' initiative, designed to redefine India's urban and
+                industrial landscape. Companies like TATA and Vedanta have
+                already marked their presence, with TATA setting up their
+                semiconductor manufacturing plant here.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Intercity Connectivity - Central Spine Road
+                World-Class Infrastructure & Connectivity
               </h3>
               <p className="text-gray-700 text-lg">
-                To speed up the connection between the smart city Dholera and
-                Ahmedabad, the government has built a special 109 km long
-                express highway, which is expected to be completed in the next
-                three months. The central spine road, a six-lane expressway, is
-                the first phase of a much larger project of the government.
+                Strategic location near Gulf of Khambhat for port access,
+                Dholera International Airport (operational by December 2026),
+                metro rail connectivity, and a 109 km express highway connecting
+                to Ahmedabad make it a perfect investment destination.
               </p>
             </div>
+
             <div className="bg-white p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Global Connectivity - Dholera International Airport
+                Special Economic Zone (SEZ) Benefits
               </h3>
               <p className="text-gray-700 text-lg">
-                Dholera Smart City Gujarat's own international airport is also
-                being developed and is expected to commence operations by
-                December 2026. It will be equipped to handle cargo as well as
-                passenger airplanes, both domestic and international.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Recognition as a Special Economic Zone (SEZ) and Employment
-                Opportunities
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Developing the Delhi-Mumbai Industrial Corridor (DMIC) is
-                India's biggest project to be undertaken today. Dholera Smart
-                City Gujarat has been declared as a Special Economic Zone (SEZ),
-                meaning companies have been offered special benefits for setting
-                up base here. Companies are being given special incentives
+                As a Special Economic Zone, companies get special incentives
                 including tax breaks, fast-track approval processes, and cheaper
-                land leases. A special Administrative and Business Tower called
-                the ABCD building has also been created for faster
-                administrative processes. Companies like TATA and Vedanta have
-                already marked their presence in this Gujarat smart city. TATA
-                will set up their semiconductor manufacturing plant here which
-                is expected to change the industry's dynamics across the world.
-                The Dholera City Gujarat is expected to generate more than 8
-                lakh jobs.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                World-class Civic Amenities
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Sustainable and cost-effective civic amenities will be an
-                integral part of this smart city. While planning each amenity,
-                inspiration has been taken from successful cities across the
-                world like Singapore and Dubai. The Dholera smart city's
-                global-level infrastructure will include a central cooling
-                system for the city which will eliminate the need for individual
-                air conditioners.
-                <br />
-                To step closer towards a digital-first India, a city-wide wifi
-                will be installed. The city will have an IoT-enabled smart
-                infrastructure.
-                <br />
-                A one-stop administration app for all administrative needs has
-                been planned exclusively for the Dholera Smart City Gujarat.
-                <br />
-                The detailed planning of the water system will ensure that there
-                is never a water shortage in the area. All water supply,
-                electrical, and other resource lines have been laid underground
-                to ensure hassle-free operations on the ground.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                India's Largest Solar Power Project
-              </h3>
-              <p className="text-gray-700 text-lg">
-                In the Dholera SIR project, a special focus has been laid on
-                renewable energies. The construction of India's largest solar
-                project has already begun here, and it will boost not just the
-                region's sustainable power consumption but that of many regions
-                around it. This 4,400 MegaWatt solar power plant is said to
-                change how energy production will look in this region. Dholera
-                smart city is a platinum-rated green city meaning sustainability
-                and environment-friendliness will be an integral part of it.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Real Estate Plots
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Dholera Smart City Gujarat is systematically planned to include
-                dedicated residential, commercial, and industrial zones. With
-                such a solid plan, multiple global companies have already shown
-                interest in setting up offices here, and Foreign Direct
-                Investment (FDI) is expected to pour in, too. Dholera metro city
-                residential plots are currently one of the top-ranked for
-                investment purposes. Returns are expected to skyrocket in the
-                next three years. From November 2022 to March 2024 alone, the
-                land rates saw a 3X jump - a land appreciation every investor
-                loves!
+                land leases. This recognition attracts global companies and
+                ensures rapid development.
               </p>
             </div>
           </div>
-        </div>
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Let's Connect
-            </span>
-          </h2>
-          <p className="text-gray-700 font-semibold text-lg text-center mb-8">
-            Whether you're looking to buy your first plot, explore investment
-            options, or simply want to understand how Dholera Smart City works —
-            we're here to help.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Link
-              href="/contact/inquiry"
-              className="px-6 py-4 bg-[#d8b66d] text-white font-bold rounded-lg shadow-lg hover:bg-[#c6a55e] transition-colors"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/contact/sitevisit"
-              className="px-6 py-4 bg-white text-[#d8b66d] font-bold rounded-lg shadow-lg border-2 border-[#d8b66d] hover:bg-gray-50 transition-colors"
-            >
-              Book a Free Site Visit
-            </Link>
-          </div>
-        </div>
-        {/* Testimonial Section */}
-        <div id="Testimonials" className="mb-4">
-          <TestimonialPagination />
         </div>
       </section>
     </>

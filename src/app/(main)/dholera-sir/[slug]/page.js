@@ -493,7 +493,7 @@ export default async function BlogDetail({ params }) {
                         key={category._id || category.title}
                         className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full"
                       >
-                        Blogs
+                        Dholera SIR
                       </span>
                     ))}
                   </div>
