@@ -19,7 +19,7 @@ export default function Imagegallery() {
       </div>
       <section className=" max-w-7xl mx-auto grid grid-cols-2 gap-6 pl-2 pr-2">
         <Link
-          href="/gallery/Dholera-SIR-progress"
+          href="/gallery/dholera-sir-progress"
           className="block bg-white rounded-lg shadow-2xl overflow-hidden transition-transform duration-300 hover:scale-105"
           aria-label="View photo gallery"
         >
