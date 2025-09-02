@@ -338,7 +338,7 @@ const BrowseUpdates = () => {
                         </h3>
 
                         <Link
-                          href={`/Dholera-Updates/latest-updates/${project.slug?.current}`}
+                          href={`/dholera-updates/latest-updates/${project.slug?.current}`}
                           passHref
                         >
                             <button

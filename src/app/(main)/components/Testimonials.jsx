@@ -92,20 +92,20 @@ const TestimonialPagination = () => {
   const styles = {
     background: "bg-white",
     heading: "text-gray-700",
-    cardBorder: "border-2 border-[#b98e31]",
+    cardBorder: "border-2 border-[#d3b36b]",
     quote: "text-gray-700",
     name: "text-black font-semibold",
     location: "text-[#C69C21]",
-    activeButton: "bg-[#b98e31] hover:bg-[#b98e31] text-white",
+    activeButton: "bg-[#d3b36b] hover:bg-[#d3b36b] text-white",
     inactiveButton:
-      "border-[#FDB913] bg-[#FDB913] text-gray-700 hover:bg-[#b98e31] hover:text-white",
+      "border-[#FDB913] bg-[#d3b36b] text-gray-700 hover:bg-[#d3b36b] hover:text-white",
   };
 
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4">
+    <div>
+      <div className="container mx-auto px-4 py-4">
         <h3
-          className={`text-center text-3xl font-semibold text-[#b98e31] mb-10`}
+          className={`text-center text-[28px] font-semibold mb-10`}
         >
           What our customers says 
         </h3>
@@ -127,7 +127,7 @@ const TestimonialPagination = () => {
               ❝ {testimonial.quote} ❞
               </p>
               <div className="flex items-center border-t border-[#b98e31] pt-4">
-                <div className="w-1 h-12 bg-[#b98e31] mr-3 rounded-full"></div>
+                <div className="w-1 h-12 bg-[#d3b36b] mr-3 rounded-full"></div>
                 <div>
                   <h3 className={styles.name}>{testimonial.name} ⦁ { testimonial.type}</h3>
                   <p className={` ${styles.location}`}>

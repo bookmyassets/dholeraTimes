@@ -1,150 +1,112 @@
-import Image from "next/image";
-import React from "react";
-import hero from "@/assets/hero5.webp";
+import React from 'react';
+import { Building, Users, AreaChart, BadgeCheck, MapPin, FileCheck, Clock, Target, Eye, Award, CheckCircle, Phone, Shield, Search, FileText, Headphones } from 'lucide-react';
+import hero from '@/assets/hero5.webp';
+import Image from 'next/image';
 
 export default function AboutUs() {
-
   return (
-    <>
-      <link rel="canonical" href="https://www.dholeratimes.com/about" />
-      <meta name="robots" content="index, dofollow" />
-
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
-        <Image
-          src={hero}
-          alt="Dholera Skyline"
-          className="object-cover w-full h-[50vh]"
-          priority
-        />
+      <div className="relative h-96 w-full overflow-hidden bg-[#151f28]">
+        <div className="absolute inset-0 "></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center px-6 py-10">
-            <h1 className="text-5xl md:text-5xl font-bold text-white mb-2">
-              About Us
+            <h1 className="text-center text-2xl md:text-4xl text-white font-bold mb-4">
+              Transforming Visions into Reality:
+              <br />
+              <span className="text-[#d3b36b]">About Dholera Times</span>
             </h1>
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
+              Step Into India’s First Greenfield Smart City – Dholera with Dholera Times
+
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <section className="py-12 bg-white">
-        <div className="container max-w-5xl mx-auto px-6">
-          <p className="text-center md:text-4xl text-2xl font-semibold">
-            Your Real Estate Partner in
-            <br /> Dholera Smart City
-          </p>
-        </div>
-      </section>
-
-      {/* Content Sections */}
-      <section className="py-12 top-40 leading-relaxed bg-gray-50">
-        {/* Company Profile Section */}
-        <div id="CompanyProfile" className="container mx-auto px-6 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Who We Are
-            </span>
-          </h2>
-          <div className="flex flex-col text-lg md:flex-row items-center gap-12">
-            <div className="md:w-1/2 order-2 md:order-1">
-              <p className="text-gray-700 mb-4">
-                At <strong>Dholera Times</strong>, we specialize in helping
-                <strong> investors, NRIs, and professionals</strong> discover
-                the best opportunities in <strong>Dholera Smart City</strong> —
-                India's first planned greenfield smart city under the DMIC
-                initiative.
-              </p>
-              <p className="text-gray-700 mb-4">
-                With over{" "}
-                <strong>
-                  8 years of experience in Dholera real estate consulting
-                </strong>
-                , our team provides{" "}
-                <strong>transparent, end-to-end services</strong> to make
-                property buying simple, transparent, and rewarding.
-              </p>
-              <p className="text-gray-700 mb-4">
-                We are your trusted real estate partners, helping you discover
-                the best investment opportunities in{" "}
-                <strong>verified, government-approved projects</strong>
-                within Dholera Smart City by offering complete support from
-                consultation to registration.
-              </p>
-              <p className="text-gray-700">
-                <strong>DholeraTimes</strong> is a proud{" "}
-                <strong>subsidiary of BMA</strong>, a reputed real estate group
-                that primarily deals in
-                <strong> Dholera Smart City development projects</strong>,
-                ensuring trust, transparency, and timely service.
-              </p>
+      {/* Our Story & Values Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div>
+              <h2 className="text-2xl md:text-4xl font-bold mb-8 text-[#151f28]">
+                About Dholera Times
+              </h2>
+              <div className="space-y-6 text-gray-700  leading-relaxed">
+                <p>
+                  At <strong className="text-[#d3b36b]">Dholera Times</strong>, we are redefining how people discover and understand real estate opportunities in India's first greenfield smart city – Dholera Smart City.
+                </p>
+                <p>
+                  We specialize in delivering transparent, secure, and growth-oriented insights on AUDA-approved projects, ensuring that investors, brokers, and homebuyers access legally clear, registry-ready plots with the potential for assured appreciation.
+                </p>
+                <p>
+                  With a strong focus on trust, timely updates, and an investor-first approach, <strong className="text-[#d3b36b]">Dholera Times</strong> bridges the gap between opportunity and authentic information.
+                </p>
+              </div>
             </div>
-            <div className="md:w-1/2 order-1 md:order-2">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src={hero}
-                  alt="Dholera Smart City"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
+
+            {/* Right - Value Icons */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+                <Shield className="h-12 w-12 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-bold text-[#151f28] mb-2">Trust & Transparency</h3>
+                <p className="text-sm text-gray-600">100% verified information</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+                <Award className="h-12 w-12 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-bold text-[#151f28] mb-2">8+ Years Of Expertise</h3>
+                <p className="text-sm text-gray-600">Proven track record</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+                <FileCheck className="h-12 w-12 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-bold text-[#151f28] mb-2">Government-Approved</h3>
+                <p className="text-sm text-gray-600">AUDA certified projects</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+                <Users className="h-12 w-12 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-bold text-[#151f28] mb-2">Client-Centric Approach</h3>
+                <p className="text-sm text-gray-600">Your success is our priority</p>
               </div>
             </div>
           </div>
-
-          <div className="mt-8">
-            <h3 className="text-2xl font-bold mb-4">What We Do</h3>
-            <p className="text-gray-700 text-lg mb-4">
-              We specialize in <strong>residential plots in Dholera SIR</strong>
-              , offering comprehensive services including:
-            </p>
-            <ul className="space-y-4 text-lg">
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  Free site visits & personalized consultation
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  Project selection guidance
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  Legal documentation & registration support
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  Regular updates on Dholera's infrastructure & development
-                </span>
-              </li>
-            </ul>
-          </div>
         </div>
+      </section>
 
-        {/* Mission Section */}
-        <div id="Mission" className="container mx-auto px-6 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Our Mission & Vision
-            </span>
+      {/* What We Do Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-2xl md:text-4xl font-bold text-center mb-12 text-[#151f28]">
+            What We Do
           </h2>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-gray-700 text-lg mb-8">
-                To help individuals <strong>invest with confidence</strong> in
-                <strong> verified, government-approved projects</strong> within
-                Dholera Smart City by offering complete support from
-                consultation to registration.
-              </p>
+          
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left - Services Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <Phone className="h-10 w-10 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-semibold text-[#151f28] mb-2">Consultation & Site Visits</h3>
+                <p className="text-sm text-gray-600">Expert guidance & free site visits</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <Search className="h-10 w-10 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-semibold text-[#151f28] mb-2">Project Selection Guidance</h3>
+                <p className="text-sm text-gray-600">Find the perfect investment</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <FileText className="h-10 w-10 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-semibold text-[#151f28] mb-2">Legal & Registration Support</h3>
+                <p className="text-sm text-gray-600">Complete documentation help</p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow">
+                <Headphones className="h-10 w-10 text-[#d3b36b] mx-auto mb-4" />
+                <h3 className="font-semibold text-[#151f28] mb-2">Post-sale Service & Updates</h3>
+                <p className="text-sm text-gray-600">Ongoing support & updates</p>
+              </div>
             </div>
-            <div className="md:w-1/2">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
+
+            {/* Right - House Image */}
+            <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
                 <Image
                   src={hero}
                   alt="Dholera Smart City Vision"
@@ -153,206 +115,136 @@ export default function AboutUs() {
                   className="w-full h-auto"
                 />
               </div>
-            </div>
           </div>
         </div>
+      </section>
 
-        {/* Why Choose Us Section */}
-        <div
-          id="WhyChooseUs"
-          className="container mx-auto px-6 py-12 mb-8 bg-gray-900 rounded-lg"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative text-white after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              What Sets Us Apart
-            </span>
+      {/* Our Achievements */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-[#151f28]">
+            Our Achievements
           </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-4">
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                100% AUDA-approved, NA, NOC, and Title-Clear projects
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Prime location plots near Dholera Airport, Expressway, and Metro
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                Dedicated on-ground team with resale & buyback assistance
-              </span>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow border-l-4 border-[#d8b66d]">
-              <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-              <span className="text-white text-lg font-semibold">
-                No hidden charges, transparent process
-              </span>
-            </div>
-          </div>
-
-          <div className="bg-gray-800 p-8 rounded-lg">
-            <h3 className="text-3xl font-bold text-[#d8b66d] text-center mb-8">
-              Proven delivery track record with sold-out projects
-            </h3>
-            <p className="text-gray-300 text-lg text-center mb-8">
-              Paradise, Pride, Marina, Maple & Orchid - delivered with
-              guaranteed success.
-            </p>
-            <div className="flex flex-wrap text-lg justify-center gap-4">
-              <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
-                Paradise 1 & 2
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                value: "7",
+                label: "Total No. of Projects",
+                icon: <Building className="h-8 w-8" />,
+              },
+              {
+                value: "1000",
+                label: "Plots Sold",
+                icon: <BadgeCheck className="h-8 w-8" />,
+              },
+              {
+                value: "400",
+                label: "Happy Customers",
+                icon: <Users className="h-8 w-8" />,
+              },
+              {
+                value: "5 Lakh Sq. Yards",
+                label: "Sold",
+                icon: <AreaChart className="h-8 w-8" />,
+              },
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 p-6 rounded-lg text-center border hover:border-[#d3b36b] transition-colors"
+              >
+                <div className="text-[#d3b36b] mb-3 flex justify-center">{stat.icon}</div>
+                <div className="text-2xl md:text-3xl font-bold text-[#151f28] mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm md:text-base text-gray-600">
+                  {stat.label}
+                </div>
               </div>
-              <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
-                Pride 1, 2, & 3
-              </div>
-              <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
-                Marina
-              </div>
-              <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
-                Maple
-              </div>
-              <div className="bg-gray-900 px-6 py-3 rounded-full border border-[#d8b66d] text-[#d8b66d] font-semibold hover:bg-[#d8b66d] hover:text-gray-900 transition-colors">
-                Orchid
-              </div>
-            </div>
+            ))}
           </div>
         </div>
+      </section>
 
-        {/* Location Advantage Section */}
-        <div id="LocationAdvantage" className="container mx-auto px-6 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Location Advantage
-            </span>
-          </h2>
-          <div className="flex flex-col text-lg md:flex-row items-center gap-12">
-            <div className="md:w-1/2 font-semibold order-2 md:order-1">
-              <ul className="space-y-4">
+      {/* Mission, Vision, Journey, Promise */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Mission */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="flex items-center mb-6">
+                <Target className="h-8 w-8 text-[#d3b36b] mr-3" />
+                <h3 className="text-2xl font-bold text-[#151f28]">Our Mission</h3>
+              </div>
+              <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Near to Knowledge and IT Zone
-                  </span>
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  To make property exploration hassle-free, transparent, and reliable.
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    In The Vicinity of Dholera SIR
-                  </span>
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  To guide investors, NRIs, and channel partners with expert insights and trusted updates.
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Site Visit Assistance 365 Days
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">On Government Road</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Near to Dholera International Airport
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    NA, NOC, Title Clear Project With Plan-pass
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Very near metro and Expressway
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Immediate Sale deed Registration
-                  </span>
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  To deliver long-term value through verified information on premium projects in India's fastest-growing smart city.
                 </li>
               </ul>
             </div>
-            <div className="md:w-1/2 order-1 md:order-2">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src={hero}
-                  alt="Dholera Location Map"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
+
+            {/* Vision */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="flex items-center mb-6">
+                <Eye className="h-8 w-8 text-[#d3b36b] mr-3" />
+                <h3 className="text-2xl font-bold text-[#151f28]">Our Vision</h3>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Investment Benefits Section */}
-        <div id="InvestmentBenefits" className="container mx-auto px-6 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Why Dholera Smart City?
-            </span>
-          </h2>
-          <p className="text-gray-700 text-lg text-center mb-12">
-            Dholera Smart City is a{" "}
-            <strong>dream project of PM Narendra Modi</strong>, designed as a{" "}
-            <strong>global manufacturing, trading, and living hub</strong>. With
-            strong infrastructure, an international airport, metro & expressway
-            connectivity, SEZ recognition, and India's largest solar power
-            plant, Dholera is set to generate over <strong>8 lakh jobs</strong>{" "}
-            and attract massive global investment.
-          </p>
-
-          <div className="space-y-8">
-            {/* Key Benefits */}
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                PM Modi's Dream Project & Global Investment Hub
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Dholera Smart City is a key part of the government's 'Make in
-                India' initiative, designed to redefine India's urban and
-                industrial landscape. Companies like TATA and Vedanta have
-                already marked their presence, with TATA setting up their
-                semiconductor manufacturing plant here.
+              <p className="text-gray-700 leading-relaxed">
+                To become the most reliable information hub for Dholera Smart City – empowering buyers, investors, and businesses with knowledge-driven decisions that shape a smarter tomorrow.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                World-Class Infrastructure & Connectivity
-              </h3>
-              <p className="text-gray-700 text-lg">
-                Strategic location near Gulf of Khambhat for port access,
-                Dholera International Airport (operational by December 2026),
-                metro rail connectivity, and a 109 km express highway connecting
-                to Ahmedabad make it a perfect investment destination.
+            {/* Journey */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="flex items-center mb-6">
+                <MapPin className="h-8 w-8 text-[#d3b36b] mr-3" />
+                <h3 className="text-2xl font-bold text-[#151f28]">Our Journey</h3>
+              </div>
+              <p className="text-gray-700 leading-relaxed">
+                Born with a vision to provide clarity and authenticity, <strong className="text-[#d3b36b]">Dholera Times</strong> has grown into a trusted platform for real estate seekers. From ground reports and project updates to government notifications and market insights, our journey is built on credibility and continuous growth alongside Dholera Smart City's progress.
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold mb-4 text-[#d8b66d]">
-                Special Economic Zone (SEZ) Benefits
-              </h3>
-              <p className="text-gray-700 text-lg">
-                As a Special Economic Zone, companies get special incentives
-                including tax breaks, fast-track approval processes, and cheaper
-                land leases. This recognition attracts global companies and
-                ensures rapid development.
-              </p>
+            {/* Promise */}
+            <div className="bg-gray-50 p-8 rounded-lg">
+              <div className="flex items-center mb-6">
+                <Shield className="h-8 w-8 text-[#d3b36b] mr-3" />
+                <h3 className="text-2xl font-bold text-[#151f28]">Our Promise</h3>
+              </div>
+              <p className="text-gray-700 mb-4">At <strong className="text-[#d3b36b]">Dholera Times</strong>, we promise to:</p>
+              <ul className="space-y-2 text-gray-700">
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  Deliver verified updates you can trust.
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  Provide transparent guidance with no hidden agendas.
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  Keep you informed with real-time growth insights.
+                </li>
+                <li className="flex items-start">
+                  <CheckCircle className="h-5 w-5 text-[#d3b36b] mr-2 mt-1 flex-shrink-0" />
+                  Stand as your long-term partner in every investment decision.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
-    </>
+
+ 
+    </div>
   );
 }

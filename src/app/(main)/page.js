@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import NewHome from './NewHome'
+import Home2Main from './components/home2/Home2Main';
 
 export default function page() {
   const [showForm, setShowForm] = useState(false);
@@ -10,7 +10,7 @@ export default function page() {
     
       <meta name='description' content='Exclusive residential plots in Dholera Smart City Gujarat! Close to Dholera SIR & International Airport. Book now for high returns!' />
         <div>
-            <NewHome openForm={() => setShowForm(true)} />
+            <Home2Main openForm={() => setShowForm(true)} />
         </div>  
     </>
   )

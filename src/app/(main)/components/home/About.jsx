@@ -1,5 +1,5 @@
 import React from "react";
-import { Users, Building, Check, Star, BookOpen } from "lucide-react";
+import { Users, Building, Check, Star } from "lucide-react";
 import bg from "@/assets/pexels2.jpg";
 import Image from "next/image";
 

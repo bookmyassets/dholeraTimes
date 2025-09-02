@@ -62,50 +62,50 @@ export default function FAQSection() {
         objectFit="cover"
         className="absolute inset-0 -z-10 opacity-30"
       />
-    <div className="max-w-7xl mx-auto">
-      <h2 className="text-5xl font-bold text-center mb-6">
-        Frequently Asked Questions
-      </h2>
-      <div className="space-y-4 relative">
-        {faqs.map((faq, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
-            className="border rounded-lg p-4 shadow-md bg-gray-900 bg-opacity-80"
-          >
-            <button
-              className="w-full flex justify-between items-center text-[#edc46b] text-left text-xl font-bold"
-              onClick={() => toggleFAQ(index)}
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-bold text-center mb-6">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-4 relative">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 200 }}
+              className="border rounded-lg p-4 shadow-md bg-gray-900 bg-opacity-80"
             >
-              {faq.question}
-              {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
-            </button>
-            <AnimatePresence>
-              {openIndex === index && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="mt-6 text-lg text-[#f6d99a] overflow-hidden"
-                >
-                  {Array.isArray(faq.answer) ? (
-                    <ul className="list-disc pl-5">
-                      {faq.answer.map((point, i) => (
-                        <li key={i}>{point}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p>{faq.answer}</p>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+              <button
+                className="w-full flex justify-between items-center text-[#edc46b] text-left text-xl font-bold"
+                onClick={() => toggleFAQ(index)}
+              >
+                {faq.question}
+                {openIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+              </button>
+              <AnimatePresence>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-6 text-lg text-[#f6d99a] overflow-hidden"
+                  >
+                    {Array.isArray(faq.answer) ? (
+                      <ul className="list-disc pl-5">
+                        {faq.answer.map((point, i) => (
+                          <li key={i}>{point}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p>{faq.answer}</p>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
 import CommonForm from "../../components/FormSection";
+import LeadForm from "../LeadForm";
 
 export async function generateMetadata({ params }) {
    const { slug } = await params;
@@ -531,27 +532,12 @@ export default async function Post({ params }) {
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
                 {/* Trending posts */}
-                <div className="bg-[#151f28] rounded-xl shadow-2xl shadow-gray-500 p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">
-                    Our Projects
-                  </h3>
-                  <div className="">
-                    {trendingBlogs && trendingBlogs.length > 0 ? (
-                      trendingBlogs.map((blog) => (
-                        <div key={blog._id} className="mb-3">
-                          <TrendingBlogItem post={blog} />
-                        </div>
-                      ))
-                    ) : (
-                      <p className="text-gray-400">
-                        No trending articles found.
-                      </p>
-                    )}
-                  </div>
-                </div>
+                <div className=" pt-4 max-w-xl mx-auto">
+                                                      <LeadForm title={post.title} buttonName="Book Free Site Visit"/>
+                                                    </div>
 
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">
+                  <h3 className="text-xl font-bold mb-4 text-white">
                     Explore Dholera SIR
                   </h3>
                   <div className="">

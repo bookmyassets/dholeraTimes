@@ -111,24 +111,24 @@ export default {
       },
     },
     {
-      type: 'image',
+      type: "image",
       fields: [
         {
-          name: 'alt',
-          type: 'string',
-          title: 'Alternative Text'
+          name: "alt",
+          type: "string",
+          title: "Alternative Text",
         },
         {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption'
+          name: "caption",
+          type: "string",
+          title: "Caption",
         },
         {
-          name: 'url',
-          type: 'url',
-          title: 'Link URL'
-        }
-      ]
+          name: "url",
+          type: "url",
+          title: "Link URL",
+        },
+      ],
     },
     // Code block
     {
@@ -154,29 +154,31 @@ export default {
     },
     // HTML Table block - now properly defined
     {
-  type: 'object',
-  name: 'htmlTableBlock',
-  title: 'HTML Table Block',
-  fields: [
-    {
-      name: 'html',
-      title: 'HTML Table Code',
-      type: 'text',
-      rows: 10,
-      description: 'Paste your complete HTML table code including <table>, <tr>, <td> tags',
-      validation: Rule => Rule.required()
-    }
-  ],
-  preview: {
-    select: { html: 'html' },
-    prepare({ html }) {
-      return {
-        title: 'HTML Table',
-        subtitle: html ? `Table: ${html.substring(0, 30)}...` : 'No HTML provided',
-      }
-    }
-  }
-}
-
+      type: "object",
+      name: "htmlTableBlock",
+      title: "HTML Table Block",
+      fields: [
+        {
+          name: "html",
+          title: "HTML Table Code",
+          type: "text",
+          rows: 10,
+          description:
+            "Paste your complete HTML table code including <table>, <tr>, <td> tags",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+      preview: {
+        select: { html: "html" },
+        prepare({ html }) {
+          return {
+            title: "HTML Table",
+            subtitle: html
+              ? `Table: ${html.substring(0, 30)}...`
+              : "No HTML provided",
+          };
+        },
+      },
+    },
   ],
 };

@@ -105,100 +105,9 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-gray-900 text-gray-400 space-y-8">
-        <div className="pt-4 md:pt-4">
-          <ButtonsSection />
-        </div>
+      <footer className="bg-gray-900 text-gray-400 space-y-8 pt-8 ">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Contact form section */}
-          <div className="mb-16 max-w-5xl mx-auto bg-gray-800 rounded-lg p-6 md:p-8">
-            <h2 className="text-white text-xl font-semibold mb-6 text-center">
-              Need help or query ? Talk to our Dholera Expert Advisor
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 p-6 max-w-4xl mx-auto text-white">
-              <div className="flex flex-col justify-center">
-                {isSubmitted ? (
-                  <div className="bg-green-700 text-white p-4 rounded-md text-center">
-                    <p className="font-medium">Thank you for contacting us!</p>
-                    <p className="text-sm mt-1">We'll get back to you soon.</p>
-                  </div>
-                ) : (
-                  <form
-                    onSubmit={handleSubmit}
-                    className="flex flex-col w-full items-center"
-                  >
-                    <div className="mb-4 relative w-full max-w-md">
-                      <FaUser className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Full Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full p-3 pl-12 rounded-lg bg-white text-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required
-                      />
-                    </div>
-
-                    <div className="mb-4 relative w-full max-w-md">
-                      <FaPhoneAlt className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500" />
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                        value={formData.phone || ""}
-                        onChange={handleChange}
-                        pattern="^[6-9]\d{9}$"
-                        title="Please enter a valid 10-digit phone number starting with 6, 7, 8, or 9"
-                        className="w-full p-3 pl-12 rounded-lg bg-white text-gray-800 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        required
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full max-w-md py-2 px-4 bg-[#d8b66d] hover:bg-[#cba64f] text-gray-700 font-medium rounded-md click transition duration-200"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? "Submitting..." : "Get A Call Back"}
-                    </button>
-                  </form>
-                )}
-                {showPopup && (
-                  <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm text-center">
-                      <h2 className="text-xl font-semibold text-gray-800">
-                        Thank You!
-                      </h2>
-                      <p className="text-gray-600 mt-2">
-                        We will contact you soon.
-                      </p>
-                      <button
-                        onClick={() => setShowPopup(false)}
-                        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700"
-                      >
-                        Close
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Info column */}
-              <div className="flex flex-col justify-center">
-                <h3 className="text-xl font-semibold text-center md:text-left">
-                  Why Contact Us?
-                </h3>
-                <p className="text-gray-300 text-lg mt-3">
-                  Have questions about Dholera Smart City? Want to explore
-                  investment opportunities? Our team is ready to assist you with
-                  any inquiries about properties, development updates, or
-                  investment options.
-                </p>
-              </div>
-            </div>
-          </div>
 
           {/* First 3-column row with company info, links, policy */}
           <div className="grid md:grid-cols-4 md:gap-32 md:left-8 gap-12 mb-12">
@@ -338,7 +247,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="/Dholera-SIR"
+                    href="/dholera-sir"
                     className="hover:text-white transition"
                   >
                     Dholera SIR
@@ -346,7 +255,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/Dholera-Updates/latest-news"
+                    href="/dholera-updates/latest-news"
                     className="hover:text-white transition"
                   >
                     Latest News
@@ -354,7 +263,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/Dholera-Updates/blogs"
+                    href="/dholera-updates/blogs"
                     className="hover:text-white transition"
                   >
                     Blogs

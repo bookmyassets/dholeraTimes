@@ -17,6 +17,7 @@ import { AnimatePresence } from "framer-motion";
 import BrochureForm from "./components/BrochureForm";
 import MegaIndustries from "./components/home/MegaIndusties";
 import Notifications from "./components/Notifications";
+import AbtDT from "./components/home2/abtDT";
 
 export default function NewHome({openForm}) {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
@@ -97,9 +98,14 @@ export default function NewHome({openForm}) {
         <Dholeravideos />
       </div>
       <div>
+        <AbtDT/>
+      </div>
+      <div>
         <section id="investment-benefits" className=" py-8 bg-white">
           <div className="max-w-7xl mx-auto">
             {/* Investment Returns Section */}
+  
+
             <div className="bg-gradient-to-r from-gray-100 to-gray-200 rounded-xl shadow-lg p-8 animate-on-scroll">
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="md:w-1/2 animate-on-scroll from-left">

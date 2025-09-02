@@ -51,24 +51,34 @@ export default function MegaIndustries() {
         }
       `}</style>
       <div className="relative">
-
-      <Image
-        src={bg}
-        alt="Background Image"
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 -z-10 opacity-30"
+        <Image
+          src={bg}
+          alt="Background Image"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 -z-10 opacity-30"
         />
-      <div className=" max-w-7xl mx-auto pt-12">
-        <div className="text-center">
-          <h3 className="text-4xl font-bold text-gray-800">
-            Mega Industries Investment in Dholera SIR
-          </h3>
-          <div className="w-24 h-1 mt-4 bg-yellow-600 mx-auto"></div>
-        </div>
+        <div className=" max-w-7xl mx-auto pt-8">
+          <div className="text-center">
+            <h3 className="text-[28px] font-bold text-gray-800">
+              Mega Industries Investment in Dholera SIR
+            </h3>
+            <div className="w-24 h-1 mt-4 mb-4 bg-yellow-600 mx-auto"></div>
+          </div>
 
-        <div className="bg-gray-50 p-8 rounded-lg">
-          <p className="text-lg leading-relaxed">
+          <div className="bg-gray-50 p-8 rounded-lg">
+            <p className=" leading-relaxed">
+              Dholera Smart City is emerging as an industrial powerhouse in
+              Gujarat. The Tata Semiconductor Plant is boosting India’s
+              electronics sector, while renewable energy hubs are making Dholera
+              SIR a leader in green energy. The Ahmedabad Dholera Expressway and
+              Dholera International Airport is unlocking global connectivity.
+              Alongside, activation areas, town planning schemes, and water
+              treatment projects ensure sustainable urban development making
+              property in Dholera Smart City one of the best investment choices
+              in India.
+            </p>
+            {/* <p className="text-lg leading-relaxed">
             <span className="font-semibold">
               Dholera is fast emerging as India's industrial powerhouse.
             </span>{" "}
@@ -81,32 +91,32 @@ export default function MegaIndustries() {
             <span className="font-semibold">
               global manufacturing and semiconductor hub 
             </span>
-           {/*  <span className="text-blue-600">
+          </p> */}
+            {/*  <span className="text-blue-600">
               <a href="/DholeraSIR/mega-industries"> Read More</a>
             </span> */}
-          </p>
-        </div>
+          </div>
 
-        <div className="marquee-container py-8">
-          <div className="animate-marquee whitespace-nowrap flex items-center">
-            {duplicatedCompanies.map((company, index) => (
-              <div
-              key={index}
-              className="mx-8 flex-shrink-0 flex items-center justify-center"
-              >
-                <Image
-                  src={company.logo}
-                  alt={company.name}
-                  width={160}
-                  height={80}
-                  className="object-contain h-44 "
+          <div className="marquee-container py-8">
+            <div className="animate-marquee whitespace-nowrap flex items-center">
+              {duplicatedCompanies.map((company, index) => (
+                <div
+                  key={index}
+                  className="mx-8 flex-shrink-0 flex items-center justify-center"
+                >
+                  <Image
+                    src={company.logo}
+                    alt={company.name}
+                    width={160}
+                    height={80}
+                    className="object-contain h-44 "
                   />
-              </div>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-            </div>
     </>
   );
 }

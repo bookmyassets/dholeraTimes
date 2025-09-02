@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect, useRef } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 
@@ -97,7 +98,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
       }
 
       // Restrict submission after 20 attempts
-      if (submissionCount >= 20) {
+      if (submissionCount >= 3) {
         setErrorMessage("You have reached the maximum submission limit. Try again after 24 hours.");
         setIsDisabled(true);
         return;

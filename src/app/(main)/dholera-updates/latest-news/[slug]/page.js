@@ -9,6 +9,7 @@ import {
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
+import LeadForm from "@/app/(main)/dholera-sir/LeadForm";
 
 export async function generateMetadata({ params }) {
    const { slug } = await params;
@@ -176,212 +177,216 @@ export default async function BlogDetail({ params }) {
       );
     }
 
-    const components = {
-      types: {
-        image: ({ value }) => {
-          if (!value?.asset) return null;
+    
+   const components = {
+        types: {
+          image: ({ value }) => {
+      if (!value?.asset) return null;
 
-          // Use the asset URL directly if urlFor is not working
-          const imageUrl = value.asset.url || urlFor(value).width(1200).url();
+      // Use the asset URL directly if urlFor is not working
+      const imageUrl = value.asset.url || urlFor(value).width(1200).url();
 
-          const imageNode = (
-            <img
-              src={imageUrl}
-              alt={value.alt || ""}
-              className="w-full rounded-lg my-6"
-              loading="lazy"
-            />
-          );
+      const imageNode = (
+        <img
+          src={imageUrl}
+          alt={value.alt || ""}
+          className="w-full rounded-lg my-6"
+          loading="lazy"
+        />
+      );
 
-          return (
-            <figure className="my-6">
-              {value.url ? (
-                <a
-                  href={value.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block hover:opacity-90 transition-opacity cursor-pointer"
-                >
-                  {imageNode}
-                </a>
-              ) : (
-                imageNode
-              )}
-              {value.caption && (
-                <figcaption className="text-center text-sm text-gray-500 mt-2">
-                  {value.caption}
-                </figcaption>
-              )}
-            </figure>
-          );
+      return (
+        <figure className="my-6">
+          {value.url ? (
+            <a
+              href={value.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:opacity-90 transition-opacity cursor-pointer"
+            >
+              {imageNode}
+            </a>
+          ) : (
+            imageNode
+          )}
+          {value.caption && (
+            <figcaption className="text-center text-sm text-gray-500 mt-2">
+              {value.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    },
+    
+          table: ({ value }) => {
+            if (!value?.rows || !Array.isArray(value.rows)) {
+              return null;
+            }
+    
+            return (
+              <div className="overflow-x-auto my-12 bg-white rounded-2xl shadow-lg border border-gray-100">
+                <table className="min-w-full">
+                  <tbody>
+                    {value.rows.map((row, i) => {
+                      if (!row?.cells || !Array.isArray(row.cells)) {
+                        return null;
+                      }
+    
+                      return (
+                        <tr
+                          key={i}
+                          className={`hover:bg-gray-50 transition-colors duration-200 ${
+                            i === 0 ? "bg-gradient-to-r from-[#C69C21]/10 to-[#FDB913]/10 font-semibold" : 
+                            i % 2 === 0 ? "bg-gray-50/50" : "bg-white"
+                          }`}
+                        >
+                          {row.cells.map((cell, j) => (
+                            <td
+                              key={j}
+                              className="px-6 py-4 text-gray-700 border-b border-gray-100 last:border-r-0"
+                            >
+                              {cell || ""}
+                            </td>
+                          ))}
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            );
+          },
+    
+          code: ({ value }) => (
+            <div className="my-8 bg-gradient-to-br from-gray-900 to-black rounded-2xl p-1 shadow-2xl">
+              <pre className="bg-gray-900 text-gray-100 p-6 rounded-xl overflow-x-auto">
+                <code className="font-mono text-sm leading-relaxed">{value.code}</code>
+              </pre>
+            </div>
+          ),
         },
-      },
-
-      marks: {
-        link: ({ children, value }) => {
-          return (
+    
+        marks: {
+          link: ({ children, value }) => (
             <Link
               href={value.href}
               rel="noopener noreferrer"
-              className="text-[#C69C21] hover:text-[#FDB913] underline decoration-[#FDB913]/30 hover:decoration-[#FDB913] transition-colors"
+              className="text-[#d3b36b] hover:text-[#FDB913] underline decoration-[#FDB913]/30 hover:decoration-[#FDB913] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#FDB913]/5 px-1 py-0.5 rounded"
             >
               {children}
             </Link>
-          );
+          ),
+          strong: ({ children }) => (
+            <strong className="font-bold text-gray-900  px-1 py-0.5 rounded">
+              {children}
+            </strong>
+          ),
+          em: ({ children }) => (
+            <em className="italic text-gray-800 bg-gray-50 px-1 py-0.5 rounded">
+              {children}
+            </em>
+          ),
+          code: ({ children }) => (
+            <code className="font-mono bg-gradient-to-r from-gray-100 to-gray-200 px-2 py-1 rounded-md text-sm text-gray-800 border border-gray-300">
+              {children}
+            </code>
+          ),
+          button: ({ children, value }) => {
+            const getButtonClasses = () => {
+              switch (value.style) {
+                case "secondary":
+                  return "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 shadow-lg hover:shadow-xl";
+                case "outline":
+                  return "bg-transparent border-2 border-[#C69C21] text-[#C69C21] hover:bg-[#C69C21] hover:text-white shadow-md hover:shadow-lg";
+                default:
+                  return "bg-gradient-to-r from-[#C69C21] to-[#FDB913] hover:from-[#FDB913] hover:to-[#C69C21] shadow-lg hover:shadow-xl";
+              }
+            };
+    
+            return (
+              <Link
+                href={value.href}
+                className={`inline-block px-8 py-3 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105 ${getButtonClasses()}`}
+              >
+                {value.text || children}
+              </Link>
+            );
+          },
         },
-        strong: ({ children }) => (
-          <strong className="font-semibold text-gray-900">{children}</strong>
-        ),
-        em: ({ children }) => (
-          <em className="italic text-gray-800">{children}</em>
-        ),
-        underline: ({ children }) => (
-          <u className="underline decoration-gray-400">{children}</u>
-        ),
-        code: ({ children }) => (
-          <code className="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-sm text-gray-800">
-            {children}
-          </code>
-        ),
-        "strike-through": ({ children }) => (
-          <del className="line-through text-gray-500">{children}</del>
-        ),
-        textColor: ({ children, value }) => (
-          <span style={{ color: value?.color || "inherit" }}>{children}</span>
-        ),
-        textBackground: ({ children, value }) => (
-          <span style={{ backgroundColor: value?.color || "transparent" }}>
-            {children}
-          </span>
-        ),
-        button: ({ children, value }) => {
-          const getButtonClasses = () => {
-            switch (value.style) {
-              case "secondary":
-                return "bg-gray-600 hover:bg-gray-700";
-              case "outline":
-                return "bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-50";
-              default:
-                return "bg-blue-600 hover:bg-blue-700";
-            }
-          };
-
-          return (
-            <Link
-              href={value.href}
-              className={`inline-block px-6 py-2 rounded-lg text-white font-medium transition-colors ${getButtonClasses()}`}
-            >
-              {value.text || children}
-            </Link>
-          );
+    
+        block: {
+          h1: ({ children }) => (
+            <h1 className="text-5xl font-black mt-8 mb-10 text-transparent bg-clip-text from- border-b-4  pb-4">
+              {children}
+            </h1>
+          ),
+          h2: ({ children }) => (
+            <h2 className="text-4xl font-bold mt-16 mb-8 text-gray-800 relative">
+              <span className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#C69C21] to-[#FDB913] rounded-full"></span>
+              {children}
+            </h2>
+          ),
+          h3: ({ children }) => (
+            <h3 className="text-3xl font-bold mt-12 mb-6 text-gray-800 flex items-center gap-3">
+              <div className="w-2 h-2  rounded-full"></div>
+              {children}
+            </h3>
+          ),
+          h4: ({ children }) => (
+            <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 border-l-4 border-[#FDB913] pl-4 bg-gradient-to-r from-[#FDB913]/5 to-transparent py-2">
+              {children}
+            </h4>
+          ),
+          normal: ({ children }) => (
+            <p className="mb-8 text-gray-700 leading-loose text-lg font-light tracking-wide">
+              {children}
+            </p>
+          ),
+          blockquote: ({ children }) => (
+            <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#C69C21]/5 to-[#FDB913]/10 rounded-2xl shadow-lg border border-[#C69C21]/20">
+              <div className="absolute top-4 left-6 text-6xl text-[#C69C21]/30 font-serif">"</div>
+              <div className="pl-8 italic text-gray-700 text-xl leading-relaxed font-medium">
+                {children}
+              </div>
+            </blockquote>
+          ),
+          centerAlign: ({ children }) => (
+            <p className="mb-8 text-gray-700 leading-loose text-lg text-center bg-gray-50 py-6 rounded-xl">
+              {children}
+            </p>
+          ),
         },
-      },
-
-      block: {
-        h1: ({ children }) => (
-          <h1 className="text-4xl font-bold mt-20 mb-8 text-gray-900 border-b border-gray-200 pb-3">
-            {children}
-          </h1>
-        ),
-        h2: ({ children }) => (
-          <h2 className="text-3xl font-bold mt-16 mb-6 text-gray-800 border-b border-gray-200 pb-2">
-            {children}
-          </h2>
-        ),
-        h3: ({ children }) => (
-          <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800">
-            {children}
-          </h3>
-        ),
-        h4: ({ children }) => (
-          <h4 className="text-xl font-semibold mt-8 mb-3 text-gray-800">
-            {children}
-          </h4>
-        ),
-        h5: ({ children }) => (
-          <h5 className="text-lg font-semibold mt-6 mb-2 text-gray-800">
-            {children}
-          </h5>
-        ),
-        h6: ({ children }) => (
-          <h6 className="text-base font-semibold mt-4 mb-2 text-gray-800">
-            {children}
-          </h6>
-        ),
-        normal: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg">
-            {children}
-          </p>
-        ),
-        blockquote: ({ children }) => (
-          <blockquote className="border-l-4 border-yellow-500 pl-6 my-8 italic text-gray-700 py-2 bg-gray-50 rounded-r-lg shadow-sm">
-            {children}
-          </blockquote>
-        ),
-        leftAlign: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg text-left">
-            {children}
-          </p>
-        ),
-        centerAlign: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg text-center">
-            {children}
-          </p>
-        ),
-        rightAlign: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg text-right">
-            {children}
-          </p>
-        ),
-        justify: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg text-justify">
-            {children}
-          </p>
-        ),
-        small: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-base">
-            {children}
-          </p>
-        ),
-        medium: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-lg">
-            {children}
-          </p>
-        ),
-        large: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-xl">
-            {children}
-          </p>
-        ),
-        xlarge: ({ children }) => (
-          <p className="mb-6 text-gray-700 leading-relaxed text-2xl">
-            {children}
-          </p>
-        ),
-      },
-
-      list: {
-        bullet: ({ children }) => (
-          <ul className="list-disc pl-6 mb-6 space-y-2 text-gray-700">
-            {children}
-          </ul>
-        ),
-        number: ({ children }) => (
-          <ol className="list-decimal pl-6 mb-6 space-y-2 text-gray-700">
-            {children}
-          </ol>
-        ),
-      },
-
-      listItem: {
-        bullet: ({ children }) => (
-          <li className="text-lg leading-relaxed">{children}</li>
-        ),
-        number: ({ children }) => (
-          <li className="text-lg leading-relaxed">{children}</li>
-        ),
-      },
-    };
+    
+        list: {
+          bullet: ({ children }) => (
+            <ul className="space-y-4 mb-10 pl-0">
+              {children}
+            </ul>
+          ),
+          number: ({ children }) => (
+            <ol className="space-y-4 mb-10 pl-0 counter-reset-list">
+              {children}
+            </ol>
+          ),
+        },
+    
+        listItem: {
+          bullet: ({ children }) => (
+            <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+              <div className="w-2 h-2 rounded-full mt-3 flex-shrink-0"></div>
+              <div>{children}</div>
+            </li>
+          ),
+          number: ({ children }) => (
+            <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative counter-increment-list">
+              <div className="w-8 h-8  rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                <span className="counter-content"></span>
+              </div>
+              <div>{children}</div>
+            </li>
+          ),
+        },
+      };
 
     // Format date for display
     const formattedDate = new Date(
@@ -570,34 +575,11 @@ export default async function BlogDetail({ params }) {
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
                 {/* Trending posts */}
+                <div className=" pt-4 max-w-xl mx-auto">
+                                                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More Know" />
+                                                    </div>
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">
-                    Our Projects
-                  </h3>
-                  <div className="">
-                    {getPro && getPro.length > 0 ? (
-                      getPro.map((post) => (
-                        <div key={post._id} className="mb-3">
-                          <Projects post={post} />
-                        </div>
-                      ))
-                    ) : (
-                      <p className="text-gray-400">
-                        No trending articles found.
-                      </p>
-                    )}
-                  </div>
-                  <div className="flex items-center justify-center mt-6">
-                    <Link href="/projects">
-                      <button className="text-center rounded-xl text-white font-semibold bg-[#d7b56d] hover:bg-[#c6a45d] p-3 transition-colors">
-                        Explore Projects
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-
-                <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
-                  <h3 className="text-xl font-bold mb-4 text-blue-300">
+                  <h3 className="text-xl font-bold mb-4 text-white">
                     Latest News
                   </h3>
                   <div className="">

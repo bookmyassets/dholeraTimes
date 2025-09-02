@@ -5,6 +5,7 @@ import Image from "next/image";
 import BlogCard from "./BlogCard";
 import TrendingBlogItem from "./TrendingBlog";
 import Link from "next/link";
+import LeadForm from "./LeadForm";
 
 export default async function BlogsPage() {
   // Fetch data and handle potential errors
@@ -51,21 +52,21 @@ export default async function BlogsPage() {
       <meta name="robots" content="noindex, dofollow"/>
 
       <div className="bg-black text-white">
-        <section className="relative h-[50vh] flex items-center justify-center text-center">
+        <section className="relative h-[50vh]  flex items-center justify-center text-center">
         <div className="absolute inset-0">
           <Image
             src={hero}
             alt="Dholera SIR Aerial View"
-            className="w-full h-full object-cover"
+            className="w-full h-[50vh] object-cover"
             priority
           />
           <div className="absolute inset-0 "></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
-          <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-lg mb-6 tracking-tight">
+          <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
             Dholera SIR
           </h1>
-          <p className="text-xl md:text-2xl font-light leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
             India's First Greenfield Smart City along the Delhi-Mumbai
             Industrial Corridor
           </p>
@@ -79,8 +80,12 @@ export default async function BlogsPage() {
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Trending Section - Left Sidebar */}
           <div className="lg:w-1/4">
+          <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] z-20 sticky top-6 mb-8">
+            
+            <LeadForm title="See Why Global Investors Are Eyeing Dholera" buttonName="Get Free Insights" />
+          </div>
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] sticky top-4">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
+              <h2 className="text-2xl font-semibold mb-6 text-gray-800">
                 Latest News on Dholera
               </h2> 
               {trendingBlogs.length > 0 ? (

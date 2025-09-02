@@ -48,7 +48,7 @@ export default function ButtonsSection() {
 
   const buttons = [
     {id: 1, title: "Download Brochure"},
-    {id: 2, title: "Book Free site Visit"} 
+    {id: 2, title: "Book Free Site Visit"} 
   ];
 
   return (
@@ -73,7 +73,7 @@ export default function ButtonsSection() {
               );
             }
           }}
-          className="btn btn-primary px-6 py-3 bg-[#d8b66d] hover:bg-[#cba64f] text-gray-800 font-semibold rounded-xl transition duration-300 w-full sm:w-auto max-w-xs"
+          className="btn btn-primary px-6 py-3 bg-[#b69b5e] hover:bg-[#d3b66b] text-gray-800 font-semibold rounded-xl transition duration-300 w-full sm:w-auto max-w-xs"
         >
           {button.title}
         </button>
