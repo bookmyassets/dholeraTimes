@@ -230,7 +230,7 @@ export default function Footer() {
                 {isProjects.map((project) => (
                   <li key={project._id}>
                     <Link
-                      href={`/projects/${project.slug.current}`}
+                      href={`/dholera-residential-plots/${project.slug.current}`}
                       className="hover:text-white transition"
                     >
                       {project.title}

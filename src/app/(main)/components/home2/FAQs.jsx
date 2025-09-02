@@ -61,11 +61,11 @@ export default function FAQS() {
             <h2 className="text-[32px] font-semibold text-gray-800 mb-4">
               Frequently Asked Questions
             </h2>
-            <p>Have more questions:</p>
+            <p>Have more questions ?</p>
             
             <div className="pt-4">
               
-              <a className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md" href="tel:+919958993549">Give us a missed call.</a>
+              <a className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md" href="tel:+919958993549">Give us a missed call</a>
             </div>
           </div>
 

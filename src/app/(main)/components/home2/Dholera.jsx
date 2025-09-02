@@ -1,5 +1,5 @@
 import React from "react";
-import dholeraSite from "@/assets/westwyn-county-home-image.webp";
+import dholeraSite from "@/assets/dholera-smart-city-home-image.webp";
 import Image from "next/image";
 
 export default function Dholera() {

@@ -25,10 +25,10 @@ export default function Home2Main() {
             <AboutDT/>
         </div>
         <div>
-            <Dholera/>
+          <BulkLand title="Know Today’s Best Offer" buttonName="Claim My Offer"/>
         </div>
         <div>
-          <BulkLand title="Know Today’s Best Offer" buttonName="Claim My Offer"/>
+            <Dholera/>
         </div>
         <div>
             <LatestUpdates/>
