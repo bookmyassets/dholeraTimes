@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /* image import */
-import hero1 from "@/assets/DTbanner1.webp";
+import hero1 from "@/assets/dt-home-banner.webp";
 import hero2 from "@/assets/DTbanner2.webp";
 import heroM1 from "@/assets/DTbanner1_mobile.webp";
 import heroM2 from "@/assets/DTbanner2_mobile.webp";
