@@ -89,33 +89,18 @@ export default function HOME2() {
               key={`desktop-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[76vh]">
+              <div className="relative w-full h-[85vh]">
                 <Image
                   src={slide.desktop}
                   alt={`hero slide ${index + 1}`}
                   fill
                   priority={index === 0}
-                  className="object-cover"
+                  className=""
                   sizes="100vw"
                 />
 
                 {/* Text overlay with animation - only visible for the current slide */}
-                {currentSlide === index && (
-                  <motion.div
-                    className="absolute bottom-20 left-40 right-0 flex"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.7 }}
-                  >
-                    <button
-                      onClick={openContactForm}
-                      className="bg-[#151f28] text-white py-4 px-8 rounded-2xl uppercase text-3xl font-semibold tracking-wider transform transition-all duration-500 hover:scale-105 hover:bg-opacity-60"
-                    >
-                      {slide.text}
-                    </button>
-                  </motion.div>
-                )}
+                
               </div>
             </div>
           ))}
