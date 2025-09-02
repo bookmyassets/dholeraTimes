@@ -128,24 +128,24 @@ export default function page() {
         {/* Project Types Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
-            <Lightbulb className="w-16 h-16 text-blue-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <Lightbulb className="w-16 h-16 " style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Retail & Commercial Services
             </p>
           </div>
 
           {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
-            <BrainCircuit className="w-16 h-16 text-red-600 rotate-90" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <BrainCircuit className="w-16 h-16 text-gray-800 rotate-90" />
             <p className="text-lg font-medium text-gray-800">
               Innovation Ecosystem
             </p>
           </div>
 
           {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-            <Globe2 className="w-16 h-16 text-green-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <Globe2 className="w-16 h-16 " style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Global Competitiveness
             </p>
@@ -153,16 +153,16 @@ export default function page() {
         </div>
         <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
           {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-            <TbBuildingSkyscraper className="w-16 h-16 text-purple-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <TbBuildingSkyscraper className="w-16 h-16 text-gray-800" />
             <p className="text-lg font-medium text-gray-800">
               Modern Infrastructure
             </p>
           </div>
 
           {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
-            <TrendingUp className="w-16 h-16 text-orange-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <TrendingUp className="w-16 h-16 " style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Long-Term Value Growth
             </p>
@@ -179,7 +179,7 @@ export default function page() {
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
             {/* High Appreciation Potential */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Cpu className="w-16 h-16 text-blue-600" />
+              <Cpu className="w-16 h-16 " style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 IT & Technology Parks
               </p>
@@ -187,7 +187,7 @@ export default function page() {
 
             {/* Mixed-Use Flexibility */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <FlaskConical className="w-16 h-16 text-green-600" />
+              <FlaskConical className="w-16 h-16 text-gray-800" />
               <p className="text-lg font-medium text-gray-800">
                 Research & Development Facilities
               </p>
@@ -195,7 +195,7 @@ export default function page() {
 
             {/* Plug & Play Infrastructure */}
             <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <GraduationCap className="w-16 h-16 text-purple-600" />
+              <GraduationCap className="w-16 h-16 " style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 Educational Institutions
               </p>
@@ -205,7 +205,7 @@ export default function page() {
         <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
           {/* Community-Centric Planning */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Building2 className="w-16 h-16 text-orange-600" />
+            <Building2 className="w-16 h-16 text-gray-800"  />
             <p className="text-lg font-medium text-gray-800">
               Corporate & Office Spaces
             </p>
@@ -213,7 +213,7 @@ export default function page() {
 
           {/* Government-Backed Development */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Home className="w-16 h-16 text-red-600" />
+            <Home className="w-16 h-16 " style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Supporting Residential & Mixed-Use
             </p>

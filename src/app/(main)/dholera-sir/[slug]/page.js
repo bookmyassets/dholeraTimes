@@ -578,7 +578,7 @@ export default async function BlogDetail({ params }) {
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
              <div className=" pt-4 max-w-xl mx-auto">
-                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More Know" />
+                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More" />
                     </div>
                 {/* Trending posts */}
                 <div className="bg-[#151f28] rounded-xl shadow-2xl shadow-gray-500 p-6 border border-gray-700">

@@ -79,12 +79,12 @@ export default async function BlogsPage() {
       <div className="px-4 py-12 ">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Trending Section - Left Sidebar */}
-          <div className="lg:w-1/4">
-          <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] z-20 sticky top-6 mb-8">
+          <div className="lg:w-1/4 sticky top-6">
+          <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
             
             <LeadForm title="See Why Global Investors Are Eyeing Dholera" buttonName="Get Free Insights" />
           </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] sticky top-4">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] ">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
                 Latest News on Dholera
               </h2> 
@@ -101,7 +101,7 @@ export default async function BlogsPage() {
           </div>
 
           {/* Blog Grid */}
-          <div className="lg:w-3/4">
+          <div className="lg:w-3/4 ">
             {safePosts.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {safePosts.map((post) => (

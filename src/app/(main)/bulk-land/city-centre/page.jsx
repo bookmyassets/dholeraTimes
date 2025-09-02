@@ -19,6 +19,24 @@ import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 
 export default function page() {
+
+  const cardStyle = `
+    .golden-card {
+      background-color: rgba(211, 179, 107, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .golden-card:hover {
+      background-color: rgba(211, 179, 107, 0.2);
+    }
+    .dark-card {
+      background-color: rgba(21, 31, 40, 0.1);
+      transition: background-color 0.3s ease;
+    }
+    .dark-card:hover {
+      background-color: rgba(21, 31, 40, 0.2);
+    }
+  `;
+
   return (
     <>
       <div className="relative h-[50vh] w-full ">
@@ -55,7 +73,7 @@ export default function page() {
 
         {/* Bottom Info Card */}
       </div>
-      <div className=" w-full  z-10">
+      <div className=" w-full  z-10" >
         <div className="p-4 md:p-6 mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 text-center">
@@ -123,56 +141,55 @@ export default function page() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
+      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4" >
         <p className="text-center text-3xl font-semibold mb-8">
           What's Allowed in City Centre Zones?
         </p>
 
         {/* Project Types Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
-            <MapPin className="w-16 h-16 text-blue-600" />
-            <p className="text-lg font-medium text-gray-800">
-              Prime Central Location
-            </p>
-          </div>
-
-          {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
-            <Users className="w-16 h-16 text-red-600" />
-            <p className="text-lg font-medium text-gray-800">
-              High Footfall & Business Potential
-            </p>
-          </div>
-
-          {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-            <Star className="w-16 h-16 text-green-600" />
-            <p className="text-lg font-medium text-gray-800">
-              Prestige & Landmark Value
-            </p>
-          </div>
-
-          
+        {/* Prime Central Location */}
+        <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg golden-card bg-gray-50  hover:bg-gray-100 ">
+          <MapPin className="w-16 h-16" style={{ color: '#d3b36b' }} />
+          <p className="text-lg font-medium" style={{ color: '#151f28' }}>
+            Prime Central Location
+          </p>
         </div>
-        <div className="md:flex justify-center items-center max-sm:space-y-4 md:space-x-8 pt-4">
-          {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-            <Layers className="w-16 h-16 text-purple-600" />
-            <p className="text-lg font-medium text-gray-800">
-              Versatility of Development
-            </p>
-          </div>
 
-          {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
-            <Train className="w-16 h-16 text-orange-600" />
-            <p className="text-lg font-medium text-gray-800">
-              Seamless Connectivity
-            </p>
-          </div>
+        {/* High Footfall & Business Potential */}
+        <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg dark-card bg-gray-50  hover:bg-gray-100 ">
+          <Users className="w-16 h-16" style={{ color: '#151f28' }} />
+          <p className="text-lg font-medium" style={{ color: '#151f28' }}>
+            High Footfall & Business Potential
+          </p>
         </div>
+
+        {/* Prestige & Landmark Value */}
+        <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg golden-card bg-gray-50  hover:bg-gray-100 ">
+          <Star className="w-16 h-16" style={{ color: '#d3b36b' }} />
+          <p className="text-lg font-medium" style={{ color: '#151f28' }}>
+            Prestige & Landmark Value
+          </p>
+        </div>
+      </div>
+
+      <div className="md:flex justify-center items-center max-sm:space-y-4 md:space-x-8 pt-4">
+        {/* Versatility of Development */}
+        <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg dark-card bg-gray-50  hover:bg-gray-100 ">
+          <Layers className="w-16 h-16" style={{ color: '#151f28' }} />
+          <p className="text-lg font-medium" style={{ color: '#151f28' }}>
+            Versatility of Development
+          </p>
+        </div>
+
+        {/* Seamless Connectivity */}
+        <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg golden-card bg-gray-50  hover:bg-gray-100">
+          <Train className="w-16 h-16" style={{ color: '#d3b36b' }} />
+          <p className="text-lg font-medium" style={{ color: '#151f28' }}>
+            Seamless Connectivity
+          </p>
+        </div>
+      </div>
       </div>
 
       <div className="max-w-6xl mx-auto p-4">
@@ -183,8 +200,8 @@ export default function page() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
             {/* High Appreciation Potential */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <ShoppingBag className="w-16 h-16 text-blue-600" />
+            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50  hover:bg-gray-100 rounded-lg transition-colors">
+              <ShoppingBag className="w-16 h-16 "style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 Retail & Shopping Districts
               </p>
@@ -192,7 +209,7 @@ export default function page() {
 
             {/* Mixed-Use Flexibility */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Clapperboard className="w-16 h-16 text-green-600" />
+              <Clapperboard className="w-16 h-16 text-gray-800" />
               <p className="text-lg font-medium text-gray-800">
                 Hospitality & Entertainment
               </p>
@@ -200,7 +217,7 @@ export default function page() {
 
             {/* Plug & Play Infrastructure */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Building2 className="w-16 h-16 text-purple-600" />
+              <Building2 className="w-16 h-16 "style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 Corporate & Administrative Offices
               </p>
@@ -212,7 +229,7 @@ export default function page() {
         <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
           {/* Community-Centric Planning */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Landmark className="w-16 h-16 text-orange-600" />
+              <Landmark className="w-16 h-16 text-gray-800" />
               <p className="text-lg font-medium text-gray-800">
                 Cultural & Civic Spaces
               </p>
@@ -220,7 +237,7 @@ export default function page() {
 
             {/* Government-Backed Development */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Building className="w-16 h-16 text-red-600" />
+              <Building className="w-16 h-16 "style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 Residential & Mixed-Use Living
               </p>

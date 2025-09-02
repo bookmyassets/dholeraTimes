@@ -77,11 +77,11 @@ export default async function BlogsPage() {
             </div>
           </div>
 
-          <div className="lg:w-1/4 ">
-           <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] z-10 sticky top-6 mb-8">
-                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More Know" />
+          <div className="lg:w-1/4 sticky top-6">
+           <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
+                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More" />
                     </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FDB913] sticky top-4">
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FDB913] ">
               <h2 className="text-2xl text-red-500 font-bold mb-6">
                 Recent Posts
               </h2>

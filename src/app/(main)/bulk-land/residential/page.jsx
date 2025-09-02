@@ -134,24 +134,24 @@ export default function page() {
         {/* Project Types Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors">
-            <ShoppingBag className="w-16 h-16 text-blue-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <ShoppingBag className="w-16 h-16 "style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Retail & Commercial Services
             </p>
           </div>
 
           {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-red-50 rounded-lg hover:bg-red-100 transition-colors">
-            <UtensilsCrossed className="w-16 h-16 text-red-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <UtensilsCrossed className="w-16 h-16 text-gray-800" />
             <p className="text-lg font-medium text-gray-800">
               Hospitality & Food Services
             </p>
           </div>
 
           {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-green-50 rounded-lg hover:bg-green-100 transition-colors">
-            <HeartPulse className="w-16 h-16 text-green-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <HeartPulse className="w-16 h-16 "style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Healthcare & Wellness
             </p>
@@ -159,16 +159,16 @@ export default function page() {
         </div>
         <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
           {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-purple-50 rounded-lg hover:bg-purple-100 transition-colors">
-            <GraduationCap className="w-16 h-16 text-purple-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <GraduationCap className="w-16 h-16 text-gray-800" />
             <p className="text-lg font-medium text-gray-800">
               Education & Community Facilities
             </p>
           </div>
 
           {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-orange-50 rounded-lg hover:bg-orange-100 transition-colors">
-            <HomeIcon className="w-16 h-16 text-orange-600" />
+          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
+            <HomeIcon className="w-16 h-16 "style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Residential & Housing Projects
             </p>
@@ -185,7 +185,7 @@ export default function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
             {/* High Appreciation Potential */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <TrendingUp className="w-16 h-16 text-blue-600" />
+              <TrendingUp className="w-16 h-16 "style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 High Appreciation Potential
               </p>
@@ -193,7 +193,7 @@ export default function page() {
 
             {/* Mixed-Use Flexibility */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <HomeIcon className="w-16 h-16 text-green-600" />
+              <HomeIcon className="w-16 h-16 text-gray-800" />
               <p className="text-lg font-medium text-gray-800">
                 Mixed-Use Flexibility
               </p>
@@ -201,7 +201,7 @@ export default function page() {
 
             {/* Plug & Play Infrastructure */}
             <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Plug className="w-16 h-16 text-purple-600" />
+              <Plug className="w-16 h-16 "style={{ color: '#d3b36b' }} />
               <p className="text-lg font-medium text-gray-800">
                 Plug & Play Infrastructure
               </p>
@@ -211,7 +211,7 @@ export default function page() {
         <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
           {/* Community-Centric Planning */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Users className="w-16 h-16 text-orange-600" />
+            <Users className="w-16 h-16 text-gray-800" />
             <p className="text-lg font-medium text-gray-800">
               Community-Centric Planning
             </p>
@@ -219,7 +219,7 @@ export default function page() {
 
           {/* Government-Backed Development */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Landmark className="w-16 h-16 text-red-600" />
+            <Landmark className="w-16 h-16 "style={{ color: '#d3b36b' }} />
             <p className="text-lg font-medium text-gray-800">
               Government-Backed Development
             </p>
