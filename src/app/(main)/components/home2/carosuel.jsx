@@ -89,13 +89,13 @@ export default function HOME2() {
               key={`desktop-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[85vh]">
+              <div className="relative w-full h-[76vh]">
                 <Image
                   src={slide.desktop}
                   alt={`hero slide ${index + 1}`}
                   fill
                   priority={index === 0}
-                  className=""
+                  className=" object-cover"
                   sizes="100vw"
                 />
 
