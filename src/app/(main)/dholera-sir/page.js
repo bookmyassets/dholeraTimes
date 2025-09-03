@@ -1,5 +1,5 @@
 import { getblogs, getProjectInfo, getUpdates, getNews } from "@/sanity/lib/api";
-import hero from "@/assets/dholeraSIR.webp";
+import hero from "@/assets/dholera-sir-hero.webp";
 import herom from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
 import BlogCard from "./BlogCard";
@@ -57,7 +57,7 @@ export default async function BlogsPage() {
           <Image
             src={hero}
             alt="Dholera SIR Aerial View"
-            className="w-full h-[50vh] object-cover"
+            className="w-full h-full object-cover"
             priority
           />
           <div className="absolute inset-0 "></div>
@@ -123,7 +123,7 @@ export default async function BlogsPage() {
       </div>
 
       {/* Bottom CTA Section */}
-      <div className="bg-black text-white py-16">
+      <div className="bg-[#151f28] text-white py-16">
         <div className="max-w-5xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             Stay Updated with Dholera SIR
@@ -131,7 +131,7 @@ export default async function BlogsPage() {
           <p className="text-lg text-gray-300 mb-8">
             Subscribe to our newsletter for the latest investment opportunities and updates.
           </p>
-          <Link href="/contact" className="bg-[#FDB913] text-black px-8 py-3 rounded-lg font-bold hover:bg-[#C69C21] transition-colors shadow-lg">
+          <Link href="/contact" className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg">
             Contact Us
           </Link>
         </div>

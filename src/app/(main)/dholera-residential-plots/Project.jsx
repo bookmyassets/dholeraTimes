@@ -242,7 +242,7 @@ export default async function Projects() {
                           className="text-2xl lg:text-3xl font-bold mb-4"
                           style={{color: '#fbfbfb'}}
                         >
-                          Interested in This <span style={{color: '#d3b36b'}}>Investment?</span>
+                          Know Today’s  <span style={{color: '#d3b36b'}}>Best Offer</span>
                         </h3>
                         <p 
                           className="text-lg"
@@ -253,7 +253,7 @@ export default async function Projects() {
                       </div>
                       <div className="max-w-2xl mx-auto">
 
-                      <LeadForm buttonName="Book Free Site Visit" />
+                      <LeadForm buttonName="Claim My Offer" />
                       </div>
                     </div>
                   </div>
@@ -391,7 +391,7 @@ export default async function Projects() {
                         className="text-3xl font-bold mb-4"
                         style={{color: '#fbfbfb'}}
                       >
-                        Ready to <span style={{color: '#d3b36b'}}>Invest?</span>
+                        Know Today's <span style={{color: '#d3b36b'}}>Best Offer</span>
                       </h3>
                       <p 
                         className="text-lg"
@@ -400,7 +400,7 @@ export default async function Projects() {
                         Connect with our investment team for personalized guidance
                       </p>
                     </div>
-                    <LeadForm/>
+                    <LeadForm buttonName="Claim My Offer"/>
                   </div>
                 </div>
               </div>

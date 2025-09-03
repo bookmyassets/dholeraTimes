@@ -203,7 +203,7 @@ export default function LeadForm({ title, headline, buttonName, onClose }) {
   return (
     <div className="relative">
       <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full mx-auto border border-gray-200 rounded-xl">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           {title}
         </h2>
         <h2 className="text-sm font-medium text-center text-gray-800 mb-6">

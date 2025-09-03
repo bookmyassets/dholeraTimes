@@ -48,7 +48,7 @@ export default function Home2Main() {
         <AboutDT />
       </div>
       <div>
-        <BulkLand title="Know Today’s Best Offer" buttonName="Claim My Offer" />
+        <BulkLand title=" Book Your Free Site Visit to Dholera Smart City" buttonName="Book My Site Visit" />
       </div>
       <div>
         <Dholera />
@@ -80,7 +80,7 @@ export default function Home2Main() {
         <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-8 mb-16 border border-white/20">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="text-center lg:text-left">
-              <h2 className="text-2xl font-bold text-gray-800 mb-3">
+              <h2 className="text-2xl font-bold text-[#151f28] mb-3">
                 🚀 Ready to Invest in Dholera SIR?
               </h2>
               <p className="text-gray-600 text-lg">
@@ -91,7 +91,7 @@ export default function Home2Main() {
               <button onClick={openContactForm} className="bg-[#d3b36b] text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
                 Get Free Consultation
               </button>
-              <button onClick={openBrochureForm} className="border-2 border-gray-800 text-[#d3b36b] px-8 py-3 rounded-xl font-semibold hover:bg-[#caac66] hover:text-white transition-all duration-300">
+              <button onClick={openBrochureForm} className="border-2 border-[#151f28] text-[#d3b36b] px-8 py-3 rounded-xl font-semibold hover:bg-[#caac66] hover:text-white transition-all duration-300">
                 Download Brochure
               </button>
             </div>
@@ -118,7 +118,7 @@ export default function Home2Main() {
             <BrochureForm
               title=""
               buttonName="Talk To Investment Advisor"
-              onClose={() => setIsContactFormOpen(false)}
+              onClose={() => setIsBrochureFormOpen(false)}
             />
           </div>
         )}

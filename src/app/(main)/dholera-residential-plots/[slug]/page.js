@@ -189,13 +189,13 @@ export default async function Post({ params }) {
           <strong className="font-semibold text-gray-900">{children}</strong>
         ),
         em: ({ children }) => (
-          <em className="italic text-gray-800">{children}</em>
+          <em className="italic text-[#151f28]">{children}</em>
         ),
         underline: ({ children }) => (
           <u className="underline decoration-gray-400">{children}</u>
         ),
         code: ({ children }) => (
-          <code className="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-sm text-gray-800">
+          <code className="font-mono bg-gray-100 px-1.5 py-0.5 rounded text-sm text-[#151f28]">
             {children}
           </code>
         ),
@@ -239,27 +239,27 @@ export default async function Post({ params }) {
           </h1>
         ),
         h2: ({ children }) => (
-          <h2 className="text-3xl font-bold mt-16 mb-6 text-gray-800 border-b border-gray-200 pb-2">
+          <h2 className="text-3xl font-bold mt-16 mb-6 text-[#151f28] border-b border-gray-200 pb-2">
             {children}
           </h2>
         ),
         h3: ({ children }) => (
-          <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800">
+          <h3 className="text-2xl font-semibold mt-10 mb-4 text-[#151f28]">
             {children}
           </h3>
         ),
         h4: ({ children }) => (
-          <h4 className="text-xl font-semibold mt-8 mb-3 text-gray-800">
+          <h4 className="text-xl font-semibold mt-8 mb-3 text-[#151f28]">
             {children}
           </h4>
         ),
         h5: ({ children }) => (
-          <h5 className="text-lg font-semibold mt-6 mb-2 text-gray-800">
+          <h5 className="text-lg font-semibold mt-6 mb-2 text-[#151f28]">
             {children}
           </h5>
         ),
         h6: ({ children }) => (
-          <h6 className="text-base font-semibold mt-4 mb-2 text-gray-800">
+          <h6 className="text-base font-semibold mt-4 mb-2 text-[#151f28]">
             {children}
           </h6>
         ),

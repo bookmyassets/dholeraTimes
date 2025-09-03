@@ -282,7 +282,7 @@ const DholeraInvestmentGuide = () => {
                       />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800">
+                  <h3 className="text-xl font-bold text-[#151f28]">
                     Why Invest Now?
                   </h3>
                 </div>

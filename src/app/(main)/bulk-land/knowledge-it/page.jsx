@@ -13,13 +13,65 @@ import {
   Server,
   TrendingUp,
   BrainCircuit,
+  ArrowRight,
 } from "lucide-react";
 import residentialMap from "@/assets/bulkLand/knowledge-it-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { TbBuildingSkyscraper } from "react-icons/tb";
+import { getKnowledgeITLinks, getResidentialLinks } from "../InterLink";
+
+
+
+// Horizontal Scroll Design
+const HorizontalScrollInterlink = ({ properties }) => {
+  return (
+    <div className="bg-gradient-to-r from-[#deae3c]/10 to-[#deae3c]/5 py-8 mb-8">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-6">
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">Discover Other Investment Zones</h3>
+          <p className="text-gray-600">Swipe to explore more opportunities</p>
+        </div>
+        
+        <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
+          {properties.map((property) => (
+            <a 
+              key={property.id}
+              href={property.link}
+              className="group flex-shrink-0 w-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative h-40 w-full rounded-t-xl overflow-hidden">
+                <Image 
+                  src={property.image} 
+                  alt={property.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  fill
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <h4 className="text-white font-semibold text-sm line-clamp-2">
+                    {property.title}
+                  </h4>
+                </div>
+              </div>
+              <div className="p-4">
+                <p className="text-gray-600 text-sm mb-3">{property.area}</p>
+                <div className="flex items-center justify-between">
+                  <span className="text-[#deae3c] font-medium text-sm">Explore Zone</span>
+                  <ArrowRight className="w-4 h-4 text-[#deae3c] group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function page() {
+  const relatedProperties = getKnowledgeITLinks();
+
   return (
     <>
       <div className="relative h-[50vh] w-full ">
@@ -88,6 +140,8 @@ export default function page() {
           </div>
         </div>
       </div>
+
+<HorizontalScrollInterlink properties={relatedProperties} />
 
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">

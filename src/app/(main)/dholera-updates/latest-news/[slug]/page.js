@@ -131,7 +131,7 @@ const RelatedBlogCard = ({ blog }) => {
           </h3>
           <p className="text-gray-700 mb-4 line-clamp-3">{blog.description}</p>
           <div className="flex items-center justify-between mt-auto">
-            <span className="hover:text-[#C69C21] text-[#FDB913] p-1 rounded-xl font-semibold bg-gray-800 inline-flex items-center">
+            <span className="hover:text-[#C69C21] text-[#FDB913] p-1 rounded-xl font-semibold bg-[#151f28] inline-flex items-center">
               Read more
             </span>
           </div>
@@ -282,12 +282,12 @@ export default async function BlogDetail({ params }) {
             </strong>
           ),
           em: ({ children }) => (
-            <em className="italic text-gray-800 bg-gray-50 px-1 py-0.5 rounded">
+            <em className="italic text-[#151f28] bg-gray-50 px-1 py-0.5 rounded">
               {children}
             </em>
           ),
           code: ({ children }) => (
-            <code className="font-mono bg-gradient-to-r from-gray-100 to-gray-200 px-2 py-1 rounded-md text-sm text-gray-800 border border-gray-300">
+            <code className="font-mono bg-gradient-to-r from-gray-100 to-gray-200 px-2 py-1 rounded-md text-sm text-[#151f28] border border-gray-300">
               {children}
             </code>
           ),
@@ -295,7 +295,7 @@ export default async function BlogDetail({ params }) {
             const getButtonClasses = () => {
               switch (value.style) {
                 case "secondary":
-                  return "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 shadow-lg hover:shadow-xl";
+                  return "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-[#151f28] shadow-lg hover:shadow-xl";
                 case "outline":
                   return "bg-transparent border-2 border-[#C69C21] text-[#C69C21] hover:bg-[#C69C21] hover:text-white shadow-md hover:shadow-lg";
                 default:
@@ -321,19 +321,19 @@ export default async function BlogDetail({ params }) {
             </h1>
           ),
           h2: ({ children }) => (
-            <h2 className="text-4xl font-bold mt-16 mb-8 text-gray-800 relative">
+            <h2 className="text-4xl font-bold mt-16 mb-8 text-[#151f28] relative">
               <span className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#C69C21] to-[#FDB913] rounded-full"></span>
               {children}
             </h2>
           ),
           h3: ({ children }) => (
-            <h3 className="text-3xl font-bold mt-12 mb-6 text-gray-800 flex items-center gap-3">
+            <h3 className="text-3xl font-bold mt-12 mb-6 text-[#151f28] flex items-center gap-3">
               <div className="w-2 h-2  rounded-full"></div>
               {children}
             </h3>
           ),
           h4: ({ children }) => (
-            <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 border-l-4 border-[#FDB913] pl-4 bg-gradient-to-r from-[#FDB913]/5 to-transparent py-2">
+            <h4 className="text-2xl font-semibold mt-10 mb-4 text-[#151f28] border-l-4 border-[#FDB913] pl-4 bg-gradient-to-r from-[#FDB913]/5 to-transparent py-2">
               {children}
             </h4>
           ),
@@ -617,7 +617,7 @@ export default async function BlogDetail({ params }) {
               </h2>
               <Link
                 href="/dholera-updates/blogs"
-                className="rounded-xl text-gray-800 max-sm:text-center font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d] "
+                className="rounded-xl text-[#151f28] max-sm:text-center font-semibold bg-[#d7b56d] p-1 hover:bg-[#c6a45d] "
               >
                 View all
               </Link>

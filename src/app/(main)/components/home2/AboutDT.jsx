@@ -23,13 +23,13 @@ export default function AboutDT() {
           <div className="md:w-1/2 w-full">
             {/* Small label */}
            {/*  <div className="inline-block mb-4">
-              <span className="bg-gray-100 text-gray-800 text-sm font-medium px-3 py-1 rounded-full">
+              <span className="bg-gray-100 text-[#151f28] text-sm font-medium px-3 py-1 rounded-full">
                 About Dholera Times
               </span>
             </div> */}
 
             {/* Main heading */}
-            <h2 className="text-[28px] font-bold text-gray-800 mb-6 leading-tight">
+            <h2 className="text-[28px] font-bold text-[#151f28] mb-6 leading-tight">
               Discover Premium Residential Plots with WestWyn County
             </h2>
 

@@ -301,7 +301,7 @@ export default function SidebarWithForm({ popularArticles }) {
                 href={`/dholera-updates/latest-news/${article.slug.current}`}
                 className="block group"
               >
-                <h4 className="text-base font-semibold text-gray-800 mb-1 group-hover:text-[#d3b36b] transition-colors">
+                <h4 className="text-base font-semibold text-[#151f28] mb-1 group-hover:text-[#d3b36b] transition-colors">
                   {article.title || `Dholera Update ${index + 1}`}
                 </h4>
                 <p className="text-sm text-gray-500">

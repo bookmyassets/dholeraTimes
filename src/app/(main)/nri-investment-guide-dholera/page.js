@@ -68,7 +68,7 @@ export default function NRIInvestmentGuide() {
     `px-6 py-4 rounded-lg font-semibold transition-all duration-300 shadow ${
       activeTab === id
         ? "bg-[#d8b66d] text-white"
-        : "bg-white text-gray-800 hover:bg-gray-100"
+        : "bg-white text-[#151f28] hover:bg-gray-100"
     }`;
 
   const faqs = [
@@ -808,14 +808,14 @@ export default function NRIInvestmentGuide() {
                 India."
               </blockquote>
 
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
                 Why NRIs Should Invest in India
               </h3>
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start">
                   <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                   <span className="text-gray-700">
-                    <strong className="text-gray-800">
+                    <strong className="text-[#151f28]">
                       Rapid Economic Growth
                     </strong>{" "}
                     — India's economy is among of the fastest growing worldwide
@@ -825,7 +825,7 @@ export default function NRIInvestmentGuide() {
                 <li className="flex items-start">
                   <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                   <span className="text-gray-700">
-                    <strong className="text-gray-800">
+                    <strong className="text-[#151f28]">
                       Policy Reforms and Government Reforms
                     </strong>{" "}
                     — Initiatives like RERA (Real Estate Regulatory Authority),
@@ -836,7 +836,7 @@ export default function NRIInvestmentGuide() {
                 <li className="flex items-start">
                   <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                   <span className="text-gray-700">
-                    <strong className="text-gray-800">
+                    <strong className="text-[#151f28]">
                       High Return on Investment and Appreciation
                     </strong>{" "}
                     — Real estate in India has delivered consistently higher
@@ -847,7 +847,7 @@ export default function NRIInvestmentGuide() {
                 <li className="flex items-start">
                   <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                   <span className="text-gray-700">
-                    <strong className="text-gray-800">
+                    <strong className="text-[#151f28]">
                       Financial and emotional security
                     </strong>{" "}
                     — A property in India provides a solid financial back-up
@@ -880,7 +880,7 @@ export default function NRIInvestmentGuide() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
                 Strategic Location
               </h3>
               <p className="text-gray-700">
@@ -890,7 +890,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
                 World-Class Infrastructure
               </h3>
               <p className="text-gray-700">
@@ -901,7 +901,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
                 Global Business Hub
               </h3>
               <p className="text-gray-700">
@@ -912,7 +912,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-gray-800">
+              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
                 Sustainable Smart Living
               </h3>
               <p className="text-gray-700">
@@ -952,7 +952,7 @@ export default function NRIInvestmentGuide() {
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  <strong className="text-gray-800">
+                  <strong className="text-[#151f28]">
                     100% Legally Clear Properties with NA/NOC approval
                   </strong>
                   , Unit Plan clearance from the relevant Government
@@ -963,7 +963,7 @@ export default function NRIInvestmentGuide() {
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  <strong className="text-gray-800">
+                  <strong className="text-[#151f28]">
                     Large Land Parcels Available
                   </strong>
                   : We provide NA/NOC certified Title-Clear properties in which
@@ -974,7 +974,7 @@ export default function NRIInvestmentGuide() {
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  <strong className="text-gray-800">
+                  <strong className="text-[#151f28]">
                     Large and Medium-Ticket size
                   </strong>{" "}
                   investors from United Kingdom (England), Italy, Spain
@@ -985,7 +985,7 @@ export default function NRIInvestmentGuide() {
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  <strong className="text-gray-800">
+                  <strong className="text-[#151f28]">
                     Unique Investment Opportunity
                   </strong>{" "}
                   in residential lands that have the potential to appreciate
@@ -996,7 +996,7 @@ export default function NRIInvestmentGuide() {
               <li className="flex items-start">
                 <span className="text-[#d8b66d] mr-2 text-xl">●</span>
                 <span className="text-gray-700">
-                  <strong className="text-gray-800">
+                  <strong className="text-[#151f28]">
                     Hassle-free purchasing process
                   </strong>{" "}
                   for NRIs such as visiting sites, virtual tours of properties
@@ -1029,7 +1029,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   1
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Shortlist Projects
                 </h3>
               </div>
@@ -1044,7 +1044,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   2
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Schedule Virtual Tour
                 </h3>
               </div>
@@ -1058,7 +1058,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   3
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Pay Token Amount
                 </h3>
               </div>
@@ -1072,7 +1072,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   4
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Submit KYC
                 </h3>
               </div>
@@ -1086,7 +1086,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   5
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Review & Sign Agreement
                 </h3>
               </div>
@@ -1100,7 +1100,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   6
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Online Payment
                 </h3>
               </div>
@@ -1114,7 +1114,7 @@ export default function NRIInvestmentGuide() {
                 <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
                   7
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">
+                <h3 className="text-xl font-semibold text-[#151f28]">
                   Final Registration & Handover
                 </h3>
               </div>
@@ -1175,7 +1175,7 @@ export default function NRIInvestmentGuide() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <FileText className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 100% Legal Projects
               </h3>
               <p className="text-gray-700">
@@ -1185,7 +1185,7 @@ export default function NRIInvestmentGuide() {
 
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <User className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 Personal Investment Advisor
               </h3>
               <p className="text-gray-700">
@@ -1195,7 +1195,7 @@ export default function NRIInvestmentGuide() {
 
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <BookOpen className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 Transparent Documentation
               </h3>
               <p className="text-gray-700">
@@ -1205,7 +1205,7 @@ export default function NRIInvestmentGuide() {
 
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <Globe className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 Virtual Tour
               </h3>
               <p className="text-gray-700">
@@ -1215,7 +1215,7 @@ export default function NRIInvestmentGuide() {
 
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <Building className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 Post-sale Support
               </h3>
               <p className="text-gray-700">
@@ -1225,7 +1225,7 @@ export default function NRIInvestmentGuide() {
 
             <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
               <DollarSign className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">
+              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
                 Financial Guidance
               </h3>
               <p className="text-gray-700">
@@ -1306,7 +1306,7 @@ export default function NRIInvestmentGuide() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
                 Funding the Purchase
               </h3>
               <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
@@ -1333,7 +1333,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
                 Power of Attorney (PoA) Explanation
               </h3>
               <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
@@ -1352,7 +1352,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
                 Regulations on Sale of Property by NRIs
               </h3>
               <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
@@ -1371,7 +1371,7 @@ export default function NRIInvestmentGuide() {
             </div>
 
             <div>
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
                 Tax Implications
               </h3>
               <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
@@ -1414,7 +1414,7 @@ export default function NRIInvestmentGuide() {
                 "I invested from Dubai through video tours. DholeraTimes made it
                 seamless!"
               </p>
-              <footer className="font-semibold text-gray-800">
+              <footer className="font-semibold text-[#151f28]">
                 — Harpreet Singh, UAE
               </footer>
             </blockquote>
@@ -1423,7 +1423,7 @@ export default function NRIInvestmentGuide() {
               <p className="text-lg italic mb-4 text-gray-700">
                 "From London to Dholera in 3 clicks. Thanks Simar & Team!"
               </p>
-              <footer className="font-semibold text-gray-800">
+              <footer className="font-semibold text-[#151f28]">
                 — Neeraj Yadav, UK
               </footer>
             </blockquote>
@@ -1433,7 +1433,7 @@ export default function NRIInvestmentGuide() {
                 "I live in Dubai, and DholeraTimes helped me invest without even
                 visiting India. Everything was smooth!"
               </p>
-              <footer className="font-semibold text-gray-800">
+              <footer className="font-semibold text-[#151f28]">
                 — Gurpreet Singh, UAE
               </footer>
             </blockquote>
@@ -1443,7 +1443,7 @@ export default function NRIInvestmentGuide() {
                 "I invested from London and the whole process was seamless —
                 thanks to Harjas Singh at DholeraTimes!"
               </p>
-              <footer className="font-semibold text-gray-800">
+              <footer className="font-semibold text-[#151f28]">
                 — Vikas Agarwal
               </footer>
             </blockquote>
@@ -1453,7 +1453,7 @@ export default function NRIInvestmentGuide() {
                 "Thanks to Simar Singh and the team, I bought a plot in Orchid
                 Township while living in Canada."
               </p>
-              <footer className="font-semibold text-gray-800">
+              <footer className="font-semibold text-[#151f28]">
                 — Rajeev Gupta, Toronto
               </footer>
             </blockquote>
@@ -1478,7 +1478,7 @@ export default function NRIInvestmentGuide() {
                   className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50"
                   onClick={() => toggleAccordion(index)}
                 >
-                  <h3 className="text-lg font-semibold text-gray-800">
+                  <h3 className="text-lg font-semibold text-[#151f28]">
                     {faq.question}
                   </h3>
                   {activeAccordion === index ? (

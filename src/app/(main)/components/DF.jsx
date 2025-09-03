@@ -151,14 +151,14 @@ const DholeraFeaturesDark = () => {
   const toggleReadMore = (index) => {
     setExpandedCards({
       ...expandedCards,
-      [index]: !expandedCards[index]
+      [index]: !expandedCards[index],
     });
   };
 
   // Function to get truncated content (about 5-6 lines)
   const getTruncatedContent = (content) => {
     // About 150-200 characters is roughly 5-6 lines depending on container width
-    return content.slice(0, 180) + (content.length > 180 ? '...' : '');
+    return content.slice(0, 180) + (content.length > 180 ? "..." : "");
   };
 
   // Animation variants
@@ -167,84 +167,85 @@ const DholeraFeaturesDark = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const cardVariants = {
     hidden: { y: 50, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: {
         type: "spring",
         stiffness: 100,
-        damping: 12
-      }
+        damping: 12,
+      },
     },
     hover: {
       y: -8,
-      boxShadow: "0 20px 25px -5px rgba(253, 224, 71, 0.1), 0 10px 10px -5px rgba(253, 224, 71, 0.04)",
+      boxShadow:
+        "0 20px 25px -5px rgba(253, 224, 71, 0.1), 0 10px 10px -5px rgba(253, 224, 71, 0.04)",
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 10
-      }
-    }
+        damping: 10,
+      },
+    },
   };
 
   const contentVariants = {
     collapsed: { height: "auto", opacity: 1 },
-    expanded: { 
-      height: "auto", 
+    expanded: {
+      height: "auto",
       opacity: 1,
       transition: {
-        duration: 0.3
-      }
-    }
+        duration: 0.3,
+      },
+    },
   };
 
   const titleVariants = {
     hidden: { opacity: 0, y: -20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
         delay: 0.2,
-        duration: 0.5
-      }
-    }
+        duration: 0.5,
+      },
+    },
   };
 
   const underlineVariants = {
     hidden: { width: 0 },
-    visible: { 
+    visible: {
       width: "6rem",
       transition: {
         delay: 0.4,
-        duration: 0.6
-      }
-    }
+        duration: 0.6,
+      },
+    },
   };
 
   const iconVariants = {
     hidden: { scale: 0, rotate: -45 },
-    visible: { 
-      scale: 1, 
+    visible: {
+      scale: 1,
       rotate: 0,
       transition: {
         type: "spring",
         stiffness: 260,
-        damping: 20
-      }
-    }
+        damping: 20,
+      },
+    },
   };
 
   return (
     <div className="w-full bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <motion.div 
+        <motion.div
           className="md:text-center max-sm:ml-7 mb-16"
           initial="hidden"
           whileInView="visible"
@@ -256,14 +257,17 @@ const DholeraFeaturesDark = () => {
           >
             Key Features That Make Dholera a Prime Investment
           </motion.h3>
-          <motion.div 
+          <motion.div
             className="w-24 h-1 bg-[#d8b66d] mx-auto mb-8"
             variants={underlineVariants}
           ></motion.div>
-          <motion.p 
+          <motion.p
             className="text-lg text-gray-300 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { delay: 0.5, duration: 0.8 } }}
+            whileInView={{
+              opacity: 1,
+              transition: { delay: 0.5, duration: 0.8 },
+            }}
             viewport={{ once: true }}
           >
             Discover why Dholera Smart City is becoming one of India's most
@@ -272,7 +276,7 @@ const DholeraFeaturesDark = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
@@ -282,14 +286,11 @@ const DholeraFeaturesDark = () => {
           {features.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 rounded-lg shadow-lg p-6 transition-all duration-300 border border-gray-700"
+              className="bg-[#151f28] rounded-lg shadow-lg p-6 transition-all duration-300 border border-gray-700"
               variants={cardVariants}
               whileHover="hover"
             >
-              <motion.div 
-                className="mb-4"
-                variants={iconVariants}
-              >
+              <motion.div className="mb-4" variants={iconVariants}>
                 {feature.icon}
               </motion.div>
               <motion.h6
@@ -300,7 +301,7 @@ const DholeraFeaturesDark = () => {
               >
                 {feature.title}
               </motion.h6>
-              <motion.div 
+              <motion.div
                 className="text-gray-300"
                 variants={contentVariants}
                 initial="collapsed"
@@ -311,17 +312,17 @@ const DholeraFeaturesDark = () => {
                     {expandedCards[index] ? (
                       <>
                         Dholera Smart City Gujarat is systematically planned to
-                        include dedicated residential, commercial, and industrial
-                        zones. Multiple global companies have already shown interest
-                        in setting up offices here, and Foreign Direct Investment
-                        (FDI) is expected to pour in, too.
+                        include dedicated residential, commercial, and
+                        industrial zones. Multiple global companies have already
+                        shown interest in setting up offices here, and Foreign
+                        Direct Investment (FDI) is expected to pour in, too.
                         <br />
                         <br />
-                        Dholera metro city residential plots are currently one of
-                        the top-ranked for investment purposes. Returns are expected
-                        to skyrocket in the next three years. From November 2022 to
-                        March 2024 alone, the land rates saw a{" "}
-                        <motion.span 
+                        Dholera metro city residential plots are currently one
+                        of the top-ranked for investment purposes. Returns are
+                        expected to skyrocket in the next three years. From
+                        November 2022 to March 2024 alone, the land rates saw a{" "}
+                        <motion.span
                           className="text-[#d8b66d] font-bold"
                           whileHover={{ scale: 1.1 }}
                         >
@@ -330,38 +331,46 @@ const DholeraFeaturesDark = () => {
                         - a land appreciation every investor loves!
                       </>
                     ) : (
-                      getTruncatedContent("Dholera Smart City Gujarat is systematically planned to include dedicated residential, commercial, and industrial zones. Multiple global companies have already shown interest in setting up offices here, and Foreign Direct Investment (FDI) is expected to pour in, too.")
+                      getTruncatedContent(
+                        "Dholera Smart City Gujarat is systematically planned to include dedicated residential, commercial, and industrial zones. Multiple global companies have already shown interest in setting up offices here, and Foreign Direct Investment (FDI) is expected to pour in, too."
+                      )
                     )}
                   </>
-                ) : feature.title === "Administration and Employment Opportunities" ? (
+                ) : feature.title ===
+                  "Administration and Employment Opportunities" ? (
                   <>
                     {expandedCards[index] ? (
                       <>
                         A special Administrative and Business Tower called the{" "}
-                        <motion.em 
+                        <motion.em
                           className="text-yellow-200"
                           whileHover={{ scale: 1.05 }}
                         >
                           ABCD
-                        </motion.em> building has been
-                        created for faster administrative processes. Companies like
-                        TATA and Vedanta have already marked their presence in this
-                        Gujarat smart city. TATA will set up their semiconductor
-                        manufacturing plant here which is expected to change the
-                        industry's dynamics across the world. The Dholera City
-                        Gujarat is expected to generate more than 8 lakh jobs.
+                        </motion.em>{" "}
+                        building has been created for faster administrative
+                        processes. Companies like TATA and Vedanta have already
+                        marked their presence in this Gujarat smart city. TATA
+                        will set up their semiconductor manufacturing plant here
+                        which is expected to change the industry's dynamics
+                        across the world. The Dholera City Gujarat is expected
+                        to generate more than 8 lakh jobs.
                       </>
                     ) : (
-                      getTruncatedContent("A special Administrative and Business Tower called the ABCD building has been created for faster administrative processes. Companies like TATA and Vedanta have already marked their presence in this Gujarat smart city.")
+                      getTruncatedContent(
+                        "A special Administrative and Business Tower called the ABCD building has been created for faster administrative processes. Companies like TATA and Vedanta have already marked their presence in this Gujarat smart city."
+                      )
                     )}
                   </>
                 ) : (
                   <>
-                    {expandedCards[index] ? feature.content : getTruncatedContent(feature.content)}
+                    {expandedCards[index]
+                      ? feature.content
+                      : getTruncatedContent(feature.content)}
                   </>
                 )}
                 {feature.content.length > 180 && (
-                  <motion.button 
+                  <motion.button
                     onClick={() => toggleReadMore(index)}
                     className="mt-2 text-[#d8b66d] hover:text-yellow-300 font-medium focus:outline-none"
                     whileHover={{ scale: 1.05 }}

@@ -180,7 +180,7 @@ export default function ContactForm({
   return (
     <div className="relative flex items-center justify-center p-4">
       <div className="bg-white p-8 shadow-2xl w-full max-w-2xl mx-auto border border-gray-200 rounded-2xl">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-4">
+        <h2 className="text-4xl font-bold text-center text-[#151f28] mb-4">
           {title}
         </h2>
         <p className="text-base text-center text-gray-600 mb-8">
@@ -208,7 +208,7 @@ export default function ContactForm({
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
               />
             </div>
 
@@ -222,7 +222,7 @@ export default function ContactForm({
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white"
               />
             </div>
 
@@ -234,7 +234,7 @@ export default function ContactForm({
                 placeholder="Plot details"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white resize-none"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm bg-gray-50 focus:bg-white resize-none"
                 rows="4"
               ></textarea>
             </div>
@@ -284,7 +284,7 @@ export default function ContactForm({
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              <h3 className="text-2xl font-bold text-[#151f28] mb-4">
                 Thank You!
               </h3>
               <p className="text-center text-gray-600 mb-6">

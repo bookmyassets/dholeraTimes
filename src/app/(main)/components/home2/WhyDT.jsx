@@ -246,7 +246,7 @@ export default function WhyDT() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left Side - Header */}
             <div className="md:col-span-2 text-center">
-              <h2 className="text-[28px]  font-bold text-gray-800 mt-6 mb-6">
+              <h2 className="text-[28px]  font-bold text-[#151f28] mt-6 mb-6">
                 Why Choose Dholera Times?
               </h2>
               <p className="text-gray-600">
@@ -274,7 +274,7 @@ export default function WhyDT() {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg text-gray-800">{feature.title}</h3>
+                      <h3 className="text-lg text-[#151f28]">{feature.title}</h3>
                     </div>
                   </div>
                 ))}

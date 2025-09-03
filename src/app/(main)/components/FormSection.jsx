@@ -276,7 +276,7 @@ export default function CommonForm({ title }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -295,7 +295,7 @@ export default function CommonForm({ title }) {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -314,7 +314,7 @@ export default function CommonForm({ title }) {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-5 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
+                    className="w-full px-4 py-5 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#d8b66d]"
                     placeholder="Enter your message"
                   />
                 </div>

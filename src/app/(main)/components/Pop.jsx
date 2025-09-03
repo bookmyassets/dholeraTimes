@@ -384,7 +384,7 @@ export default function Popup({
               <button
                 type="button"
                 onClick={handleClose}
-                className="absolute top-4 right-4 text-white/80 hover:text-[#FDB913] focus:outline-none focus:ring-2 focus:ring-[#FDB913]/50 rounded-full p-2 transition-all duration-200 hover:bg-gray-800 z-10"
+                className="absolute top-4 right-4 text-white/80 hover:text-[#FDB913] focus:outline-none focus:ring-2 focus:ring-[#FDB913]/50 rounded-full p-2 transition-all duration-200 hover:bg-[#151f28] z-10"
                 aria-label="Close form"
               >
                 <svg
@@ -470,7 +470,7 @@ export default function Popup({
                   <h3 className="text-2xl font-bold text-[#FDB913] mb-2">
                     Thank You!
                   </h3>
-                  <p className="text-gray-800">
+                  <p className="text-[#151f28]">
                     Your request has been submitted successfully. We'll contact
                     you shortly.
                   </p>

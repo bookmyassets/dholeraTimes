@@ -258,7 +258,7 @@ export default function ChannelPartnerForm() {
 
   return (
     <div className="bg-white p-8 rounded-xl shadow-2xl border border-gray-200 sticky top-8">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+      <h3 className="text-2xl font-bold text-[#151f28] mb-6 text-center">
         Join Our Channel Partner Program
       </h3>
 
@@ -299,7 +299,7 @@ export default function ChannelPartnerForm() {
               value={formData.fullName}
               onChange={handleChange}
               required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
             />
           </div>
 
@@ -313,7 +313,7 @@ export default function ChannelPartnerForm() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
             />
           </div>
 
@@ -327,7 +327,7 @@ export default function ChannelPartnerForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
             />
           </div>
 
@@ -339,7 +339,7 @@ export default function ChannelPartnerForm() {
               value={formData.profession}
               onChange={handleChange}
               required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm appearance-none bg-white"
+              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm appearance-none bg-white"
             >
               <option value="">What Best Describes You? *</option>
               {professionOptions.map((option, index) => (
@@ -358,7 +358,7 @@ export default function ChannelPartnerForm() {
               value={formData.experience}
               onChange={handleChange}
               required
-              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm appearance-none bg-white"
+              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm appearance-none bg-white"
             >
               <option value="">Years of Experience *</option>
               {experienceOptions.map((option, index) => (

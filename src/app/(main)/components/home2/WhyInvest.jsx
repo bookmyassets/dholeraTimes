@@ -105,7 +105,7 @@ const InvestmentTimeline = () => {
           >
             {milestone.icon}
           </div>
-          <div className="text-lg font-bold text-gray-800">
+          <div className="text-lg font-bold text-[#151f28]">
             {milestone.year}
           </div>
           {
@@ -129,7 +129,7 @@ const InvestmentTimeline = () => {
         </div>
 
         <div className="text-center">
-          <h3 className=" text-gray-800 mb-2">
+          <h3 className=" text-[#151f28] mb-2">
             {milestone.title}
           </h3>
         </div>
@@ -140,7 +140,7 @@ const InvestmentTimeline = () => {
   return (
     <div className="w-full max-w-7xl mx-auto p-6">
       <div className="text-center mb-6">
-        <h2 className="text-[28px] font-bold text-gray-800 mb-4">
+        <h2 className="text-[28px] font-bold text-[#151f28] mb-4">
           Investment Growth Timeline
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">

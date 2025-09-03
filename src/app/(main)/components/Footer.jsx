@@ -105,8 +105,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="bg-gray-900 text-gray-400 space-y-8 pt-8 ">
-
+      <footer className="bg-[#151f28] text-gray-400 space-y-8 pt-8 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* First 3-column row with company info, links, policy */}

@@ -192,14 +192,14 @@ export default function HOME2() {
           className="absolute top-1/2 left-4 -translate-y-1/2 p-2 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all z-10"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} className="text-gray-800" />
+          <ChevronLeft size={24} className="text-[#151f28]" />
         </button>
         <button
           onClick={nextSlide}
           className="absolute top-1/2 right-4 -translate-y-1/2 p-2 rounded-full bg-white bg-opacity-50 hover:bg-opacity-75 transition-all z-10"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} className="text-gray-800" />
+          <ChevronRight size={24} className="text-[#151f28]" />
         </button>
 
         {/* Indicator dots */}

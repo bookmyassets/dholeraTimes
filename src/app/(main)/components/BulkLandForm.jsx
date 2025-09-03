@@ -231,10 +231,10 @@ export default function BulkLand({ title , buttonName }) {
       <section className="py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6 sm:px-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-gray-800 text-3xl sm:text-4xl font-bold text-center">
+            <h2 className="text-[#151f28] text-3xl sm:text-4xl font-bold text-center">
               {title}
             </h2>
-            <p className="text-gray-800 mt-4 text-center">
+            <p className="text-[#151f28] mt-4 text-center">
               Scale Your Portfolio with High-Growth Land Opportunities
             </p>
             {showPopup ? (
@@ -286,7 +286,7 @@ export default function BulkLand({ title , buttonName }) {
                   <div className="w-full"> 
                     <label
                       htmlFor="fullName"
-                      className="block text-gray-800 text-sm font-medium mb-2"
+                      className="block text-[#151f28] text-sm font-medium mb-2"
                     >
                       Full Name *
                     </label>
@@ -297,7 +297,7 @@ export default function BulkLand({ title , buttonName }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-700 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -305,7 +305,7 @@ export default function BulkLand({ title , buttonName }) {
                   <div className="w-full">
                     <label
                       htmlFor="phone"
-                      className="block text-gray-800 text-sm font-medium mb-2"
+                      className="block text-[#151f28] text-sm font-medium mb-2"
                     >
                       Phone Number *
                     </label>
@@ -316,7 +316,7 @@ export default function BulkLand({ title , buttonName }) {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg  border border-gray-700 text-gray-800 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-4 py-3 rounded-lg  border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       placeholder="Enter your phone number"
                     />
                   </div>

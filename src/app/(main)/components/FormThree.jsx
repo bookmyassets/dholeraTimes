@@ -43,7 +43,7 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
     }
 
     // Restrict submission after 20 attempts
-    if (submissionCount >= 20) {
+    if (submissionCount >= 3) {
       alert(
         "You have reached the maximum submission limit. Try again after 24 hours."
       );
@@ -127,16 +127,16 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-600 hover:text-gray-800 transition"
+          className="absolute top-4 right-4 text-gray-600 hover:text-[#151f28] transition"
           aria-label="Close form"
         >
           <X size={24} />
         </button>
         
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-3xl font-bold text-center text-[#151f28] mb-6">
           {title}
         </h2>
-        <h2 className="text-sm font-medium text-center text-gray-800 mb-6">
+        <h2 className="text-sm font-medium text-center text-[#151f28] mb-6">
           {headline}
         </h2>
         {isDisabled ? (
@@ -155,7 +155,7 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
               />
             </div>
 
@@ -168,7 +168,7 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
                 placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
               />
             </div>
 
@@ -182,7 +182,7 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
                 value={formData.phone}
                 onChange={handleChange}
                 required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
+                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
               />
             </div>
 
@@ -206,7 +206,7 @@ export default function PopupForm3({ title, headline, buttonName, onClose, onSuc
       {showPopup && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white p-8 rounded-xl max-w-md w-full shadow-lg">
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-4">
+            <h3 className="text-2xl font-bold text-center text-[#151f28] mb-4">
               Thank You!
             </h3>
             <p className="text-center text-gray-600 mb-6">

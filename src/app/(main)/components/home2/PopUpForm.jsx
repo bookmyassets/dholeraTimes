@@ -229,7 +229,7 @@ export default function PopupForm() {
                     </svg>
                   </div>
                 </motion.div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Thank You!</h3>
+                <h3 className="text-2xl font-bold text-[#151f28] mb-2">Thank You!</h3>
                 <p className="text-gray-600">We will contact you shortly.</p>
               </div>
             ) : (
@@ -242,7 +242,7 @@ export default function PopupForm() {
                   >
                     ×
                   </button>
-                  <h1 className="text-2xl font-bold text-gray-800 mb-2">Dholera Times</h1>
+                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Dholera Times</h1>
                   
                   {/* Section 2: Sub-heading CTA */}
                   <p className="text-lg text-gray-700 font-semibold">

@@ -61,7 +61,7 @@ export default async function New() {
                 <h1 className="text-4xl font-bold text-[#d3b36b] mb-2">
                   Dholera SIR Latest Updates
                 </h1>
-                <p className="text-gray-800 mb-8">
+                <p className="text-[#151f28] mb-8">
                   Stay updated with the latest insights about Dholera Special
                   Investment Region, infrastructure developments, and smart city
                   investment opportunities.
