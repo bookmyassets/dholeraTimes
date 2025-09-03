@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 /* image import */
 import hero1 from "@/assets/dt-home-banner.webp";
-import hero2 from "@/assets/DTbanner2.webp";
+import hero2 from "@/assets/dt-westwyn-county-home-banner.webp";
 import heroM1 from "@/assets/DTbanner1_mobile.webp";
 import heroM2 from "@/assets/DTbanner2_mobile.webp";
 import BrochureForm from "../BrochureForm";
@@ -41,20 +41,11 @@ export default function HOME2() {
       desktop: hero1,
       tablet: hero1,
       mobile: heroM1,
-      text: "Book free site visit",
-      formHead: "Book free site visit",
-      subTitle: "Fill out the form to book your Dholera Free Site Visit",
-      buttonText: "Book Now",
     },
     {
       desktop: hero2,
       tablet: hero2,
       mobile: heroM2,
-      text: "Book free consultation",
-      formHead: "Book free consultation",
-      subTitle:
-        "Book your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory.",
-      buttonText: "Book Now",
     },
   ];
 

@@ -5,7 +5,7 @@ import "./project.css";
 import Image from "next/image";
 import { PortableText } from "next-sanity";
 import LeadForm from "./LeadForm";
-import hero from "@/assets/hero5.webp"
+import hero from "@/assets/residential-hero.webp"
 
 export default async function Projects() {
   const posts = await getPosts();
@@ -27,26 +27,24 @@ export default async function Projects() {
   const soldOutProjects = posts.filter(post => checkIfSoldOut(post));
 
   return (
-    <div className="min-h-screen" style={{backgroundColor: '#fbfbfb'}}>
+    <div className="min-h-screen" >
       <link rel="canonical" href="https://www.dholeratimes.com/dholera-residential-plots" />
       <meta name="robots" content="index, dofollow"/>
 
       {/* Hero Section with Image and Text */}
-      <div className="relative h-[40vh] overflow-hidden" style={{backgroundColor: '#151f28'}}>
+      <div className="relative h-[50vh] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
             src={hero} // Replace with your hero image
             alt="Hero Background"
             fill
-            className="object-cover opacity-40"
+            className="object-cover "
             priority
           />
         </div>
         
-        {/* Overlay */}
-        <div className="absolute inset-0" style={{backgroundColor: 'rgba(21, 31, 40, 0.7)'}}></div>
-        
+      
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 text-center">

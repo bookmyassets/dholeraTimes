@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import get from "@/assets/get.webp";
+import get from "@/assets/contact-us-hero.webp";
 import {
   FaPhoneAlt,
   FaHeadset,
@@ -113,26 +113,22 @@ export default function ContactDetails() {
           href="https://www.dholeratimes.com/contact/inquiry"
         />
 
-        <div className="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center text-white px-6 md:px-10">
-          {/* Left Text Section */}
-          <div className="md:w-1/2 text-center">
-            <h2 className="text-4xl font-bold max-sm:pt-4">
-              Have Some Questions?
-            </h2>
-            <p className="text-gray-300 text-lg mt-3 max-sm:pt-4">
-              Let us know, we will be more than happy to connect.
-            </p>
-          </div>
-          {/* Right Image Section */}
-          <div className="md:w-1/2 flex  justify-center mt-6 md:mt-0">
-            <Image
-              src={get}
-              alt="Contact"
-              width={400}
-              height={300}
-              className="w-full h-[50vh] max-sm:h-[30vh] object-cover rounded-lg p-5"
-            />
-          </div>
+        <div className="relative h-[50vh] w-full ">
+                {/* Banner Image */}
+                <Image
+                  src={get}
+                  alt="banner"
+                  className="h-full w-full object-cover max-sm:hidden"
+                  fill
+                  priority
+                />
+                {/* <Image
+                  src={bannerMob}
+                  alt="banner"
+                  className="h-full w-full object-cover md:hidden"
+                  fill
+                  priority
+                /> */}
         </div>
       </div>
 

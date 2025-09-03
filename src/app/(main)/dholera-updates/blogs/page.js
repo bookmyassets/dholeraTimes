@@ -1,7 +1,7 @@
 import { getblogs } from "@/sanity/lib/api";
 import BlogCard from "./BlogCard";
 import TrendingBlogItem from "./TrendingBlog";
-import hero from "@/assets/ExploreDholeraSIR.webp";
+import hero from "@/assets/blog-hero.webp";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import LeadForm from "../../dholera-sir/LeadForm";
@@ -30,7 +30,7 @@ export default async function BlogsPage() {
       <meta name="robots" content="index, dofollow" />
 
       {/* Hero Section */}
-      <div className="relative md:h-96 w-full h-[50vh] bg-black/90 overflow-hidden">
+      <div className="relative md:h-96 w-full h-[50vh] overflow-hidden">
         <Image
           src={hero}
           alt="Dholera Skyline"
@@ -79,8 +79,7 @@ export default async function BlogsPage() {
 
           <div className="lg:w-1/4 sticky top-6">
            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
-            <LeadForm title="Learn Why Global Investors Are Eyeing Dholera?" buttonName="Get Free Insights" />
-                      
+                      <LeadForm title="Planning to Invest in Dholera Smart City?" buttonName="Know More" />
                     </div>
             <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#FDB913] ">
               <h2 className="text-2xl text-red-500 font-bold mb-6">

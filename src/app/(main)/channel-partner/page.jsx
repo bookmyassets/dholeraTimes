@@ -7,27 +7,28 @@ import training from "@/assets/icons/training-and-onboarding-icon.webp"
 import inventory from "@/assets/icons/registry-ready-inventory-icon.webp"
 import sales from "@/assets/icons/white-labeled-sales-kit-icon.webp";
 import Image from "next/image";
+import hero from "@/assets/Channelpartner-hero.webp"
 
 export default function ChannelPartnerPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section
-        className="py-20 relative overflow-hidden"
-        style={{ backgroundColor: "#151f28" }}
+        className="py-20 relative overflow-hidden h-[50vh]"
       >
         <div className="absolute inset-0 ">
-          <div
-            className="absolute inset-0"
-            style={{ backgroundColor: "#151f28" }}
-          ></div>
+          <Image
+            src={hero}
+            alt="Channel Partner"
+            className="w-full h-full object-cover"
+          />
         </div>
         <div className="container mx-auto px-6 pt-10 relative z-10">
           <div className="max-w-7xl mx-auto gap-12 text-center">
             {/* Content */}
             <div>
               <h1
-                style={{ color: "#d3b36b" }}
+                style={{ color: "#151f28" }}
                 className="text-2xl md:text-4xl font-bold leading-tight mb-6 text-white"
               >
                 Become a Channel Partner With Dholera Times - Grow With WestWyn
@@ -38,23 +39,6 @@ export default function ChannelPartnerPage() {
                 high commissions, premium projects, and dedicated support.
               </p>
             </div>
-
-            {/* Hero Image Placeholder */}
-            {/* <div
-              className="rounded-2xl p-8 text-center shadow-2xl"
-              style={{ backgroundColor: "#d3b36b" }}
-            >
-              <div className="text-6xl mb-4">🤝</div>
-              <h3
-                className="text-2xl font-bold mb-2"
-                style={{ color: "#151f28" }}
-              >
-                Channel Partner
-              </h3>
-              <p style={{ color: "#151f28" }} className="opacity-80">
-                Premium Partnership Program
-              </p>
-            </div> */}
           </div>
         </div>
       </section>
