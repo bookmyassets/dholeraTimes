@@ -132,6 +132,7 @@ export default function RootLayout({ children }) {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+    closeAllDropdowns();
   };
 
   const toggleDesktopMenu = () => {
