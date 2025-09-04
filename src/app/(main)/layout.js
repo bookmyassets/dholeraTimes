@@ -132,7 +132,6 @@ export default function RootLayout({ children }) {
 
   const closeAllDropdowns = () => {
     setIsProjectsDropdownOpen(false);
-    setIsGetInTouchDropdownOpen(false);
     setIsDholeraDropdownOpen(false);
   };
 
@@ -732,208 +731,204 @@ export default function RootLayout({ children }) {
 
           {/* Mobile menu */}
           <AnimatePresence>
-            {isMenuOpen && (
+  {isMenuOpen && (
+    <motion.div
+      initial={{ x: "-100%", opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: "-100%", opacity: 0 }}
+      ref={menuOpenRef}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="lg:hidden bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-md fixed top-0 left-0 w-full h-screen z-50 p-6 overflow-y-auto"
+    >
+      {/* Mobile Header */}
+      <div className="flex justify-between items-center mb-8">
+        <Link href="/" onClick={() => setIsMenuOpen(false)}>
+          <Image
+            src={logo2}
+            alt="Dholera Times Logo"
+            width={120}
+            height={120}
+          />
+        </Link>
+        <button onClick={toggleMenu}>
+          <X className="h-8 w-8 text-white" />
+        </button>
+      </div>
+
+      {/* Mobile Navigation Items */}
+      <div className="space-y-2">
+        <Link
+          href="/"
+          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span className="ml-2">Home</span>
+        </Link>
+
+        {/* Dholera SIR Dropdown */}
+        <div className="rounded-xl overflow-hidden">
+          <Link
+            href="/dholera-sir"
+            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <span className="ml-2">Dholera SIR</span>
+          </Link>
+        </div>
+
+        {/* Projects Dropdown */}
+        <div className="rounded-xl overflow-hidden">
+          <Link
+            href="/dholera-residential-plots"
+            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <span className="ml-2">Projects</span>
+          </Link>
+        </div>
+
+        {/* Dholera Updates Dropdown */}
+        <div className="rounded-xl overflow-hidden">
+          <div
+            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+            onClick={toggleMobileBlogsDropdown}
+          >
+            <span className="ml-2">Dholera Updates</span>
+            <ChevronDown
+              className={`h-5 w-5 transition-transform duration-300 ${
+                isMobileBlogsOpen ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+          <AnimatePresence>
+            {isMobileBlogsOpen && (
               <motion.div
-                initial={{ x: "-100%", opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: "-100%", opacity: 0 }}
-                ref={menuOpenRef}
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="lg:hidden bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-md fixed top-0 left-0 w-full h-screen z-50 p-6 overflow-y-auto"
+                className="bg-white/5 overflow-hidden"
               >
-                {/* Mobile Header */}
-                <div className="flex justify-between items-center mb-8">
-                  <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                    <Image
-                      src={logo2}
-                      alt="Dholera Times Logo"
-                      width={120}
-                      height={120}
-                    />
-                  </Link>
-                  <button onClick={toggleMenu}>
-                    <X className="h-8 w-8 text-white" />
-                  </button>
-                </div>
-
-                {/* Mobile Navigation Items */}
-                <div className="space-y-2">
+                {[
+                  {
+                    title: "Latest News",
+                    path: "/dholera-updates/latest-news",
+                  },
+                  { title: "Blogs", path: "/dholera-updates/blogs" },
+                  
+                ].map((item) => (
                   <Link
-                    href="/"
-                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
+                    key={item.path}
+                    href={item.path}
+                    className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
+                    onClick={() => {
+                      setIsMobileBlogsOpen(false);
+                      setIsMenuOpen(false); // Added this line
+                    }}
                   >
-                    <span className="ml-2">Home</span>
+                    {item.title}
                   </Link>
-
-                  {/* Dholera SIR Dropdown */}
-                  <div className="rounded-xl overflow-hidden">
-                    <div
-                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-                      onClick={toggleMobileDholeraDropdown}
-                    >
-                      <span className="ml-2">Dholera SIR</span>
-                    </div>
-                  </div>
-
-                  {/* Projects Dropdown */}
-                  <div className="rounded-xl overflow-hidden">
-                    <Link
-                      href="/dholera-residential-plots"
-                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-                      onClick={toggleMobileProjectsDropdown}
-                    >
-                      <span className="ml-2">Projects</span>
-                    </Link>
-                  </div>
-
-                  {/* Dholera Updates Dropdown */}
-                  <div className="rounded-xl overflow-hidden">
-                    <div
-                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-                      onClick={toggleMobileBlogsDropdown}
-                    >
-                      <span className="ml-2">Dholera Updates</span>
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-300 ${
-                          isMobileBlogsOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
-                    <AnimatePresence>
-                      {isMobileBlogsOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="bg-white/5 overflow-hidden"
-                        >
-                          {[
-                            {
-                              title: "Latest News",
-                              path: "/dholera-updates/latest-news",
-                            },
-                            { title: "Blogs", path: "/dholera-updates/blogs" },
-                            
-                          ].map((item) => (
-                            <Link
-                              key={item.path}
-                              href={item.path}
-                              className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
-                              onClick={() => {
-                                setIsMobileBlogsOpen(false);
-                                setIsMenuOpen(false);
-                              }}
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  <Link
-                    href="/bulk-land"
-                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className="ml-2">Bulk Land</span>
-                  </Link>
-
-                  {/* Gallery Dropdown */}
-                  <div className="rounded-xl overflow-hidden">
-                    <div
-                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-                      onClick={toggleMobileGalleryDropdown}
-                    >
-                      <span className="ml-2">Gallery</span>
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-300 ${
-                          isMobileGalleryOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </div>
-                    <AnimatePresence>
-                      {isMobileGalleryOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="bg-white/5 overflow-hidden"
-                        >
-                          {[
-                            {
-                              title: "Dholera SIR Progress",
-                              path: "/gallery/dholera-sir-progress",
-                            },
-                            {
-                              title: "Site Progress",
-                              path: "/gallery/site-progress",
-                            },
-                            {
-                              title: "Dholera Smart City Video",
-                              path: "/gallery/dholera-smart-city-videos",
-                            },
-                            {
-                              title: "Dholera Smart City Photos",
-                              path: "/gallery/dholera-photos",
-                            },
-                          ].map((item) => (
-                            <Link
-                              key={item.path}
-                              href={item.path}
-                              className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
-                              onClick={() => {
-                                setIsMobileGalleryOpen(false);
-                                setIsMenuOpen(false);
-                              }}
-                            >
-                              {item.title}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
-                  <Link
-                    href="/about"
-                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className="ml-2">About Us</span>
-                  </Link>
-
-                  <Link
-                    href="/nri-investment-guide-dholera"
-                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    <span className="ml-2">NRI Guide</span>
-                  </Link>
-
-                  {/* Contact Dropdown */}
-                  <div className="rounded-xl overflow-hidden">
-                    <Link
-                      href="/contact/inquiry"
-                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-                      onClick={toggleMobileContactDropdown}
-                    >
-                      <span className="ml-2">Contact Us</span>
-                      {/* <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-300 ${
-                          isMobileContactOpen ? "rotate-180" : ""
-                        }`}
-                      /> */}
-                    </Link>
-                  </div>
-                </div>
+                ))}
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+
+        <Link
+          href="/bulk-land"
+          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span className="ml-2">Bulk Land</span>
+        </Link>
+
+        {/* Gallery Dropdown */}
+        <div className="rounded-xl overflow-hidden">
+          <div
+            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+            onClick={toggleMobileGalleryDropdown}
+          >
+            <span className="ml-2">Gallery</span>
+            <ChevronDown
+              className={`h-5 w-5 transition-transform duration-300 ${
+                isMobileGalleryOpen ? "rotate-180" : ""
+              }`}
+            />
+          </div>
+          <AnimatePresence>
+            {isMobileGalleryOpen && (
+              <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="bg-white/5 overflow-hidden"
+              >
+                {[
+                  {
+                    title: "Dholera SIR Progress",
+                    path: "/gallery/dholera-sir-progress",
+                  },
+                  {
+                    title: "Site Progress",
+                    path: "/gallery/site-progress",
+                  },
+                  {
+                    title: "Dholera Smart City Video",
+                    path: "/gallery/dholera-smart-city-videos",
+                  },
+                  {
+                    title: "Dholera Smart City Photos",
+                    path: "/gallery/dholera-photos",
+                  },
+                ].map((item) => (
+                  <Link
+                    key={item.path}
+                    href={item.path}
+                    className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
+                    onClick={() => {
+                      setIsMobileGalleryOpen(false);
+                      setIsMenuOpen(false); // Added this line
+                    }}
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        <Link
+          href="/about"
+          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span className="ml-2">About Us</span>
+        </Link>
+
+        <Link
+          href="/nri-investment-guide-dholera"
+          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span className="ml-2">NRI Guide</span>
+        </Link>
+
+        {/* Contact Dropdown */}
+        <div className="rounded-xl overflow-hidden">
+          <Link
+            href="/contact/inquiry"
+            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <span className="ml-2">Contact Us</span>
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
         </nav>
 
         <div className="pt-20">{children}</div>
