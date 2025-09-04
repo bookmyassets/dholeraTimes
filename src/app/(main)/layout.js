@@ -130,6 +130,12 @@ export default function RootLayout({ children }) {
     setIsProjectsDropdownOpen(false);
   };
 
+  const closeAllDropdowns = () => {
+    setIsProjectsDropdownOpen(false);
+    setIsGetInTouchDropdownOpen(false);
+    setIsDholeraDropdownOpen(false);
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     closeAllDropdowns();
