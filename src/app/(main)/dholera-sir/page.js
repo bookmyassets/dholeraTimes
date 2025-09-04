@@ -1,4 +1,9 @@
-import { getblogs, getProjectInfo, getUpdates, getNews } from "@/sanity/lib/api";
+import {
+  getblogs,
+  getProjectInfo,
+  getUpdates,
+  getNews,
+} from "@/sanity/lib/api";
 import hero from "@/assets/dholera-sir-hero.webp";
 import herom from "@/assets/dholeraSIR.webp";
 import Image from "next/image";
@@ -24,7 +29,9 @@ export default async function BlogsPage() {
     ...post,
     author: post.author || "BookMyAssets",
     mainImage: post.mainImage || null,
-    slug: post.slug?.current ? { current: post.slug.current } : { current: "#" },
+    slug: post.slug?.current
+      ? { current: post.slug.current }
+      : { current: "#" },
   }));
 
   // Fetch news for sidebar (changed from getUpdates to getnews)
@@ -48,46 +55,47 @@ export default async function BlogsPage() {
   return (
     <>
       {/* Hero Section with Black Background */}
-                     <link rel="canonical" href="https://www.dholeratimes.com/dholera-sir" />
-      <meta name="robots" content="noindex, dofollow"/>
+      <link rel="canonical" href="https://www.dholeratimes.com/dholera-sir" />
+      <meta name="robots" content="noindex, dofollow" />
 
       <div className="bg-black text-white">
         <section className="relative h-[50vh]  flex items-center justify-center text-center">
-        <div className="absolute inset-0">
-          <Image
-            src={hero}
-            alt="Dholera SIR Aerial View"
-            className="w-full h-full object-cover"
-            priority
-          />
-          <div className="absolute inset-0 "></div>
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
-          <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
-            Dholera SIR
-          </h1>
-          <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
-            India's First Greenfield Smart City along the Delhi-Mumbai
-            Industrial Corridor
-          </p>
-          
-        </div>
-      </section>
+          <div className="absolute inset-0">
+            <Image
+              src={hero}
+              alt="Dholera SIR Aerial View"
+              className="w-full h-full object-cover"
+              priority
+            />
+            <div className="absolute inset-0 "></div>
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
+            <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
+              Dholera SIR
+            </h1>
+            <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
+              India's First Greenfield Smart City along the Delhi-Mumbai
+              Industrial Corridor
+            </p>
+          </div>
+        </section>
       </div>
 
       {/* Main Content */}
       <div className="px-4 py-12 ">
-        <div className="flex flex-col lg:flex-row gap-8">
+        <div className="flex flex-col max-sm:flex-col-reverse lg:flex-row gap-8">
           {/* Trending Section - Left Sidebar */}
           <div className="lg:w-1/4 sticky top-6">
-          <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
-            
-            <LeadForm title="See Why Global Investors Are Eyeing Dholera" buttonName="Get Free Insights" />
-          </div>
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
+              <LeadForm
+                title="See Why Global Investors Are Eyeing Dholera"
+                buttonName="Get Free Insights"
+              />
+            </div>
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] ">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
                 Latest News on Dholera
-              </h2> 
+              </h2>
               {trendingBlogs.length > 0 ? (
                 <div className="space-y-6">
                   {trendingBlogs.map((post) => (
@@ -95,7 +103,9 @@ export default async function BlogsPage() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500">No news available at the moment.</p>
+                <p className="text-gray-500">
+                  No news available at the moment.
+                </p>
               )}
             </div>
           </div>
@@ -114,7 +124,8 @@ export default async function BlogsPage() {
                   No Blog Posts Available
                 </h3>
                 <p className="text-gray-600">
-                  Check back soon for information about Dholera SIR investment opportunities.
+                  Check back soon for information about Dholera SIR investment
+                  opportunities.
                 </p>
               </div>
             )}
@@ -129,9 +140,13 @@ export default async function BlogsPage() {
             Stay Updated with Dholera SIR
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            Subscribe to our newsletter for the latest investment opportunities and updates.
+            Subscribe to our newsletter for the latest investment opportunities
+            and updates.
           </p>
-          <Link href="/contact" className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg">
+          <Link
+            href="/contact"
+            className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white px-8 py-3 rounded-lg font-bold transition-colors shadow-lg"
+          >
             Contact Us
           </Link>
         </div>
