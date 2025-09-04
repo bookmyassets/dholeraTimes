@@ -13,8 +13,8 @@ import CommonForm from "../../components/FormSection";
 import LeadForm from "../LeadForm";
 
 export async function generateMetadata({ params }) {
-   const { slug } = await params;
-  const site = 'dholera-times';
+  const { slug } = await params;
+  const site = "dholera-times";
   const post = await getPostBySlug(slug, site);
 
   return {
@@ -23,48 +23,17 @@ export async function generateMetadata({ params }) {
   };
 }
 
-// Trending Blog Item Component
-const TrendingBlogItem = ({ post }) => {
-  return (
-    <Link href={`/projects/${post.slug.current}`}>
-      <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
-        {post.mainImage && (
-          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-            <Image
-              src={urlFor(post.mainImage).width(80).height(80).url()}
-              alt={post.title}
-              width={80}
-              height={80}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
-        <div>
-          <h4 className="font-semibold text-gray-900 line-clamp-2">
-            {post.title}
-          </h4>
-          <p className="text-sm text-gray-500 line-clamp-1 mt-1">
-            {post.description}
-          </p>
-        </div>
-      </div>
-    </Link>
-  );
-};
-
 const Projects = ({ post }) => {
   // Check if post exists and has required properties
   if (!post || !post.slug?.current) return null;
 
-  // Check if category is "sold out" (case insensitive)
-  if (post.category && post.category.toLowerCase().trim() === "sold out") {
-    return null;
-  }
-
   return (
-    <Link href={`/dholera-sir/${post.slug.current}`}>
-      <link rel="canonical" href={`https://www.dholeratimes.com/projects/${post.slug.current}`}/>
-      <meta name="robots" content="index, dofollow"/>
+    <Link href={`/dholera-residential-plots/${post.slug.current}`}>
+      <link
+        rel="canonical"
+        href={`https://www.dholeratimes.com/dholera-residential-plots/${post.slug.current}`}
+      />
+      <meta name="robots" content="index, dofollow" />
 
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
@@ -92,8 +61,8 @@ const Projects = ({ post }) => {
 };
 
 export default async function Post({ params }) {
-   const { slug } = await params;
-  const site = 'dholera-times';
+  const { slug } = await params;
+  const site = "dholera-times";
 
   if (!slug) {
     return (
@@ -104,11 +73,17 @@ export default async function Post({ params }) {
   }
 
   try {
-    const [post, trendingBlogs, projects, projectInfo] = await Promise.all([
+    const [post, allProjects, projectInfo] = await Promise.all([
       getPostBySlug(slug, site),
-      getProjects(4),
+      getProjects(20), // Try getting more projects
       getProjectInfo(),
     ]);
+
+    // If getProjects is filtering sold out, you might need getAllProjects() or getProjects(limit, includeSoldOut: true)
+    console.log("Raw projects from API:", allProjects.map(p => ({
+      title: p.title, 
+      categories: p.categories?.map(c => c.title)
+    })));
 
     if (!post) {
       return (
@@ -116,7 +91,7 @@ export default async function Post({ params }) {
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-2">Project not found</h1>
             <Link
-              href="/projects"
+              href="/dholera-residential-plots"
               className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
             >
               ← Back to Projects
@@ -130,9 +105,30 @@ export default async function Post({ params }) {
       (category) => category.title.toLowerCase() === "project"
     );
 
+    // Check if current project is sold out
     const isSold = post.categories?.some(
       (category) => category.title === "Sold Out"
     );
+
+    console.log("Current post categories:", post.categories);
+    console.log("Is current project sold?", isSold);
+    console.log("All projects count:", allProjects.length);
+
+    // Filter projects for sidebar based on current project's status
+    let projectsToShow = allProjects;
+    
+    if (isSold) {
+      // If current project is sold out, show only active projects
+      projectsToShow = allProjects.filter(project => !project.isSoldOut);
+    }
+    
+    console.log("Projects to show count:", projectsToShow.length);
+    console.log("Projects to show:", projectsToShow.map(p => ({
+      title: p.title, 
+      isSoldOut: p.isSoldOut,
+      categories: p.categories?.map(c => c.title)
+    })));
+    // If current project is active, show all projects (no filtering needed)
 
     const components = {
       types: {
@@ -349,7 +345,7 @@ export default async function Post({ params }) {
       <div className="bg-white min-h-screen">
         <link
           rel="canonical"
-          href={`https://www.dholeratimes.com/projects/${post.slug.current}`}
+          href={`https://www.dholeratimes.com/dholera-residential-plots/${post.slug.current}`}
         />
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
@@ -525,24 +521,27 @@ export default async function Post({ params }) {
             </article>
 
             <div className="md:hidden pt-4">
-          <CommonForm title="Still Have Questions? Contact Us Now" />
-        </div>
+              <CommonForm title="Still Have Questions? Contact Us Now" />
+            </div>
 
             {/* Sidebar */}
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
                 {/* Trending posts */}
                 <div className=" pt-4 max-w-xl mx-auto">
-                                                      <LeadForm title={post.title} buttonName="Book Free Site Visit"/>
-                                                    </div>
+                  <LeadForm
+                    title={post.title}
+                    buttonName="Book Free Site Visit"
+                  />
+                </div>
 
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-white">
-                    Explore Dholera SIR
+                    {isSold ? "Available Projects" : "Our Projects"}
                   </h3>
                   <div className="">
-                    {projects && projects.length > 0 ? (
-                      projects.map((project) => (
+                    {projectsToShow && projectsToShow.length > 0 ? (
+                      projectsToShow.map((project) => (
                         <div key={project._id} className="mb-3">
                           <Projects post={project} />
                         </div>
@@ -562,7 +561,6 @@ export default async function Post({ params }) {
         <div className="max-sm:hidden pt-4">
           <CommonForm title="Still Have Questions? Contact Us Now" />
         </div>
-
       </div>
     );
   } catch (error) {
