@@ -382,7 +382,7 @@ export default async function Post({ params }) {
                           ></path>
                         </svg>
                         <Link
-                          href="/projects"
+                          href="/dholera-residential-plots"
                           className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 md:ml-2"
                         >
                           Projects
@@ -508,7 +508,7 @@ export default async function Post({ params }) {
                       {post.tags.map((tag) => (
                         <Link
                           key={tag}
-                          href={`/projects/tag/${tag}`}
+                          href={`/dholera-residential-plots/tag/${tag}`}
                           className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition"
                         >
                           #{tag}
@@ -571,7 +571,7 @@ export default async function Post({ params }) {
           <h1 className="text-2xl font-bold mb-2">Error loading project</h1>
           <p className="text-gray-600">Please try again later</p>
           <Link
-            href="/projects"
+            href="/dholera-residential-plots"
             className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
           >
             ← Back to Projects
