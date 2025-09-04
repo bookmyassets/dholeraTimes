@@ -6,6 +6,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: '/projects/:slug*',
+        destination: '/dholera-residential-plots/:slug*', 
+        permanent: true
+      },
+      {
         source: "/DholeraSIR/mega-industries",
         destination: "/dholera-sir/mega-industries",
         permanent: true,
