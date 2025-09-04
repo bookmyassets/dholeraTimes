@@ -537,7 +537,7 @@ export default async function Post({ params }) {
 
                 <div className="bg-[#151f28] rounded-xl shadow-md p-6 border border-gray-700">
                   <h3 className="text-xl font-bold mb-4 text-white">
-                    {isSold ? "Available Projects" : "Our Projects"}
+                    {isSold ? "Current Projects" : "Our Projects"}
                   </h3>
                   <div className="">
                     {projectsToShow && projectsToShow.length > 0 ? (
