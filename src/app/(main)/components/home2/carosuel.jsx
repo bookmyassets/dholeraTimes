@@ -7,8 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 /* image import */
 import hero1 from "@/assets/dt-home-banner.webp";
 import hero2 from "@/assets/dt-westwyn-county-home-banner.webp";
+import hero2 from "@/assets/DT-banner3.webp";
 import heroM1 from "@/assets/DTbanner1_mobile.webp";
 import heroM2 from "@/assets/DTbanner2_mobile.webp";
+import heroM2 from "@/assets/DTbanner3_mobile.webp";
 import BrochureForm from "../BrochureForm";
 
 export default function HOME2() {
