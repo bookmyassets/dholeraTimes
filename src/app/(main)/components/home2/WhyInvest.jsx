@@ -16,7 +16,7 @@ const InvestmentTimeline = () => {
       year: "2025",
       multiplier: "Current",
       price: "₹9,500/sq.ft",
-      title: "Your Investment Entry Point",
+      title: <span>Your Investment<br />Entry Point</span>,
       description:
         "Prime opportunity to invest in India's first smart city with world-class infrastructure under development",
       icon: <TrendingUp className="w-6 h-6" />,

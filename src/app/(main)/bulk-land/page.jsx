@@ -120,7 +120,7 @@ export default function page() {
           ))}
         </div>
       </div>
-      <BulkLand title="Bulk Land Parcels Starting from Rs. 1.75 Cr."/>
+      <BulkLand title="Bulk Land from Rs. 2 Cr Onwards."/>
     </>
   );
 }
