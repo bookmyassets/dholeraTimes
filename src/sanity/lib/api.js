@@ -305,3 +305,45 @@ export async function getAllProjects() {
   
   return sortedPosts;
 }
+
+export async function getProjectsForSidebar(currentProjectSlug = null) {
+  const query = `*[_type == "post" && "Project" in categories[]->title && author->name == "Dholera Times"]{
+    _id,
+    title,
+    slug,
+    mainImage,
+    publishedAt,
+    body,
+    description,
+    author->{name, image},
+    categories[]->{title, _id},
+    "category": categories[0]->title,
+    "isSoldOut": "Sold Out" in categories[]->title
+  }`;
+  
+  const posts = await client.fetch(query, {}, { cache: 'no-store' });
+  
+  // Find current project to determine its status
+  const currentProject = currentProjectSlug 
+    ? posts.find(p => p.slug?.current === currentProjectSlug)
+    : null;
+  
+  let filteredPosts;
+  
+  if (currentProject?.isSoldOut) {
+    // If current project is sold out, show only active projects
+    filteredPosts = posts.filter(p => !p.isSoldOut);
+  } else {
+    // If current project is active, show all projects but prioritize active ones
+    filteredPosts = posts.sort((a, b) => {
+      // Active projects first
+      if (!a.isSoldOut && b.isSoldOut) return -1;
+      if (a.isSoldOut && !b.isSoldOut) return 1;
+      
+      // If both have same status, sort by publishedAt (newest first)
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    });
+  }
+  
+  return filteredPosts;
+}

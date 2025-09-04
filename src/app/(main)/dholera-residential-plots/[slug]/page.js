@@ -4,6 +4,7 @@ import {
   getblogs,
   getProjectInfo,
   getProjects,
+  getProjectsForSidebar,
 } from "@/sanity/lib/api";
 import CostSheet from "@/app/(main)/components/costSheet";
 import Image from "next/image";
@@ -73,17 +74,11 @@ export default async function Post({ params }) {
   }
 
   try {
-    const [post, allProjects, projectInfo] = await Promise.all([
+    const [post, projectsForSidebar, projectInfo] = await Promise.all([
       getPostBySlug(slug, site),
-      getProjects(20), // Try getting more projects
+      getProjectsForSidebar(slug), // Pass current project slug
       getProjectInfo(),
     ]);
-
-    // If getProjects is filtering sold out, you might need getAllProjects() or getProjects(limit, includeSoldOut: true)
-    console.log("Raw projects from API:", allProjects.map(p => ({
-      title: p.title, 
-      categories: p.categories?.map(c => c.title)
-    })));
 
     if (!post) {
       return (
@@ -112,23 +107,18 @@ export default async function Post({ params }) {
 
     console.log("Current post categories:", post.categories);
     console.log("Is current project sold?", isSold);
-    console.log("All projects count:", allProjects.length);
+    console.log("Projects for sidebar count:", projectsForSidebar.length);
+    console.log(
+      "Projects to show:",
+      projectsForSidebar.map((p) => ({
+        title: p.title,
+        isSoldOut: p.isSoldOut,
+        categories: p.categories?.map((c) => c.title),
+      }))
+    );
 
     // Filter projects for sidebar based on current project's status
-    let projectsToShow = allProjects;
     
-    if (isSold) {
-      // If current project is sold out, show only active projects
-      projectsToShow = allProjects.filter(project => !project.isSoldOut);
-    }
-    
-    console.log("Projects to show count:", projectsToShow.length);
-    console.log("Projects to show:", projectsToShow.map(p => ({
-      title: p.title, 
-      isSoldOut: p.isSoldOut,
-      categories: p.categories?.map(c => c.title)
-    })));
-    // If current project is active, show all projects (no filtering needed)
 
     const components = {
       types: {
@@ -540,8 +530,8 @@ export default async function Post({ params }) {
                     {isSold ? "Current Projects" : "Our Projects"}
                   </h3>
                   <div className="">
-                    {projectsToShow && projectsToShow.length > 0 ? (
-                      projectsToShow.map((project) => (
+                    {projectsForSidebar && projectsForSidebar.length > 0 ? (
+                      projectsForSidebar.map((project) => (
                         <div key={project._id} className="mb-3">
                           <Projects post={project} />
                         </div>
