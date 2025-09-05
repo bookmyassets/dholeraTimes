@@ -2,6 +2,7 @@ import { getblogs } from "@/sanity/lib/api";
 import BlogCard from "./BlogCard";
 import TrendingBlogItem from "./TrendingBlog";
 import hero from "@/assets/blog-hero.webp";
+import heroM from "@/assets/blog-m-v.webp";
 import Image from "next/image";
 import { FaWhatsapp } from "react-icons/fa";
 import LeadForm from "../../dholera-sir/LeadForm";
@@ -34,7 +35,13 @@ export default async function BlogsPage() {
         <Image
           src={hero}
           alt="Dholera Skyline"
-          className="object-cover w-full h-[50vh] "
+          className="object-cover w-full h-[50vh] max-sm:hidden"
+          priority
+        />
+        <Image
+          src={heroM}
+          alt="Dholera Skyline"
+          className="object-cover w-full h-[50vh] md:hidden"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">

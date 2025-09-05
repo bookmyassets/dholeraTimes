@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import hero from "@/assets/bulk-land-dt-hero.webp";
+import heroM from "@/assets/bulk-land-m-v.webp";
 import residential from "@/assets/bulkLand/residential-bulk-land-cover.webp"
 import industrial from "@/assets/bulkLand/industrial-bulk-land-cover.webp"
 import hac from "@/assets/bulkLand/high-access-corridor-bulk-land-cover.webp"
@@ -62,7 +63,13 @@ export default function page() {
         <Image
           src={hero}
           alt="Dholera Skyline"
-          className="object-cover w-full h-[50vh]"
+          className="object-cover w-full h-[50vh] max-sm:hidden"
+          priority
+        />
+        <Image
+          src={heroM}
+          alt="Dholera Skyline"
+          className="object-cover w-full h-[50vh] md:hidden"
           priority
         />
         <div className="absolute inset-0 flex items-center justify-center">

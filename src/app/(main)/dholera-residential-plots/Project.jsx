@@ -6,6 +6,7 @@ import Image from "next/image";
 import { PortableText } from "next-sanity";
 import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
+import heroM from "@/assets/residential-mob-view.webp";  
 
 export default async function Projects() {
   const posts = await getPosts();
@@ -43,10 +44,17 @@ export default async function Projects() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src={hero} // Replace with your hero image
+            src={hero}
             alt="Hero Background"
             fill
             className="object-cover "
+            priority
+          />
+          <Image
+            src={heroM}
+            alt="Hero Background"
+            fill
+            className="object-cover md:hidden"
             priority
           />
         </div>

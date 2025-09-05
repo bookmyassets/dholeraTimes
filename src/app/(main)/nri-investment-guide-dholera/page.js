@@ -19,6 +19,8 @@ import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp";
 import priceBanner from "@/assets/price-cut-banner.webp";
 import priceBannerM from "@/assets/priceBannerM.webp";
 import projectedNRI from "@/assets/Projected-NRI.webp";
+import nri from "@/assets/nri-mob-view.webp";
+import nriD from "@/assets/nriguide-hero.webp";
 
 export default function NRIInvestmentGuide() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
@@ -614,21 +616,23 @@ export default function NRIInvestmentGuide() {
   };
 
   const breadcrumb = {
-      "@context": "https://schema.org/", 
-  "@type": "BreadcrumbList", 
-  "itemListElement": [{
-    "@type": "ListItem", 
-    "position": 1, 
-    "name": "Home",
-    "item": "https://www.dholeratimes.com/"  
-  },{
-    "@type": "ListItem", 
-    "position": 2, 
-    "name": "NRI Guide",
-    "item": "https://www.dholeratimes.com/nri-investment-guide-dholera"  
-  }]
-
-  }
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.dholeratimes.com/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "NRI Guide",
+        item: "https://www.dholeratimes.com/nri-investment-guide-dholera",
+      },
+    ],
+  };
 
   return (
     <>
@@ -637,7 +641,7 @@ export default function NRIInvestmentGuide() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
-      <meta name="robots" content="index, dofollow"/>
+      <meta name="robots" content="index, dofollow" />
 
       <script
         type="application/ld+json"
@@ -665,36 +669,53 @@ export default function NRIInvestmentGuide() {
         href="https://www.dholeratimes.com/nri-investment-guide-dholera"
       />
 
-      <div className="relative bg-[#151f28] text-white py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Your Gateway to Property Investment in India's 1st Greenfield Smart
-            City!
-          </h2>
-          <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8">
-            Invest in India's No.1 Smart City from Anywhere in the World
-          </h2>
-          <p className="text-lg mb-8">
-            Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal,
-            AUDA-Approved Plots with Virtual Support.
-          </p>
+      <div className="relative text-white py-12 px-6">
+  {/* Background Images */}
+  <div className="absolute inset-0">
+    <Image
+      src={nri}
+      alt="Dholera Skyline"
+      className="object-cover w-full h-full md:hidden"
+    />
+    <Image
+      src={nriD}
+      alt="Dholera Skyline"
+      className="object-cover w-full h-full max-sm:hidden"
+    />
+    {/* Dark overlay for better text readability */}
+    <div className="absolute inset-0 bg-black/40"></div>
+  </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <button
-              onClick={openContactForm}
-              className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all"
-            >
-              Get Free Consultation
-            </button>
-            <Link
-              href="/projects"
-              className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all"
-            >
-              Explore Projects
-            </Link>
-          </div>
-        </div>
-      </div>
+  {/* Content */}
+  <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center">
+    <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+      Your Gateway to Property Investment in India's 1st Greenfield Smart
+      City!
+    </h2>
+    <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8 drop-shadow-lg">
+      Invest in India's No.1 Smart City from Anywhere in the World
+    </h2>
+    <p className="text-lg mb-8 drop-shadow-lg">
+      Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal,
+      AUDA-Approved Plots with Virtual Support.
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 mb-8">
+      <button
+        onClick={openContactForm}
+        className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
+      >
+        Get Free Consultation
+      </button>
+      <Link
+        href="/projects"
+        className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
+      >
+        Explore Projects
+      </Link>
+    </div>
+  </div>
+</div>
 
       {/* Navigation Tabs */}
       <div className="sticky top-0 z-20 bg-white shadow-md py-4 max-sm:hidden">
@@ -1139,7 +1160,10 @@ export default function NRIInvestmentGuide() {
 
             {/* Button positioned on desktop image */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <button onClick={openForm} className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md">
+              <button
+                onClick={openForm}
+                className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md"
+              >
                 Talk To An Expert
               </button>
             </div>
@@ -1157,7 +1181,10 @@ export default function NRIInvestmentGuide() {
 
             {/* Button positioned on mobile image (centered) */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-              <button onClick={openForm} className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md text-sm">
+              <button
+                onClick={openForm}
+                className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md text-sm"
+              >
                 Talk To An Expert
               </button>
             </div>

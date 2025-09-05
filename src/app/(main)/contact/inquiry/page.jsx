@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import get from "@/assets/contact-us-hero.webp";
+import getM from "@/assets/contact-us-m-v.webp";
 import {
   FaPhoneAlt,
   FaHeadset,
@@ -119,6 +120,13 @@ export default function ContactDetails() {
                   src={get}
                   alt="banner"
                   className="h-full w-full object-cover max-sm:hidden"
+                  fill
+                  priority
+                />
+                <Image
+                  src={getM}
+                  alt="banner"
+                  className="h-full w-full object-cover md:hidden"
                   fill
                   priority
                 />

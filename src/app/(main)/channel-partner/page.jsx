@@ -8,6 +8,7 @@ import inventory from "@/assets/icons/registry-ready-inventory-icon.webp"
 import sales from "@/assets/icons/white-labeled-sales-kit-icon.webp";
 import Image from "next/image";
 import hero from "@/assets/Channelpartner-hero.webp"
+import heroM from "@/assets/channel-partner-mob.-view.webp"
 
 export default function ChannelPartnerPage() {
   return (
@@ -20,7 +21,12 @@ export default function ChannelPartnerPage() {
           <Image
             src={hero}
             alt="Channel Partner"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover max-sm:hidden"
+          />
+          <Image
+            src={heroM}
+            alt="Channel Partner"
+            className="w-full h-full object-cover md:hidden"
           />
         </div>
         <div className="container mx-auto px-6 pt-10 relative z-10">
