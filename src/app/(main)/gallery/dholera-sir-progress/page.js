@@ -2,21 +2,23 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import hero from "@/assets/news.webp";
-import sample1 from "@/assets/gallery/sir/Dholera Abcd building.webp";
-import sample2 from "@/assets/gallery/sir/Dholera Abcd building auditorium.webp";
-import sample3 from "@/assets/gallery/sir/Dholera Abcd building  inside.webp";
-import sample4 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway After & Before Contruction (1).webp";
-import sample5 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway After & Before Contruction (2).webp";
-import sample6 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway Final.webp";
-import sample7 from "@/assets/gallery/sir/Dholera Ahmedabad Expressway Night view.webp";
-import sample8 from "@/assets/gallery/sir/Dholera Canal Front Final View.webp";
-import sample9 from "@/assets/gallery/sir/Dholera Cannel front view daytime & nighttime.webp";
-import sample10 from "@/assets/gallery/sir/Dholera Common Effluent Treatement Plant 1.webp";
-import sample11 from "@/assets/gallery/sir/Dholera Common Effluent Treatment Plant.webp";
-import sample12 from "@/assets/gallery/sir/Dholera Sewage Treatment Plant outer view.webp";
-import sample13 from "@/assets/gallery/sir/Dholera Sewage Treatment Plant.webp";
-import sample14 from "@/assets/gallery/sir/Dholera Solar Power Plant 2.webp";
-import sample15 from "@/assets/gallery/sir/Dholera Solar Power Project.webp";
+import sample1 from "@/assets/gallery/sir/BMAWebsitegallery7.webp";
+import sample2 from "@/assets/gallery/sir/BMAWebsitegallery8.webp";
+import sample3 from "@/assets/gallery/sir/dt-abcd.webp";
+import sample4 from "@/assets/gallery/sir/dt-abcd.webp";
+import sample5 from "@/assets/gallery/sir/dt-acti.webp";
+import sample6 from "@/assets/gallery/sir/dt-activation.webp";
+import sample7 from "@/assets/gallery/sir/dt-airport.webp";
+import sample8 from "@/assets/gallery/sir/dt-experess.webp";
+import sample9 from "@/assets/gallery/sir/dt-renew.webp";
+import sample10 from "@/assets/gallery/sir/dt-renew2.webp";
+import sample11 from "@/assets/gallery/sir/dt-solar.webp";
+import sample12 from "@/assets/gallery/sir/dt-sprr.webp";
+import sample13 from "@/assets/gallery/sir/dt-tata1.webp";
+import sample14 from "@/assets/gallery/sir/dt-tata.webp";
+import sample15 from "@/assets/gallery/sir/dt-toll.webp";
+import sample16 from "@/assets/gallery/sir/dt-torrent.webp";
+import sample17 from "@/assets/gallery/sir/dt-wtp.webp";
 
 
 export default function DholeraProgressPage() {
@@ -25,16 +27,19 @@ export default function DholeraProgressPage() {
     { id: 2, src: sample2, alt: "Dholera Abcd building auditorium", caption: "Dholera Abcd building auditorium" },
     { id: 3, src: sample3, alt: "Dholera Abcd building  inside", caption: "Dholera Abcd building  inside" },
     { id: 4, src: sample4, alt: "Dholera Ahmedabad Expressway After & Before Contruction (1)", caption: "Dholera Ahmedabad Expressway After & Before Contruction (1)" },
-    { id: 5, src: sample6, alt: "Dholera Ahmedabad Expressway Final", caption: "Dholera Ahmedabad Expressway Final" },
-    { id: 6, src: sample7, alt: "Dholera Ahmedabad Expressway Night view", caption: "Dholera Ahmedabad Expressway Night view" },
-    { id: 7, src: sample8, alt: "Dholera Canal Front Final View", caption: "Dholera Canal Front Final View" },
-    { id: 8, src: sample9, alt: "Dholera Cannel front view daytime & nighttime", caption: "Dholera Cannel front view daytime & nighttime" },
-    { id: 9, src: sample10, alt: "Dholera Common Effluent Treatement Plant 1", caption: "Dholera Common Effluent Treatement Plant 1" },
-    { id: 10, src: sample11, alt: "Dholera Common Effluent Treatement Plant", caption: "Dholera Common Effluent Treatement Plant 1" },
-    { id: 11, src: sample12, alt: "Dholera Sewage Treatment Plant outer view", caption: "Dholera Sewage Treatment Plant outer view" },
-    { id: 12, src: sample13, alt: "Dholera Sewage Treatment Plant", caption: "Dholera Sewage Treatment Plant" },
-    { id: 13, src: sample15, alt: "Dholera Solar Power Plant", caption: "Dholera Solar Power Plant" },
+    { id: 5, src: sample5, alt: "Dholera Ahmedabad Expressway Final", caption: "Dholera Ahmedabad Expressway Final" },
+    { id: 6, src: sample6, alt: "Dholera Ahmedabad Expressway Night view", caption: "Dholera Ahmedabad Expressway Night view" },
+    { id: 7, src: sample7, alt: "Dholera Canal Front Final View", caption: "Dholera Canal Front Final View" },
+    { id: 8, src: sample8, alt: "Dholera Cannel front view daytime & nighttime", caption: "Dholera Cannel front view daytime & nighttime" },
+    { id: 9, src: sample9, alt: "Dholera Common Effluent Treatement Plant 1", caption: "Dholera Common Effluent Treatement Plant 1" },
+    { id: 10, src: sample10, alt: "Dholera Common Effluent Treatement Plant", caption: "Dholera Common Effluent Treatement Plant 1" },
+    { id: 11, src: sample11, alt: "Dholera Sewage Treatment Plant outer view", caption: "Dholera Sewage Treatment Plant outer view" },
+    { id: 12, src: sample12, alt: "Dholera Sewage Treatment Plant", caption: "Dholera Sewage Treatment Plant" },
+    { id: 13, src: sample13, alt: "Dholera Solar Power Plant", caption: "Dholera Solar Power Plant" },
     { id: 14, src: sample14, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
+    { id: 15, src: sample15, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
+    { id: 16, src: sample16, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
+    { id: 17, src: sample17, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
    
   ];
 
@@ -133,10 +138,10 @@ export default function DholeraProgressPage() {
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
-            <div className="bg-white p-4 text-center">
+            {/* <div className="bg-white p-4 text-center">
               <h3 className="text-lg font-bold">{selectedImage.alt}</h3>
               <p className="text-gray-600">{selectedImage.caption}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       )}

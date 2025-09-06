@@ -16,8 +16,6 @@ import Popup from "../Pop";
 import PopupForm3 from "../FormThree";
 import BrochureForm from "../BrochureForm";
 
-
-
 export default function Home2Main() {
   const [showpopForm, setpopShowForm] = useState(false);
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
