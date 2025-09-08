@@ -43,16 +43,22 @@ export default function HOME2() {
       desktop: hero1,
       tablet: hero1,
       mobile: heroM1,
+      desktopClickArea: { left: 159, top: 527, right: 367, bottom: 565 },
+      mobileClickArea: { left: 191, top: 865, right: 400, bottom: 906 },
     },
     {
       desktop: hero2,
       tablet: hero2,
       mobile: heroM2,
+      desktopClickArea: { left: 160, top: 524, right: 406, bottom: 570 },
+      mobileClickArea: { left: 181, top: 856, right: 412, bottom: 898 },
     },
     {
       desktop: hero3,
       tablet: hero3,
       mobile: heroM3,
+      desktopClickArea: { left: 159, top: 518, right: 401, bottom: 562 },
+      mobileClickArea: { left: 174, top: 861, right: 417, bottom: 902 },
     },
   ];
 
@@ -72,6 +78,11 @@ export default function HOME2() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Function to handle phone call
+  const handlePhoneCall = () => {
+    window.location.href = "tel:+919958993549";
+  };
 
   return (
     <>
@@ -93,8 +104,22 @@ export default function HOME2() {
                   alt={`hero slide ${index + 1}`}
                   fill
                   priority={index === 0}
-                  className=" object-cover"
+                  className="object-cover"
                   sizes="100vw"
+                />
+
+                {/* Clickable area for phone number - Desktop */}
+                <button
+                  onClick={handlePhoneCall}
+                  className="absolute z-20 bg-transparent hover:bg-black hover:bg-opacity-10 transition-all duration-300"
+                  style={{
+                    left: `${(slide.desktopClickArea.left / 1920) * 100}%`,
+                    top: `${(slide.desktopClickArea.top / 1080) * 175}%`,
+                    width: `${((slide.desktopClickArea.right - slide.desktopClickArea.left) / 1920) * 100}%`,
+                    height: `${((slide.desktopClickArea.bottom - slide.desktopClickArea.top) / 1080) * 100}%`,
+                  }}
+                  aria-label="Call +91 9958993549"
+                  title="Call +91 9958993549"
                 />
 
                 {/* Text overlay with animation - only visible for the current slide */}
@@ -104,6 +129,7 @@ export default function HOME2() {
           ))}
         </div>
 
+        {/* Tablet Slides container */}
         <div
           className="hidden md:flex lg:hidden w-full transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -123,27 +149,26 @@ export default function HOME2() {
                   sizes="100vw"
                 />
 
-                {currentSlide === index && (
-                  <motion.div
-                    className="absolute bottom-20 left-10 right-0 flex"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.7 }}
-                  >
-                    <button
-                      onClick={openContactForm}
-                      className="bg-[#151f28] text-white py-3 px-6 rounded-2xl uppercase text-xl font-semibold tracking-wider transform transition-all duration-500 hover:scale-105 hover:bg-opacity-60"
-                    >
-                      {slide.text}
-                    </button>
-                  </motion.div>
-                )}
+                {/* Clickable area for phone number - Tablet (using desktop coordinates but scaled) */}
+                <button
+                  onClick={handlePhoneCall}
+                  className="absolute z-20 bg-transparent hover:bg-black hover:bg-opacity-10 transition-all duration-300"
+                  style={{
+                    left: `${(slide.desktopClickArea.left / 1920) * 100}%`,
+                    top: `${(slide.desktopClickArea.top / 1080) * 100}%`,
+                    width: `${((slide.desktopClickArea.right - slide.desktopClickArea.left) / 1920) * 100}%`,
+                    height: `${((slide.desktopClickArea.bottom - slide.desktopClickArea.top) / 1080) * 100}%`,
+                  }}
+                  aria-label="Call +91 9958993549"
+                  title="Call +91 9958993549"
+                />
+
               </div>
             </div>
           ))}
         </div>
 
+        {/* Mobile Slides container */}
         <div
           className="flex md:hidden w-full transition-transform duration-700 ease-in-out"
           style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -163,22 +188,19 @@ export default function HOME2() {
                   sizes="100vw"
                 />
 
-                {currentSlide === index && (
-                  <motion.div
-                    className="absolute bottom-4 left-0 right-0 flex justify-center items-center"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.7 }}
-                  >
-                    <button
-                      onClick={openContactForm}
-                      className="bg-[#151f28] bg-opacity-80 text-white py-3 px-6 rounded-lg uppercase text-lg font-semibold tracking-wider transform transition-all duration-500 hover:scale-105"
-                    >
-                      {slide.text}
-                    </button>
-                  </motion.div>
-                )}
+                {/* Clickable area for phone number - Mobile */}
+                <button
+                  onClick={handlePhoneCall}
+                  className="absolute z-20 bg-transparent hover:bg-black hover:bg-opacity-10 transition-all duration-300"
+                  style={{
+                    left: `${(slide.mobileClickArea.left / 430) * 62}%`,
+                    top: `${(slide.mobileClickArea.top / 932) * 97}%`,
+                    width: `${((slide.mobileClickArea.right - slide.mobileClickArea.left) / 430) * 100}%`,
+                    height: `${((slide.mobileClickArea.bottom - slide.mobileClickArea.top) / 932) * 100}%`,
+                  }}
+                  aria-label="Call +91 9958993549"
+                  title="Call +91 9958993549"
+                />
               </div>
             </div>
           ))}
