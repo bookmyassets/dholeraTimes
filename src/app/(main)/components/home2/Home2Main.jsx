@@ -102,7 +102,7 @@ export default function Home2Main() {
         {isContactFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <PopupForm3
-              title=""
+              title="Invest With Confidence"
               buttonName="Talk To Investment Advisor"
               onClose={() => setIsContactFormOpen(false)}
             />
@@ -114,8 +114,8 @@ export default function Home2Main() {
         {isBrochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureForm
-              title=""
-              buttonName="Talk To Investment Advisor"
+              title="Discover Your Investment Options In Dholera Smart City"
+              buttonName="Download Brochure"
               onClose={() => setIsBrochureFormOpen(false)}
             />
           </div>

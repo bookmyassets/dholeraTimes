@@ -117,7 +117,7 @@ export default function PopupForm() {
               email: formData.email,
               source: "Dholera Times",
             },
-            source: "Dholera Times Popup",
+            source: "Dholera Times",
             tags: ["Dholera Investment", "Popup Lead", "Dholera Times"],
             recaptchaToken: token,
           }),
