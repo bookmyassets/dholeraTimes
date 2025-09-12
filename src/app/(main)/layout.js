@@ -334,6 +334,7 @@ export default function RootLayout({ children }) {
         }
       `}</style>
       <head>
+         <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
         <Script
           strategy="afterInteractive"
