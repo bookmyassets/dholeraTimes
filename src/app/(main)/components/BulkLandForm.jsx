@@ -234,9 +234,6 @@ export default function BulkLand({ title , buttonName }) {
             <h2 className="text-[#151f28] text-3xl sm:text-4xl font-bold text-center">
               {title}
             </h2>
-            <p className="text-[#151f28] mt-4 text-center">
-              Scale Your Portfolio with High-Growth Land Opportunities
-            </p>
             {showPopup ? (
               <div className="text-center py-8">
                 <motion.div

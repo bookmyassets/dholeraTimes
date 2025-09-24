@@ -242,12 +242,8 @@ export default function PopupForm() {
                   >
                     ×
                   </button>
-                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Dholera Times</h1>
+                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Get plots 0KM from Dholera SIR under ₹10 Lakhs</h1>
                   
-                  {/* Section 2: Sub-heading CTA */}
-                  <p className="text-lg text-gray-700 font-semibold">
-                    Be among the First to Invest in India’s First Greenfield Smart City
-                  </p>
                 </div>
 
                 {/* Section 3: Form Fields */}

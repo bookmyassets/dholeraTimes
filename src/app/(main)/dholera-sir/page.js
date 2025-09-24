@@ -94,8 +94,8 @@ export default async function BlogsPage() {
           <div className="lg:w-1/4 sticky top-6">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
               <LeadForm
-                title="See Why Global Investors Are Eyeing Dholera"
-                buttonName="Get Free Insights"
+                title="Own Registry-Ready Plot under ₹10 Lakhs"
+                buttonName="Get A Call Back"
               />
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] ">

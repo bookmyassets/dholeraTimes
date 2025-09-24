@@ -46,7 +46,7 @@ export default function Home2Main() {
         <AboutDT />
       </div>
       <div>
-        <BulkLand title=" Book Your Free Site Visit to Dholera Smart City" buttonName="Book My Site Visit" />
+        <BulkLand title="Registry-ready dholera plots under ₹10 Lakhs" buttonName="Book My Site Visit" />
       </div>
       <div>
         <Dholera />
