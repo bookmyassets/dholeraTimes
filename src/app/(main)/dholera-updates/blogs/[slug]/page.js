@@ -96,7 +96,7 @@ const Projects = ({ post }) => {
 // Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
-    <Link href={`/dholera-updates/blogs/${blog.slug.current}`}>
+    <Link href={`/dholera-updates/latest-news/${blog.slug.current}`}>
       <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
         <div className="relative h-48 overflow-hidden">
           {blog.mainImage ? (
@@ -240,7 +240,7 @@ export default async function BlogDetail({ params }) {
                            <tr
                              key={i}
                              className={`hover:bg-gray-50 transition-colors duration-200 ${
-                               i === 0 ? "bg-gradient-to-r from-[#C69C21]/10 to-[#FDB913]/10 font-semibold" : 
+                               i === 0 ? "bg-gradient-to-r from-[#d3b66b]/10 to-[#b69b5e]/10 font-semibold" : 
                                i % 2 === 0 ? "bg-gray-50/50" : "bg-white"
                              }`}
                            >
@@ -275,7 +275,7 @@ export default async function BlogDetail({ params }) {
                <Link
                  href={value.href}
                  rel="noopener noreferrer"
-                 className="text-[#d3b36b] hover:text-[#FDB913] underline decoration-[#FDB913]/30 hover:decoration-[#FDB913] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#FDB913]/5 px-1 py-0.5 rounded"
+                 className="text-[#d3b36b] hover:text-[#b69b5e] underline decoration-[#b69b5e]/30 hover:decoration-[#b69b5e] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#b69b5e]/5 px-1 py-0.5 rounded"
                >
                  {children}
                </Link>
@@ -301,9 +301,9 @@ export default async function BlogDetail({ params }) {
                    case "secondary":
                      return "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-[#151f28] shadow-lg hover:shadow-xl";
                    case "outline":
-                     return "bg-transparent border-2 border-[#C69C21] text-[#C69C21] hover:bg-[#C69C21] hover:text-white shadow-md hover:shadow-lg";
+                     return "bg-transparent border-2 border-[#d3b66b] text-[#d3b66b] hover:bg-[#d3b66b] hover:text-white shadow-md hover:shadow-lg";
                    default:
-                     return "bg-gradient-to-r from-[#C69C21] to-[#FDB913] hover:from-[#FDB913] hover:to-[#C69C21] shadow-lg hover:shadow-xl";
+                     return "bg-gradient-to-r from-[#d3b66b] to-[#b69b5e] hover:from-[#b69b5e] hover:to-[#d3b66b] shadow-lg hover:shadow-xl";
                  }
                };
        
@@ -319,47 +319,63 @@ export default async function BlogDetail({ params }) {
            },
        
            block: {
-             h1: ({ children }) => (
-               <h1 className="text-5xl font-black mt-8 mb-10 text-transparent bg-clip-text from- border-b-4  pb-4">
+           h1: ({ children }) => (
+             <h1 className="text-5xl font-black mt-8 mb-10 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#9e8750] rounded-full"></span>
+               {children}
+             </h1>
+           ),
+           h2: ({ children }) => (
+             <h2 className="text-4xl font-bold mt-16 mb-8 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+               {children}
+             </h2>
+           ),
+           h3: ({ children }) => (
+             <h3 className="text-3xl font-bold mt-12 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+               {children}
+             </h3>
+           ),
+           h4: ({ children }) => (
+             <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+               {children}
+             </h4>
+           ),
+           h5: ({ children }) => (
+             <h5 className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+               {children}
+             </h5>
+           ),
+           h6: ({ children }) => (
+             <h6 className="text-lg font-semibold mt-6 mb-2 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-1">
+               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+               {children}
+             </h6>
+           ),
+           normal: ({ children }) => (
+             <p className="mb-8 text-gray-700 leading-loose text-lg font-light tracking-wide">
+               {children}
+             </p>
+           ),
+           blockquote: ({ children }) => (
+             <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
+               <div className="absolute top-4 left-6 text-6xl text-[#d3b66b]/30 font-serif">
+                 "
+               </div>
+               <div className="pl-8 italic text-gray-700 text-xl leading-relaxed font-medium">
                  {children}
-               </h1>
-             ),
-             h2: ({ children }) => (
-               <h2 className="text-4xl font-bold mt-16 mb-8 text-[#151f28] relative">
-                 <span className="absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-[#C69C21] to-[#FDB913] rounded-full"></span>
-                 {children}
-               </h2>
-             ),
-             h3: ({ children }) => (
-               <h3 className="text-3xl font-bold mt-12 mb-6 text-[#151f28] flex items-center gap-3">
-                 <div className="w-2 h-2  rounded-full"></div>
-                 {children}
-               </h3>
-             ),
-             h4: ({ children }) => (
-               <h4 className="text-2xl font-semibold mt-10 mb-4 text-[#151f28] border-l-4 border-[#FDB913] pl-4 bg-gradient-to-r from-[#FDB913]/5 to-transparent py-2">
-                 {children}
-               </h4>
-             ),
-             normal: ({ children }) => (
-               <p className="mb-8 text-gray-700 leading-loose text-lg font-light tracking-wide">
-                 {children}
-               </p>
-             ),
-             blockquote: ({ children }) => (
-               <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#C69C21]/5 to-[#FDB913]/10 rounded-2xl shadow-lg border border-[#C69C21]/20">
-                 <div className="absolute top-4 left-6 text-6xl text-[#C69C21]/30 font-serif">"</div>
-                 <div className="pl-8 italic text-gray-700 text-xl leading-relaxed font-medium">
-                   {children}
-                 </div>
-               </blockquote>
-             ),
-             centerAlign: ({ children }) => (
-               <p className="mb-8 text-gray-700 leading-loose text-lg text-center bg-gray-50 py-6 rounded-xl">
-                 {children}
-               </p>
-             ),
-           },
+               </div>
+             </blockquote>
+           ),
+           centerAlign: ({ children }) => (
+             <p className="mb-8 text-gray-700 leading-loose text-lg text-center bg-gray-50 py-6 rounded-xl">
+               {children}
+             </p>
+           ),
+         },
        
            list: {
              bullet: ({ children }) => (
