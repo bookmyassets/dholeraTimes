@@ -1,15 +1,216 @@
 import Link from "next/link";
-import { getPosts } from "@/sanity/lib/api";
-import { urlFor } from "@/sanity/lib/image";
 import "./project.css";
 import Image from "next/image";
-import { PortableText } from "next-sanity";
 import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
-import heroM from "@/assets/residential-mob-view.webp";  
+import heroM from "@/assets/residential-mob-view.webp";
+import westwyn from "@/assets/residential/westwyn.webp";
+import orchid from "@/assets/residential/orchid-cover.webp";
+import paradise1 from "@/assets/residential/paradise1.webp";
+import paradise2 from "@/assets/residential/paradise2.webp";
+import maple from "@/assets/residential/maple-township.webp";
+import marina from "@/assets/residential/marina-bay.webp";
+import pride from "@/assets/residential/pride-1.webp";
 
-export default async function Projects() {
-  const posts = await getPosts();
+// JSON data array
+const projectsData = [
+  {
+    _id: "1",
+    title: "WestWyn Estate",
+    slug: { current: "westwyn-estate" },
+    mainImage: westwyn,
+    description:
+      "Invest in plots in Dholera at WestWyn Estate, 0 km from Dholera SIR, and close to proximity to the activation area at an unbeatable price.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Premium investment opportunity in the heart of Dholera Smart City. Strategic location with excellent connectivity and growth potential.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Under Construction" }, { title: "Latest" }],
+    location: "Vadhela, Dholera, Gujarat",
+    status: "ongoing",
+  },
+  {
+    _id: "2",
+    title: "WestWyn County",
+    slug: { current: "westwyn-county" },
+    mainImage: westwyn,
+    description:
+      "Premium township with spacious plots, world-class connectivity, and Tata Semiconductor Fab nearby.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Strategically located premium township offering world-class amenities and infrastructure development.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Under Construction" }, { title: "Premium" }],
+    location: "Fedra-Pipli State Highway, Dholera, Gujarat",
+    status: "ongoing",
+  },
+  {
+    _id: "3",
+    title: "Orchid",
+    slug: { current: "orchid" },
+    mainImage: orchid,
+    description:
+      "Peaceful residential project with smart amenities and direct connectivity to Ahmedabad Dholera Expressway.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Smart residential development with modern amenities and excellent connectivity to major transportation networks.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Smart Living" }],
+    location: "Gamph, Dholera",
+    status: "sold-out",
+  },
+  {
+    _id: "4",
+    title: "Paradise",
+    slug: { current: "paradise" },
+    mainImage: paradise1,
+    description:
+      "Luxury plotted developments close to Dholera International Airport, designed for long term investors and smart living.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Luxury residential plots strategically located near the upcoming international airport with premium amenities.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Luxury" }],
+    location: "Shela, Dholera",
+    status: "sold-out",
+  },
+  {
+    _id: "5",
+    title: "Paradise 2",
+    slug: { current: "paradise-2" },
+    mainImage: paradise2,
+    description:
+      "Luxury plotted developments close to Dholera International Airport, designed for long term investors and smart living.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Second phase of the luxury Paradise project with enhanced amenities and premium location advantages.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Luxury" }],
+    location: "Shela, Dholera",
+    status: "sold-out",
+  },
+  {
+    _id: "6",
+    title: "Maple Township",
+    slug: { current: "maple" },
+    mainImage: maple,
+    description:
+      "Affordable premium plots near the ABCD Building, Dholera, and Smart City Booking Centre, ideal for families and investors.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Family-friendly township with affordable pricing and proximity to key administrative buildings in Dholera.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Affordable" }],
+    location: "Gamph, Gujarat",
+    status: "sold-out",
+  },
+  {
+    _id: "7",
+    title: "Marina Bay",
+    slug: { current: "marina-bay" },
+    mainImage: marina,
+    description:
+      "A unique project inspired by coastal living, situated near Dholera Port and the Solar Power Plant, is ideal for future growth.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Coastal-inspired residential development with unique design elements and strategic location near port facilities.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Coastal Living" }],
+    location: "Gamph, Dholera",
+    status: "sold-out",
+  },
+  {
+    _id: "8",
+    title: "Pride",
+    slug: { current: "pride" },
+    mainImage: pride,
+    description:
+      "Prestigious township with eco-friendly infrastructure and assured growth potential in Dholera Metro City.",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Eco-friendly township development with sustainable infrastructure and promising growth prospects.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Sold Out" }, { title: "Eco-Friendly" }],
+    location: "Kasindra, Dholera",
+    status: "sold-out",
+  },
+];
+
+// Simple PortableText component replacement
+const PortableText = ({ value }) => {
+  if (!value || !Array.isArray(value)) return null;
+
+  return (
+    <div>
+      {value.map((block, index) => (
+        <p key={index}>
+          {block.children?.map((child, childIndex) => (
+            <span key={childIndex}>{child.text}</span>
+          ))}
+        </p>
+      ))}
+    </div>
+  );
+};
+
+export default function Projects() {
+  const posts = projectsData;
 
   function checkIfSoldOut(post) {
     if (!post.categories) return false;
@@ -66,9 +267,9 @@ export default async function Projects() {
               <span
                 className="px-6 py-3 rounded-full text-sm font-medium border-2"
                 style={{
-                  backgroundColor: "rgba(211, 179, 107, 0.2)",
-                  color: "#d3b36b",
-                  borderColor: "rgba(211, 179, 107, 0.3)",
+                  backgroundColor: "rgba(222, 190, 107, 0.2)",
+                  color: "#debe6b",
+                  borderColor: "rgba(222, 190, 107, 0.3)",
                 }}
               >
                 Premium Investment Opportunities
@@ -78,7 +279,7 @@ export default async function Projects() {
               className="text-4xl font-bold mb-8"
               style={{ color: "#fbfbfb" }}
             >
-              Our <span style={{ color: "#d3b36b" }}>Projects</span>
+              Our <span style={{ color: "#debe6b" }}>Projects</span>
             </h1>
             <p
               className=" max-w-4xl mx-auto leading-relaxed mb-12"
@@ -101,13 +302,13 @@ export default async function Projects() {
                 style={{ color: "#151f28" }}
               >
                 High-Growth Opportunities in{" "}
-                <span style={{ color: "#d3b36b" }}>Dholera</span>
+                <span style={{ color: "#debe6b" }}>Dholera</span>
               </h2>
               <p
                 className="max-w-2xl mx-auto"
                 style={{ color: "rgba(21, 31, 40, 0.7)" }}
               >
-                Secure a future-ready asset in India’s first smart city
+                Secure a future-ready asset in India's first smart city
               </p>
             </div>
 
@@ -128,7 +329,7 @@ export default async function Projects() {
                         className="rounded-3xl shadow-2xl overflow-hidden border-2 cursor-pointer"
                         style={{
                           backgroundColor: "#fbfbfb",
-                          borderColor: "rgba(211, 179, 107, 0.2)",
+                          borderColor: "rgba(222, 190, 107, 0.2)",
                         }}
                       >
                         {/* Image Section */}
@@ -137,10 +338,8 @@ export default async function Projects() {
                             <div className="relative h-[300px]">
                               <Image
                                 src={
-                                  urlFor(availableProjects[0].mainImage)
-                                    .width(600)
-                                    .height(400)
-                                    .url() || "/placeholder.svg"
+                                  availableProjects[0].mainImage ||
+                                  "/placeholder.svg"
                                 }
                                 alt={availableProjects[0].title}
                                 fill
@@ -167,10 +366,10 @@ export default async function Projects() {
                                         className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
                                         style={{
                                           backgroundColor:
-                                            "rgba(211, 179, 107, 0.9)",
+                                            "rgba(222, 190, 107, 0.9)",
                                           color: "#151f28",
                                           borderColor:
-                                            "rgba(211, 179, 107, 0.5)",
+                                            "rgba(222, 190, 107, 0.5)",
                                         }}
                                       >
                                         {category.title}
@@ -185,9 +384,9 @@ export default async function Projects() {
                                     className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
                                     style={{
                                       backgroundColor:
-                                        "rgba(211, 179, 107, 0.9)",
+                                        "rgba(222, 190, 107, 0.9)",
                                       color: "#151f28",
-                                      borderColor: "rgba(211, 179, 107, 0.5)",
+                                      borderColor: "rgba(222, 190, 107, 0.5)",
                                     }}
                                   >
                                     {availableProjects[0].categories.title}
@@ -197,9 +396,9 @@ export default async function Projects() {
                                     className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
                                     style={{
                                       backgroundColor:
-                                        "rgba(211, 179, 107, 0.9)",
+                                        "rgba(222, 190, 107, 0.9)",
                                       color: "#151f28",
-                                      borderColor: "rgba(211, 179, 107, 0.5)",
+                                      borderColor: "rgba(222, 190, 107, 0.5)",
                                     }}
                                   >
                                     Available
@@ -244,7 +443,7 @@ export default async function Projects() {
                               <div
                                 className="inline-flex items-center px-8 py-4 font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                                 style={{
-                                  backgroundColor: "#d3b36b",
+                                  backgroundColor: "#debe6b",
                                   color: "#151f28",
                                 }}
                               >
@@ -276,7 +475,7 @@ export default async function Projects() {
                       className="rounded-3xl p-6 shadow-2xl border-2"
                       style={{
                         backgroundColor: "#151f28",
-                        borderColor: "rgba(211, 179, 107, 0.3)",
+                        borderColor: "rgba(222, 190, 107, 0.3)",
                       }}
                     >
                       <div className="text-center mb-4">
@@ -285,7 +484,7 @@ export default async function Projects() {
                           style={{ color: "#fbfbfb" }}
                         >
                           Know Today's{" "}
-                          <span style={{ color: "#d3b36b" }}>Best Offer</span>
+                          <span style={{ color: "#debe6b" }}>Best Offer</span>
                         </h3>
                         <p
                           className="text-lg"
@@ -316,78 +515,19 @@ export default async function Projects() {
                           className="rounded-3xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
                           style={{
                             backgroundColor: "#fbfbfb",
-                            borderColor: "rgba(211, 179, 107, 0.2)",
+                            borderColor: "rgba(222, 190, 107, 0.2)",
                           }}
                         >
                           {/* Image */}
                           <div className="relative h-64">
                             {post.mainImage && (
                               <Image
-                                src={
-                                  urlFor(post.mainImage)
-                                    .width(400)
-                                    .height(300)
-                                    .url() || "/placeholder.svg"
-                                }
+                                src={post.mainImage || "/placeholder.svg"}
                                 alt={post.title}
                                 fill
                                 className="object-cover"
                               />
                             )}
-
-                            {/* Categories */}
-                            <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
-                              {post.categories &&
-                              Array.isArray(post.categories) ? (
-                                post.categories
-                                  .filter(
-                                    (category) =>
-                                      category.title !== "Sub-Project" &&
-                                      category.title.toLowerCase() !==
-                                        "sold out"
-                                  )
-                                  .slice(0, 2)
-                                  .map((category, catIndex) => (
-                                    <span
-                                      key={catIndex}
-                                      className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border"
-                                      style={{
-                                        backgroundColor:
-                                          "rgba(211, 179, 107, 0.9)",
-                                        color: "#151f28",
-                                        borderColor: "rgba(211, 179, 107, 0.5)",
-                                      }}
-                                    >
-                                      {category.title}
-                                    </span>
-                                  ))
-                              ) : post.categories &&
-                                post.categories.title !== "Sub-Project" &&
-                                post.categories.title.toLowerCase() !==
-                                  "sold out" ? (
-                                <span
-                                  className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border"
-                                  style={{
-                                    backgroundColor: "rgba(211, 179, 107, 0.9)",
-                                    color: "#151f28",
-                                    borderColor: "rgba(211, 179, 107, 0.5)",
-                                  }}
-                                >
-                                  {post.categories.title}
-                                </span>
-                              ) : (
-                                <span
-                                  className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border"
-                                  style={{
-                                    backgroundColor: "rgba(211, 179, 107, 0.9)",
-                                    color: "#151f28",
-                                    borderColor: "rgba(211, 179, 107, 0.5)",
-                                  }}
-                                >
-                                  Available
-                                </span>
-                              )}
-                            </div>
                           </div>
 
                           {/* Content */}
@@ -416,7 +556,7 @@ export default async function Projects() {
                               }
                               className="inline-flex items-center px-6 py-3 font-semibold rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
                               style={{
-                                backgroundColor: "#d3b36b",
+                                backgroundColor: "#debe6b",
                                 color: "#151f28",
                               }}
                             >
@@ -448,7 +588,7 @@ export default async function Projects() {
                     className="rounded-3xl p-8 lg:p-12 shadow-2xl border-2"
                     style={{
                       backgroundColor: "#151f28",
-                      borderColor: "rgba(211, 179, 107, 0.3)",
+                      borderColor: "rgba(222, 190, 107, 0.3)",
                     }}
                   >
                     <div className="text-center mb-8">
@@ -457,7 +597,7 @@ export default async function Projects() {
                         style={{ color: "#fbfbfb" }}
                       >
                         Know Today's{" "}
-                        <span style={{ color: "#d3b36b" }}>Best Offer</span>
+                        <span style={{ color: "#debe6b" }}>Best Offer</span>
                       </h3>
                       <p
                         className="text-lg"
@@ -488,7 +628,7 @@ export default async function Projects() {
                 className="text-[28px] font-bold mb-6"
                 style={{ color: "#151f28" }}
               >
-                Sold Out <span style={{ color: "#d3b36b" }}>Projects</span>
+                Sold Out <span style={{ color: "#debe6b" }}>Projects</span>
               </h2>
               <p
                 className="text-xl max-w-2xl mx-auto"
@@ -499,180 +639,140 @@ export default async function Projects() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-  {soldOutProjects.map((post) => (
-    <div key={post._id} className="group">
-      <Link
-        href={
-          post.slug?.current
-            ? `/dholera-residential-plots/${post.slug.current}`
-            : "#"
-        }
-        className="block"
-      >
-        <div
-          className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer"
-          style={{
-            backgroundColor: "#fbfbfb",
-            borderColor: "rgba(211, 179, 107, 0.2)",
-          }}
-        >
-          {/* Sold Out Overlay */}
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
-
-          {/* Image */}
-          <div className="relative h-64">
-            {post.mainImage && (
-              <Image
-                src={
-                  urlFor(post.mainImage)
-                    .width(400)
-                    .height(300)
-                    .url() || "/placeholder.svg"
-                }
-                alt={post.title}
-                fill
-                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-              />
-            )}
-
-            {/* Sold Out Badge */}
-            <div className="absolute top-4 right-4 z-20">
-              <span
-                className="px-4 py-2 text-sm font-bold rounded-full shadow-lg backdrop-blur-sm border-2"
-                style={{
-                  backgroundColor: "rgba(220, 38, 38, 0.9)",
-                  color: "#fbfbfb",
-                  borderColor: "rgba(220, 38, 38, 0.5)",
-                }}
-              >
-                SOLD OUT
-              </span>
-            </div>
-
-            {/* Other Categories */}
-            <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
-              {post.categories && Array.isArray(post.categories)
-                ? post.categories
-                    .filter(
-                      (category) =>
-                        category.title !== "Sub-Project" &&
-                        category.title.toLowerCase() !== "sold out"
-                    )
-                    .slice(0, 1)
-                    .map((category, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
-                        style={{
-                          backgroundColor: "rgba(211, 179, 107, 0.8)",
-                          color: "#151f28",
-                          borderColor: "rgba(211, 179, 107, 0.5)",
-                        }}
-                      >
-                        {category.title}
-                      </span>
-                    ))
-                : post.categories &&
-                  post.categories.title !== "Sub-Project" &&
-                  post.categories.title.toLowerCase() !==
-                    "sold out" && (
-                    <span
-                      className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
+              {soldOutProjects.map((post) => (
+                <div key={post._id} className="group">
+                  <Link
+                    href={
+                      post.slug?.current
+                        ? `/dholera-residential-plots/${post.slug.current}`
+                        : "#"
+                    }
+                    className="block"
+                  >
+                    <div
+                      className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer"
                       style={{
-                        backgroundColor: "rgba(211, 179, 107, 0.8)",
-                        color: "#151f28",
-                        borderColor: "rgba(211, 179, 107, 0.5)",
+                        backgroundColor: "#fbfbfb",
+                        borderColor: "rgba(222, 190, 107, 0.2)",
                       }}
                     >
-                      {post.categories.title}
-                    </span>
-                  )}
+                      {/* Sold Out Overlay */}
+                      <div className="absolute inset-0 bg-black/40 z-10"></div>
+
+                      {/* Image */}
+                      <div className="relative h-64">
+                        {post.mainImage && (
+                          <Image
+                            src={post.mainImage || "/placeholder.svg"}
+                            alt={post.title}
+                            fill
+                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          />
+                        )}
+
+                        {/* Sold Out Badge */}
+                        <div className="absolute top-4 right-4 z-20">
+                          <span
+                            className="px-4 py-2 text-sm font-bold rounded-full shadow-lg backdrop-blur-sm border-2"
+                            style={{
+                              backgroundColor: "rgba(220, 38, 38, 0.9)",
+                              color: "#fbfbfb",
+                              borderColor: "rgba(220, 38, 38, 0.5)",
+                            }}
+                          >
+                            SOLD OUT
+                          </span>
+                        </div>
+
+                        {/* Other Categories */}
+                        <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
+                          {post.categories && Array.isArray(post.categories)
+                            ? post.categories
+                                .filter(
+                                  (category) =>
+                                    category.title !== "Sub-Project" &&
+                                    category.title.toLowerCase() !== "sold out"
+                                )
+                                .slice(0, 1)
+                                .map((category, index) => (
+                                  <span
+                                    key={index}
+                                    className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
+                                    style={{
+                                      backgroundColor:
+                                        "rgba(222, 190, 107, 0.8)",
+                                      color: "#151f28",
+                                      borderColor: "rgba(222, 190, 107, 0.5)",
+                                    }}
+                                  >
+                                    {category.title}
+                                  </span>
+                                ))
+                            : post.categories &&
+                              post.categories.title !== "Sub-Project" &&
+                              post.categories.title.toLowerCase() !==
+                                "sold out" && (
+                                <span
+                                  className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
+                                  style={{
+                                    backgroundColor: "rgba(222, 190, 107, 0.8)",
+                                    color: "#151f28",
+                                    borderColor: "rgba(222, 190, 107, 0.5)",
+                                  }}
+                                >
+                                  {post.categories.title}
+                                </span>
+                              )}
+                        </div>
+                      </div>
+
+                      {/* Content */}
+                      <div className="p-6 relative z-20">
+                        <h3
+                          className="text-xl font-bold mb-3 line-clamp-2"
+                          style={{ color: "#151f28" }}
+                        >
+                          {post.title}
+                        </h3>
+
+                        {post.description && (
+                          <p
+                            className="text-sm leading-relaxed mb-4 line-clamp-3"
+                            style={{ color: "rgba(21, 31, 40, 0.8)" }}
+                          >
+                            {post.description}
+                          </p>
+                        )}
+
+                        <div
+                          className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
+                          style={{
+                            borderColor: "#debe6b",
+                            color: "#debe6b",
+                            backgroundColor: "transparent",
+                          }}
+                        >
+                          <span>View Project</span>
+                          <svg
+                            className="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
-          </div>
-
-          {/* Content */}
-          <div className="p-6 relative z-20">
-            <h3
-              className="text-xl font-bold mb-3 line-clamp-2"
-              style={{ color: "#151f28" }}
-            >
-              {post.title}
-            </h3>
-
-            {post.description && (
-              <p
-                className="text-sm leading-relaxed mb-4 line-clamp-3"
-                style={{ color: "rgba(21, 31, 40, 0.8)" }}
-              >
-                {post.description}
-              </p>
-            )}
-
-            <div
-              className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
-              style={{
-                borderColor: "#d3b36b",
-                color: "#d3b36b",
-                backgroundColor: "transparent",
-              }}
-            >
-              <span>View Project</span>
-              <svg
-                className="w-4 h-4 ml-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  ))}
-</div>
-          </div>
-        </div>
-      )}
-
-      {/* No Projects Available */}
-      {availableProjects.length === 0 && soldOutProjects.length === 0 && (
-        <div className="py-20">
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <div
-              className="w-32 h-32 mx-auto mb-8 rounded-full flex items-center justify-center"
-              style={{ backgroundColor: "rgba(211, 179, 107, 0.1)" }}
-            >
-              <svg
-                className="w-16 h-16"
-                fill="none"
-                stroke="#d3b36b"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                />
-              </svg>
-            </div>
-            <h3
-              className="text-3xl font-bold mb-4"
-              style={{ color: "#151f28" }}
-            >
-              New Projects <span style={{ color: "#d3b36b" }}>Coming Soon</span>
-            </h3>
-            <p className="text-xl" style={{ color: "rgba(21, 31, 40, 0.7)" }}>
-              We're preparing exciting new investment opportunities. Stay tuned
-              for updates.
-            </p>
           </div>
         </div>
       )}
