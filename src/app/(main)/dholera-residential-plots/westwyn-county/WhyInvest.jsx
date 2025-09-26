@@ -109,6 +109,15 @@ export default function InvestmentBenefits() {
       body: "With the city's rapid industrialization, rising residential demand, and proximity to the Dholera International Airport, plots in WestWyn County are positioned for strong appreciation. Early investors can gain maximum returns as the city transforms into a modern, government and industry-supported smart metro city.",
       image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
     },
+    {
+      title: "Exceptional Growth Opportunities",
+      icon: "✅",
+      description:
+        "Early investors benefit from rapid value growth in a developing region.",
+      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estate offers one of the smartest Dholera SIR investment opportunities.",
+      image:
+        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+    },
   ];
 
   // Animation variants

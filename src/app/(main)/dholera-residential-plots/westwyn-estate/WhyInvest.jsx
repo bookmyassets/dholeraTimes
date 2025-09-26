@@ -117,7 +117,15 @@ export default function InvestmentBenefits() {
       image:
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
     },
-    
+    {
+      title: "Exceptional Growth Opportunities",
+      icon: "✅",
+      description:
+        "Early investors benefit from rapid value growth in a developing region.",
+      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estate offers one of the smartest Dholera SIR investment opportunities.",
+      image:
+        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+    },
   ];
 
   // Animation variants
