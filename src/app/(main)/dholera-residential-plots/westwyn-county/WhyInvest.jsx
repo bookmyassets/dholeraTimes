@@ -82,49 +82,32 @@ export default function InvestmentBenefits() {
 
   const benefits = [
     {
-      title: "Strategic Location Advantage",
+      title: "Prime Location Advantage",
       icon: "📍",
-      description:
-        "Situated at the entrance of Dholera SIR, near TP 5, WestWyn County puts you at the center of the region's fastest-growing corridor.",
-      body: "With the Activation Area just 15 minutes away, this location ensures unmatched convenience and long-term growth potential. Strategically positioned on Navda Highway, 0 km from Dholera SIR and close to TP 5, ensuring you are at the heart of the region's fastest development zone.",
-      image:
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=600&fit=crop&crop=center",
+      description: "Positioned at the heart of Dholera's growth corridor, near the most active sectors of Dholera SIR.",
+      body: "WestWyn County offers early access to the city's fastest-developing areas. The close proximity to Ahmedabad–Dholera Expressway and the airport ensures superior accessibility, making it ideal for investors and future residents.",
+      image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=600&fit=crop&crop=center",
     },
     {
-      title: "Strong Connectivity",
-      icon: "🏗️",
-      description:
-        "Well-connected to Dholera International Airport, Expressway, and proposed monorail.",
-      body: "WestWyn County is well-connected to the upcoming Dholera International Airport, Ahmedabad–Dholera Expressway, and the proposed monorail. With just 25 minutes from the Tata Semiconductor Fab, this area is set to become a hub of industrial and residential activity. Connectivity in Dholera has never been better for investors looking at rapid appreciation.",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center",
+      title: "NRI-Friendly & Hassle-Free Investment",
+      icon: "🌐",
+      description: "Designed for NRI investors seeking secure and legally transparent options.",
+      body: "With clear-title plots, registry-ready documentation, and additional support like resale and buy-back assistance*, managing investments from abroad is straightforward and reliable.",
+      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
     },
     {
-      title: "Government-Supported Smart City",
-      icon: "⚖️",
-      description:
-        "Part of Dholera Smart City under DMIC, supported by Central and State Governments.",
-      body: "As part of Dholera Smart City under the Delhi–Mumbai Industrial Corridor (DMIC), the project benefits from both Central and State Government support. The government-backed development ensures planned urban growth and a stable investment environment.",
-      image:
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop&crop=center",
+      title: "Government-Backed Smart City Infrastructure",
+      icon: "🏛️",
+      description: "As part of Dholera Smart City, benefits from central and state government-backed development.",
+      body: "Industrial, residential, and infrastructure projects in the region ensure planned growth and long-term value, making it one of the smartest Dholera SIR investment opportunities.",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop&crop=center",
     },
     {
-      title: "Safe and Transparent Investment",
+      title: "Exceptional Growth Potential",
       icon: "📈",
-      description:
-        "NA/NOC cleared, Plan pass and title-cleared plots for secure ownership.",
-      body: "All plots in WestWyn County are NA/NOC cleared, Plan pass and title-cleared, ensuring complete legal transparency and a safe investment in Dholera SIR.",
-      image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
-    },
-    {
-      title: "Exceptional Growth Opportunities",
-      icon: "✅",
-      description:
-        "Early investors benefit from rapid value growth in a developing region.",
-      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn County offers one of the smartest Dholera SIR investment opportunities.",
-      image:
-        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+      description: "Positioned for strong appreciation with rapid industrialization and rising residential demand.",
+      body: "With the city's rapid industrialization, rising residential demand, and proximity to the Dholera International Airport, plots in WestWyn County are positioned for strong appreciation. Early investors can gain maximum returns as the city transforms into a modern, government and industry-supported smart metro city.",
+      image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
     },
   ];
 

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import wc from "@/assets/residential/westwyn-county.webp";
+import wc from "@/assets/residential/westwyn-estate.webp";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../../components/BrochureDownload";

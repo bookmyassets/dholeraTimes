@@ -87,7 +87,7 @@ export default function Hero() {
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-[#151f28]">
-                        ₹6,250
+                        ₹9,500
                         <span className="text-sm text-gray-600 ml-1">
                           /Sq.Yd
                         </span>

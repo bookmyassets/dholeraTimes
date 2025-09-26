@@ -110,28 +110,28 @@ const WestWynAboutSection = () => {
   const locationFeatures = [
     {
       icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
+      text: "On Fedra-Pipli State Highway (100 ft road)",
+      highlight: "First project on Fedra-Pipli Highway",
     },
     {
       icon: FaClock,
-      text: "5 Minutes from Expressway",
+      text: "15 minutes from Ahmedabad–Dholera Expressway",
       highlight: "Excellent connectivity",
     },
     {
       icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
+      text: "15 minutes from Dholera International Airport",
       highlight: "Prime strategic location",
     },
     {
       icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
+      text: "Surrounded by industrial hubs and commercial projects",
       highlight: "Industrial corridor advantage",
     },
     {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      icon: FaCity,
+      text: "Located near residential zones and commercial projects",
+      highlight: "High potential for appreciation",
     },
   ];
 
@@ -158,16 +158,18 @@ const WestWynAboutSection = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             WestWyn County –{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
+              Secure & Government-Approved Plots in Dholera SIR
             </span>
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Introducing WestWyn County – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
-            investors and inspired by the strong response to our earlier
-            project, this new launch continues our vision of excellence, growth,
-            and reliability at a prime location.
+            WestWyn County offers clear-title, government-approved plots in
+            Dholera SIR, making it a secure choice for both domestic and NRI
+            investors. Situated within the government and industry-backed
+            Dholera Smart City, the project ensures hassle-free investment with
+            flexible payment plans, registry-ready plots, resale support, and
+            buy-back assistance*, providing peace of mind even for investors
+            from abroad.
           </p>
         </div>
 
@@ -207,7 +209,6 @@ const WestWynAboutSection = () => {
                     key={index}
                     className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
-                    
                     <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon className="w-6 h-6 text-[#debe6b]" />
                     </div>

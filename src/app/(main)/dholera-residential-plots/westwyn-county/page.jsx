@@ -3,6 +3,7 @@ import Hero from './Hero'
 import WestWynAboutSection from './About'
 import WestWynEstate from './WhyInvest'
 import ProjectAmenities from './Amenities'
+import FAQS from './FAQs'
 
 export default function page() {
   return (
@@ -12,6 +13,7 @@ export default function page() {
             <WestWynAboutSection/>
             <WestWynEstate/>
             <ProjectAmenities/>
+            <FAQS/>
         </div>
     </>
   )
