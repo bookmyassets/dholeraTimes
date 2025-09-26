@@ -117,15 +117,7 @@ export default function InvestmentBenefits() {
       image:
         "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
     },
-    {
-      title: "Exceptional Growth Opportunities",
-      icon: "✅",
-      description:
-        "Early investors benefit from rapid value growth in a developing region.",
-      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estate offers one of the smartest Dholera SIR investment opportunities.",
-      image:
-        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
-    },
+    
   ];
 
   // Animation variants
@@ -226,7 +218,7 @@ export default function InvestmentBenefits() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Why Invest in <span className="text-[#debe6b]">WestWyn Estate</span>
             ?
           </h2>

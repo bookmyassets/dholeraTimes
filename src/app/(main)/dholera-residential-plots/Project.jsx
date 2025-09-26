@@ -4,13 +4,13 @@ import Image from "next/image";
 import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
 import heroM from "@/assets/residential-mob-view.webp";
-import westwyn from "@/assets/residential/westwyn.webp";
-import orchid from "@/assets/residential/orchid-cover.webp";
+import westwyn from "@/assets/residential/westwyn-county.webp";
+import orchid from "@/assets/residential/orchid.webp";
 import paradise1 from "@/assets/residential/paradise1.webp";
 import paradise2 from "@/assets/residential/paradise2.webp";
 import maple from "@/assets/residential/maple-township.webp";
 import marina from "@/assets/residential/marina-bay.webp";
-import pride from "@/assets/residential/pride-1.webp";
+import pride from "@/assets/residential/pride.webp";
 
 // JSON data array
 const projectsData = [
@@ -83,7 +83,7 @@ const projectsData = [
   {
     _id: "4",
     title: "Paradise",
-    slug: { current: "paradise" },
+    slug: { current: "paradise-1" },
     mainImage: paradise1,
     description:
       "Luxury plotted developments close to Dholera International Airport, designed for long term investors and smart living.",

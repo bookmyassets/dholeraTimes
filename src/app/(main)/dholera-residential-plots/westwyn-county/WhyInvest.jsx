@@ -226,7 +226,7 @@ export default function InvestmentBenefits() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Why Invest in <span className="text-[#debe6b]">WestWyn County</span>
             ?
           </h2>
