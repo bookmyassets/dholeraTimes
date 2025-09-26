@@ -1,67 +1,92 @@
 "use client";
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { 
+  Users, Shield, Car, Baby, Waves, Globe, Trees, 
+  Lightbulb, Activity, MapPin, Home, Heart, Zap , SquareDashed
+} from "lucide-react";  
+import { FaRoad } from "react-icons/fa";
 
 const ProjectAmenities = () => {
   const [showAll, setShowAll] = useState(false);
 
-  const amenities = [
-    {
-      icon: "🚧",
-      title: "Project Boundary",
-      description: "Clearly defined project boundaries with proper demarcation"
-    },
-    {
-      icon: "🏰",
-      title: "Entrance Gate",
-      description: "Grand entrance with secure access control"
-    },
-    {
-      icon: "🛣️",
-      title: "Internal RCC Roads",
-      description: "High-quality reinforced cement concrete roads"
-    },
-    {
-      icon: "🧱",
-      title: "Boundary Wall",
-      description: "Complete perimeter boundary wall for security"
-    },
-    {
-      icon: "🏠",
-      title: "Security Cabin",
-      description: "24/7 security personnel and monitoring station"
-    },
-    {
-      icon: "🏢",
-      title: "Club House",
-      description: "Community club house for residents"
-    },
-    {
-      icon: "🌳",
-      title: "Open Plot with Garden",
-      description: "Landscaped gardens and open green spaces"
-    },
-    {
-      icon: "📍",
-      title: "Demarcation",
-      description: "Clear plot demarcation and numbering"
-    },
-    {
-      icon: "⚡",
-      title: "Power & Water Supply",
-      description: "Reliable electricity and water infrastructure"
-    },
-    {
-      icon: "🪑",
-      title: "Visitor Waiting Room",
-      description: "Comfortable waiting area for visitors"
-    },
-    {
-      icon: "🌲",
-      title: "Tree Plantation",
-      description: "Extensive green cover with native trees"
-    }
-  ];
+ const amenities = [
+  {
+    icon: <Users className="w-8 h-8" />,
+    title: "Club House & Co-Working Space",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Shield className="w-8 h-8" />,
+    title: "Gated Community",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Car className="w-8 h-8" />,
+    title: "EV Charging Station",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Baby className="w-8 h-8" />,
+    title: "Kids Play Area",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Shield className="w-8 h-8" />,
+    title: "24/7 Security & CCTV Surveillance",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Waves className="w-8 h-8" />,
+    title: "Swimming Pool",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Globe className="w-8 h-8" />,
+    title: "App-based Society Management",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Trees className="w-8 h-8" />,
+    title: "Lush Green Surroundings",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Baby className="w-8 h-8" />,
+    title: "Indoor Games & Gymnasium",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Lightbulb className="w-8 h-8" />,
+    title: "Automated Street Light",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Activity className="w-8 h-8" />,
+    title: "Jogging Track",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <FaRoad className="w-8 h-8" />,
+    title: "Internal Roads",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <SquareDashed className="w-8 h-8" />,
+    title: "Project Boundary",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Heart className="w-8 h-8" />,
+    title: "Yoga Deck & Senior Citizen Zone",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+  {
+    icon: <Zap className="w-8 h-8" />,
+    title: "Power & Water Supply",
+    color: "from-[#151f28] to-[#debe6b]",
+  },
+];
 
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
   const initialItems = isMobile ? 6 : 8;
@@ -90,12 +115,12 @@ const ProjectAmenities = () => {
               className="group relative bg-[#1e2a36] rounded-xl p-6 border border-[#2a3a4a] hover:border-[#debe6b] hover:rounded-xl transition-all duration-300 hover:-translate-y-1"
             >
               {/* Icon */}
-              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-3xl text-white mb-4 group-hover:scale-110 transition-transform duration-300">
                 {amenity.icon}
               </div>
 
               {/* Title */}
-              <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#debe6b] transition-colors duration-300">
+              <h3 className="text-lg font-semibold text-[#debe6b] mb-2 group-hover:text-[#debe6b] transition-colors duration-300">
                 {amenity.title}
               </h3>
               

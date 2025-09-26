@@ -9,57 +9,68 @@ const ProjectAmenities = () => {
     {
       icon: "🚧",
       title: "Project Boundary",
-      description: "Clearly defined project boundaries with proper demarcation"
+      description: "Clearly defined project boundaries with proper demarcation",
+      color: "from-gray-500 to-gray-700"
     },
     {
       icon: "🏰",
-      title: "Entrance Gate",
-      description: "Grand entrance with secure access control"
+      title: "Gated Community",
+      description: "Grand entrance with secure access control",
+      color: "from-indigo-500 to-purple-600"
     },
     {
       icon: "🛣️",
-      title: "Internal RCC Roads",
-      description: "High-quality reinforced cement concrete roads"
+      title: "Internal Roads",
+      description: "High-quality reinforced cement concrete roads",
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: "🧱",
-      title: "Boundary Wall",
-      description: "Complete perimeter boundary wall for security"
+      icon: "📹",
+      title: "24/7 Security & CCTV Surveillance",
+      description: "Complete perimeter security with surveillance",
+      color: "from-red-500 to-red-700"
     },
     {
-      icon: "🏠",
-      title: "Security Cabin",
-      description: "24/7 security personnel and monitoring station"
+      icon: "🧒",
+      title: "Kids Play Area",
+      description: "Safe and fun play area for children",
+      color: "from-purple-400 to-pink-400"
     },
     {
-      icon: "🏢",
-      title: "Club House",
-      description: "Community club house for residents"
-    },
-    {
-      icon: "🌳",
-      title: "Open Plot with Garden",
-      description: "Landscaped gardens and open green spaces"
-    },
-    {
-      icon: "📍",
-      title: "Demarcation",
-      description: "Clear plot demarcation and numbering"
+      icon: "📱",
+      title: "App-Based Society Management",
+      description: "Modern app-based community management system",
+      color: "from-teal-500 to-teal-700"
     },
     {
       icon: "⚡",
       title: "Power & Water Supply",
-      description: "Reliable electricity and water infrastructure"
+      description: "Reliable electricity and water infrastructure",
+      color: "from-yellow-600 to-yellow-800"
     },
     {
-      icon: "🪑",
-      title: "Visitor Waiting Room",
-      description: "Comfortable waiting area for visitors"
+      icon: "🧘",
+      title: "Yoga Deck",
+      description: "Peaceful space for yoga and meditation",
+      color: "from-pink-500 to-rose-500"
     },
     {
-      icon: "🌲",
-      title: "Tree Plantation",
-      description: "Extensive green cover with native trees"
+      icon: "🏃",
+      title: "Jogging Track",
+      description: "Dedicated track for walking and jogging",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: "👵",
+      title: "Senior Citizen Zone",
+      description: "Comfortable area for senior residents",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: "🔌",
+      title: "EV Charging Station",
+      description: "Electric vehicle charging facilities",
+      color: "from-green-600 to-green-800"
     }
   ];
 
@@ -89,9 +100,11 @@ const ProjectAmenities = () => {
               key={index}
               className="group relative bg-[#1e2a36] rounded-xl p-6 border border-[#2a3a4a] hover:border-[#debe6b] hover:rounded-xl transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Icon */}
-              <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                {amenity.icon}
+              {/* Icon with gradient background */}
+              <div className={`inline-flex items-center justify-center w-12 h-12 rounded-lg mb-4 bg-gradient-to-r ${amenity.color} group-hover:scale-110 transition-transform duration-300`}>
+                <div className="text-2xl">
+                  {amenity.icon}
+                </div>
               </div>
 
               {/* Title */}
