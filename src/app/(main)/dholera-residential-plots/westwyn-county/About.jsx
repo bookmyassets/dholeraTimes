@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaRoad,
   FaPlane,
+  FaCity,
   FaIndustry,
   FaClock,
 } from "react-icons/fa";
