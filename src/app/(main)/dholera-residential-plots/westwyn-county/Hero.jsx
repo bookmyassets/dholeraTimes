@@ -78,11 +78,11 @@ export default function Hero() {
                     {/* Left Column - Categories & Price */}
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <span className="px-3 py-1.5 text-[#debe6b] bg-[#151f28] rounded-full text-sm font-medium">
+                        <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
                           Residential
                         </span>
 
-                        <span className="px-3 py-1.5 bg-[#debe6b] text-[#151f28] rounded-full text-sm font-medium">
+                        <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
                           🔥 Newly Launched
                         </span>
                       </div>
@@ -107,7 +107,7 @@ export default function Hero() {
                     {/* Right Column - Contact & Buttons */}
                     <div className="flex flex-col justify-between">
                       <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                         <a href="tel:+919958993549" className="flex-1 text-center bg-[#debe6b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                         <a href="tel:+919958993549" className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
                           📞 Site Visit
                         </a>
                         <button onClick={openBrochureForm} className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">

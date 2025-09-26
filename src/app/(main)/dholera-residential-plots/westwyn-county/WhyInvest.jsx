@@ -219,7 +219,7 @@ export default function InvestmentBenefits() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Why Invest in <span className="text-[#debe6b]">WestWyn County</span>
+            Why Invest in <span className="text-[#d3b36b]">WestWyn County</span>
             ?
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300">
@@ -265,7 +265,7 @@ export default function InvestmentBenefits() {
 
                 {/* CTA Section - Moved under image for PC */}
                 <motion.div
-                  className="mt-6 p-4 rounded-xl bg-gradient-to-r from-[#debe6b]/10 to-[#debe6b]/5 border border-[#debe6b]/20"
+                  className="mt-6 p-4 rounded-xl bg-gradient-to-r from-[#d3b36b]/10 to-[#d3b36b]/5 border border-[#d3b36b]/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
@@ -280,7 +280,7 @@ export default function InvestmentBenefits() {
                   <div className="flex flex-wrap gap-2">
                     <motion.a
                     href="tel:+919958993549"
-                      className="bg-[#debe6b] hover:bg-[#d4b15f] text-[#151f28] text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                      className="bg-[#d3b36b] hover:bg-[#d4b15f] text-[#151f28] text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -288,7 +288,7 @@ export default function InvestmentBenefits() {
                     </motion.a>
                     <motion.button
                     onClick={openContactForm}
-                      className="border border-[#debe6b] text-[#debe6b] hover:bg-[#debe6b]/10 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300"
+                      className="border border-[#d3b36b] text-[#d3b36b] hover:bg-[#d3b36b]/10 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -343,7 +343,7 @@ export default function InvestmentBenefits() {
                       key={index}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
                         hoveredBenefit === index
-                          ? "bg-[#debe6b] scale-125"
+                          ? "bg-[#d3b36b] scale-125"
                           : "bg-white/50"
                       }`}
                       onClick={() => updateHoveredBenefit(index)}
@@ -354,7 +354,7 @@ export default function InvestmentBenefits() {
 
                 {/* Navigation Arrows */}
                 <button
-                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#151f28]/70 hover:bg-[#151f28] text-[#debe6b] p-2 rounded-full transition-all duration-300"
+                  className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-[#151f28]/70 hover:bg-[#151f28] text-[#d3b36b] p-2 rounded-full transition-all duration-300"
                   onClick={() =>
                     updateHoveredBenefit(
                       hoveredBenefit > 0
@@ -366,7 +366,7 @@ export default function InvestmentBenefits() {
                   <ChevronLeft className="w-4 h-4" />
                 </button>
                 <button
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#151f28]/70 hover:bg-[#151f28] text-[#debe6b] p-2 rounded-full transition-all duration-300"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-[#151f28]/70 hover:bg-[#151f28] text-[#d3b36b] p-2 rounded-full transition-all duration-300"
                   onClick={() =>
                     updateHoveredBenefit(
                       hoveredBenefit < benefits.length - 1
@@ -393,8 +393,8 @@ export default function InvestmentBenefits() {
                     className={`group border rounded-xl p-4 md:p-5 cursor-pointer transition-all duration-300 
                       ${
                         isHighlighted
-                          ? "border-[#debe6b] bg-[#debe6b]/10 transform scale-[1.02]"
-                          : "border-gray-700 hover:border-[#debe6b]/50"
+                          ? "border-[#d3b36b] bg-[#d3b36b]/10 transform scale-[1.02]"
+                          : "border-gray-700 hover:border-[#d3b36b]/50"
                       }`}
                     variants={cardVariants}
                     initial="hidden"
@@ -411,7 +411,7 @@ export default function InvestmentBenefits() {
                       >
                         {benefit.icon}
                       </motion.div>
-                      <h3 className="text-lg md:text-xl font-semibold text-[#debe6b]">
+                      <h3 className="text-lg md:text-xl font-semibold text-[#d3b36b]">
                         {benefit.title}
                       </h3>
                     </div>
@@ -426,7 +426,7 @@ export default function InvestmentBenefits() {
                     </motion.div>
 
                     <motion.div
-                      className="mt-3 flex items-center text-[#debe6b] text-sm font-medium"
+                      className="mt-3 flex items-center text-[#d3b36b] text-sm font-medium"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: isHighlighted ? 1 : 0 }}
                     >
@@ -447,7 +447,7 @@ export default function InvestmentBenefits() {
             {/* CTA Section for Mobile - Keep it below cards on mobile */}
             {isMobile && (
               <motion.div
-                className="mt-8 p-4 rounded-xl bg-gradient-to-r from-[#debe6b]/10 to-[#debe6b]/5 border border-[#debe6b]/20"
+                className="mt-8 p-4 rounded-xl bg-gradient-to-r from-[#d3b36b]/10 to-[#d3b36b]/5 border border-[#d3b36b]/20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -462,7 +462,7 @@ export default function InvestmentBenefits() {
                 <div className="flex flex-col sm:flex-row gap-2">
                   <motion.a
                   href="tel:+919958993549"
-                    className="bg-[#debe6b] hover:bg-[#d4b15f] text-[#151f28] text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
+                    className="bg-[#d3b36b] hover:bg-[#d4b15f] text-[#151f28] text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -470,7 +470,7 @@ export default function InvestmentBenefits() {
                   </motion.a>
                   <motion.button
                   onClick={openContactForm}
-                    className="border border-[#debe6b] text-[#debe6b] hover:bg-[#debe6b]/10 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
+                    className="border border-[#d3b36b] text-[#d3b36b] hover:bg-[#d3b36b]/10 text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -575,7 +575,7 @@ export default function InvestmentBenefits() {
                 >
                   <motion.button
                     onClick={closeModal}
-                    className="bg-[#debe6b] hover:bg-[#d4b15f] text-[#151f28] font-medium py-2 px-6 rounded-lg transition-colors duration-300"
+                    className="bg-[#d3b36b] hover:bg-[#d4b15f] text-[#151f28] font-medium py-2 px-6 rounded-lg transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

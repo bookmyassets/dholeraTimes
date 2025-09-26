@@ -149,15 +149,15 @@ const WestWynAboutSection = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 py-16">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             WestWyn Estate –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
               Dholera SIR's Newest Landmark
             </span>
           </h2>
@@ -176,7 +176,7 @@ const WestWynAboutSection = () => {
           <div className="space-y-8 h-full">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-14 h-14 bg-gradient-to-br from-[#d3b36b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
                   <svg
                     className="w-7 h-7 text-white"
                     fill="none"
@@ -195,7 +195,7 @@ const WestWynAboutSection = () => {
                   <h3 className="text-2xl text-center font-bold text-gray-900">
                     Strategic Location Advantage
                   </h3>
-                  <p className="text-[#debe6b] text-center font-medium">
+                  <p className="text-[#d3b36b] text-center font-medium">
                     Vadhela-Navda Highway
                   </p>
                 </div>
@@ -205,11 +205,11 @@ const WestWynAboutSection = () => {
                 {locationFeatures.map((feature, index) => (
                   <div
                     key={index}
-                    className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
+                    className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#d3b36b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
                     
                     <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-6 h-6 text-[#debe6b]" />
+                      <feature.icon className="w-6 h-6 text-[#d3b36b]" />
                     </div>
                     <div>
                       <p className="font-bold text-gray-900 text-sm leading-tight mb-2">
@@ -223,14 +223,14 @@ const WestWynAboutSection = () => {
                 ))}
               </div>
 
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
+              <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#d3b36b] pl-4 italic">
                 "Every plot is designed as a secure, future-ready investment
                 that grows with Dholera's transformation."
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="https://wa.me/919958993549" className="flex-1">
-                  <button className="w-full bg-white border-2 border-[#debe6b] text-[#debe6b] px-8 py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
+                  <button className="w-full bg-white border-2 border-[#d3b36b] text-[#d3b36b] px-8 py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
                     <FaWhatsapp className="w-5 h-5" />
                     Book Site Visit
                   </button>
