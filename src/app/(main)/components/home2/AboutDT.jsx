@@ -1,5 +1,5 @@
 import React from "react";
-import dholeraSite from "@/assets/westwyn-county-home-image.webp";
+import dholeraSite from "@/assets/westwyn-estate-home-image.webp";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -30,7 +30,7 @@ export default function AboutDT() {
 
             {/* Main heading */}
             <h2 className="text-[28px] font-bold text-[#151f28] mb-6 leading-tight">
-              Discover Premium Residential Plots with WestWyn County
+              WestWyn Estate – Your Gateway to Smart Investment in Dholera SIR
             </h2>
 
             {/* Description */}
@@ -50,7 +50,7 @@ export default function AboutDT() {
             </p>
 
             {/* CTA Button */}
-            <Link href="/dholera-residential-plots/westwyn-county">
+            <Link href="/dholera-residential-plots/westwyn-estate">
               <button className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md">
                 Explore WestWyn County →
               </button>
