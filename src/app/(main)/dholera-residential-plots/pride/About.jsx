@@ -9,6 +9,10 @@ import {
   FaPlane,
   FaIndustry,
   FaClock,
+  FaCity,
+  FaShieldAlt,
+  FaChartLine,
+  FaHome,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -107,31 +111,36 @@ const WestWynAboutSection = () => {
     }
   };
 
-  const locationFeatures = [
+  const investmentBenefits = [
     {
       icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
+      title: "Strategic Advantage",
+      description:
+        "Located inside Dholera SIR with unmatched connectivity to the expressway, airport, and Dholera Metro City.",
     },
     {
-      icon: FaClock,
-      text: "5 Minutes from Expressway",
-      highlight: "Excellent connectivity",
+      icon: FaChartLine,
+      title: "Future Appreciation",
+      description:
+        "Being part of an early-stage Dholera Smart City project promises significant ROI.",
     },
     {
-      icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
-      highlight: "Prime strategic location",
+      icon: FaShieldAlt,
+      title: "Legally Secure",
+      description:
+        "All plots NA/NOC approved, registry-ready with clear titles",
+    },
+    {
+      icon: FaHome,
+      title: "Planned Infrastructure",
+      description:
+        "Gated project with wide roads, electrification, water facilities, and landscaped green areas.",
     },
     {
       icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
-      highlight: "Industrial corridor advantage",
-    },
-    {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      title: "Investor Plans",
+      description:
+        "Flexible sizes and affordable installment options for all categories of investors",
     },
   ];
 
@@ -156,18 +165,16 @@ const WestWynAboutSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-           Pride –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
-            </span>
+            About Maple Township
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Introducing Pride – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
-            investors and inspired by the strong response to our earlier
-            project, this new launch continues our vision of excellence, growth,
-            and reliability at a prime location.
+            Maple Township is a large-scale plotting project situated in Village
+            Kasindra, Tehsil Dholera, District Ahmedabad, inside the rapidly
+            progressing Dholera Smart City (Dholera SIR). With easy access to
+            the Ahmedabad-Dholera Expressway and close proximity to the upcoming
+            Dholera International Airport, Maple Township offers buyers secure, legally
+            approved residential plots in India’s Greenfield Smart City.
           </p>
         </div>
 
@@ -177,58 +184,54 @@ const WestWynAboutSection = () => {
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-7 h-7 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
+                  <FaMapMarkerAlt className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl text-center font-bold text-gray-900">
-                    Strategic Location Advantage
+                    Prime Location in Dholera SIR
                   </h3>
                   <p className="text-[#debe6b] text-center font-medium">
-                    Kasindra, Dholera
+                    Village Gamph, Dholera, Ahmedabad District
                   </p>
                 </div>
               </div>
 
-              <div className="mb-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                {locationFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
-                  >
-                    
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-6 h-6 text-[#debe6b]" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900 text-sm leading-tight mb-2">
-                        {feature.text}
-                      </p>
-                      <p className="text-xs text-gray-600 leading-relaxed">
-                        {feature.highlight}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
               <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment
-                that grows with Dholera's transformation."
+                "Maple Township combines strategic location with modern
+                infrastructure, offering a secure investment in India's first
+                greenfield smart city."
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              {/* Investment Benefits Section */}
+              <div className="mt-12">
+                <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
+                  Why Invest in Maple Township?
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {investmentBenefits.map((benefit, index) => (
+                    <div
+                      key={index}
+                      className="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl border border-gray-200 hover:border-[#debe6b]/50 hover:shadow-lg transition-all duration-300 group"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                          <benefit.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-gray-900 mb-2">
+                            {benefit.title}
+                          </h4>
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {benefit.description}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 mt-8">
                 <a href="https://wa.me/919958993549" className="flex-1">
                   <button className="w-full bg-white border-2 border-[#debe6b] text-[#debe6b] px-8 py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
                     <FaWhatsapp className="w-5 h-5" />
@@ -247,7 +250,7 @@ const WestWynAboutSection = () => {
             <div className="w-full max-w-md">
               <BrochureDownload
                 onClose={closeBrochureForm}
-                title="Get thePride Brochure"
+                title="Get the Maple Brochure"
                 headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
                 buttonName="Download Brochure"
                 onAfterSubmit={handleAfterSubmit}

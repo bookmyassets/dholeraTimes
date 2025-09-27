@@ -9,6 +9,10 @@ import {
   FaPlane,
   FaIndustry,
   FaClock,
+  FaTree,
+  FaShieldAlt,
+  FaChartLine,
+  FaHome,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -110,28 +114,28 @@ const WestWynAboutSection = () => {
   const locationFeatures = [
     {
       icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
+      text: "Prime Connectivity",
+      highlight: "Inside Dholera SIR with expressway access",
     },
     {
-      icon: FaClock,
-      text: "5 Minutes from Expressway",
-      highlight: "Excellent connectivity",
+      icon: FaChartLine,
+      text: "Future Growth Potential",
+      highlight: "Early entry into Dholera Smart City",
     },
     {
-      icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
-      highlight: "Prime strategic location",
+      icon: FaShieldAlt,
+      text: "Legal & Transparent",
+      highlight: "Fully NA/NOC approved, clear titles",
     },
     {
-      icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
-      highlight: "Industrial corridor advantage",
+      icon: FaHome,
+      text: "Lifestyle Infrastructure",
+      highlight: "Gated entry, wide roads, utilities",
     },
     {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      icon: FaTree,
+      text: "Investor-Oriented Options",
+      highlight: "Flexible plot sizes & convenient plans",
     },
   ];
 
@@ -156,18 +160,16 @@ const WestWynAboutSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-           Paradise –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
-            </span>
+            Paradise
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Introducing Paradise – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
-            investors and inspired by the strong response to our earlier
-            project, this new launch continues our vision of excellence, growth,
-            and reliability at a prime location.
+            Paradise is a thoughtfully planned plotting project in Village Shela, 
+            Taluka Dholera, District Ahmedabad, within the upcoming Dholera Smart City 
+            (Dholera SIR). Close to the Ahmedabad–Dholera Expressway and the future 
+            Dholera International Airport, Paradise offers buyers a perfect balance 
+            of security, planning, and connectivity inside India's First Greenfield 
+            Smart City.
           </p>
         </div>
 
@@ -175,7 +177,7 @@ const WestWynAboutSection = () => {
           {/* Left Content - Enhanced */}
           <div className="space-y-8 h-full">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex justify-center items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
                   <svg
                     className="w-7 h-7 text-white"
@@ -193,10 +195,10 @@ const WestWynAboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl text-center font-bold text-gray-900">
-                    Strategic Location Advantage
+                    Why Invest in Paradise?
                   </h3>
                   <p className="text-[#debe6b] text-center font-medium">
-                   Shela, Dholera
+                    Village Shela, Dholera
                   </p>
                 </div>
               </div>
@@ -207,7 +209,6 @@ const WestWynAboutSection = () => {
                     key={index}
                     className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
-                    
                     <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon className="w-6 h-6 text-[#debe6b]" />
                     </div>
@@ -224,8 +225,8 @@ const WestWynAboutSection = () => {
               </div>
 
               <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment
-                that grows with Dholera's transformation."
+                "An ideal investment opportunity in Dholera Smart City with legal security, 
+                modern infrastructure, and strong growth potential."
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -247,7 +248,7 @@ const WestWynAboutSection = () => {
             <div className="w-full max-w-md">
               <BrochureDownload
                 onClose={closeBrochureForm}
-                title="Get theparadise Brochure"
+                title="Get theOrchid Brochure"
                 headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
                 buttonName="Download Brochure"
                 onAfterSubmit={handleAfterSubmit}

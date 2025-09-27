@@ -9,6 +9,10 @@ import {
   FaPlane,
   FaIndustry,
   FaClock,
+  FaShieldAlt,
+  FaChartLine,
+  FaHome,
+  FaHandHoldingUsd,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -107,31 +111,31 @@ const WestWynAboutSection = () => {
     }
   };
 
-  const locationFeatures = [
-    {
-      icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
-    },
-    {
-      icon: FaClock,
-      text: "5 Minutes from Expressway",
-      highlight: "Excellent connectivity",
-    },
+  const investmentFeatures = [
     {
       icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
-      highlight: "Prime strategic location",
+      text: "Strategic Location",
+      highlight: "Inside Dholera SIR, directly linked to expressway, airport, and Dholera Metro City",
     },
     {
-      icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
-      highlight: "Industrial corridor advantage",
+      icon: FaChartLine,
+      text: "Future Appreciation",
+      highlight: "Early entry into Dholera Smart City assures long-term ROI",
     },
     {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      icon: FaShieldAlt,
+      text: "Legal Security",
+      highlight: "NA/NOC approved plots with clear titles, registry-ready",
+    },
+    {
+      icon: FaHome,
+      text: "Lifestyle Facilities",
+      highlight: "Gated security, wide roads, power, water, landscaped spaces",
+    },
+    {
+      icon: FaHandHoldingUsd,
+      text: "Investor-Friendly",
+      highlight: "Multiple plot sizes and flexible payment terms",
     },
   ];
 
@@ -156,18 +160,11 @@ const WestWynAboutSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-           Paradise 2 –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
-            </span>
+            Paradise 2
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Introducing Paradise 2 – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
-            investors and inspired by the strong response to our earlier
-            project, this new launch continues our vision of excellence, growth,
-            and reliability at a prime location.
+            Paradise 2, located in Village Shela, Tehsil Dholera, District Ahmedabad, is part of the fast-growing Dholera Smart City (Dholera SIR). Designed with futuristic planning and secure legal approvals, it enjoys excellent proximity to the Ahmedabad-Dholera Expressway and the upcoming Dholera International Airport, making it a safe and profitable investment in India's first greenfield smart city.
           </p>
         </div>
 
@@ -175,7 +172,7 @@ const WestWynAboutSection = () => {
           {/* Left Content - Enhanced */}
           <div className="space-y-8 h-full">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex justify-center items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
                   <svg
                     className="w-7 h-7 text-white"
@@ -193,21 +190,20 @@ const WestWynAboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl text-center font-bold text-gray-900">
-                    Strategic Location Advantage
+                    Why Invest in Paradise 2?
                   </h3>
                   <p className="text-[#debe6b] text-center font-medium">
-                    Shela, Dholera
+                    Smart Investment for Future Growth
                   </p>
                 </div>
               </div>
 
               <div className="mb-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                {locationFeatures.map((feature, index) => (
+                {investmentFeatures.map((feature, index) => (
                   <div
                     key={index}
                     className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
-                    
                     <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon className="w-6 h-6 text-[#debe6b]" />
                     </div>
@@ -224,8 +220,7 @@ const WestWynAboutSection = () => {
               </div>
 
               <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment
-                that grows with Dholera's transformation."
+                "A secure, future-ready investment that grows with Dholera's transformation as India's first greenfield smart city."
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -247,7 +242,7 @@ const WestWynAboutSection = () => {
             <div className="w-full max-w-md">
               <BrochureDownload
                 onClose={closeBrochureForm}
-                title="Get theParadise 2 Brochure"
+                title="Get theOrchid Brochure"
                 headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
                 buttonName="Download Brochure"
                 onAfterSubmit={handleAfterSubmit}

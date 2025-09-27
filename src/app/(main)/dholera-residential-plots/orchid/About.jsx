@@ -9,6 +9,12 @@ import {
   FaPlane,
   FaIndustry,
   FaClock,
+  FaCity,
+  FaRocket,
+  FaShieldAlt,
+  FaChartLine,
+  FaHome,
+  FaTree,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -107,32 +113,43 @@ const WestWynAboutSection = () => {
     }
   };
 
-  const locationFeatures = [
+  const investmentFeatures = [
     {
-      icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
-    },
-    {
-      icon: FaClock,
-      text: "5 Minutes from Expressway",
-      highlight: "Excellent connectivity",
+      icon: FaCity,
+      title: "Smart City Advantage",
+      description: "An exclusive entry into India's first Greenfield Smart City, backed by government-driven infrastructure.",
+      highlight: "Government-backed infrastructure"
     },
     {
       icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
-      highlight: "Prime strategic location",
+      title: "Prime Location",
+      description: "Located in Village Gamph, Tehsil Dholera, District Ahmedabad with strong links to the Ahmedabad–Dholera Expressway, Dholera International Airport, and major DMIC projects.",
+      highlight: "Excellent connectivity"
     },
     {
-      icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
-      highlight: "Industrial corridor advantage",
+      icon: FaRocket,
+      title: "Investor-Friendly Plans",
+      description: "Plot sizes begin from 100 sq. yards (900 sq. ft.) at approx. ₹6,700 per sq. yard (₹744 per sq. ft.), with 25% down payment and flexible installment plans.",
+      highlight: "Flexible payment options"
     },
     {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      icon: FaShieldAlt,
+      title: "Safe & Legal Investment",
+      description: "Every plot is NA/NOC approved, comes with clear titles, and is registry-ready with plan pass certification.",
+      highlight: "Registry-ready plots"
     },
+    {
+      icon: FaChartLine,
+      title: "Growth Potential",
+      description: "Being part of an early-stage smart city ensures long-term appreciation.",
+      highlight: "Long-term appreciation"
+    },
+    {
+      icon: FaHome,
+      title: "Lifestyle Amenities & Digital Ease",
+      description: "Gated campus, internal roads, street lights, water, power, CCTV, landscaped gardens, and an integrated digital booking system with instant documents.",
+      highlight: "Modern amenities"
+    }
   ];
 
   return (
@@ -156,18 +173,15 @@ const WestWynAboutSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-           Orchid –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#debe6b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
-            </span>
+            Orchid
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Introducing Orchid – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
-            investors and inspired by the strong response to our earlier
-            project, this new launch continues our vision of excellence, growth,
-            and reliability at a prime location.
+            Orchid is a premium residential plotting community situated in Gamph
+            village, within the heart of the rapidly emerging Dholera Smart City
+            (Dholera SIR). Strategically positioned along the DMIC corridor,
+            Orchid brings investors the perfect mix of legally secure plots,
+            modern township facilities, and digital ease of ownership.
           </p>
         </div>
 
@@ -175,7 +189,7 @@ const WestWynAboutSection = () => {
           {/* Left Content - Enhanced */}
           <div className="space-y-8 h-full">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex justify-center items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
                   <svg
                     className="w-7 h-7 text-white"
@@ -193,29 +207,31 @@ const WestWynAboutSection = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl text-center font-bold text-gray-900">
-                    Strategic Location Advantage
+                    Why Invest in Orchid?
                   </h3>
                   <p className="text-[#debe6b] text-center font-medium">
-                   Gamph, Dholera
+                    Premium Investment Opportunity in Dholera Smart City
                   </p>
                 </div>
               </div>
 
-              <div className="mb-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                {locationFeatures.map((feature, index) => (
+              <div className="mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {investmentFeatures.map((feature, index) => (
                   <div
                     key={index}
                     className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
-                    
                     <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
                       <feature.icon className="w-6 h-6 text-[#debe6b]" />
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 text-sm leading-tight mb-2">
-                        {feature.text}
+                      <h4 className="font-bold text-gray-900 text-sm leading-tight mb-2">
+                        {feature.title}
+                      </h4>
+                      <p className="text-xs text-gray-600 leading-relaxed mb-2">
+                        {feature.description}
                       </p>
-                      <p className="text-xs text-gray-600 leading-relaxed">
+                      <p className="text-xs text-[#debe6b] font-semibold">
                         {feature.highlight}
                       </p>
                     </div>
@@ -224,8 +240,7 @@ const WestWynAboutSection = () => {
               </div>
 
               <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment
-                that grows with Dholera's transformation."
+                "Every plot is designed as a secure, future-ready investment that grows with Dholera's transformation."
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -240,22 +255,6 @@ const WestWynAboutSection = () => {
           </div>
         </div>
       </div>
-
-      {/*       <AnimatePresence>
-        {isBrochureFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000] p-4">
-            <div className="w-full max-w-md">
-              <BrochureDownload
-                onClose={closeBrochureForm}
-                title="Get theOrchid Brochure"
-                headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
-                buttonName="Download Brochure"
-                onAfterSubmit={handleAfterSubmit}
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence> */}
     </div>
   );
 };
