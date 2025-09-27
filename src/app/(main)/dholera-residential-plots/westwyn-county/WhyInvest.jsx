@@ -118,6 +118,15 @@ export default function InvestmentBenefits() {
       image:
         "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
     },
+     {
+      title: "Modern Living & Trusted Legacy",
+      icon: "🤝",
+      description:
+        "Experience modern living ",
+      body: "A gated community with green landscapes, wide roads, and amenities designed for comfort, security, and sustainability, built by a developer trusted by investors, with six successful projects already sold out.",
+      image:
+        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+    },
   ];
 
   // Animation variants

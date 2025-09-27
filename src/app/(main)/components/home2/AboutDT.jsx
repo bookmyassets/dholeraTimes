@@ -22,7 +22,7 @@ export default function AboutDT() {
           {/* Right side - Content */}
           <div className="md:w-1/2 w-full">
             {/* Small label */}
-           {/*  <div className="inline-block mb-4">
+            {/*  <div className="inline-block mb-4">
               <span className="bg-gray-100 text-[#151f28] text-sm font-medium px-3 py-1 rounded-full">
                 About Dholera Times
               </span>
@@ -35,22 +35,25 @@ export default function AboutDT() {
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-8">
-              Your Trusted Gateway to Dholera Smart City – India's first
-              Greenfield Smart City under DMIC. With upcoming mega projects like
-              the Ahmedabad–Dholera Expressway, the Dholera International Airport,
-              and the Tata Semiconductor Plant, this region is set to become one
-              of India's top investment destinations. Our project, WestWyn County,
-              brings you residential plots in Dholera at the prime Fedra–Pipli
-              Highway location. Backed by government approvals and equipped with
-              future-ready infrastructure, it offers the perfect mix of high ROI
-              and a modern lifestyle.
+              WestWyn Estate is the newest landmark project in Dholera SIR,
+              designed for long-term value and growth. Strategically located on
+              Vadhela–Navda Highway, it offers unbeatable connectivity: just 0
+              km from the Dholera SIR boundary, 5 minutes from the
+              Ahmedabad–Dholera Expressway, 15 minutes from the Activation Area,
+              25 minutes from the Tata Semiconductor Plant, and 30 minutes from
+              the Dholera International Airport. <br />
+              All plots are NA/NOC approved, title-cleared, and registry-ready,
+              ensuring a secure investment. With flexible plot sizes, even
+              buyers looking to buy under 10 lakh plot in Dholera can own a
+              future-ready property. This is an ideal opportunity for investors
+              seeking growth in India’s first Greenfield Smart City.
             </p>
 
             {/* CTA Button */}
             <Link href="/dholera-residential-plots/westwyn-county">
-            <button className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md">
-             Explore WestWyn County →
-            </button>
+              <button className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md">
+                Explore WestWyn County →
+              </button>
             </Link>
           </div>
         </div>

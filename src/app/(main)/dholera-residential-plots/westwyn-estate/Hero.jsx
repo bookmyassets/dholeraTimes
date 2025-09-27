@@ -54,7 +54,7 @@ export default function Hero() {
                 Projects
               </Link>
               <span>/</span>
-              <span className="text-white">WestWyn County</span>
+              <span className="text-white">WestWyn Estate</span>
             </nav>
 
             {/* Image Container */}
@@ -139,7 +139,7 @@ export default function Hero() {
                       </span>
                     </div>
                     <div className="text-3xl font-bold text-[#151f28]">
-                      ₹9,500
+                      ₹6,250
                       <span className="text-sm text-gray-600 ml-1">
                         /Sq.Yd
                       </span>
@@ -149,7 +149,7 @@ export default function Hero() {
                   {/* Title & Description */}
                   <div>
                     <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
-                      WestWyn County
+                      WestWyn Estate
                     </h1>
                   </div>
 

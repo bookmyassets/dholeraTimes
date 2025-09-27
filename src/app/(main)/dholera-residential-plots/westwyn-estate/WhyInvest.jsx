@@ -126,6 +126,15 @@ export default function InvestmentBenefits() {
       image:
         "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
     },
+    {
+      title: "Lifestyle & Trust Combined",
+      icon: "🤝",
+      description:
+        "A gated community with green landscapes, wide roads",
+      body: "Experience modern living with wide roads, landscaped greenery, and top-notch amenities, delivered by a developer trusted by investors with six projects successfully sold out.",
+      image:
+        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+    },
   ];
 
   // Animation variants
