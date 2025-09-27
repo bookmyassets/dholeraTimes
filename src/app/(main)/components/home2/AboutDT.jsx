@@ -52,7 +52,7 @@ export default function AboutDT() {
             {/* CTA Button */}
             <Link href="/dholera-residential-plots/westwyn-estate">
               <button className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md">
-                Explore WestWyn County →
+                Explore WestWyn Estate →
               </button>
             </Link>
           </div>
