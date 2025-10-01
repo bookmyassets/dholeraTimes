@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import wc from "@/assets/residential/estate-hero.webp";
+import wcM from "@/assets/residential/westwyn-estate-mobile.webp";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../../components/BrochureDownload";
@@ -64,7 +65,14 @@ export default function Hero() {
                 src={wc}
                 alt="WestWyn County"
                 fill
-                className="absolute object-cover"
+                className="absolute object-cover max-sm:hidden"
+                priority
+              />
+              <Image
+                src={wcM}
+                alt="WestWyn County"
+                fill
+                className="absolute object-cover md:hidden"
                 priority
               />
 
@@ -97,7 +105,7 @@ export default function Hero() {
                     {/* Middle Column - Title & Description */}
                     <div>
                       <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                        WestWyn County
+                        WestWyn Estate
                       </h1>
                       {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
                         {post.description}
@@ -115,7 +123,7 @@ export default function Hero() {
                         </button>
                       </div>
                       <div className=" text-[#151f28] text-xl font-semibold">
-                       <p>Registry Ready Plot under ₹10 Lakhs</p>
+                       <p>Immediate Possesion</p>
                       </div>
                     </div>
                   </div>

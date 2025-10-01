@@ -5,6 +5,7 @@ import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
 import heroM from "@/assets/residential-mob-view.webp";
 import westwyn from "@/assets/residential/westwyn-county.webp";
+import westwyn_estate from "@/assets/westwyn-estate-home-image.webp";
 import orchid from "@/assets/residential/orchid.webp";
 import paradise1 from "@/assets/residential/paradise1.webp";
 import paradise2 from "@/assets/residential/paradise2.webp";
@@ -18,7 +19,7 @@ const projectsData = [
     _id: "1",
     title: "WestWyn Estate",
     slug: { current: "westwyn-estate" },
-    mainImage: westwyn,
+    mainImage: westwyn_estate,
     description:
       "Invest in plots in Dholera at WestWyn Estate, 0 km from Dholera SIR, and close to proximity to the activation area at an unbeatable price.",
     body: [
