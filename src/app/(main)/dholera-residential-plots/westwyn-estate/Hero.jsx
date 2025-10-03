@@ -36,8 +36,6 @@ export default function Hero() {
     { icon: "📍", title: "Location", value: "Dholera SIR" },
   ];
 
-  
-
   return (
     <>
       <div className="bg-gray-100">
