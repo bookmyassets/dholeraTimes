@@ -75,7 +75,7 @@ export default function Hero() {
               {/* Bottom Overlay Box */}
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="bg-white/95 backdrop-blur-md rounded-t-2xl shadow-2xl border border-white/30 max-w-6xl mx-auto w-full">
-                  <div className="grid md:grid-cols-3 gap-6 p-6">
+                   <div className="grid md:grid-cols-3 gap-6 p-6">
                     {/* Left Column - Categories & Price */}
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-3">
@@ -83,12 +83,12 @@ export default function Hero() {
                           Residential
                         </span>
 
-                        <span className="px-3 py-1.5 bg-red-500 text-white rounded-full text-sm font-medium">
-                          Sold Out
+                        <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
+                          🔥 Newly Launched
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-[#151f28]">
-                        ₹6,700
+                        ₹6,250
                         <span className="text-sm text-gray-600 ml-1">
                           /Sq.Yd
                         </span>
@@ -97,12 +97,16 @@ export default function Hero() {
 
                     {/* Middle Column - Title & Description */}
                     <div>
-                      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                       Marina Bay 2
+                      <a href="/dholera-residential-plots/westwyn-estate">
+
+                      <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
+                       <span className="text-base font-bold text-gray-900">Explore Our Latest Project 
+                        </span> <br /> WestWyn Estate
                       </h1>
+                      </a>
                       {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
                         {post.description}
-                      </p> */}
+                        </p> */}
                     </div>
 
                     {/* Right Column - Contact & Buttons */}

@@ -83,12 +83,12 @@ export default function Hero() {
                           Residential
                         </span>
 
-                        <span className="px-3 py-1.5 bg-red-500 text-white rounded-full text-sm font-medium">
-                          Sold Out
+                        <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
+                          🔥 Newly Launched
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-[#151f28]">
-                        ₹6,700
+                        ₹6,250
                         <span className="text-sm text-gray-600 ml-1">
                           /Sq.Yd
                         </span>
@@ -97,12 +97,16 @@ export default function Hero() {
 
                     {/* Middle Column - Title & Description */}
                     <div>
-                      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                       Maple 2
+                      <a href="/dholera-residential-plots/westwyn-estate">
+
+                      <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
+                       <span className="text-base font-bold text-gray-900">Explore Our Latest Project 
+                        </span> <br /> WestWyn Estate
                       </h1>
+                      </a>
                       {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
                         {post.description}
-                      </p> */}
+                        </p> */}
                     </div>
 
                     {/* Right Column - Contact & Buttons */}
