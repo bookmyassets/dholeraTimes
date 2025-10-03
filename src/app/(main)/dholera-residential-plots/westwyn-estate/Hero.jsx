@@ -30,7 +30,7 @@ export default function Hero() {
     };
 
   const projectFeatures = [
-    { icon: "📐", title: "Plot Size", value: "177-300 Sq.Yards" },
+    { icon: "📐", title: "Plot Size", value: "151 and 198 Sq.Yards" },
     { icon: "💰", title: "Starting Price", value: "₹6,250/Sq.Yd" },
     { icon: "🏗️", title: "Project Type", value: "Residential Plots" },
     { icon: "📍", title: "Location", value: "Dholera SIR" },
