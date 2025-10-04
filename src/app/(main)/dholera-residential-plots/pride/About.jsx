@@ -165,15 +165,15 @@ const WestWynAboutSection = () => {
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            About Maple Township
+            About Pride
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Maple Township is a large-scale plotting project situated in Village
+            Pride is a large-scale plotting project situated in Village
             Kasindra, Tehsil Dholera, District Ahmedabad, inside the rapidly
             progressing Dholera Smart City (Dholera SIR). With easy access to
             the Ahmedabad-Dholera Expressway and close proximity to the upcoming
-            Dholera International Airport, Maple Township offers buyers secure, legally
+            Dholera International Airport, Pride offers buyers secure, legally
             approved residential plots in India’s Greenfield Smart City.
           </p>
         </div>
