@@ -294,7 +294,7 @@ export default function CommonForm({ title }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#b69b5e]"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -313,7 +313,7 @@ export default function CommonForm({ title }) {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#b69b5e]"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -330,7 +330,7 @@ export default function CommonForm({ title }) {
                     className={`w-full font-bold py-3 px-6 rounded-lg transition duration-300 ${
                       isLoading || isDisabled || !recaptchaLoaded
                         ? "bg-gray-600 cursor-not-allowed text-gray-400"
-                        : "bg-yellow-600 hover:bg-yellow-700 text-white shadow-md"
+                        : "bg-[#d3b36b] hover:bg-[#b69b5e] text-white shadow-md"
                     }`}
                   >
                     {isLoading ? "Submitting..." : "Submit"}

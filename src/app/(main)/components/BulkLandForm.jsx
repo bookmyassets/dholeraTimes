@@ -294,7 +294,7 @@ export default function BulkLand({ title , buttonName }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-[#b69b5e]"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -313,7 +313,7 @@ export default function BulkLand({ title , buttonName }) {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg  border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
+                      className="w-full px-4 py-3 rounded-lg  border border-gray-700 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-[#b69b5e]"
                       placeholder="Enter your phone number"
                     />
                   </div>
