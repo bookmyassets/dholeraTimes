@@ -525,7 +525,7 @@ export default function RootLayout({ children }) {
                           {[
                             {
                               title: "Latest News",
-                              path: "/dholera-updates/latest-news",
+                              path: "/dholera-updates/latest-updates",
                             },
                             { title: "Blogs", path: "/dholera-updates/blogs" },
                            
@@ -813,7 +813,7 @@ export default function RootLayout({ children }) {
                 {[
                   {
                     title: "Latest News",
-                    path: "/dholera-updates/latest-news",
+                    path: "/dholera-updates/latest-updates",
                   },
                   { title: "Blogs", path: "/dholera-updates/blogs" },
                   

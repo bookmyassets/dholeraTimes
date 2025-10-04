@@ -160,8 +160,8 @@ const onRecaptchaSuccess = async (token) => {
             phone: formData.phone,
             source: source,
           },
-          source: "BookMyAssets",
-          tags: ["Dholera Investment", "Website Lead", "BookMyAssets"],
+          source: "Dholera Times",
+          tags: ["Dholera Investment", "Website Lead", "Dholera Times"],
           recaptchaToken: token,
         }),
       }
@@ -190,7 +190,7 @@ const onRecaptchaSuccess = async (token) => {
         const currentPath = pathname || window.location.pathname;
         
         // Push to thank-you route with return URL
-        router.push(`/more-info/thankyou`);
+        router.push(`/thankyou`);
       }, 2000);
     } else {
       throw new Error("Error submitting form");
@@ -349,7 +349,7 @@ const onRecaptchaSuccess = async (token) => {
             <button
               type="button"
               onClick={handleClose}
-              className="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-yellow-500 rounded-full p-1 transition-all duration-200 hover:bg-gray-700 z-10"
+              className="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#FDB913] rounded-full p-1 transition-all duration-200 hover:bg-gray-700 z-10"
               aria-label="Close form"
             >
               <svg
@@ -434,7 +434,7 @@ const onRecaptchaSuccess = async (token) => {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
+                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] border border-gray-700 hover:border-yellow-400 transition-colors"
                   />
                 </motion.div>
 
@@ -454,7 +454,7 @@ const onRecaptchaSuccess = async (token) => {
                     minLength="10"
                     maxLength="15"
                     required
-                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
+                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FDB913] border border-gray-700 hover:border-yellow-400 transition-colors"
                   />
                 </motion.div>
 

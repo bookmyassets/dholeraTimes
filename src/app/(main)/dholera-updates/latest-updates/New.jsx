@@ -127,7 +127,7 @@ export default async function New() {
                         className="bg-[#151f28] border border-[#d3b36b]/20 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#d3b36b]/20 hover:scale-[1.03] hover:border-[#d3b36b]/40"
                       >
                         <Link
-                          href={`/dholera-updates/latest-news/${post.slug.current}`}
+                          href={`/dholera-updates/latest-updates/${post.slug.current}`}
                         >
                           <div className="h-32 bg-gray-200 flex items-center justify-center overflow-hidden">
                             {post.mainImage ? (

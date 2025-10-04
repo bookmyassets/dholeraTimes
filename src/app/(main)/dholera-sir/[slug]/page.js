@@ -452,7 +452,7 @@ export default async function BlogDetail({ params }) {
                           ></path>
                         </svg>
                         <Link
-                          href="/DholeraSIR"
+                          href="/dholera-sir"
                           className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 md:ml-2"
                         >
                           DholeraSIR
@@ -627,7 +627,7 @@ export default async function BlogDetail({ params }) {
           <h1 className="text-2xl font-bold mb-2">Error loading blog post</h1>
           <p className="text-gray-600">Please try again later</p>
           <Link
-            href="/Dholera-Updates/blogs"
+            href="/dholera-sir"
             className="mt-4 inline-block text-[#d3b66b] hover:text-[#b69b5e]"
           >
             ← Back to News

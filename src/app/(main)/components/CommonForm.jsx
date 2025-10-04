@@ -233,9 +233,7 @@ export default function CommonForm({ title }) {
             <h2 className="text-white text-3xl sm:text-4xl font-bold text-center">
               {title}
             </h2>
-            <p className="text-gray-300 mt-4 text-center">
-              Maximize your ROI with professional market insights
-            </p>
+            
             {showPopup ? (
               <div className="text-center py-8">
                 <motion.div
@@ -296,7 +294,7 @@ export default function CommonForm({ title }) {
                       value={formData.fullName}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
                       placeholder="Enter your name"
                     />
                   </div>
@@ -315,7 +313,7 @@ export default function CommonForm({ title }) {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                      className="w-full px-4 py-3 rounded-lg bg-[#151f28] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#FDB913]"
                       placeholder="Enter your phone number"
                     />
                   </div>
