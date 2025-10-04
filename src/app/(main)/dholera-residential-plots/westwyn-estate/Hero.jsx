@@ -197,6 +197,7 @@ export default function Hero() {
               title="Get the Dholera Brochure"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
+             link="https://cdn.sanity.io/files/c3e1h345/projects/3c478ed13facaf28fffdf55e47a6eb0c0ba1b075.pdf"
             />
           </div>
         )}

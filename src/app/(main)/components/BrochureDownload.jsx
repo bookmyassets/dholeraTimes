@@ -13,6 +13,7 @@ export default function BrochureDownload({
   thankYouTitle = "Thank You!",
   thankYouMessage = "Your request has been submitted successfully.",
   source = "Dholera Times",
+  link,
   ids
 }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,7 +30,7 @@ export default function BrochureDownload({
   const pathname = usePathname();
 
   // PDF download URL
-  const pdfUrl = "https://cdn.sanity.io/files/c3e1h345/projects/9f32c6d0d835cfc039e42a741e63894f87fd48ce.pdf";
+  const pdfUrl = link;
 
   // Function to download PDF
   const downloadPDF = () => {
@@ -159,8 +160,8 @@ const onRecaptchaSuccess = async (token) => {
             phone: formData.phone,
             source: source,
           },
-          source: "Dholera Times",
-          tags: ["Dholera Investment", "Website Lead", "Dholera Times"],
+          source: "BookMyAssets",
+          tags: ["Dholera Investment", "Website Lead", "BookMyAssets"],
           recaptchaToken: token,
         }),
       }
@@ -367,24 +368,6 @@ const onRecaptchaSuccess = async (token) => {
               </svg>
             </button>
 
-            {/* Logo */}
-{/*             <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="bg-black p-2 rounded-full shadow-lg"
-              >
-                <Image
-                  src={logo}
-                  alt="Logo"
-                  width={60}
-                  height={60}
-                  className="rounded-full"
-                />
-              </motion.div>
-            </div> */}
-
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -431,47 +414,73 @@ const onRecaptchaSuccess = async (token) => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                          {/* Full Name Input */}
-                          <div className="relative">
-                            <FaUser className="absolute left-4 top-4 text-gray-500" />
-                            <input
-                              name="fullName"
-                              placeholder="Full Name *"
-                              value={formData.fullName}
-                              onChange={handleChange}
-                              required
-                              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-                            />
-                          </div>
-              
-                          {/* Phone Number Input */}
-                          <div className="relative">
-                            <FaPhoneAlt className="absolute left-4 top-4 text-gray-500" />
-                            <input
-                              name="phone"
-                              type="tel"
-                              placeholder="Phone Number *"
-                              value={formData.phone}
-                              onChange={handleChange}
-                              required
-                              className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-[#151f28] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-                            />
-                          </div>
-              
-                          {/* Submit Button */}
-                          <button
-                            type="submit"
-                            disabled={isLoading }
-                            className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
-                              isLoading
-                                ? "bg-gray-400 cursor-not-allowed"
-                                : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
-                            }`}
-                          >
-                            {isLoading ? "Submitting..." : buttonName}
-                          </button>
-                        </form>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                {errorMessage && (
+                  <div className="p-3 bg-red-500 bg-opacity-20 border border-red-400 text-red-100 rounded-lg text-sm">
+                    {errorMessage}
+                  </div>
+                )}
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="relative"
+                >
+                  <FaUser className="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400" />
+                  <input
+                    name="fullName"
+                    placeholder="Full Name"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
+                  />
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                  className="relative"
+                >
+                  <FaPhoneAlt className="absolute left-4 top-1/2 transform -translate-y-1/2 text-yellow-400" />
+                  <input
+                    name="phone"
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    minLength="10"
+                    maxLength="15"
+                    required
+                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 border border-gray-700 hover:border-yellow-400 transition-colors"
+                  />
+                </motion.div>
+
+                {/* reCAPTCHA container */}
+                <div className="flex justify-center">
+                  <div ref={recaptchaRef}></div>
+                </div>
+
+                <motion.button
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6 }}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  type="submit"
+                  disabled={isLoading || !recaptchaLoaded}
+                  id="brochure"
+                  className="w-full py-3 px-6 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all shadow-lg hover:shadow-yellow-500/20 font-semibold disabled:opacity-70 disabled:cursor-not-allowed"
+                >
+                  {isLoading
+                    ? "Verifying..."
+                    : recaptchaLoaded
+                      ? buttonName
+                      : "Loading..."}
+                </motion.button>
+              </form>
             )}
           </motion.div>
         </div>
