@@ -15,16 +15,8 @@ const nextConfig = {
         destination: '/dholera-sir/:slug*', 
         permanent: true
       },
-      {
-        source: '/Dholera-Updates/blogs/:slug*',
-        destination: '/dholera-updates/blogs/:slug*', 
-        permanent: true
-      },
-      {
-        source: '/Dholera-Updates/latest-news/:slug*',
-        destination: '/dholera-updates/latest-news/:slug*', 
-        permanent: true
-      },
+
+
       {
         source: "/DholeraSIR/mega-industries",
         destination: "/dholera-sir/mega-industries",
@@ -40,7 +32,7 @@ const nextConfig = {
         destination: "/sitemap",
         permanent: true,
       },
-      /* {
+      {
         source:
           "/Dholera-Updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
         destination:
@@ -53,7 +45,7 @@ const nextConfig = {
         destination:
           "/dholera-updates/latest-news/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
         permanent: true,
-      }, */
+      },
       {
         source: "/posts/paradise-2",
         destination: "/dholera-residential-plots/paradise-2",
@@ -74,13 +66,13 @@ const nextConfig = {
         destination: "/dholera-residential-plots/maple",
         permanent: true,
       },
-      /* {
+      {
         source:
           "/Dholera-Updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         destination:
           "/dholera-updates/latest-news/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         permanent: true,
-      }, */
+      },
       {
         source: "/posts/marina-bay",
         destination: "/dholera-residential-plots/marina-bay",
@@ -197,7 +189,7 @@ const nextConfig = {
         destination: "/dholera-sir/international-airport-dholera",
         permanent: true,
       },
-      /* {
+      {
         source:
           "/Dholera-SIR/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
         destination:
@@ -224,7 +216,7 @@ const nextConfig = {
         destination:
           "/dholera-updates/latest-news/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         permanent: true,
-      }, */
+      },
       {
         source:
           "/projects/abcd-building",
