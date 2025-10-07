@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function PrivacyPopcy() {
   return (
     <>
-      <meta name="robots" content="noindex, follow"/>
+      <meta name="robots" content="index, dofollow"/>
       <div className="relative w-full h-[40vh]">
         <Image src={hero} alt="hero" layout="fill" objectFit="cover" priority />
       </div>
