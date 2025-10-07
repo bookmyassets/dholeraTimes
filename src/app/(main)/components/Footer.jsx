@@ -226,16 +226,70 @@ export default function Footer() {
                 Projects
               </h2>
               <ul className="space-y-2">
-                {isProjects.map((project) => (
-                  <li key={project._id}>
-                    <Link
-                      href={`/dholera-residential-plots/${project.slug.current}`}
-                      className="hover:text-white transition"
-                    >
-                      {project.title}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <a
+                    href="/dholera-residential-plots/westwyn-estate"
+                    className="hover:text-white transition"
+                  >
+                    WestWyn Estate
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/westwyn-county"
+                    className="hover:text-white transition"
+                  >
+                    WestWyn County
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/paradise-1"
+                    className="hover:text-white transition"
+                  >
+                    Paradise 
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/paradise-2"
+                    className="hover:text-white transition"
+                  >
+                   Paradise 2
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/orchid"
+                    className="hover:text-white transition"
+                  >
+                   Orchid
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/maple"
+                    className="hover:text-white transition"
+                  >
+                   Maple
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/marina-bay"
+                    className="hover:text-white transition"
+                  >
+                   Marina Bay
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="/dholera-residential-plots/Pride"
+                    className="hover:text-white transition"
+                  >
+                   Pride
+                  </a>
+                </li>
               </ul>
             </div>
             
