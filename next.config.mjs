@@ -11,6 +11,21 @@ const nextConfig = {
         permanent: true
       },
       {
+        source: '/DholeraSIR/:slug*',
+        destination: '/dholera-sir/:slug*', 
+        permanent: true
+      },
+      {
+        source: '/Dholera-Updates/blogs/:slug*',
+        destination: '/dholera-updates/blogs/:slug*', 
+        permanent: true
+      },
+      {
+        source: '/Dholera-Updates/latest-news/:slug*',
+        destination: '/dholera-updates/latest-news/:slug*', 
+        permanent: true
+      },
+      {
         source: "/DholeraSIR/mega-industries",
         destination: "/dholera-sir/mega-industries",
         permanent: true,
@@ -41,7 +56,7 @@ const nextConfig = {
       },
       {
         source: "/posts/paradise-2",
-        destination: "/projects/paradise-2",
+        destination: "/dholera-residential-plots/paradise-2",
         permanent: true,
       },
       {
@@ -56,7 +71,7 @@ const nextConfig = {
       },
       {
         source: "/posts/maple",
-        destination: "/projects/maple",
+        destination: "/dholera-residential-plots/maple",
         permanent: true,
       },
       {
@@ -68,22 +83,22 @@ const nextConfig = {
       },
       {
         source: "/posts/marina-bay",
-        destination: "/projects/marina-bay",
+        destination: "/dholera-residential-plots/marina-bay",
         permanent: true,
       },
       {
         source: "/posts/orchid-township",
-        destination: "/projects/orchid-township",
+        destination: "/dholera-residential-plots/orchid-township",
         permanent: true,
       },
       {
         source: "/pages/projects",
-        destination: "/projects",
+        destination: "/dholera-residential-plots",
         permanent: true,
       },
       {
         source: "/posts/paradise-1",
-        destination: "/projects/paradise-1",
+        destination: "/dholera-residential-plots/paradise-1",
         permanent: true,
       },
       {
@@ -93,12 +108,12 @@ const nextConfig = {
       },
       {
         source: "/Blogs",
-        destination: "/Dholera-Updates/blogs",
+        destination: "/dholera-updates/blogs",
         permanent: true,
       },
       {
         source: "/posts/westwyn-county",
-        destination: "/projects/westwyn-county",
+        destination: "/dholera-residential-plots/westwyn-county",
         permanent: true,
       },
       {
@@ -134,7 +149,7 @@ const nextConfig = {
       },
       {
         source: "/posts/paradise-dt",
-        destination: "/projects/paradise-2",
+        destination: "/dholera-residential-plots/paradise-2",
         permanent: true,
       },
       {

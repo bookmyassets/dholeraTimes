@@ -56,7 +56,7 @@ export default async function BlogsPage() {
     <>
       {/* Hero Section with Black Background */}
       <link rel="canonical" href="https://www.dholeratimes.com/dholera-sir" />
-      <meta name="robots" content="noindex, dofollow" />
+      <meta name="robots" content="index, dofollow" />
 
       <div className="bg-black text-white">
         <section className="relative h-[50vh]  flex items-center justify-center text-center">
