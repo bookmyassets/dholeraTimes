@@ -11,18 +11,6 @@ import Image from "next/image";
 import CommonForm from "@/app/(main)/components/FormSection";
 import LeadForm from "@/app/(main)/dholera-sir/LeadForm";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const site = "dholera-times";
-
-  const post = await getPostBySlug(slug, site);
-
-  return {
-    title: post.title,
-    description: post.metaDescription,
-  };
-}
-
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
   return (
@@ -426,6 +414,9 @@ export default async function BlogDetail({ params }) {
 
     return (
       <div className="bg-white min-h-screen">
+        <meta name="description" content={post.metaDescription} />
+          <meta name="keywords" content={post.keywords} />
+          <meta name="publisher" content="Dholera Times" />
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
 

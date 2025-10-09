@@ -11,22 +11,10 @@ import Link from "next/link";
 import Image from "next/image";
 import LeadForm from "@/app/(main)/dholera-sir/LeadForm";
 
-export async function generateMetadata({ params }) {
-  const { slug } = await params;
-  const site = "dholera-times";
-
-  const post = await getPostBySlug(slug, site);
-
-  return {
-    title: post.title,
-    description: post.metaDescription,
-  };
-}
-
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
   return (
-    <Link href={`/dholera-updates/latest-news/${post.slug.current}`}>
+    <Link href={`/dholera-updates/latest-updates/${post.slug.current}`}>
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
@@ -165,7 +153,7 @@ export default async function BlogDetail({ params }) {
           <div className="text-center">
             <h1 className="text-2xl font-bold mb-2">Blog post not found</h1>
             <Link
-              href="/dholera-updates/latest-news"
+              href="/dholera-updates/latest-updates"
               className="mt-4 inline-block text-[#C69C21] hover:text-[#FDB913]"
             >
               ← Back to News
@@ -413,14 +401,19 @@ export default async function BlogDetail({ params }) {
       year: "numeric",
     });
 
-    const canonicalUrl = `https://www.dholeratimes.com/dholera-updates/latest-news/${post.slug.current}`;
+    const canonicalUrl = `https://www.dholeratimes.com/dholera-updates/latest-updates/${post.slug.current}`;
 
     return (
+      <>
+     
       <div className="bg-white min-h-screen">
         {/* Sticky Nav Placeholder */}
-        <div className="bg-white shadow-sm sticky top-0 z-30" />
+        <meta name="description" content={post.metaDescription} />
+        <meta name="keywords" content={post.keywords} />
+        <meta name="publisher" content="Dholera Times" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, dofollow" />
+        <div className="bg-white shadow-sm sticky top-0 z-30" />
 
         {/* Main content */}
         <main className="max-w-7xl mx-auto px-4 py-8">
@@ -454,7 +447,7 @@ export default async function BlogDetail({ params }) {
                           ></path>
                         </svg>
                         <Link
-                          href="/dholera-updates/latest-news"
+                          href="/dholera-updates/latest-updates"
                           className="ml-1 text-sm font-medium text-gray-500 hover:text-gray-700 md:ml-2"
                         >
                           News
@@ -575,7 +568,7 @@ export default async function BlogDetail({ params }) {
                       {post.tags.map((tag) => (
                         <Link
                           key={tag}
-                          href={`/dholera-updates/latest-news/tag/${tag}`}
+                          href={`/dholera-updates/latest-updates/tag/${tag}`}
                           className="px-3 py-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm rounded-full transition"
                         >
                           #{tag}
@@ -670,6 +663,7 @@ export default async function BlogDetail({ params }) {
           </div>
         </section>
       </div>
+       </>
     );
   } catch (error) {
     console.error("Error loading blog post:", slug, error);
@@ -679,7 +673,7 @@ export default async function BlogDetail({ params }) {
           <h1 className="text-2xl font-bold mb-2">Error loading blog post</h1>
           <p className="text-gray-600">Please try again later</p>
           <Link
-            href="/dholera-updates/latest-news"
+            href="/dholera-updates/latest-updates"
             className="mt-4 inline-block text-[#d7b56d] hover:text-[#c6a45d]"
           >
             ← Back to News

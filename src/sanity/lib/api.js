@@ -93,7 +93,7 @@ export async function getPostBySlug(slug, site) {
     title,
     metaTitle,
     metaDescription,
-    "keywords": keywords[]->title,
+    "keywords": keywords,
     slug,
     mainImage {
       asset->{ _id, _ref, url, metadata { dimensions, lqip } },

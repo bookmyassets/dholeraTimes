@@ -26,20 +26,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source:
-          "/Dholera-Updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
-        destination:
-          "/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-Updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        destination:
-          "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        permanent: true,
-      },
-      {
         source: "/posts/paradise-2",
         destination: "/projects/paradise-2",
         permanent: true,
@@ -57,13 +43,6 @@ const nextConfig = {
       {
         source: "/posts/maple",
         destination: "/projects/maple",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-Updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        destination:
-          "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         permanent: true,
       },
       {
@@ -180,34 +159,6 @@ const nextConfig = {
       {
         source: "/DholeraSIR/Dholera-International-Airport",
         destination: "/dholera-sir/international-airport-dholera",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-SIR/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        destination:
-          "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-Updates/blogs/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        destination:
-          "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-SIR/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
-        destination:
-          "/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
-        permanent: true,
-      },
-      {
-        source:
-          "/Dholera-SIR/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        destination:
-          "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
         permanent: true,
       },
       {
