@@ -283,7 +283,7 @@ export default function Projects() {
               Our <span style={{ color: "#debe6b" }}>Projects</span>
             </h1>
             <p
-              className=" max-w-4xl mx-auto leading-relaxed mb-12"
+              className=" max-w-5xl mx-auto leading-relaxed mb-12"
               style={{ color: "rgba(251, 251, 251, 0.8)" }}
             >
               Discover exclusive investment opportunities with proven returns.
@@ -512,72 +512,63 @@ export default function Projects() {
                   >
                     {availableProjects.map((post, index) => (
                       <div key={post._id} className="flex-shrink-0 w-96">
-                        <div
-                          className="rounded-3xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
-                          style={{
-                            backgroundColor: "#fbfbfb",
-                            borderColor: "rgba(222, 190, 107, 0.2)",
-                          }}
+                        <Link
+                          href={
+                            post.slug?.current
+                              ? `/dholera-residential-plots/${post.slug.current}`
+                              : "#"
+                          }
+                          className="block"
                         >
-                          {/* Image */}
-                          <div className="relative h-64">
-                            {post.mainImage && (
-                              <Image
-                                src={post.mainImage || "/placeholder.svg"}
-                                alt={post.title}
-                                fill
-                                className="object-cover"
-                              />
-                            )}
-                          </div>
-
-                          {/* Content */}
-                          <div className="p-6">
-                            <h3
-                              className="text-xl font-bold mb-3 line-clamp-2"
-                              style={{ color: "#151f28" }}
-                            >
-                              {post.title}
-                            </h3>
-
-                            {post.description && (
-                              <p
-                                className="text-sm leading-relaxed mb-4 line-clamp-3"
-                                style={{ color: "rgba(21, 31, 40, 0.8)" }}
-                              >
-                                {post.description}
-                              </p>
-                            )}
-
-                            <Link
-                              href={
-                                post.slug?.current
-                                  ? `/dholera-residential-plots/${post.slug.current}`
-                                  : "#"
-                              }
-                              className="inline-flex items-center px-6 py-3 font-semibold rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
-                              style={{
-                                backgroundColor: "#debe6b",
-                                color: "#151f28",
-                              }}
-                            >
-                              <span>Learn More</span>
-                              <svg
-                                className="w-4 h-4 ml-2"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                              >
-                                <path
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth={2}
-                                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          <div
+                            className="rounded-3xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]"
+                            style={{
+                              backgroundColor: "#fbfbfb",
+                              borderColor: "rgba(222, 190, 107, 0.2)",
+                            }}
+                          >
+                            {/* Image */}
+                            <div className="relative h-64">
+                              {post.mainImage && (
+                                <Image
+                                  src={post.mainImage || "/placeholder.svg"}
+                                  alt={post.title}
+                                  fill
+                                  className="object-cover"
                                 />
-                              </svg>
-                            </Link>
+                              )}
+                            </div>
+
+                            {/* Content */}
+                            <div className="p-6">
+                              <h3
+                                className="text-xl font-bold mb-3 line-clamp-2"
+                                style={{ color: "#151f28" }}
+                              >
+                                {post.title}
+                              </h3>
+
+                              {post.description && (
+                                <p
+                                  className="text-sm leading-relaxed mb-4 line-clamp-3"
+                                  style={{ color: "rgba(21, 31, 40, 0.8)" }}
+                                >
+                                  {post.description}
+                                </p>
+                              )}
+
+                              <div
+                                className="inline-flex items-center px-6 py-3 font-semibold rounded-xl shadow-md hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm"
+                                style={{
+                                  backgroundColor: "#debe6b",
+                                  color: "#151f28",
+                                }}
+                              >
+                                View Projects
+                              </div>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     ))}
                   </div>

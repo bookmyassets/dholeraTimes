@@ -44,7 +44,7 @@ export default function Dholera() {
               Ahmedabad Dholera Expressway and the upcoming Dholera
               International Airport (India’s second largest). With investments
               from mega industries like Tata Semiconductor (₹91,000 CR), ReNew
-              Power (₹1200 CR), and featuring one of the world’s largest Solar
+              Power (₹1,200 CR), and featuring one of the world’s largest Solar
               Power Parks, Dholera smart city is shaping up as India’s future
               business and investment capital.
             </p>

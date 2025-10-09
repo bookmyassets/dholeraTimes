@@ -342,7 +342,7 @@ const onRecaptchaSuccess = async (token) => {
             initial={{ scale: 0.9, y: 50 }}
             animate={{ scale: 1, y: 0 }}
             exit={{ scale: 0.9, y: 50 }}
-            className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl shadow-2xl border border-gray-700 max-w-md w-full relative"
+            className="bg-gray-800   p-8 rounded-xl shadow-2xl border border-gray-700 max-w-md w-full relative"
             onClick={handleModalContentClick}
           >
             {/* Close Button */}
@@ -375,7 +375,7 @@ const onRecaptchaSuccess = async (token) => {
               className="text-center mb-6 pt-4"
             >
               <h2 className="text-3xl font-bold text-white mb-2">{title}</h2>
-              <p className="text-gray-300 text-sm">Only for first 10 users</p>
+             
             </motion.div>
 
             {showPopup ? (
@@ -434,7 +434,7 @@ const onRecaptchaSuccess = async (token) => {
                     value={formData.fullName}
                     onChange={handleChange}
                     required
-                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b69b5e] border border-gray-700 hover:border-[#d3b36b] transition-colors"
+                    className="w-full p-4 pl-12 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b69b5e] border border-gray-700 hover:border-[#d3b36b] transition-colors"
                   />
                 </motion.div>
 
@@ -454,7 +454,7 @@ const onRecaptchaSuccess = async (token) => {
                     minLength="10"
                     maxLength="15"
                     required
-                    className="w-full p-4 pl-12 bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b69b5e] border border-gray-700 hover:border-[#d3b36b] transition-colors"
+                    className="w-full p-4 pl-12 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#b69b5e] border border-gray-700 hover:border-[#d3b36b] transition-colors"
                   />
                 </motion.div>
 

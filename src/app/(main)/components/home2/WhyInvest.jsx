@@ -15,7 +15,7 @@ const InvestmentTimeline = () => {
     {
       year: "2025",
       multiplier: "Current",
-      price: "₹9,500/sq.yd",
+      price: "₹6,250/sq.yd",
       title: <span>Your Investment<br />Entry Point</span>,
       description:
         "Prime opportunity to invest in India's first smart city with world-class infrastructure under development",
@@ -27,7 +27,7 @@ const InvestmentTimeline = () => {
     {
       year: "2027-2029",
       multiplier: "5x Returns",
-      price: "₹47,500/sq.yd",
+      price: "₹31,250/sq.yd",
       title: "Dholera-Ahmedabad Expressway & Airport Launch",
       description:
         "Direct connectivity to Ahmedabad via expressway and inaugural commercial flights at Dholera Airport",
@@ -39,7 +39,7 @@ const InvestmentTimeline = () => {
     {
       year: "2030-2032",
       multiplier: "7x Returns",
-      price: "₹66,500/sq.yd",
+      price: "₹43,750/sq.yd",
       title: "Tata Semiconductor Operations",
       description:
         "Tata's semiconductor manufacturing facility becomes fully operational, creating massive employment and industrial growth",
@@ -51,7 +51,7 @@ const InvestmentTimeline = () => {
     {
       year: "2033-2035",
       multiplier: "10x Returns",
-      price: "₹95,000/sq.yd",
+      price: "₹62,500/sq.yd",
       title: "Complete Smart City Ecosystem",
       description:
         "All TP zones operational with full smart city infrastructure, making Dholera Gujarat's prime investment destination",
@@ -83,9 +83,9 @@ const InvestmentTimeline = () => {
     >
       {/* Timeline connector */}
       {index < milestones.length - 1 && (
-        <div className="absolute top-16 leyd-1/2 w-full h-1 bg-gray-300 transform -translate-x-1/2 z-0">
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 -translate-x-1">
-            <div className="w-0 h-0 border-l-[6px] border-l-gray-400 border-t-[4px] border-t-transparent border-b-[4px] border-b-transparent"></div>
+        <div className="hidden lg:block absolute top-20 left-full w-8 h-1 bg-gray-300 z-0">
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2">
+            <div className="w-0 h-0 border-l-[8px] border-l-gray-400 border-t-[5px] border-t-transparent border-b-[5px] border-b-transparent"></div>
           </div>
         </div>
       )}
@@ -169,20 +169,20 @@ const InvestmentTimeline = () => {
       <div className="mt-16 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
           <div className="bg-white rounded-lg p-6 shadow-md">
-            <div className="text-[24px] text-blue-600 mb-2">₹14.25L</div>
+            <div className="text-[24px] text-blue-600 mb-2">₹9.44L</div>
             <div className="text-gray-600">Initial Investment</div>
-            <div className="text-sm text-gray-500 mt-1">(150 sq.yd plot)</div>
+            <div className="text-sm text-gray-500 mt-1">(151 sq.yd plot)</div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-[24px] text-green-600 mb-2">
-              ₹1.42Cr
+              ₹94.38L
             </div>
             <div className="text-gray-600">Projected Value by 2035</div>
             <div className="text-sm text-gray-500 mt-1">(10x returns)</div>
           </div>
           <div className="bg-white rounded-lg p-6 shadow-md">
             <div className="text-[24px] text-purple-600 mb-2">
-              ₹1.27Cr
+              ₹84.94L
             </div>
             <div className="text-gray-600">Potential Profit</div>
             <div className="text-sm text-gray-500 mt-1">(≈900% growth)</div>

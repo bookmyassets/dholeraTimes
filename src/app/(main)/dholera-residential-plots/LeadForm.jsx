@@ -271,10 +271,10 @@ export default function LeadForm({ title, headline, buttonName, onClose }) {
             <button
               type="submit"
               disabled={isLoading || isDisabled || !recaptchaLoaded}
-              className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
+              className={`w-full p-4 text-[#151f28] text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
                 isLoading || isDisabled || !recaptchaLoaded
                    ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#b69b5e] hover:bg-[#d3b66b] hover:shadow-lg active:scale-95"
+                  : "bg-[#debe6b] hover:bg-[#d3b66b] hover:shadow-lg active:scale-95"
               }`}
             >
               {isLoading ? "Submitting..." : buttonName}
