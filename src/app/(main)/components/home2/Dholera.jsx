@@ -1,6 +1,7 @@
 import React from "react";
 import dholeraSite from "@/assets/dholera-smart-city-home-image.webp";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Dholera() {
   return (
@@ -48,6 +49,12 @@ export default function Dholera() {
               Power Parks, Dholera smart city is shaping up as India’s future
               business and investment capital.
             </p>
+
+            <Link href="/dholera-sir">
+              <button className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md">
+                Dholera SIR →
+              </button>
+            </Link>
           </div>
         </div>
       </div>

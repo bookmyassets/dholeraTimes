@@ -92,13 +92,13 @@ export default async function BlogsPage() {
         <div className="flex flex-col max-sm:flex-col-reverse lg:flex-row gap-8">
           {/* Trending Section - Left Sidebar */}
           <div className="lg:w-1/4 sticky top-6">
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913]  mb-8">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d]  mb-8">
               <LeadForm
                 title="Own Registry-Ready Plot under ₹10 Lakhs"
                 buttonName="Get A Call Back"
               />
             </div>
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#FDB913] ">
+            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d] ">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
                 Latest News on Dholera
               </h2>
