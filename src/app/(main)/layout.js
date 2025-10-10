@@ -843,63 +843,13 @@ export default function RootLayout({ children }) {
           <span className="ml-2">Bulk Land</span>
         </Link>
 
-        {/* Gallery Dropdown */}
-        <div className="rounded-xl overflow-hidden">
-          <div
-            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-            onClick={toggleMobileGalleryDropdown}
-          >
-            <span className="ml-2">Gallery</span>
-            <ChevronDown
-              className={`h-5 w-5 transition-transform duration-300 ${
-                isMobileGalleryOpen ? "rotate-180" : ""
-              }`}
-            />
-          </div>
-          <AnimatePresence>
-            {isMobileGalleryOpen && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="bg-white/5 overflow-hidden"
-              >
-                {[
-                  {
-                    title: "Dholera SIR Progress",
-                    path: "/gallery/dholera-sir-progress",
-                  },
-                  {
-                    title: "Site Progress",
-                    path: "/gallery/site-progress",
-                  },
-                  {
-                    title: "Dholera Smart City Video",
-                    path: "/gallery/dholera-smart-city-videos",
-                  },
-                  {
-                    title: "Dholera Smart City Photos",
-                    path: "/gallery/dholera-photos",
-                  },
-                ].map((item) => (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
-                    onClick={() => {
-                      setIsMobileGalleryOpen(false);
-                      setIsMenuOpen(false); // Added this line
-                    }}
-                  >
-                    {item.title}
-                  </Link>
-                ))}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-
+        <Link
+          href="/gallery/dholera-sir-progress"
+          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+          onClick={() => setIsMenuOpen(false)}
+        >
+          <span className="ml-2">Gallery</span>
+        </Link>
         <Link
           href="/about"
           className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
