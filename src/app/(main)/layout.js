@@ -614,63 +614,15 @@ export default function RootLayout({ children }) {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="absolute right-0 mt-2 w-64 bg-white shadow-xl rounded-xl z-50 border border-gray-100 overflow-hidden"
                       >
-                        {/* Gallery Dropdown in Desktop Menu */}
-                        <div>
-                          <div
-                            className="flex items-center justify-between px-4 py-3 text-gray-700 hover:bg-gray-50 cursor-pointer"
-                            onClick={toggleGalleryDropdown}
-                          >
-                            <span>Gallery</span>
-                            <ChevronDown
-                              className={`h-4 w-4 transition-transform duration-200 ${
-                                isGalleryOpen ? "rotate-180" : ""
-                              }`}
-                            />
-                          </div>
-                          <AnimatePresence>
-                            {isGalleryOpen && (
-                              <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.2 }}
-                                className="bg-gray-50 overflow-hidden"
-                              >
-                                {[
-                                  {
-                                    title: "Dholera SIR Progress",
-                                    path: "/gallery/dholera-sir-progress",
-                                  },
-                                  {
-                                    title: "Site Progress",
-                                    path: "/gallery/site-progress",
-                                  },
-                                  {
-                                    title: "Dholera Smart City Video",
-                                    path: "/gallery/dholera-smart-city-videos",
-                                  },
-                                  {
-                                    title: "Dholera Smart City Photos",
-                                    path: "/gallery/dholera-photos",
-                                  },
-                                ].map((item) => (
-                                  <Link
-                                    key={item.path}
-                                    href={item.path}
-                                    className="block pl-8 pr-4 py-2 text-sm text-gray-600 hover:bg-gray-100 transition-colors duration-150"
-                                    onClick={() => {
-                                      setIsGalleryOpen(false);
-                                      setIsDesktopMenuOpen(false);
-                                    }}
-                                  >
-                                    {item.title}
-                                  </Link>
-                                ))}
-                              </motion.div>
-                            )}
-                          </AnimatePresence>
-                        </div>
+                  
 
+                        <Link
+                          href="/gallery/dholera-sir-progress"
+                          className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150"
+                          onClick={() => setIsDesktopMenuOpen(false)}
+                        >
+                          Gallery
+                        </Link>
                         <Link
                           href="/about"
                           className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150"
