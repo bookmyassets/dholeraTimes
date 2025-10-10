@@ -122,7 +122,7 @@ export default function CommonForm({ title }) {
               name: formData.fullName,
               phone: formData.phone,
               message: formData.message,
-              source: "Dholera Times Project/Dholera-Sir/Blog Page",
+              source: "Dholera Times Dholera-Sir/Dholera-Update Page",
             },
             source: "Dholera Times ",
             tags: ["Dholera Investment", "Website Lead"],
@@ -211,10 +211,10 @@ export default function CommonForm({ title }) {
 
   return (
     <div>
-      <section className="py-12 bg-gray-300 animate-gradient-x">
+      <section className="py-12 bg-gray-100 animate-gradient-x">
         <div className="container mx-auto px-6 sm:px-12">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-blue-600 text-3xl sm:text-4xl font-bold text-center">
+            <h2 className="text-gray-900 text-3xl sm:text-4xl font-bold text-center">
               {title}
             </h2>
             <p className="text-gray-900 mt-4 text-center">

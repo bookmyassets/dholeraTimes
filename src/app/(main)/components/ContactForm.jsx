@@ -274,7 +274,7 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
               className={`w-full p-4 text-white text-lg font-semibold rounded-xl shadow-md transition-all duration-300 ${
                 isLoading || isDisabled || !recaptchaLoaded
                   ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-[#be9233] hover:bg-[#dbaf51] hover:shadow-lg active:scale-95"
+                  : "bg-[#d7b56d] hover:bg-[#c6a45d] hover:shadow-lg active:scale-95"
               }`}
             >
               {isLoading ? "Submitting..." : buttonName}
