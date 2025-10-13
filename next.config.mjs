@@ -20,11 +20,7 @@ const nextConfig = {
         destination: "/dholera-sir/mega-industries",
         permanent: true,
       },
-      {
-        source: "/sitemap.xml",
-        destination: "/sitemap",
-        permanent: true,
-      },
+
       {
         source: "/posts/paradise-2",
         destination: "/projects/paradise-2",
@@ -133,7 +129,7 @@ const nextConfig = {
       },
       {
         source: "/pages/sitemap",
-        destination: "/sitemap",
+        destination: "/sitemap.xml",
         permanent: true,
       },
       {

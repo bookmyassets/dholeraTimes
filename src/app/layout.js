@@ -832,6 +832,9 @@ export default function RootLayout({ children }) {
     </motion.div>
   )}
 </AnimatePresence>
+<Link href="/sitemap.xml" className="hidden">
+sitemap
+</Link>
         </nav>
 
         <div className="pt-20">{children}</div>
