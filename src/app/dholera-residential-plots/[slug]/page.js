@@ -6,7 +6,7 @@ import {
   getProjects,
   getProjectsForSidebar,
 } from "@/sanity/lib/api";
-import CostSheet from "@/app/(main)/components/costSheet";
+import CostSheet from "@/app/components/costSheet";
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";

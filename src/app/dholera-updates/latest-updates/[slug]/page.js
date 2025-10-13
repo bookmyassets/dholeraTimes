@@ -9,7 +9,7 @@ import {
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
-import LeadForm from "@/app/(main)/dholera-sir/LeadForm";
+import LeadForm from "@/app/dholera-sir/LeadForm";
 
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {

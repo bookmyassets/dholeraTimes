@@ -12,7 +12,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
-import ContactForm from "@/app/(main)/components/ContactForm";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function ContactDetails() {
   const schemaData = {

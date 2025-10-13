@@ -8,8 +8,8 @@ import {
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
-import CommonForm from "@/app/(main)/components/FormSection";
-import LeadForm from "@/app/(main)/dholera-sir/LeadForm";
+import CommonForm from "@/app/components/FormSection";
+import LeadForm from "@/app/dholera-sir/LeadForm";
 
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
