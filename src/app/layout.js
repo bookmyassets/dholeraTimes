@@ -710,14 +710,6 @@ export default function RootLayout({ children }) {
 
       {/* Mobile Navigation Items */}
       <div className="space-y-2">
-        <Link
-          href="/"
-          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <span className="ml-2">Home</span>
-        </Link>
-
         {/* Dholera SIR Dropdown */}
         <div className="rounded-xl overflow-hidden">
           <Link
