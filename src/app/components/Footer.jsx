@@ -284,7 +284,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/dholera-residential-plots/Pride"
+                    href="/dholera-residential-plots/pride"
                     className="hover:text-white transition"
                   >
                    Pride
@@ -308,7 +308,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/dholera-updates/latest-news"
+                    href="/dholera-updates/latest-updates"
                     className="hover:text-white transition"
                   >
                     Latest News
@@ -324,7 +324,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="/gallery/dholera-photos"
+                    href="/gallery/dholera-sir-progress"
                     className="hover:text-white transition"
                   >
                     Dholera Photos

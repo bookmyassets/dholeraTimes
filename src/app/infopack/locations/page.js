@@ -1,14 +1,21 @@
-"use client"
+"use client";
 import React, { useState, useEffect, useRef } from "react";
-import bg from "@/assets/bg-image.webp"
+import bg from "@/assets/bg-image.webp";
 
 const locations = [
+  {
+    name: "WestWyn Estate",
+    coordinates: "22°41'50.2\"N 72°21'18.8\"E",
+    mapSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4446.080350950581!2d72.03348757600405!3d22.14718747979702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f33007987615f%3A0x28c9c473efaffc7c!2sWestWyn%20Estate!5e1!3m2!1sen!2sin!4v1758699694665!5m2!1sen!2sin",
+    link: "https://maps.app.goo.gl/k85B4pyzUZ9yzpZM9",
+  },
   {
     name: "WestWyn County",
     coordinates: "22°41'50.2\"N 72°21'18.8\"E",
     mapSrc:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35344.53857731938!2d72.20113283321216!3d22.424291772729436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395ed9023a7c4ccf%3A0x917dafab28e1aa95!2sGJ%20SH%2040%2C%20Gujarat%20382465!5e1!3m2!1sen!2sin!4v1746533802687!5m2!1sen!2sin",
-    link: "https://maps.app.goo.gl/wqMPQS4TV9VfAAyM8",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4580.5316429671975!2d72.17771279999998!3d22.448890000000105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395ed900459779db%3A0xe211952def5d9bab!2sWestWyn%20County!5e1!3m2!1sen!2sin!4v1753684185448!5m2!1sen!2sin",
+    link: "https://maps.app.goo.gl/DM97JCjuQotau73j7",
   },
   {
     name: "Dholera International Airport",
@@ -92,42 +99,44 @@ export default function LocationsComponent() {
       <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
         {locations.map((location, index) => (
           <div key={index} className="border-b last:border-b-0 border-gray-300">
-            <div 
+            <div
               className="p-4 flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors duration-300"
               onClick={() => toggleLocation(index)}
             >
               <h2 className="text-2xl font-semibold text-gray-900 transition-colors duration-300">
                 {location.name}
               </h2>
-              <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-500 ${
-                expandedLocation === index ? 'bg-[#d8b66d] text-white' : 'bg-gray-100 text-gray-500'
-              }`}>
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  className={`h-5 w-5 transition-transform duration-500 ${expandedLocation === index ? 'rotate-180' : ''}`}
-                  viewBox="0 0 20 20" 
+              <span
+                className={`inline-flex items-center justify-center w-8 h-8 rounded-full transition-all duration-500 ${
+                  expandedLocation === index
+                    ? "bg-[#d8b66d] text-white"
+                    : "bg-gray-100 text-gray-500"
+                }`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className={`h-5 w-5 transition-transform duration-500 ${expandedLocation === index ? "rotate-180" : ""}`}
+                  viewBox="0 0 20 20"
                   fill="currentColor"
                 >
-                  <path 
-                    fillRule="evenodd" 
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" 
-                    clipRule="evenodd" 
+                  <path
+                    fillRule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clipRule="evenodd"
                   />
                 </svg>
               </span>
             </div>
-            
-            <div 
-              className="overflow-hidden transition-all duration-500 ease-in-out" 
-              style={{ 
-                maxHeight: expandedLocation === index ? `${heights[index]}px` : '0px',
-                opacity: expandedLocation === index ? 1 : 0
+
+            <div
+              className="overflow-hidden transition-all duration-500 ease-in-out"
+              style={{
+                maxHeight:
+                  expandedLocation === index ? `${heights[index]}px` : "0px",
+                opacity: expandedLocation === index ? 1 : 0,
               }}
             >
-              <div 
-                ref={contentRefs.current[index]} 
-                className="p-4 bg-gray-50"
-              >
+              <div ref={contentRefs.current[index]} className="p-4 bg-gray-50">
                 <div className="relative w-full aspect-video overflow-hidden rounded-lg mb-4 transform transition-transform duration-500 ease-out">
                   <iframe
                     src={location.mapSrc}
@@ -200,13 +209,17 @@ export default function LocationsComponent() {
 
   return (
     <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-8 sm:px-6 lg:px-8">
-      <meta name="robots" content="noindex, dofollow"/>
-<link rel="canonical" href="https://www.dholeratimes.com/infopack/locations" />
-     {/*  <h1 className="md:text-5xl font-bold text-3xl text-center text-gray-500 p-4 animate-fadeIn">DHOLERA LOCATIONS</h1> */}
+      <meta name="robots" content="noindex, dofollow" />
+      <link
+        rel="canonical"
+        href="https://www.dholeratimes.com/infopack/locations"
+      />
+      {/*  <h1 className="md:text-5xl font-bold text-3xl text-center text-gray-500 p-4 animate-fadeIn">DHOLERA LOCATIONS</h1> */}
       <p className="text-center md:text-xl md:font-medium font-semibold mb-6 animate-fadeIn">
-        Know more about nearby landmarks and our project's location on Google Maps
+        Know more about nearby landmarks and our project's location on Google
+        Maps
       </p>
-      
+
       {/* Toggle view buttons for desktop */}
       {!isMobile && (
         <div className="flex justify-center mb-6 animate-fadeIn">
@@ -258,19 +271,25 @@ export default function LocationsComponent() {
           </div>
         </div>
       )}
-      
+
       {/* Add animation for the container */}
       <div className="animate-fadeIn">
         {isMobile || viewMode === "list" ? renderListView() : renderGridView()}
       </div>
-      
+
       {/* Add keyframes for animations */}
       <style jsx>{`
         @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(10px); }
-          to { opacity: 1; transform: translateY(0); }
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
-        
+
         .animate-fadeIn {
           animation: fadeIn 0.6s ease-out forwards;
         }
