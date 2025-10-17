@@ -391,12 +391,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/sitemap" className="hover:text-white transition">
-                    Sitemap
-                  </a>
-                </li>
-                <li>
-                  <a href="/sitemap.xml" className="hidden">
+                  <a href="/sitemap.xml" className="hover:text-white transition">
                     Sitemap
                   </a>
                 </li>

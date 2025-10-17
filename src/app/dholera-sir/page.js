@@ -38,7 +38,7 @@ export default async function BlogsPage() {
   let trendingBlogs = [];
   try {
     const newsData = await getNews();
-    trendingBlogs = Array.isArray(newsData) ? newsData.slice(0, 5) : [];
+    trendingBlogs = Array.isArray(newsData) ? newsData.slice(0, 3) : [];
     console.log("News data fetched:", trendingBlogs.length);
   } catch (error) {
     console.error("Error fetching news:", error);
