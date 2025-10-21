@@ -20,27 +20,110 @@ import sample15 from "@/assets/gallery/sir/dt-toll.webp";
 import sample16 from "@/assets/gallery/sir/dt-torrent.webp";
 import sample17 from "@/assets/gallery/sir/dt-wtp.webp";
 
-
 export default function DholeraProgressPage() {
   const galleryImages = [
-    { id: 1, src: sample1, alt: "Dholera Abcd building", caption: "Dholera Abcd building" },
-    { id: 2, src: sample2, alt: "Dholera Abcd building auditorium", caption: "Dholera Abcd building auditorium" },
-    { id: 3, src: sample3, alt: "Dholera Abcd building  inside", caption: "Dholera Abcd building  inside" },
-    { id: 4, src: sample4, alt: "Dholera Ahmedabad Expressway After & Before Contruction (1)", caption: "Dholera Ahmedabad Expressway After & Before Contruction (1)" },
-    { id: 5, src: sample5, alt: "Dholera Ahmedabad Expressway Final", caption: "Dholera Ahmedabad Expressway Final" },
-    { id: 6, src: sample6, alt: "Dholera Ahmedabad Expressway Night view", caption: "Dholera Ahmedabad Expressway Night view" },
-    { id: 7, src: sample7, alt: "Dholera Canal Front Final View", caption: "Dholera Canal Front Final View" },
-    { id: 8, src: sample8, alt: "Dholera Cannel front view daytime & nighttime", caption: "Dholera Cannel front view daytime & nighttime" },
-    { id: 9, src: sample9, alt: "Dholera Common Effluent Treatement Plant 1", caption: "Dholera Common Effluent Treatement Plant 1" },
-    { id: 10, src: sample10, alt: "Dholera Common Effluent Treatement Plant", caption: "Dholera Common Effluent Treatement Plant 1" },
-    { id: 11, src: sample11, alt: "Dholera Sewage Treatment Plant outer view", caption: "Dholera Sewage Treatment Plant outer view" },
-    { id: 12, src: sample12, alt: "Dholera Sewage Treatment Plant", caption: "Dholera Sewage Treatment Plant" },
-    { id: 13, src: sample13, alt: "Dholera Solar Power Plant", caption: "Dholera Solar Power Plant" },
-    { id: 14, src: sample14, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
-    { id: 15, src: sample15, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
-    { id: 16, src: sample16, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
-    { id: 17, src: sample17, alt: "Dholera Solar Power Plant 2", caption: "Dholera Solar Power Plant 2" },
-   
+    {
+      id: 1,
+      src: sample1,
+      alt: "Dholera Abcd building",
+      caption: "Dholera Abcd building",
+    },
+    {
+      id: 2,
+      src: sample2,
+      alt: "Dholera Abcd building auditorium",
+      caption: "Dholera Abcd building auditorium",
+    },
+    {
+      id: 3,
+      src: sample3,
+      alt: "Dholera Abcd building  inside",
+      caption: "Dholera Abcd building  inside",
+    },
+    {
+      id: 4,
+      src: sample4,
+      alt: "Dholera Ahmedabad Expressway After & Before Contruction (1)",
+      caption: "Dholera Ahmedabad Expressway After & Before Contruction (1)",
+    },
+    {
+      id: 5,
+      src: sample5,
+      alt: "Dholera Ahmedabad Expressway Final",
+      caption: "Dholera Ahmedabad Expressway Final",
+    },
+    {
+      id: 6,
+      src: sample6,
+      alt: "Dholera Ahmedabad Expressway Night view",
+      caption: "Dholera Ahmedabad Expressway Night view",
+    },
+    {
+      id: 7,
+      src: sample7,
+      alt: "Dholera Canal Front Final View",
+      caption: "Dholera Canal Front Final View",
+    },
+    {
+      id: 8,
+      src: sample8,
+      alt: "Dholera Cannel front view daytime & nighttime",
+      caption: "Dholera Cannel front view daytime & nighttime",
+    },
+    {
+      id: 9,
+      src: sample9,
+      alt: "Dholera Common Effluent Treatement Plant 1",
+      caption: "Dholera Common Effluent Treatement Plant 1",
+    },
+    {
+      id: 10,
+      src: sample10,
+      alt: "Dholera Common Effluent Treatement Plant",
+      caption: "Dholera Common Effluent Treatement Plant 1",
+    },
+    {
+      id: 11,
+      src: sample11,
+      alt: "Dholera Sewage Treatment Plant outer view",
+      caption: "Dholera Sewage Treatment Plant outer view",
+    },
+    {
+      id: 12,
+      src: sample12,
+      alt: "Dholera Sewage Treatment Plant",
+      caption: "Dholera Sewage Treatment Plant",
+    },
+    {
+      id: 13,
+      src: sample13,
+      alt: "Dholera Solar Power Plant",
+      caption: "Dholera Solar Power Plant",
+    },
+    {
+      id: 14,
+      src: sample14,
+      alt: "Dholera Solar Power Plant 2",
+      caption: "Dholera Solar Power Plant 2",
+    },
+    {
+      id: 15,
+      src: sample15,
+      alt: "Dholera Solar Power Plant 2",
+      caption: "Dholera Solar Power Plant 2",
+    },
+    {
+      id: 16,
+      src: sample16,
+      alt: "Dholera Solar Power Plant 2",
+      caption: "Dholera Solar Power Plant 2",
+    },
+    {
+      id: 17,
+      src: sample17,
+      alt: "Dholera Solar Power Plant 2",
+      caption: "Dholera Solar Power Plant 2",
+    },
   ];
 
   const [selectedImage, setSelectedImage] = useState(null);
@@ -55,8 +138,21 @@ export default function DholeraProgressPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-200">
-             <link rel="canonical" href="https://www.dholeratimes.com/gallery/dholera-sir-progress" />
-      <meta name="robots" content="index, dofollow"/>
+      <title>Dholera Smart City Gallery | Dholera Times</title>
+      <meta
+        name="description"
+        content="Explore the Dholera Smart City gallery by Dholera Times featuring project visuals, site progress, and development updates in Dholera SIR"
+      />
+      <meta
+        name="keywords"
+        content="Dholera Smart City, Dholera SIR, Dholera Gujarat, Smart City Dholera, Dholera Project, Dholera Investment"
+      />
+
+      <link
+        rel="canonical"
+        href="https://www.dholeratimes.com/gallery/dholera-sir-progress"
+      />
+      <meta name="robots" content="index, dofollow" />
 
       {/* Hero Section with Enhanced Overlay */}
       <div className="relative h-[50vh] overflow-hidden">
@@ -116,8 +212,8 @@ export default function DholeraProgressPage() {
 
       {/* Image Popup */}
       {selectedImage && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" 
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
           onClick={closePopup}
         >
           <div className="relative max-w-4xl max-h-[90vh] mx-4">

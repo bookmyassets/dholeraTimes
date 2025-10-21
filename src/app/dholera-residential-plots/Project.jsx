@@ -235,6 +235,15 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen">
+      <title>Residential Plots in Dholera Smart City | Dholera Times</title>
+      <meta
+        name="description"
+        content="Premium residential plots in Dholera Smart City. Explore projects like WestWyn, Paradise, Orchid, and more with the top Dholera investment value."
+      />
+      <meta
+        name="keywords"
+        content="Dholera residential plots, Dholera Smart City, Dholera plots, Dholera investment, investment in Dholera"
+      />
       <link
         rel="canonical"
         href="https://www.dholeratimes.com/dholera-residential-plots"

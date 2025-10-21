@@ -2,21 +2,29 @@
 import { useState } from "react";
 import ChannelPartnerForm from "./channelPartnerForm";
 import supoort from "@/assets/icons/dedicated-support-team-icon.webp";
-import partner from "@/assets/icons/partner-first-culture-icon.webp"
-import training from "@/assets/icons/training-and-onboarding-icon.webp"
-import inventory from "@/assets/icons/registry-ready-inventory-icon.webp"
+import partner from "@/assets/icons/partner-first-culture-icon.webp";
+import training from "@/assets/icons/training-and-onboarding-icon.webp";
+import inventory from "@/assets/icons/registry-ready-inventory-icon.webp";
 import sales from "@/assets/icons/white-labeled-sales-kit-icon.webp";
 import Image from "next/image";
-import hero from "@/assets/Channelpartner-hero.webp"
-import heroM from "@/assets/channel-partner-mob.-view.webp"
+import hero from "@/assets/Channelpartner-hero.webp";
+import heroM from "@/assets/channel-partner-mob.-view.webp";
 
 export default function ChannelPartnerPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <title>Channel Partner Program | Dholera Smart City</title>
+      <meta
+        name="description"
+        content="Join Dholera Times as a channel partner for verified Dholera Smart City plots. Get transparent deals, AUDA approvals, and on-time commissions."
+      />
+      <meta
+        name="keywords"
+        content="Dholera Smart City, Dholera Gujarat, Dholera SIR, Dholera Project, Invest in Dholera, Dholera Property Investment"
+      />
+
       {/* Hero Section */}
-      <section
-        className="py-20 relative overflow-hidden h-[50vh]"
-      >
+      <section className="py-20 relative overflow-hidden h-[50vh]">
         <div className="absolute inset-0 ">
           <Image
             src={hero}

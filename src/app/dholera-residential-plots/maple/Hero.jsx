@@ -16,18 +16,16 @@ const FeatureCard = ({ icon, title, value }) => (
   </div>
 );
 
-
 export default function Hero() {
+  const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
-    const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
+  const openBrochureForm = () => {
+    setIsBrochureFormOpen(true);
+  };
 
-    const openBrochureForm = () => {
-      setIsBrochureFormOpen(true);
-    };
-  
-    const closeBrochureForm = () => {
-      setIsBrochureFormOpen(false);
-    };
+  const closeBrochureForm = () => {
+    setIsBrochureFormOpen(false);
+  };
 
   const projectFeatures = [
     { icon: "📐", title: "Plot Size", value: "177-300 Sq.Yards" },
@@ -36,10 +34,18 @@ export default function Hero() {
     { icon: "📍", title: "Location", value: "Dholera SIR" },
   ];
 
-  
-
   return (
     <>
+      <title>Maple Dholera | Affordable Plots in Smart City Gujarat</title>
+      <meta
+        name="description"
+        content="Find Maple Dholera plots on Dholera Times - affordable and strategic plots in Smart City Gujarat designed for investors seeking steady growth."
+      />
+      <meta
+        name="keywords"
+        content="Maple Dholera, Dholera plots, smart city Gujarat, Dholera investment, Dholera Smart City."
+      />
+
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-12">
@@ -98,11 +104,12 @@ export default function Hero() {
                     {/* Middle Column - Title & Description */}
                     <div>
                       <a href="/dholera-residential-plots/westwyn-estate">
-
-                      <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
-                       <span className="text-base font-bold text-gray-900">Explore Our Latest Project 
-                        </span> <br /> WestWyn Estate
-                      </h1>
+                        <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
+                          <span className="text-base font-bold text-gray-900">
+                            Explore Our Latest Project
+                          </span>{" "}
+                          <br /> WestWyn Estate
+                        </h1>
                       </a>
                       {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
                         {post.description}
@@ -112,15 +119,21 @@ export default function Hero() {
                     {/* Right Column - Contact & Buttons */}
                     <div className="flex flex-col justify-between">
                       <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                         <a href="tel:+919958993549" className="flex-1 text-center bg-[#debe6b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                        <a
+                          href="tel:+919958993549"
+                          className="flex-1 text-center bg-[#debe6b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                        >
                           📞 Site Visit
                         </a>
-                        <button onClick={openBrochureForm} className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                        <button
+                          onClick={openBrochureForm}
+                          className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                        >
                           📄 Brochure
                         </button>
                       </div>
                       <div className=" text-[#151f28] text-xl font-semibold">
-                       <p>Registry Ready Plot under ₹10 Lakhs</p>
+                        <p>Registry Ready Plot under ₹10 Lakhs</p>
                       </div>
                     </div>
                   </div>
@@ -148,8 +161,7 @@ export default function Hero() {
               title="Get the Dholera Brochure"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
-                            link="https://cdn.sanity.io/files/c3e1h345/projects/c9471499567c096befb9416aa99c7f0077900d11.pdf"
-
+              link="https://cdn.sanity.io/files/c3e1h345/projects/c9471499567c096befb9416aa99c7f0077900d11.pdf"
             />
           </div>
         )}

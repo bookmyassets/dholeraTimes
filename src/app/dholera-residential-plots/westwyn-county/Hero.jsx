@@ -17,16 +17,15 @@ const FeatureCard = ({ icon, title, value }) => (
 );
 
 export default function Hero() {
+  const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
-    const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
+  const openBrochureForm = () => {
+    setIsBrochureFormOpen(true);
+  };
 
-    const openBrochureForm = () => {
-      setIsBrochureFormOpen(true);
-    };
-  
-    const closeBrochureForm = () => {
-      setIsBrochureFormOpen(false);
-    };
+  const closeBrochureForm = () => {
+    setIsBrochureFormOpen(false);
+  };
 
   const projectFeatures = [
     { icon: "📐", title: "Plot Size", value: "177-300 Sq.Yards" },
@@ -35,10 +34,18 @@ export default function Hero() {
     { icon: "📍", title: "Location", value: "Dholera SIR" },
   ];
 
-  
-
   return (
     <>
+      <title>WestWyn County Dholera | Registry-Ready Smart City Plots</title>
+      <meta
+        name="description"
+        content="Explore WestWyn County Dholera on Dholera Times - registry-ready plots in Gujarat’s Smart City designed for investors seeking secure Dholera investments."
+      />
+      <meta
+        name="keywords"
+        content="WestWyn County Dholera, Dholera plots, Dholera Smart City, Dholera investment, smart city Gujarat"
+      />
+
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-12">
@@ -107,15 +114,21 @@ export default function Hero() {
                     {/* Right Column - Contact & Buttons */}
                     <div className="flex flex-col justify-between">
                       <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                         <a href="tel:+919958993549" className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                        <a
+                          href="tel:+919958993549"
+                          className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                        >
                           📞 Site Visit
                         </a>
-                        <button onClick={openBrochureForm} className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                        <button
+                          onClick={openBrochureForm}
+                          className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                        >
                           📄 Brochure
                         </button>
                       </div>
                       <div className=" text-[#151f28] text-xl font-semibold">
-                       <p>Registry Ready Plot under ₹10 Lakhs</p>
+                        <p>Registry Ready Plot under ₹10 Lakhs</p>
                       </div>
                     </div>
                   </div>
@@ -140,9 +153,7 @@ export default function Hero() {
                     </div>
                     <div className="text-3xl font-bold text-[#151f28]">
                       ₹9,500
-                      <span className="text-sm text-gray-600 ml-1">
-                        /Sq.Yd
-                      </span>
+                      <span className="text-sm text-gray-600 ml-1">/Sq.Yd</span>
                     </div>
                   </div>
 
@@ -156,10 +167,16 @@ export default function Hero() {
                   {/* Contact & Buttons */}
                   <div className="flex flex-col justify-between">
                     <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                      <a href="tel:+919958993549" className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                      <a
+                        href="tel:+919958993549"
+                        className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                      >
                         📞 Site Visit
                       </a>
-                      <button onClick={openBrochureForm} className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5">
+                      <button
+                        onClick={openBrochureForm}
+                        className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+                      >
                         📄 Brochure
                       </button>
                     </div>

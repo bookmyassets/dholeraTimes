@@ -13,14 +13,12 @@ import {
   Landmark,
   Layers,
   Train,
-   ArrowRight,
+  ArrowRight,
 } from "lucide-react";
 import residentialMap from "@/assets/bulkLand/recreation-sports-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getResidentialLinks, getSportLinks } from "../InterLink";
-
-
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -28,20 +26,22 @@ const HorizontalScrollInterlink = ({ properties }) => {
     <div className="bg-gradient-to-r from-[#deae3c]/10 to-[#deae3c]/5 py-8 mb-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Discover Other Investment Zones</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            Discover Other Investment Zones
+          </h3>
           <p className="text-gray-600">Swipe to explore more opportunities</p>
         </div>
-        
+
         <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
           {properties.map((property) => (
-            <a 
+            <a
               key={property.id}
               href={property.link}
               className="group flex-shrink-0 w-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-40 w-full rounded-t-xl overflow-hidden">
-                <Image 
-                  src={property.image} 
+                <Image
+                  src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   fill
@@ -56,7 +56,9 @@ const HorizontalScrollInterlink = ({ properties }) => {
               <div className="p-4">
                 <p className="text-gray-600 text-sm mb-3">{property.area}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-[#deae3c] font-medium text-sm">Explore Zone</span>
+                  <span className="text-[#deae3c] font-medium text-sm">
+                    Explore Zone
+                  </span>
                   <ArrowRight className="w-4 h-4 text-[#deae3c] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -73,6 +75,16 @@ export default function page() {
 
   return (
     <>
+      <title>Recreation Zone Dholera | Sports & Entertainment Land</title>
+      <meta
+        name="description"
+        content="Dholera Smart City’s Recreation Zone offers bulk land for tourism, sports, and entertainment projects near Dholera International Airport and the city centre."
+      />
+      <meta
+        name="keywords"
+        content="Dholera Smart City, Dholera, Gujarat, Dholera International Airport, Dholera Project, Dholera Property Investment"
+      />
+
       <div className="relative h-[50vh] w-full ">
         {/* Banner Image */}
         <Image
@@ -125,7 +137,6 @@ export default function page() {
                 </h3>
                 <p className="text-gray-700 text-sm md:text-lg font-medium">
                   Commercial Development
-
                 </p>
               </div>
               <div className="flex flex-col items-center">
@@ -140,48 +151,51 @@ export default function page() {
           </div>
         </div>
       </div>
-<HorizontalScrollInterlink properties={relatedProperties} />
+      <HorizontalScrollInterlink properties={relatedProperties} />
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">
-  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-    {/* Text Content */}
-    <div className="space-y-6">
-      <div>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-         The Recreation Zone in Dholera Smart City is the lifestyle hub, designed for stadiums, amusement parks, and cultural venues. With world-class tourism potential, it positions Dholera Gujarat as a global recreation hub.
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Text Content */}
+          <div className="space-y-6">
+            <div>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+                The Recreation Zone in Dholera Smart City is the lifestyle hub,
+                designed for stadiums, amusement parks, and cultural venues.
+                With world-class tourism potential, it positions Dholera Gujarat
+                as a global recreation hub.
+              </p>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+                With proximity to Dholera International Airport, this zone
+                ensures high footfall, community engagement, and business
+                opportunities in Dholera Project.
+              </p>
+            </div>
+          </div>
 
-        </p>
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-          With proximity to Dholera International Airport, this zone ensures high footfall, community engagement, and business opportunities in Dholera Project.
-
-        </p>
+          {/* Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src={residentialMap}
+                alt="residential Zone Dholera SIR land plots"
+                className="w-full max-w-96 h-96 object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    {/* Image */}
-    <div className="flex justify-center lg:justify-end">
-      <div className="relative rounded-lg overflow-hidden shadow-lg">
-        <Image
-          src={residentialMap}
-          alt="residential Zone Dholera SIR land plots"
-          className="w-full max-w-96 h-96 object-cover"
-          priority
-        />
-      </div>
-    </div>
-  </div>
-</div>
 
       <div className="max-w-6xl mx-auto p-4">
         {/* Benefits Grid */}
         <div>
           <p className="text-center text-3xl font-semibold mb-8">
-          Why Invest in Dholera Recreation, Sports & Entertainment Zone?
+            Why Invest in Dholera Recreation, Sports & Entertainment Zone?
           </p>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
             {/* High Appreciation Potential */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Trophy className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+              <Trophy className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Sports Infrastructure
               </p>
@@ -197,7 +211,7 @@ export default function page() {
 
             {/* Plug & Play Infrastructure */}
             <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Theater className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+              <Theater className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Cultural & Event Venues
               </p>
@@ -213,7 +227,7 @@ export default function page() {
             </p>
           </div>
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <BedDouble className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <BedDouble className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Hospitality & Tourism
             </p>
@@ -225,14 +239,14 @@ export default function page() {
 
       <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
         <p className="text-center text-3xl font-semibold mb-8">
-         What's Allowed in Recreation, Sports & Entertainment Zone?
+          What's Allowed in Recreation, Sports & Entertainment Zone?
         </p>
 
         {/* Project Types Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Retail & Commercial Services */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Users className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Users className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               High Footfall Potential
             </p>
@@ -248,7 +262,7 @@ export default function page() {
 
           {/* Healthcare & Wellness */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Landmark className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Landmark className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Community & Cultural Hub
             </p>
@@ -265,7 +279,7 @@ export default function page() {
 
           {/* Residential & Housing Projects */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Train className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Train className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Future-Ready Infrastructure
             </p>

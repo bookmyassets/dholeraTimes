@@ -13,7 +13,7 @@ import {
   Banknote,
   Ruler,
   Globe2,
-   ArrowRight,
+  ArrowRight,
 } from "lucide-react";
 import icon2 from "@/assets/svg/plug-and-plug-connection.svg";
 import residentialMap from "@/assets/bulkLand/industrial-zone-map.webp";
@@ -21,28 +21,28 @@ import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getIndustrialLinks, getResidentialLinks } from "../InterLink";
 
-
-
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
   return (
     <div className="bg-gradient-to-r from-[#deae3c]/10 to-[#deae3c]/5 py-8 mb-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Discover Other Investment Zones</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            Discover Other Investment Zones
+          </h3>
           <p className="text-gray-600">Swipe to explore more opportunities</p>
         </div>
-        
+
         <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
           {properties.map((property) => (
-            <a 
+            <a
               key={property.id}
               href={property.link}
               className="group flex-shrink-0 w-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-40 w-full rounded-t-xl overflow-hidden">
-                <Image 
-                  src={property.image} 
+                <Image
+                  src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   fill
@@ -57,7 +57,9 @@ const HorizontalScrollInterlink = ({ properties }) => {
               <div className="p-4">
                 <p className="text-gray-600 text-sm mb-3">{property.area}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-[#deae3c] font-medium text-sm">Explore Zone</span>
+                  <span className="text-[#deae3c] font-medium text-sm">
+                    Explore Zone
+                  </span>
                   <ArrowRight className="w-4 h-4 text-[#deae3c] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -74,6 +76,16 @@ export default function page() {
 
   return (
     <>
+      <title>Industrial Bulk Land in Dholera SIR | Smart City Gujarat</title>
+      <meta
+        name="description"
+        content="Invest in industrial bulk land at Dholera SIR - a manufacturing and logistics hub with world-class infrastructure and airport-port connectivity."
+      />
+      <meta
+        name="keywords"
+        content="Dholera SIR, Dholera Smart City, Industrial Land Dholera, Dholera Investment"
+      />
+
       <div className="relative h-[50vh] w-full ">
         {/* Banner Image */}
         <Image
@@ -141,7 +153,7 @@ export default function page() {
         </div>
       </div>
 
-<HorizontalScrollInterlink properties={relatedProperties} />
+      <HorizontalScrollInterlink properties={relatedProperties} />
 
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">
@@ -186,7 +198,7 @@ export default function page() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Retail & Commercial Services */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Network className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Network className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Strategic Connectivity
             </p>
@@ -206,7 +218,7 @@ export default function page() {
 
           {/* Healthcare & Wellness */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Banknote className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Banknote className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               High ROI & Incentives
             </p>
@@ -223,7 +235,7 @@ export default function page() {
 
           {/* Residential & Housing Projects */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Globe2 className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Globe2 className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Global Investment Magnet
             </p>
@@ -240,7 +252,7 @@ export default function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
             {/* High Appreciation Potential */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Factory className="w-16 h-16" style={{ color: '#d3b36b' }} />
+              <Factory className="w-16 h-16" style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Manufacturing & Heavy Industries
               </p>
@@ -256,7 +268,7 @@ export default function page() {
 
             {/* Plug & Play Infrastructure */}
             <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Wrench className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+              <Wrench className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Light & Medium Industries
               </p>
@@ -272,7 +284,7 @@ export default function page() {
           </div>
           {/* Community-Centric Planning */}
           <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Zap className="w-16 h-16 " style={{ color: '#d3b36b' }} />
+            <Zap className="w-16 h-16 " style={{ color: "#d3b36b" }} />
             <p className="text-lg font-medium text-gray-800">
               Utilities & Support Services
             </p>

@@ -21,28 +21,28 @@ import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getResidentialLinks } from "../InterLink";
 
-
-
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
   return (
     <div className="bg-gradient-to-r from-[#deae3c]/10 to-[#deae3c]/5 py-8 mb-8">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-gray-800 mb-2">Discover Other Investment Zones</h3>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">
+            Discover Other Investment Zones
+          </h3>
           <p className="text-gray-600">Swipe to explore more opportunities</p>
         </div>
-        
+
         <div className="flex overflow-x-auto space-x-6 pb-4 scrollbar-hide">
           {properties.map((property) => (
-            <a 
+            <a
               key={property.id}
               href={property.link}
               className="group flex-shrink-0 w-64 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="relative h-40 w-full rounded-t-xl overflow-hidden">
-                <Image 
-                  src={property.image} 
+                <Image
+                  src={property.image}
                   alt={property.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   fill
@@ -57,7 +57,9 @@ const HorizontalScrollInterlink = ({ properties }) => {
               <div className="p-4">
                 <p className="text-gray-600 text-sm mb-3">{property.area}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-[#deae3c] font-medium text-sm">Explore Zone</span>
+                  <span className="text-[#deae3c] font-medium text-sm">
+                    Explore Zone
+                  </span>
                   <ArrowRight className="w-4 h-4 text-[#deae3c] group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -69,12 +71,21 @@ const HorizontalScrollInterlink = ({ properties }) => {
   );
 };
 
-
 export default function page() {
   const relatedProperties = getResidentialLinks();
 
   return (
     <>
+      <title>Residential Bulk Land in Dholera | Smart City Plots</title>
+      <meta
+        name="description"
+        content="Explore Dholera Smart City’s Residential Zone - premium bulk land for housing, retail, and community projects with strong ROI and connectivity advantages."
+      />
+      <meta
+        name="keywords"
+        content="Dholera Smart City, Dholera Gujarat, Invest in Dholera, Dholera Project, Dholera Property Investment"
+      />
+
       {/* Hero Section */}
       <div className="relative h-[50vh] w-full ">
         {/* Banner Image */}
@@ -154,18 +165,18 @@ export default function page() {
             <div className="space-y-6">
               <div>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                  Where homes meet opportunity â€" the Residential Zone in Dholera
-                  Smart City is designed for people, progress, and prosperity. It
-                  offers modern housing supported by schools, hospitals, retail
-                  outlets, and recreation spaces.
+                  Where homes meet opportunity â€" the Residential Zone in
+                  Dholera Smart City is designed for people, progress, and
+                  prosperity. It offers modern housing supported by schools,
+                  hospitals, retail outlets, and recreation spaces.
                 </p>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   Built for families, developers, and investors, this zone
                   provides quality living with profitable growth. As part of
-                  Dholera Project under DMIC, it promotes sustainable communities
-                  with green spaces, infrastructure, and connectivity to Dholera
-                  International Airport and Ahmedabad to Dholera distance
-                  corridor.
+                  Dholera Project under DMIC, it promotes sustainable
+                  communities with green spaces, infrastructure, and
+                  connectivity to Dholera International Airport and Ahmedabad to
+                  Dholera distance corridor.
                 </p>
               </div>
             </div>
@@ -193,7 +204,10 @@ export default function page() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Retail & Commercial Services */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <ShoppingBag className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+              <ShoppingBag
+                className="w-16 h-16 "
+                style={{ color: "#d3b36b" }}
+              />
               <p className="text-lg font-medium text-gray-800">
                 Retail & Commercial Services
               </p>
@@ -209,7 +223,7 @@ export default function page() {
 
             {/* Healthcare & Wellness */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <HeartPulse className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+              <HeartPulse className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Healthcare & Wellness
               </p>
@@ -226,7 +240,7 @@ export default function page() {
 
             {/* Residential & Housing Projects */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <HomeIcon className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+              <HomeIcon className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Residential & Housing Projects
               </p>
@@ -243,7 +257,10 @@ export default function page() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
               {/* High Appreciation Potential */}
               <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <TrendingUp className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+                <TrendingUp
+                  className="w-16 h-16 "
+                  style={{ color: "#d3b36b" }}
+                />
                 <p className="text-lg font-medium text-gray-800">
                   High Appreciation Potential
                 </p>
@@ -259,7 +276,7 @@ export default function page() {
 
               {/* Plug & Play Infrastructure */}
               <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Plug className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+                <Plug className="w-16 h-16 " style={{ color: "#d3b36b" }} />
                 <p className="text-lg font-medium text-gray-800">
                   Plug & Play Infrastructure
                 </p>
@@ -277,7 +294,7 @@ export default function page() {
 
             {/* Government-Backed Development */}
             <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Landmark className="w-16 h-16 "style={{ color: '#d3b36b' }} />
+              <Landmark className="w-16 h-16 " style={{ color: "#d3b36b" }} />
               <p className="text-lg font-medium text-gray-800">
                 Government-Backed Development
               </p>

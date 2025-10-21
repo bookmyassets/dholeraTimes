@@ -54,6 +54,15 @@ export default async function BlogsPage() {
 
   return (
     <>
+      <title>About Dholera SIR | Smart City Dholera Gujarat</title>
+      <meta
+        name="description"
+        content="Learn about Dholera SIR, Gujarat’s first and largest smart city project, offering investment opportunities, infrastructure, and growth potential."
+      />
+      <meta
+        name="keywords"
+        content="Dholera SIR, Dholera Smart City, Smart City Dholera, Dholera Gujarat, Dholera Project, Dholera Investment"
+      />
       {/* Hero Section with Black Background */}
       <link rel="canonical" href="https://www.dholeratimes.com/dholera-sir" />
       <meta name="robots" content="index, dofollow" />
