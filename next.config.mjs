@@ -99,7 +99,6 @@ const nextConfig = {
           "/dholera-sir/the-abcd-building-in-dholera",
         permanent: true,
       },
-      
       {
         source: "/Dholera-Updates",
         destination: "/dholera-updates/blogs",
