@@ -77,7 +77,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/posts/dholera-plot-price",
+        source: "/Dholera-Updates/blogs/dholera-plot-price",
         destination: "/dholera-updates/blogs/dholera-plot-price",
         permanent: true,
       },
