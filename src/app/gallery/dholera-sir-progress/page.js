@@ -5,7 +5,7 @@ import hero from "@/assets/news.webp";
 import sample1 from "@/assets/gallery/sir/BMAWebsitegallery7.webp";
 import sample2 from "@/assets/gallery/sir/BMAWebsitegallery8.webp";
 import sample3 from "@/assets/gallery/sir/dt-abcd.webp";
-import sample4 from "@/assets/gallery/sir/dt-abcd.webp";
+// sample4 removed (duplicate)
 import sample5 from "@/assets/gallery/sir/dt-acti.webp";
 import sample6 from "@/assets/gallery/sir/dt-activation.webp";
 import sample7 from "@/assets/gallery/sir/dt-airport.webp";
@@ -25,104 +25,98 @@ export default function DholeraProgressPage() {
     {
       id: 1,
       src: sample1,
-      alt: "Dholera Abcd building",
-      caption: "Dholera Abcd building",
+      alt: "ABCD Building",
+      caption: "ABCD Building",
     },
     {
       id: 2,
       src: sample2,
-      alt: "Dholera Abcd building auditorium",
-      caption: "Dholera Abcd building auditorium",
+      alt: "Ahmedabad Dholera Toll",
+      caption: "Ahmedabad Dholera Toll",
     },
     {
       id: 3,
       src: sample3,
-      alt: "Dholera Abcd building  inside",
-      caption: "Dholera Abcd building  inside",
+      alt: "ABCD Building Dholera",
+      caption: "ABCD Building Dholera",
     },
     {
       id: 4,
-      src: sample4,
-      alt: "Dholera Ahmedabad Expressway After & Before Contruction (1)",
-      caption: "Dholera Ahmedabad Expressway After & Before Contruction (1)",
+      src: sample5,
+      alt: "Activation Area Road Dholera",
+      caption: "Activation Area Road Dholera",
     },
     {
       id: 5,
-      src: sample5,
-      alt: "Dholera Ahmedabad Expressway Final",
-      caption: "Dholera Ahmedabad Expressway Final",
+      src: sample6,
+      alt: "River Front - Dholera Activation Area ",
+      caption: "River Front - Dholera Activation Area ",
     },
     {
       id: 6,
-      src: sample6,
-      alt: "Dholera Ahmedabad Expressway Night view",
-      caption: "Dholera Ahmedabad Expressway Night view",
+      src: sample7,
+      alt: "Dholera Airport",
+      caption: "Dholera Airport",
     },
     {
       id: 7,
-      src: sample7,
-      alt: "Dholera Canal Front Final View",
-      caption: "Dholera Canal Front Final View",
+      src: sample8,
+      alt: "Ahmedabad to Dholera",
+      caption: "Ahmedabad to Dholera",
     },
     {
       id: 8,
-      src: sample8,
-      alt: "Dholera Cannel front view daytime & nighttime",
-      caption: "Dholera Cannel front view daytime & nighttime",
+      src: sample9,
+      alt: "Renew Solar Power Private Limited",
+      caption: "Renew Solar Power Private Limited",
     },
     {
       id: 9,
-      src: sample9,
-      alt: "Dholera Common Effluent Treatement Plant 1",
-      caption: "Dholera Common Effluent Treatement Plant 1",
+      src: sample10,
+      alt: "Renew Solar Panel",
+      caption: "Renew Solar Panel",
     },
     {
       id: 10,
-      src: sample10,
-      alt: "Dholera Common Effluent Treatement Plant",
-      caption: "Dholera Common Effluent Treatement Plant 1",
+      src: sample11,
+      alt: "Largest Solar Power Plant in India",
+      caption: "Largest Solar Power Plant in India",
     },
     {
       id: 11,
-      src: sample11,
-      alt: "Dholera Sewage Treatment Plant outer view",
-      caption: "Dholera Sewage Treatment Plant outer view",
+      src: sample12,
+      alt: "Ahmedabad Dholera Expressway Route Map",
+      caption: "Ahmedabad Dholera Expressway Route Map",
     },
     {
       id: 12,
-      src: sample12,
-      alt: "Dholera Sewage Treatment Plant",
-      caption: "Dholera Sewage Treatment Plant",
+      src: sample13,
+      alt: "Tata Semiconductor Plant",
+      caption: "Tata Semiconductor Plant",
     },
     {
       id: 13,
-      src: sample13,
-      alt: "Dholera Solar Power Plant",
-      caption: "Dholera Solar Power Plant",
+      src: sample14,
+      alt: "Tata Semiconductor Hub",
+      caption: "Tata Semiconductor Hub",
     },
     {
       id: 14,
-      src: sample14,
-      alt: "Dholera Solar Power Plant 2",
-      caption: "Dholera Solar Power Plant 2",
+      src: sample15,
+      alt: "Ahmedabad Dholera Bhavanagar Expressway Toll",
+      caption: "Ahmedabad Dholera Bhavanagar Expressway Toll",
     },
     {
       id: 15,
-      src: sample15,
-      alt: "Dholera Solar Power Plant 2",
-      caption: "Dholera Solar Power Plant 2",
+      src: sample16,
+      alt: "Sewage Treatment Plant in Dholera SIR",
+      caption: "Sewage Treatment Plant in Dholera SIR",
     },
     {
       id: 16,
-      src: sample16,
-      alt: "Dholera Solar Power Plant 2",
-      caption: "Dholera Solar Power Plant 2",
-    },
-    {
-      id: 17,
       src: sample17,
-      alt: "Dholera Solar Power Plant 2",
-      caption: "Dholera Solar Power Plant 2",
+      alt: "Water Treatment Plant in Dholera",
+      caption: "Water Treatment Plant in Dholera",
     },
   ];
 
@@ -147,14 +141,13 @@ export default function DholeraProgressPage() {
         name="keywords"
         content="Dholera Smart City, Dholera SIR, Dholera Gujarat, Smart City Dholera, Dholera Project, Dholera Investment"
       />
-
       <link
         rel="canonical"
         href="https://www.dholeratimes.com/gallery/dholera-sir-progress"
       />
       <meta name="robots" content="index, dofollow" />
 
-      {/* Hero Section with Enhanced Overlay */}
+      {/* Hero Section */}
       <div className="relative h-[50vh] overflow-hidden">
         <Image
           src={hero}
@@ -172,15 +165,15 @@ export default function DholeraProgressPage() {
         </div>
       </div>
 
-      {/* Gallery Section with Enhanced Design */}
+      {/* Gallery Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4 text-center">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
             Explore Dholera Growth through Images
           </h2>
         </div>
 
-        {/* Gallery Grid with Enhanced Hover Effects */}
+        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image) => (
             <div
@@ -188,26 +181,10 @@ export default function DholeraProgressPage() {
               className="group relative overflow-hidden rounded-xl transition-all duration-300 shadow-2xl h-80 cursor-pointer"
               onClick={() => openPopup(image)}
             >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0  group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                {/* <h3 className="text-black text-xl font-bold mb-2">{image.alt}</h3> */}
-              </div>
+              <Image src={image.src} alt={image.alt} fill className="object-cover" />
             </div>
           ))}
         </div>
-
-        {/* Navigation with Category Tags */}
-        {/* <div className="mt-16 flex flex-wrap justify-center gap-3">
-          <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full cursor-pointer hover:bg-blue-200 transition-colors font-medium">All Images</span>
-          <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Infrastructure</span>
-          <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Transportation</span>
-          <span className="bg-gray-100 text-gray-800 px-4 py-2 rounded-full cursor-pointer hover:bg-gray-200 transition-colors font-medium">Urban Planning</span>
-        </div> */}
       </div>
 
       {/* Image Popup */}
@@ -233,10 +210,7 @@ export default function DholeraProgressPage() {
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
-            {/* <div className="bg-white p-4 text-center">
-              <h3 className="text-lg font-bold">{selectedImage.alt}</h3>
-              <p className="text-gray-600">{selectedImage.caption}</p>
-            </div> */}
+            <div className="bg-white p-4 text-center"> <h3 className="text-lg font-bold">{selectedImage.alt}</h3> <p className="text-gray-600">{selectedImage.caption}</p> </div>
           </div>
         </div>
       )}
