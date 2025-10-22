@@ -88,6 +88,19 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/Dholera-SIR/mega-industries",
+        destination:
+          "/dholera-sir/mega-industries-in-dholera",
+        permanent: true,
+      },
+      {
+        source: "/Dholera-SIR/abcd-building",
+        destination:
+          "/dholera-sir/the-abcd-building-in-dholera",
+        permanent: true,
+      },
+      
+      {
         source: "/Dholera-Updates",
         destination: "/dholera-updates/blogs",
         permanent: true,
