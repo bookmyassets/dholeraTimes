@@ -674,12 +674,12 @@ export default function NRIInvestmentGuide() {
   <div className="absolute inset-0">
     <Image
       src={nri}
-      alt="Dholera Skyline"
+      alt="NRI Investment in Dholera SIR"
       className="object-cover w-full h-full md:hidden"
     />
     <Image
       src={nriD}
-      alt="Dholera Skyline"
+      alt="NRI Investment in Dholera SIR"
       className="object-cover w-full h-full max-sm:hidden"
     />
     {/* Dark overlay for better text readability */}

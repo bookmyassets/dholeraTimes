@@ -69,7 +69,7 @@ export default function Hero() {
               {/* Background Image */}
               <Image
                 src={wc}
-                alt="WestWyn County"
+                alt="Maple Township in Dholera"
                 fill
                 className="absolute object-cover"
                 priority

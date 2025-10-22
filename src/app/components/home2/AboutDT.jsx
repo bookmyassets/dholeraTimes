@@ -13,7 +13,7 @@ export default function AboutDT() {
             <div className="relative">
               <Image
                 src={dholeraSite}
-                alt="Modern sustainable house with solar panels"
+                alt="WestWyn Estate in Dholera SIR"
                 className="w-full h-[400px] object-cover rounded-lg shadow-lg"
               />
             </div>

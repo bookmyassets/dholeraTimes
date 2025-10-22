@@ -71,13 +71,13 @@ export default function page() {
       <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
         <Image
           src={hero}
-          alt="Dholera Skyline"
+          alt="Dholera Land"
           className="object-cover w-full h-[50vh] max-sm:hidden"
           priority
         />
         <Image
           src={heroM}
-          alt="Dholera Skyline"
+          alt="Dholera Land"
           className="object-cover w-full h-[50vh] md:hidden"
           priority
         />

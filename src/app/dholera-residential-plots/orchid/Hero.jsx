@@ -68,7 +68,7 @@ export default function Hero() {
               {/* Background Image */}
               <Image
                 src={wc}
-                alt="WestWyn County"
+                alt="Orchid Dholera Residential Project"
                 fill
                 className="absolute object-cover"
                 priority

@@ -70,14 +70,14 @@ export default function Hero() {
               {/* Background Image */}
               <Image
                 src={wc}
-                alt="WestWyn County"
+                alt="WestWyn Estate in Dholera Gujarat"
                 fill
                 className="absolute object-cover max-sm:hidden"
                 priority
               />
               <Image
                 src={wcM}
-                alt="WestWyn County"
+                alt="WestWyn Estate in Dholera Gujarat"
                 fill
                 className="absolute object-cover md:hidden"
                 priority

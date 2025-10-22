@@ -118,14 +118,14 @@ export default function ContactDetails() {
                 {/* Banner Image */}
                 <Image
                   src={get}
-                  alt="banner"
+                  alt="Get in touch with Dholera Times team for inquiries and support"
                   className="h-full w-full object-cover max-sm:hidden"
                   fill
                   priority
                 />
                 <Image
                   src={getM}
-                  alt="banner"
+                  alt="Get in touch with Dholera Times team for inquiries and support"
                   className="h-full w-full object-cover md:hidden"
                   fill
                   priority

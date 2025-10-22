@@ -93,14 +93,14 @@ export default function page() {
         {/* Banner Image */}
         <Image
           src={banner}
-          alt="banner"
+          alt="High Access Corridor Bulk Land in Dholera SIR"
           className="h-full w-full object-cover max-sm:hidden"
           fill
           priority
         />
         <Image
           src={bannerMob}
-          alt="banner"
+          alt="High Access Corridor Bulk Land in Dholera SIR"
           className="h-full w-full object-cover md:hidden"
           fill
           priority

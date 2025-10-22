@@ -256,14 +256,14 @@ export default function Projects() {
         <div className="absolute inset-0">
           <Image
             src={hero}
-            alt="Hero Background"
+            alt="Dholera SIR Project"
             fill
             className="object-cover "
             priority
           />
           <Image
             src={heroM}
-            alt="Hero Background"
+            alt="Dholera SIR Project"
             fill
             className="object-cover md:hidden"
             priority

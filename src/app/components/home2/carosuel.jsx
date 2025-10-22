@@ -43,6 +43,7 @@ export default function HOME2() {
       desktop: hero1,
       tablet: hero1,
       mobile: heroM1,
+      alt:"Dholera Smart City",
       desktopClickArea: { left: 159, top: 527, right: 367, bottom: 565 },
       mobileClickArea: { left: 191, top: 865, right: 400, bottom: 906 },
     },
@@ -50,6 +51,7 @@ export default function HOME2() {
       desktop: hero2,
       tablet: hero2,
       mobile: heroM2,
+      alt:"Dholera SIR",
       desktopClickArea: { left: 160, top: 524, right: 406, bottom: 570 },
       mobileClickArea: { left: 181, top: 856, right: 412, bottom: 898 },
     },
@@ -57,6 +59,7 @@ export default function HOME2() {
       desktop: hero3,
       tablet: hero3,
       mobile: heroM3,
+      alt:"Dholera Smart City Project",
       desktopClickArea: { left: 159, top: 518, right: 401, bottom: 562 },
       mobileClickArea: { left: 174, top: 861, right: 417, bottom: 902 },
     },
@@ -101,7 +104,7 @@ export default function HOME2() {
               <div className="relative w-full h-[76vh]">
                 <Image
                   src={slide.desktop}
-                  alt={`hero slide ${index + 1}`}
+                  alt={slide.alt}
                   fill
                   priority={index === 0}
                   className="object-cover"

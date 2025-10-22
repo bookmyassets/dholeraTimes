@@ -91,14 +91,14 @@ export default function page() {
         {/* Banner Image */}
         <Image
           src={banner}
-          alt="banner"
+          alt="Dholera SIR Residential Zone"
           className="h-full w-full object-cover max-sm:hidden"
           fill
           priority
         />
         <Image
           src={bannerMob}
-          alt="banner"
+          alt="Dholera SIR Residential Zone"
           className="h-full w-full object-cover md:hidden"
           fill
           priority

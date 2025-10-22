@@ -106,14 +106,14 @@ export default function page() {
         {/* Banner Image */}
         <Image
           src={banner}
-          alt="banner"
+          alt="Commercial Bulk Land Dholera SIR "
           className="h-full w-full object-cover max-sm:hidden"
           fill
           priority
         />
         <Image
           src={bannerMob}
-          alt="banner"
+          alt="Commercial Bulk Land Dholera SIR "
           className="h-full w-full object-cover md:hidden"
           fill
           priority
