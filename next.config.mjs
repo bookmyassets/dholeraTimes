@@ -149,7 +149,7 @@ const nextConfig = {
       },
       {
         source: "/DholeraSIR/Dholera-Expressway-Six-Lane",
-        destination: "/dholera-sir/dholera-expressway",
+        destination: "/dholera-sir/ahmedabad-dholera-expressway",
         permanent: true,
       },
       {
