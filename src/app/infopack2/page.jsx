@@ -50,10 +50,10 @@ const FixedNavigation = () => (
 );
 
 const WhyDholeraGrowth = () => (
-  <div className="bg-gradient-to-br from-[#151f28] via-[#1a2832] to-[#151f28] p-8 md:p-12 rounded-3xl shadow-2xl border-2 border-[#d3b36b]/40 mb-12">
+  <div className="bg-gradient-to-br from-[#151f28] via-[#1a2832] to-[#151f28] p-8 rounded-3xl shadow-2xl border-2 border-[#d3b36b]/40">
     <div className="text-center mb-10">
       <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
-        Why Dholera is the{" "}
+        Why Dholera is the
         <span className="text-[#d3b36b]">Future of India</span>
       </h2>
       <div className="h-1.5 w-40 bg-gradient-to-r from-transparent via-[#d3b36b] to-transparent mx-auto rounded-full" />
@@ -127,54 +127,6 @@ const WhyDholeraGrowth = () => (
   </div>
 );
 
-// Add Footer Component
-const Footer = () => (
-  <footer className="relative z-10 bg-[#151f28]/95 backdrop-blur-md border-t-2 border-[#d3b36b]/40 py-8 mt-16">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center">
-        <h3 className="text-2xl font-bold text-[#d3b36b] mb-4">
-          Dholera SIR - India's First Smart City
-        </h3>
-        <p className="text-gray-300 mb-6">
-          Your gateway to premium residential and commercial plots in India's
-          most promising smart city project.
-        </p>
-        <div className="flex justify-center space-x-6">
-          <Link
-            href="/contact"
-            className="text-gray-300 hover:text-[#d3b36b] transition-colors"
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="/about"
-            className="text-gray-300 hover:text-[#d3b36b] transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="/privacy"
-            className="text-gray-300 hover:text-[#d3b36b] transition-colors"
-          >
-            Privacy Policy
-          </Link>
-          <Link
-            href="/terms"
-            className="text-gray-300 hover:text-[#d3b36b] transition-colors"
-          >
-            Terms of Service
-          </Link>
-        </div>
-        <div className="mt-6 pt-6 border-t border-gray-600">
-          <p className="text-gray-400">
-            © {new Date().getFullYear()} Dholera SIR Properties. All rights
-            reserved.
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-);
 
 export default function Page() {
   return (
@@ -184,7 +136,7 @@ export default function Page() {
       {/* Hero Section */}
       <div className="relative">
         {/* Content */}
-        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-32 pb-20">
+        <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-32 ">
           <div className="max-w-6xl mx-auto">
             <div className="text-center space-y-6 mb-16">
               <div className="inline-block">
@@ -336,7 +288,7 @@ export default function Page() {
           <section aria-labelledby="updates-heading" className="pt-8">
             <h2
               id="updates-heading"
-              className="bg-[#d3b36b] text-gray-900 text-xl md:text-3xl lg:text-4xl text-center p-3 md:p-5 font-semibold mx-auto rounded-md mb-8"
+              className="bg-[#d3b36b] text-gray-900 text-xl md:text-3xl lg:text-4xl text-center p-3 md:p-5 font-semibold mx-auto rounded-md"
             >
               Explore Latest Progress Around Dholera
             </h2>
