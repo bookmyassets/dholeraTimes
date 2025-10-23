@@ -670,52 +670,52 @@ export default function NRIInvestmentGuide() {
       />
 
       <div className="relative text-white py-12 px-6">
-  {/* Background Images */}
-  <div className="absolute inset-0">
-    <Image
-      src={nri}
-      alt="NRI Investment in Dholera SIR"
-      className="object-cover w-full h-full md:hidden"
-    />
-    <Image
-      src={nriD}
-      alt="NRI Investment in Dholera SIR"
-      className="object-cover w-full h-full max-sm:hidden"
-    />
-    {/* Dark overlay for better text readability */}
-    <div className="absolute inset-0 bg-black/40"></div>
-  </div>
+        {/* Background Images */}
+        <div className="absolute inset-0">
+          <Image
+            src={nri}
+            alt="NRI Investment in Dholera SIR"
+            className="object-cover w-full h-full md:hidden"
+          />
+          <Image
+            src={nriD}
+            alt="NRI Investment in Dholera SIR"
+            className="object-cover w-full h-full max-sm:hidden"
+          />
+          {/* Dark overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
 
-  {/* Content */}
-  <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center">
-    <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-      Your Gateway to Property Investment in India's 1st Greenfield Smart
-      City!
-    </h2>
-    <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8 drop-shadow-lg">
-      Invest in India's No.1 Smart City from Anywhere in the World
-    </h2>
-    <p className="text-lg mb-8 drop-shadow-lg">
-      Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal,
-      AUDA-Approved Plots with Virtual Support.
-    </p>
+        {/* Content */}
+        <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
+            Your Gateway to Property Investment in India's 1st Greenfield Smart
+            City!
+          </h2>
+          <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8 drop-shadow-lg">
+            Invest in India's No.1 Smart City from Anywhere in the World
+          </h2>
+          <p className="text-lg mb-8 drop-shadow-lg">
+            Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal,
+            AUDA-Approved Plots with Virtual Support.
+          </p>
 
-    <div className="flex flex-col sm:flex-row gap-4 mb-8">
-      <button
-        onClick={openContactForm}
-        className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
-      >
-        Get Free Consultation
-      </button>
-      <Link
-        href="/projects"
-        className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
-      >
-        Explore Projects
-      </Link>
-    </div>
-  </div>
-</div>
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <button
+              onClick={openContactForm}
+              className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
+            >
+              Get Free Consultation
+            </button>
+            <Link
+              href="/projects"
+              className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
+            >
+              Explore Projects
+            </Link>
+          </div>
+        </div>
+      </div>
 
       {/* Navigation Tabs */}
       <div className="sticky top-0 z-20 bg-white shadow-md py-4 max-sm:hidden">
