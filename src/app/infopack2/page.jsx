@@ -17,7 +17,7 @@ import DholeraCarousel from "./gallery";
 
 // Updated FixedNavigation component that accepts currentPage prop
 const FixedNavigation = ({ currentPage = "home" }) => (
-  <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-2xl">
+  <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-20 w-[95%] max-w-2xl">
     <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-amber-200/50 px-3 py-3 md:px-6 md:py-4">
       <div className="flex items-center justify-center gap-2 md:gap-6">
         <Link
