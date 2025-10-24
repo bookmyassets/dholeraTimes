@@ -25,7 +25,7 @@ const FixedNavigation = ({ currentPage = "home" }) => (
           className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "locations"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-white hover:bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] hover:text-[#151f28] text-gray-600 hover:bg-gray-50 border-gray-300"
           }`}
         >
           <FaMapMarkerAlt className="text-sm md:text-lg" />
@@ -37,7 +37,7 @@ const FixedNavigation = ({ currentPage = "home" }) => (
           className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "videos"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300 hover:bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] hover:text-[#151f28]"
           }`}
         >
           <FaVideo className="text-sm md:text-lg" />
@@ -49,7 +49,7 @@ const FixedNavigation = ({ currentPage = "home" }) => (
           className={`group flex items-center gap-2 px-2 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "inventory"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300 hover:bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] hover:text-[#151f28]"
           }`}
         >
           <FaBuilding className="text-sm md:text-lg" />
@@ -64,7 +64,7 @@ const FixedNavigation = ({ currentPage = "home" }) => (
 
 const WhyDholeraGrowth = () => (
   <div className="bg-gradient-to-br from-[#151f28] via-[#1a2832] to-[#151f28] p-8 rounded-3xl shadow-2xl border-2 border-[#d3b36b]/40">
-    <div className="text-center mb-10">
+    <div className="text-center mb-8">
       <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
         Why Dholera is the
         <span className="text-[#d3b36b]">Future of India</span>
@@ -75,7 +75,7 @@ const WhyDholeraGrowth = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
       <div className="space-y-6">
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             🚀 Government Backing
           </h3>
           <p className="text-gray-700">
@@ -85,7 +85,7 @@ const WhyDholeraGrowth = () => (
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             ✈️ International Airport
           </h3>
           <p className="text-gray-700">
@@ -95,7 +95,7 @@ const WhyDholeraGrowth = () => (
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             🏭 Industrial Hub
           </h3>
           <p className="text-gray-700">
@@ -107,7 +107,7 @@ const WhyDholeraGrowth = () => (
 
       <div className="space-y-6">
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             🌆 Smart Infrastructure
           </h3>
           <p className="text-gray-700">
@@ -117,7 +117,7 @@ const WhyDholeraGrowth = () => (
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             💰 Investment Returns
           </h3>
           <p className="text-gray-700">
@@ -127,7 +127,7 @@ const WhyDholeraGrowth = () => (
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-3 group-hover:text-[#d3b36b] transition-colors">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
             🎯 Strategic Location
           </h3>
           <p className="text-gray-700">
@@ -139,7 +139,6 @@ const WhyDholeraGrowth = () => (
     </div>
   </div>
 );
-
 
 export default function Page() {
   return (
@@ -311,7 +310,7 @@ export default function Page() {
       </div>
 
       <div>
-        <DholeraCarousel/>
+        <DholeraCarousel />
       </div>
 
       {/* Fixed Navigation - Moved to bottom */}

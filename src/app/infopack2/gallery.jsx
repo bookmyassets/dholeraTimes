@@ -65,68 +65,61 @@ export default function DholeraCarousel() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex items-center justify-center p-4">
       {/* Carousel Section */}
-      <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl" style={{ backgroundColor: "#151f28" }}>
+      <div className="max-w-6xl w-full mx-auto">
+        <div className="relative rounded-2xl w-full max-w-4xl mx-auto aspect-video overflow-hidden shadow-2xl bg-[#151f28]">
           {/* Main Image Display */}
-          <div className="relative aspect-video">
-            <div className="absolute inset-0 flex items-center justify-center bg-black">
-              <div className="relative w-full h-full">
-                <Image
-                  src={galleryImages[currentIndex].src}
-                  alt={galleryImages[currentIndex].alt}
-                  fill
-                  className="object-contain"
-                  priority
-                />
-                {/* Image Number Overlay */}
-                <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm font-bold">
-                  {currentIndex + 1} / {galleryImages.length}
-                </div>
-              </div>
+          <div className="relative w-full h-full bg-black flex items-center justify-center">
+            <Image
+              src={galleryImages[currentIndex].src}
+              alt={galleryImages[currentIndex].alt}
+              fill
+              className="object-contain"
+              priority
+            />
+            {/* Image Number Overlay */}
+            <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm font-bold">
+              {currentIndex + 1} / {galleryImages.length}
             </div>
           </div>
 
           {/* Navigation Buttons */}
           <button
             onClick={goToPrevious}
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-3 transition-all hover:scale-110 z-10"
-            style={{ backgroundColor: "#d3b36b" }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full p-3 hover:scale-110 transition-all z-10 bg-[#d3b36b]"
           >
-            <ChevronLeft size={24} style={{ color: "#151f28" }} />
+            <ChevronLeft size={24} className="text-[#151f28]" />
           </button>
 
           <button
             onClick={goToNext}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-3 transition-all hover:scale-110 z-10"
-            style={{ backgroundColor: "#d3b36b" }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full p-3 hover:scale-110 transition-all z-10 bg-[#d3b36b]"
           >
-            <ChevronRight size={24} style={{ color: "#151f28" }} />
+            <ChevronRight size={24} className="text-[#151f28]" />
           </button>
 
           {/* Play/Pause Button */}
           <button
             onClick={() => setIsPlaying(!isPlaying)}
-            className="absolute bottom-4 left-4 rounded-full p-3 transition-all hover:scale-110"
-            style={{ backgroundColor: "#d3b36b" }}
+            className="absolute bottom-4 left-4 rounded-full p-3 hover:scale-110 transition-all bg-[#d3b36b]"
           >
             {isPlaying ? (
-              <Pause size={20} style={{ color: "#151f28" }} />
+              <Pause size={20} className="text-[#151f28]" />
             ) : (
-              <Play size={20} style={{ color: "#151f28" }} />
+              <Play size={20} className="text-[#151f28]" />
             )}
           </button>
 
           {/* Progress Indicator */}
-          <div className="absolute bottom-4 right-4 px-4 py-2 rounded-full text-sm font-semibold" style={{ backgroundColor: "#d3b36b", color: "#151f28" }}>
+          <div className="absolute bottom-4 right-4 px-4 py-2 rounded-full text-sm font-semibold bg-[#d3b36b] text-[#151f28]">
             {currentIndex + 1} / {galleryImages.length}
           </div>
         </div>
 
         {/* Image Info */}
         <div className="mt-6 p-4 text-center">
-          <h3 className="text-2xl font-bold mb-2" style={{ color: "#d3b36b" }}>
+          <h3 className="text-2xl font-bold mb-2 text-[#d3b36b]">
             {galleryImages[currentIndex].alt}
           </h3>
           <p className="text-lg text-gray-300">
@@ -136,7 +129,7 @@ export default function DholeraCarousel() {
 
         {/* Thumbnail Navigation */}
         <div className="mt-8 overflow-x-auto">
-          <div className="flex gap-3 pb-4">
+          <div className="flex gap-3 pb-4 justify-center">
             {galleryImages.map((image, index) => (
               <button
                 key={image.id}
