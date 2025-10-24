@@ -1,6 +1,55 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import bg from "@/assets/bg-image.webp";
+import Link from "next/link";
+import { FaMapMarkerAlt, FaVideo, FaBuilding } from "react-icons/fa";
+
+  //naviagtion tab
+const FixedNavigation = ({ currentPage = "locations" }) => (
+  <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-2xl">
+    <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-amber-200/50 px-3 py-3 md:px-6 md:py-4">
+      <div className="flex items-center justify-center gap-2 md:gap-6">
+        <Link
+          href="/infopack/locations"
+          className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "locations"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
+        >
+          <FaMapMarkerAlt className="text-sm md:text-lg" />
+          <span className="font-semibold text-sm md:text-base">Locations</span>
+        </Link>
+
+        <Link
+          href="/infopack/videos"
+          className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "videos"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
+        >
+          <FaVideo className="text-sm md:text-lg" />
+          <span className="font-semibold text-sm md:text-base">Videos</span>
+        </Link>
+
+        <Link
+          href="/infopack/inventory"
+          className={`group flex items-center gap-2 px-2 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "inventory"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
+        >
+          <FaBuilding className="text-sm md:text-lg" />
+          <span className="font-semibold text-xs md:text-base whitespace-nowrap">
+            Available Plots
+          </span>
+        </Link>
+      </div>
+    </div>
+  </div>
+);
 
 const locations = [
   {
@@ -92,6 +141,8 @@ export default function LocationsComponent() {
       setExpandedLocation(index);
     }
   };
+
+
 
   // List view for mobile
   const renderListView = () => {
@@ -208,7 +259,7 @@ export default function LocationsComponent() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-8 sm:px-6 lg:px-8">
+    <div className="w-full max-w-7xl mx-auto space-y-3 px-4 py-8 pt-32 sm:px-6 lg:px-8">
       <meta name="robots" content="noindex, dofollow" />
       <link
         rel="canonical"
@@ -294,6 +345,7 @@ export default function LocationsComponent() {
           animation: fadeIn 0.6s ease-out forwards;
         }
       `}</style>
+      <FixedNavigation currentPage="locations"/>
     </div>
   );
 }

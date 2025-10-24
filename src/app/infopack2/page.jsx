@@ -11,17 +11,22 @@ import bg from "@/assets/pexels.jpg";
 import estate1 from "@/assets/residential/estate-hero.webp";
 import Image from "next/image";
 import Link from "next/link";
-import LatestUpdates from "../components/Latest-updates";
 import { FaMapMarkerAlt, FaVideo, FaBuilding } from "react-icons/fa";
+import LatestUpdates from "../components/Latest-updates";
 import DholeraCarousel from "./gallery";
 
-const FixedNavigation = () => (
+// Updated FixedNavigation component that accepts currentPage prop
+const FixedNavigation = ({ currentPage = "home" }) => (
   <div className="fixed top-24 left-1/2 transform -translate-x-1/2 z-40 w-[95%] max-w-2xl">
     <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl border border-amber-200/50 px-3 py-3 md:px-6 md:py-4">
       <div className="flex items-center justify-center gap-2 md:gap-6">
         <Link
           href="/infopack/locations"
-          className="group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/40 transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border border-[#d3b36b]/40 font-bold"
+          className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "locations"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
         >
           <FaMapMarkerAlt className="text-sm md:text-lg" />
           <span className="font-semibold text-sm md:text-base">Locations</span>
@@ -29,7 +34,11 @@ const FixedNavigation = () => (
 
         <Link
           href="/infopack/videos"
-          className="group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/40 transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border border-[#d3b36b]/40 font-bold"
+          className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "videos"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
         >
           <FaVideo className="text-sm md:text-lg" />
           <span className="font-semibold text-sm md:text-base">Videos</span>
@@ -37,7 +46,11 @@ const FixedNavigation = () => (
 
         <Link
           href="/infopack/inventory"
-          className="group flex items-center gap-2 px-2 py-2 md:px-4 md:py-2 rounded-xl bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/40 transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border border-[#d3b36b]/40 font-bold"
+          className={`group flex items-center gap-2 px-2 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
+            currentPage === "inventory"
+              ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
+              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+          }`}
         >
           <FaBuilding className="text-sm md:text-lg" />
           <span className="font-semibold text-xs md:text-base whitespace-nowrap">
