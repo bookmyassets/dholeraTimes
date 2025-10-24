@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import bg from "@/assets/pexels.jpg";
 import estate1 from "@/assets/residential/estate-hero.webp";
+import county1 from "@/assets/residential/westwyn-county-banner.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaVideo, FaBuilding } from "react-icons/fa";
@@ -280,7 +281,7 @@ export default function Page() {
             >
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border-2 border-[#d3b36b]/30 hover:border-[#d3b36b]/60">
                 <Image
-                  src={estate1}
+                  src={county1}
                   alt="Westwyn County"
                   className="w-full h-52 object-contain md:object-cover md:h-72 group-hover:scale-110 transition-transform duration-300"
                 />
