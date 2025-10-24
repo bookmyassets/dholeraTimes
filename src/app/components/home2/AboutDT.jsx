@@ -37,14 +37,14 @@ export default function AboutDT() {
             <p className="text-gray-600 leading-relaxed mb-8">
               WestWyn Estate is the newest landmark project in Dholera SIR,
               designed for long-term value and growth. Strategically located on
-              Vadhela–Navda Highway,<br /> it offers unbeatable connectivity: just 0
-              km from the Dholera SIR boundary,<br /> 5 minutes from the
-              Ahmedabad–Dholera Expressway, 15 minutes from the Activation Area,
+              Vadhela-Navda Highway,<span className="max-sm:hidden"> <br /> </span>  it offers unbeatable connectivity: just 0
+              km from the Dholera SIR boundary,<span className="max-sm:hidden"> <br /> </span>  5 minutes from the
+              Ahmedabad-Dholera Expressway, 15 minutes from the Activation Area,
               25 minutes from the Tata Semiconductor Plant, and 30 minutes from
-              the Dholera International Airport. <br />
+              the Dholera International Airport. <span className="max-sm:hidden"> <br /> </span> 
               All plots are NA/NOC approved, title-cleared, and registry-ready,
               ensuring a secure investment. With flexible plot sizes, even
-              buyers looking to buy under <br />10 lakhs plot in Dholera can own a
+              buyers looking to buy under <span className="max-sm:hidden"> <br /> </span> 10 lakhs plot in Dholera can own a
               future-ready property. This is an ideal opportunity for investors
               seeking growth in India’s first Greenfield Smart City.
             </p>
