@@ -8,7 +8,7 @@ import { urlFor } from "@/sanity/lib/image";
 // Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
-      <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full transition-transform duration-300 hover:scale-105">
+    <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full transition-transform duration-300 hover:scale-105">
       {/* Image */}
       <div className="relative w-full h-64">
         {blog.mainImage ? (
@@ -82,7 +82,7 @@ export default function LatestUpdates() {
       try {
         setLoading(true);
         const getUpdates = await getblogs();
-        
+
         const safePosts = getUpdates.map((post) => ({
           ...post,
           author: post.author || "Dholera Times",
@@ -100,7 +100,7 @@ export default function LatestUpdates() {
 
         setBlogs(trendingBlogs);
       } catch (err) {
-        console.error('Error fetching blogs:', err);
+        console.error("Error fetching blogs:", err);
         setError(err);
       } finally {
         setLoading(false);
@@ -112,7 +112,7 @@ export default function LatestUpdates() {
 
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto py-16 px-4">
+      <div className="max-w-7xl mx-auto py-4 md:py-16 px-4">
         <p className="text-[28px] font-semibold mb-6">Featured Blogs</p>
         <div className="text-center text-red-500">
           <p>Error loading blogs. Please try again later.</p>
@@ -122,8 +122,10 @@ export default function LatestUpdates() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
-      <p className="text-[28px] font-semibold mb-6 text-center">Featured Blogs</p>
+    <div className="max-w-7xl mx-auto py-4 md:py-16 px-4">
+      <p className="text-[28px] font-semibold mb-6 text-center">
+        Featured Blogs
+      </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {loading
           ? Array(4)
@@ -135,8 +137,7 @@ export default function LatestUpdates() {
               ))
             : Array(4)
                 .fill(0)
-                .map((_, i) => <BlogSkeleton key={i} />)
-        }
+                .map((_, i) => <BlogSkeleton key={i} />)}
       </div>
     </div>
   );

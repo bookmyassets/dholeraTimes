@@ -65,7 +65,7 @@ export default function DholeraCarousel() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center p-2 md:p-4">
       {/* Carousel Section */}
       <div className="max-w-6xl w-full mx-auto">
         <div className="relative rounded-2xl w-full max-w-4xl mx-auto aspect-video overflow-hidden shadow-2xl bg-[#151f28]">

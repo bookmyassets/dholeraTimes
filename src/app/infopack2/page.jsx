@@ -235,7 +235,7 @@ export default function Page() {
       </div>
 
       {/* Why Dholera Section */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">
           <WhyDholeraGrowth />
         </div>
