@@ -3,6 +3,13 @@ import { useState, useEffect } from "react";
 import { Plus, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import PopupForm from "../../components/PopupForm";
+import safe from "@/assets/residential/safe-investment.webp"
+import lifestyle from "@/assets/residential/lifestyle-and-trust.webp"
+import support from "@/assets/residential/government-support-dholera.webp"
+import growth from "@/assets/residential/exceptional-growth.webp"
+import connectivity from "@/assets/residential/dholera-strong-connectivity.webp"
+import location from "@/assets/residential/strategic-location-dholera.webp"
+import Image from "next/image";
 
 export default function InvestmentBenefits() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -88,7 +95,7 @@ export default function InvestmentBenefits() {
         "Situated at the entrance of Dholera SIR, near TP 5, WestWyn Estate puts you at the center of the region's fastest-growing corridor.",
       body: "With the Activation Area just 15 minutes away, this location ensures unmatched convenience and long-term growth potential. Strategically positioned on Navda Highway, 0 km from Dholera SIR and close to TP 5, ensuring you are at the heart of the region's fastest development zone.",
       image:
-        "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&h=600&fit=crop&crop=center",
+        location,
     },
     {
       title: "Strong Connectivity",
@@ -97,7 +104,7 @@ export default function InvestmentBenefits() {
         "Well-connected to Dholera International Airport, Expressway, and proposed monorail.",
       body: "WestWyn Estate is well-connected to the upcoming Dholera International Airport, Ahmedabad–Dholera Expressway, and the proposed monorail. With just 25 minutes from the Tata Semiconductor Fab, this area is set to become a hub of industrial and residential activity. Connectivity in Dholera has never been better for investors looking at rapid appreciation.",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop&crop=center",
+        connectivity,
     },
     {
       title: "Government-Supported Smart City",
@@ -106,7 +113,7 @@ export default function InvestmentBenefits() {
         "Part of Dholera Smart City under DMIC, supported by Central and State Governments.",
       body: "As part of Dholera Smart City under the Delhi–Mumbai Industrial Corridor (DMIC), the project benefits from both Central and State Government support. The government-backed development ensures planned urban growth and a stable investment environment.",
       image:
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop&crop=center",
+        support,
     },
     {
       title: "Safe and Transparent Investment",
@@ -115,7 +122,7 @@ export default function InvestmentBenefits() {
         "NA/NOC cleared, Plan pass and title-cleared plots for secure ownership.",
       body: "All plots in WestWyn Estate are NA/NOC cleared, Plan pass and title-cleared, ensuring complete legal transparency and a safe investment in Dholera SIR.",
       image:
-        "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&crop=center",
+        safe,
     },
     {
       title: "Exceptional Growth Opportunities",
@@ -124,7 +131,7 @@ export default function InvestmentBenefits() {
         "Early investors benefit from rapid value growth in a developing region.",
       body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estate offers one of the smartest Dholera SIR investment opportunities.",
       image:
-        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+        growth,
     },
     {
       title: "Lifestyle & Trust Combined",
@@ -133,7 +140,7 @@ export default function InvestmentBenefits() {
         "A gated community with green landscapes, wide roads",
       body: "Experience modern living with wide roads, landscaped greenery, and top-notch amenities, delivered by a developer trusted by investors with six projects successfully sold out.",
       image:
-        "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=800&h=600&fit=crop&crop=center",
+        lifestyle,
     },
   ];
 
@@ -258,7 +265,7 @@ export default function InvestmentBenefits() {
                   initial="hidden"
                   animate="visible"
                 >
-                  <img
+                  <Image
                     src={benefits[hoveredBenefit].image}
                     alt={benefits[hoveredBenefit].title}
                     className="w-full h-full object-cover"
@@ -330,7 +337,7 @@ export default function InvestmentBenefits() {
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.4 }}
                   >
-                    <img
+                    <Image
                       src={benefits[hoveredBenefit].image}
                       alt={benefits[hoveredBenefit].title}
                       className="w-full h-full object-cover"
@@ -526,7 +533,7 @@ export default function InvestmentBenefits() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 }}
                   >
-                    <img
+                    <Image
                       src={selectedBenefit.image}
                       alt={selectedBenefit.title}
                       className="w-full h-full object-cover"
