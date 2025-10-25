@@ -12,6 +12,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ContactForm from "../../components/ContactForm";
 import LeadForm from "../LeadForm";
+import SchemaMarkup from "../SchemaMarkup";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -421,7 +422,7 @@ export default async function BlogDetail({ params }) {
           href={`https://www.dholeratimes.com/dholera-sir/${post.slug.current}`}
         />
         <meta name="robots" content="index, dofollow" />
-
+        <SchemaMarkup post={post}/>
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
 

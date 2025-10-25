@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import CommonForm from "@/app/components/FormSection";
 import LeadForm from "@/app/dholera-sir/LeadForm";
+import SchemaMarkup from "../SchemaMarkup";
 
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
@@ -418,6 +419,7 @@ export default async function BlogDetail({ params }) {
           <meta name="keywords" content={post.keywords} />
           <meta name="publisher" content="Dholera Times" />
         {/* Sticky Nav Placeholder */}
+        <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
         <div className="bg-white shadow-sm sticky top-0 z-30" />
 
         <link rel="canonical" href={canonicalUrl} />
