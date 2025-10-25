@@ -298,7 +298,7 @@ export default function SidebarWithForm({ popularArticles }) {
               className="pb-4 border-b border-gray-200 last:border-b-0 last:pb-0"
             >
               <Link
-                href={`/dholera-updates/latest-news/${article.slug.current}`}
+                href={`/dholera-updates/latest-updates/${article.slug.current}`}
                 className="block group"
               >
                 <h4 className="text-base font-semibold text-[#151f28] mb-1 group-hover:text-[#d3b36b] transition-colors">
