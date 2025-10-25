@@ -185,39 +185,8 @@ const WhyDholeraGrowth = () => (
         </div>
 
         <div className="space-y-6">
-          <AnimatedSection
-            variants={{
-              hidden: { opacity: 0, x: 60 },
-              visible: {
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
-            className="max-sm:hidden"
-          >
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🌆 Green & Sustainable
-              </h3>
-              <p className="text-gray-700">
-                India's largest planned solar park and eco-friendly smart grids.
-              </p>
-            </div>
-          </AnimatedSection>
 
-          <AnimatedSection variants={slideInLeft} className="sm:hidden">
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🌆 Green & Sustainable
-              </h3>
-              <p className="text-gray-700">
-                India's largest planned solar park and eco-friendly smart grids.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection
+           <AnimatedSection
             variants={{
               hidden: { opacity: 0, x: 60 },
               visible: {
@@ -250,6 +219,39 @@ const WhyDholeraGrowth = () => (
               </p>
             </div>
           </AnimatedSection>
+          <AnimatedSection
+            variants={{
+              hidden: { opacity: 0, x: 60 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: { duration: 0.6, ease: "easeOut" },
+              },
+            }}
+            className="max-sm:hidden"
+          >
+            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
+              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+                🌆 Green & Sustainable
+              </h3>
+              <p className="text-gray-700">
+                India's largest planned solar park and eco-friendly smart grids.
+              </p>
+            </div>
+          </AnimatedSection>
+
+          <AnimatedSection variants={slideInLeft} className="sm:hidden">
+            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
+              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+                🌆 Green & Sustainable
+              </h3>
+              <p className="text-gray-700">
+                India's largest planned solar park and eco-friendly smart grids.
+              </p>
+            </div>
+          </AnimatedSection>
+
+         
 
           <AnimatedSection
             variants={{

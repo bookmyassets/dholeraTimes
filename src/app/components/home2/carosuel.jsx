@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /* image import */
-import hero1 from "@/assets/dt-home-banner.webp";
-import hero2 from "@/assets/westwyn-estate-banner.webp";
-import hero3 from "@/assets/DT-banner3.webp";
-import heroM1 from "@/assets/DTbanner1_mobile.webp";
-import heroM2 from "@/assets/westwyn-estate-mobile-banner.webp";
-import heroM3 from "@/assets/DTbanner3_mobile.webp";
+import hero1 from "@/assets/test/westwyn-estate-desktop-banner-dholera-times.webp";
+import hero2 from "@/assets/test/mega-projects-dholera-desktop-banner-dholera-times.webp";
+import hero3 from "@/assets/test/dholera-desktop-banner-dholera-times.webp";
+import heroM1 from "@/assets/test/westwyn-estate-mobile-banner-dholera-times.webp";
+import heroM2 from "@/assets/test/mega-projects-mobile-banner-dholera-times.webp";
+import heroM3 from "@/assets/test/dholera-mobile-banner-dholera-times.webp";
 import BrochureForm from "../BrochureForm";
 
 export default function HOME2() {
