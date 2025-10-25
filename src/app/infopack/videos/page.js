@@ -50,57 +50,37 @@ const FixedNavigation = ({ currentPage = "home" }) => (
 );
 
 export default async function VideosPage() {
-  // Assuming YouTube video links could be fetched from Sanity or another source
+  
   const videos = [
     {
-      id: "hNbWaEU1d_A?si=c5c7r-9oUr-CB8QD",
-      title: "Dholera Smart City Overview",
-      duration: "5:42",
+      id: "yePZG0VDfjw?si=YE2H9KAmrQkqpvZ_",
+      title: "India's First GreenField Smart City Dholera",
+      duration: "3:37",
     },
     {
-      id: "rYv0f3BPhkg?si=AMWq3AMNQKwAW9Q_",
+      id: "-3i9B9TQDUE?si=lNZn6PQNflBbTPYk",
       title: "Ahmedabad to Dholera in 45 Mins!",
-      duration: "7:18",
+      duration: "1:08",
     },
     {
-      id: "RhQ1EdoQthc?si=E0gr-_r2za9T5TRU",
-      title: "Dholera International Airport: Latest On-Ground Updates",
-      duration: "4:55",
-    },
-    {
-      id: "d_OATHg69UE?si=zPAeMlms8__JRZZH",
-      title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
-      duration: "6:30",
-    },
-    {
-      id: "eugms9FsV1M?si=xDcpLcq4EfM-hsUW",
-      title: "Dholera Now: City Progress You Must See!",
-      duration: "8:12",
-    },
-    {
-      id: "HbB5WatmHD4?si=Of_TaIOcdfyuNdtV",
+      id: "-Jotm3dCha8?si=iOdBxOFGfVFQIonX",
       title: "Dholera Water Treatment Plant",
-      duration: "8:12",
+      duration: "0:51",
     },
     {
-      id: "_r3Mn5MWhJg?si=JNqD1KxKzXOvLFV9",
-      title: "Ahmedabad Dholera Expressway",
-      duration: "8:12",
+      id: "bUK2zLXUDkA?si=AONjVcYWG33EZUzA",
+      title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
+      duration: "1:11",
     },
     {
-      id: "_8xDR8tsIj8?si=LGPakhs5et01FH9X",
-      title: "Dholera International Airport",
-      duration: "8:12",
+      id: "7g8QWTgK9Ro?si=lNnCg8IU9na-HW0T",
+      title: "Dholera Now: WestWyn County",
+      duration: "0:52",
     },
     {
-      id: "3KpfdlcFmLQ?si=WWvNkS21ENXkcuau",
-      title: "TATA SEMICON",
-      duration: "8:12",
-    },
-    {
-      id: "e-k_LKudNM0?si=LT_Om9yr-KQbs_Fw",
+      id: "PbkWAirTEnk?si=gwo9R8Zvfgw3gmLe",
       title: "Dholera Activation Area",
-      duration: "8:12",
+      duration: "0:48",
     },
   ];
 
