@@ -45,6 +45,11 @@ export default function Hero() {
         name="keywords"
         content="Orchid Dholera, Dholera Activation Area, Dholera plots, Dholera investment, smart city Dholera"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-residential-plots/orchid"
+      />
+
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-12">

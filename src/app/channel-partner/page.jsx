@@ -22,6 +22,10 @@ export default function ChannelPartnerPage() {
         name="keywords"
         content="Dholera Smart City, Dholera Gujarat, Dholera SIR, Dholera Project, Invest in Dholera, Dholera Property Investment"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/channel-partner"
+      />
 
       {/* Hero Section */}
       <section className="py-20 relative overflow-hidden h-[50vh]">

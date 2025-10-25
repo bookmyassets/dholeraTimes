@@ -6,7 +6,10 @@ export default function PrivacyPolicy() {
   return (
     <>
       <meta name="robots" content="index, dofollow"/>
-
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/policies/refund"
+      />
       <div className="relative w-full h-[40vh]">
         <Image src={hero} alt="hero" layout="fill" objectFit="cover" priority />
       </div>

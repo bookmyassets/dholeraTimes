@@ -45,6 +45,10 @@ export default function Hero() {
         name="keywords"
         content="Maple Dholera, Dholera plots, smart city Gujarat, Dholera investment, Dholera Smart City."
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-residential-plots/maple"
+      />
 
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">

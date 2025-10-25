@@ -85,6 +85,10 @@ export default function page() {
         name="keywords"
         content="Dholera SIR, Dholera Smart City, Industrial Land Dholera, Dholera Investment"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/bulk-land/industrial"
+      />
 
       <div className="relative h-[50vh] w-full ">
         {/* Banner Image */}

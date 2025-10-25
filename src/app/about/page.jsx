@@ -32,6 +32,10 @@ export default function AboutUs() {
         name="keywords"
         content="Dholera Smart City, Dholera SIR, Dholera Gujarat, Dholera Project, Dholera Investment, Smart City Dholera"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/about"
+        />
       {/* Hero Section */}
       <div className="relative h-96 w-full overflow-hidden bg-[#151f28]">
         <div className="absolute inset-0 "></div>

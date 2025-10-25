@@ -77,31 +77,29 @@ const WhyDholeraGrowth = () => (
       <div className="space-y-6">
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
           <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-            🚀 Government Backing
+            🚀 Infrastructure-First Planning
           </h3>
           <p className="text-gray-700">
-            First greenfield smart city in India with complete government
-            support and infrastructure development.
+            Roads, water, and ICT systems already operational in key zones.
           </p>
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
           <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-            ✈️ International Airport
+            💰 High ROI Zone
           </h3>
           <p className="text-gray-700">
-            Upcoming international airport making it a global business hub with
-            direct connectivity.
+            Early investors gaining value as infrastructure advances.
           </p>
         </div>
 
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
           <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-            🏭 Industrial Hub
+            🏭 Industrial Magnet
           </h3>
           <p className="text-gray-700">
-            Major industries like automotive, textiles, and IT are setting up
-            operations here.
+            Major players like TATA, Jabil, and Vedanta establishing operations
+            nearby.
           </p>
         </div>
       </div>
@@ -109,21 +107,10 @@ const WhyDholeraGrowth = () => (
       <div className="space-y-6">
         <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
           <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-            🌆 Smart Infrastructure
+            🌆 Green & Sustainable
           </h3>
           <p className="text-gray-700">
-            World-class infrastructure with smart utilities, metro connectivity,
-            and modern amenities.
-          </p>
-        </div>
-
-        <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-            💰 Investment Returns
-          </h3>
-          <p className="text-gray-700">
-            Land prices expected to appreciate 10-15x in the next 5-7 years as
-            development progresses.
+            India’s largest planned solar park and eco-friendly smart grids.
           </p>
         </div>
 
@@ -132,8 +119,17 @@ const WhyDholeraGrowth = () => (
             🎯 Strategic Location
           </h3>
           <p className="text-gray-700">
-            Located between Delhi-Mumbai Industrial Corridor (DMIC) with
-            excellent connectivity.
+            Positioned between Ahmedabad and Bhavnagar with rapid connectivity.
+          </p>
+        </div>
+
+        <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
+          <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+            ✈️ Quality of Life
+          </h3>
+          <p className="text-gray-700">
+            Designed for smart housing, healthcare, and educational
+            institutions.
           </p>
         </div>
       </div>
@@ -150,50 +146,69 @@ export default function Page() {
       <div className="relative">
         {/* Content */}
         <div className="relative z-10 px-4 sm:px-6 lg:px-8 pt-32 ">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div className="text-center space-y-6 mb-16">
               <div className="inline-block">
-                <h1 className="text-5xl md:text-7xl font-black text-[#d3b36b] mb-4 tracking-tight">
-                  Dholera SIR
+                <h1 className="text-3xl md:text-5xl font-black text-[#d3b36b] mb-4 tracking-tight">
+                  Dholera: India’s Smart City Revolution
                 </h1>
                 <div className="h-2 bg-gradient-to-r from-transparent via-[#d3b36b] to-transparent rounded-full"></div>
               </div>
 
               <p className="text-[#d3b36b] text-2xl md:text-3xl font-bold tracking-wide">
-                India's First Smart City
+                Dholera matlab{" "}
+                <span className="text-[#151f28]">Dholera Times</span>
               </p>
 
-              {/* Feature Card */}
-              <div className="flex justify-center pt-8">
-                <div className="bg-[#151f28]/95 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10 w-full max-w-lg border-2 border-[#d3b36b]/40">
-                  <ul className="space-y-5">
-                    {[
-                      "$25 Billion Investment",
-                      "7x Returns in Last 5 years",
-                      "Residential Plots from ₹10 Lakhs",
-                    ].map((text, idx) => (
-                      <li key={idx} className="flex items-center gap-4 group">
-                        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[#d3b36b] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                          <svg
-                            className="w-5 h-5 text-[#151f28]"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={3}
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                        </div>
-                        <span className="text-white text-lg font-semibold">
-                          {text}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl p-6 md:p-8 border-2 border-[#d3b36b]/40 max-w-5xl mx-auto mt-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-[#151f28] mb-4 text-center">
+                  The Vision of{" "}
+                  <span className="text-[#d3b36b]">Dholera SIR</span>
+                </h3>
+
+                <p className="text-gray-700 leading-relaxed mb-6 text-center">
+                  Dholera Special Investment Region is India's flagship smart
+                  city spanning{" "}
+                  <span className="font-bold text-[#d3b36b]">920 sq. km</span>,
+                  developed under the Delhi-Mumbai Industrial Corridor (DMIC). A
+                  self-sustained global hub combining advanced technology,
+                  world-class infrastructure, and sustainable design - setting
+                  the standard for future Indian cities.
+                </p>
+
+                <div className="bg-gradient-to-br from-[#151f28] to-[#1a2832] rounded-xl p-6 mb-4">
+                  <h4 className="text-xl font-bold text-[#d3b36b] mb-4 text-center">
+                    Dholera 2040
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                      <div className="text-3xl mb-2 text-center">🏭</div>
+                      <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
+                        Manufacturing Powerhouse
+                      </h5>
+                      <p className="text-white text-xs text-center">
+                        Global hub for electronics, semiconductors, and defense
+                      </p>
+                    </div>
+                    <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                      <div className="text-3xl mb-2 text-center">✈️</div>
+                      <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
+                        Connectivity Hub
+                      </h5>
+                      <p className="text-white text-xs text-center">
+                        Airport, expressway, and seaport network
+                      </p>
+                    </div>
+                    <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                      <div className="text-3xl mb-2 text-center">💡</div>
+                      <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
+                        Innovation Zone
+                      </h5>
+                      <p className="text-white text-xs text-center">
+                        Magnet for startups, R&D, and clean-tech
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -265,11 +280,14 @@ export default function Page() {
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-[#d3b36b] mb-2">
-                    Westwyn Estate
+                    WestWyn Estate - A Smart Investment for Smart Futures
                   </h3>
                   <p className="text-[#151f28]">
-                    Premium residential plots with modern amenities and smart
-                    city features.
+                    Located at the 0 KM mark of Dholera SIR, on the
+                    Vadhela–Navda Highway, WestWyn Estate stands as a landmark
+                    plotted community - offering ready-to-register,
+                    NA/NOC-approved plots within the entry zone of India’s most
+                    futuristic city.
                   </p>
                 </div>
               </div>
@@ -287,11 +305,14 @@ export default function Page() {
                 />
                 <div className="p-6">
                   <h3 className="text-2xl font-bold text-[#d3b36b] mb-2">
-                    Westwyn County
+                    WestWyn County - Premium Plots, Promising Returns
                   </h3>
                   <p className="text-[#151f28]">
-                    Premium residential plots with modern amenities and smart
-                    city features.
+                    WestWyn County is a premium plot located along the
+                    Fedra–Pipli Highway in the Dholera region. The project
+                    offers government-approved residential plots ranging from
+                    150 sq. yds to 325 sq. yds, combining smart design,
+                    connectivity, and long-term appreciation.
                   </p>
                 </div>
               </div>

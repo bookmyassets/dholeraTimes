@@ -45,6 +45,10 @@ export default function Hero() {
         name="keywords"
         content="WestWyn County Dholera, Dholera plots, Dholera Smart City, Dholera investment, smart city Gujarat"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-county"
+      />
 
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">

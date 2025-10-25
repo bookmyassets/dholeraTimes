@@ -52,6 +52,10 @@ export default async function New() {
         name="description"
         content=" Discover the latest on Dholera SIR! Get real-time updates on airport, metro, expressways, and industrial projects to help you make smart investment choices."
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-updates/latest-updates"
+      />
       <div className="min-h-screen relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 pt-12 pb-16">
           <div className="flex flex-col lg:flex-row gap-8">

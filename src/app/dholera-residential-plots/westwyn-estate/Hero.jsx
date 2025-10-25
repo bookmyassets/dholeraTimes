@@ -46,6 +46,10 @@ export default function Hero() {
         name="keywords"
         content="WestWyn Estate Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate"
+      />
 
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">

@@ -68,6 +68,10 @@ export default function page() {
         name="keywords"
         content="Dholera Smart City, Dholera Gujarat, Dholera SIR, Dholera Project, Invest in Dholera, Dholera Property Investment"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/bulk-land"
+      />
       <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
         <Image
           src={hero}

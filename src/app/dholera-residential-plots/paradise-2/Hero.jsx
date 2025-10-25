@@ -45,6 +45,10 @@ export default function Hero() {
         name="keywords"
         content="Paradise 2 Dholera, Dholera plots, smart city Gujarat, Dholera investment, investment in Dholera"
       />
+      <link
+          rel="canonical"
+          href="https://www.dholeratimes.com/dholera-residential-plots/paradise-2"
+      />
 
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
