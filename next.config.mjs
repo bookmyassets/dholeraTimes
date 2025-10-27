@@ -82,6 +82,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/dholera-updates/blogs/why-invest-in-dholera",
+        destination: "/dholera-updates/blogs/why-invest-in-dholera-smart-city",
+        permanent: true,
+      },
+      {
         source: "/posts/important-tips-for-buying-plots-in-dholera-smart-city",
         destination:
           "/dholera-updates/blogs/important-tips-for-buying-plots-in-dholera-smart-city",
