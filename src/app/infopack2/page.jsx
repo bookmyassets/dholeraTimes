@@ -445,7 +445,7 @@ export default function Page() {
                     />
                     <div className="p-6">
                       <h3 className="text-2xl font-bold text-[#d3b36b] mb-2">
-                        WestWyn Estate - A Smart Investment for Smart Futures
+                        WestWyn Estate - A Smart Investment for Smart Future
                       </h3>
                       <p className="text-[#151f28]">
                         Located at the 0 KM mark of Dholera SIR, on the
