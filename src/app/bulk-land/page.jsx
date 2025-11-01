@@ -85,9 +85,9 @@ export default function page() {
           className="object-cover w-full h-[50vh] md:hidden"
           priority
         />
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex top-44 justify-center">
           <div className="text-center px-6 py-10">
-            <h1 className="text-4xl font-bold text-white mb-2">Bulk Land</h1>
+            <h1 className="text-4xl font-bold text-white mb-2">Tap on Dholera's rising demand for Bulk Land</h1>
           </div>
         </div>
       </div>
@@ -124,6 +124,7 @@ export default function page() {
                   <h3 className="text-white text-xl font-bold mb-2 group-hover:text-[#d3b36b] transition-colors">
                     {category.title}
                   </h3>
+                  <p className="text-xs text-white">Where Potential Meets Progress</p>
                 </div>
               </div>
               <div className="p-6">

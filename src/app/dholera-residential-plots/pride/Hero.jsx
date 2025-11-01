@@ -161,7 +161,7 @@ export default function Hero() {
         {brochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-              title="Get the Dholera Brochure"
+             title="Get the Complete Project Brief"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
               link="https://cdn.sanity.io/files/c3e1h345/projects/c9471499567c096befb9416aa99c7f0077900d11.pdf"

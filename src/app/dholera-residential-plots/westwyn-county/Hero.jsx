@@ -209,7 +209,7 @@ export default function Hero() {
         {brochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-              title="Get the Dholera Brochure"
+            title="Get the Complete Project Brief"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
             />
