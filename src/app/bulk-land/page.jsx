@@ -15,14 +15,14 @@ export default function page() {
   const bulkLandCategories = [
     {
       id: 1,
-      title: "Residential Bulk Land",
+      title: "Residential Zone",
       image: residential,
       href: "/bulk-land/residential",
       description: "Perfect for residential townships and housing projects",
     },
     {
       id: 2,
-      title: "Industrial Bulk Land",
+      title: "Industrial Zone",
       image: industrial,
       href: "/bulk-land/industrial",
       description: "Ideal for manufacturing and industrial developments",
