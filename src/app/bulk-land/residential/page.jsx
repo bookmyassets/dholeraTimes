@@ -169,7 +169,7 @@ export default function page() {
             <div className="space-y-6">
               <div>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                  Where homes meet opportunity â€" the Residential Zone in
+                  Where homes meet opportunity the Residential Zone in
                   Dholera Smart City is designed for people, progress, and
                   prosperity. It offers modern housing supported by schools,
                   hospitals, retail outlets, and recreation spaces.

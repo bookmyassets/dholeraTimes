@@ -52,7 +52,7 @@ export default function Hero() {
 
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
-          <div className="max-w-7xl mx-auto px-4 py-12">
+          <div className="max-w-7xl mx-auto px-4 py-4">
             <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-6">
               <Link href="/" className="hover:text-white">
                 Home
@@ -69,7 +69,7 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative min-h-[500px] md:min-h-[600px]">
+            <div className="relative min-h-[500px] md:min-h-screen">
               {/* Background Image */}
               <Image
                 src={wc}
