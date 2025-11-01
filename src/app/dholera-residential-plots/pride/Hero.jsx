@@ -68,7 +68,7 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative min-h-[500px] md:min-h-screen">
+            <div className="relative min-h-[500px] md:min-h-[600px]">
               {/* Background Image */}
               <Image
                 src={wc}
