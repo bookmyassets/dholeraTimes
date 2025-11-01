@@ -471,7 +471,7 @@ export default function InvestmentBenefits() {
                 <div className="flex flex-col sm:flex-row gap-2">
                   <motion.a
                   href="tel:+919958993549"
-                    className="bg-[#d3b36b] hover:bg-[#d4b15f] text-[#151f28] text-sm font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
+                    className="bg-[#d3b36b] hover:bg-[#d4b15f] text-[#151f28] text-sm text-center font-medium py-2 px-4 rounded-lg transition-colors duration-300 flex-1"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

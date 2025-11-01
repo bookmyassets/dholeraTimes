@@ -32,7 +32,7 @@ export default function Hero() {
     { icon: "📐", title: "Plot Size", value: "151 and 198 Sq.Yards" },
     { icon: "💰", title: "Starting Price", value: "₹6,250/Sq.Yd" },
     { icon: "🏗️", title: "Project Type", value: "Residential Plots" },
-    { icon: "📍", title: "Location", value: "Dholera SIR" },
+    { icon: "📍", title: "Location", value: "Dholera" },
   ];
 
   return (
