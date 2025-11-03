@@ -68,7 +68,7 @@ export default async function BlogsPage() {
       <meta name="robots" content="index, dofollow" />
 
       <div className="bg-black text-white">
-        <section className="relative h-[50vh]  flex items-center justify-center text-center">
+        <section className="relative h-[50vh] flex items-center">
           <div className="absolute inset-0">
             <Image
               src={hero}
@@ -82,17 +82,19 @@ export default async function BlogsPage() {
               className="w-full h-full object-cover md:hidden"
               priority
             />
-            <div className="absolute inset-0 "></div>
+            <div className="absolute inset-0"></div>
           </div>
-          <div className="relative z-10 max-w-4xl mx-auto text-white px-6">
-            <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
-              Dholera SIR
-            </h1>
-            <p className="text-xl font-light leading-relaxed max-w-3xl mx-auto">
-              India's First Greenfield Smart City along the Delhi-Mumbai
-              Industrial Corridor
-            </p>
-          </div>
+          <div className="relative z-10 max-w-7xl mx-auto w-full px-6">
+  <div className="text-white text-left max-w-xl">
+    <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
+      Dholera SIR
+    </h1>
+    <p className="text-xl font-light leading-relaxed">
+      India's First Greenfield Smart City along the Delhi-Mumbai
+      Industrial Corridor
+    </p>
+  </div>
+</div>
         </section>
       </div>
 

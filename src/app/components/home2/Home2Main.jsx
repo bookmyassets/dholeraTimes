@@ -99,8 +99,8 @@ export default function Home2Main() {
         {isBrochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-              title="Discover Your Investment Options In Dholera Smart City"
-              buttonName="Download Brochure"
+              title="Get Verified Project Details"
+              buttonName="Get Plot Details"
               onClose={() => setIsBrochureFormOpen(false)}
             />
           </div>
