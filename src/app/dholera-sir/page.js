@@ -10,7 +10,7 @@ import Image from "next/image";
 import BlogCard from "./BlogCard";
 import TrendingBlogItem from "./TrendingBlog";
 import Link from "next/link";
-import LeadForm from "./LeadForm";
+import LeadFormSlug from "../dholera-updates/latest-updates/[slug]/LeadForm";
 
 export default async function BlogsPage() {
   // Fetch data and handle potential errors
@@ -104,7 +104,7 @@ export default async function BlogsPage() {
           {/* Trending Section - Left Sidebar */}
           <div className="lg:w-1/4 sticky top-6">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d]  mb-8">
-              <LeadForm
+              <LeadFormSlug
                 title="Own Registry-Ready Plot under ₹10 Lakhs"
                 buttonName="Get A Call Back"
               />

@@ -9,8 +9,9 @@ import {
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
-import LeadForm from "@/app/dholera-sir/LeadForm";
+
 import SchemaMarkup from "../SchemaMarkup";
+import LeadFormSlug from "./LeadForm";
 
 // Trending Blog Item Component
 const TrendingBlogItem = ({ post }) => {
@@ -587,7 +588,7 @@ export default async function BlogDetail({ params }) {
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
                 <div className=" pt-4 max-w-xl mx-auto">
-                  <LeadForm
+                  <LeadFormSlug
                     title="Secure Plots in Dholera's Prime Location under ₹10 Lakhs"
                     buttonName="Know More"
                   />

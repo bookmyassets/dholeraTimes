@@ -10,9 +10,9 @@ import {
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
-import ContactForm from "../../components/ContactForm";
-import LeadForm from "../LeadForm";
+
 import SchemaMarkup from "../SchemaMarkup";
+import LeadFormSlug from "@/app/dholera-updates/latest-updates/[slug]/LeadForm";
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -416,7 +416,7 @@ export default async function BlogDetail({ params }) {
         <meta name="description" content={post.title} />
         <meta name="description" content={post.metaDescription} />
           <meta name="keywords" content={post.keywords} />
-          <meta name="publisher" content="BookMyAssets" />
+          <meta name="publisher" content="Dholera Times" />
         <link
           rel="canonical"
           href={`https://www.dholeratimes.com/dholera-sir/${post.slug.current}`}
@@ -595,7 +595,7 @@ export default async function BlogDetail({ params }) {
             <aside className="lg:w-1/3">
               <div className="sticky space-y-4 top-24">
                 <div className=" pt-4 max-w-xl mx-auto">
-                  <LeadForm
+                  <LeadFormSlug
                     title="Planning to Invest in Dholera Smart City?"
                     buttonName="Know More"
                   />
