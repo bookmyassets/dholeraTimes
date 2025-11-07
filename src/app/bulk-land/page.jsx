@@ -149,7 +149,7 @@ export default function page() {
           ))}
         </div>
       </div>
-      <BulkLand title="Bulk Land from Rs. 2 Cr Onwards." />
+      <BulkLand title="Looking for Bulk Land Parcel in Dholera? Let’s Connect." />
     </>
   );
 }
