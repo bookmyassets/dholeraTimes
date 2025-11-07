@@ -75,57 +75,10 @@ export default async function New() {
               {safePosts.length > 0 ? (
                 <div className="space-y-8">
                   {/* Featured Blog Post */}
-                  <article className="bg-white rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#d3b36b]/20 hover:scale-[1.02]">
-                    <Link
-                      href={`/dholera-updates/latest-updates/${safePosts[0].slug.current}`}
-                    >
-                      <div className="h-48 bg-gray-200 flex items-center justify-center overflow-hidden">
-                        {safePosts[0].mainImage ? (
-                          <Image
-                            src={urlFor(safePosts[0].mainImage)
-                              .width(800)
-                              .height(400)
-                              .url()}
-                            alt={safePosts[0].title || "Dholera SIR Blog Post"}
-                            width={800}
-                            height={400}
-                            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gradient-to-br from-[#d3b36b]/20 to-[#151f28]/20 flex items-center justify-center">
-                            <div className="text-6xl">📰</div>
-                          </div>
-                        )}
-                      </div>
-                      <div className="p-6 bg-[#151f28] text-white hover:text-[#d3b36b] transition-colors duration-300">
-                        <h2 className="text-xl font-bold mb-3 cursor-pointer">
-                          {safePosts[0].title ||
-                            "Latest Dholera SIR Investment Updates"}
-                        </h2>
-
-                        <p className="mb-4 text-gray-300">
-                          {safePosts[0].description ||
-                            "Discover the latest developments and investment opportunities in India's first planned smart city - Dholera Special Investment Region."}
-                        </p>
-                        <div className="flex items-center justify-between">
-                          <p className="text-sm text-gray-400">
-                            {formatDate(
-                              safePosts[0].publishedAt ||
-                                safePosts[0]._createdAt
-                            )}
-                          </p>
-
-                          <button className="font-medium hover:underline text-[#d3b36b]">
-                            Read More →
-                          </button>
-                        </div>
-                      </div>
-                    </Link>
-                  </article>
-
+                
                   {/* Smaller Blog Posts Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {safePosts.slice(1).map((post, index) => (
+                    {safePosts.slice(0).map((post, index) => (
                       <article
                         key={post._id}
                         className="bg-[#151f28] border border-[#d3b36b]/20 rounded-xl shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#d3b36b]/20 hover:scale-[1.03] hover:border-[#d3b36b]/40"
@@ -133,7 +86,7 @@ export default async function New() {
                         <Link
                           href={`/dholera-updates/latest-updates/${post.slug.current}`}
                         >
-                          <div className="h-32 bg-gray-200 flex items-center justify-center overflow-hidden">
+                          <div className=" bg-gray-200 flex items-center justify-center overflow-hidden">
                             {post.mainImage ? (
                               <Image
                                 src={urlFor(post.mainImage)
@@ -146,7 +99,7 @@ export default async function New() {
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                               />
                             ) : (
-                              <div className="w-full h-full bg-gradient-to-br from-[#d3b36b]/20 to-[#151f28]/20 flex items-center justify-center">
+                              <div className="w-full h-48 bg-gradient-to-br from-[#d3b36b]/20 to-[#151f28]/20 flex items-center justify-center">
                                 <div className="text-6xl">📰</div>
                               </div>
                             )}

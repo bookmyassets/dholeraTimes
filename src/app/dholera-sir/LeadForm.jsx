@@ -200,14 +200,39 @@ export default function LeadForm({ title, headline, buttonName, onClose }) {
     }
   };
 
+   const handleClose = () => {
+    if (onClose && typeof onClose === 'function') {
+      onClose();
+    }
+  };
+
+
   return (
     <div className="relative">
       <div className="bg-gradient-to-b from-blue-50 to-white p-8 shadow-2xl w-full mx-auto border border-gray-200 rounded-xl">
+        <button
+              type="button"
+              onClick={handleClose}
+              className="absolute top-4 right-4 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-[#b69b5e] rounded-full p-1 transition-all duration-200 hover:bg-gray-700 z-10"
+              aria-label="Close form"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
           {title}
-        </h2>
-        <h2 className="text-sm font-medium text-center text-gray-800 mb-6">
-          {headline}
         </h2>
 
         {errorMessage && (
@@ -231,19 +256,6 @@ export default function LeadForm({ title, headline, buttonName, onClose }) {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
-              />
-            </div>
-
-            {/* Email Input */}
-            <div className="relative">
-              <FaEnvelope className="absolute left-4 top-4 text-gray-500" />
-              <input
-                name="email"
-                type="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={handleChange}
                 className="w-full p-4 pl-12 rounded-xl border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition shadow-sm"
               />
             </div>

@@ -85,16 +85,16 @@ export default async function BlogsPage() {
             <div className="absolute inset-0"></div>
           </div>
           <div className="relative z-10 max-w-7xl mx-auto w-full px-6">
-  <div className="text-white text-left max-w-xl">
-    <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
-      Dholera SIR
-    </h1>
-    <p className="text-xl font-light leading-relaxed">
-      India's First Greenfield Smart City along the Delhi-Mumbai
-      Industrial Corridor
-    </p>
-  </div>
-</div>
+            <div className="text-white text-left max-w-xl">
+              <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
+                Dholera SIR
+              </h1>
+              <p className="text-xl font-light leading-relaxed">
+                India's First Greenfield Smart City along the Delhi-Mumbai
+                Industrial Corridor
+              </p>
+            </div>
+          </div>
         </section>
       </div>
 
