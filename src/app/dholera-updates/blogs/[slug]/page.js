@@ -89,7 +89,7 @@ const Projects = ({ post }) => {
 // Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
-    <Link href={`/dholera-updates/latest-news/${blog.slug.current}`}>
+    <Link href={`/dholera-updates/latest-updates/${blog.slug.current}`}>
       <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
         <div className="relative h-48 overflow-hidden">
           {blog.mainImage ? (
