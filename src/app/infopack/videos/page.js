@@ -52,37 +52,53 @@ const FixedNavigation = ({ currentPage = "home" }) => (
 export default async function VideosPage() {
   
   const videos = [
-    {
-      id: "yePZG0VDfjw?si=YE2H9KAmrQkqpvZ_",
-      title: "India's First GreenField Smart City Dholera",
-      duration: "3:37",
-    },
-    {
-      id: "-3i9B9TQDUE?si=lNZn6PQNflBbTPYk",
-      title: "Ahmedabad to Dholera in 45 Mins!",
-      duration: "1:08",
-    },
-    {
-      id: "-Jotm3dCha8?si=iOdBxOFGfVFQIonX",
-      title: "Dholera Water Treatment Plant",
-      duration: "0:51",
-    },
-    {
-      id: "bUK2zLXUDkA?si=AONjVcYWG33EZUzA",
-      title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
-      duration: "1:11",
-    },
-    {
-      id: "7g8QWTgK9Ro?si=lNnCg8IU9na-HW0T",
-      title: "Dholera Now: WestWyn County",
-      duration: "0:52",
-    },
-    {
-      id: "PbkWAirTEnk?si=gwo9R8Zvfgw3gmLe",
-      title: "Dholera Activation Area",
-      duration: "0:48",
-    },
-  ];
+  {
+    id: "xPYA-To8_YQ",
+    title: "Dholera International Airport",
+    duration: "3:37",
+  },
+  {
+    id: "tFbTJfNe3y8",
+    title: "Ahmedabad to Dholera in 45 Mins!",
+    duration: "1:08",
+  },
+  {
+    id: "1g_2cNYiDHA",
+    title: "Dholera Water Treatment Plant",
+    duration: "0:51",
+  },
+  {
+    id: "_AN2VE8BiBs",
+    title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
+    duration: "1:11",
+  },
+  {
+    id: "5jlnciMfwmk",
+    title: "Dholera Now: WestWyn County",
+    duration: "0:52",
+  },
+  {
+    id: "ha3BffU4gHo",
+    title: "Dholera Activation Area",
+    duration: "0:48",
+  },
+  {
+    id: "o5rSdgmnHyQ",
+    title: "ABCD Building",
+    duration: "unknown",
+  },
+  {
+    id: "byMMCQNP4eo",
+    title: "ReNew Solar Plant",
+    duration: "unknown",
+  },
+  {
+    id: "so6bg_0OAWA",
+    title: "WestWyn Estate",
+    duration: "unknown",
+  }
+];
+
 
   if (videos.length === 0) {
     return (
