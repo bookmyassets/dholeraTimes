@@ -86,55 +86,55 @@ const Projects = ({ post }) => {
   );
 };
 
-// Related Blog Card Component
 const RelatedBlogCard = ({ blog }) => {
   return (
-    <Link href={`/dholera-updates/latest-updates/${blog.slug.current}`}>
-      <div className="relative w-full h-64">
-              {post.mainImage ? (
-                <Image
-                src={urlFor(post.mainImage).url()}
-                alt={post.title}
-                fill
-                className="object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                  <span className="text-gray-400">No image available</span>
-                </div>
-              )}
+    <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full transition-transform duration-300 hover:scale-105">
+      <Link href={`/dholera-updates/blogs/${blog.slug.current}`}>
+        <div className="relative w-full h-64">
+          {blog.mainImage ? (
+            <Image
+              src={urlFor(blog.mainImage).url()}
+              alt={blog.title}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+              <span className="text-gray-400">No image available</span>
             </div>
-      
-            {/* Content */}
-            <div className="flex flex-col flex-grow">
-                    <div className="w-full px-4 py-2 transition-all font-semibold border-white  hover:bg-[#d6b873] bg-[#151f28] hover:text-[#151f28] text-lg md:text-base text-[#d6b873] mt-auto space-y-3">
-                {/* Title */}
-                <h3 className="text-xl font-semibold line-clamp-2 h-14">
-                  {post.title}
-                </h3>
-      
-                {/* Meta info */}
-                <div className="text-sm text-gray-400">
-                  <time>
-                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </time>
-                  <div>
-                    Posted By{" "}
-                    <span className="font-medium text-white">{authorName}</span>
-                  </div>
-                </div>
-      
-                {/* CTA */}
-                <div className="underline underline-offset-4 text-lg">Read More</div>
-                    </div>
+          )}
+        </div>
+
+        {/* Content */}
+        <div className="flex flex-col flex-grow">
+          <div className="w-full px-4 py-2 transition-all font-semibold border-white  hover:bg-[#d6b873] bg-[#151f28] hover:text-[#151f28] text-lg md:text-base text-[#d6b873] mt-auto space-y-3">
+            {/* Title */}
+            <h3 className="text-xl font-semibold line-clamp-2 h-14">
+              {blog.title}
+            </h3>
+
+            {/* Meta info */}
+            <div className="text-sm text-gray-400">
+              <time>
+                {new Date(blog.publishedAt).toLocaleDateString("en-US", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </time>
             </div>
-    </Link>
+
+            {/* CTA */}
+            <div className="underline underline-offset-4 text-lg">
+              Read More
+            </div>
+          </div>
+        </div>
+      </Link>
+    </div>
   );
 };
+
 
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
