@@ -90,51 +90,48 @@ const Projects = ({ post }) => {
 const RelatedBlogCard = ({ blog }) => {
   return (
     <Link href={`/dholera-updates/latest-updates/${blog.slug.current}`}>
-      <div className="bg-white rounded-xl shadow-md overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300 h-full">
-        <div className="relative h-48 overflow-hidden">
-          {blog.mainImage ? (
-            <Image
-              src={urlFor(blog.mainImage).width(400).height(250).url()}
-              alt={blog.title}
-              width={400}
-              height={250}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-            />
-          ) : (
-            <div className="w-full h-full bg-gradient-to-r from-gray-100 to-gray-200 flex items-center justify-center">
-              <span className="text-gray-400">No image</span>
+      <div className="relative w-full h-64">
+              {post.mainImage ? (
+                <Image
+                src={urlFor(post.mainImage).url()}
+                alt={post.title}
+                fill
+                className="object-cover"
+                />
+              ) : (
+                <div className="w-full h-full bg-gray-200 flex items-center justify-center">
+                  <span className="text-gray-400">No image available</span>
+                </div>
+              )}
             </div>
-          )}
-          {blog.categories && blog.categories.length > 0 && (
-            <div className="absolute top-2 left-2">
-              <span className="px-3 py-1 bg-blue-50 text-blue-600 text-sm rounded-full bg-opacity-90">
-                News Headlines
-              </span>
+      
+            {/* Content */}
+            <div className="flex flex-col flex-grow">
+                    <div className="w-full px-4 py-2 transition-all font-semibold border-white  hover:bg-[#d6b873] bg-[#151f28] hover:text-[#151f28] text-lg md:text-base text-[#d6b873] mt-auto space-y-3">
+                {/* Title */}
+                <h3 className="text-xl font-semibold line-clamp-2 h-14">
+                  {post.title}
+                </h3>
+      
+                {/* Meta info */}
+                <div className="text-sm text-gray-400">
+                  <time>
+                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </time>
+                  <div>
+                    Posted By{" "}
+                    <span className="font-medium text-white">{authorName}</span>
+                  </div>
+                </div>
+      
+                {/* CTA */}
+                <div className="underline underline-offset-4 text-lg">Read More</div>
+                    </div>
             </div>
-          )}
-        </div>
-        <div className="p-5">
-          <div className="text-sm text-gray-500 mb-2">
-            {new Date(blog.publishedAt || blog._createdAt).toLocaleDateString(
-              "en-US",
-              {
-                day: "numeric",
-                month: "short",
-                year: "numeric",
-              }
-            )}
-          </div>
-          <h3 className="font-bold text-lg mb-2 text-gray-900 line-clamp-2">
-            {blog.title}
-          </h3>
-          <p className="text-gray-700 mb-4 line-clamp-3">{blog.description}</p>
-          <div className="flex items-center justify-between mt-auto">
-            <span className="text-[#d7b56d] hover:text-[#c6a45d] p-1 rounded-xl font-semibold bg-[#151f28] inline-flex items-center">
-              Read more
-            </span>
-          </div>
-        </div>
-      </div>
     </Link>
   );
 };
