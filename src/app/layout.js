@@ -374,7 +374,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
 
-        <Script type="text/javascript">
+        <Script type="text/javascript" strategy="afterInteractive">
           {`
               (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -384,11 +384,11 @@ export default function RootLayout({ children }) {
         `}
         </Script>
 
-        <Script
+        <Script strategy="afterInteractive"
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16970030484"
         ></Script>
-        <Script>
+        <Script strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -397,11 +397,11 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-16970030484');
           `}
         </Script>
-        <Script
+        <Script strategy="afterInteractive"
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17011995425"
         ></Script>
-        <Script>
+        <Script strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -415,23 +415,7 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
         />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        ></link>
-        <link
-          rel="icon"
-          type="image/ico"
-          sizes="16x16"
-          href="/favicon-16x16.ico"
-        ></link>
+       
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
