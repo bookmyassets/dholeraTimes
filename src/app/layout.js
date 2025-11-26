@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef, use } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ChevronUp, ImageIcon } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import "./globals.css";
 import logo from "@/assets/dt.webp";
@@ -12,7 +12,6 @@ import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
 import {
   getAllProjects,
-  getPosts,
   getProjectInfo,
   getblogs,
 } from "@/sanity/lib/api";
@@ -20,8 +19,6 @@ import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
 import Script from "next/script";
-import imageUrlBuilder from "@sanity/image-url";
-import { client } from "@/sanity/lib/client";
 import ScrollToTop from "./components/ScrollToTop";
 
 const FACEBOOK_PIXEL_ID = "1147887730461644"; // Replace with your actual Pixel ID
@@ -302,28 +299,6 @@ export default function RootLayout({ children }) {
     fetchData();
   }, []);
 
-  // Function to safely get image URL
-  /* const getImageUrl = (item) => {
-    if (item && item.mainImage && item.mainImage.asset && item.mainImage.asset.url) {
-      return item.mainImage.asset.url;
-    }
-    return null;
-  }; */
-
-  const builder = imageUrlBuilder(client);
-
-  // Updated getImageUrl function
-  const getImageUrl = (item) => {
-    if (!item || !item.mainImage) return null;
-
-    try {
-      return builder.image(item.mainImage).url();
-    } catch (error) {
-      console.error("Error building image URL:", error);
-      return null;
-    }
-  };
-
   return (
     <html lang="en">
       <style jsx global>{`
@@ -353,17 +328,6 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <Script
-          id="taboola-pixel-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-            window._tfa = window._tfa || [];
-            window._tfa.push({notify: 'event', name: 'page_view', id: 1829100});
-          `,
-          }}
-        />
-
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -388,6 +352,7 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-16970030484"
         ></Script>
+
         <Script strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -397,10 +362,12 @@ export default function RootLayout({ children }) {
           gtag('config', 'AW-16970030484');
           `}
         </Script>
+
         <Script strategy="afterInteractive"
           async
           src="https://www.googletagmanager.com/gtag/js?id=AW-17011995425"
         ></Script>
+
         <Script strategy="afterInteractive">
           {`
           window.dataLayer = window.dataLayer || [];
@@ -415,7 +382,6 @@ export default function RootLayout({ children }) {
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
         />
-       
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -440,6 +406,7 @@ export default function RootLayout({ children }) {
                     alt="Dholera Times Logo"
                     width={100}
                     height={100}
+                    className="h-14 w-auto max-sm:h-16"
                   />
                 </Link>
               </div>

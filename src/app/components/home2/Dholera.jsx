@@ -29,9 +29,9 @@ export default function Dholera() {
             </div> */}
 
             {/* Main heading */}
-            <h2 className="text-[28px] font-bold text-[#151f28] mb-6 leading-tight">
+            <h1 className="text-[28px] font-bold text-[#151f28] mb-6 leading-tight">
               Dholera Smart City
-            </h2>
+            </h1>
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-8">

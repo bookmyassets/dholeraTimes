@@ -54,9 +54,8 @@ export default function MegaIndustries() {
         <Image
           src={bg}
           alt="Background Image"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 -z-10 opacity-30"
+          fill
+          className="absolute inset-0 -z-10 opacity-30 object-cover"
         />
         <div className=" max-w-7xl mx-auto pt-8">
           <div className="text-center">
@@ -107,9 +106,9 @@ export default function MegaIndustries() {
                   <Image
                     src={company.logo}
                     alt={company.name}
-                    width={160}
-                    height={80}
-                    className="object-contain h-44 "
+                  /*   width={160}
+                    height={80} */
+                    className="object-contain w-40 h-28 "
                   />
                 </div>
               ))}

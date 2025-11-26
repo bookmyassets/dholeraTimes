@@ -13,7 +13,7 @@ const RelatedBlogCard = ({ blog }) => {
       <div className="relative w-full h-64">
         {blog.mainImage ? (
           <Image
-            src={urlFor(blog.mainImage).url()}
+            src={`${urlFor(blog.mainImage).url()}`}
             alt={blog.title}
             fill
             className="object-cover"

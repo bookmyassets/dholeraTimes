@@ -105,10 +105,8 @@ export default function HOME2() {
                 <Image
                   src={slide.desktop}
                   alt={slide.alt}
-                  fill
                   priority={index === 0}
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover w-[100vw]"
                 />
 
                 {/* Clickable area for phone number - Desktop */}
@@ -142,14 +140,12 @@ export default function HOME2() {
               key={`tablet-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[60vh]">
+              <div className="relative w-full ">
                 <Image
                   src={slide.desktop} 
                   alt={`hero slide ${index + 1}`}
-                  fill
                   priority={index === 0}
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover w-[100vw] "
                 />
 
                 {/* Clickable area for phone number - Tablet (using desktop coordinates but scaled) */}
@@ -185,10 +181,8 @@ export default function HOME2() {
                 <Image
                   src={slide.mobile}
                   alt={`hero slide ${index + 1}`}
-                  fill
                   priority={index === 0}
-                  className="object-cover"
-                  sizes="100vw"
+                  className="object-cover w-[100vw]"
                 />
 
                 {/* Clickable area for phone number - Mobile */}

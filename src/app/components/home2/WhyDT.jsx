@@ -268,7 +268,6 @@ export default function WhyDT() {
                         <Image
                           src={feature.icon}
                           alt={feature.title}
-                          fill
                           className="object-contain"
                         />
                       </div>
