@@ -182,6 +182,7 @@ export default function HOME2() {
                   src={slide.mobile}
                   alt={`hero slide ${index + 1}`}
                   priority={index === 0}
+                  fetchPriority="high"
                   className="object-cover w-[100vw]"
                 />
 
