@@ -175,6 +175,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/dholera-updates/latest-news/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
+        destination: "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
+        permanent: true,
+      },
+      {
         source:
           "/projects/abcd-building",
         destination:
