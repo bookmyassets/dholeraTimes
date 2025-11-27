@@ -180,6 +180,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/dholera-updates/latest-news/dholera-international-airport-latest-news-2025",
+        destination: "/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025",
+        permanent: true,
+      },
+      {
+        source: "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        destination: "/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        permanent: true,
+      },
+      {
         source:
           "/projects/abcd-building",
         destination:
