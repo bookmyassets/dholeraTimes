@@ -164,7 +164,8 @@ export default function Hero() {
              title="Get the Complete Project Brief"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
-              link="https://cdn.sanity.io/files/c3e1h345/projects/c9471499567c096befb9416aa99c7f0077900d11.pdf"
+              link="https://cdn.sanity.io/files/c3e1h345/projects/ff6834296b06f1a58794fae05302be6507dca8a9.pdf"
+
             />
           </div>
         )}
