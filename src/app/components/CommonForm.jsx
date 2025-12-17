@@ -133,7 +133,7 @@ export default function CommonForm({ title }) {
             fields: {
               name: formData.fullName,
               phone: formData.phone,
-              source: "BookMyAssets",
+              source: "Dholera Times",
             },
             source: "BookMyAssets Website",
             tags: ["Dholera Investment", "Website Lead", "Common Form"],
@@ -227,10 +227,10 @@ export default function CommonForm({ title }) {
 
   return (
     <div>
-      <section className="py-12 bg-black">
+      <section className="py-12 bg-gray-200">
         <div className="container mx-auto px-6 sm:px-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-white text-3xl sm:text-4xl font-bold text-center">
+            <h2 className="text-[#151f28] text-3xl sm:text-4xl font-bold text-center">
               {title}
             </h2>
             
@@ -283,7 +283,7 @@ export default function CommonForm({ title }) {
                   <div className="w-full">
                     <label
                       htmlFor="fullName"
-                      className="block text-white text-sm font-medium mb-2"
+                      className="block text-[#151f28] text-sm font-medium mb-2"
                     >
                       Full Name *
                     </label>
@@ -302,7 +302,7 @@ export default function CommonForm({ title }) {
                   <div className="w-full">
                     <label
                       htmlFor="phone"
-                      className="block text-white text-sm font-medium mb-2"
+                      className="block text-[#151f28] text-sm font-medium mb-2"
                     >
                       Phone Number *
                     </label>
@@ -330,7 +330,7 @@ export default function CommonForm({ title }) {
                     className={`w-full font-bold py-3 px-6 rounded-lg transition duration-300 ${
                       isLoading || isDisabled || !recaptchaLoaded
                         ? "bg-gray-600 cursor-not-allowed text-gray-400"
-                        : "bg-[#d3b36b] hover:bg-[#b69b5e] text-white shadow-md"
+                        : "bg-[#d3b36b] hover:bg-[#b69b5e] text-white hover:text-[#151f28] shadow-md"
                     }`}
                   >
                     {isLoading ? "Submitting..." : "Submit"}

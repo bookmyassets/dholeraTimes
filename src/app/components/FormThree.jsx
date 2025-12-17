@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import { FaUser, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { X } from "lucide-react"; // Import the X icon from lucide-react
