@@ -10,6 +10,11 @@ export default {
         type: 'string',
       },
       {
+        name: 'formTitle',
+        title: 'Form Title',
+        type: 'string',
+      },
+      {
         name: 'metaTitle',
         title: 'Meta Title',
         type: 'string',
