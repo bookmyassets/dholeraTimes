@@ -378,7 +378,7 @@ export default async function BlogDetail({ params }) {
       listItem: {
         bullet: ({ children }) => (
           <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
-            <div className="w-2 h-2 rounded-full mt-3 flex-shrink-0"></div>
+            <div className="w-2 h-2 rounded-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] mt-2 flex-shrink-0"></div>
             <div>{children}</div>
           </li>
         ),
