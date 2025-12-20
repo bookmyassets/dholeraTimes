@@ -2,7 +2,7 @@ import React from 'react'
 import Hero from './Hero'
 import WestWynAboutSection from './About'
 import CommonForm from '@/app/components/CommonForm'
-import React from 'react'
+
 
 
 export default function page() {
