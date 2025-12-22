@@ -206,15 +206,22 @@ export default async function BlogDetail({ params }) {
 
         table: ({ value }) => {
           if (!value?.rows || !Array.isArray(value.rows)) {
+            console.log("No table data or invalid structure:", value);
             return null;
           }
+
+          // Check if this is a Sanity table structure
+          const rows = value.rows || [];
 
           return (
             <div className="overflow-x-auto my-12 bg-white rounded-2xl shadow-lg border border-gray-100">
               <table className="min-w-full">
                 <tbody>
-                  {value.rows.map((row, i) => {
-                    if (!row?.cells || !Array.isArray(row.cells)) {
+                  {rows.map((row, i) => {
+                    // Handle both possible Sanity table structures
+                    const cells = row.cells || row;
+
+                    if (!cells || !Array.isArray(cells)) {
                       return null;
                     }
 
@@ -229,19 +236,47 @@ export default async function BlogDetail({ params }) {
                               : "bg-white"
                         }`}
                       >
-                        {row.cells.map((cell, j) => (
-                          <td
-                            key={j}
-                            className="px-6 py-4 text-gray-700 border-b border-gray-100 last:border-r-0"
-                          >
-                            {cell || ""}
-                          </td>
-                        ))}
+                        {cells.map((cell, j) => {
+                          // Handle cell content - could be string or rich text
+                          const cellContent =
+                            typeof cell === "string"
+                              ? cell
+                              : cell?.text || cell?.value || "";
+
+                          return (
+                            <td
+                              key={j}
+                              className="px-6 py-4 text-gray-700 border-b border-gray-100 last:border-r-0"
+                            >
+                              {cellContent}
+                            </td>
+                          );
+                        })}
                       </tr>
                     );
                   })}
                 </tbody>
               </table>
+            </div>
+          );
+        },
+
+        htmlTableBlock: ({ value }) => {
+          if (!value?.html) return null;
+
+          return (
+            <div className="my-8 overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+              <div
+                className="[&_table]:w-full [&_table]:border-collapse [&_table]:bg-white 
+      [&_th]:px-6 [&_th]:py-4 [&_th]:text-left [&_th]:font-semibold [&_th]:text-gray-700 
+      [&_th]:bg-gray-50 [&_th]:border-b [&_th]:border-gray-200
+      [&_td]:px-6 [&_td]:py-4 [&_td]:text-gray-600 [&_td]:border-b [&_td]:border-gray-200
+      [&_tr:last-child_td]:border-b-0
+      [&_tr:hover]:bg-gray-50/50
+      [&_th:first-child]:rounded-tl-lg [&_th:last-child]:rounded-tr-lg
+      [&_tr:last-child_td:first-child]:rounded-bl-lg [&_tr:last-child_td:last-child]:rounded-br-lg"
+                dangerouslySetInnerHTML={{ __html: value.html }}
+              />
             </div>
           );
         },
@@ -268,7 +303,7 @@ export default async function BlogDetail({ params }) {
           </Link>
         ),
         strong: ({ children }) => (
-          <strong className="font-bold text-gray-900  px-1 py-0.5 rounded">
+          <strong className="font-bold text-gray-900 px-1 py-0.5 rounded">
             {children}
           </strong>
         ),
@@ -307,37 +342,37 @@ export default async function BlogDetail({ params }) {
 
       block: {
         h1: ({ children }) => (
-          <h1 className="text-5xl font-black mt-8 mb-10 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4">
+          <h1 className="text-5xl font-black mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4 [&+ul]:mt-4 [&+ol]:mt-4">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#9e8750] rounded-full"></span>
             {children}
           </h1>
         ),
         h2: ({ children }) => (
-          <h2 className="text-4xl font-bold mt-16 mb-8 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3">
+          <h2 className="text-4xl font-bold mt-16 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3 [&+ul]:mt-4 [&+ol]:mt-4">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
             {children}
           </h2>
         ),
         h3: ({ children }) => (
-          <h3 className="text-3xl font-bold mt-12 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+          <h3 className="text-3xl font-bold mt-12 mb-5 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-4 [&+ol]:mt-4">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
             {children}
           </h3>
         ),
         h4: ({ children }) => (
-          <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+          <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
             {children}
           </h4>
         ),
         h5: ({ children }) => (
-          <h5 className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2">
+          <h5 className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
             {children}
           </h5>
         ),
         h6: ({ children }) => (
-          <h6 className="text-lg font-semibold mt-6 mb-2 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-1">
+          <h6 className="text-lg font-semibold mt-6 mb-2 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-1 [&+ul]:mt-2 [&+ol]:mt-2">
             <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
             {children}
           </h6>
@@ -369,7 +404,10 @@ export default async function BlogDetail({ params }) {
           <ul className="space-y-4 mb-10 pl-0">{children}</ul>
         ),
         number: ({ children }) => (
-          <ol className="space-y-4 mb-10 pl-0 counter-reset-list">
+          <ol
+            className="space-y-4 mb-10 pl-0 list-none"
+            style={{ counterReset: "item" }}
+          >
             {children}
           </ol>
         ),
@@ -379,15 +417,19 @@ export default async function BlogDetail({ params }) {
         bullet: ({ children }) => (
           <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
             <div className="w-2 h-2 rounded-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] mt-2 flex-shrink-0"></div>
-            <div>{children}</div>
+            <div className="flex-1 [&>ul]:mt-4 [&>ul]:mb-0 [&>ol]:mt-4 [&>ol]:mb-0 [&>ul>li]:shadow-none [&>ul>li]:border-0 [&>ul>li]:p-2 [&>ol>li]:shadow-none [&>ol>li]:border-0 [&>ol>li]:p-2">
+              {children}
+            </div>
           </li>
         ),
         number: ({ children }) => (
-          <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative counter-increment-list">
-            <div className="w-8 h-8  rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-              <span className="counter-content"></span>
+          <li
+            className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative before:content-[counter(item)] before:absolute before:left-4 before:top-4 before:w-8 before:h-8 before:bg-gradient-to-r before:from-[#d3b66b] before:to-[#b69b5e] before:rounded-full before:flex before:items-center before:justify-center before:text-white before:text-sm before:font-bold"
+            style={{ counterIncrement: "item" }}
+          >
+            <div className="ml-10 flex-1 [&>ul]:mt-4 [&>ul]:mb-0 [&>ol]:mt-4 [&>ol]:mb-0 [&>ul>li]:shadow-none [&>ul>li]:border-0 [&>ul>li]:p-2 [&>ol>li]:shadow-none [&>ol>li]:border-0 [&>ol>li]:p-2">
+              {children}
             </div>
-            <div>{children}</div>
           </li>
         ),
       },
