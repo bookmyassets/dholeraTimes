@@ -24,7 +24,6 @@ export default async function BlogsPage() {
   console.log("Posts data fetched:", posts.length);
 } catch (error) {
   console.error("Error fetching blog posts:", error);
-  fetchError = error;
 }
 
   // Add error handling for post data
