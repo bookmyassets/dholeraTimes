@@ -1,4 +1,4 @@
-import { getNews, getUpdates } from "@/sanity/lib/api";
+import { getNews } from "@/sanity/lib/api";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -20,12 +20,21 @@ const formatDate = (dateString) => {
 
 export default async function New() {
   let posts = [];
-  try {
+    try {
     const postsData = await getNews();
     posts = Array.isArray(postsData) ? postsData : [];
+    
+    // Sort by publishedAt date (newest first)
+    posts.sort((a, b) => {
+      const dateA = new Date(a.publishedAt || a._createdAt || 0);
+      const dateB = new Date(b.publishedAt || b._createdAt || 0);
+      return dateB - dateA; // Descending order (newest first)
+    });
+    
     console.log("Posts data fetched:", posts.length);
   } catch (error) {
-    console.error("Error fetching project info:", error);
+    console.error("Error fetching blog posts:", error);
+    fetchError = error;
   }
 
   const safePosts = posts.map((post) => ({
