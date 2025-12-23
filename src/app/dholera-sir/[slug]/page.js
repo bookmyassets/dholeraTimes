@@ -26,6 +26,46 @@ export async function generateMetadata({ params }) {
   };
 }
 
+const URLFormatter = (text) => {
+  if (!text) return "";
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+};
+
+const extractHeadings = (body) => {
+  if (!body || !Array.isArray(body)) return [];
+
+  return body
+    .filter((block) => {
+      // Check if it's a valid heading block
+      const isHeading =
+        block.style &&
+        ["h1", "h2", "h3", "h4", "h5", "h6"].includes(block.style);
+
+      // Check if it has valid text content
+      const hasValidText =
+        block.children &&
+        Array.isArray(block.children) &&
+        block.children.length > 0 &&
+        block.children[0]?.text &&
+        block.children[0].text.trim().length > 0;
+
+      return isHeading && hasValidText;
+    })
+    .map((block) => ({
+      ...block,
+      // Ensure we have clean text
+      children: [
+        {
+          ...block.children[0],
+          text: block.children[0].text.trim(),
+        },
+      ],
+    }));
+};
+
 const TrendingBlogItem = ({ post }) => {
   return (
     <Link href={`/dholera-sir/${post.slug.current}`}>
@@ -352,59 +392,173 @@ export default async function BlogDetail({ params }) {
       },
 
       block: {
-        h1: ({ children }) => (
-          <h1 className="text-5xl font-black mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4 [&+ul]:mt-4 [&+ol]:mt-4">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#9e8750] rounded-full"></span>
-            {children}
-          </h1>
-        ),
-        h2: ({ children }) => (
-          <h2 className="text-4xl font-bold mt-16 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3 [&+ul]:mt-4 [&+ol]:mt-4">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
-            {children}
-          </h2>
-        ),
-        h3: ({ children }) => (
-          <h3 className="text-3xl font-bold mt-12 mb-5 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-4 [&+ol]:mt-4">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
-            {children}
-          </h3>
-        ),
-        h4: ({ children }) => (
-          <h4 className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
-            {children}
-          </h4>
-        ),
-        h5: ({ children }) => (
-          <h5 className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
-            {children}
-          </h5>
-        ),
-        h6: ({ children }) => (
-          <h6 className="text-lg font-semibold mt-6 mb-2 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-1 [&+ul]:mt-2 [&+ol]:mt-2">
-            <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
-            {children}
-          </h6>
-        ),
+        h1: ({ children }) => {
+          // Better text extraction
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h1
+              id={id}
+              className="text-5xl font-black mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4 [&+ul]:mt-4 [&+ol]:mt-4"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#9e8750] rounded-full"></span>
+              {children}
+            </h1>
+          );
+        },
+        h2: ({ children }) => {
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h2
+              id={id}
+              className="text-4xl font-bold mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3 [&+ul]:mt-4 [&+ol]:mt-4"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+              {children}
+            </h2>
+          );
+        },
+        h3: ({ children }) => {
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h3
+              id={id}
+              className="text-3xl font-bold mt-8 mb-5 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-4 [&+ol]:mt-4"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+              {children}
+            </h3>
+          );
+        },
+        h4: ({ children }) => {
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h4
+              id={id}
+              className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+              {children}
+            </h4>
+          );
+        },
+        h5: ({ children }) => {
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h5
+              id={id}
+              className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+              {children}
+            </h5>
+          );
+        },
+        h6: ({ children }) => {
+          const getText = () => {
+            if (typeof children === "string") return children;
+            if (Array.isArray(children)) {
+              return children
+                .map((child) =>
+                  typeof child === "string" ? child : child?.props?.text || ""
+                )
+                .join("");
+            }
+            return "";
+          };
+          const text = getText();
+          const id = URLFormatter(text);
+
+          return (
+            <h6
+              id={id}
+              className="text-lg font-semibold mt-6 mb-2 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-1 [&+ul]:mt-2 [&+ol]:mt-2"
+            >
+              <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
+              {children}
+            </h6>
+          );
+        },
+
         normal: ({ children }) => (
-          <p className="mb-8 text-gray-700 leading-loose text-lg font-light tracking-wide">
-            {children}
-          </p>
+          <p className="mb-4 leading-loose text-lg font-light">{children}</p>
         ),
         blockquote: ({ children }) => (
           <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
             <div className="absolute top-4 left-6 text-6xl text-[#d3b66b]/30 font-serif">
               "
             </div>
-            <div className="pl-8 italic text-gray-700 text-xl leading-relaxed font-medium">
+            <div className="pl-8 italic text-xl leading-relaxed font-medium">
               {children}
             </div>
           </blockquote>
         ),
         centerAlign: ({ children }) => (
-          <p className="mb-8 text-gray-700 leading-loose text-lg text-center bg-gray-50 py-6 rounded-xl">
+          <p className="mb-8 leading-loose text-lg text-center bg-gray-50 py-6 rounded-xl">
             {children}
           </p>
         ),
@@ -426,7 +580,7 @@ export default async function BlogDetail({ params }) {
 
       listItem: {
         bullet: ({ children }) => (
-          <li className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
+          <li className="text-lg leading-relaxed flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300">
             <div className="w-2 h-2 rounded-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] mt-2 flex-shrink-0"></div>
             <div className="flex-1 [&>ul]:mt-4 [&>ul]:mb-0 [&>ol]:mt-4 [&>ol]:mb-0 [&>ul>li]:shadow-none [&>ul>li]:border-0 [&>ul>li]:p-2 [&>ol>li]:shadow-none [&>ol>li]:border-0 [&>ol>li]:p-2">
               {children}
@@ -435,7 +589,7 @@ export default async function BlogDetail({ params }) {
         ),
         number: ({ children }) => (
           <li
-            className="text-lg leading-relaxed text-gray-700 flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative before:content-[counter(item)] before:absolute before:left-4 before:top-4 before:w-8 before:h-8 before:bg-gradient-to-r before:from-[#d3b66b] before:to-[#b69b5e] before:rounded-full before:flex before:items-center before:justify-center before:text-white before:text-sm before:font-bold"
+            className="text-lg leading-relaxed  flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300 relative before:content-[counter(item)] before:absolute before:left-4 before:top-4 before:w-8 before:h-8 before:bg-gradient-to-r before:from-[#d3b66b] before:to-[#b69b5e] before:rounded-full before:flex before:items-center before:justify-center before:text-white before:text-sm before:font-bold"
             style={{ counterIncrement: "item" }}
           >
             <div className="ml-10 flex-1 [&>ul]:mt-4 [&>ul]:mb-0 [&>ol]:mt-4 [&>ol]:mb-0 [&>ul>li]:shadow-none [&>ul>li]:border-0 [&>ul>li]:p-2 [&>ol>li]:shadow-none [&>ol>li]:border-0 [&>ol>li]:p-2">
@@ -444,6 +598,50 @@ export default async function BlogDetail({ params }) {
           </li>
         ),
       },
+    };
+
+    const TableOfContent = ({ headings }) => {
+      // Filter out any empty or invalid headings
+      const validHeadings =
+        headings?.filter((heading) => {
+          const text = heading.children?.[0]?.text;
+          return text && text.trim().length > 0;
+        }) || [];
+
+      if (validHeadings.length === 0) return null;
+
+      return (
+        <div className="my-8 p-6 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            Table of Contents
+          </h2>
+          <ul className="space-y-3">
+            {validHeadings.map((heading, index) => {
+              const text = heading.children[0].text.trim();
+
+              // Add indentation based on heading level
+              const level = parseInt(heading.style.replace("h", ""));
+              const indent = (level - 2) * 16; // h2 = 0, h3 = 16px, h4 = 32px, etc.
+
+              return (
+                <li
+                  key={index}
+                  style={{ marginLeft: `${Math.max(0, indent)}px` }}
+                  className="relative"
+                >
+                  <a
+                    href={`#${URLFormatter(text)}`}
+                    className="text-[#b69b5e] hover:text-[#d3b66b] hover:underline transition-colors duration-200 flex items-start gap-2 group"
+                  >
+                    <span className="w-1.5 h-1.5 bg-[#b69b5e] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                    <span className="text-sm leading-relaxed">{text}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      );
     };
 
     // Format date for display
@@ -607,6 +805,7 @@ export default async function BlogDetail({ params }) {
                   />
                 </div>
               )}
+              <TableOfContent headings={extractHeadings(post.body)} />
 
               {/* Content */}
               <div className="bg-white rounded-xl shadow-2xl text-black leading-5 shadow-t-2xl p-8 border border-gray-200">

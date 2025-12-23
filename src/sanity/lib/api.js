@@ -82,7 +82,6 @@ export async function getUpdates() {
   return posts;
 }
 
-// Fetch a single blog post by slug (No Cache)
 export async function getPostBySlug(slug, site) {
   const query = `*[
     _type == "post" &&
