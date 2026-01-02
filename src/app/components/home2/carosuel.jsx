@@ -106,6 +106,7 @@ export default function HOME2() {
                   src={slide.desktop}
                   alt={slide.alt}
                   priority={index === 0}
+                  fetchPriority="high"
                   className="object-cover w-[100vw]"
                 />
 
