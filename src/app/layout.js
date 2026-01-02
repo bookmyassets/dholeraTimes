@@ -199,9 +199,7 @@ export default function RootLayout({ children }) {
                   {/* Home with hover card */}
 
                   <div className="relative group" ref={projectsDropdownRef}>
-                    <button
-                      className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
-                    >
+                    <button className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1">
                       <Link href="/dholera-residential-plots">Residential</Link>
                     </button>
                   </div>
@@ -217,9 +215,7 @@ export default function RootLayout({ children }) {
 
                   {/* Dholera SIR with hover card and dropdown */}
                   <div className="relative group" ref={dholeraDropdownRef}>
-                    <button
-                      className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
-                    >
+                    <button className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1">
                       <Link href="/dholera-sir">Dholera SIR</Link>
                     </button>
                   </div>
@@ -281,7 +277,6 @@ export default function RootLayout({ children }) {
                       >
                         <span>Contact Us</span>
                       </Link>
-                     
                     </div>
                   </div>
                 </div>

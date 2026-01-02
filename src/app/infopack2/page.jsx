@@ -336,7 +336,7 @@ export default function Page() {
                     </h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
                           <div className="text-3xl mb-2 text-center">🏭</div>
                           <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
                             Manufacturing Powerhouse
@@ -348,7 +348,7 @@ export default function Page() {
                         </div>
                       </AnimatedSection>
                       <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
                           <div className="text-3xl mb-2 text-center">✈️</div>
                           <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
                             Connectivity Hub
@@ -359,7 +359,7 @@ export default function Page() {
                         </div>
                       </AnimatedSection>
                       <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30">
+                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
                           <div className="text-3xl mb-2 text-center">💡</div>
                           <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
                             Innovation Zone
