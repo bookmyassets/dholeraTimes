@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect, useRef, use } from "react";
-import { Geist, Geist_Mono } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -10,11 +9,7 @@ import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
-import {
-  getAllProjects,
-  getProjectInfo,
-  getblogs,
-} from "@/sanity/lib/api";
+import { getAllProjects, getProjectInfo, getblogs } from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
@@ -24,6 +19,7 @@ import ScrollToTop from "./components/ScrollToTop";
 const FACEBOOK_PIXEL_ID = "1147887730461644"; // Replace with your actual Pixel ID
 
 import { Inter } from "next/font/google";
+import Head from "next/head";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,18 +33,7 @@ export default function RootLayout({ children }) {
   const [isBlogsDropdownOpen, setIsBlogsDropdownOpen] = useState(false);
   const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   const [isMobileBlogsOpen, setIsMobileBlogsOpen] = useState(false);
-  const [isMobileProjectsOpen, setIsMobileProjectsOpen] = useState(false);
-  const [blogs, setBlogs] = useState([]);
-  const [projects, setProjects] = useState([]);
   const [isDholeraDropdownOpen, setIsDholeraDropdownOpen] = useState(false);
-  const [isMobileDholeraOpen, setIsMobileDholeraOpen] = useState(false);
-  const [isEventOpen, setIsEventOpen] = useState(false);
-  const [isMobileEventOpen, setIsMobileEventOpen] = useState(false);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
-  const [isMobileGalleryOpen, setIsMobileGalleryOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
-  const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
-  const [dholera, setDholera] = useState([]);
 
   //PIXEL
   const pathname = usePathname();
@@ -68,32 +53,18 @@ export default function RootLayout({ children }) {
   const menuOpenRef = useRef(null);
   const desktopMenuRef = useRef(null);
   const dholeraDropdownRef = useRef(null);
-  const eventRef = useRef(null);
-  const galleryRef = useRef(null);
-  const contactRef = useRef(null);
 
   const toggleDholeraDropdown = () => {
     setIsDholeraDropdownOpen(!isDholeraDropdownOpen);
     setIsBlogsDropdownOpen(false);
-    setIsEventOpen(false);
     setIsProjectsDropdownOpen(false);
     setIsGalleryOpen(false);
   };
-
-  const toggleEvent = () => {
-    setIsEventOpen(!isEventOpen);
-    setIsDholeraDropdownOpen(false);
-    setIsBlogsDropdownOpen(false);
-    setIsProjectsDropdownOpen(false);
-    setIsGalleryOpen(false);
-    setIsContactOpen(false);
-  };
-
   const toggleBlogsDropdown = () => {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
     setIsProjectsDropdownOpen(false);
     setIsDholeraDropdownOpen(false);
-    setIsEventOpen(false);
+
     setIsContactOpen(false);
     setIsGalleryOpen(false);
   };
@@ -102,27 +73,9 @@ export default function RootLayout({ children }) {
     setIsProjectsDropdownOpen(!isProjectsDropdownOpen);
     setIsBlogsDropdownOpen(false);
     setIsDholeraDropdownOpen(false);
-    setIsEventOpen(false);
+
     setIsContactOpen(false);
     setIsGalleryOpen(false);
-  };
-
-  const toggleGalleryDropdown = () => {
-    setIsGalleryOpen(!isGalleryOpen);
-    setIsBlogsDropdownOpen(false);
-    setIsDholeraDropdownOpen(false);
-    setIsEventOpen(false);
-    setIsContactOpen(false);
-    setIsProjectsDropdownOpen(false);
-  };
-
-  const toggleContactDropdown = () => {
-    setIsContactOpen(!isContactOpen);
-    setIsBlogsDropdownOpen(false);
-    setIsDholeraDropdownOpen(false);
-    setIsEventOpen(false);
-    setIsGalleryOpen(false);
-    setIsProjectsDropdownOpen(false);
   };
 
   const closeAllDropdowns = () => {
@@ -139,63 +92,14 @@ export default function RootLayout({ children }) {
     setIsDesktopMenuOpen(!isDesktopMenuOpen);
   };
 
-  const toggleMobileDholeraDropdown = () => {
-    setIsMobileDholeraOpen(!isMobileDholeraOpen);
-    setIsMobileProjectsOpen(false);
-    setIsMobileEventOpen(false);
-    setIsMobileBlogsOpen(false);
-    setIsMobileGalleryOpen(false);
-    setIsContactOpen(false);
-  };
-
-  const toggleMobileEvent = () => {
-    setIsMobileEventOpen(!isMobileEventOpen);
-    setIsMobileDholeraOpen(false);
-    setIsMobileProjectsOpen(false);
-    setIsMobileBlogsOpen(false);
-    setIsMobileGalleryOpen(false);
-    setIsContactOpen(false);
-  };
-
-  const toggleMobileProjectsDropdown = () => {
-    setIsMobileProjectsOpen(!isMobileProjectsOpen);
-    // Close other mobile dropdowns
-    setIsMobileDholeraOpen(false);
-    setIsMobileEventOpen(false);
-    setIsMobileBlogsOpen(false);
-    setIsMobileGalleryOpen(false);
-    setIsContactOpen(false);
-  };
-
   const toggleMobileBlogsDropdown = () => {
     setIsMobileBlogsOpen(!isMobileBlogsOpen);
     // Close other mobile dropdowns
     setIsMobileDholeraOpen(false);
     setIsMobileEventOpen(false);
-    setIsMobileProjectsOpen(false);
+
     setIsMobileGalleryOpen(false);
     setIsContactOpen(false);
-  };
-
-  const toggleMobileGalleryDropdown = () => {
-    setIsMobileGalleryOpen(!isMobileGalleryOpen);
-    // Close other mobile dropdowns
-    setIsMobileDholeraOpen(false);
-    setIsMobileEventOpen(false);
-    setIsMobileProjectsOpen(false);
-    setIsMobileBlogsOpen(false);
-    setIsContactOpen(false);
-  };
-
-  const toggleMobileContactDropdown = () => {
-    setIsMobileContactOpen(!isMobileContactOpen);
-    // Close other mobile dropdowns
-    setIsMobileDholeraOpen(false);
-    setIsMobileEventOpen(false);
-    setIsMobileProjectsOpen(false);
-    setIsMobileBlogsOpen(false);
-    setIsContactOpen(false);
-    setIsMobileGalleryOpen(false);
   };
 
   // Handle clicks outside dropdowns to close them
@@ -252,7 +156,6 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     function handleClickOutside(event) {
       if (eventRef.current && !eventRef.current.contains(event.target)) {
-        setIsEventOpen(false);
         setIsMobileEventOpen(false);
       }
     }
@@ -287,10 +190,8 @@ export default function RootLayout({ children }) {
 
   useEffect(() => {
     async function fetchData() {
-      const blogsData = await getblogs();
       const projectsData = await getAllProjects();
       const dholeraData = await getProjectInfo();
-      setBlogs(blogsData);
       setProjects(projectsData);
       setDholera(dholeraData);
     }
@@ -299,11 +200,10 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      
-      <head>
-         <link rel="icon" href="/favicon.ico" />
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
-        
+
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -327,45 +227,13 @@ export default function RootLayout({ children }) {
         `}
         </Script>
 
-        <Script strategy="afterInteractive"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16970030484"
-        ></Script>
-
-        <Script strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-16970030484');
-          `}
-        </Script>
-
-        <Script strategy="afterInteractive"
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17011995425"
-        ></Script>
-
-        <Script strategy="afterInteractive">
-          {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'AW-17011995425');
-          `}
-        </Script>
-
         <meta
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
         />
-      </head>
-      <body
-        className={inter.className}
-      >
-        <ScrollToTop/>
+      </Head>
+      <body className={inter.className}>
+        <ScrollToTop />
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-NLL6M3PL"
@@ -458,7 +326,6 @@ export default function RootLayout({ children }) {
                               path: "/dholera-updates/latest-updates",
                             },
                             { title: "Blogs", path: "/dholera-updates/blogs" },
-                           
                           ].map((item) => (
                             <Link
                               key={item.path}
@@ -544,8 +411,6 @@ export default function RootLayout({ children }) {
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="absolute right-0 mt-2 w-64 bg-white shadow-xl rounded-xl z-50 border border-gray-100 overflow-hidden"
                       >
-                  
-
                         <Link
                           href="/gallery/dholera-sir-progress"
                           className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150"
@@ -614,149 +479,148 @@ export default function RootLayout({ children }) {
 
           {/* Mobile menu */}
           <AnimatePresence>
-  {isMenuOpen && (
-    <motion.div
-      initial={{ x: "-100%", opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: "-100%", opacity: 0 }}
-      ref={menuOpenRef}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="lg:hidden bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-md fixed top-0 left-0 w-full h-screen z-50 p-6 overflow-y-auto"
-    >
-      {/* Mobile Header */}
-      <div className="flex justify-between items-center mb-8">
-        <Link href="/" onClick={() => setIsMenuOpen(false)}>
-          <Image
-            src={logo2}
-            alt="Dholera Times Logo"
-            width={120}
-            height={120}
-          />
-        </Link>
-        <button onClick={toggleMenu}>
-          <X className="h-8 w-8 text-white" />
-        </button>
-      </div>
-
-      {/* Mobile Navigation Items */}
-      <div className="space-y-2">
-        {/* Dholera SIR Dropdown */}
-        <div className="rounded-xl overflow-hidden">
-          <Link
-            href="/dholera-sir"
-            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <span className="ml-2">Dholera SIR</span>
-          </Link>
-        </div>
-
-        {/* Projects Dropdown */}
-        <div className="rounded-xl overflow-hidden">
-          <Link
-            href="/dholera-residential-plots"
-            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <span className="ml-2">Projects</span>
-          </Link>
-        </div>
-
-        {/* Dholera Updates Dropdown */}
-        <div className="rounded-xl overflow-hidden">
-          <div
-            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-            onClick={toggleMobileBlogsDropdown}
-          >
-            <span className="ml-2">Dholera Updates</span>
-            <ChevronDown
-              className={`h-5 w-5 transition-transform duration-300 ${
-                isMobileBlogsOpen ? "rotate-180" : ""
-              }`}
-            />
-          </div>
-          <AnimatePresence>
-            {isMobileBlogsOpen && (
+            {isMenuOpen && (
               <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: "auto", opacity: 1 }}
-                exit={{ height: 0, opacity: 0 }}
+                initial={{ x: "-100%", opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: "-100%", opacity: 0 }}
+                ref={menuOpenRef}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="bg-white/5 overflow-hidden"
+                className="lg:hidden bg-gradient-to-br from-slate-900 to-slate-800 backdrop-blur-md fixed top-0 left-0 w-full h-screen z-50 p-6 overflow-y-auto"
               >
-                {[
-                  {
-                    title: "Latest News",
-                    path: "/dholera-updates/latest-updates",
-                  },
-                  { title: "Blogs", path: "/dholera-updates/blogs" },
-                  
-                ].map((item) => (
-                  <Link
-                    key={item.path}
-                    href={item.path}
-                    className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
-                    onClick={() => {
-                      setIsMobileBlogsOpen(false);
-                      setIsMenuOpen(false); // Added this line
-                    }}
-                  >
-                    {item.title}
+                {/* Mobile Header */}
+                <div className="flex justify-between items-center mb-8">
+                  <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                    <Image
+                      src={logo2}
+                      alt="Dholera Times Logo"
+                      width={120}
+                      height={120}
+                    />
                   </Link>
-                ))}
+                  <button onClick={toggleMenu}>
+                    <X className="h-8 w-8 text-white" />
+                  </button>
+                </div>
+
+                {/* Mobile Navigation Items */}
+                <div className="space-y-2">
+                  {/* Dholera SIR Dropdown */}
+                  <div className="rounded-xl overflow-hidden">
+                    <Link
+                      href="/dholera-sir"
+                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="ml-2">Dholera SIR</span>
+                    </Link>
+                  </div>
+
+                  {/* Projects Dropdown */}
+                  <div className="rounded-xl overflow-hidden">
+                    <Link
+                      href="/dholera-residential-plots"
+                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="ml-2">Projects</span>
+                    </Link>
+                  </div>
+
+                  {/* Dholera Updates Dropdown */}
+                  <div className="rounded-xl overflow-hidden">
+                    <div
+                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+                      onClick={toggleMobileBlogsDropdown}
+                    >
+                      <span className="ml-2">Dholera Updates</span>
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-300 ${
+                          isMobileBlogsOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
+                    <AnimatePresence>
+                      {isMobileBlogsOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="bg-white/5 overflow-hidden"
+                        >
+                          {[
+                            {
+                              title: "Latest News",
+                              path: "/dholera-updates/latest-updates",
+                            },
+                            { title: "Blogs", path: "/dholera-updates/blogs" },
+                          ].map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              className="block text-white/80 py-3 px-8 hover:bg-white/10 hover:text-white transition-all duration-200"
+                              onClick={() => {
+                                setIsMobileBlogsOpen(false);
+                                setIsMenuOpen(false); // Added this line
+                              }}
+                            >
+                              {item.title}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  <Link
+                    href="/bulk-land"
+                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="ml-2">Bulk Land</span>
+                  </Link>
+
+                  <Link
+                    href="/gallery/dholera-sir-progress"
+                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="ml-2">Gallery</span>
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="ml-2">About Us</span>
+                  </Link>
+
+                  <Link
+                    href="/nri-investment-guide-dholera"
+                    className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span className="ml-2">NRI Guide</span>
+                  </Link>
+
+                  {/* Contact Dropdown */}
+                  <div className="rounded-xl overflow-hidden">
+                    <Link
+                      href="/contact/inquiry"
+                      className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="ml-2">Contact Us</span>
+                    </Link>
+                  </div>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
-
-        <Link
-          href="/bulk-land"
-          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <span className="ml-2">Bulk Land</span>
-        </Link>
-
-        <Link
-          href="/gallery/dholera-sir-progress"
-          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <span className="ml-2">Gallery</span>
-        </Link>
-        <Link
-          href="/about"
-          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <span className="ml-2">About Us</span>
-        </Link>
-
-        <Link
-          href="/nri-investment-guide-dholera"
-          className="flex items-center text-white text-lg py-4 px-4 rounded-xl hover:bg-white/10 transition-all duration-300"
-          onClick={() => setIsMenuOpen(false)}
-        >
-          <span className="ml-2">NRI Guide</span>
-        </Link>
-
-        {/* Contact Dropdown */}
-        <div className="rounded-xl overflow-hidden">
-          <Link
-            href="/contact/inquiry"
-            className="flex items-center justify-between text-white text-lg py-4 px-4 cursor-pointer hover:bg-white/10 transition-all duration-300"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <span className="ml-2">Contact Us</span>
+          <Link href="/sitemap.xml" className="hidden">
+            sitemap
           </Link>
-        </div>
-      </div>
-    </motion.div>
-  )}
-</AnimatePresence>
-<Link href="/sitemap.xml" className="hidden">
-sitemap
-</Link>
         </nav>
 
         <div className="pt-20">{children}</div>
