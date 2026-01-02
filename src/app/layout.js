@@ -9,7 +9,6 @@ import logo2 from "@/assets/dtlogobg.png";
 import Image from "next/image";
 import Footer from "./components/Footer";
 import FloatingIcons from "./components/Floating";
-import { getAllProjects, getProjectInfo, getblogs } from "@/sanity/lib/api";
 import { usePathname } from "next/navigation";
 import { initFacebookPixel, trackPageView } from "@/lib/fbpixel";
 import call from "@/assets/call.svg";
@@ -34,6 +33,7 @@ export default function RootLayout({ children }) {
   const [isProjectsDropdownOpen, setIsProjectsDropdownOpen] = useState(false);
   const [isMobileBlogsOpen, setIsMobileBlogsOpen] = useState(false);
   const [isDholeraDropdownOpen, setIsDholeraDropdownOpen] = useState(false);
+  const [isMobileDholeraOpen, setIsMobileDholeraOpen] = useState(false);
 
   //PIXEL
   const pathname = usePathname();
@@ -54,27 +54,10 @@ export default function RootLayout({ children }) {
   const desktopMenuRef = useRef(null);
   const dholeraDropdownRef = useRef(null);
 
-  const toggleDholeraDropdown = () => {
-    setIsDholeraDropdownOpen(!isDholeraDropdownOpen);
-    setIsBlogsDropdownOpen(false);
-    setIsProjectsDropdownOpen(false);
-    setIsGalleryOpen(false);
-  };
   const toggleBlogsDropdown = () => {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
     setIsProjectsDropdownOpen(false);
     setIsDholeraDropdownOpen(false);
-
-    setIsContactOpen(false);
-    setIsGalleryOpen(false);
-  };
-
-  const toggleProjectsDropdown = () => {
-    setIsProjectsDropdownOpen(!isProjectsDropdownOpen);
-    setIsBlogsDropdownOpen(false);
-    setIsDholeraDropdownOpen(false);
-
-    setIsContactOpen(false);
     setIsGalleryOpen(false);
   };
 
@@ -96,10 +79,6 @@ export default function RootLayout({ children }) {
     setIsMobileBlogsOpen(!isMobileBlogsOpen);
     // Close other mobile dropdowns
     setIsMobileDholeraOpen(false);
-    setIsMobileEventOpen(false);
-
-    setIsMobileGalleryOpen(false);
-    setIsContactOpen(false);
   };
 
   // Handle clicks outside dropdowns to close them
@@ -151,51 +130,6 @@ export default function RootLayout({ children }) {
     }
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (eventRef.current && !eventRef.current.contains(event.target)) {
-        setIsMobileEventOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (galleryRef.current && !galleryRef.current.contains(event.target)) {
-        setIsGalleryOpen(false);
-        setIsMobileGalleryOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (contactRef.current && !contactRef.current.contains(event.target)) {
-        setIsContactOpen(false);
-        setIsMobileContactOpen(false);
-      }
-    }
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  useEffect(() => {
-    async function fetchData() {
-      const projectsData = await getAllProjects();
-      const dholeraData = await getProjectInfo();
-      setProjects(projectsData);
-      setDholera(dholeraData);
-    }
-    fetchData();
   }, []);
 
   return (
@@ -266,7 +200,6 @@ export default function RootLayout({ children }) {
 
                   <div className="relative group" ref={projectsDropdownRef}>
                     <button
-                      onClick={toggleProjectsDropdown}
                       className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
                     >
                       <Link href="/dholera-residential-plots">Residential</Link>
@@ -285,14 +218,11 @@ export default function RootLayout({ children }) {
                   {/* Dholera SIR with hover card and dropdown */}
                   <div className="relative group" ref={dholeraDropdownRef}>
                     <button
-                      onClick={toggleDholeraDropdown}
                       className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
                     >
                       <Link href="/dholera-sir">Dholera SIR</Link>
                     </button>
                   </div>
-
-                  {/* Projects with hover card and dropdown */}
 
                   {/* Dholera Updates with hover card and dropdown */}
                   <div className="relative group" ref={blogsDropdownRef}>
@@ -350,46 +280,8 @@ export default function RootLayout({ children }) {
                         href="/contact/inquiry"
                       >
                         <span>Contact Us</span>
-                        {/* <ChevronDown
-                          className={`h-4 w-4 transition-transform duration-200 ${
-                            isContactOpen ? "rotate-180" : ""
-                          }`}
-                        /> */}
                       </Link>
-                      {/* <AnimatePresence>
-                        {isContactOpen && (
-                          <motion.div
-                            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute left-0 mt-2 w-56 bg-white shadow-xl rounded-xl z-50 border border-gray-100 overflow-hidden"
-                          >
-                            {[
-                              { title: "Inquiry", path: "/contact/inquiry" },
-                              {
-                                title: "Site Visit",
-                                path: "/contact/site-visit",
-                              },
-                              {
-                                title: "Resale Support",
-                                path: "/contact/resale-support",
-                              },
-
-                              { title: "Career", path: "/contact/career" },
-                            ].map((item) => (
-                              <Link
-                                key={item.path}
-                                href={item.path}
-                                className="block px-4 py-3 text-gray-700 hover:bg-gray-50 transition-colors duration-150"
-                                onClick={() => setIsBlogsDropdownOpen(false)}
-                              >
-                                {item.title}
-                              </Link>
-                            ))}
-                          </motion.div>
-                        )}
-                      </AnimatePresence> */}
+                     
                     </div>
                   </div>
                 </div>
