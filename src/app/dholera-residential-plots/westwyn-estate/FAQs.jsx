@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     question: "What is the price of plots?",
-    answer: "Plots in Dholera start from ₹10 Lakhs, with sizes ranging between 151 and 198 sq. yd., making them accessible for early investors."
+    answer: "Plots in Dholera start from ₹10 Lakh, with sizes ranging between 151 and 198 sq. yd., making them accessible for early investors."
   },
   {
     question: "Are the plots legally approved?",

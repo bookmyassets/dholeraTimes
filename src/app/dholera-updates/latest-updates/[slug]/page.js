@@ -828,7 +828,7 @@ export default async function BlogDetail({ params }) {
                 <div className="sticky space-y-4 top-24">
                   <div className=" pt-4 max-w-xl mx-auto">
                     <LeadFormSlug
-                      title="Secure Plots in Dholera's Prime Location under ₹10 Lakhs"
+                      title="Secure Plots in Dholera's Prime Location under ₹10 Lakh"
                       buttonName="Know More"
                     />
                   </div>

@@ -65,7 +65,7 @@ export default function page() {
             logo: "https://www.dholeratimes.com/src/assets/dtlogo.png",
             image:
               "	https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&w=128&q=75",
-            priceRange: "from ₹10 Lakhs",
+            priceRange: "from ₹10 Lakh",
             telephone: "+91 99589 93549",
             address: {
               "@type": "PostalAddress",

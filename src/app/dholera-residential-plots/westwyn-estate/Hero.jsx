@@ -193,7 +193,7 @@ export default function Hero() {
                       </button>
                     </div>
                     <div className="text-[#151f28] text-xl font-semibold">
-                      <p>Registry Ready Plot under ₹10 Lakhs</p>
+                      <p>Registry Ready Plot under ₹10 Lakh</p>
                     </div>
                   </div>
                 </div>

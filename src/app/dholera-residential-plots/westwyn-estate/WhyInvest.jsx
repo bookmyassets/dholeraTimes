@@ -616,7 +616,7 @@ export default function InvestmentBenefits() {
        {isContactFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <PopupForm
-              title="Plots Under ₹10 Lakhs"
+              title="Plots Under ₹10 Lakh"
               buttonName="Get A Call Back"
               onClose={() => closeContactForm()}
             />

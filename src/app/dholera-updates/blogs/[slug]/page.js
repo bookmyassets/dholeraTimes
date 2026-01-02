@@ -836,7 +836,7 @@ export default async function BlogDetail({ params }) {
               <div className="sticky space-y-4 top-24">
                 <div className=" pt-4 max-w-xl mx-auto">
                   <LeadFormSlug
-                    title="Own Registry-Ready Plot under ₹10 Lakhs"
+                    title="Own Registry-Ready Plot under ₹10 Lakh"
                     buttonName="Know More"
                   />
                 </div>

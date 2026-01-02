@@ -112,7 +112,7 @@ export default async function BlogsPage() {
           <div className="lg:w-1/4 sticky top-6">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d]  mb-8">
               <LeadFormSlug
-                title="Own Registry-Ready Plot under ₹10 Lakhs"
+                title="Own Registry-Ready Plot under ₹10 Lakh"
                 buttonName="Get A Call Back"
               />
             </div>

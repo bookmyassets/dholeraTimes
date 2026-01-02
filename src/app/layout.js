@@ -23,14 +23,12 @@ import ScrollToTop from "./components/ScrollToTop";
 
 const FACEBOOK_PIXEL_ID = "1147887730461644"; // Replace with your actual Pixel ID
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Inter } from "next/font/google";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export default function RootLayout({ children }) {
@@ -301,13 +299,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-
-        body {
-          font-family: "Inter", sans-serif;
-        }
-      `}</style>
+      
       <head>
          <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
@@ -371,7 +363,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={inter.className}
       >
         <ScrollToTop/>
         <noscript>
