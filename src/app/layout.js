@@ -15,7 +15,7 @@ import call from "@/assets/call.svg";
 import Script from "next/script";
 import ScrollToTop from "./components/ScrollToTop";
 
-const FACEBOOK_PIXEL_ID = "1147887730461644"; // Replace with your actual Pixel ID
+const FACEBOOK_PIXEL_ID = "672210205737825"; // Replace with your actual Pixel ID
 
 import { Inter } from "next/font/google";
 import Head from "next/head";
