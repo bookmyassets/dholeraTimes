@@ -1,327 +1,358 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 
-<url>
-  <loc>https://www.dholeratimes.com/</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/contact/inquiry</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/westwyn-county</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/paradise-1</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/paradise-2</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/orchid</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/maple</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/marina-bay</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-residential-plots/pride</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/gallery/dholera-sir-progress</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/nri-investment-guide-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/about</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/policies/privacy</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/policies/termsandconditions</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/residential</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/industrial</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/high-access-corridor</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/city-centre</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/knowledge-it</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/bulk-land/recreation-sports</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/about-dholera-sir</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/the-abcd-building-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/connectivity-makes-dholera-the-next-big-investment-hub</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/international-airport-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/mega-industries-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-sir/ahmedabad-dholera-expressway</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/industrial-growth-trends-in-dholera-smart-city</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-inox-air-semiconductor-update</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/why-invest-in-dholera-smart-city</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/connectivity-a-game-changer-for-property-investors</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-smart-city-development-progress-2025</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/india-second-largest-airport-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/where-to-buy-plots-in-dholera-in-2025</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/solar-park-development-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/ahmedabad-dholera-expressway-investment-corridor</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-monorail-update</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-sea-port-growth</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/nextgen-8800cr-investment-in-dholera-semiconductor-fab</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/ahmedabad-dholera-expressway-december-2025</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/jabil-1000cr-silicon-photonics-plant-dholera-gujarat</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/semiconductor-leader-tokyo-electron-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/infopack</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-smart-city-investment-guide-2025</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-sea-port-growth</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/Plug-and-play-infrastructure-in-dholera-smart-city</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-top-investment-india</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/inside-vs-outside-dholera-sir-investment-guide</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/gujarat-spends-15-crore-semiconductor-security-infrastructure</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-2025-transformation-key-developments-recap</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/tata-semiconductor-dholera-project-timeline-2024-2028</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-international-airport-impact-gujarat-global-reach</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/latest-updates/rohm-tata-semiconductor-partnership-in-dholera</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-plot-growth-timeline-real-changes</loc>
-  <lastmod>2025-11-27T05:59:04+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
+  <url>
+    <loc>https://www.dholeratimes.com/</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/contact/inquiry</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/westwyn-county</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/paradise-1</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/paradise-2</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/orchid</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/maple</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/marina-bay</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-residential-plots/pride</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/latest-updates</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/gallery/dholera-sir-progress</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/nri-investment-guide-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/about</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/policies/privacy</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/policies/termsandconditions</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/residential</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/industrial</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/high-access-corridor</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/city-centre</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/knowledge-it</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/bulk-land/recreation-sports</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir/about-dholera-sir</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir/the-abcd-building-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-sir/connectivity-makes-dholera-the-next-big-investment-hub</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir/international-airport-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir/mega-industries-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-sir/ahmedabad-dholera-expressway</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/industrial-growth-trends-in-dholera-smart-city</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-inox-air-semiconductor-update</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/why-invest-in-dholera-smart-city</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/connectivity-a-game-changer-for-property-investors</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/dholera-smart-city-development-progress-2025</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/india-second-largest-airport-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/where-to-buy-plots-in-dholera-in-2025</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/solar-park-development-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/ahmedabad-dholera-expressway-investment-corridor</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-monorail-update</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-sea-port-growth</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/nextgen-8800cr-investment-in-dholera-semiconductor-fab</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/ahmedabad-dholera-expressway-december-2025</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/jabil-1000cr-silicon-photonics-plant-dholera-gujarat</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/semiconductor-leader-tokyo-electron-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/infopack</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.51</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-smart-city-investment-guide-2025</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-sea-port-growth</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/Plug-and-play-infrastructure-in-dholera-smart-city</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/dholera-top-investment-india</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/inside-vs-outside-dholera-sir-investment-guide</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/gujarat-spends-15-crore-semiconductor-security-infrastructure</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/dholera-2025-transformation-key-developments-recap</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/tata-semiconductor-dholera-project-timeline-2024-2028</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/dholera-international-airport-impact-gujarat-global-reach</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/latest-updates/rohm-tata-semiconductor-partnership-in-dholera</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/dholera-plot-growth-timeline-real-changes</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>
+      https://www.dholeratimes.com/dholera-updates/blogs/the-top-10-companies-invested-in-dholera-smart-city</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
+  <url>
+    <loc>https://www.dholeratimes.com/dholera-updates/blogs/is-your-dholera-plot-in-growth-zone</loc>
+    <lastmod>2025-11-27T05:59:04+00:00</lastmod>
+    <priority>0.64</priority>
+  </url>
 
 
 </urlset>
