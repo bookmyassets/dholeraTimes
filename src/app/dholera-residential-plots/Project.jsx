@@ -57,7 +57,7 @@ const projectsData = [
     ],
     categories: [{ title: "Under Construction" }, { title: "Premium" }],
     location: "Fedra-Pipli State Highway, Dholera, Gujarat",
-    status: "ongoing",
+    status: "sold-out",
   },
   {
     _id: "3",
