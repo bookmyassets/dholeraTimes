@@ -81,8 +81,8 @@ export default function page() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Corporation",
-            name: "BookMyAssets",
-            alternateName: "BMA",
+            name: "Dholera Times",
+            alternateName: "DT",
             url: "https://www.dholeratimes.com/",
             logo: "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fdt.7009f759.webp&amp;w=256&amp;q=75",
             address: {
