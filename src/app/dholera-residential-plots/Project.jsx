@@ -55,9 +55,9 @@ const projectsData = [
         ],
       },
     ],
-    categories: [{ title: "Under Construction" }, { title: "Premium" }],
+    categories: [{ title: "Sold Out" }, { title: "Premium" }],
     location: "Fedra-Pipli State Highway, Dholera, Gujarat",
-    status: "sold-out",
+    status: "sold out",
   },
   {
     _id: "3",
@@ -355,66 +355,6 @@ export default function Projects() {
                                 fill
                                 className="object-cover"
                               />
-
-                              {/* Categories */}
-                              <div className="absolute top-6 left-6 flex flex-wrap gap-3 z-20">
-                                {availableProjects[0].categories &&
-                                Array.isArray(
-                                  availableProjects[0].categories
-                                ) ? (
-                                  availableProjects[0].categories
-                                    .filter(
-                                      (category) =>
-                                        category.title !== "Sub-Project" &&
-                                        category.title.toLowerCase() !==
-                                          "sold out"
-                                    )
-                                    .slice(0, 2)
-                                    .map((category, index) => (
-                                      <span
-                                        key={index}
-                                        className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
-                                        style={{
-                                          backgroundColor:
-                                            "rgba(222, 190, 107, 0.9)",
-                                          color: "#151f28",
-                                          borderColor:
-                                            "rgba(222, 190, 107, 0.5)",
-                                        }}
-                                      >
-                                        {category.title}
-                                      </span>
-                                    ))
-                                ) : availableProjects[0].categories &&
-                                  availableProjects[0].categories.title !==
-                                    "Sub-Project" &&
-                                  availableProjects[0].categories.title.toLowerCase() !==
-                                    "sold out" ? (
-                                  <span
-                                    className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
-                                    style={{
-                                      backgroundColor:
-                                        "rgba(222, 190, 107, 0.9)",
-                                      color: "#151f28",
-                                      borderColor: "rgba(222, 190, 107, 0.5)",
-                                    }}
-                                  >
-                                    {availableProjects[0].categories.title}
-                                  </span>
-                                ) : (
-                                  <span
-                                    className="px-4 py-2 text-sm font-semibold rounded-full shadow-lg backdrop-blur-sm border-2"
-                                    style={{
-                                      backgroundColor:
-                                        "rgba(222, 190, 107, 0.9)",
-                                      color: "#151f28",
-                                      borderColor: "rgba(222, 190, 107, 0.5)",
-                                    }}
-                                  >
-                                    Available
-                                  </span>
-                                )}
-                              </div>
                             </div>
                           )}
                         </div>
@@ -671,59 +611,18 @@ export default function Projects() {
                           />
                         )}
 
-                        {/* Sold Out Badge */}
-                        <div className="absolute top-4 right-4 z-20">
-                          <span
-                            className="px-4 py-2 text-sm font-bold rounded-full shadow-lg backdrop-blur-sm border-2"
-                            style={{
-                              backgroundColor: "rgba(220, 38, 38, 0.9)",
-                              color: "#fbfbfb",
-                              borderColor: "rgba(220, 38, 38, 0.5)",
-                            }}
-                          >
-                            SOLD OUT
-                          </span>
-                        </div>
-
                         {/* Other Categories */}
                         <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
-                          {post.categories && Array.isArray(post.categories)
-                            ? post.categories
-                                .filter(
-                                  (category) =>
-                                    category.title !== "Sub-Project" &&
-                                    category.title.toLowerCase() !== "sold out"
-                                )
-                                .slice(0, 1)
-                                .map((category, index) => (
-                                  <span
-                                    key={index}
-                                    className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
-                                    style={{
-                                      backgroundColor:
-                                        "rgba(222, 190, 107, 0.8)",
-                                      color: "#151f28",
-                                      borderColor: "rgba(222, 190, 107, 0.5)",
-                                    }}
-                                  >
-                                    {category.title}
-                                  </span>
-                                ))
-                            : post.categories &&
-                              post.categories.title !== "Sub-Project" &&
-                              post.categories.title.toLowerCase() !==
-                                "sold out" && (
-                                <span
-                                  className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
-                                  style={{
-                                    backgroundColor: "rgba(222, 190, 107, 0.8)",
-                                    color: "#151f28",
-                                    borderColor: "rgba(222, 190, 107, 0.5)",
-                                  }}
-                                >
-                                  {post.categories.title}
-                                </span>
-                              )}
+                          <span
+                            className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
+                            style={{
+                              backgroundColor: "rgba(222, 190, 107, 0.8)",
+                              color: "#151f28",
+                              borderColor: "rgba(222, 190, 107, 0.5)",
+                            }}
+                          >
+                            Sold Out
+                          </span>
                         </div>
                       </div>
 
