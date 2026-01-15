@@ -39,11 +39,6 @@ export default function RootLayout({ children }) {
   const pathname = usePathname();
 
   useEffect(() => {
-    initFacebookPixel(FACEBOOK_PIXEL_ID);
-    trackPageView();
-  }, []);
-
-  useEffect(() => {
     trackPageView();
   }, [pathname]);
 
@@ -134,7 +129,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
+      <head>
         <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
 
@@ -194,7 +189,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           name="google-site-verification"
           content="w4B8pqZZDySMLUmxZYsGxeKSCsTI_aHk-myN3iKS3CU"
         />
-      </Head>
+      </head>
       <body className={inter.className}>
         <ScrollToTop />
         <noscript>
