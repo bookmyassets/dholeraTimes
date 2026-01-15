@@ -151,12 +151,6 @@ export default function RootLayout({ children }) {
           }}
         />
 
-        <Script type="text/javascript">
-          {`
-          
-           `}
-        </Script>
-
         <Script
           id="gtm-script"
           strategy="afterInteractive"
