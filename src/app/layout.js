@@ -132,6 +132,10 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
+         <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=GT-NLL6M3PL"
+        />
 
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"></Script>
 
