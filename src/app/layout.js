@@ -42,6 +42,19 @@ export default function RootLayout({ children }) {
     trackPageView();
   }, [pathname]);
 
+  const handleCallClick = () => {
+    if (typeof window !== "undefined") {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "call_click_organic",
+        lead_type: "call",
+        device: window.innerWidth <= 768 ? "mobile" : "desktop",
+      });
+
+      window.location.href = "tel:+919958993549";
+    }
+  };
+
   // Refs for dropdown elements
   const blogsDropdownRef = useRef(null);
   const projectsDropdownRef = useRef(null);
@@ -132,12 +145,15 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
-         <Script
+        <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=GT-NLL6M3PL"
         />
 
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"></Script>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"
+        ></Script>
 
         <Script
           id="google-analytics"
@@ -151,7 +167,7 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
-        
+
         <Script
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -351,20 +367,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
               {/* Mobile menu button */}
               <div className="lg:hidden flex items-center gap-4">
-                <div className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2">
-                  <Link
-                    href="tel:+919958993549"
-                    className="flex items-center space-x-2"
-                  >
-                    <Image
-                      src={call}
-                      alt="call"
-                      height={30}
-                      width={30}
-                      className="animate-image-tint"
-                    />
-                    <p className="animate-color-change">Call Now</p>
-                  </Link>
+                <div
+                  onClick={handleCallClick}
+                  className="text-[#d8b66d] mt-3 animate-bounce duration-2000 flex items-center space-x-2 cursor-pointer"
+                >
+                  <Image
+                    src={call}
+                    alt="call"
+                    height={30}
+                    width={30}
+                    className="animate-image-tint"
+                  />
+                  <p className="animate-color-change">Call Now</p>
                 </div>
 
                 <button onClick={toggleMenu}>
