@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./about.css";
 
-export default function BulkLand({ title , buttonName }) {
+export default function BulkLand({ title , buttonName, pageName }) {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({ 
     fullName: "", 
@@ -164,6 +164,12 @@ export default function BulkLand({ title , buttonName }) {
             localStorage.setItem("formSubmissionCount", newCount.toString());
             localStorage.setItem("lastSubmissionTime", Date.now().toString());
           }
+          /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+            page_name : pageName,
+          });
 
         } else {
           console.log("Response Text:", responseText);

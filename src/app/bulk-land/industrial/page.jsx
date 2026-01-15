@@ -328,7 +328,7 @@ export default function page() {
       <div>
         <Table />
       </div>
-      <BulkLand title="Industrial Land from Rs. 2 Cr Onwards" />
+      <BulkLand title="Industrial Land from Rs. 2 Cr Onwards" pageName="industrial-bulk-land"/>
     </>
   );
 }

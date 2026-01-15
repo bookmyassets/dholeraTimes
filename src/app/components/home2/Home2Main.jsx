@@ -38,6 +38,7 @@ export default function Home2Main() {
         <BulkLand
           title="Registry-Ready Dholera Plots Under ₹10 Lakh"
           buttonName="Book My Site Visit"
+          pageName="Home"
         />
       </div>
       <div>

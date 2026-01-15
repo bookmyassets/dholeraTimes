@@ -336,7 +336,7 @@ export default function page() {
       <div>
         <Table />
       </div>
-      <BulkLand title="High Access Corridor Land from Rs. 2 Cr Onwards" />
+      <BulkLand title="High Access Corridor Land from Rs. 2 Cr Onwards" pageName="hac-bulk-land" />
     </>
   );
 }

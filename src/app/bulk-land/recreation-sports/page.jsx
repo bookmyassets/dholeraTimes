@@ -320,7 +320,7 @@ export default function page() {
       <div>
         <Table />
       </div>
-      <BulkLand title="Recreation, Sports & Entertainment Zone Land from Rs. 2 Cr Onwards" />
+      <BulkLand title="Recreation, Sports & Entertainment Zone Land from Rs. 2 Cr Onwards" pageName="recreation-sports-bulk-land"/>
     </>
   );
 }
