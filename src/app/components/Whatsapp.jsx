@@ -15,7 +15,7 @@ export default function Whatsapp() {
         device: window.innerWidth <= 768 ? "mobile" : "desktop",
       });
 
-      window.open("https://wa.link/bvb3dt", "_blank");
+      window.open("https://wa.me/919958993549", "_blank");
     }
   };
 
