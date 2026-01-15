@@ -138,6 +138,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" />
         {/* script tags */}
 
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7TB2TDXYX0"></Script>
+
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -151,7 +153,7 @@ export default function RootLayout({ children }) {
           }}
         />
         
-        <Script
+        {/* <Script
           id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -162,7 +164,7 @@ export default function RootLayout({ children }) {
               gtag('config', 'G-7TB2TDXYX0'); 
             `,
           }}
-        />
+        /> */}
 
         <Script
           id="google-analytics"
