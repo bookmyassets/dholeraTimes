@@ -153,7 +153,6 @@ export default function RootLayout({ children }) {
         />
         
         <Script
-          id="google-analytics"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
