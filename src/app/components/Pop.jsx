@@ -206,6 +206,11 @@ export default function Popup({
           localStorage.setItem("lastSubmissionTime", now.toString());
           return newCount;
         });
+         /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+          });
 
         // Show thank you popup for 2 seconds
         setShowThankYou(true);

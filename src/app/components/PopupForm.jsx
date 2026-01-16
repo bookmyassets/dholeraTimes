@@ -100,6 +100,11 @@ export default function PopupForm({ title, headline, buttonName, onClose, trustB
           setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
           localStorage.setItem("lastSubmissionTime", Date.now().toString());
+           /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+          });
         } else {
           // Handle unexpected response
           console.log("Response Text:", responseText);

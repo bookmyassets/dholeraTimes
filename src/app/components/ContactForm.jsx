@@ -144,6 +144,11 @@ export default function ContactForm({ title, headline, buttonName, onClose }) {
           setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
           localStorage.setItem("lastSubmissionTime", Date.now().toString());
+           /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+          });
         } else {
           console.log("Response Text:", responseText);
           setErrorMessage("Submission received but with unexpected response");

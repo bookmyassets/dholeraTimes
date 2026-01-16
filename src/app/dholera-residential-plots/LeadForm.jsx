@@ -152,6 +152,11 @@ export default function LeadForm({ title, headline, buttonName, onClose }) {
         console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
       }
+       /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+          });
     } catch (error) {
       console.error("Error submitting form:", error);
       setErrorMessage(`Error submitting form: ${error.message}`);

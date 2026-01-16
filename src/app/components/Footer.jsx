@@ -1,12 +1,6 @@
 import { getAllProjects } from "@/sanity/lib/api";
 import React, { useEffect, useState } from "react";
 import { FaEnvelope, FaPhone, FaPhoneAlt, FaUser } from "react-icons/fa";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/assets/dt.webp";
-import { AnimatePresence, motion } from "framer-motion";
-import PopupForm from "./PopupForm";
-import ButtonsSection from "./FooterButtons";
 
 export default function Footer() {
   const [isSubmitted, setIsSubmitted] = useState(false);

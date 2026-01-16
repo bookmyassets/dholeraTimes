@@ -99,11 +99,19 @@ export default function BrochureForm({ title, subTitle, buttonName, onClose, onS
           setSubmissionCount(submissionCount);
           localStorage.setItem("formSubmissionCount", submissionCount);
           localStorage.setItem("lastSubmissionTime", Date.now().toString());
-        } else {
+           /* Google Tag */
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({
+            event: "lead_form",
+          });
+        }
+        
+        else {
           // Handle unexpected response
           console.log("Response Text:", responseText);
           alert("Submission received but with unexpected response");
         }
+
       } else {
         console.error("Server Error:", responseText);
         throw new Error(responseText || "Submission failed");
