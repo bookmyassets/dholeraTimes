@@ -601,27 +601,31 @@ export default async function BlogDetail({ params }) {
     };
 
     const TableOfContent = ({ headings }) => {
-      // Filter out any empty or invalid headings
+      // Filter for valid headings with text content
       const validHeadings =
         headings?.filter((heading) => {
           const text = heading.children?.[0]?.text;
           return text && text.trim().length > 0;
         }) || [];
 
-      if (validHeadings.length === 0) return null;
+      // Filter for only h1 and h2 headings
+      const h1h2Headings = validHeadings.filter((heading) => {
+        return heading.style === "h1" || heading.style === "h2";
+      });
+
+      // Hide TOC if no h1 or h2 headings exist
+      if (h1h2Headings.length === 0) return null;
 
       return (
-        <div className="my-8 p-6 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
+        <div className="my-8 p-6 bg-gradient-to-br from-[#C69C21]/5 to-[#FDB913]/10 rounded-2xl shadow-lg border border-[#C69C21]/20">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">
             Table of Contents
           </h2>
           <ul className="space-y-3">
             {validHeadings.map((heading, index) => {
               const text = heading.children[0].text.trim();
-
-              // Add indentation based on heading level
               const level = parseInt(heading.style.replace("h", ""));
-              const indent = (level - 2) * 16; // h2 = 0, h3 = 16px, h4 = 32px, etc.
+              const indent = (level - 2) * 16;
 
               return (
                 <li
@@ -631,9 +635,9 @@ export default async function BlogDetail({ params }) {
                 >
                   <a
                     href={`#${URLFormatter(text)}`}
-                    className="text-[#b69b5e] hover:text-[#d3b66b] hover:underline transition-colors duration-200 flex items-start gap-2 group"
+                    className="text-[#C69C21] hover:text-[#FDB913] hover:underline transition-colors duration-200 flex items-start gap-2 group"
                   >
-                    <span className="w-1.5 h-1.5 bg-[#b69b5e] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
+                    <span className="w-1.5 h-1.5 bg-[#C69C21] rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></span>
                     <span className="text-sm leading-relaxed">{text}</span>
                   </a>
                 </li>
