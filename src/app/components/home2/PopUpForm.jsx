@@ -242,7 +242,7 @@ export default function PopupForm() {
                   >
                     ×
                   </button>
-                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Get plots 0KM from Dholera SIR under ₹10 Lakh</h1>
+                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Explore Verified Residential Plots in Dholera under ₹10 lakh</h1>
                   
                 </div>
 

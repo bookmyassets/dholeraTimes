@@ -344,7 +344,7 @@ export default function page() {
       <div>
         <Table />
       </div>
-      <BulkLand title="City Centre Land from Rs. 2 Cr Onwards" pageName="city-centre-bulk-land" />
+      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="city-centre-bulk-land" />
     </>
   );
 }

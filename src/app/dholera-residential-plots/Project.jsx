@@ -433,19 +433,18 @@ export default function Projects() {
                           className="text-2xl lg:text-3xl font-bold mb-4"
                           style={{ color: "#fbfbfb" }}
                         >
-                          Know Today's{" "}
-                          <span style={{ color: "#debe6b" }}>Best Offer</span>
+                          Verified plots under ₹10 Lakh only,<br /> 5 Minute from the expressway
                         </h3>
-                        <p
+                        {/* <p
                           className="text-lg"
                           style={{ color: "rgba(251, 251, 251, 0.8)" }}
                         >
                           Get detailed information and secure your investment
                           opportunity
-                        </p>
+                        </p> */}
                       </div>
                       <div className="max-w-2xl mx-auto">
-                        <LeadForm buttonName="Claim My Offer" />
+                        <LeadForm buttonName="Get A Call Back" />
                       </div>
                     </div>
                   </div>

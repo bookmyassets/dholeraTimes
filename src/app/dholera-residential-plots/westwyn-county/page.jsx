@@ -16,7 +16,7 @@ export default function page() {
         </div>
         <WestWynAboutSection />
         <div className="max-sm:hidden">
-          <CommonForm title="Get Plots Under ₹10 Lakh at 0 KM from Dholera SIR " />
+          <CommonForm title="WestWyn County is Sold Out - Invest in Westwyn Estate, 0 km from Dholera SIR" />
         </div>
         <WestWynEstate />
         <ProjectAmenities />

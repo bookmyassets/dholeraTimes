@@ -338,7 +338,7 @@ export default function CommonForm({ title }) {
                         : "bg-[#d3b36b] hover:bg-[#b69b5e] text-white hover:text-[#151f28] shadow-md"
                     }`}
                   >
-                    {isLoading ? "Submitting..." : "Submit"}
+                    {isLoading ? "Submitting..." : "Get A Call Back"}
                   </button>
                 </div>
               </form>

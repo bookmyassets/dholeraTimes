@@ -246,8 +246,8 @@ export default function SidebarWithForm({ popularArticles }) {
     <aside className="lg:sticky lg:top-24 space-y-6">
       {/* Get Our Free Guide Widget */}
       <div className="bg-[#f9f9f9] rounded-xl shadow-sm p-6 border border-gray-200">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">
-          Get Free Dholera Investment Guide
+        <h3 className="text-lg font-bold text-gray-900 mb-4">
+          Get Verified Plot Details and Plan Layout 
         </h3>
         <p className="text-gray-600 text-sm mb-6">
           Download our comprehensive guide covering investment opportunities,

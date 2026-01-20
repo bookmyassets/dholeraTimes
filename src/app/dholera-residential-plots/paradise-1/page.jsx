@@ -11,7 +11,7 @@ export default function page() {
             <Hero/>
             <WestWynAboutSection/>
             <div className="">
-              <CommonForm title="Get Plots Under ₹10 Lakh at 0 KM from Dholera SIR " />
+              <CommonForm title="Missed Paradise 1? Discover Westwyn Estate Registry Ready Plots under 10 Lakh" />
             </div>
         </div>
     </>

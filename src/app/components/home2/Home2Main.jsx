@@ -36,7 +36,7 @@ export default function Home2Main() {
       </div>
       <div>
         <BulkLand
-          title="Registry-Ready Dholera Plots Under ₹10 Lakh"
+          title="Invest in Registry-Ready plots in Dholera under ₹10 Lakh"
           buttonName="Book My Site Visit"
           pageName="Home"
         />
@@ -100,7 +100,7 @@ export default function Home2Main() {
         {isBrochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-              title="Get Verified Project Details"
+              title="Explore verified residential plots in Dholera under ₹10 lakh"
               buttonName="Get Plot Details"
               onClose={() => setIsBrochureFormOpen(false)}
             />
