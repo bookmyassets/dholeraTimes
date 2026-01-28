@@ -543,7 +543,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <FloatingIcons />
         <Footer />
 
-        <Script
+        {/* <Script
           id="tawk-to"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -559,7 +559,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               })();
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
   );
