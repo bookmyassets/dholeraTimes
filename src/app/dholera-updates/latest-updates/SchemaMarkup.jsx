@@ -22,14 +22,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
       .substring(0, 160); // Limit for meta description
   };
 
-  // Helper function to get reading time estimate
-  const getReadingTime = (portableText) => {
-    const plainText = extractPlainText(portableText);
-    const wordsPerMinute = 200;
-    const wordCount = plainText.split(/\s+/).length;
-    return Math.ceil(wordCount / wordsPerMinute);
-  };
-
   // Helper function to extract all images from portable text
   const extractImages = (portableText) => {
     if (!portableText || !Array.isArray(portableText)) return [];
@@ -92,8 +84,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     },
     "articleSection": post.categories?.length > 0 ? post.categories[0].title : "Latest Update",
     "articleBody": extractPlainText(post.body),
-    "wordCount": extractPlainText(post.body).split(/\s+/).length,
-    "timeRequired": `PT${getReadingTime(post.body)}M`,
     "inLanguage": "en-US", // Adjust based on your content language
     "isAccessibleForFree": true,
     "isPartOf": {
