@@ -99,7 +99,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     "isPartOf": {
       "@type": "Latest Update",
       "name": "Dholera Times Latest Update", // Replace with your Latest Update name
-      "url": `${baseUrl}/dholera-updates/latest-updates`
+      "url": `${baseUrl}/dholera-sir`
     }
   };
 
@@ -169,7 +169,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dholera Times Latest Update",
-    "url": `${baseUrl}/dholera-sir-Latest Updates`,
+    "url": `${baseUrl}/dholera-sir`,
     "publisher": {
       "@type": "Organization",
       "name": "Dholera Times",
@@ -199,8 +199,8 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Latest Updates",
-        "item": `${baseUrl}/dholera-sir-Latest Updates`
+        "name": "",
+        "item": `${baseUrl}/dholera-sir`
       },
       {
         "@type": "ListItem",
@@ -238,7 +238,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     allSchemas.push(faqSchema);
   }
 
-  // If there are related Latest Updates, add ItemList schema
+  // If there are related , add ItemList schema
   if (relatedBlog && relatedBlog.length > 0) {
     const relatedBlogSchema = {
       "@context": "https://schema.org",
@@ -250,7 +250,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
         "item": {
           "@type": "Blog Posting",
           "headline": post.title,
-          "url": `${baseUrl}/latest-updates/${post.slug.current}`,
+          "url": `${baseUrl}/dholera-sir/${post.slug.current}`,
           "description": post.description,
           "image": post.mainImage ? urlFor(post.mainImage).width(400).height(250).url() : undefined,
           "datePublished": post.publishedAt || post._createdAt

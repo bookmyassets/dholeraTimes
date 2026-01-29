@@ -22,13 +22,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
       .substring(0, 160); // Limit for meta description
   };
 
-  // Helper function to get reading time estimate
-  const getReadingTime = (portableText) => {
-    const plainText = extractPlainText(portableText);
-    const wordsPerMinute = 200;
-    const wordCount = plainText.split(/\s+/).length;
-    return Math.ceil(wordCount / wordsPerMinute);
-  };
 
   // Helper function to extract all images from portable text
   const extractImages = (portableText) => {
@@ -53,7 +46,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
   };
 
   const baseUrl = "https://dholeratimes.com"; // Replace with your actual domain
-  const postUrl = `${baseUrl}/dholera-updates/latest-updates/${post.slug.current}`;
+  const postUrl = `${baseUrl}/dholera-updates/blogs/${post.slug.current}`;
   
   // Main Latest Update post schema
   const blogSchema = {
@@ -92,14 +85,13 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     },
     "articleSection": post.categories?.length > 0 ? post.categories[0].title : "Latest Update",
     "articleBody": extractPlainText(post.body),
-    "wordCount": extractPlainText(post.body).split(/\s+/).length,
     "timeRequired": `PT${getReadingTime(post.body)}M`,
     "inLanguage": "en-US", // Adjust based on your content language
     "isAccessibleForFree": true,
     "isPartOf": {
       "@type": "Latest Update",
       "name": "Dholera Times Latest Update", // Replace with your Latest Update name
-      "url": `${baseUrl}/dholera-updates/latest-updates`
+      "url": `${baseUrl}/dholera-updates/blogs`
     }
   };
 
@@ -169,7 +161,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dholera Times Latest Update",
-    "url": `${baseUrl}/dholera-sir-Latest Updates`,
+    "url": `${baseUrl}/dholera-updates/blogs`,
     "publisher": {
       "@type": "Organization",
       "name": "Dholera Times",
@@ -200,7 +192,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
         "@type": "ListItem",
         "position": 2,
         "name": "Latest Updates",
-        "item": `${baseUrl}/dholera-sir-Latest Updates`
+        "item": `${baseUrl}/dholera-updates/blogs`
       },
       {
         "@type": "ListItem",
@@ -250,7 +242,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
         "item": {
           "@type": "Blog Posting",
           "headline": post.title,
-          "url": `${baseUrl}/latest-updates/${post.slug.current}`,
+          "url": `${baseUrl}/dholera-updates/blogs/${post.slug.current}`,
           "description": post.description,
           "image": post.mainImage ? urlFor(post.mainImage).width(400).height(250).url() : undefined,
           "datePublished": post.publishedAt || post._createdAt
@@ -274,7 +266,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
       <meta name="description" content={post.description || extractPlainText(post.body)} />
       <meta name="keywords" content={post.tags?.join(", ") || ""} />
       <meta name="author" content="Dholera Times" />
-      <meta name="robots" content="index, follow" />
       
       {/* Open Graph meta tags */}
       <meta property="og:type" content="article" />

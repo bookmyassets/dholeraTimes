@@ -57,13 +57,13 @@ const extractHeadings = (body) => {
 const TrendingBlogItem = ({ post }) => {
   return (
     <Link href={`/dholera-updates/blogs/${post.slug.current}`}>
-      <meta name="robots" content="index, dofollow" />
+      
 
       <link
         rel="canonical"
         href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
       />
-      <meta name="robots" content="index, dofollow" />
+    
 
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
@@ -662,6 +662,7 @@ export default async function BlogDetail({ params }) {
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords} />
         <meta name="publisher" content="Dholera Times" />
+        <meta name="robots" content="index, follow" />
         {/* Sticky Nav Placeholder */}
         <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
         <div className="bg-white shadow-sm sticky top-0 z-30" />

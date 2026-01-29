@@ -169,7 +169,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "name": "Dholera Times Latest Update",
-    "url": `${baseUrl}/dholera-sir-Latest Updates`,
+    "url": `${baseUrl}/dholera-updates/latest-updates`,
     "publisher": {
       "@type": "Organization",
       "name": "Dholera Times",
@@ -200,7 +200,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
         "@type": "ListItem",
         "position": 2,
         "name": "Latest Updates",
-        "item": `${baseUrl}/dholera-sir-Latest Updates`
+        "item": `${baseUrl}/dholera-updates/latest-updates`
       },
       {
         "@type": "ListItem",
@@ -250,7 +250,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
         "item": {
           "@type": "Blog Posting",
           "headline": post.title,
-          "url": `${baseUrl}/latest-updates/${post.slug.current}`,
+          "url": `${baseUrl}/dholera-updates/latest-updates/${post.slug.current}`,
           "description": post.description,
           "image": post.mainImage ? urlFor(post.mainImage).width(400).height(250).url() : undefined,
           "datePublished": post.publishedAt || post._createdAt

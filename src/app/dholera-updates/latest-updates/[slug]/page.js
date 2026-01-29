@@ -658,7 +658,7 @@ export default async function BlogDetail({ params }) {
           <meta name="keywords" content={post.keywords} />
           <meta name="publisher" content="Dholera Times" />
           <link rel="canonical" href={canonicalUrl} />
-          <meta name="robots" content="index, dofollow" />
+          <meta name="robots" content="index, follow" />
           <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
           <div className="bg-white shadow-sm sticky top-0 z-30" />
 

@@ -668,7 +668,7 @@ export default async function BlogDetail({ params }) {
           rel="canonical"
           href={`https://www.dholeratimes.com/dholera-sir/${post.slug.current}`}
         />
-        <meta name="robots" content="index, dofollow" />
+        <meta name="robots" content="index, follow" />
         <SchemaMarkup post={post} />
         {/* Sticky Nav Placeholder */}
         <div className="bg-white shadow-sm sticky top-0 z-30" />
