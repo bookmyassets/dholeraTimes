@@ -85,7 +85,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     },
     "articleSection": post.categories?.length > 0 ? post.categories[0].title : "Latest Update",
     "articleBody": extractPlainText(post.body),
-    "timeRequired": `PT${getReadingTime(post.body)}M`,
     "inLanguage": "en-US", // Adjust based on your content language
     "isAccessibleForFree": true,
     "isPartOf": {
