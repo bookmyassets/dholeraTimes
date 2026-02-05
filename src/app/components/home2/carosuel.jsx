@@ -101,13 +101,13 @@ export default function HOME2() {
               key={`desktop-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[76vh]">
+              <div className="relative w-full h-[80vh]">
                 <Image
                   src={slide.desktop}
                   alt={slide.alt}
                   priority={index === 0}
                   fetchPriority="high"
-                  className="object-cover w-[100vw]"
+                  className="object-cover w-[100vw] h-[80vh]"
                 />
 
                 {/* Clickable area for phone number - Desktop */}
@@ -178,13 +178,13 @@ export default function HOME2() {
               key={`mobile-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[80vh]">
+              <div className="relative w-full h-[90vh">
                 <Image
                   src={slide.mobile}
                   alt={`hero slide ${index + 1}`}
                   priority={index === 0}
                   fetchPriority="high"
-                  className="object-cover w-[100vw]"
+                  className="object-cover w-[100vw] h-[90vh"
                 />
 
                 {/* Clickable area for phone number - Mobile */}

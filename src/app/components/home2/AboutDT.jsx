@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function AboutDT() {
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           {/* Left side - Image */}
