@@ -626,7 +626,7 @@ export default function Projects() {
                       </div>
 
                       {/* Content */}
-                      <div className="p-6 relative z-20">
+                      <div className="p-6 relative z-20 h-56">
                         <h3
                           className="text-xl font-bold mb-3 line-clamp-2"
                           style={{ color: "#151f28" }}

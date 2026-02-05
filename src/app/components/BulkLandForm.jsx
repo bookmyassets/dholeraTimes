@@ -237,7 +237,7 @@ export default function BulkLand({ title , buttonName, pageName }) {
       <section className="py-12 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-6 sm:px-12">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-[#151f28] text-3xl sm:text-4xl font-bold text-center">
+            <h2 className="text-[#151f28] text-xl md:text-3xl font-bold text-center">
               {title}
             </h2>
             {showPopup ? (

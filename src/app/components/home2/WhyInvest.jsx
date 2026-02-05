@@ -140,7 +140,7 @@ const InvestmentTimeline = () => {
   return (
     <div className="w-full max-w-7xl mx-auto p-6">
       <div className="text-center mb-6">
-        <h2 className="text-[28px] font-bold text-[#151f28] mb-4">
+        <h2 className="text-2xl md:text-[28px] font-bold text-[#151f28] mb-4">
           Investment Growth Timeline
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
