@@ -273,18 +273,6 @@ export default function Projects() {
         {/* Content */}
         <div className="relative z-10 h-full flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <div className="inline-block mb-6">
-              <span
-                className="px-6 py-3 rounded-full text-sm font-medium border-2"
-                style={{
-                  backgroundColor: "rgba(222, 190, 107, 0.2)",
-                  color: "#debe6b",
-                  borderColor: "rgba(222, 190, 107, 0.3)",
-                }}
-              >
-                Premium Investment Opportunities
-              </span>
-            </div>
             <h1
               className="text-4xl font-bold mb-8"
               style={{ color: "#fbfbfb" }}
@@ -360,8 +348,8 @@ export default function Projects() {
                         </div>
 
                         {/* Content Section */}
-                        <div className="p-8">
-                          <div className="space-y-6">
+                        <div className="p-4">
+                          <div className="space-y-4">
                             <h3
                               className="text-2xl lg:text-3xl font-bold"
                               style={{ color: "#151f28" }}
@@ -377,17 +365,6 @@ export default function Projects() {
                                 {availableProjects[0].description}
                               </p>
                             )}
-
-                            <div className="prose prose-slate max-w-none">
-                              <div
-                                className="line-clamp-4"
-                                style={{ color: "rgba(21, 31, 40, 0.7)" }}
-                              >
-                                <PortableText
-                                  value={availableProjects[0].body}
-                                />
-                              </div>
-                            </div>
 
                             <div className="pt-4">
                               <div
@@ -488,7 +465,7 @@ export default function Projects() {
                             </div>
 
                             {/* Content */}
-                            <div className="p-6">
+                            <div className="p-4">
                               <h3
                                 className="text-xl font-bold mb-3 line-clamp-2"
                                 style={{ color: "#151f28" }}
@@ -557,124 +534,128 @@ export default function Projects() {
       )}
 
       {/* Sold Out Projects Grid */}
-      {soldOutProjects.length > 0 && (
-        <div
-          className="py-20"
-          style={{ backgroundColor: "rgba(21, 31, 40, 0.05)" }}
+    {/* Sold Out Projects Grid */}
+{soldOutProjects.length > 0 && (
+  <div
+    className="py-20"
+    style={{ backgroundColor: "rgba(21, 31, 40, 0.05)" }}
+  >
+    <div className="max-w-7xl mx-auto px-4">
+      <div className="text-center mb-16">
+        <h2
+          className="text-[28px] font-bold mb-6"
+          style={{ color: "#151f28" }}
         >
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2
-                className="text-[28px] font-bold mb-6"
-                style={{ color: "#151f28" }}
-              >
-                Sold Out <span style={{ color: "#debe6b" }}>Projects</span>
-              </h2>
-              <p
-                className="text-xl max-w-2xl mx-auto"
-                style={{ color: "rgba(21, 31, 40, 0.7)" }}
-              >
-                Our successful investment projects with proven returns
-              </p>
-            </div>
+          Sold Out <span style={{ color: "#debe6b" }}>Projects</span>
+        </h2>
+        <p
+          className="text-xl max-w-2xl mx-auto"
+          style={{ color: "rgba(21, 31, 40, 0.7)" }}
+        >
+          Our successful investment projects with proven returns
+        </p>
+      </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-              {soldOutProjects.map((post) => (
-                <div key={post._id} className="group">
-                  <Link
-                    href={
-                      post.slug?.current
-                        ? `/dholera-residential-plots/${post.slug.current}`
-                        : "#"
-                    }
-                    className="block"
-                  >
-                    <div
-                      className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer"
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {soldOutProjects.map((post) => (
+          <div key={post._id} className="group h-full">
+            <Link
+              href={
+                post.slug?.current
+                  ? `/dholera-residential-plots/${post.slug.current}`
+                  : "#"
+              }
+              className="block h-full"
+            >
+              <div
+                className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer h-full flex flex-col"
+                style={{
+                  backgroundColor: "#fbfbfb",
+                  borderColor: "rgba(222, 190, 107, 0.2)",
+                }}
+              >
+                {/* Sold Out Overlay */}
+                <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+
+                {/* Image */}
+                <div className="relative h-64 flex-shrink-0">
+                  {post.mainImage && (
+                    <Image
+                      src={post.mainImage || "/placeholder.svg"}
+                      alt={post.title}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  )}
+
+                  {/* Sold Out Badge */}
+                  <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
+                    <span
+                      className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
                       style={{
-                        backgroundColor: "#fbfbfb",
-                        borderColor: "rgba(222, 190, 107, 0.2)",
+                        backgroundColor: "rgba(222, 190, 107, 0.8)",
+                        color: "#151f28",
+                        borderColor: "rgba(222, 190, 107, 0.5)",
                       }}
                     >
-                      {/* Sold Out Overlay */}
-                      <div className="absolute inset-0 bg-black/40 z-10"></div>
-
-                      {/* Image */}
-                      <div className="relative h-64">
-                        {post.mainImage && (
-                          <Image
-                            src={post.mainImage || "/placeholder.svg"}
-                            alt={post.title}
-                            fill
-                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                          />
-                        )}
-
-                        {/* Other Categories */}
-                        <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
-                          <span
-                            className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
-                            style={{
-                              backgroundColor: "rgba(222, 190, 107, 0.8)",
-                              color: "#151f28",
-                              borderColor: "rgba(222, 190, 107, 0.5)",
-                            }}
-                          >
-                            Sold Out
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-6 relative z-20 h-56">
-                        <h3
-                          className="text-xl font-bold mb-3 line-clamp-2"
-                          style={{ color: "#151f28" }}
-                        >
-                          {post.title}
-                        </h3>
-
-                        {post.description && (
-                          <p
-                            className="text-sm leading-relaxed mb-4 line-clamp-3"
-                            style={{ color: "rgba(21, 31, 40, 0.8)" }}
-                          >
-                            {post.description}
-                          </p>
-                        )}
-
-                        <div
-                          className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
-                          style={{
-                            borderColor: "#debe6b",
-                            color: "#debe6b",
-                            backgroundColor: "transparent",
-                          }}
-                        >
-                          <span>View Project</span>
-                          <svg
-                            className="w-4 h-4 ml-2"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M17 8l4 4m0 0l-4 4m4-4H3"
-                            />
-                          </svg>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                      Sold Out
+                    </span>
+                  </div>
                 </div>
-              ))}
-            </div>
+
+                {/* Content - Flex grow to fill space */}
+                <div className="p-6 relative z-20 flex flex-col flex-grow">
+                  <h3
+                    className="text-xl font-bold mb-3"
+                    style={{ color: "#151f28" }}
+                  >
+                    {post.title}
+                  </h3>
+
+                  {post.description && (
+                    <p
+                      className="text-sm leading-relaxed mb-6 flex-grow"
+                      style={{ color: "rgba(21, 31, 40, 0.8)" }}
+                    >
+                      {post.description}
+                    </p>
+                  )}
+
+                  {/* Button - Anchored to bottom */}
+                  <div className="mt-auto">
+                    <div
+                      className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
+                      style={{
+                        borderColor: "#debe6b",
+                        color: "#debe6b",
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      <span>View Project</span>
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
-        </div>
-      )}
+        ))}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
