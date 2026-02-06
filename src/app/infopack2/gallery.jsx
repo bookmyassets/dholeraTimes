@@ -1,43 +1,112 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
-import sample1 from "@/assets/gallery/sir/BMAWebsitegallery7.webp";
-import sample2 from "@/assets/gallery/sir/BMAWebsitegallery8.webp";
-import sample3 from "@/assets/gallery/sir/dt-abcd.webp";
-import sample5 from "@/assets/gallery/sir/dt-acti.webp";
-import sample6 from "@/assets/gallery/sir/dt-activation.webp";
-import sample7 from "@/assets/gallery/sir/dt-airport.webp";
-import sample8 from "@/assets/gallery/sir/dt-experess.webp";
-import sample9 from "@/assets/gallery/sir/dt-renew.webp";
-import sample10 from "@/assets/gallery/sir/dt-renew2.webp";
-import sample11 from "@/assets/gallery/sir/dt-solar.webp";
-import sample12 from "@/assets/gallery/sir/dt-sprr.webp";
-import sample13 from "@/assets/gallery/sir/dt-tata1.webp";
-import sample14 from "@/assets/gallery/sir/dt-tata.webp";
-import sample15 from "@/assets/gallery/sir/dt-toll.webp";
-import sample16 from "@/assets/gallery/sir/dt-torrent.webp";
-import sample17 from "@/assets/gallery/sir/dt-wtp.webp";
+import img1 from "@/assets/gallery/sir/5000mw-solar-park-dholera-times.webp";
+import img2 from "@/assets/gallery/sir/ahmedabad-dholera-expressway-butterfly-dholera-times.webp";
+import img3 from "@/assets/gallery/sir/ahmedabad-dholera-expressway-dholera-times.webp";
+import img4 from "@/assets/gallery/sir/cargo-terminal-dholera-international-airport-dholera-times.webp";
+import img5 from "@/assets/gallery/sir/infrastruction-activation-area-dholera-times.webp";
+import img6 from "@/assets/gallery/sir/main-gate-tata-semiconductor-plant-dholera-times.webp";
+import img7 from "@/assets/gallery/sir/renew-solar-cell-manufacturing-plant-dholera-times.webp";
+import img8 from "@/assets/gallery/sir/riverfront-dholera-activation-area-dholera-times.webp";
+import img9 from "@/assets/gallery/sir/runway-dholera-international-airport-dholera-times.webp";
+import img10 from "@/assets/gallery/sir/silk-route-park-activation-area-dholera-times.webp";
+import img11 from "@/assets/gallery/sir/tata-semiconductor-plant-construction-dholera-times.webp";
+import img12 from "@/assets/gallery/sir/tata-solar-park-dholera-times.webp";
+import img13 from "@/assets/gallery/sir/water-treatment-plant-dholera-times.webp";
+import img14 from "@/assets/gallery/sir/westwyn-estate-dholera-residential-plots.webp";
+
 import Image from "next/image";
 
+
 export default function DholeraCarousel() {
-  const galleryImages = [
-    { id: 1, src: sample1, alt: "ABCD Building", caption: "ABCD Building" },
-    { id: 2, src: sample2, alt: "Ahmedabad Dholera Toll", caption: "Ahmedabad Dholera Toll" },
-    { id: 3, src: sample3, alt: "ABCD Building Dholera", caption: "ABCD Building Dholera" },
-    { id: 4, src: sample5, alt: "Activation Area Road Dholera", caption: "Activation Area Road Dholera" },
-    { id: 5, src: sample6, alt: "River Front - Dholera Activation Area", caption: "River Front - Dholera Activation Area" },
-    { id: 6, src: sample7, alt: "Dholera Airport", caption: "Dholera Airport" },
-    { id: 7, src: sample8, alt: "Ahmedabad to Dholera", caption: "Ahmedabad to Dholera" },
-    { id: 8, src: sample9, alt: "Renew Solar Power Private Limited", caption: "Renew Solar Power Private Limited" },
-    { id: 9, src: sample10, alt: "Renew Solar Panel", caption: "Renew Solar Panel" },
-    { id: 10, src: sample11, alt: "Largest Solar Power Plant in India", caption: "Largest Solar Power Plant in India" },
-    { id: 11, src: sample12, alt: "Ahmedabad Dholera Expressway Route Map", caption: "Ahmedabad Dholera Expressway Route Map" },
-    { id: 12, src: sample13, alt: "Tata Semiconductor Plant", caption: "Tata Semiconductor Plant" },
-    { id: 13, src: sample14, alt: "Tata Semiconductor Hub", caption: "Tata Semiconductor Hub" },
-    { id: 14, src: sample15, alt: "Ahmedabad Dholera Bhavanagar Expressway Toll", caption: "Ahmedabad Dholera Bhavanagar Expressway Toll" },
-    { id: 15, src: sample16, alt: "Sewage Treatment Plant in Dholera SIR", caption: "Sewage Treatment Plant in Dholera SIR" },
-    { id: 16, src: sample17, alt: "Water Treatment Plant in Dholera", caption: "Water Treatment Plant in Dholera" },
-  ];
+const galleryImages = [
+  {
+    id: 1,
+    src: img1,
+    alt: "5000 MW Solar Park Dholera",
+    caption: "5000 MW Solar Park – Dholera",
+  },
+  {
+    id: 2,
+    src: img2,
+    alt: "Ahmedabad Dholera Expressway Butterfly Junction",
+    caption: "Ahmedabad–Dholera Expressway Butterfly Junction",
+  },
+  {
+    id: 3,
+    src: img3,
+    alt: "Ahmedabad Dholera Expressway",
+    caption: "Ahmedabad–Dholera Expressway",
+  },
+  {
+    id: 4,
+    src: img4,
+    alt: "Cargo Terminal Dholera International Airport",
+    caption: "Cargo Terminal – Dholera International Airport",
+  },
+  {
+    id: 5,
+    src: img5,
+    alt: "Activation Area Infrastructure Dholera",
+    caption: "Infrastructure – Dholera Activation Area",
+  },
+  {
+    id: 6,
+    src: img6,
+    alt: "Main Gate Tata Semiconductor Plant Dholera",
+    caption: "Main Gate – Tata Semiconductor Plant",
+  },
+  {
+    id: 7,
+    src: img7,
+    alt: "ReNew Solar Cell Manufacturing Plant Dholera",
+    caption: "ReNew Solar Cell Manufacturing Plant",
+  },
+  {
+    id: 8,
+    src: img8,
+    alt: "Riverfront Dholera Activation Area",
+    caption: "Riverfront – Dholera Activation Area",
+  },
+  {
+    id: 9,
+    src: img9,
+    alt: "Runway Dholera International Airport",
+    caption: "Runway – Dholera International Airport",
+  },
+  {
+    id: 10,
+    src: img10,
+    alt: "Silk Route Park Activation Area Dholera",
+    caption: "Silk Route Park – Activation Area",
+  },
+  {
+    id: 11,
+    src: img11,
+    alt: "Tata Semiconductor Plant Construction Dholera",
+    caption: "Tata Semiconductor Plant – Construction Phase",
+  },
+  {
+    id: 12,
+    src: img12,
+    alt: "Tata Solar Park Dholera",
+    caption: "Tata Solar Park – Dholera",
+  },
+  {
+    id: 13,
+    src: img13,
+    alt: "Water Treatment Plant Dholera",
+    caption: "Water Treatment Plant – Dholera",
+  },
+  {
+    id: 14,
+    src: img14,
+    alt: "WestWyn Estate Dholera Residential Plots",
+    caption: "WestWyn Estate – Dholera Residential Plots",
+  },
+];
+
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
