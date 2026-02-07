@@ -66,7 +66,6 @@ export default function RootLayout({ children }) {
     setIsBlogsDropdownOpen(!isBlogsDropdownOpen);
     setIsProjectsDropdownOpen(false);
     setIsDholeraDropdownOpen(false);
-    setIsGalleryOpen(false);
   };
 
   const closeAllDropdowns = () => {
@@ -257,7 +256,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                       onClick={toggleBlogsDropdown}
                       className="text-white hover:bg-white/10 px-4 py-2 rounded-lg transition-all duration-300 flex items-center gap-1"
                     >
-                      <Link href="/dholera-updates/blogs">Dholera Updates</Link>
+                      <p>Dholera Updates</p>
                       <ChevronDown
                         className={`h-4 w-4 text-white transition-transform duration-300 ${
                           isBlogsDropdownOpen ? "rotate-180" : ""
