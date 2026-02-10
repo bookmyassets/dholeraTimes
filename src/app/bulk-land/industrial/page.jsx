@@ -76,7 +76,7 @@ export default function page() {
 
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -113,8 +113,8 @@ export default function page() {
         content="Dholera SIR, Dholera Smart City, Industrial Land Dholera, Dholera Investment"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land/industrial"
+        rel="canonical"
+        href="https://www.dholeratimes.com/bulk-land/industrial"
       />
 
       <div className="relative h-[50vh] w-full ">
@@ -183,8 +183,6 @@ export default function page() {
           </div>
         </div>
       </div>
-
-      <HorizontalScrollInterlink properties={relatedProperties} />
 
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">
@@ -325,10 +323,15 @@ export default function page() {
         </div>
       </div>
 
+      <BulkLand
+        title="Invest in govt. approved bulk land in Dholera starting 2Cr"
+        pageName="industrial-bulk-land"
+      />
+      <HorizontalScrollInterlink properties={relatedProperties} />
+
       <div>
         <Table />
       </div>
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="industrial-bulk-land"/>
     </>
   );
 }

@@ -199,7 +199,6 @@ export default function page() {
           </div>
         </div>
       </div>
-      <HorizontalScrollInterlink properties={relatedProperties} />
 
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">
@@ -341,10 +340,12 @@ export default function page() {
         </div>
       </div>
 
+      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="city-centre-bulk-land" />
+      <HorizontalScrollInterlink properties={relatedProperties} />
+
       <div>
         <Table />
       </div>
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="city-centre-bulk-land" />
     </>
   );
 }

@@ -182,7 +182,6 @@ export default function page() {
           </div>
         </div>
       </div>
-      <HorizontalScrollInterlink properties={relatedProperties} />
       {/* Description Section */}
       <div className="max-w-5xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -317,10 +316,14 @@ export default function page() {
           </div>
         </div>
       </div>
+
+      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="recreation-sports-bulk-land"/>
+      <HorizontalScrollInterlink properties={relatedProperties} />
+
+
       <div>
         <Table />
       </div>
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="recreation-sports-bulk-land"/>
     </>
   );
 }

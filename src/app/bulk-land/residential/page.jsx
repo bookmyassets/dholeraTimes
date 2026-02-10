@@ -186,7 +186,6 @@ export default function page() {
       </div>
 
       {/* Horizontal Scroll Interlink - Alternative placement */}
-      <HorizontalScrollInterlink properties={relatedProperties} />
 
       <div>
         {/* Description Section */}
@@ -334,10 +333,13 @@ export default function page() {
         </div>
       </div>
 
+      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="residential-bulk-land"/>
+      <HorizontalScrollInterlink properties={relatedProperties} />
+
+
       <div>
         <Table />
       </div>
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="residential-bulk-land"/>
     </>
   );
 }

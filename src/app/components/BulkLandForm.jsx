@@ -339,7 +339,7 @@ export default function BulkLand({ title , buttonName, pageName }) {
                         : "bg-[#b69b5e] hover:bg-[#d3b36b] hover:shadow-lg active:scale-95"
                     }`}
                   >
-                     {isLoading ? "Submitting..." : buttonName || "Get Bulk Land Detail"}
+                     {isLoading ? "Submitting..." : buttonName || "Get A Call Back"}
                   </button>
                 </div>
               </form>
