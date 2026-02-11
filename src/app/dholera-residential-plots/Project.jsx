@@ -5,7 +5,7 @@ import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
 import heroM from "@/assets/residential-mob-view.webp";
 import westwyn from "@/assets/residential/westwyn-county.webp";
-import westwyn_estate from "@/assets/westwyn-estate-home-image.webp";
+import westwyn_estate from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
 import orchid from "@/assets/residential/orchid.webp";
 import paradise1 from "@/assets/residential/paradise1.webp";
 import paradise2 from "@/assets/residential/paradise2.webp";
@@ -219,7 +219,7 @@ export default function Projects() {
     if (Array.isArray(post.categories)) {
       return post.categories.some(
         (category) =>
-          category.title && category.title.toLowerCase() === "sold out"
+          category.title && category.title.toLowerCase() === "sold out",
       );
     } else {
       return (
@@ -250,42 +250,41 @@ export default function Projects() {
       />
       <meta name="robots" content="index, dofollow" />
 
-      {/* Hero Section with Image and Text */}
-      <div className="relative h-[50vh] overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
+      <div className="relative overflow-hidden h-[50vh] w-full">
+        {/* Background Image - Desktop */}
+        <div className="hidden md:block absolute inset-0 w-full h-full ">
           <Image
             src={hero}
             alt="Dholera SIR Project"
             fill
-            className="object-cover "
-            priority
-          />
-          <Image
-            src={heroM}
-            alt="Dholera SIR Project"
-            fill
-            className="object-cover md:hidden"
+            className="object-cover" // Use cover to fill width and height
             priority
           />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 h-full flex items-center justify-center">
+        {/* Background Image - Mobile */}
+        <div className="md:hidden absolute inset-0 w-full h-full">
+          <Image
+            src={heroM}
+            alt="Dholera SIR Project"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+         <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content Overlay */}
+        <div className="relative z-10 h-full flex items-center justify-center bg-black/20">
+          {" "}
+          {/* Added slight overlay for text readability */}
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h1
-              className="text-4xl font-bold mb-8"
+              className="text-4xl md:text-5xl font-bold mb-8"
               style={{ color: "#fbfbfb" }}
             >
               Our <span style={{ color: "#debe6b" }}>Projects</span>
             </h1>
-            <p
-              className=" max-w-5xl mx-auto leading-relaxed mb-12"
-              style={{ color: "rgba(251, 251, 251, 0.8)" }}
-            >
-              Discover exclusive investment opportunities with proven returns.
-              Join sophisticated investors in premium real estate ventures.
-            </p>
           </div>
         </div>
       </div>
@@ -315,7 +314,7 @@ export default function Projects() {
               <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                   {/* Project Details - Left Side */}
-                  <div className="order-2 lg:order-1">
+                  <div className="order-1 lg:order-1">
                     <Link
                       href={
                         availableProjects[0].slug?.current
@@ -397,7 +396,7 @@ export default function Projects() {
                   </div>
 
                   {/* Lead Form - Right Side */}
-                  <div className="order-1 lg:order-2 lg:sticky lg:top-8">
+                  <div className="order-2 lg:order-2 lg:sticky lg:top-8">
                     <div
                       className="rounded-3xl p-6 shadow-2xl border-2"
                       style={{
@@ -410,7 +409,8 @@ export default function Projects() {
                           className="text-2xl lg:text-3xl font-bold mb-4"
                           style={{ color: "#fbfbfb" }}
                         >
-                          Verified plots under ₹10 Lakh only,<br /> 5 Minute from the expressway
+                          Verified plots under ₹10 Lakh only,
+                          <br /> 5 Minute from the expressway
                         </h3>
                         {/* <p
                           className="text-lg"
@@ -534,128 +534,128 @@ export default function Projects() {
       )}
 
       {/* Sold Out Projects Grid */}
-    {/* Sold Out Projects Grid */}
-{soldOutProjects.length > 0 && (
-  <div
-    className="py-20"
-    style={{ backgroundColor: "rgba(21, 31, 40, 0.05)" }}
-  >
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="text-center mb-16">
-        <h2
-          className="text-[28px] font-bold mb-6"
-          style={{ color: "#151f28" }}
+      {/* Sold Out Projects Grid */}
+      {soldOutProjects.length > 0 && (
+        <div
+          className="py-20"
+          style={{ backgroundColor: "rgba(21, 31, 40, 0.05)" }}
         >
-          Sold Out <span style={{ color: "#debe6b" }}>Projects</span>
-        </h2>
-        <p
-          className="text-xl max-w-2xl mx-auto"
-          style={{ color: "rgba(21, 31, 40, 0.7)" }}
-        >
-          Our successful investment projects with proven returns
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        {soldOutProjects.map((post) => (
-          <div key={post._id} className="group h-full">
-            <Link
-              href={
-                post.slug?.current
-                  ? `/dholera-residential-plots/${post.slug.current}`
-                  : "#"
-              }
-              className="block h-full"
-            >
-              <div
-                className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer h-full flex flex-col"
-                style={{
-                  backgroundColor: "#fbfbfb",
-                  borderColor: "rgba(222, 190, 107, 0.2)",
-                }}
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2
+                className="text-[28px] font-bold mb-6"
+                style={{ color: "#151f28" }}
               >
-                {/* Sold Out Overlay */}
-                <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+                Sold Out <span style={{ color: "#debe6b" }}>Projects</span>
+              </h2>
+              <p
+                className="text-xl max-w-2xl mx-auto"
+                style={{ color: "rgba(21, 31, 40, 0.7)" }}
+              >
+                Our successful investment projects with proven returns
+              </p>
+            </div>
 
-                {/* Image */}
-                <div className="relative h-64 flex-shrink-0">
-                  {post.mainImage && (
-                    <Image
-                      src={post.mainImage || "/placeholder.svg"}
-                      alt={post.title}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                    />
-                  )}
-
-                  {/* Sold Out Badge */}
-                  <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
-                    <span
-                      className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
-                      style={{
-                        backgroundColor: "rgba(222, 190, 107, 0.8)",
-                        color: "#151f28",
-                        borderColor: "rgba(222, 190, 107, 0.5)",
-                      }}
-                    >
-                      Sold Out
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content - Flex grow to fill space */}
-                <div className="p-6 relative z-20 flex flex-col flex-grow">
-                  <h3
-                    className="text-xl font-bold mb-3"
-                    style={{ color: "#151f28" }}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+              {soldOutProjects.map((post) => (
+                <div key={post._id} className="group h-full">
+                  <Link
+                    href={
+                      post.slug?.current
+                        ? `/dholera-residential-plots/${post.slug.current}`
+                        : "#"
+                    }
+                    className="block h-full"
                   >
-                    {post.title}
-                  </h3>
-
-                  {post.description && (
-                    <p
-                      className="text-sm leading-relaxed mb-6 flex-grow"
-                      style={{ color: "rgba(21, 31, 40, 0.8)" }}
-                    >
-                      {post.description}
-                    </p>
-                  )}
-
-                  {/* Button - Anchored to bottom */}
-                  <div className="mt-auto">
                     <div
-                      className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
+                      className="rounded-2xl shadow-xl overflow-hidden border-2 hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] relative cursor-pointer h-full flex flex-col"
                       style={{
-                        borderColor: "#debe6b",
-                        color: "#debe6b",
-                        backgroundColor: "transparent",
+                        backgroundColor: "#fbfbfb",
+                        borderColor: "rgba(222, 190, 107, 0.2)",
                       }}
                     >
-                      <span>View Project</span>
-                      <svg
-                        className="w-4 h-4 ml-2"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17 8l4 4m0 0l-4 4m4-4H3"
-                        />
-                      </svg>
+                      {/* Sold Out Overlay */}
+                      <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+
+                      {/* Image */}
+                      <div className="relative h-64 flex-shrink-0">
+                        {post.mainImage && (
+                          <Image
+                            src={post.mainImage || "/placeholder.svg"}
+                            alt={post.title}
+                            fill
+                            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                          />
+                        )}
+
+                        {/* Sold Out Badge */}
+                        <div className="absolute top-4 left-4 flex flex-wrap gap-2 z-20">
+                          <span
+                            className="px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm border opacity-90"
+                            style={{
+                              backgroundColor: "rgba(222, 190, 107, 0.8)",
+                              color: "#151f28",
+                              borderColor: "rgba(222, 190, 107, 0.5)",
+                            }}
+                          >
+                            Sold Out
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Content - Flex grow to fill space */}
+                      <div className="p-6 relative z-20 flex flex-col flex-grow">
+                        <h3
+                          className="text-xl font-bold mb-3"
+                          style={{ color: "#151f28" }}
+                        >
+                          {post.title}
+                        </h3>
+
+                        {post.description && (
+                          <p
+                            className="text-sm leading-relaxed mb-6 flex-grow"
+                            style={{ color: "rgba(21, 31, 40, 0.8)" }}
+                          >
+                            {post.description}
+                          </p>
+                        )}
+
+                        {/* Button - Anchored to bottom */}
+                        <div className="mt-auto">
+                          <div
+                            className="inline-flex items-center px-6 py-2 font-medium rounded-lg border-2 hover:shadow-md transition-all duration-300 text-sm opacity-75 hover:opacity-100"
+                            style={{
+                              borderColor: "#debe6b",
+                              color: "#debe6b",
+                              backgroundColor: "transparent",
+                            }}
+                          >
+                            <span>View Project</span>
+                            <svg
+                              className="w-4 h-4 ml-2"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                              />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
-              </div>
-            </Link>
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
-  </div>
-)}
+        </div>
+      )}
     </div>
   );
 }

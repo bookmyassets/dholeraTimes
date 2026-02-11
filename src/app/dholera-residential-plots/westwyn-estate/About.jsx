@@ -1,6 +1,8 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import React, { useState, useEffect } from "react";
+import westwyn from "@/assets/residential/westwyn-estate-dholera-plots-under-10-lakh.webp";
 
 import {
   FaWhatsapp,
@@ -10,6 +12,7 @@ import {
   FaIndustry,
   FaClock,
 } from "react-icons/fa";
+import { TbBuildingFactory } from "react-icons/tb";
 
 const WestWynAboutSection = () => {
   const [counters, setCounters] = useState({
@@ -17,13 +20,6 @@ const WestWynAboutSection = () => {
     price: 0,
     amenities: 0,
   });
-
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
-  const [formTitle, setFormTitle] = useState("");
-  const [formHeadline, setFormHeadline] = useState("");
-  const [buttonName, setButtonName] = useState("");
-  const [formType, setFormType] = useState("");
 
   // Animation for counters
   useEffect(() => {
@@ -38,15 +34,15 @@ const WestWynAboutSection = () => {
       const timer = setInterval(() => {
         current.plotSize = Math.min(
           current.plotSize + targets.plotSize / steps,
-          targets.plotSize
+          targets.plotSize,
         );
         current.price = Math.min(
           current.price + targets.price / steps,
-          targets.price
+          targets.price,
         );
         current.amenities = Math.min(
           current.amenities + targets.amenities / steps,
-          targets.amenities
+          targets.amenities,
         );
 
         setCounters({
@@ -72,7 +68,7 @@ const WestWynAboutSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     const counterSection = document.getElementById("counters-section");
@@ -82,30 +78,6 @@ const WestWynAboutSection = () => {
 
     return () => observer.disconnect();
   }, []);
-
-  const handleAfterSubmit = () => {
-    console.log("Form submitted successfully, type:", formType);
-
-    if (formType === "brochure") {
-      try {
-        console.log("Initiating brochure download");
-
-        setTimeout(() => {
-          const link = document.createElement("a");
-          link.href = "https://shorturl.at/Dv00M";
-          link.target = "_blank";
-          link.download = "brochure.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          console.log("Download link clicked");
-        }, 300);
-      } catch (error) {
-        console.error("Error downloading brochure:", error);
-        window.open("https://shorturl.at/Dv00M", "_blank");
-      }
-    }
-  };
 
   const locationFeatures = [
     {
@@ -133,6 +105,11 @@ const WestWynAboutSection = () => {
       text: "30 minutes from International Airport",
       highlight: "International connectivity",
     },
+    {
+      icon: TbBuildingFactory,
+      text: "5 min from hebatpur industrial zone",
+      highlight: "Industrial Area",
+    },
   ];
 
   return (
@@ -152,110 +129,84 @@ const WestWynAboutSection = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16">
+      <div className="text-center">
+        <h2 className="text-2xl md:text-3xl pt-4 font-bold text-gray-900 mb-4">
+          WestWyn Estate –{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
+            Dholera SIR's Newest Landmark
+          </span>
+        </h2> 
+      </div>
+      <div className="relative md:flex items-center justify-center md:space-x-20 max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            WestWyn Estate –{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
-              Dholera SIR's Newest Landmark
-            </span>
-          </h2>
-
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        <div className="text-center mb-16 ">
+          <p className="text-base md:text-lg text-gray-600 text-left max-w-4xl mx-auto leading-relaxed">
             Introducing WestWyn Estate – the newest landmark in Dholera SIR,
-            offering plots designed for long-term value and growth.. Trusted by
+            offering plots designed for long-term value and growth. Trusted by
             investors and inspired by the strong response to our earlier
             project, this new launch continues our vision of excellence, growth,
             and reliability at a prime location.
           </p>
+          <div className="py-4">
+            <Image src={westwyn} alt="westwyn" className="rounded-xl" />
+          </div>
         </div>
 
-        <div className="max-w-7xl mx-auto gap-12 items-stretch">
+        <div className="max-w-7xl mx-auto items-stretch">
           {/* Left Content - Enhanced */}
           <div className="space-y-8 h-full">
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#d3b36b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-7 h-7 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl text-center font-bold text-gray-900">
+            <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
+              <div className="mb-6">
+                <div className="text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
                     Strategic Location Advantage
                   </h3>
-                  <p className="text-[#d3b36b] text-center font-medium">
+                  <p className="text-[#d3b36b] font-medium text-sm md:text-base">
                     Vadhela-Navda Highway
                   </p>
                 </div>
               </div>
 
-              <div className="mb-8 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
                 {locationFeatures.map((feature, index) => (
                   <div
                     key={index}
-                    className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#d3b36b]/30 hover:shadow-lg transition-all duration-300 group"
+                    className="relative flex flex-col items-center text-center p-3 md:p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#d3b36b]/30 hover:shadow-lg transition-all duration-300 group"
                   >
-                    
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-6 h-6 text-[#d3b36b]" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#d3b36b]" />
                     </div>
                     <div>
-                      <p className="font-bold text-gray-900 text-sm leading-tight mb-2">
+                      <p className="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 md:mb-2">
                         {feature.text}
                       </p>
-                      <p className="text-xs text-gray-600 leading-relaxed">
+                      <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed">
                         {feature.highlight}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#d3b36b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment
-                that grows with Dholera's transformation."
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://wa.me/919958993549" className="flex-1">
-                  <button className="w-full bg-white border-2 border-[#d3b36b] text-[#d3b36b] px-8 py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
-                    <FaWhatsapp className="w-5 h-5" />
-                    Book Site Visit
-                  </button>
-                </a>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/*       <AnimatePresence>
-        {isBrochureFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000] p-4">
-            <div className="w-full max-w-md">
-              <BrochureDownload
-                onClose={closeBrochureForm}
-                title="Get the WestWyn Estate Brochure"
-                headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
-                buttonName="Download Brochure"
-                onAfterSubmit={handleAfterSubmit}
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence> */}
+      <div className="max-w-5xl mx-auto px-4 pb-8">
+        <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#d3b36b] pl-3 md:pl-4 italic">
+          "Every plot is designed as a secure, future-ready investment that
+          grows with Dholera's transformation."
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/919958993549" className="flex-1">
+            <button className="w-full bg-white border-2 border-[#d3b36b] text-[#d3b36b] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg text-sm md:text-base">
+              <FaWhatsapp className="w-5 h-5" />
+              Book Site Visit
+            </button>
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

@@ -37,7 +37,7 @@ export default function Home2Main() {
       <div>
         <BulkLand
           title="Invest in Registry-Ready plots in Dholera under ₹10 Lakh"
-          buttonName="Book My Site Visit"
+          buttonName="Get A Call Back"
           pageName="Home"
         />
       </div>
@@ -101,7 +101,7 @@ export default function Home2Main() {
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
               title="Explore verified residential plots in Dholera under ₹10 lakh"
-              buttonName="Get Plot Details"
+              buttonName="Get A Call Back"
               onClose={() => setIsBrochureFormOpen(false)}
             />
           </div>

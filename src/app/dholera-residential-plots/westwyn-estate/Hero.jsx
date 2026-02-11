@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import wc from "@/assets/residential/estate-hero.webp";
-import wcM from "@/assets/residential/westwyn-estate-mobile.webp";
+import wc from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
+import wcM from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../../components/BrochureDownload";
@@ -51,7 +51,7 @@ export default function Hero() {
           href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate"
       />
 
-      <div className="bg-gray-100">
+      <div className="bg-gray-100 ">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-6">
@@ -70,7 +70,7 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative min-h-[500px] md:min-h-[600px] ">
+            <div className="relative aspect-[3/2] md:min-h-[600px] ">
               {/* Background Image */}
               <Image
                 src={wc}
@@ -83,7 +83,7 @@ export default function Hero() {
                 src={wcM}
                 alt="WestWyn Estate in Dholera Gujarat"
                 fill
-                className="absolute object-cover md:hidden"
+                className="absolute object-contain md:hidden aspect-[3/2]"
                 priority
               />
 
@@ -151,7 +151,7 @@ export default function Hero() {
             {/* Mobile Only Section - Below Hero Image */}
             <div className="md:hidden mt-6">
               <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/30 w-full">
-                <div className="grid gap-6 p-6">
+                <div className="grid gap-4 p-4">
                   {/* Categories & Price */}
                   <div>
                     <div className="flex items-center gap-2 flex-wrap mb-3">
@@ -163,7 +163,7 @@ export default function Hero() {
                         🔥 Newly Launched
                       </span>
                     </div>
-                    <div className="text-3xl font-bold text-[#151f28]">
+                    <div className="text-xl font-bold text-[#151f28]">
                       ₹6,500
                       <span className="text-sm text-gray-600 ml-1">/Sq.Yd</span>
                     </div>
@@ -171,7 +171,7 @@ export default function Hero() {
 
                   {/* Title & Description */}
                   <div>
-                    <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
+                    <h1 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
                       WestWyn Estate
                     </h1>
                   </div>
@@ -192,7 +192,7 @@ export default function Hero() {
                         📄 Brochure
                       </button>
                     </div>
-                    <div className="text-[#151f28] text-xl font-semibold">
+                    <div className="text-[#151f28] text-lg font-semibold">
                       <p>Registry Ready Plot under ₹10 Lakh</p>
                     </div>
                   </div>
