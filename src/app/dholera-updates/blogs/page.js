@@ -64,9 +64,6 @@ export default async function BlogsPage() {
             <h1 className="text-2xl md:text-4xl font-bold text-white mb-2">
               Dholera Smart City Blogs
             </h1>
-            <p className="text-white mb-6">
-              Keep up with the latest developments in Dholera SIR
-            </p>
             <div className="flex justify-center">
               {" "}
               {/* Added this wrapper div */}
