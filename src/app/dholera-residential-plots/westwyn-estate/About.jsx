@@ -135,62 +135,66 @@ const WestWynAboutSection = () => {
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
             Dholera SIR's Newest Landmark
           </span>
-        </h2> 
+        </h2>
       </div>
       <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-8">
-  {/* Left Section - Header */}
-  <div className="text-center mb-8 md:mb-0 md:w-1/2">
-    <div className="h-full flex flex-col">
-      <p className="text-base md:text-lg text-gray-600 text-left max-w-4xl mx-auto leading-relaxed mb-4">
-        Introducing WestWyn Estate – the newest landmark in Dholera SIR,
-        offering plots designed for long-term value and growth. Trusted by
-        investors and inspired by the strong response to our earlier
-        project, this new launch continues our vision of excellence, growth,
-        and reliability at a prime location.
-      </p>
-      <div className="flex-grow flex items-center">
-        <Image src={westwyn} alt="westwyn" className="rounded-xl w-full" />
-      </div>
-    </div>
-  </div>
-
-  {/* Right Section - Location Features */}
-  <div className="md:w-1/2">
-    <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300 flex flex-col">
-      <div className="mb-6">
-        <div className="text-center">
-          <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
-            Strategic Location Advantage
-          </h3>
-          <p className="text-[#d3b36b] font-medium text-sm md:text-base">
-            Vadhela-Navda Highway
-          </p>
-        </div>
-      </div>
-
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 flex-grow">
-        {locationFeatures.map((feature, index) => (
-          <div
-            key={index}
-            className="relative flex flex-col items-center text-center p-3 md:p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#d3b36b]/30 hover:shadow-lg transition-all duration-300 group"
-          >
-            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
-              <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#d3b36b]" />
-            </div>
-            <div>
-              <p className="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 md:mb-2">
-                {feature.text}
-              </p>
-              <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed">
-                {feature.highlight}
-              </p>
+        {/* Left Section - Header */}
+        <div className="text-center mb-8 md:mb-0 md:w-1/2">
+          <div className="h-full flex flex-col">
+            <p className="text-base md:text-lg text-gray-600 text-left max-w-4xl mx-auto leading-relaxed mb-4">
+              Introducing WestWyn Estate – the newest landmark in Dholera SIR,
+              offering plots designed for long-term value and growth. Trusted by
+              investors and inspired by the strong response to our earlier
+              project, this new launch continues our vision of excellence,
+              growth, and reliability at a prime location.
+            </p>
+            <div className="flex-grow flex items-center">
+              <Image
+                src={westwyn}
+                alt="westwyn"
+                className="rounded-xl w-full"
+              />
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* Right Section - Location Features */}
+        <div className="md:w-1/2">
+          <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300 flex flex-col">
+            <div className="mb-6">
+              <div className="text-center">
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                  Strategic Location Advantage
+                </h3>
+                <p className="text-[#d3b36b] font-medium text-sm md:text-base">
+                  Vadhela-Navda Highway
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 flex-grow">
+              {locationFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="relative flex flex-col items-center text-center p-3 md:p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#d3b36b]/30 hover:shadow-lg transition-all duration-300 group"
+                >
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#d3b36b]" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 md:mb-2">
+                      {feature.text}
+                    </p>
+                    <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed">
+                      {feature.highlight}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
       <div className="max-w-5xl mx-auto px-4 pb-8">
         <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#d3b36b] pl-3 md:pl-4 italic">
