@@ -39,15 +39,15 @@ const WestWynAboutSection = () => {
       const timer = setInterval(() => {
         current.plotSize = Math.min(
           current.plotSize + targets.plotSize / steps,
-          targets.plotSize
+          targets.plotSize,
         );
         current.price = Math.min(
           current.price + targets.price / steps,
-          targets.price
+          targets.price,
         );
         current.amenities = Math.min(
           current.amenities + targets.amenities / steps,
-          targets.amenities
+          targets.amenities,
         );
 
         setCounters({
@@ -73,7 +73,7 @@ const WestWynAboutSection = () => {
           observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
     const counterSection = document.getElementById("counters-section");
@@ -164,13 +164,14 @@ const WestWynAboutSection = () => {
           </h2>
 
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            WestWyn County offers clear-title, government-approved plots in
-            Dholera SIR, making it a secure choice for both domestic and NRI
-            investors. Situated within the government and industry-backed
-            Dholera Smart City, the project ensures hassle-free investment with
-            flexible payment plans, registry-ready plots, resale support, and
-            buy-back assistance*, providing peace of mind even for investors
-            from abroad.
+            WestWyn County offers clear-title, government-approved plots in the
+            rapidly developing Dholera SIR. With registry-ready documentation,
+            flexible payment plans, and complete legal transparency, it ensures
+            a hassle-free investment experience.<br/> Located within the
+            government-backed Dholera Smart City, the project is ideal for both
+            domestic and NRI investors seeking safe, future-ready property
+            opportunities.<br/> Secure. Transparent. Future-Ready – WestWyn County is
+            where smart investments begin.
           </p>
         </div>
 

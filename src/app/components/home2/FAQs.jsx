@@ -1,55 +1,64 @@
 "use client";
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
-    question: "What is Dholera Smart City?",
+    question: "How far is Dholera from Ahmedabad?",
     answer:
-      "Dholera Smart City is India's first planned greenfield smart city, located in Ahmedabad, Gujarat. It is part of the Delhi-Mumbai Industrial Corridor (DMIC) project and is envisioned as a global hub for economic activities through advanced infrastructure, technology, and sustainable development.",
+      "Dholera is approximately 109 km from Ahmedabad. Once the Ahmedabad–Dholera Expressway is fully operational, travel time will reduce significantly, improving connectivity and boosting real estate potential.",
   },
   {
-    question: "What are the major projects planned in Dholera?",
-    answer: [
-      "Dholera International Airport.",
-      "India's first semiconductor plant by TATA - ₹91,000 Cr investment.",
-      "Asia's largest solar park - 5,000MW",
-      "ReNew Power solar cell manufacturing unit",
-    ],
+    question: "Is Dholera suitable for NRIs to invest?",
+    answer:
+      "Yes. Dholera is a government-backed smart city with transparent planning, structured TP zones, and high long-term appreciation potential. With clear documentation and regulated development, it is considered a safe and attractive option for NRI investors.",
   },
   {
-    question: "Why should we invest in Dholera?",
-    answer: [
-      "India's first fully planned smart city, built from scratch",
-      "Upcoming expressway to be operational in 1-2 months",
-      "International airport set for completion by 2026",
-      "₹90,000 Cr investment by TATA in India's first semiconductor plant, boosting growth potential",
-    ],
+    question: "Is my land investment secure in Dholera?",
+    answer:
+      "Your investment is secure when you purchase NA (Non-Agricultural) / NOC-approved plots with clear title verification and proper documentation. Buying within approved TP zones through verified developers ensures legal safety and transparency.",
   },
   {
-    question: "I live in Delhi NCR. Why should I invest so far away?",
-    answer: [
-      "Helps diversify your investment portfolio",
-      "Requires a smaller investment amount (low ticket size)",
-      "Offers potential for high returns",
-    ],
+    question: "When will Dholera Smart City be fully developed?",
+    answer:
+      "Dholera is being developed in phases. The Activation Area infrastructure is already operational, and major projects like the International Airport and Expressway are progressing rapidly. Growth is ongoing and structured as per the master development plan.",
   },
   {
-    question: "Is my land investment secure?",
+    question: "What makes Dholera different from other cities?",
+    answer:
+      "Dholera is not an extension of an existing city. It is a fully planned Greenfield Smart City built from scratch with organized zoning, underground utilities, smart infrastructure, wide roads, and global-standard connectivity.",
+  },
+  {
+    question: "Is Dholera a government project?",
+    answer:
+      "Yes. Dholera Smart City is a government-planned and government-backed project under the Delhi-Mumbai Industrial Corridor (DMIC), making it one of India's most structured and transparent urban development initiatives.",
+  },
+  {
+    question: "Is Dholera good for long-term investment?",
+    answer:
+      "Yes. Dholera is considered a long-term growth destination due to massive infrastructure spending, industrial investments, and smart city planning. It is not positioned as a short-term speculative market, but rather a strategic future-focused investment opportunity.",
+  },
+  {
+    question: "What are the major projects driving growth in Dholera?",
     answer: [
-      "Located in a gated community",
-      "Registry-ready",
-      "N.A. (Non-Agricultural) and N.O.C. (No Objection Certificate) approvals",
+      "Dholera International Airport",
+      "Ahmedabad–Dholera Expressway",
+      "Semiconductor fabrication plant (₹91,000 Cr investment)",
+      "5,000 MW Solar Park",
+      "Industrial and logistics zones under DMIC",
     ],
   },
 ];
 
 export default function FAQS() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 5);
 
   const renderAnswer = (answer) => {
     if (Array.isArray(answer)) {
@@ -63,9 +72,7 @@ export default function FAQS() {
         </ul>
       );
     }
-    return (
-      <p className="text-gray-600 text-sm leading-relaxed">{answer}</p>
-    );
+    return <p className="text-gray-600 text-sm leading-relaxed">{answer}</p>;
   };
 
   return (
@@ -77,11 +84,11 @@ export default function FAQS() {
             <h2 className="text-[32px] font-semibold text-[#151f28] mb-4">
               Frequently Asked Questions
             </h2>
-            <p>Have more questions ?</p>
+            <p className="text-gray-600 mb-4">Have more questions?</p>
 
             <div className="pt-4">
               <a
-                className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md"
+                className="inline-block bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md"
                 href="tel:+919958993549"
               >
                 Give us a missed call
@@ -90,38 +97,60 @@ export default function FAQS() {
           </div>
 
           {/* Right Section (60%) */}
-          <div className="w-full md:w-3/5 md:pl-24 md:pr-4 md:mt-0 space-y-1">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200">
-                <button
-                  className="w-full py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-all duration-200"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <span className="text-gray-900 font-medium pr-4 leading-relaxed">
-                    {faq.question}
-                  </span>
-                  <div className="flex-shrink-0 transition-transform duration-200">
-                    {openIndex === index ? (
-                      <Minus className="w-5 h-5 text-gray-600" />
-                    ) : (
-                      <Plus className="w-5 h-5 text-gray-600" />
-                    )}
-                  </div>
-                </button>
+          <div className="w-full md:w-3/5 md:pl-24 md:pr-4 md:mt-0">
+            <div className="space-y-1">
+              {displayedFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-gray-200">
+                  <button
+                    className="w-full py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-all duration-200"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span className="text-gray-900 font-medium pr-4 leading-relaxed">
+                      {faq.question}
+                    </span>
+                    <div className="flex-shrink-0 transition-transform duration-200">
+                      {openIndex === index ? (
+                        <Minus className="w-5 h-5 text-gray-600" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-gray-600" />
+                      )}
+                    </div>
+                  </button>
 
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="pb-4 px-0">
-                    {renderAnswer(faq.answer)}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openIndex === index
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="pb-4 px-0">{renderAnswer(faq.answer)}</div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Show More / Show Less Button */}
+            {faqs.length > 5 && (
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="inline-flex items-center gap-2 text-[#b69b5e] hover:text-[#d3b36b] font-semibold transition-colors duration-200"
+                >
+                  {showAll ? (
+                    <>
+                      <span>Show Less</span>
+                      <ChevronUp className="w-5 h-5" />
+                    </>
+                  ) : (
+                    <>
+                      <span>Show More FAQs ({faqs.length - 5} more)</span>
+                      <ChevronDown className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>

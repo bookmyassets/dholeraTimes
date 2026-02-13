@@ -7,6 +7,9 @@ export default function Dholera() {
   return (
     <div className="bg-gray-50 py-16 px-4">
       <div className="max-w-7xl mx-auto">
+        <h1 className="text-[28px] text-center font-bold text-[#151f28] mb-6 leading-tight">
+              Dholera Smart City - Where India’s Future Is Being Built
+            </h1>
         <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-12">
           {/* Left side - Image */}
           <div className="md:w-1/2 w-full">
@@ -29,25 +32,25 @@ export default function Dholera() {
             </div> */}
 
             {/* Main heading */}
-            <h1 className="text-[28px] font-bold text-[#151f28] mb-6 leading-tight">
-              Dholera Smart City
-            </h1>
+            
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-8">
-              Dholera Smart City is India’s first planned Greenfield city,
-              developed under the Delhi-Mumbai Industrial Corridor (DMIC).
-              Spanning 922.5 sq. km, Dholera SIR is designed to become a global
-              Industrial and Manufacturing hub with plug and play
-              infrastructure, renewable energy, and global connectivity.
+              Dholera Smart City is India’s first planned smart city, being
+              developed under the prestigious Delhi–Mumbai Industrial Corridor
+              (DMIC). Spread across 922.5 sq. km, Dholera SIR is planned as a
+              world-class industrial and manufacturing hub with modern
+              infrastructure, smart utilities, sustainable energy solutions, and
+              seamless global connectivity.
               <br />
-              Located just 109 km from Ahmedabad, it is connected via the
-              Ahmedabad Dholera Expressway and the upcoming Dholera
-              International Airport (India’s second largest). With investments
-              from mega industries like Tata Semiconductor (₹91,000 CR), ReNew
-              Power (₹1,200 CR), and featuring one of the world’s largest Solar
-              Power Parks, Dholera smart city is shaping up as India’s future
-              business and investment capital.
+              Strategically located just 109 km from Ahmedabad, the city is well
+              connected through the Ahmedabad–Dholera Expressway and the
+              upcoming Dholera International Airport, which is set to be one of
+              India’s largest airports. Backed by major investments such as Tata
+              Semiconductor Plant (₹91,000 CR), ReNew Power Project (₹1,200 CR),
+              and one of the world’s largest solar power parks, Dholera Smart
+              City is rapidly emerging as a next-generation economic and
+              industrial powerhouse of India.
             </p>
 
             <Link href="/dholera-sir">

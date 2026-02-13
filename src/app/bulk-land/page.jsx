@@ -68,10 +68,7 @@ export default function page() {
         name="keywords"
         content="Dholera Smart City, Dholera Gujarat, Dholera SIR, Dholera Project, Invest in Dholera, Dholera Property Investment"
       />
-      <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land"
-      />
+      <link rel="canonical" href="https://www.dholeratimes.com/bulk-land" />
       <div className="relative md:h-96 w-full h-[30vh] overflow-hidden">
         <Image
           src={hero}
@@ -87,20 +84,25 @@ export default function page() {
         />
         <div className="absolute inset-0 flex top-44 justify-center">
           <div className="text-center px-6 py-10">
-            <h1 className="text-4xl font-bold text-white mb-2">Tap on Dholera's rising demand for Bulk Land</h1>
+            <h1 className="text-4xl font-bold text-white mb-2">
+              Tap on Dholera's rising demand for Bulk Land
+            </h1>
           </div>
         </div>
       </div>
 
       <div>
         <p className="text-center max-w-4xl mx-auto my-8 px-4 leading-relaxed">
-          Looking to invest in bulk land in Dholera Smart City? With
-          AUDA-approved, legally clear plots and large parcels ideal for
-          residential townships, housing projects, and commercial hubs, Dholera
-          offers unmatched growth potential. As India's first greenfield smart
-          city, Dholera SIR is emerging as the top destination for bulk land
-          investment with high ROI, modern infrastructure, and government-backed
-          development.
+          Looking to invest in bulk land in Dholera Smart City? This is the
+          right time to explore large, legally approved land parcels designed
+          for high-growth opportunities. With modern infrastructure, planned
+          development, and government-backed progress, Dholera is becoming a
+          prime destination for residential, commercial, and industrial
+          projects. Whether you are planning a township, business hub, or
+          long-term investment, bulk land in Dholera offers strategic location
+          advantages and strong future potential. Connect with us to get
+          verified details on premium bulk land options and make an informed
+          investment decision.
         </p>
       </div>
 
@@ -124,7 +126,9 @@ export default function page() {
                   <h3 className="text-white text-xl font-bold mb-2 group-hover:text-[#d3b36b] transition-colors">
                     {category.title}
                   </h3>
-                  <p className="text-xs text-white">Where Potential Meets Progress</p>
+                  <p className="text-xs text-white">
+                    Where Potential Meets Progress
+                  </p>
                 </div>
               </div>
               <div className="p-6">
@@ -149,7 +153,7 @@ export default function page() {
           ))}
         </div>
       </div>
-      <BulkLand title="Looking for Bulk Land Parcel in Dholera? Let’s Connect." />
+      <BulkLand title="Looking to Invest in Bulk Land Parcels in Dholera Smart City" />
     </>
   );
 }

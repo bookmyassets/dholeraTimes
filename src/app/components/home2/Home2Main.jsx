@@ -52,9 +52,9 @@ export default function Home2Main() {
         <WhyDT />
       </div>
 
-      <div>
+      {/* <div>
         <InvestmentTimeline />
-      </div>
+      </div> */}
 
       <div>
         <MegaIndustries />

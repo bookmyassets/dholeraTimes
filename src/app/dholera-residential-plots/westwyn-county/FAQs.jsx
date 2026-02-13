@@ -1,91 +1,136 @@
 "use client";
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
+import { Plus, Minus, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
     question: "Where is WestWyn County located?",
-    answer: "WestWyn County is on Fedra-Pipli State Highway (100 ft road), a lively and highly accessible area in Dholera SIR, just 15 minutes from the Dholera International Airport and the Ahmedabad–Dholera Expressway."
+    answer:
+      "WestWyn County is strategically located near Dholera SIR, offering excellent connectivity to Dholera Smart City, Vadhela–Navda Highway, Ahmedabad–Dholera Expressway, and major upcoming infrastructure developments.",
   },
   {
     question: "Are the plots legally approved?",
-    answer: "Yes, all plots are NA/NOC cleared, title-clear, and registry-ready, making them safe for both domestic and NRI investors."
+    answer:
+      "Yes. All plots in WestWyn County are NA (Non-Agricultural) approved, NOC-cleared, clear-title, and registry-ready, ensuring a safe and transparent investment in Dholera Smart City.",
   },
   {
     question: "What sizes and prices are available?",
-    answer: "Plots range from 170–250 sq. yd., starting at ₹10 Lakh, designed to suit early investors and those looking for secure growth in Dholera Smart City."
+    answer:
+      "WestWyn County offers flexible plot sizes suitable for different budgets and investment goals. Pricing is competitive for early-stage investors in Dholera SIR. Please contact us for the latest availability, size options, and updated pricing details.",
   },
   {
     question: "How does the booking process work?",
-    answer: "Reserve your plot with a token of ₹50,000. Free site visits are included, and after full payment, the legal process is initiated, with registry papers delivered via speed post."
+    answer:
+      "The process is simple: select your plot → submit documents → pay booking amount → complete agreement → registry. Our team provides full assistance for a smooth purchase in WestWyn County.",
   },
   {
     question: "What makes WestWyn County a smart investment now?",
-    answer: "With the Dholera International Airport, Ahmedabad–Dholera Expressway, and industrial projects like the Tata Semiconductor Fab, land values in this region are set to rise rapidly. Early investment ensures high growth potential."
-  }
+    answer:
+      "Its proximity to Dholera Smart City infrastructure, expressway connectivity, activation areas, and major industrial developments positions WestWyn County as a high-potential long-term investment opportunity with strong future appreciation prospects.",
+  },
 ];
 
 export default function FAQS() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [showAll, setShowAll] = useState(false);
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const displayedFaqs = showAll ? faqs : faqs.slice(0, 5);
+
+  const renderAnswer = (answer) => {
+    if (Array.isArray(answer)) {
+      return (
+        <ul className="list-disc list-inside space-y-2">
+          {answer.map((item, idx) => (
+            <li key={idx} className="text-gray-600 text-sm leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+    return <p className="text-gray-600 text-sm leading-relaxed">{answer}</p>;
   };
 
   return (
     <>
       <div className="bg-white">
         <div className="flex flex-col md:flex-row px-4 md:px-8 py-8 gap-6 md:gap-12 max-w-7xl mx-auto">
-          
           {/* Left Section (40%) */}
           <div className="w-full md:w-2/5 pl-2 pr-2">
             <h2 className="text-[32px] font-semibold text-[#151f28] mb-4">
               Frequently Asked Questions
             </h2>
-            <p>Have more questions ?</p>
-            
+            <p className="text-gray-600 mb-4">Have more questions?</p>
+
             <div className="pt-4">
-              
-              <a className="bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md" href="tel:+919958993549">Give us a missed call</a>
+              <a
+                className="inline-block bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200 shadow-md"
+                href="tel:+919958993549"
+              >
+                Give us a missed call
+              </a>
             </div>
           </div>
 
           {/* Right Section (60%) */}
-          <div className="w-full md:w-3/5 md:pl-24 md:pr-4  md:mt-0 space-y-1">
-            {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200">
-                <button
-                  className="w-full py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-all duration-200"
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <span className="text-gray-900 font-medium pr-4 leading-relaxed">
-                    {faq.question}
-                  </span>
-                  <div className="flex-shrink-0 transition-transform duration-200">
-                    {openIndex === index ? (
-                      <Minus className="w-5 h-5 text-gray-600" />
-                    ) : (
-                      <Plus className="w-5 h-5 text-gray-600" />
-                    )}
-                  </div>
-                </button>
+          <div className="w-full md:w-3/5 md:pl-24 md:pr-4 md:mt-0">
+            <div className="space-y-1">
+              {displayedFaqs.map((faq, index) => (
+                <div key={index} className="border-b border-gray-200">
+                  <button
+                    className="w-full py-4 flex justify-between items-center text-left hover:bg-gray-50 transition-all duration-200"
+                    onClick={() => toggleFAQ(index)}
+                  >
+                    <span className="text-gray-900 font-medium pr-4 leading-relaxed">
+                      {faq.question}
+                    </span>
+                    <div className="flex-shrink-0 transition-transform duration-200">
+                      {openIndex === index ? (
+                        <Minus className="w-5 h-5 text-gray-600" />
+                      ) : (
+                        <Plus className="w-5 h-5 text-gray-600" />
+                      )}
+                    </div>
+                  </button>
 
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openIndex === index
-                      ? "max-h-96 opacity-100"
-                      : "max-h-0 opacity-0"
-                  }`}
-                >
-                  <div className="pb-4 px-0">
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {faq.answer}
-                    </p>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openIndex === index
+                        ? "max-h-96 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="pb-4 px-0">{renderAnswer(faq.answer)}</div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {/* Show More / Show Less Button */}
+            {faqs.length > 5 && (
+              <div className="mt-6 text-center">
+                <button
+                  onClick={() => setShowAll(!showAll)}
+                  className="inline-flex items-center gap-2 text-[#b69b5e] hover:text-[#d3b36b] font-semibold transition-colors duration-200"
+                >
+                  {showAll ? (
+                    <>
+                      <span>Show Less</span>
+                      <ChevronUp className="w-5 h-5" />
+                    </>
+                  ) : (
+                    <>
+                      <span>Show More FAQs ({faqs.length - 5} more)</span>
+                      <ChevronDown className="w-5 h-5" />
+                    </>
+                  )}
+                </button>
               </div>
-            ))}
-            
+            )}
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ export default {
         name: 'formTitle',
         title: 'Form Title',
         type: 'string',
+        validation: Rule => Rule.required(),
       },
       {
         name: 'metaTitle',
