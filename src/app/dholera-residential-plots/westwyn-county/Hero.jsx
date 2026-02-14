@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import wc from "@/assets/residential/westwyn-county.webp";
+import wc from "@/assets/residential/westwyn-county-dholera-residential-plots.webp";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../../components/BrochureDownload";
@@ -69,15 +69,15 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative min-h-[500px] md:min-h-[600px]">
-              {/* Background Image */}
-              <Image
-                src={wc}
-                alt="WestWyn County Dholera SIR Project"
-                fill
-                className="absolute object-cover"
-                priority
-              />
+            <div className="relative aspect-[3/2] md:min-h-[600px] ">
+                          {/* Background Image */}
+                          <Image
+                            src={wc}
+                            alt="WestWyn Estate in Dholera Gujarat"
+                            fill
+                            className="absolute object-cover "
+                            priority
+                          />
 
               {/* Dark overlay for contrast */}
               <div className="absolute inset-0 bg-black/30" />
