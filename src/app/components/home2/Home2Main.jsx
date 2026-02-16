@@ -12,6 +12,7 @@ import PopupForm from "./PopUpForm";
 import BulkLand from "../BulkLandForm";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../BrochureDownload";
+import Magnet from "./Magnet";
 
 export default function Home2Main() {
   const [showpopForm, setpopShowForm] = useState(false);
@@ -34,7 +35,18 @@ export default function Home2Main() {
         <AboutDT />
       </div>
       <div>
+        <Magnet/>
+      </div>
+      <div>
         <Dholera />
+      </div>
+      
+      <div>
+        <LatestUpdates />
+      </div>
+
+      <div>
+        <WhyDT />
       </div>
       <div>
         <BulkLand
@@ -42,13 +54,6 @@ export default function Home2Main() {
           buttonName="Get A Call Back"
           pageName="Home"
         />
-      </div>
-      <div>
-        <LatestUpdates />
-      </div>
-
-      <div>
-        <WhyDT />
       </div>
 
       {/* <div>
