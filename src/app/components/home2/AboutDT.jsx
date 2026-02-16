@@ -45,11 +45,11 @@ export default function AboutDT() {
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed mb-4">
-              WestWyn Estate is a strategically planned plot located right next
+              WestWyn Estate is a strategically planned project located right next
               to Dholera SIR. Designed for secure investment and long-term
               appreciation, the project offers excellent connectivity, legal
               safety, and affordable entry options for buyers looking to invest
-              in India’s first Semiconductor Smart City.
+              in India’s first semiconductor smart city.
             </p>
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
