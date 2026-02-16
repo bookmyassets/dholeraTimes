@@ -162,7 +162,7 @@ const RelatedBlogCard = ({ blog }) => {
                 day: "numeric",
                 month: "short",
                 year: "numeric",
-              }
+              },
             )}
           </div>
           <h3 className="font-bold text-lg mb-2 text-gray-900 line-clamp-2">
@@ -401,7 +401,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -413,7 +413,7 @@ export default async function BlogDetail({ params }) {
           return (
             <h1
               id={id}
-              className="text-5xl font-black mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4 [&+ul]:mt-4 [&+ol]:mt-4"
+              className="text-2xl md:text-5xl font-black mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-4 [&+ul]:mt-4 [&+ol]:mt-4"
             >
               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#9e8750] rounded-full"></span>
               {children}
@@ -426,7 +426,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -438,7 +438,7 @@ export default async function BlogDetail({ params }) {
           return (
             <h2
               id={id}
-              className="text-4xl font-bold mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3 [&+ul]:mt-4 [&+ol]:mt-4"
+              className="text-2xl md:text-3xl font-bold mt-8 mb-6 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-3 [&+ul]:mt-4 [&+ol]:mt-4"
             >
               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
               {children}
@@ -451,7 +451,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -463,7 +463,7 @@ export default async function BlogDetail({ params }) {
           return (
             <h3
               id={id}
-              className="text-3xl font-bold mt-8 mb-5 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-4 [&+ol]:mt-4"
+              className="text-xl md:text-2xl font-bold mt-8 mb-5 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-4 [&+ol]:mt-4"
             >
               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
               {children}
@@ -476,7 +476,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -488,7 +488,7 @@ export default async function BlogDetail({ params }) {
           return (
             <h4
               id={id}
-              className="text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
+              className="text-lg md:text-2xl font-semibold mt-10 mb-4 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
             >
               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
               {children}
@@ -501,7 +501,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -513,7 +513,7 @@ export default async function BlogDetail({ params }) {
           return (
             <h5
               id={id}
-              className="text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
+              className="text-lg md:text-xl font-semibold mt-8 mb-3 text-gray-800 relative border-l-4 border-[#b69b5e] pl-6 bg-gradient-to-r from-[#b69b5e]/5 to-transparent py-2 [&+ul]:mt-3 [&+ol]:mt-3"
             >
               <span className="absolute -left-1 top-0 w-1 h-full bg-gradient-to-b from-[#d3b66b] to-[#b69b5e] rounded-full"></span>
               {children}
@@ -526,7 +526,7 @@ export default async function BlogDetail({ params }) {
             if (Array.isArray(children)) {
               return children
                 .map((child) =>
-                  typeof child === "string" ? child : child?.props?.text || ""
+                  typeof child === "string" ? child : child?.props?.text || "",
                 )
                 .join("");
             }
@@ -547,7 +547,9 @@ export default async function BlogDetail({ params }) {
         },
 
         normal: ({ children }) => (
-          <p className="mb-4 text-justify text-lg font-light">{children}</p>
+          <p className="mb-4 leading-loose text-left md:text-justify text-lg font-light">
+            {children}
+          </p>
         ),
         blockquote: ({ children }) => (
           <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
@@ -652,7 +654,7 @@ export default async function BlogDetail({ params }) {
 
     // Format date for display
     const formattedDate = new Date(
-      post.publishedAt || post._createdAt
+      post.publishedAt || post._createdAt,
     ).toLocaleDateString("en-US", {
       day: "numeric",
       month: "long",
