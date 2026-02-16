@@ -35,7 +35,7 @@ export default function Dholera() {
             
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed mb-8">
+            <p className="text-gray-600 leading-relaxed text-justify mb-8">
               Dholera Smart City is India’s first planned smart city, being
               developed under the prestigious Delhi–Mumbai Industrial Corridor
               (DMIC). Spread across 922.5 sq. km, Dholera SIR is planned as a

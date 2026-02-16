@@ -547,7 +547,7 @@ export default async function BlogDetail({ params }) {
         },
 
         normal: ({ children }) => (
-          <p className="mb-4 leading-loose text-lg font-light">{children}</p>
+          <p className="mb-4 text-justify text-lg font-light">{children}</p>
         ),
         blockquote: ({ children }) => (
           <blockquote className="relative my-12 p-8 bg-gradient-to-br from-[#d3b66b]/5 to-[#b69b5e]/10 rounded-2xl shadow-lg border border-[#d3b66b]/20">
@@ -752,7 +752,7 @@ export default async function BlogDetail({ params }) {
                   </div>
                 )}
 
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
                   {post.title}
                 </h1>
 

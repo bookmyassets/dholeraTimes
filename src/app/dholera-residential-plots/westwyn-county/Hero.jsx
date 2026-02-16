@@ -46,8 +46,8 @@ export default function Hero() {
         content="WestWyn County Dholera, Dholera plots, Dholera Smart City, Dholera investment, smart city Gujarat"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-county"
+        rel="canonical"
+        href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-county"
       />
 
       <div className="bg-gray-100">
@@ -69,15 +69,15 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative aspect-[3/2] md:min-h-[600px] ">
-                          {/* Background Image */}
-                          <Image
-                            src={wc}
-                            alt="WestWyn Estate in Dholera Gujarat"
-                            fill
-                            className="absolute object-cover "
-                            priority
-                          />
+            <div className="relative min-h-[250px] md:min-h-[600px] ">
+              {/* Background Image */}
+              <Image
+                src={wc}
+                alt="WestWyn Estate in Dholera Gujarat"
+                fill
+                className="absolute object-cover "
+                priority
+              />
 
               {/* Dark overlay for contrast */}
               <div className="absolute inset-0 bg-black/30" />
@@ -90,11 +90,7 @@ export default function Hero() {
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-3">
                         <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
-                          Residential
-                        </span>
-
-                        <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
-                          🔥 Newly Launched
+                          Residential Project
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-[#151f28]">
@@ -148,11 +144,7 @@ export default function Hero() {
                   <div>
                     <div className="flex items-center gap-2 flex-wrap mb-3">
                       <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
-                        Residential
-                      </span>
-
-                      <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
-                        🔥 Newly Launched
+                        Residential Project
                       </span>
                     </div>
                     <div className="text-3xl font-bold text-[#151f28]">
@@ -209,7 +201,7 @@ export default function Hero() {
         {brochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-            title="Get the Complete Project Brief"
+              title="Get the Complete Project Brief"
               buttonName="Download Brochure"
               onClose={() => closeBrochureForm()}
               link="https://cdn.sanity.io/files/c3e1h345/projects/4fe6c7629f7f8caf78eb2b65074a0a439726b608.pdf"

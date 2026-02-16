@@ -70,7 +70,7 @@ export default function Hero() {
             </nav>
 
             {/* Image Container */}
-            <div className="relative aspect-[3/2] md:min-h-[600px] ">
+            <div className="relative min-h-[250px] md:min-h-[600px] ">
               {/* Background Image */}
               <Image
                 src={wc}

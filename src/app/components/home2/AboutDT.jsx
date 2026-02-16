@@ -26,7 +26,7 @@ export default function AboutDT() {
               <Image
                 src={dholeraSite}
                 alt="WestWyn Estate in Dholera SIR"
-                className="w-full h-[400px] object-cover rounded-lg shadow-lg"
+                className="w-full h-auto md:h-[400px] object-cover rounded-lg shadow-lg"
               />
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function AboutDT() {
             
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 leading-relaxed text-justify mb-4">
               WestWyn Estate is a strategically planned project located right next
               to Dholera SIR. Designed for secure investment and long-term
               appreciation, the project offers excellent connectivity, legal

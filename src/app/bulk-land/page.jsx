@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
-import hero from "@/assets/bulk-land-dt-hero.webp";
-import heroM from "@/assets/bulk-land-m-v.webp";
+import hero from "@/assets/bulk-land-in-dholera-desktop-banner.webp";
+import heroM from "@/assets/bulk-land-in-dholera-mobile-banner.webp";
 import residential from "@/assets/bulkLand/residential-bulk-land-cover.webp";
 import industrial from "@/assets/bulkLand/industrial-bulk-land-cover.webp";
 import hac from "@/assets/bulkLand/high-access-corridor-bulk-land-cover.webp";
@@ -73,26 +73,25 @@ export default function page() {
         <Image
           src={hero}
           alt="Dholera Land"
-          className="object-cover w-full h-[50vh] max-sm:hidden"
+          className="object-cover w-full h-auto max-sm:hidden"
           priority
         />
         <Image
           src={heroM}
           alt="Dholera Land"
-          className="object-cover w-full h-[50vh] md:hidden"
+          className="object-cover w-full h-[60vh] md:hidden"
           priority
         />
-        <div className="absolute inset-0 flex top-44 justify-center">
-          <div className="text-center px-6 py-10">
-            <h1 className="text-4xl font-bold text-white mb-2">
-              Tap on Dholera's rising demand for Bulk Land
-            </h1>
-          </div>
-        </div>
       </div>
 
       <div>
-        <p className="text-center max-w-4xl mx-auto my-8 px-4 leading-relaxed">
+        <h1 className="text-2xl  md:text-3xl pt-8 font-bold text-black text-center mb-2">
+          Explore Bulk Land Growth Zones in Dholera
+        </h1>
+      </div>
+
+      <div>
+        <p className="text-center max-w-4xl mx-auto px-4 leading-relaxed">
           Looking to invest in bulk land in Dholera Smart City? This is the
           right time to explore large, legally approved land parcels designed
           for high-growth opportunities. With modern infrastructure, planned
@@ -105,9 +104,13 @@ export default function page() {
           investment decision.
         </p>
       </div>
+      
+      <div className="text-xl text-center font-semibold pt-4">
+        Explore zones in bulk land
+      </div>
 
       {/* 3-Column Grid Section */}
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {bulkLandCategories.map((category) => (
             <Link
