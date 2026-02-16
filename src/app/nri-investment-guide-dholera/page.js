@@ -708,7 +708,7 @@ export default function NRIInvestmentGuide() {
               Get Free Consultation
             </button>
             <Link
-              href="/projects"
+              href="/dholera-residential-plots"
               className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
             >
               Explore Projects
