@@ -5,7 +5,6 @@ import Dholera from "./Dholera";
 import LatestUpdates from "../Latest-updates";
 import WhyDT from "./WhyDT";
 import AboutDT from "./AboutDT";
-import InvestmentTimeline from "./WhyInvest";
 import MegaIndustries from "./MegaIndusties";
 import TestimonialPagination from "../Testimonials";
 import FAQS from "./FAQs";
@@ -35,14 +34,14 @@ export default function Home2Main() {
         <AboutDT />
       </div>
       <div>
+        <Dholera />
+      </div>
+      <div>
         <BulkLand
           title="Invest in Registry-Ready plots in Dholera under ₹10 Lakh"
           buttonName="Get A Call Back"
           pageName="Home"
         />
-      </div>
-      <div>
-        <Dholera />
       </div>
       <div>
         <LatestUpdates />

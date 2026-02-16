@@ -178,13 +178,13 @@ export default function HOME2() {
               key={`mobile-${index}`}
               className="w-full flex-shrink-0 relative"
             >
-              <div className="relative w-full h-[90vh">
+              <div className="relative w-full h-auto">
                 <Image
                   src={slide.mobile}
                   alt={`hero slide ${index + 1}`}
                   priority={index === 0}
                   fetchPriority="high"
-                  className="object-cover w-[100vw] h-[90vh"
+                  className="w-full h-auto"
                 />
 
                 {/* Clickable area for phone number - Mobile */}
