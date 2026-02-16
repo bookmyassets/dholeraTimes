@@ -23,19 +23,7 @@ export default function HOME2() {
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-  const openContactForm = () => {
-    // Set the form data based on the current slide
-    setFormData({
-      title: slides[currentSlide].formHead,
-      subTitle: slides[currentSlide].subTitle,
-      buttonText: slides[currentSlide].buttonText,
-    });
-    setIsContactFormOpen(true);
-  };
-
-  const closeContactForm = () => {
-    setIsContactFormOpen(false);
-  };
+ 
 
   // Array of slides with both images and text
   const slides = [

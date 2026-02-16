@@ -215,9 +215,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                   <Image
                     src={logo}
                     alt="Dholera Times Logo"
-                    width={100}
-                    height={100}
-                    className="h-14 w-auto max-sm:h-16"
+                    width={150}
+                    height={150}
+                    className="h-16 w-auto max-sm:h-16"
                   />
                 </Link>
               </div>
