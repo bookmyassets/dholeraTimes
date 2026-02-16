@@ -130,18 +130,18 @@ const WestWynAboutSection = () => {
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
 
       <div className="text-center">
-        <h2 className="text-2xl md:text-3xl pt-4 font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
           WestWyn Estate -{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
             Dholera SIR's Newest Landmark
           </span>
         </h2>
       </div>
-      <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-8">
+      <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-4">
         {/* Left Section - Header */}
-        <div className="text-center mb-8 md:mb-0 md:w-1/2">
+        <div className="text-center mb-8 md:w-1/2">
           <div className="h-full flex flex-col">
-            <p className="text-base text-gray-600 text-left max-w-4xl mx-auto leading-relaxed mb-4">
+            <p className="text-base text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-4">
               Introducing WestWyn Estate, a premium plotted project in Dholera
               SIR designed for secure, long-term growth. Strategically located
               near upcoming infrastructure, it offers a smart opportunity to

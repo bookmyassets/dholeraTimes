@@ -208,20 +208,6 @@ export default function HOME2() {
         >
           <ChevronRight size={24} className="text-[#151f28]" />
         </button>
-
-        {/* Indicator dots */}
-        {/* <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 z-10">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all ${
-                currentSlide === index ? "bg-white" : "bg-white bg-opacity-50"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div> */}
       </div>
 
       <AnimatePresence>

@@ -50,14 +50,14 @@ export default function MegaIndustries() {
           position: relative;
         }
       `}</style>
-      <div className="relative">
+      <div className="relative py-8">
         <Image
           src={bg}
           alt="Background Image"
           fill
           className="absolute inset-0 -z-10 opacity-30 object-cover"
         />
-        <div className=" max-w-7xl mx-auto pt-8">
+        <div className=" max-w-7xl mx-auto">
           <div className="text-center">
             <h3 className="text-[28px] font-bold text-[#151f28]">
               Mega Industries Investment in Dholera SIR
@@ -65,7 +65,7 @@ export default function MegaIndustries() {
             <div className="w-24 h-1 mt-4 mb-4 bg-yellow-600 mx-auto"></div>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-gray-50 p-8 text-justify rounded-lg">
             <p className=" leading-relaxed">
               Dholera Smart City is emerging as an industrial powerhouse in
               Gujarat. The Tata Semiconductor Plant is boosting India’s

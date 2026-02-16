@@ -158,7 +158,7 @@ const WestWynAboutSection = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
@@ -240,22 +240,6 @@ const WestWynAboutSection = () => {
           </div>
         </div>
       </div>
-
-      {/*       <AnimatePresence>
-        {isBrochureFormOpen && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000] p-4">
-            <div className="w-full max-w-md">
-              <BrochureDownload
-                onClose={closeBrochureForm}
-                title="Get the Maple Brochure"
-                headline="Premium plots at 0 km from Dholera SIR with 5x ROI potential"
-                buttonName="Download Brochure"
-                onAfterSubmit={handleAfterSubmit}
-              />
-            </div>
-          </div>
-        )}
-      </AnimatePresence> */}
     </div>
   );
 };

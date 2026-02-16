@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Dholera() {
   return (
-    <div className="bg-gray-50 py-16 px-4">
+    <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-[28px] text-center font-bold text-[#151f28] mb-6 leading-tight">
               Dholera Smart City - Where India’s Future Is Being Built

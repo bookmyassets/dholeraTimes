@@ -1,9 +1,24 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const ProjectAmenities = () => {
   const [showAll, setShowAll] = useState(false);
+  const [initialItems, setInitialItems] = useState(8); // Default to desktop value
+
+  // Update initialItems after component mounts on client
+  useEffect(() => {
+    const handleResize = () => {
+      setInitialItems(window.innerWidth < 768 ? 6 : 8);
+    };
+    
+    // Set initial value
+    handleResize();
+    
+    // Optional: Update on resize
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const amenities = [
     {
@@ -73,14 +88,11 @@ const ProjectAmenities = () => {
       color: "from-green-600 to-green-800"
     }
   ];
-
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const initialItems = isMobile ? 6 : 8;
   
   const visibleAmenities = showAll ? amenities : amenities.slice(0, initialItems);
 
   return (
-    <div className="bg-gray-100 py-16 px-4">
+    <div className="bg-gray-100 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-12">

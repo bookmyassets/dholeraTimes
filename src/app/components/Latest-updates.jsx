@@ -112,7 +112,7 @@ export default function LatestUpdates() {
 
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto py-4 md:py-16 px-4">
+      <div className="max-w-7xl mx-auto py-8 px-4">
         <p className="text-[28px] font-semibold mb-6">Featured Blogs</p>
         <div className="text-center text-red-500">
           <p>Error loading blogs. Please try again later.</p>
@@ -122,7 +122,7 @@ export default function LatestUpdates() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto py-4 md:py-16 px-4">
+    <div className="max-w-7xl mx-auto py-8 px-4">
       <p className="text-[28px] font-semibold mb-6 text-center">
         Featured Blogs
       </p>
