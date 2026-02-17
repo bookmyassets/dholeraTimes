@@ -20,6 +20,7 @@ import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { TbBuildingSkyscraper } from "react-icons/tb";
 import { getKnowledgeITLinks, getResidentialLinks } from "../InterLink";
+import KnowledgeITZoneCards from "./Cards";
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -76,7 +77,7 @@ export default function page() {
 
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -113,8 +114,8 @@ export default function page() {
         content="Dholera Smart City, Dholera Gujarat, Dholera International Airport, Dholera Project, Invest in Dholera"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land/knowledge-it"
+        rel="canonical"
+        href="https://www.dholeratimes.com/bulk-land/knowledge-it"
       />
 
       <div className="relative h-[50vh] w-full ">
@@ -184,9 +185,11 @@ export default function page() {
         </div>
       </div>
 
-
       {/* Description Section */}
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
+        <p className="text-center mb-4 font-semibold text-lg md:text-2xl">
+          Strategic Knowledge & IT Zone Bulk Land in Dholera
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="space-y-6">
@@ -220,111 +223,14 @@ export default function page() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
-        <p className="text-center text-3xl font-semibold mb-8">
-          What's Allowed in Knowledge and IT Zones?
-        </p>
-
-        {/* Project Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Lightbulb className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Retail & Commercial Services
-            </p>
-          </div>
-
-          {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <BrainCircuit className="w-16 h-16 text-gray-800 rotate-90" />
-            <p className="text-lg font-medium text-gray-800">
-              Innovation Ecosystem
-            </p>
-          </div>
-
-          {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Globe2 className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Global Competitiveness
-            </p>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <TbBuildingSkyscraper className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Modern Infrastructure
-            </p>
-          </div>
-
-          {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <TrendingUp className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Long-Term Value Growth
-            </p>
-          </div>
-        </div>
+      <div>
+          <KnowledgeITZoneCards/>
       </div>
 
-      <div className="max-w-6xl mx-auto p-4">
-        {/* Benefits Grid */}
-        <div>
-          <p className="text-center text-3xl font-semibold mb-8">
-            Why Invest in Dholera Knowledge and IT Zones?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-            {/* High Appreciation Potential */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Cpu className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                IT & Technology Parks
-              </p>
-            </div>
-
-            {/* Mixed-Use Flexibility */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <FlaskConical className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Research & Development Facilities
-              </p>
-            </div>
-
-            {/* Plug & Play Infrastructure */}
-            <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <GraduationCap
-                className="w-16 h-16 "
-                style={{ color: "#d3b36b" }}
-              />
-              <p className="text-lg font-medium text-gray-800">
-                Educational Institutions
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Community-Centric Planning */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Building2 className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Corporate & Office Spaces
-            </p>
-          </div>
-
-          {/* Government-Backed Development */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Home className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Supporting Residential & Mixed-Use
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="knowledge-it-bulk-land"/>
+      <BulkLand
+        title="Invest in govt. approved bulk land in Dholera starting 2Cr"
+        pageName="knowledge-it-bulk-land"
+      />
       <HorizontalScrollInterlink properties={relatedProperties} />
 
       <div>

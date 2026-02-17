@@ -20,6 +20,7 @@ import residentialMap from "@/assets/bulkLand/industrial-zone-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getIndustrialLinks, getResidentialLinks } from "../InterLink";
+import IndustrialZoneCards from "./cards";
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -185,7 +186,11 @@ export default function page() {
       </div>
 
       {/* Description Section */}
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
+        <p className="text-center mb-4 font-semibold text-lg md:text-2xl">
+          Strategic Industrial Bulk Land for Business Growth
+        </p>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="space-y-6">
@@ -218,109 +223,8 @@ export default function page() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
-        <p className="text-center text-3xl font-semibold mb-8">
-          What's Allowed in Industrial Zones?
-        </p>
-
-        {/* Project Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Network className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Strategic Connectivity
-            </p>
-          </div>
-
-          {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Image
-              src={icon2}
-              alt="Plug-and-Play Infrastructure"
-              className="w-16 h-16 text-gray-800"
-            />
-            <p className="text-lg font-medium text-gray-800">
-              Plug-and-Play Infrastructure
-            </p>
-          </div>
-
-          {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Banknote className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              High ROI & Incentives
-            </p>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Ruler className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Scalable Land Parcels
-            </p>
-          </div>
-
-          {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Globe2 className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Global Investment Magnet
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto p-4">
-        {/* Benefits Grid */}
-        <div>
-          <p className="text-center text-3xl font-semibold mb-8">
-            Why Invest in Dholera Industrial Zones?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-            {/* High Appreciation Potential */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Factory className="w-16 h-16" style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Manufacturing & Heavy Industries
-              </p>
-            </div>
-
-            {/* Mixed-Use Flexibility */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Truck className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Warehousing & Logistics
-              </p>
-            </div>
-
-            {/* Plug & Play Infrastructure */}
-            <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Wrench className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Light & Medium Industries
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <School className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Institutional & Ancillary Facilities
-            </p>
-          </div>
-          {/* Community-Centric Planning */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Zap className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Utilities & Support Services
-            </p>
-          </div>
-
-          {/* Government-Backed Development */}
-        </div>
+      <div>
+        <IndustrialZoneCards />
       </div>
 
       <BulkLand

@@ -19,6 +19,7 @@ import residentialMap from "@/assets/bulkLand/recreation-sports-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getResidentialLinks, getSportLinks } from "../InterLink";
+import RecreationZoneCards from "./Cards";
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -183,7 +184,10 @@ export default function page() {
         </div>
       </div>
       {/* Description Section */}
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
+        <p className="text-center mb-4 font-semibold text-lg md:text-2xl">
+          Premium Bulk Land in Dholera’s Recreation & Sports Zone
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="space-y-6">
@@ -216,106 +220,10 @@ export default function page() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto p-4">
-        {/* Benefits Grid */}
-        <div>
-          <p className="text-center text-3xl font-semibold mb-8">
-            Why Invest in Dholera Recreation, Sports & Entertainment Zone?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-            {/* High Appreciation Potential */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Trophy className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Sports Infrastructure
-              </p>
-            </div>
-
-            {/* Mixed-Use Flexibility */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <FerrisWheel className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Amusement & Theme Parks
-              </p>
-            </div>
-
-            {/* Plug & Play Infrastructure */}
-            <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Theater className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Cultural & Event Venues
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Community-Centric Planning */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <HeartPulse className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Wellness & Lifestyle Facilities
-            </p>
-          </div>
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <BedDouble className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Hospitality & Tourism
-            </p>
-          </div>
-
-          {/* Government-Backed Development */}
-        </div>
+      <div>
+        <RecreationZoneCards/>
       </div>
-
-      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
-        <p className="text-center text-3xl font-semibold mb-8">
-          What's Allowed in Recreation, Sports & Entertainment Zone?
-        </p>
-
-        {/* Project Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Users className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              High Footfall Potential
-            </p>
-          </div>
-
-          {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Plane className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Tourism & Hospitality Growth
-            </p>
-          </div>
-
-          {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Landmark className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Community & Cultural Hub
-            </p>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Layers className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Diverse Development Options
-            </p>
-          </div>
-
-          {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Train className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Future-Ready Infrastructure
-            </p>
-          </div>
-        </div>
-      </div>
+      
 
       <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="recreation-sports-bulk-land"/>
       <HorizontalScrollInterlink properties={relatedProperties} />

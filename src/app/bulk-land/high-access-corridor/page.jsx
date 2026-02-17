@@ -23,6 +23,7 @@ import residentialMap from "@/assets/bulkLand/high-access-corridor-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getHACLinks, getResidentialLinks } from "../InterLink";
+import HighAccessCorridorCards from "./Cards";
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -79,7 +80,7 @@ export default function page() {
 
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -116,8 +117,8 @@ export default function page() {
         content="Dholera Smart City, Dholera, Gujarat, Dholera International Airport, Invest in Dholera, Dholera Project"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land/high-access-corridor"
+        rel="canonical"
+        href="https://www.dholeratimes.com/bulk-land/high-access-corridor"
       />
 
       <div className="relative h-[50vh] w-full ">
@@ -188,7 +189,10 @@ export default function page() {
       </div>
 
       {/* Description Section */}
-      <div className="max-w-5xl mx-auto px-4 py-8">
+      <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
+        <p className="text-center mb-4 font-semibold text-lg md:text-2xl">
+          Premium Bulk Land in Dholera’s High Access Corridor
+        </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="space-y-6">
@@ -222,119 +226,15 @@ export default function page() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
-        <p className="text-center text-3xl font-semibold mb-8">
-          What's Allowed in High Access Corridor Zones?
-        </p>
-
-        {/* Project Types Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Retail & Commercial Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <TbGardenCart className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Retail & Shopping Complexes
-            </p>
-          </div>
-
-          {/* Hospitality & Food Services */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <BedDouble className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Hospitality & Accommodation
-            </p>
-          </div>
-
-          {/* Healthcare & Wellness */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Building2 className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Corporate & Commercial Offices
-            </p>
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Education & Community Facilities */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Hospital className="w-16 h-16 text-gray-800" />
-            <p className="text-lg font-medium text-gray-800">
-              Healthcare & Wellness Facilities
-            </p>
-          </div>
-
-          {/* Residential & Housing Projects */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-            <Home className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Residential & Mixed-Use Housing
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-6xl mx-auto p-4">
-        {/* Benefits Grid */}
-        <div>
-          <p className="text-center text-3xl font-semibold mb-8">
-            Why Invest in Dholera High Access Corridor Zone?
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-            {/* High Appreciation Potential */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Image
-                src={icon}
-                alt="Prime Visibility & Frontage"
-                className="w-16 h-16 "
-                style={{ color: "#d3b36b" }}
-              />
-              <p className="text-lg font-medium text-gray-800">
-                Prime Visibility & Frontage
-              </p>
-            </div>
-
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Plug className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Plug & Play Infrastructure
-              </p>
-            </div>
-            {/* Mixed-Use Flexibility */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Layers className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Versatile Development Options
-              </p>
-            </div>
-
-            {/* Plug & Play Infrastructure */}
-          </div>
-        </div>
-        <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-          {/* Community-Centric Planning */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Image
-              src={icon2}
-              alt="High Footfall Potential"
-              className="w-16 h-16 text-blue-600"
-            />
-            <p className="text-lg font-medium text-gray-800">
-              High Footfall Potential
-            </p>
-          </div>
-
-          {/* Government-Backed Development */}
-          <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-            <Landmark className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-            <p className="text-lg font-medium text-gray-800">
-              Government Incentives & Flexibility
-            </p>
-          </div>
-        </div>
+      <div>
+        <HighAccessCorridorCards/>
       </div>
 
       <HorizontalScrollInterlink properties={relatedProperties} />
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="hac-bulk-land" />
-
+      <BulkLand
+        title="Invest in govt. approved bulk land in Dholera starting 2Cr"
+        pageName="hac-bulk-land"
+      />
 
       <div>
         <Table />

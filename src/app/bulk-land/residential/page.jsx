@@ -20,6 +20,7 @@ import residentialMap from "@/assets/bulkLand/residential-zone-map.webp";
 import Table from "./table";
 import BulkLand from "../../components/BulkLandForm";
 import { getResidentialLinks } from "../InterLink";
+import ResidentialZoneCards from "./cards";
 
 // Horizontal Scroll Design
 const HorizontalScrollInterlink = ({ properties }) => {
@@ -76,7 +77,7 @@ export default function page() {
 
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -113,8 +114,8 @@ export default function page() {
         content="Dholera Smart City, Dholera Gujarat, Invest in Dholera, Dholera Project, Dholera Property Investment"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land/residential"
+        rel="canonical"
+        href="https://www.dholeratimes.com/bulk-land/residential"
       />
 
       {/* Hero Section */}
@@ -155,7 +156,7 @@ export default function page() {
       <div className=" w-full  z-10">
         <div className="p-4 md:p-6 mx-auto">
           <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 text-center">
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-6 text-center">
               <div className="flex flex-col items-center">
                 <h3 className="text-gray-800 font-semibold text-xs md:text-sm mb-1">
                   Zone Area
@@ -189,16 +190,18 @@ export default function page() {
 
       <div>
         {/* Description Section */}
-        <div className="max-w-5xl mx-auto px-4 py-8">
+        <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
+          <p className="text-center mb-4 font-semibold text-lg md:text-2xl">Future-Ready Residential Bulk Land in Dholera</p>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-6">
               <div>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                  Where homes meet opportunity the Residential Zone in
-                  Dholera Smart City is designed for people, progress, and
-                  prosperity. It offers modern housing supported by schools,
-                  hospitals, retail outlets, and recreation spaces.
+                  Where homes meet opportunity the Residential Zone in Dholera
+                  Smart City is designed for people, progress, and prosperity.
+                  It offers modern housing supported by schools, hospitals,
+                  retail outlets, and recreation spaces.
                 </p>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   Built for families, developers, and investors, this zone
@@ -224,118 +227,17 @@ export default function page() {
             </div>
           </div>
         </div>
-
-        <div className="max-w-6xl mx-auto pb-8 pt-12 p-4">
-          <p className="text-center text-3xl font-semibold mb-8">
-            What's Allowed in Residential Zones?
-          </p>
-
-          {/* Project Types Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Retail & Commercial Services */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <ShoppingBag
-                className="w-16 h-16 "
-                style={{ color: "#d3b36b" }}
-              />
-              <p className="text-lg font-medium text-gray-800">
-                Retail & Commercial Services
-              </p>
-            </div>
-
-            {/* Hospitality & Food Services */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <UtensilsCrossed className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Hospitality & Food Services
-              </p>
-            </div>
-
-            {/* Healthcare & Wellness */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <HeartPulse className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Healthcare & Wellness
-              </p>
-            </div>
-          </div>
-          <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-            {/* Education & Community Facilities */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <GraduationCap className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Education & Community Facilities
-              </p>
-            </div>
-
-            {/* Residential & Housing Projects */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-gray-50  hover:bg-gray-100 transition-colors">
-              <HomeIcon className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Residential & Housing Projects
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-6xl mx-auto p-4">
-          {/* Benefits Grid */}
-          <div>
-            <p className="text-center text-3xl font-semibold mb-8">
-              Why Invest in Dholera Residential Zones
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-4">
-              {/* High Appreciation Potential */}
-              <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <TrendingUp
-                  className="w-16 h-16 "
-                  style={{ color: "#d3b36b" }}
-                />
-                <p className="text-lg font-medium text-gray-800">
-                  High Appreciation Potential
-                </p>
-              </div>
-
-              {/* Mixed-Use Flexibility */}
-              <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <HomeIcon className="w-16 h-16 text-gray-800" />
-                <p className="text-lg font-medium text-gray-800">
-                  Mixed-Use Flexibility
-                </p>
-              </div>
-
-              {/* Plug & Play Infrastructure */}
-              <div className=" flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-                <Plug className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-                <p className="text-lg font-medium text-gray-800">
-                  Plug & Play Infrastructure
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="md:flex justify-center items-center pt-4 max-sm:space-y-4 md:space-x-8">
-            {/* Community-Centric Planning */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Users className="w-16 h-16 text-gray-800" />
-              <p className="text-lg font-medium text-gray-800">
-                Community-Centric Planning
-              </p>
-            </div>
-
-            {/* Government-Backed Development */}
-            <div className="flex flex-col items-center text-center space-y-4 p-6 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
-              <Landmark className="w-16 h-16 " style={{ color: "#d3b36b" }} />
-              <p className="text-lg font-medium text-gray-800">
-                Government-Backed Development
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="residential-bulk-land"/>
-      <HorizontalScrollInterlink properties={relatedProperties} />
+      <div>
+        <ResidentialZoneCards/>
+      </div>
 
+      <BulkLand
+        title="Invest in govt. approved bulk land in Dholera starting 2Cr"
+        pageName="residential-bulk-land"
+      />
+      <HorizontalScrollInterlink properties={relatedProperties} />
 
       <div>
         <Table />

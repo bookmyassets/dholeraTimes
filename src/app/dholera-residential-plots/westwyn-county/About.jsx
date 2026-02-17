@@ -12,6 +12,7 @@ import {
   FaCity,
   FaIndustry,
   FaClock,
+  FaPlaceOfWorship
 } from "react-icons/fa";
 import Image from "next/image";
 
@@ -118,8 +119,13 @@ const WestWynAboutSection = () => {
       highlight: "First project on Fedra-Pipli Highway",
     },
     {
+      icon: FaPlaceOfWorship,
+      text: "5 minutes from Kamiyala Temple",
+      highlight: "Temple Nearby",
+    },
+    {
       icon: FaClock,
-      text: "15 minutes from Ahmedabad–Dholera Expressway",
+      text: "10 minutes from Ahmedabad–Dholera Expressway",
       highlight: "Excellent connectivity",
     },
     {
