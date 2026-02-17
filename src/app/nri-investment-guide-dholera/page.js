@@ -10,6 +10,12 @@ import {
   DollarSign,
   Building,
   FileText,
+  CheckCircle,
+  AlertTriangle,
+  MapPin,
+  Plane,
+  Sun,
+  Cpu,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,6 +34,8 @@ export default function NRIInvestmentGuide() {
   const [activeTab, setActiveTab] = useState("WhyInvest");
   const [activeAccordion, setActiveAccordion] = useState(null);
   const [visibleFAQs, setVisibleFAQs] = useState(6);
+  const [activeInfra, setActiveInfra] = useState(null);
+  const [activeArticleFaq, setActiveArticleFaq] = useState(null);
 
   const toggleAccordion = (index) => {
     if (activeAccordion === index) {
@@ -268,10 +276,12 @@ export default function NRIInvestmentGuide() {
       "@type": "WebPage",
       "@id": "https://www.dholeratimes.com/nri-investment-guide-dholera",
     },
+    // updated
     headline:
+      //
       "Our NRI Investment guide for Dholera Smart City give you a complete step by step path to buy plots in india",
     description:
-      "Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you're in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
+      "Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India - legally, securely and entirely online. Whether you're in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
     image: "",
     author: {
       "@type": "Organization",
@@ -593,7 +603,7 @@ export default function NRIInvestmentGuide() {
     },
     headline: "Complete Guide to NRI Investment in Dholera Smart City",
     description:
-      "NRI investment in Dholera has emerged as one of the most promising real estate opportunities in India. With AUDA-approved residential plots, simplified buying processes, and strong resale potential, Dholera Smart City offers unmatched value for NRIs looking to invest in a futuristic smart city.Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India — legally, securely and entirely online. Whether you are in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
+      "NRI investment in Dholera has emerged as one of the most promising real estate opportunities in India. With AUDA-approved residential plots, simplified buying processes, and strong resale potential, Dholera Smart City offers unmatched value for NRIs looking to invest in a futuristic smart city.Our NRI Investment Guide for Dholera Smart City gives you a complete step-by-step path to buy plots in India - legally, securely and entirely online. Whether you are in the USA, UK, UAE, or Canada, start your smart investment journey in Dholera Smart City, India's first greenfield smart city backed by massive government infrastructure projects.",
     image: [
       "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FDholera-Smart-City.a696428d.webp&w=640&q=75",
       "https://www.dholeratimes.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FProjected-NRI.1b752d49.webp&w=640&q=75",
@@ -636,13 +646,12 @@ export default function NRIInvestmentGuide() {
 
   return (
     <>
-      {/* Hero Section */}
+      {/* SEO / Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       <meta name="robots" content="index, dofollow" />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -655,22 +664,25 @@ export default function NRIInvestmentGuide() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleNRI) }}
       />
-      <title>NRI Investment in Dholera | AUDA Approved Residential Plots</title>
+      <title>
+        NRI Property Investment in India: Why Dholera Smart City Is Gaining
+        Attention in 2026
+      </title>
       <meta
         name="description"
-        content="Looking for secure NRI investment in Dholera? Explore AUDA-approved plots with high ROI, legal support & resale assistance. Trusted by 500+ NRIs."
+        content="Explore NRI property investment in India with insights on Dholera Smart City, Dholera International Airport, semiconductor growth, and land investment potential. Understand legal rules, infrastructure impact, and long-term appreciation before investing."
       />
       <meta
         name="keywords"
-        content="NRI property investment in Dholera, Buy plots in Dholera for NRIs, Dholera Smart City NRI guide, NRI investment in Dholera, NRI investment Guide, Buy Plots in Dholera Smart city, Real Estate Investment for NRI, Real estate investment in India "
+        content="NRI property investment in India, best investment for NRI in India, land investment in India, Dholera SIR, Dholera Smart City, Dholera plots, upcoming smart cities in India"
       />
       <link
         rel="canonical"
         href="https://www.dholeratimes.com/nri-investment-guide-dholera"
       />
 
-      <div className="relative text-white py-12 px-6">
-        {/* Background Images */}
+      {/* ─── HERO ─── */}
+      <div className="relative text-white py-12 px-4">
         <div className="absolute inset-0">
           <Image
             src={nri}
@@ -682,473 +694,524 @@ export default function NRIInvestmentGuide() {
             alt="NRI Investment in Dholera SIR"
             className="object-cover w-full h-full max-sm:hidden"
           />
-          {/* Dark overlay for better text readability */}
-          <div className="absolute inset-0 bg-black/40"></div>
         </div>
-
-        {/* Content */}
-        <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg">
-            Your Gateway to Property Investment in India's 1st Greenfield Smart
-            City!
-          </h2>
-          <h2 className="text-xl md:text-3xl text-[#d3b469] mb-8 drop-shadow-lg">
-            Invest in India's No.1 Smart City from Anywhere in the World
-          </h2>
-          <p className="text-lg mb-8 drop-shadow-lg">
-            Trusted by 500+ NRIs from USA, UAE, UK & Canada. 100% Legal,
-            AUDA-Approved Plots with Virtual Support.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <button
-              onClick={openContactForm}
-              className="bg-[#d3b469] hover:bg-[#c0a355] text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
-            >
-              Get Free Consultation
-            </button>
-            <Link
-              href="/dholera-residential-plots"
-              className="border-2 border-[#d3b469] text-[#d3b469] hover:bg-[#d3b469] text-center hover:text-[#151f28] font-bold py-3 px-6 rounded-lg transition-all shadow-lg"
-            >
-              Explore Projects
-            </Link>
-          </div>
-        </div>
+        <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center"></div>
       </div>
 
-      {/* Navigation Tabs */}
+      {/* ─── NAV TABS ─── */}
       <div className="sticky top-0 z-20 bg-white shadow-md py-4 max-sm:hidden">
         <div className="container mx-auto px-4">
           <div className="flex justify-center items-center gap-4 overflow-x-auto pb-2 flex-wrap md:flex-nowrap">
-            <button
-              className={buttonStyle("WhyInvest")}
-              onClick={() => handleScroll("WhyInvest")}
-              aria-label="Why Invest in Dholera"
-            >
-              Why Invest
-            </button>
-            <button
-              className={buttonStyle("WhyDholera")}
-              onClick={() => handleScroll("WhyDholera")}
-              aria-label="Why Choose Dholera"
-            >
-              Why Dholera
-            </button>
-            <button
-              className={buttonStyle("WhyChoose")}
-              onClick={() => handleScroll("WhyChoose")}
-              aria-label="Why Choose"
-            >
-              Why Choose Us
-            </button>
-            <button
-              className={buttonStyle("InvestmentGuide")}
-              onClick={() => handleScroll("InvestmentGuide")}
-              aria-label="Investment Guide"
-            >
-              Investment Guide
-            </button>
-            <button
-              className={buttonStyle("FinancialGuidelines")}
-              onClick={() => handleScroll("FinancialGuidelines")}
-              aria-label="Financial Guidelines"
-            >
-              Financial Guidelines
-            </button>
-            <button
-              className={buttonStyle("FAQs")}
-              onClick={() => handleScroll("FAQs")}
-              aria-label="FAQs"
-            >
-              RBI Guidelines
-            </button>
+            {[
+              { id: "Intro", label: "Overview" },
+              { id: "Infrastructure", label: "Infrastructure" },
+              { id: "LegalClarity", label: "Legal Clarity" },
+              { id: "Checklist", label: "Checklist" },
+              { id: "ArticleFAQs", label: "FAQs" },
+              { id: "RBIGuidelines", label: "RBI Guidelines" },
+            ].map(({ id, label }) => (
+              <button
+                key={id}
+                className={buttonStyle(id)}
+                onClick={() => handleScroll(id)}
+                aria-label={label}
+              >
+                {label}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Introduction Section */}
-      <section className="py-12 bg-white">
-        <div className="container max-w-5xl mx-auto px-4">
-          <h1 className="text-black text-center text-3xl max-sm:text-xl font-semibold mb-4">
-            Complete Guide to NRI Investment in Dholera Smart City
+      {/* ─── MAIN CONTENT ─── */}
+      <section className="py-8 bg-white">
+        {/* ── Intro ── */}
+        <div id="Intro" className="max-w-6xl mx-auto px-4 mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center leading-snug">
+            NRI Property Investment in India: Why Smart Investors Are Quietly
+            Watching Dholera
           </h1>
-          <p className="text-left text-lg md:text-xl font-medium text-gray-700">
-            <strong>NRI investment in Dholera</strong> has emerged as one of the
-            most promising <strong>real estate opportunities</strong> in India.
-            With AUDA-approved{" "}
-            <strong>residential plots, simplified buying processes</strong>, and{" "}
-            <strong>
-              {" "}
-              <a href="/contact/resale-support" className="text-blue-500">
-                {" "}
-                strong resale potential
-              </a>
-              ,
-            </strong>
-            <strong>Dholera Smart City</strong> offers unmatched value for NRIs
-            looking to invest in a futuristic smart city.
+          <div className="w-16 h-1 bg-[#d8b66d] mx-auto mb-6 rounded-full" />
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            If you've been searching for the{" "}
+            <strong>best investment for NRI in India</strong>, you've probably
+            looked at metro cities, luxury apartments, or commercial properties.
+            But a growing number of overseas Indians are now exploring something
+            different - planned smart city developments backed by infrastructure
+            and industrial growth.
           </p>
-          <br />
-          <p className="text-left text-lg md:text-xl font-medium text-gray-700">
-            Looking to invest in India from abroad? Our{" "}
-            <strong>NRI Investment Guide for Dholera Smart City</strong> gives
-            you a complete step-by-step path to{" "}
-            <strong>buy plots in India</strong> — legally, securely and entirely
-            online. Whether you're in the USA, UK, UAE, or Canada, start your
-            smart investment journey in <strong>Dholera Smart City</strong>,
-            India's first greenfield smart city backed by massive government
-            infrastructure projects.
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            One name that keeps appearing in serious investment discussions and
+            even in recent <strong>Dholera News</strong> updates is{" "}
+            <strong>Dholera Smart City</strong>. Let's break this down in a
+            clear, practical way - no hype, just structured insight.
           </p>
         </div>
-      </section>
 
-      {/* Content Sections */}
-      <section className="py-4 leading-relaxed bg-gray-50">
-        {/* Why Invest Section */}
-        <div id="WhyInvest" className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Why NRIs Should Invest In India, Especially In Dholera Smart City
-            </span>
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2 order-2 md:order-1">
-              <p className="text-gray-700 mb-6">
-                The real estate market in India is now a top investment option
-                for Indians who are not residents (NRIs) with the highest
-                returns, stability in the economy and a long-term potential for
-                growth. In the midst of emerging intelligent cities Dholera
-                Smart City stands out as a futuristic urban center that offers
-                top-of-the-line infrastructure, strategically connected, and a
-                government-backed investment environment.
-              </p>
-
-              <blockquote className="border-l-4 border-[#d8b66d] pl-4 italic font-semibold text-xl mb-8 text-[#d8b66d]">
-                "Dholera is not just a city, it's the future of smart living in
-                India."
-              </blockquote>
-
-              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
-                Why NRIs Should Invest in India
-              </h3>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    <strong className="text-[#151f28]">
-                      Rapid Economic Growth
-                    </strong>{" "}
-                    — India's economy is among of the fastest growing worldwide
-                    which makes real estate an excellent investment choice.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    <strong className="text-[#151f28]">
-                      Policy Reforms and Government Reforms
-                    </strong>{" "}
-                    — Initiatives like RERA (Real Estate Regulatory Authority),
-                    GST benefits, and the relaxation of FDI rules have improved
-                    transparency and security for the property market.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    <strong className="text-[#151f28]">
-                      High Return on Investment and Appreciation
-                    </strong>{" "}
-                    — Real estate in India has delivered consistently higher
-                    yields than the developed markets, with a particular focus
-                    on the growth corridors such as Dholera Smart City.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    <strong className="text-[#151f28]">
-                      Financial and emotional security
-                    </strong>{" "}
-                    — A property in India provides a solid financial back-up
-                    while also keeping NRIs connected to their home country.
-                  </span>
-                </li>
-              </ul>
+        {/* ── Why NRIs Are Re-Evaluating Investment Strategy ── */}
+        <div className="bg-gray-50 py-8 mb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-6">
+              Why NRIs Are Re-Evaluating Investment Strategy
+            </h2>
+            <div className="flex flex-col md:flex-row gap-8 items-center">
+              <div className="md:w-1/2">
+                <p className="text-base text-gray-700 leading-relaxed mb-4">
+                  For years, <strong>NRI property investment in India</strong>{" "}
+                  focused on metro cities like Mumbai, Pune, Gurgaon, and the
+                  Ahmedabad outskirts. While these markets offer stability, high
+                  entry prices and slower land appreciation are pushing
+                  investors to look elsewhere.
+                </p>
+                <p className="text-base text-gray-700 leading-relaxed mb-4">
+                  In 2026, many NRIs are exploring{" "}
+                  <strong>land investment in India</strong> and{" "}
+                  <strong>upcoming smart cities in India</strong> where growth
+                  is still at an early stage. Investors are asking practical
+                  questions about NRI investment options in India, long-term
+                  property appreciation in India, and whether structured regions
+                  like Dholera SIR offer better long-term positioning.
+                </p>
+                <blockquote className="border-l-4 border-[#d8b66d] pl-4 italic text-[#d8b66d] font-semibold text-base mb-4">
+                  "This shift in approach is one reason why Dholera Smart City
+                  is increasingly part of serious investment discussions."
+                </blockquote>
+                <p className="text-base text-gray-700 leading-relaxed">
+                  This is where Gujarat especially Dholera - enters the
+                  conversation.
+                </p>
+              </div>
+              <div className="md:w-1/2">
+                <div className="rounded-lg overflow-hidden shadow-xl">
+                  <Image
+                    src={dholeraSmartCity}
+                    alt="Dholera Smart City"
+                    width={600}
+                    height={400}
+                    className="w-full h-auto"
+                  />
+                </div>
+              </div>
             </div>
-            <div className="md:w-1/2 order-1 md:order-2">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src={dholeraSmartCity}
-                  alt="Dholera Smart City – India’s emerging global investment hub"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
+          </div>
+        </div>
+
+        {/* ── The Smart City That's Built on Policy, Not Just Promises ── */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            The Smart City That is Built on Policy, Not Just Promises
+          </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            Unlike organic city growth, Dholera Smart City is part of a
+            structured national plan under the{" "}
+            <strong>Delhi–Mumbai Industrial Corridor</strong>. This is not a
+            random township. It is a designated <strong>Dholera SIR</strong>{" "}
+            (Special Investment Region) - a legally notified planning zone with
+            industrial, residential, and infrastructure mapping.
+          </p>
+          <p className="text-base text-gray-700 mb-3">
+            When investors review Dholera smart city project details, they
+            typically focus on:
+          </p>
+          <ul className="space-y-2 mb-4">
+            {[
+              "Large-scale land pooling model",
+              "Industrial zoning",
+              "Dedicated activation zones",
+              "Government-led trunk infrastructure",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-2 text-base text-gray-700"
+              >
+                <span className="text-[#d8b66d] font-bold">●</span> {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-base text-gray-700 leading-relaxed">
+            One of the most discussed zones is the{" "}
+            <strong>Dholera activation area</strong>, where infrastructure like
+            roads, drainage, and utility corridors are already operational.
+          </p>
+        </div>
+
+        {/* ── Infrastructure That Changes the Investment Equation ── */}
+        <div id="Infrastructure" className="bg-gray-50 py-8 mb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-2">
+              Infrastructure That Changes the Investment Equation
+            </h2>
+            <p className="text-base text-gray-600 mb-6">
+              Real estate appreciation follows infrastructure. And Dholera's
+              value proposition is directly tied to major projects.
+            </p>
+            <div className="space-y-3">
+              {[
+                {
+                  icon: "✈",
+                  label: "Dholera International Airport",
+                  detail:
+                    "The upcoming Dholera International Airport (often searched as Dholera airport) is expected to enhance logistics and connectivity for the entire region and surrounding industrial zones.",
+                },
+                {
+                  icon: "🛣",
+                  label: "Ahmedabad–Dholera Expressway",
+                  detail:
+                    "The Ahmedabad Dholera expressway reduces travel time and improves regional access between Ahmedabad and Gujarat Dholera, making the corridor more commercially viable.",
+                },
+                {
+                  icon: "☀",
+                  label: "Dholera Solar Park",
+                  detail:
+                    "The large-scale Dholera Solar Park supports industrial power needs and positions the region as an energy-backed manufacturing zone with sustainable energy supply.",
+                },
+                {
+                  icon: "🏢",
+                  label: "ABCD Building",
+                  detail:
+                    "The ABCD Building in Dholera serves as the administrative hub, indicating formal governance presence inside the SIR - a marker of active development.",
+                },
+                {
+                  icon: "🏭",
+                  label: "Semiconductor Manufacturing Push",
+                  detail:
+                    "The proposed TATA Semiconductor plant in Dholera and discussions around a broader Dholera semiconductor plant have increased investor curiosity. When industrial jobs grow, housing demand follows. That's the long-term thesis.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-lg border border-gray-200 overflow-hidden"
+                >
+                  <button
+                    className="w-full flex items-center justify-between px-4 py-4 text-left hover:bg-gray-50 transition-colors"
+                    onClick={() => setActiveInfra(activeInfra === i ? null : i)}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">{item.icon}</span>
+                      <span className="font-semibold text-gray-800 text-base">
+                        {item.label}
+                      </span>
+                    </div>
+                    {activeInfra === i ? (
+                      <ChevronUp
+                        className="text-[#d8b66d] shrink-0"
+                        size={20}
+                      />
+                    ) : (
+                      <ChevronDown
+                        className="text-[#d8b66d] shrink-0"
+                        size={20}
+                      />
+                    )}
+                  </button>
+                  {activeInfra === i && (
+                    <div className="px-4 pb-4 text-base text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
+                      {item.detail}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ── Can NRI Buy Land in India? Legal Clarity First. ── */}
+        <div id="LegalClarity" className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            Can NRI Buy Land in India? Legal Clarity First.
+          </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            One of the most searched questions is:{" "}
+            <strong>Can NRI buy land in India?</strong>
+            <br/> Yes, NRIs can purchase
+            non-agricultural land and residential property, subject to FEMA and
+            RBI guidelines.
+          </p>
+          <p className="text-base text-gray-700 mb-3">
+            Important considerations include:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            {[
+              "Payment via NRE/NRO accounts",
+              "Proper title verification",
+              "Understanding zoning within Dholera SIR",
+              "NRI property tax in India compliance",
+              "Repatriation rules upon sale",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-2 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3"
+              >
+                <CheckCircle
+                  className="text-[#d8b66d] shrink-0 mt-0.5"
+                  size={18}
                 />
+                <span className="text-base text-gray-700">{item}</span>
               </div>
-            </div>
+            ))}
           </div>
-        </div>
-
-        {/* Why Dholera Section */}
-        <div id="WhyDholera" className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Why Dholera is a Smart Choice for NRIs
-            </span>
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
-            <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
-                Strategic Location
-              </h3>
-              <p className="text-gray-700">
-                Only 70 km away from Ahmedabad and connected by metro rail,
-                expressways, and the soon-to-be Dholera International Airport.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
-                World-Class Infrastructure
-              </h3>
-              <p className="text-gray-700">
-                Includes six-lane highways and underground utility, 24-hour
-                power and water supply. It also includes ICT enabled government
-                and intelligent mobility solutions.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
-                Global Business Hub
-              </h3>
-              <p className="text-gray-700">
-                Industries such as electronics, aerospace, defense, IT, and
-                renewable power sectors are being set up in Dholera creating
-                jobs and business growth.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-lg shadow-sm border-t-4 border-[#d8b66d]">
-              <h3 className="text-xl font-semibold mb-3 text-[#151f28]">
-                Sustainable Smart Living
-              </h3>
-              <p className="text-gray-700">
-                Eco-friendly development, green energy solutions, and
-                top-quality urban development make Dholera an ideal location for
-                commercial and residential investments.
-              </p>
-            </div>
-          </div>
-
-          <p className="text-[#d8b66d] text-center font-semibold text-lg">
-            Dholera Smart City is planned within the Delhi-Mumbai Industrial
-            Corridor (DMIC), and is the largest planned smart city covering an
-            area of 920 square km.
+          <p className="text-base text-gray-700 leading-relaxed">
+            This is why structured zones like{" "}
+            <strong>Dholera SIR investment</strong> models attract attention,
+            they operate within defined planning regulations.
           </p>
         </div>
 
-        {/* Why Choose Dholera Times */}
-        <div id="WhyChoose" className="container mx-auto px-4 mb-4">
-          <div className="bg-white p-8 rounded-lg shadow-sm">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center relative">
-              <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-                Why Choose{" "}
-                <span className="text-[#d8b66d]"> Dholera Times</span> as Your
-                Investment Partner?
-              </span>
-            </h3>
-
-            <p className="text-gray-700 mb-6">
-              NRIs require a reliable, professional, transparent, and
-              knowledgeable real estate agent when they invest in India. Dholera
-              Times is one of the most reliable brands within Dholera Smart
-              City, Ahmedabad, Gujarat, offering:
-            </p>
-
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  <strong className="text-[#151f28]">
-                    100% Legally Clear Properties with NA/NOC approval
-                  </strong>
-                  , Unit Plan clearance from the relevant Government
-                  Authorities, Clear Title ownership, which guarantees an
-                  investment that is completely risk-free.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  <strong className="text-[#151f28]">
-                    Large Land Parcels Available
-                  </strong>
-                  : We provide NA/NOC certified Title-Clear properties in which
-                  all revenue issues are checked and resolved prior to the sale,
-                  giving you complete security.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  <strong className="text-[#151f28]">
-                    Large and Medium-Ticket size
-                  </strong>{" "}
-                  investors from United Kingdom (England), Italy, Spain
-                  (Barcelona), USA (New Jersey), Canada, Australia, UAE (Dubai),
-                  Singapore, and Hong Kong have already invested with us.
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  <strong className="text-[#151f28]">
-                    Unique Investment Opportunity
-                  </strong>{" "}
-                  in residential lands that have the potential to appreciate
-                  within and in the vicinity of Dholera SIR (Special Investment
-                  Region).
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                <span className="text-gray-700">
-                  <strong className="text-[#151f28]">
-                    Hassle-free purchasing process
-                  </strong>{" "}
-                  for NRIs such as visiting sites, virtual tours of properties
-                  as well as support for documentation and financial advice
-                  services.
-                </span>
-              </li>
-            </ul>
-
-            <p className="italic text-[#d8b66d] font-semibold text-lg">
-              Dholera Smart City is an opportunity to invest in the future for
-              NRIs seeking high returns, strategic growth, and an assured
-              future. Working with Dholera Times guarantees that your investment
-              is secure with a seasoned, knowledgeable, and transparent team.
+        {/* ── Is Land Investment in India Better Than Apartments for NRIs? ── */}
+        <div className="bg-gray-50 py-8 mb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+              Is Land Investment in India Better Than Apartments for NRIs?
+            </h2>
+            <div className="flex flex-col md:flex-row gap-8">
+              <div className="md:w-1/2">
+                <p className="text-base text-gray-700 mb-3">
+                  Many NRIs now prefer <strong>land investment in India</strong>{" "}
+                  over ready flats because:
+                </p>
+                <ul className="space-y-2 mb-4">
+                  {[
+                    "No depreciation like buildings",
+                    "Lower maintenance",
+                    "Early-stage entry pricing",
+                    "Better upside in emerging corridors",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-base text-gray-700"
+                    >
+                      <span className="text-[#d8b66d] font-bold">●</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="md:w-1/2">
+                <p className="text-base text-gray-700 mb-3">
+                  When looking at <strong>plots in Dholera</strong>, investors
+                  usually evaluate:
+                </p>
+                <ul className="space-y-2 mb-4 pt-6">
+                  {[
+                    "Location relative to activation area",
+                    "Road connectivity",
+                    "Proximity to industrial zones",
+                    "Long-term zoning plans",
+                  ].map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-center gap-2 text-base text-gray-700"
+                    >
+                      <span className="text-[#d8b66d] font-bold">●</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <p className="text-base text-gray-700 leading-relaxed">
+              The investment logic is based on projected{" "}
+              <strong>property appreciation in India</strong> driven by
+              infrastructure, not short-term flipping.
             </p>
           </div>
         </div>
 
-        {/* Step-by-Step Guide */}
-        <div id="InvestmentGuide" className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Step-by-Step Guide for NRIs to Buy Plots
-            </span>
+        {/* ── How Does Dholera Compare With Other NRI Investment Destinations in India? ── */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            How Does Dholera Compare With Other NRI Investment Destinations in
+            India?
           </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            When evaluating <strong>NRI property investment in India</strong>,
+            most investors consider cities like Pune, Ahmedabad outskirts,
+            Surat, or Gurgaon. These are mature markets with established demand
+            but higher entry prices and slower land appreciation.
+          </p>
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            Dholera Smart City is a planned greenfield development under Dholera
+            SIR. It is infrastructure-led, with projects like{" "}
+            <strong>Dholera International Airport</strong>, the{" "}
+            <strong>Ahmedabad–Dholera Expressway</strong>, and industrial growth
+            initiatives including semiconductor developments.
+          </p>
+          <p className="text-base text-gray-700 leading-relaxed">
+            For NRIs seeking early-stage growth rather than saturated markets,
+            Dholera offers a different risk–reward profile.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  1
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Shortlist Projects
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Browse through our available projects like Orchid, Paradise,
-                etc.
-              </p>
+        {/* ── Step-by-Step Checklist Before Buying Plots in Dholera ── */}
+        <div id="Checklist" className="bg-[#151f28] py-8 mb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-2xl">📌</span>
+              <h2 className="text-xl md:text-3xl font-bold text-white">
+                Step-by-Step Checklist Before Buying Plots in Dholera
+              </h2>
             </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  2
+            <p className="text-gray-400 text-base mb-6">
+              If you are considering plots in Dholera, follow this structured
+              checklist:
+            </p>
+            <div className="space-y-4">
+              {[
+                {
+                  step: "01",
+                  title: "Confirm the Plot Is Inside Dholera SIR",
+                  desc: "Verify survey number and town planning alignment within the Dholera smart city project.",
+                },
+                {
+                  step: "02",
+                  title: "Check Proximity to Dholera Activation Area",
+                  desc: "Closer access to operational infrastructure may influence long-term value.",
+                },
+                {
+                  step: "03",
+                  title: "Review Infrastructure Connectivity",
+                  desc: "Evaluate access to Dholera International Airport and the Ahmedabad–Dholera Expressway.",
+                },
+                {
+                  step: "04",
+                  title: "Understand Industrial Drivers",
+                  desc: "Monitor developments like semiconductor initiatives and support from Dholera Solar Park.",
+                },
+                {
+                  step: "05",
+                  title: "Verify Legal Compliance",
+                  desc: "Ensure NA status, clear title, FEMA compliance, and understand NRI property tax in India.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.step}
+                  className="flex gap-4 bg-white/5 border border-white/10 rounded-lg p-4"
+                >
+                  <div className="shrink-0 w-10 h-10 rounded-full bg-[#d8b66d] flex items-center justify-center font-bold text-[#151f28] text-sm">
+                    {item.step}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white text-base mb-1">
+                      ✔ {item.title}
+                    </p>
+                    <p className="text-gray-400 text-base">{item.desc}</p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Schedule Virtual Tour
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Connect with our advisors for a detailed virtual tour.
-              </p>
+              ))}
             </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  3
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Pay Token Amount
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Secure your property choice with an initial token payment.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  4
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Submit KYC
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Share your Passport, PAN, OCI, and other required documents.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  5
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Review & Sign Agreement
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Complete the agreement process remotely with our guidance.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  6
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Online Payment
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Secure online payment facility available for your convenience.
-              </p>
-            </div>
-
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm md:col-span-2 mb-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-[#d8b66d] text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
-                  7
-                </div>
-                <h3 className="text-xl font-semibold text-[#151f28]">
-                  Final Registration & Handover
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                Get Sale Deed Registered (with or without visit) and complete
-                the property handover process.
-              </p>
-            </div>
+            <p className="text-gray-400 text-base mt-6">
+              For NRIs exploring{" "}
+              <strong className="text-[#d8b66d]">
+                land investment in India
+              </strong>
+              , structured due diligence is essential before committing to any
+              Dholera investment opportunity.
+            </p>
           </div>
         </div>
 
+        {/* ── What Makes Dholera Different ── */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            What Makes Dholera Different From Other Upcoming Smart Cities in
+            India?
+          </h2>
+          <p className="text-base text-gray-700 mb-4">
+            Several smart cities exist on paper. But Dholera's differentiation
+            lies in:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            {[
+              "Large contiguous land area",
+              "Dedicated industrial zoning",
+              "Government-notified SIR status",
+              "Infrastructure-first approach",
+              "Energy ecosystem via Dholera solar park",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-lg px-4 py-3"
+              >
+                <span className="text-[#d8b66d] font-bold text-lg">●</span>
+                <span className="text-base text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-base text-gray-700 leading-relaxed">
+            When people search for a Dholera smart city project, they are
+            typically looking for structured growth, not speculative layouts.
+          </p>
+        </div>
+
+        {/* ── Risks Every NRI Should Understand ── */}
+        <div className="bg-gray-50 py-8 mb-8">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+              Risks Every NRI Should Understand
+            </h2>
+            <p className="text-base text-gray-700 mb-4">
+              Balanced analysis is essential.
+            </p>
+            <div className="space-y-3">
+              {[
+                "Not all land marketed as 'Dholera' is within Dholera SIR",
+                "Agricultural land purchase restrictions apply",
+                "Liquidity may take time in early phases",
+                "Title due diligence is critical",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 bg-white border border-orange-200 rounded-lg px-4 py-3"
+                >
+                  <AlertTriangle
+                    className="text-orange-400 shrink-0 mt-0.5"
+                    size={18}
+                  />
+                  <span className="text-base text-gray-700">{item}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-base text-gray-700 leading-relaxed mt-4">
+              Smart investors evaluate location within the Dholera smart city
+              project details, not just marketing brochures.
+            </p>
+          </div>
+        </div>
+
+        {/* ── Is Dholera a Dholera Investment Opportunity Worth Considering? ── */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            So, Is Dholera a Dholera Investment Opportunity Worth Considering?
+          </h2>
+          <p className="text-base text-gray-700 mb-4">
+            For NRIs exploring structured{" "}
+            <strong>NRI investment options in India</strong>, Dholera
+            represents:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+            {[
+              "Infrastructure-backed planning",
+              "Industrial manufacturing potential",
+              "Airport-led connectivity",
+              "Semiconductor-led employment ecosystem",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3"
+              >
+                <CheckCircle className="text-[#d8b66d] shrink-0" size={18} />
+                <span className="text-base text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-base text-gray-700 leading-relaxed">
+            It may not be for short-term traders. But for those evaluating{" "}
+            <strong>long-term property appreciation in India</strong>, emerging
+            smart corridors often present an asymmetric upside compared to
+            saturated metro markets.
+          </p>
+        </div>
+
+        {/* ── Price Banner ── */}
         <section className="relative mb-8">
-          {/* Desktop Image */}
           <div className="max-sm:hidden relative">
             <Image
               src={priceBanner}
@@ -1156,9 +1219,7 @@ export default function NRIInvestmentGuide() {
               className="w-full"
               priority
             />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-
-            {/* Button positioned on desktop image */}
+            <div className="absolute inset-0 bg-black opacity-20" />
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
               <button
                 onClick={openForm}
@@ -1168,8 +1229,6 @@ export default function NRIInvestmentGuide() {
               </button>
             </div>
           </div>
-
-          {/* Mobile Image */}
           <div className="lg:hidden relative">
             <Image
               src={priceBannerM}
@@ -1177,9 +1236,7 @@ export default function NRIInvestmentGuide() {
               className="w-full"
               priority
             />
-            <div className="absolute inset-0 bg-black opacity-20"></div>
-
-            {/* Button positioned on mobile image (centered) */}
+            <div className="absolute inset-0 bg-black opacity-20" />
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
               <button
                 onClick={openForm}
@@ -1191,310 +1248,162 @@ export default function NRIInvestmentGuide() {
           </div>
         </section>
 
-        {/* Our Services */}
-        <div className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Our Services for NRIs
+        {/* ── Conclusion ── */}
+        <div className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
+            Conclusion: Strategic, Not Emotional Investment
+          </h2>
+          <p className="text-base text-gray-700 leading-relaxed mb-4">
+            Dholera is not a guaranteed shortcut to wealth. It is a
+            policy-driven smart city experiment supported by infrastructure and
+            industrial ambition.
+          </p>
+          <p className="text-base text-gray-700 mb-3">For NRIs researching:</p>
+          <ul className="space-y-2 mb-4">
+            {[
+              "NRI property investment in India",
+              "Upcoming smart cities in India",
+              "Land investment in India",
+              "Dholera SIR investment",
+              "Dholera smart city project details",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-center gap-2 text-base text-gray-700"
+              >
+                <span className="text-[#d8b66d] font-bold">●</span> {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-base text-gray-700 leading-relaxed">
+            It deserves structured evaluation - with legal checks and long-term
+            perspective.
+          </p>
+        </div>
+
+        {/* ── Article FAQs ── */}
+        <div id="ArticleFAQs" className="max-w-6xl mx-auto px-4 mb-8">
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8 text-center relative">
+            <span className="relative after:content-[\'\'] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
+              Frequently Asked Questions
             </span>
           </h2>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <FileText className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                100% Legal Projects
-              </h3>
-              <p className="text-gray-700">
-                All projects are NA/NOC/RERA certified for your security.
-              </p>
-            </div>
-
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <User className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                Personal Investment Advisor
-              </h3>
-              <p className="text-gray-700">
-                Dedicated support throughout your investment journey.
-              </p>
-            </div>
-
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <BookOpen className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                Transparent Documentation
-              </h3>
-              <p className="text-gray-700">
-                Clear and straightforward documentation process.
-              </p>
-            </div>
-
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <Globe className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                Virtual Tour
-              </h3>
-              <p className="text-gray-700">
-                Comprehensive virtual tours and site visit management.
-              </p>
-            </div>
-
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <Building className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                Post-sale Support
-              </h3>
-              <p className="text-gray-700">
-                Ongoing assistance even after your purchase is complete.
-              </p>
-            </div>
-
-            <div className="bg-white shadow-sm rounded-lg p-6 border-t-4 border-[#d8b66d]">
-              <DollarSign className="text-[#d8b66d] mb-4" size={40} />
-              <h3 className="text-xl font-semibold mb-2 text-[#151f28]">
-                Financial Guidance
-              </h3>
-              <p className="text-gray-700">
-                Expert advice on taxation and financial considerations.
-              </p>
-            </div>
+          <div className="space-y-4">
+            {[
+              {
+                q: "Can NRI buy land in India, including Dholera?",
+                a: "Yes. NRIs can purchase non-agricultural land and residential property under FEMA guidelines. Within Dholera Smart City, investors usually buy NA plots inside the notified Dholera SIR area.",
+              },
+              {
+                q: "Is Dholera Smart City government approved?",
+                a: "Yes. Dholera is a notified Special Investment Region (SIR) under Gujarat law and part of the industrial corridor development. Projects like the Dholera International Airport and Ahmedabad–Dholera Expressway support its long-term planning.",
+              },
+              {
+                q: "Why is Dholera considered a strong Dholera investment opportunity?",
+                a: "Dholera attracts attention due to planned infrastructure, industrial zoning, renewable energy support from Dholera Solar Park, and semiconductor-related developments such as the proposed TATA Semiconductor plant in Dholera.",
+              },
+              {
+                q: "What is the Dholera activation area?",
+                a: "The Dholera activation area is the first phase where roads, drainage, and utilities are operational. Properties near this zone are often evaluated for long-term growth potential.",
+              },
+              {
+                q: "What are NRI property tax rules in India?",
+                a: "NRIs must pay property tax like residents. Rental income and capital gains are taxable under Indian law. Understanding NRI property tax in India is important before investing.",
+              },
+              {
+                q: "Is Dholera better than Pune, Surat, Ahmedabad outskirts, or Gurgaon?",
+                a: "Established cities like Pune and Gurgaon offer mature markets, while Dholera represents an early-stage smart city model with industrial corridor integration. The choice depends on whether the investor prefers stability or long-term growth potential.",
+              },
+            ].map((faq, i) => (
+              <div
+                key={i}
+                className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+              >
+                <button
+                  className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-gray-50"
+                  onClick={() =>
+                    setActiveArticleFaq(activeArticleFaq === i ? null : i)
+                  }
+                >
+                  <h3 className="text-base font-semibold text-[#151f28] pr-4">
+                    {i + 1}. {faq.q}
+                  </h3>
+                  {activeArticleFaq === i ? (
+                    <ChevronUp className="text-[#d8b66d] shrink-0" size={20} />
+                  ) : (
+                    <ChevronDown
+                      className="text-[#d8b66d] shrink-0"
+                      size={20}
+                    />
+                  )}
+                </button>
+                {activeArticleFaq === i && (
+                  <div className="px-4 pb-4 bg-white text-gray-700 text-base leading-relaxed border-t border-gray-100 pt-3">
+                    {faq.a}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Benefits for NRI Investors */}
-        <div className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Benefits for Non-Resident Indian Investors
-            </span>
-          </h2>
-
-          <div className="flex flex-col md:flex-row gap-8">
-            {/* Image div - will appear first on mobile, right side on desktop */}
-            <div className="md:w-1/2 order-1 md:order-2">
-              <div className="rounded-lg overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300">
-                <Image
-                  src={projectedNRI}
-                  alt="Projected return on investment for NRI real estate in Dholera"
-                  width={600}
-                  height={400}
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-
-            {/* Text content - will appear second on mobile, left side on desktop */}
-            <div className="bg-white p-8 rounded-lg shadow-sm md:w-1/2 order-2 md:order-1">
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    India has recently altered their taxation policies in order
-                    to facilitate foreign direct investment (NRIs). They can
-                    easily invest their savings here without incurring excessive
-                    penalties and tax liabilities.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Provisions have been put in place under various routes so as
-                    to facilitate foreign investors coming into India.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Loans are offered to nonresident Indians against deposit
-                    schemes to construct homes in India.
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#d8b66d] mr-2 text-xl">●</span>
-                  <span className="text-gray-700">
-                    Thanks to technology advancements, mode of transaction has
-                    also advanced through demat accounts and internet banking
-                    facilities.
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Financial Guidelines */}
-        <div id="FinancialGuidelines" className="container mx-auto px-4 mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
-              Financial Guidelines: Loan & Funding for NRIs
-            </span>
-          </h2>
-
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
-                Funding the Purchase
-              </h3>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <p className="mb-4 text-gray-700">
-                  Lenders in India will gladly fund your project provided that
-                  it meets their eligibility criteria and property papers are
-                  clear. Before moving ahead with any deal, it is always
-                  recommended to have all property papers checked by a lawyer to
-                  ensure everything is in order before finalizing it.
-                </p>
-                <p className="mb-4 text-gray-700">
-                  According to RBI standards, only up to 80% of a property's
-                  appraisal can be funded through financial institutions; any
-                  remaining amount must come from personal resources of an NRI.
-                  Since Indian financial institutions offer loans only in
-                  rupees, repayment must also take place exclusively in rupees.
-                </p>
-                <p className="text-gray-700">
-                  If you rent out the property, rent payments could help cover
-                  loan repayment costs as well. Cheques issued from family
-                  accounts could also be used as loan payments.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
-                Power of Attorney (PoA) Explanation
-              </h3>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <p className="mb-4 text-gray-700">
-                  When buying under-construction property, your developer may
-                  request that you grant them power of attorney (PoA). This is
-                  common and would make documentation work faster and simpler.
-                </p>
-                <p className="text-gray-700">
-                  If and when it is time to sell your property, having a Power
-                  of Attorney who resides in India would be helpful in terms of
-                  completing formalities such as registration, possession
-                  transfer, agreement of sale execution etc.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
-                Regulations on Sale of Property by NRIs
-              </h3>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <p className="mb-4 text-gray-700">
-                  FEMA rules allow an NRI to sell any residential or commercial
-                  properties they've bought or inherited to anyone they want,
-                  although any agricultural properties, plantations properties
-                  or farm houses must first be offered up for sale to an Indian
-                  resident for purchase.
-                </p>
-                <p className="text-gray-700">
-                  Note that non-resident Indians (NRIs) cannot remit proceeds of
-                  more than two properties back home.
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-semibold mb-4 text-[#151f28]">
-                Tax Implications
-              </h3>
-              <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-                <p className="mb-4 text-gray-700">
-                  Property can be an excellent way to save taxes for both
-                  residents and non-residents alike, with NRIs receiving similar
-                  tax savings benefits as residents Indians.
-                </p>
-                <p className="text-gray-700">
-                  An NRI is eligible for all tax benefits related to purchasing
-                  property that a resident Indian would. As such, one lakh
-                  rupees deduction can be claimed under 80C.
-                </p>
-                <ul className="list-disc ml-5 mt-2 font-semibold">
-                  <li>Tax Benefits</li>
-                  <li>Growing Economy</li>
-                  <li>Favorable Market Conditions</li>
-                  <li>High Rental Yields</li>
-                  <li>Long-Term Appreciation</li>
-                  <li>Secure Asset</li>
-                  <li>Diversification</li>
-                  <li>Investment Opportunities</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Testimonials */}
+        {/* ── Testimonials ── */}
         <div className="container mx-auto px-4 mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center relative">
+            <span className="relative after:content-[\'\'] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Testimonials from NRI Clients
             </span>
           </h2>
-
           <div className="grid md:grid-cols-2 gap-6">
-            <blockquote className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d]">
-              <p className="text-lg italic mb-4 text-gray-700">
-                "I invested from Dubai through video tours. DholeraTimes made it
-                seamless!"
-              </p>
-              <footer className="font-semibold text-[#151f28]">
-                — Harpreet Singh, UAE
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d]">
-              <p className="text-lg italic mb-4 text-gray-700">
-                "From London to Dholera in 3 clicks. Thanks Simar & Team!"
-              </p>
-              <footer className="font-semibold text-[#151f28]">
-                — Neeraj Yadav, UK
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d]">
-              <p className="text-lg italic mb-4 text-gray-700">
-                "I live in Dubai, and DholeraTimes helped me invest without even
-                visiting India. Everything was smooth!"
-              </p>
-              <footer className="font-semibold text-[#151f28]">
-                — Gurpreet Singh, UAE
-              </footer>
-            </blockquote>
-
-            <blockquote className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d]">
-              <p className="text-lg italic mb-4 text-gray-700">
-                "I invested from London and the whole process was seamless —
-                thanks to Harjas Singh at DholeraTimes!"
-              </p>
-              <footer className="font-semibold text-[#151f28]">
-                — Vikas Agarwal
-              </footer>
-            </blockquote>
-
+            {[
+              {
+                text: "I invested from Dubai through video tours. DholeraTimes made it seamless!",
+                name: "Harpreet Singh, UAE",
+              },
+              {
+                text: "From London to Dholera in 3 clicks. Thanks Simar & Team!",
+                name: "Neeraj Yadav, UK",
+              },
+              {
+                text: "I live in Dubai, and DholeraTimes helped me invest without even visiting India. Everything was smooth!",
+                name: "Gurpreet Singh, UAE",
+              },
+              {
+                text: "I invested from London and the whole process was seamless - thanks to Harjas Singh at DholeraTimes!",
+                name: "Vikas Agarwal",
+              },
+            ].map((t, i) => (
+              <blockquote
+                key={i}
+                className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d]"
+              >
+                <p className="text-base italic mb-3 text-gray-700">
+                  "{t.text}"
+                </p>
+                <footer className="font-semibold text-[#151f28] text-sm">
+                  - {t.name}
+                </footer>
+              </blockquote>
+            ))}
             <blockquote className="bg-white p-6 rounded-lg shadow-sm border-l-4 border-[#d8b66d] md:col-span-2">
-              <p className="text-lg italic mb-4 text-gray-700">
+              <p className="text-base italic mb-3 text-gray-700">
                 "Thanks to Simar Singh and the team, I bought a plot in Orchid
                 Township while living in Canada."
               </p>
-              <footer className="font-semibold text-[#151f28]">
-                — Rajeev Gupta, Toronto
+              <footer className="font-semibold text-[#151f28] text-sm">
+                - Rajeev Gupta, Toronto
               </footer>
             </blockquote>
           </div>
         </div>
 
-        {/* FAQs */}
-        <div id="FAQs" className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center relative">
-            <span className="relative after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
+        {/* ── RBI & Legal Guidelines FAQs ── */}
+        <div id="RBIGuidelines" className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center relative">
+            <span className="relative after:content-[\'\'] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               RBI & Legal Guidelines for NRIs
             </span>
           </h2>
-
           <div className="space-y-4">
             {faqs.slice(0, visibleFAQs).map((faq, index) => (
               <div
@@ -1502,27 +1411,28 @@ export default function NRIInvestmentGuide() {
                 className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
               >
                 <button
-                  className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50"
+                  className="w-full flex items-center justify-between p-4 text-left bg-white hover:bg-gray-50"
                   onClick={() => toggleAccordion(index)}
                 >
-                  <h3 className="text-lg font-semibold text-[#151f28]">
+                  <h3 className="text-base font-semibold text-[#151f28] pr-4">
                     {faq.question}
                   </h3>
                   {activeAccordion === index ? (
-                    <ChevronUp className="text-[#d8b66d]" size={40} />
+                    <ChevronUp className="text-[#d8b66d] shrink-0" size={30} />
                   ) : (
-                    <ChevronDown className="text-[#d8b66d]" size={40} />
+                    <ChevronDown
+                      className="text-[#d8b66d] shrink-0"
+                      size={30}
+                    />
                   )}
                 </button>
-
                 {activeAccordion === index && (
-                  <div className="p-6 pt-0 bg-white text-gray-700">
+                  <div className="p-4 pt-0 bg-white text-gray-700 text-base leading-relaxed">
                     <p>{faq.answer}</p>
                   </div>
                 )}
               </div>
             ))}
-
             {visibleFAQs < faqs.length && (
               <div className="text-center mt-4">
                 <button
@@ -1541,7 +1451,7 @@ export default function NRIInvestmentGuide() {
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <PopupForm
               title="Book A Free Consultation Today"
-              headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory."
+              headline="Book  your free consultation with our Dholera expert-no obligations, just guidance. Fields marked with * are mandatory."
               buttonName="Get A Call Back"
               trustBadge="500+ NRI Clients Served & AUDA-Approved Projects"
               X
@@ -1555,7 +1465,7 @@ export default function NRIInvestmentGuide() {
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <PopupForm
               title="Book A Free Consultation Today"
-              headline="Book  your free consultation with our Dholera expert—no obligations, just guidance. Fields marked with * are mandatory."
+              headline="Book  your free consultation with our Dholera expert-no obligations, just guidance. Fields marked with * are mandatory."
               buttonName="Get A Call Back"
               trustBadge="500+ NRI Clients Served & AUDA-Approved Projects"
               X
