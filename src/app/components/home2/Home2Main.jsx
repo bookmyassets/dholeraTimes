@@ -104,7 +104,7 @@ export default function Home2Main() {
         {isBrochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
-              title="Explore verified residential plots in Dholera under ₹10 lakh"
+              title="Explore Verified Residential Plots in Dholera Under ₹10 lakh"
               buttonName="Get A Call Back"
               onClose={() => setIsBrochureFormOpen(false)}
             />
