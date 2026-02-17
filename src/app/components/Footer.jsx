@@ -62,7 +62,7 @@ export default function Footer() {
             source: "Dholera Times Website",
             tags: ["Dholera Investment", "Website Lead"],
           }),
-        }
+        },
       );
 
       const responseText = await response.text();
@@ -101,23 +101,23 @@ export default function Footer() {
     <>
       <footer className="bg-[#151f28] text-gray-400 space-y-8 pt-8 ">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* First 3-column row with company info, links, policy */}
           <div className="grid md:grid-cols-4 md:gap-32 md:left-8 gap-12 mb-12">
             <div className="text-white">
               <div className="mb-6">
                 <h2 className="text-lg font-semibold mb-3">Contact Us</h2>
                 <p className="font-semibold text-blue-400">Head Office</p>
-               
+
                 <p className="text-gray-300">
-                   620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
+                  620, JMD Megapolis, Sector-48, Sohna Road, Gurugram - 122018,
                   India
                 </p>
                 <br />
                 <p className="font-semibold text-blue-400">Branch Office</p>
-             
+
                 <p className="text-gray-300">
-                Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015
+                  Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy,
+                  Makarba, Ahmedabad, Gujarat 380015
                 </p>
               </div>
 
@@ -241,7 +241,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/paradise-1"
                     className="hover:text-white transition"
                   >
-                    Paradise 
+                    Paradise
                   </a>
                 </li>
                 <li>
@@ -249,7 +249,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/paradise-2"
                     className="hover:text-white transition"
                   >
-                   Paradise 2
+                    Paradise 2
                   </a>
                 </li>
                 <li>
@@ -257,7 +257,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/orchid"
                     className="hover:text-white transition"
                   >
-                   Orchid
+                    Orchid
                   </a>
                 </li>
                 <li>
@@ -265,7 +265,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/maple"
                     className="hover:text-white transition"
                   >
-                   Maple
+                    Maple
                   </a>
                 </li>
                 <li>
@@ -273,7 +273,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/marina-bay"
                     className="hover:text-white transition"
                   >
-                   Marina Bay
+                    Marina Bay
                   </a>
                 </li>
                 <li>
@@ -281,12 +281,12 @@ export default function Footer() {
                     href="/dholera-residential-plots/pride"
                     className="hover:text-white transition"
                   >
-                   Pride
+                    Pride
                   </a>
                 </li>
               </ul>
             </div>
-            
+
             <div className="">
               <h2 className="text-white text-lg font-semibold mb-4">
                 Useful Links
@@ -385,7 +385,10 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="/sitemap.xml" className="hover:text-white transition">
+                  <a
+                    href="/sitemap.xml"
+                    className="hover:text-white transition"
+                  >
                     Sitemap
                   </a>
                 </li>
@@ -424,7 +427,7 @@ export default function Footer() {
           </div>
         </div>
         <p className="text-sm text-center pt-5">
-          © 2025 Dholera Times. All rights reserved.
+          &copy; {new Date().getFullYear()} Dholera Times. All rights reserved.
         </p>
       </footer>
     </>

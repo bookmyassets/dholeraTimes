@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import wc from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
-import wcM from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import BrochureDownload from "../../components/BrochureDownload";
@@ -54,36 +53,15 @@ export default function Hero() {
       <div className="bg-gray-100 ">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-4">
-            <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-6">
-              <Link href="/" className="hover:text-white">
-                Home
-              </Link>
-              <span>/</span>
-              <Link
-                href="/dholera-residential-plots"
-                className="hover:text-white"
-              >
-                Projects
-              </Link>
-              <span>/</span>
-              <span className="text-white">WestWyn Estate</span>
-            </nav>
 
             {/* Image Container */}
-            <div className="relative min-h-[250px] md:min-h-[600px] ">
+            <div className="relative min-h-[250px] md:min-h-[min(600px,80vh)] ">
               {/* Background Image */}
               <Image
                 src={wc}
                 alt="WestWyn Estate in Dholera Gujarat"
                 fill
-                className="absolute object-cover max-sm:hidden"
-                priority
-              />
-              <Image
-                src={wcM}
-                alt="WestWyn Estate in Dholera Gujarat"
-                fill
-                className="absolute object-contain md:hidden aspect-[3/2]"
+                className="absolute object-cover aspect-[3/2]"
                 priority
               />
 
@@ -98,11 +76,7 @@ export default function Hero() {
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-3">
                         <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
-                          Residential
-                        </span>
-
-                        <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
-                          🔥 Newly Launched
+                          Ongoing
                         </span>
                       </div>
                       <div className="text-3xl font-bold text-[#151f28]">
@@ -155,12 +129,8 @@ export default function Hero() {
                   {/* Categories & Price */}
                   <div>
                     <div className="flex items-center gap-2 flex-wrap mb-3">
-                      <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
-                        Residential
-                      </span>
-
-                      <span className="px-3 py-1.5 bg-[#d3b36b] text-[#151f28] rounded-full text-sm font-medium">
-                        🔥 Newly Launched
+                      <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
+                        Ongoing
                       </span>
                     </div>
                     <div className="text-xl font-bold text-[#151f28]">
@@ -178,7 +148,7 @@ export default function Hero() {
 
                   {/* Contact & Buttons */}
                   <div className="flex flex-col justify-between">
-                    <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
+                    <div className="flex items-center order-2 gap-2 text-gray-700 text-base py-2">
                       <a
                         href="tel:+919958993549"
                         className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
@@ -192,7 +162,7 @@ export default function Hero() {
                         📄 Brochure
                       </button>
                     </div>
-                    <div className="text-[#151f28] text-lg font-semibold">
+                    <div className="text-[#151f28] order-1 text-lg font-semibold">
                       <p>Registry Ready Plot under ₹10 Lakh</p>
                     </div>
                   </div>
