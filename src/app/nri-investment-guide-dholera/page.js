@@ -1210,43 +1210,6 @@ export default function NRIInvestmentGuide() {
           </p>
         </div>
 
-        {/* ── Price Banner ── */}
-        <section className="relative mb-8">
-          <div className="max-sm:hidden relative">
-            <Image
-              src={priceBanner}
-              alt="Investment Opportunity"
-              className="w-full"
-              priority
-            />
-            <div className="absolute inset-0 bg-black opacity-20" />
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-              <button
-                onClick={openForm}
-                className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md"
-              >
-                Talk To An Expert
-              </button>
-            </div>
-          </div>
-          <div className="lg:hidden relative">
-            <Image
-              src={priceBannerM}
-              alt="Investment Opportunity Mobile"
-              className="w-full"
-              priority
-            />
-            <div className="absolute inset-0 bg-black opacity-20" />
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-              <button
-                onClick={openForm}
-                className="bg-[#d8b66d] hover:bg-[#c9a85d] text-white font-bold py-2 px-4 rounded-lg transition duration-300 shadow-md text-sm"
-              >
-                Talk To An Expert
-              </button>
-            </div>
-          </div>
-        </section>
 
         {/* ── Conclusion ── */}
         <div className="max-w-6xl mx-auto px-4 mb-8">
@@ -1348,7 +1311,7 @@ export default function NRIInvestmentGuide() {
         </div>
 
         {/* ── Testimonials ── */}
-        <div className="container mx-auto px-4 mb-8">
+        {/* <div className="container mx-auto px-4 mb-8">
           <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center relative">
             <span className="relative after:content-[\'\'] after:absolute after:bottom-[-10px] after:left-1/2 after:w-20 after:h-1 after:bg-[#d8b66d] after:-translate-x-1/2">
               Testimonials from NRI Clients
@@ -1395,7 +1358,7 @@ export default function NRIInvestmentGuide() {
               </footer>
             </blockquote>
           </div>
-        </div>
+        </div> */}
 
         {/* ── RBI & Legal Guidelines FAQs ── */}
         <div id="RBIGuidelines" className="container mx-auto px-4">
