@@ -22,11 +22,8 @@ import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/PopupForm";
 import dholeraSmartCity from "@/assets/Dholera-Smart-City.webp";
-import priceBanner from "@/assets/price-cut-banner.webp";
-import priceBannerM from "@/assets/priceBannerM.webp";
-import projectedNRI from "@/assets/Projected-NRI.webp";
-import nri from "@/assets/nri-mob-view.webp";
-import nriD from "@/assets/nriguide-hero.webp";
+import nri from "@/assets/nri-hero.webp";
+import nriD from "@/assets/nri-hero.webp";
 
 export default function NRIInvestmentGuide() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
@@ -682,7 +679,7 @@ export default function NRIInvestmentGuide() {
       />
 
       {/* ─── HERO ─── */}
-      <div className="relative text-white py-12 px-4">
+      {/* <div className="relative py-12 px-4">
         <div className="absolute inset-0">
           <Image
             src={nri}
@@ -696,6 +693,19 @@ export default function NRIInvestmentGuide() {
           />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center"></div>
+      </div> */}
+
+      <div className="bg-black text-white">
+        <div className="md:relative overflow-hidden">
+          <Image
+            src={nri}
+            alt="Dholera SIR Aerial View"
+            className="w-full md:h-full h-auto object-contain md:object-cover"
+            priority
+            quality={85}
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       {/* ─── NAV TABS ─── */}
@@ -923,9 +933,8 @@ export default function NRIInvestmentGuide() {
           <p className="text-base text-gray-700 leading-relaxed mb-4">
             One of the most searched questions is:{" "}
             <strong>Can NRI buy land in India?</strong>
-            <br/> Yes, NRIs can purchase
-            non-agricultural land and residential property, subject to FEMA and
-            RBI guidelines.
+            <br /> Yes, NRIs can purchase non-agricultural land and residential
+            property, subject to FEMA and RBI guidelines.
           </p>
           <p className="text-base text-gray-700 mb-3">
             Important considerations include:
@@ -1209,7 +1218,6 @@ export default function NRIInvestmentGuide() {
             saturated metro markets.
           </p>
         </div>
-
 
         {/* ── Conclusion ── */}
         <div className="max-w-6xl mx-auto px-4 mb-8">

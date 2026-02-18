@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import hero from "@/assets/news.webp";
+import hero from "@/assets/gallery/galleryHero.webp";
 import img1 from "@/assets/gallery/sir/5000mw-solar-park-dholera-times.webp";
 import img2 from "@/assets/gallery/sir/ahmedabad-dholera-expressway-butterfly-dholera-times.webp";
 import img3 from "@/assets/gallery/sir/ahmedabad-dholera-expressway-dholera-times.webp";
@@ -145,7 +145,7 @@ export default function DholeraProgressPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/40 flex items-center justify-center">
           <div className="text-center px-6 py-10 max-w-4xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
               Dholera SIR Progress in Every Frame
             </h1>
           </div>
@@ -154,11 +154,6 @@ export default function DholeraProgressPage() {
 
       {/* Gallery Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-            Explore Dholera Growth through Images
-          </h2>
-        </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

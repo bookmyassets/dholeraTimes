@@ -4,7 +4,7 @@ import {
   getUpdates,
   getNews,
 } from "@/sanity/lib/api";
-import hero from "@/assets/dholera-sir-hero.webp";
+import hero from "@/assets/DholeraSirhero.webp";
 import herom from "@/assets/dholera-sir-m-v.webp";
 import Image from "next/image";
 import BlogCard from "./BlogCard";
@@ -16,20 +16,20 @@ export default async function BlogsPage() {
   // Fetch data and handle potential errors
   let posts = [];
   try {
-  const postsData = await getProjectInfo();
-  posts = Array.isArray(postsData) ? postsData : [];
-  
-  // Sort by publishedAt date (newest first)
-  posts.sort((a, b) => {
-    const dateA = new Date(a.publishedAt || a._createdAt || 0);
-    const dateB = new Date(b.publishedAt || b._createdAt || 0);
-    return dateB - dateA; // Descending order (newest first)
-  });
-  
-  console.log("Posts data fetched:", posts.length);
-} catch (error) {
-  console.error("Error fetching blog posts:", error);
-}
+    const postsData = await getProjectInfo();
+    posts = Array.isArray(postsData) ? postsData : [];
+
+    // Sort by publishedAt date (newest first)
+    posts.sort((a, b) => {
+      const dateA = new Date(a.publishedAt || a._createdAt || 0);
+      const dateB = new Date(b.publishedAt || b._createdAt || 0);
+      return dateB - dateA; // Descending order (newest first)
+    });
+
+    console.log("Posts data fetched:", posts.length);
+  } catch (error) {
+    console.error("Error fetching blog posts:", error);
+  }
 
   // Add error handling for post data
   const safePosts = posts.map((post) => ({
@@ -75,34 +75,16 @@ export default async function BlogsPage() {
       <meta name="robots" content="index, dofollow" />
 
       <div className="bg-black text-white">
-        <section className="relative h-[50vh] flex items-center">
-          <div className="absolute inset-0">
-            <Image
-              src={hero}
-              alt="Dholera SIR Aerial View"
-              className="w-full h-full object-cover max-sm:hidden"
-              priority
-            />
-            <Image
-              src={herom}
-              alt="Dholera SIR Aerial View"
-              className="w-full h-full object-cover md:hidden"
-              priority
-            />
-            <div className="absolute inset-0"></div>
-          </div>
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-6">
-            <div className="text-white text-left max-w-xl">
-              <h1 className="text-2xl md:text-4xl font-bold drop-shadow-lg mb-6 tracking-tight">
-                Dholera SIR
-              </h1>
-              <p className="text-xl font-light leading-relaxed">
-                India's First Greenfield Smart City along the Delhi-Mumbai
-                Industrial Corridor
-              </p>
-            </div>
-          </div>
-        </section>
+        <div className="md:relative md:h-[65vh] overflow-hidden">
+          <Image
+            src={hero}
+            alt="Dholera SIR Aerial View"
+            className="w-full md:h-full h-auto object-contain md:object-cover"
+            priority
+            quality={85}
+            sizes="100vw"
+          />
+        </div>
       </div>
 
       {/* Main Content */}
