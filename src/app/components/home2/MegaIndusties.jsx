@@ -31,25 +31,6 @@ export default function MegaIndustries() {
 
   return (
     <>
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
-          width: max-content;
-        }
-        .marquee-container {
-          width: 100%;
-          overflow: hidden;
-          position: relative;
-        }
-      `}</style>
       <div className="relative py-8">
         <Image
           src={bg}

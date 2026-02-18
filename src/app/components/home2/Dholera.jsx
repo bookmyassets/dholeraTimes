@@ -2,9 +2,11 @@ import React from "react";
 import dholeraSite from "@/assets/dholera-smart-city-home-image.webp";
 import Image from "next/image";
 import Link from "next/link";
+import Magnet from "./Magnet";
 
 export default function Dholera() {
   return (
+    <>
     <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-[28px] text-center font-bold text-[#151f28] mb-6 leading-tight">
@@ -18,7 +20,7 @@ export default function Dholera() {
                 src={dholeraSite}
                 alt="ABCD Building"
                 className="w-full h-[400px] object-cover rounded-lg shadow-lg"
-              />
+                />
             </div>
           </div>
 
@@ -27,9 +29,9 @@ export default function Dholera() {
             {/* Small label */}
             {/*  <div className="inline-block mb-4">
               <span className="bg-gray-100 text-[#151f28] text-sm font-medium px-3 py-1 rounded-full">
-                About Dholera Times
+              About Dholera Times
               </span>
-            </div> */}
+              </div> */}
 
             {/* Main heading */}
             
@@ -62,5 +64,9 @@ export default function Dholera() {
         </div>
       </div>
     </div>
+    <div>
+      <Magnet/>
+    </div>
+              </>
   );
 }
