@@ -679,22 +679,6 @@ export default function NRIInvestmentGuide() {
       />
 
       {/* ─── HERO ─── */}
-      {/* <div className="relative py-12 px-4">
-        <div className="absolute inset-0">
-          <Image
-            src={nri}
-            alt="NRI Investment in Dholera SIR"
-            className="object-cover w-full h-full md:hidden"
-          />
-          <Image
-            src={nriD}
-            alt="NRI Investment in Dholera SIR"
-            className="object-cover w-full h-full max-sm:hidden"
-          />
-        </div>
-        <div className="relative z-10 max-w-6xl mx-auto min-h-[50vh] flex flex-col justify-center"></div>
-      </div> */}
-
       <div className="bg-black text-white">
         <div className="md:relative overflow-hidden">
           <Image
