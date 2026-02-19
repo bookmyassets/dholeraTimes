@@ -76,7 +76,7 @@ export default function page() {
 
   return (
     <>
-    <script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
@@ -113,8 +113,8 @@ export default function page() {
         content="Dholera Smart City, Dholera, Gujarat, Dholera International Airport, Dholera Project, Dholera Property Investment"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/bulk-land/recreation-sports"
+        rel="canonical"
+        href="https://www.dholeratimes.com/bulk-land/recreation-sports"
       />
 
       <div className="relative h-[50vh] w-full ">
@@ -221,13 +221,14 @@ export default function page() {
       </div>
 
       <div>
-        <RecreationZoneCards/>
+        <RecreationZoneCards />
       </div>
-      
 
-      <BulkLand title="Invest in govt. approved bulk land in Dholera starting 2Cr" pageName="recreation-sports-bulk-land"/>
+      <BulkLand
+        title="Invest in Govt. Approved Bulk Land in Dholera Starting 2Cr"
+        pageName="recreation-sports-bulk-land"
+      />
       <HorizontalScrollInterlink properties={relatedProperties} />
-
 
       <div>
         <Table />

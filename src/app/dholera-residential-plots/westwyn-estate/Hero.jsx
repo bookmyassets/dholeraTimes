@@ -75,7 +75,7 @@ export default function Hero() {
                     {/* Left Column - Categories & Price */}
                     <div>
                       <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <span className="px-3 py-1.5 text-[#d3b36b] bg-[#151f28] rounded-full text-sm font-medium">
+                        <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
                           Ongoing
                         </span>
                       </div>

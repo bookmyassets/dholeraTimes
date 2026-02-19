@@ -242,7 +242,7 @@ export default function PopupForm() {
                   >
                     ×
                   </button>
-                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Explore Verified Residential Plots in Dholera under ₹10 lakh</h1>
+                  <h1 className="text-2xl font-bold text-[#151f28] mb-2">Explore Verified Residential Plots in Dholera Under ₹10 lakh</h1>
                   
                 </div>
 
@@ -326,7 +326,7 @@ export default function PopupForm() {
                         Submitting...
                       </div>
                     ) : (
-                      "Show Me How"
+                      "Get A Call Back"
                     )}
                   </button>
 

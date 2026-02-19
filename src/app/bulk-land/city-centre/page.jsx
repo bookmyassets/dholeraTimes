@@ -244,7 +244,7 @@ export default function page() {
       </div>
 
       <BulkLand
-        title="Invest in govt. approved bulk land in Dholera starting 2Cr"
+        title="Invest in Govt. Approved Bulk Land in Dholera Starting 2Cr"
         pageName="city-centre-bulk-land"
       />
       <HorizontalScrollInterlink properties={relatedProperties} />
