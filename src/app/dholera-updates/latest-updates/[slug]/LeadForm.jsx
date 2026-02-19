@@ -227,8 +227,8 @@ export default function LeadFormSlug({ title, headline, buttonName, onClose }) {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Full Name Input */}
-            <div className="relative">
-              <FaUser className="absolute left-4 top-4 text-gray-500" />
+            <div className="relative flex items-center">
+              <FaUser className="absolute left-4 text-gray-500" />
               <input
                 name="fullName"
                 placeholder="Full Name *"
@@ -240,8 +240,8 @@ export default function LeadFormSlug({ title, headline, buttonName, onClose }) {
             </div>
 
             {/* Phone Number Input */}
-            <div className="relative">
-              <FaPhoneAlt className="absolute left-4 top-4 text-gray-500" />
+            <div className="relative flex items-center">
+              <FaPhoneAlt className="absolute left-4 text-gray-500" />
               <input
                 name="phone"
                 type="tel"
@@ -268,7 +268,7 @@ export default function LeadFormSlug({ title, headline, buttonName, onClose }) {
                   : "bg-[#d7b56d] hover:bg-[#c6a45d] hover:shadow-lg active:scale-95"
               }`}
             >
-              {isLoading ? "Submitting..." : buttonName}
+              {isLoading ? "Submitting..." : "Get A Call back"}
             </button>
           </form>
         )}

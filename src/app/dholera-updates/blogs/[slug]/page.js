@@ -90,91 +90,6 @@ const TrendingBlogItem = ({ post }) => {
   );
 };
 
-const Projects = ({ post }) => {
-  // Check if post exists and has required properties
-  if (!post || !post.slug?.current) return null;
-
-  // Check if category is "sold out" (case insensitive)
-  if (post.category && post.category.toLowerCase().trim() === "sold out") {
-    return null;
-  }
-
-  return (
-    <Link href={`/projects/${post.slug.current}`}>
-      <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
-        {post.mainImage && (
-          <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
-            <Image
-              src={urlFor(post.mainImage).width(80).height(80).url()}
-              alt={post.title || "Project image"}
-              width={80}
-              height={80}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
-        <div>
-          <h4 className="font-semibold text-gray-900 line-clamp-2">
-            {post.title || "Untitled Project"}
-          </h4>
-          <p className="text-sm text-gray-500 line-clamp-1 mt-1">
-            {post.description || ""}
-          </p>
-        </div>
-      </div>
-    </Link>
-  );
-};
-
-const RelatedBlogCard = ({ blog }) => {
-  return (
-    <div className="bg-white rounded-lg shadow-2xl overflow-hidden flex flex-col h-full transition-transform duration-300 hover:scale-105">
-      <Link href={`/dholera-updates/blogs/${blog.slug.current}`}>
-        <div className="relative w-full h-64">
-          {blog.mainImage ? (
-            <Image
-              src={urlFor(blog.mainImage).url()}
-              alt={blog.title}
-              fill
-              className="object-cover"
-            />
-          ) : (
-            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-              <span className="text-gray-400">No image available</span>
-            </div>
-          )}
-        </div>
-
-        {/* Content */}
-        <div className="flex flex-col flex-grow">
-          <div className="w-full px-4 py-2 transition-all font-semibold border-white  hover:bg-[#d6b873] bg-[#151f28] hover:text-[#151f28] text-lg md:text-base text-[#d6b873] mt-auto space-y-3">
-            {/* Title */}
-            <h3 className="text-xl font-semibold line-clamp-2 h-14">
-              {blog.title}
-            </h3>
-
-            {/* Meta info */}
-            <div className="text-sm text-gray-400">
-              <time>
-                {new Date(blog.publishedAt).toLocaleDateString("en-US", {
-                  day: "numeric",
-                  month: "long",
-                  year: "numeric",
-                })}
-              </time>
-            </div>
-
-            {/* CTA */}
-            <div className="underline underline-offset-4 text-lg">
-              Read More
-            </div>
-          </div>
-        </div>
-      </Link>
-    </div>
-  );
-};
-
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
   const site = "dholera-times";
@@ -845,7 +760,7 @@ export default async function BlogDetail({ params }) {
               <div className="sticky space-y-4 top-24">
                 <div className=" pt-4 max-w-xl mx-auto">
                   <LeadFormSlug
-                    title="Buy Residential Plot near Dholera SIR under 10 Lakh"
+                    title="Buy Residential Plot near Dholera SIR under ₹10 Lakh"
                     buttonName="Know More"
                   />
                 </div>
@@ -858,6 +773,7 @@ export default async function BlogDetail({ params }) {
                     {trendingBlogs && trendingBlogs.length > 0 ? (
                       trendingBlogs
                         .filter((post) => post.slug.current !== slug) // Filter out the current blog
+                        .slice(0,5)
                         .map((post) => (
                           <div key={post._id} className="mb-3">
                             <TrendingBlogItem post={post} />
