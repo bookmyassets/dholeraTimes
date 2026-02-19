@@ -657,7 +657,7 @@ export default async function BlogDetail({ params }) {
         <div className="bg-white min-h-screen">
           {/* Sticky Nav Placeholder */}
           <title>{post.title}</title>
-          <meta name="title" content={post.title} />
+          <meta name="title" content={post.metaTitle} />
           <meta name="description" content={post.metaDescription} />
           <meta name="keywords" content={post.keywords} />
           <meta name="publisher" content="Dholera Times" />

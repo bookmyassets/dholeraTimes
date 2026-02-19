@@ -663,8 +663,8 @@ export default async function BlogDetail({ params }) {
 
     return (
       <div className="bg-white min-h-screen">
-        <title>{post.title}</title>
-        <meta name="title" content={post.title} />
+        <title>{post.metaTitle}</title>
+        <meta name="title" content={post.metaTitle} />
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.keywords} />
         <meta name="publisher" content="Dholera Times" />
