@@ -23,36 +23,33 @@ export default function ChannelPartnerPage() {
         content="Dholera Smart City, Dholera Gujarat, Dholera SIR, Dholera Project, Invest in Dholera, Dholera Property Investment"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/channel-partner"
+        rel="canonical"
+        href="https://www.dholeratimes.com/channel-partner"
       />
 
-      {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden h-[72vh]">
-        <div className="absolute inset-0 ">
+      <div>
+        <div className="md:relative md:h-[72vh] overflow-hidden">
           <Image
             src={hero}
-            alt="Channel Partner"
-            className="w-full h-auto max-sm:hidden"
-          />
-          <Image
-            src={heroM}
-            alt="Channel Partner"
-            className="w-full h-full object-cover md:hidden"
+            alt="Dholera SIR Aerial View"
+            className="w-full md:h-full h-auto object-contain md:object-cover"
+            priority
+            quality={85}
+            sizes="100vw"
           />
         </div>
-      </section>
+      </div>
 
       {/* Main Content */}
       <section className="py-8">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-2 md:px-6">
           <div className="max-w-5xl mx-auto gap-12">
             {/* Content Column */}
-            <div className=" space-y-12">
+            <div className=" space-y-8">
               {/* What We Offer Section */}
-              <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="bg-white p-4 md:p-8 rounded-xl shadow-lg">
                 <h2
-                  className="text-3xl font-bold mb-8"
+                  className="text-2xl md:text-3xl font-bold mb-8"
                   style={{ color: "#151f28" }}
                 >
                   What We Offer Our Partners
@@ -196,7 +193,7 @@ export default function ChannelPartnerPage() {
               </div>
 
               {/* Why Partner Section */}
-              <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="bg-white p-4 md:p-8 rounded-xl shadow-lg">
                 <h2
                   className="text-3xl font-bold mb-6"
                   style={{ color: "#151f28" }}
@@ -217,14 +214,14 @@ export default function ChannelPartnerPage() {
 
               {/* About WestWyn County Section */}
               <div
-                className="bg-white p-8 rounded-xl shadow-lg border"
+                className="bg-white p-4 md:p-8 rounded-xl shadow-lg border"
                 style={{ borderColor: "#d3b36b", borderWidth: "1px" }}
               >
                 <h2
-                  className="text-3xl font-bold mb-6"
+                  className="text-2xl md:text-3xl font-bold mb-6"
                   style={{ color: "#151f28" }}
                 >
-                  About WestWyn County – Your Premium Offering
+                  About WestWyn County - Your Premium Offering
                 </h2>
                 <p className="text-gray-600 text-lg mb-6">
                   Our flagship project, WestWyn County, is a premium
@@ -310,9 +307,9 @@ export default function ChannelPartnerPage() {
               </div>
 
               {/* Who Can Join Section */}
-              <div className="bg-white p-8 rounded-xl shadow-lg">
+              <div className="bg-white p-4 md:p-8 rounded-xl shadow-lg">
                 <h2
-                  className="text-3xl font-bold mb-6"
+                  className="text-2xl md:text-3xl font-bold mb-6"
                   style={{ color: "#151f28" }}
                 >
                   Who Can Join Us?
