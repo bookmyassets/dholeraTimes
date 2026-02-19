@@ -7,7 +7,7 @@ import training from "@/assets/icons/training-and-onboarding-icon.webp";
 import inventory from "@/assets/icons/registry-ready-inventory-icon.webp";
 import sales from "@/assets/icons/white-labeled-sales-kit-icon.webp";
 import Image from "next/image";
-import hero from "@/assets/Channelpartner-hero.webp";
+import hero from "@/assets/channelpartner.webp";
 import heroM from "@/assets/channel-partner-mob.-view.webp";
 
 export default function ChannelPartnerPage() {
@@ -28,12 +28,12 @@ export default function ChannelPartnerPage() {
       />
 
       {/* Hero Section */}
-      <section className="py-20 relative overflow-hidden h-[50vh]">
+      <section className="py-20 relative overflow-hidden h-[72vh]">
         <div className="absolute inset-0 ">
           <Image
             src={hero}
             alt="Channel Partner"
-            className="w-full h-full object-cover max-sm:hidden"
+            className="w-full h-auto max-sm:hidden"
           />
           <Image
             src={heroM}
@@ -41,28 +41,10 @@ export default function ChannelPartnerPage() {
             className="w-full h-full object-cover md:hidden"
           />
         </div>
-        <div className="container mx-auto px-6 pt-10 relative z-10">
-          <div className="max-w-7xl mx-auto gap-12 text-center">
-            {/* Content */}
-            <div>
-              <h1
-                style={{ color: "#151f28" }}
-                className="text-2xl md:text-4xl font-bold leading-tight mb-6 text-white"
-              >
-                Become a Channel Partner With Dholera Times - Grow With WestWyn
-                County
-              </h1>
-              <p className="text-lg mb-8 text-gray-200">
-                Join Gujarat's Fastest Growing Real Estate EcoSystem and Unlock
-                high commissions, premium projects, and dedicated support.
-              </p>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
+      <section className="py-8">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto gap-12">
             {/* Content Column */}
