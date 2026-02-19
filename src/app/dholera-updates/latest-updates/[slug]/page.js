@@ -757,13 +757,13 @@ export default async function BlogDetail({ params }) {
                   {/* Trending posts */}
                   <div className="bg-[#151f28] rounded-xl shadow-2xl shadow-gray-500 p-6 border border-gray-700">
                     <h3 className="text-xl font-bold mb-4 text-white">
-                      Latest Blogs
+                      Latest Updates
                     </h3>
                     <div className="">
                       {trendingBlogs && trendingBlogs.length > 0 ? (
                         trendingBlogs
                           .filter((post) => post.slug.current !== slug) // Filter out the current blog
-                          .slice(5)
+                          .slice(0,5)
                           .map((post) => (
                             <div key={post._id} className="mb-3">
                               <TrendingBlogItem post={post} />

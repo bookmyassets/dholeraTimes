@@ -1,8 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-/* image import */
-import hero1 from "@/assets/DTbanner1.webp";
 import HOME2 from "./components/home/carosuel";
 import FAQSection from "./components/Faq";
 import Dholeravideos from "./components/home/Dholeravideos";
