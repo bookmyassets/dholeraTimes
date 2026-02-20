@@ -23,67 +23,67 @@ export default function DholeraProgressPage() {
   {
     id: 1,
     src: img1,
-    alt: "5000 MW Solar Park Dholera",
+    alt: "Solar Park Dholera",
     caption: "5000 MW Solar Park – Dholera",
   },
   {
     id: 2,
     src: img2,
-    alt: "Ahmedabad Dholera Expressway Butterfly Junction",
+    alt: "Ahmedabad-Dholera Expressway",
     caption: "Ahmedabad–Dholera Expressway Butterfly Junction",
   },
   {
     id: 3,
-    src: img3,
-    alt: "Ahmedabad Dholera Expressway",
+    src: img4,
+    alt: "Dholera International Airport",
     caption: "Ahmedabad–Dholera Expressway",
   },
   {
     id: 4,
-    src: img4,
-    alt: "Cargo Terminal Dholera International Airport",
+    src: img7,
+    alt: "Dholera ReNew Power Plant ",
     caption: "Cargo Terminal – Dholera International Airport",
   },
   {
     id: 5,
     src: img5,
-    alt: "Activation Area Infrastructure Dholera",
+    alt: "Dholera Activation Area Infrastructure",
     caption: "Infrastructure – Dholera Activation Area",
   },
   {
     id: 6,
     src: img6,
-    alt: "Main Gate Tata Semiconductor Plant Dholera",
+    alt: "Tata Semiconductor Plant Dholera",
     caption: "Main Gate – Tata Semiconductor Plant",
   },
   {
     id: 7,
-    src: img7,
-    alt: "ReNew Solar Cell Manufacturing Plant Dholera",
+    src: img3,
+    alt: "Dholera Expressway",
     caption: "ReNew Solar Cell Manufacturing Plant",
   },
   {
     id: 8,
     src: img8,
-    alt: "Riverfront Dholera Activation Area",
+    alt: "Dholera Riverfront Development",
     caption: "Riverfront – Dholera Activation Area",
   },
   {
     id: 9,
     src: img9,
-    alt: "Runway Dholera International Airport",
+    alt: "Dholera International Airport Runway",
     caption: "Runway – Dholera International Airport",
   },
   {
     id: 10,
     src: img10,
-    alt: "Silk Route Park Activation Area Dholera",
+    alt: "Dholera Silk Route Park",
     caption: "Silk Route Park – Activation Area",
   },
   {
     id: 11,
     src: img11,
-    alt: "Tata Semiconductor Plant Construction Dholera",
+    alt: "Semiconductor Plant in Dholera ",
     caption: "Tata Semiconductor Plant – Construction Phase",
   },
   {
@@ -101,7 +101,7 @@ export default function DholeraProgressPage() {
   {
     id: 14,
     src: img14,
-    alt: "WestWyn Estate Dholera Residential Plots",
+    alt: "Residential Plots in Dholera",
     caption: "WestWyn Estate – Dholera Residential Plots",
   },
 ];
@@ -153,23 +153,38 @@ export default function DholeraProgressPage() {
       </div>
 
       {/* Gallery Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-8">
 
-        {/* Gallery Grid */}
+        {/* Gallery Grid with Enhanced Hover Effects */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-xl transition-all duration-300 shadow-2xl h-80 cursor-pointer"
+              className="group relative overflow-hidden rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl cursor-pointer bg-white"
               onClick={() => openPopup(image)}
             >
-              <Image src={image.src} alt={image.alt} fill className="object-cover" />
+              {/* Image Container */}
+              <div className="relative h-64 overflow-hidden">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
+              {/* Caption */}
+              <div className="p-4 text-center">
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{image.alt}</h3>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Image Popup */}
+     {/* Image Popup */}
       {selectedImage && (
         <div
           className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
@@ -192,7 +207,9 @@ export default function DholeraProgressPage() {
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
-            <div className="bg-white p-4 text-center"> <h3 className="text-lg font-bold">{selectedImage.alt}</h3> <p className="text-gray-600">{selectedImage.caption}</p> </div>
+            <div className="bg-white p-4 text-center">
+              <h3 className="text-lg font-bold">{selectedImage.alt}</h3>
+            </div>
           </div>
         </div>
       )}
