@@ -1,5 +1,5 @@
 import React from "react";
-import dholeraSite from "@/assets/dholera-smart-city-home-image.webp";
+import dholeraSite from "@/assets/dholera-smart-city-home-image2.webp";
 import Image from "next/image";
 import Link from "next/link";
 import Magnet from "./Magnet";

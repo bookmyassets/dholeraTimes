@@ -111,7 +111,7 @@ export default function WhyDT() {
     // Observe all animation elements
     document
       .querySelectorAll(
-        ".fade-in-up, .feature-item, .project-image, .amenity-item, .investment-calculator"
+        ".fade-in-up, .feature-item, .project-image, .amenity-item, .investment-calculator",
       )
       .forEach((el) => observer.observe(el));
 
@@ -247,12 +247,16 @@ export default function WhyDT() {
             {/* Left Side - Header */}
             <div className="md:col-span-2 text-center">
               <h2 className="text-2xl md:text-[28px] font-bold text-[#151f28] mt-6 mb-6">
-                Why Choose Dholera Times?
+                Your Trusted Partner in Dholera Smart City
               </h2>
               <p className="text-gray-600">
-                Choosing Dholera Times means investing with confidence in
-                AUDA-approved, government-backed Dholera residential plots. We
-                offer:
+                Dholera Times focuses on verified information, structured
+                guidance, and transparent processes for buyers exploring
+                opportunities in Dholera Smart City. Our approach emphasizes
+                legal clarity, location awareness, and long-term development
+                potential so investors can make well-informed property
+                decisions.
+                
               </p>
             </div>
 
@@ -275,7 +279,9 @@ export default function WhyDT() {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg text-[#151f28]">{feature.title}</h3>
+                      <h3 className="text-lg text-[#151f28]">
+                        {feature.title}
+                      </h3>
                     </div>
                   </div>
                 ))}

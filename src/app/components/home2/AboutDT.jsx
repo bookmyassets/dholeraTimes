@@ -2,7 +2,7 @@ import React from "react";
 import dholeraSite from "@/assets/westwyn-estate-home-image.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Clock, CheckCircle2, Sparkles, ArrowRight } from "lucide-react";
+import { MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function AboutDT() {
   const locationFeatures = [

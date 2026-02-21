@@ -1,7 +1,8 @@
 "use client";
 import { AnimatePresence } from "framer-motion";
 import React, { useState, useEffect } from "react";
-
+import Image from "next/image";
+import wc from "@/assets/residential/orchid.webp";
 import {
   FaWhatsapp,
   FaMapMarkerAlt,
@@ -15,6 +16,7 @@ import {
   FaChartLine,
   FaHome,
   FaTree,
+  FaArrowAltCircleUp,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -113,7 +115,7 @@ const WestWynAboutSection = () => {
     }
   };
 
-  const investmentFeatures = [
+  const locationFeatures = [
     {
       icon: FaCity,
       title: "Smart City Advantage",
@@ -149,7 +151,8 @@ const WestWynAboutSection = () => {
       title: "Lifestyle Amenities & Digital Ease",
       description: "Gated campus, internal roads, street lights, water, power, CCTV, landscaped gardens, and an integrated digital booking system with instant documents.",
       highlight: "Modern amenities"
-    }
+    },
+   
   ];
 
   return (
@@ -169,92 +172,87 @@ const WestWynAboutSection = () => {
       <div className="absolute top-0 right-0 w-64 h-64 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 py-16">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Orchid
-          </h2>
-
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Orchid is a premium residential plotting community situated in Gamph
+      <div className="text-center">
+              <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
+                Orchid
+              </h2>
+            </div>
+            <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-4">
+              {/* Left Section - Header */}
+              <div className="text-center mb-8 md:w-1/2">
+                <div className="h-full flex flex-col">
+                  <p className="text-base text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-4">
+                    Orchid is a premium residential plotting community situated in Gamph
             village, within the heart of the rapidly emerging Dholera Smart City
             (Dholera SIR). Strategically positioned along the DMIC corridor,
             Orchid brings investors the perfect mix of legally secure plots,
             modern township facilities, and digital ease of ownership.
-          </p>
-        </div>
-
-        <div className="max-w-7xl mx-auto gap-12 items-stretch">
-          {/* Left Content - Enhanced */}
-          <div className="space-y-8 h-full">
-            <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300">
-              <div className="flex justify-center items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#debe6b] to-[#c9992a] rounded-xl flex items-center justify-center shadow-lg">
-                  <svg
-                    className="w-7 h-7 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-2xl text-center font-bold text-gray-900">
-                    Why Invest in Orchid?
-                  </h3>
-                  <p className="text-[#debe6b] text-center font-medium">
-                    Premium Investment Opportunity in Dholera Smart City
                   </p>
+      
+                  <div className="flex-grow flex items-center">
+                    <Image
+                      src={wc} // <-- replace with your paradise image variable
+                      alt="Paradise Project"
+                      className="rounded-xl w-full"
+                    />
+                  </div>
                 </div>
               </div>
-
-              <div className="mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {investmentFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="relative flex flex-col items-center text-center p-6 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
-                  >
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className="w-6 h-6 text-[#debe6b]" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-900 text-sm leading-tight mb-2">
-                        {feature.title}
-                      </h4>
-                      <p className="text-xs text-gray-600 leading-relaxed mb-2">
-                        {feature.description}
-                      </p>
-                      <p className="text-xs text-[#debe6b] font-semibold">
-                        {feature.highlight}
-                      </p>
-                    </div>
+      
+              {/* Right Section - Location Features */}
+              <div className="md:w-1/2">
+                <div className="bg-white/80 backdrop-blur-sm p-4 md:p-8 rounded-3xl shadow-xl border border-gray-100/50 h-full transform hover:shadow-2xl transition-all duration-300 flex flex-col">
+                  <div className="mb-6 text-center">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                      Strategic Location Advantage
+                    </h3>
+                    <p className="text-[#debe6b] font-medium text-sm md:text-base">
+                      Village Gamph, Dholera
+                    </p>
                   </div>
-                ))}
+      
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 flex-grow">
+                    {locationFeatures.map((feature, index) => (
+                      <div
+                        key={index}
+                        className="relative flex flex-col items-center text-center p-3 md:p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-100/50 hover:border-[#debe6b]/30 hover:shadow-lg transition-all duration-300 group"
+                      >
+                        <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#f8f5e6] to-[#fefcf0] rounded-lg flex items-center justify-center mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <feature.icon className="w-5 h-5 md:w-6 md:h-6 text-[#debe6b]" />
+                        </div>
+      
+                        <div>
+                          <p className="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 md:mb-2">
+                            {feature.title}
+                          </p>
+                          <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-
-              <p className="text-gray-700 mb-8 leading-relaxed text-lg border-l-4 border-[#debe6b] pl-4 italic">
-                "Every plot is designed as a secure, future-ready investment that grows with Dholera's transformation."
+            </div>
+      
+            {/* Bottom Quote + CTA */}
+            <div className="max-w-5xl mx-auto px-4 pb-8">
+              <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#debe6b] pl-3 md:pl-4 italic">
+                "An ideal investment opportunity in Dholera Smart City with legal
+                security, modern infrastructure, and strong growth potential."
               </p>
-
+      
               <div className="flex flex-col sm:flex-row gap-4">
                 <a href="https://wa.me/919958993549" className="flex-1">
-                  <button className="w-full bg-white border-2 border-[#debe6b] text-[#debe6b] px-8 py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg">
+                  <button className="w-full bg-white border-2 border-[#debe6b] text-[#debe6b] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg text-sm md:text-base">
                     <FaWhatsapp className="w-5 h-5" />
                     Book Site Visit
                   </button>
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   );
 };

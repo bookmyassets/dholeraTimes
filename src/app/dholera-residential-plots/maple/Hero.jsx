@@ -53,21 +53,6 @@ export default function Hero() {
       <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-4">
-            <nav className="flex items-center space-x-2 text-sm text-blue-200 mb-6">
-              <Link href="/" className="hover:text-white">
-                Home
-              </Link>
-              <span>/</span>
-              <Link
-                href="/dholera-residential-plots"
-                className="hover:text-white"
-              >
-                Projects
-              </Link>
-              <span>/</span>
-              <span className="text-white">Maple</span>
-            </nav>
-
             {/* Image Container */}
             <div className="relative min-h-[250px] md:min-h-[min(600px,80vh)] ">
               {/* Background Image */}
@@ -108,9 +93,6 @@ export default function Hero() {
                           <br /> WestWyn Estate
                         </h1>
                       </a>
-                      {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
-                                    {post.description}
-                                    </p> */}
                     </div>
 
                     {/* Right Column - Contact & Buttons */}
