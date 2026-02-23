@@ -1097,6 +1097,7 @@ export default function NRIInvestmentGuide() {
               </strong>
               , structured due diligence is essential before committing to any
               Dholera investment opportunity.
+              
             </p>
           </div>
         </div>
