@@ -200,7 +200,7 @@ const WestWynAboutSection = () => {
 
       <div className="max-w-5xl mx-auto px-4 pb-8">
         <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#d3b36b] pl-3 md:pl-4 italic">
-          "Every plot is designed as a secure, future-ready investment that
+          "Every Dholera plot is designed as a secure, future-ready investment that
           grows with Dholera's transformation."
         </p>
 

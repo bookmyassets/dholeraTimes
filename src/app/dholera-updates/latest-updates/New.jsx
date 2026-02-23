@@ -20,17 +20,17 @@ const formatDate = (dateString) => {
 
 export default async function New() {
   let posts = [];
-    try {
+  try {
     const postsData = await getNews();
     posts = Array.isArray(postsData) ? postsData : [];
-    
+
     // Sort by publishedAt date (newest first)
     posts.sort((a, b) => {
       const dateA = new Date(a.publishedAt || a._createdAt || 0);
       const dateB = new Date(b.publishedAt || b._createdAt || 0);
       return dateB - dateA; // Descending order (newest first)
     });
-    
+
     console.log("Posts data fetched:", posts.length);
   } catch (error) {
     console.error("Error fetching blog posts:", error);
@@ -49,7 +49,7 @@ export default async function New() {
     .sort(
       (a, b) =>
         new Date(b.publishedAt || b._createdAt) -
-        new Date(a.publishedAt || a._createdAt)
+        new Date(a.publishedAt || a._createdAt),
     )
     .slice(0, 3);
 
@@ -61,8 +61,8 @@ export default async function New() {
         content=" Discover the latest on Dholera SIR! Get real-time updates on airport, metro, expressways, and industrial projects to help you make smart investment choices."
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/dholera-updates/latest-updates"
+        rel="canonical"
+        href="https://www.dholeratimes.com/dholera-updates/latest-updates"
       />
       <div className="min-h-screen relative overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-4 pt-12 pb-16">
@@ -74,16 +74,16 @@ export default async function New() {
                   Dholera SIR Latest Updates
                 </h1>
                 <p className="text-[#151f28] mb-8">
-                  Stay updated with the latest insights about Dholera Special
-                  Investment Region, infrastructure developments, and smart city
-                  investment opportunities.
+                  Stay updated with the latest insights about Dholera SIR,
+                  infrastructure developments, and smart city investment
+                  opportunities.
                 </p>
               </div>
 
               {safePosts.length > 0 ? (
                 <div className="space-y-8">
                   {/* Featured Blog Post */}
-                
+
                   {/* Smaller Blog Posts Grid */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {safePosts.slice(0).map((post, index) => (
@@ -117,16 +117,16 @@ export default async function New() {
                               {post.title ||
                                 `Dholera Investment Guide ${index + 2}`}
                             </h3>
-                          <div className="flex items-center justify-between">
-                            <p className="text-sm text-gray-400">
-                              {formatDate(post.publishedAt || post._createdAt)}
-                            </p>
-                            <button className="font-medium hover:underline text-[#d3b36b]">
-                            Read More →
-                          </button>
-                            
-                          </div>
-
+                            <div className="flex items-center justify-between">
+                              <p className="text-sm text-gray-400">
+                                {formatDate(
+                                  post.publishedAt || post._createdAt,
+                                )}
+                              </p>
+                              <button className="font-medium hover:underline text-[#d3b36b]">
+                                Read More →
+                              </button>
+                            </div>
                           </div>
                         </Link>
                       </article>

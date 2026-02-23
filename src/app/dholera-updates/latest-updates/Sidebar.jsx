@@ -247,7 +247,7 @@ export default function SidebarWithForm({ popularArticles }) {
       {/* Get Our Free Guide Widget */}
       <div className="bg-[#f9f9f9] rounded-xl shadow-sm p-6 border border-gray-200">
         <h3 className="text-lg font-bold text-gray-900 mb-4">
-          Get Verified Plot Details and Plan Layout 
+          Get Verified Dholera Plot Details and Plan Layout 
         </h3>
         <p className="text-gray-600 text-sm mb-6">
           Download our comprehensive guide covering investment opportunities,

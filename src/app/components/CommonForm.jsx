@@ -235,7 +235,7 @@ export default function CommonForm({ title }) {
       <section className="py-12 bg-gray-200">
         <div className="container mx-auto px-6 sm:px-12">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-[#151f28] text-xl sm:text-4xl font-bold text-center">
+            <h2 className="text-[#151f28] text-xl sm:text-2xl font-bold text-center">
               {title}
             </h2>
             

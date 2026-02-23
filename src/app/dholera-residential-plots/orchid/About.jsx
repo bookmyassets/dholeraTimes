@@ -6,17 +6,11 @@ import wc from "@/assets/residential/orchid.webp";
 import {
   FaWhatsapp,
   FaMapMarkerAlt,
-  FaRoad,
-  FaPlane,
-  FaIndustry,
-  FaClock,
   FaCity,
   FaRocket,
   FaShieldAlt,
   FaChartLine,
   FaHome,
-  FaTree,
-  FaArrowAltCircleUp,
 } from "react-icons/fa";
 
 const WestWynAboutSection = () => {
@@ -26,11 +20,6 @@ const WestWynAboutSection = () => {
     amenities: 0,
   });
 
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-  const [isBrochureFormOpen, setIsBrochureFormOpen] = useState(false);
-  const [formTitle, setFormTitle] = useState("");
-  const [formHeadline, setFormHeadline] = useState("");
-  const [buttonName, setButtonName] = useState("");
   const [formType, setFormType] = useState("");
 
   // Animation for counters
@@ -185,7 +174,7 @@ const WestWynAboutSection = () => {
                     Orchid is a premium residential plotting community situated in Gamph
             village, within the heart of the rapidly emerging Dholera Smart City
             (Dholera SIR). Strategically positioned along the DMIC corridor,
-            Orchid brings investors the perfect mix of legally secure plots,
+            Orchid brings investors the perfect mix of legally secure Dholera plots,
             modern township facilities, and digital ease of ownership.
                   </p>
       
@@ -239,7 +228,7 @@ const WestWynAboutSection = () => {
             {/* Bottom Quote + CTA */}
             <div className="max-w-5xl mx-auto px-4 pb-8">
               <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#debe6b] pl-3 md:pl-4 italic">
-                "An ideal investment opportunity in Dholera Smart City with legal
+                "An ideal Dholera investment opportunity in Dholera Smart City with legal
                 security, modern infrastructure, and strong growth potential."
               </p>
       

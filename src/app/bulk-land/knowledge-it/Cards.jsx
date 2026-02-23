@@ -185,7 +185,7 @@ export default function KnowledgeITZoneCards() {
       {/* Section 1 */}
       <section>
         <SectionHeader
-          label="Zoning Overview"
+          label="Dholera Zoning Overview"
           title="What's Allowed in Knowledge and IT Zones?"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">

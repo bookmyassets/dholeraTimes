@@ -29,9 +29,9 @@ export default function Hero() {
 
   const projectFeatures = [
     { icon: "📐", title: "Plot Size", value: "177-300 Sq.Yards" },
+    { icon: "🏗️", title: "Project Type", value: "Residential Dholera Plots" },
     { icon: "💰", title: "Starting Price", value: "₹6,700/Sq.Yd" },
-    { icon: "🏗️", title: "Project Type", value: "Residential Plots" },
-    { icon: "📍", title: "Location", value: "Dholera" },
+    { icon: "📍", title: "Location", value: "Dholera SIR" },
   ];
 
   return (

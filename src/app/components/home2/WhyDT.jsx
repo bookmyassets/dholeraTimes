@@ -19,7 +19,7 @@ import {
 const features = [
   {
     icon: govtApprovedProject,
-    title: "Verified AUDA-approved plots",
+    title: "Verified AUDA-approved Dholera plots",
     description: "Fully government approved and verified",
   },
   {
@@ -247,12 +247,12 @@ export default function WhyDT() {
             {/* Left Side - Header */}
             <div className="md:col-span-2 text-center">
               <h2 className="text-2xl md:text-[28px] font-bold text-[#151f28] mt-6 mb-6">
-                Your Trusted Partner in Dholera Smart City
+                Your Trusted Partner in Dholera SIR
               </h2>
               <p className="text-gray-600">
                 Dholera Times focuses on verified information, structured
                 guidance, and transparent processes for buyers exploring
-                opportunities in Dholera Smart City. Our approach emphasizes
+                opportunities in Dholera SIR. Our approach emphasizes
                 legal clarity, location awareness, and long-term development
                 potential so investors can make well-informed property
                 decisions.

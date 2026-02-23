@@ -35,7 +35,7 @@ export default function Home2Main() {
       </div>
       <div>
         <BulkLand
-          title="Invest in Registry-Ready Plots in Dholera Under ₹10 Lakh"
+          title="Invest in Registry-Ready Plots in Dholera SIR Under ₹10 Lakh"
           buttonName="Get A Call Back"
           pageName="Home"
         />

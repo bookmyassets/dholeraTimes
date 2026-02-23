@@ -237,7 +237,7 @@ const WestWynAboutSection = () => {
       {/* Bottom Quote + CTA */}
       <div className="max-w-5xl mx-auto px-4 pb-8">
         <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#debe6b] pl-3 md:pl-4 italic">
-          "An ideal investment opportunity in Dholera Smart City with legal
+          "An ideal Dholera investment opportunity in Dholera Smart City with legal
           security, modern infrastructure, and strong growth potential."
         </p>
 

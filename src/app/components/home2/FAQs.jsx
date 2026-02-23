@@ -4,39 +4,39 @@ import { Plus, Minus, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
-    question: "How far is Dholera from Ahmedabad?",
+    question: "How far is Dholera SIR from Ahmedabad?",
     answer:
-      "Dholera is approximately 109 km from Ahmedabad. Once the Ahmedabad–Dholera Expressway is fully operational, travel time will reduce significantly, improving connectivity and boosting real estate potential.",
+      "Dholera SIR is approximately 109 km from Ahmedabad. Once the Ahmedabad–Dholera Expressway is fully operational, travel time will reduce significantly, improving connectivity and boosting real estate potential.",
   },
   {
-    question: "Is Dholera suitable for NRIs to invest?",
+    question: "Is Dholera SIR suitable for NRIs to invest?",
     answer:
-      "Yes. Dholera is a government-backed smart city with transparent planning, structured TP zones, and high long-term appreciation potential. With clear documentation and regulated development, it is considered a safe and attractive option for NRI investors.",
+      "Yes. Dholera SIR is a government-backed smart city with transparent planning, structured TP zones, and high long-term appreciation potential. With clear documentation and regulated development, it is considered a safe and attractive option for NRI investors.",
   },
   {
-    question: "Is my land investment secure in Dholera?",
+    question: "Is my land investment secure in Dholera SIR?",
     answer:
       "Your investment is secure when you purchase NA (Non-Agricultural) / NOC-approved plots with clear title verification and proper documentation. Buying within approved TP zones through verified developers ensures legal safety and transparency.",
   },
   {
-    question: "When will Dholera Smart City be fully developed?",
+    question: "When will Dholera SIR be fully developed?",
     answer:
-      "Dholera is being developed in phases. The Activation Area infrastructure is already operational, and major projects like the International Airport and Expressway are progressing rapidly. Growth is ongoing and structured as per the master development plan.",
+      "Dholera SIR is being developed in phases. The Activation Area infrastructure is already operational, and major projects like the International Airport and Expressway are progressing rapidly. Growth is ongoing and structured as per the master development plan.",
   },
   {
-    question: "What makes Dholera different from other cities?",
+    question: "What makes Dholera SIR different from other cities?",
     answer:
-      "Dholera is not an extension of an existing city. It is a fully planned Greenfield Smart City built from scratch with organized zoning, underground utilities, smart infrastructure, wide roads, and global-standard connectivity.",
+      "Dholera SIR is not an extension of an existing city. It is a fully planned Greenfield Smart City built from scratch with organized zoning, underground utilities, smart infrastructure, wide roads, and global-standard connectivity.",
   },
   {
-    question: "Is Dholera a government project?",
+    question: "Is Dholera SIR a government project?",
     answer:
-      "Yes. Dholera Smart City is a government-planned and government-backed project under the Delhi-Mumbai Industrial Corridor (DMIC), making it one of India's most structured and transparent urban development initiatives.",
+      "Yes. Dholera SIR is a government-planned and government-backed project under the Delhi-Mumbai Industrial Corridor (DMIC), making it one of India's most structured and transparent urban development initiatives.",
   },
   {
-    question: "Is Dholera good for long-term investment?",
+    question: "Is Dholera SIR good for long-term investment?",
     answer:
-      "Yes. Dholera is considered a long-term growth destination due to massive infrastructure spending, industrial investments, and smart city planning. It is not positioned as a short-term speculative market, but rather a strategic future-focused investment opportunity.",
+      "Yes. Dholera SIR is considered a long-term growth destination due to massive infrastructure spending, industrial investments, and smart city planning. It is not positioned as a short-term speculative market, but rather a strategic future-focused investment opportunity.",
   },
   {
     question: "What are the major projects driving growth in Dholera?",

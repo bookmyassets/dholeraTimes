@@ -11,7 +11,7 @@ export default function page() {
             <Hero/>
             <WestWynAboutSection/>
             <div className="">
-                      <CommonForm title="Missed Pride? Discover Westwyn Estate Registry Ready Plots under 10 Lakh" />
+                      <CommonForm title="Missed Pride? Discover Westwyn Estate Registry Ready Dholera Plots under 10 Lakh" />
                     </div>
 
         </div>

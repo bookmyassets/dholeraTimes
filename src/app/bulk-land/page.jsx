@@ -86,7 +86,7 @@ export default function page() {
 
       <div>
         <h1 className="text-2xl  md:text-3xl pt-8 font-bold text-black text-center mb-2">
-          Explore Bulk Land Growth Zones in Dholera
+          Explore Bulk Land Growth Zones in Dholera SIR
         </h1>
       </div>
 
@@ -95,10 +95,10 @@ export default function page() {
           Looking to invest in bulk land in Dholera Smart City? This is the
           right time to explore large, legally approved land parcels designed
           for high-growth opportunities. With modern infrastructure, planned
-          development, and government-backed progress, Dholera is becoming a
+          development, and government-backed progress, Dholera SIR is becoming a
           prime destination for residential, commercial, and industrial
           projects. Whether you are planning a township, business hub, or
-          long-term investment, bulk land in Dholera offers strategic location
+          long-term investment, bulk land in Dholera SIR offers strategic location
           advantages and strong future potential. Connect with us to get
           verified details on premium bulk land options and make an informed
           investment decision.
@@ -156,7 +156,7 @@ export default function page() {
           ))}
         </div>
       </div>
-      <BulkLand title="Looking to Invest in Bulk Land Parcels in Dholera Smart City" />
+      <BulkLand title="Looking to Invest in Bulk Land Parcels in Dholera SIR" />
     </>
   );
 }

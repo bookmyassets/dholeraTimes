@@ -406,10 +406,10 @@ export default function Projects() {
                     >
                       <div className="text-center mb-4">
                         <h3
-                          className="text-2xl lg:text-3xl font-bold mb-4"
+                          className="text-xl lg:text-2xl font-bold mb-4"
                           style={{ color: "#fbfbfb" }}
                         >
-                          Verified plots under ₹10 Lakh only,
+                          Verified Dholera plots under ₹10 Lakh only,
                           <br /> 5 Minute from the expressway
                         </h3>
                         {/* <p

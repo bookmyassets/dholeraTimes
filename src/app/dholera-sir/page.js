@@ -94,13 +94,13 @@ export default async function BlogsPage() {
           <div className="lg:w-1/4 sticky top-6">
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d]  mb-8">
               <LeadFormSlug
-                title="Invest in Registry Ready Plots near Dholera Expressway under ₹10 Lakh"
+                title="Invest in Registry Ready Dholera Plots near Dholera Expressway under ₹10 Lakh"
                 buttonName="Get A Call Back"
               />
             </div>
             <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-[#d7b56d] ">
               <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                Latest News on Dholera
+                Latest News on Dholera SIR
               </h2>
               {trendingBlogs.length > 0 ? (
                 <div className="space-y-6">
@@ -146,7 +146,7 @@ export default async function BlogsPage() {
             Stay Updated with Dholera SIR
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            Subscribe to our newsletter for the latest investment opportunities
+            Subscribe to our newsletter for the latest dholera investment opportunities
             and updates.
           </p>
           <Link

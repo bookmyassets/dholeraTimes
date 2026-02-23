@@ -1103,8 +1103,8 @@ export default function NRIInvestmentGuide() {
 
         {/* ── What Makes Dholera Different ── */}
         <div className="max-w-6xl mx-auto px-4 mb-8">
-          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4">
-            What Makes Dholera Different From Other Upcoming Smart Cities in
+          <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-4"> 
+            What Makes Dholera SIR Different From Other Upcoming Smart Cities in
             India?
           </h2>
           <p className="text-base text-gray-700 mb-4">

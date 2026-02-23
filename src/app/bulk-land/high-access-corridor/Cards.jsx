@@ -207,7 +207,7 @@ export default function HighAccessCorridorCards() {
       {/* Section 2 */}
       <section>
         <SectionHeader
-          label="Investment Benefits"
+          label="Dholera Investment Benefits"
           title="Why Invest in Dholera High Access Corridor Zone?"
         />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
