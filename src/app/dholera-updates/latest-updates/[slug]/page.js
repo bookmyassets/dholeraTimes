@@ -81,7 +81,6 @@ const TrendingBlogItem = ({ post }) => {
   );
 };
 
-
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
   const site = "dholera-times";
@@ -564,8 +563,6 @@ export default async function BlogDetail({ params }) {
       year: "numeric",
     });
 
-    const canonicalUrl = `https://www.dholeratimes.com/dholera-updates/latest-updates/${post.slug.current}`;
-
     return (
       <>
         <div className="bg-white min-h-screen">
@@ -574,7 +571,11 @@ export default async function BlogDetail({ params }) {
           <meta name="description" content={post.metaDescription} />
           <meta name="keywords" content={post.keywords} />
           <meta name="publisher" content="Dholera Times" />
-          <link rel="canonical" href={canonicalUrl} />
+          <link
+            rel="canonical"
+            href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
+          />
+
           <meta name="robots" content="index, follow" />
           <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
           <div className="bg-white shadow-sm sticky top-0 z-30" />
@@ -762,7 +763,7 @@ export default async function BlogDetail({ params }) {
                       {trendingBlogs && trendingBlogs.length > 0 ? (
                         trendingBlogs
                           .filter((post) => post.slug.current !== slug) // Filter out the current blog
-                          .slice(0,5)
+                          .slice(0, 5)
                           .map((post) => (
                             <div key={post._id} className="mb-3">
                               <TrendingBlogItem post={post} />

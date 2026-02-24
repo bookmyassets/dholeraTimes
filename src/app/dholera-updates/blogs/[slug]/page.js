@@ -57,14 +57,6 @@ const extractHeadings = (body) => {
 const TrendingBlogItem = ({ post }) => {
   return (
     <Link href={`/dholera-updates/blogs/${post.slug.current}`}>
-      
-
-      <link
-        rel="canonical"
-        href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
-      />
-    
-
       <div className="flex gap-4 items-center bg-white hover:bg-gray-50 p-4 rounded-lg border border-gray-100 transition-all hover:shadow-md">
         {post.mainImage && (
           <div className="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0">
@@ -126,7 +118,7 @@ export default async function BlogDetail({ params }) {
       );
     }
 
-   const components = {
+    const components = {
       types: {
         image: ({ value }) => {
           if (!value?.asset) return null;
@@ -515,7 +507,7 @@ export default async function BlogDetail({ params }) {
       },
     };
 
-     const TableOfContent = ({ headings }) => {
+    const TableOfContent = ({ headings }) => {
       // Filter for valid headings with text content
       const validHeadings =
         headings?.filter((heading) => {
@@ -565,14 +557,12 @@ export default async function BlogDetail({ params }) {
 
     // Format date for display
     const formattedDate = new Date(
-      post.publishedAt || post._createdAt
+      post.publishedAt || post._createdAt,
     ).toLocaleDateString("en-US", {
       day: "numeric",
       month: "long",
       year: "numeric",
     });
-
-    const canonicalUrl = `https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`;
 
     return (
       <div className="bg-white min-h-screen">
@@ -585,7 +575,10 @@ export default async function BlogDetail({ params }) {
         <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
         <div className="bg-white shadow-sm sticky top-0 z-30" />
 
-        <link rel="canonical" href={canonicalUrl} />
+        <link
+          rel="canonical"
+          href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
+        />
 
         {/* Main content */}
         <main className="max-w-7xl mx-auto px-4 py-8">
@@ -772,7 +765,7 @@ export default async function BlogDetail({ params }) {
                     {trendingBlogs && trendingBlogs.length > 0 ? (
                       trendingBlogs
                         .filter((post) => post.slug.current !== slug) // Filter out the current blog
-                        .slice(0,5)
+                        .slice(0, 5)
                         .map((post) => (
                           <div key={post._id} className="mb-3">
                             <TrendingBlogItem post={post} />
@@ -901,7 +894,7 @@ export default async function BlogDetail({ params }) {
                                       </svg>
                                       <span className="text-xs font-medium">
                                         {new Date(
-                                          blog.publishedAt
+                                          blog.publishedAt,
                                         ).toLocaleDateString("en-US", {
                                           month: "short",
                                           day: "numeric",
@@ -1024,7 +1017,7 @@ export default async function BlogDetail({ params }) {
                                   </svg>
                                   <span className="text-sm font-medium">
                                     {new Date(
-                                      blog.publishedAt
+                                      blog.publishedAt,
                                     ).toLocaleDateString("en-US", {
                                       year: "numeric",
                                       month: "short",
