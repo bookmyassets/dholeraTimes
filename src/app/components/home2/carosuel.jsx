@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 /* image import */
-import hero1 from "@/assets/test/westwyn-estate-desktop-banner-dholera-times.webp";
-import hero2 from "@/assets/test/mega-projects-dholera-desktop-banner-dholera-times.webp";
-import hero3 from "@/assets/test/dholera-desktop-banner-dholera-times.webp";
-import heroM1 from "@/assets/test/westwyn-estate-mobile-banner-dholera-times.webp";
-import heroM2 from "@/assets/test/mega-projects-mobile-banner-dholera-times.webp";
-import heroM3 from "@/assets/test/dholera-mobile-banner-dholera-times.webp";
+import hero1 from "@/assets/hero/dholera-sir-greenfield-smart-city-banner-dholera-times.webp";
+import hero2 from "@/assets/hero/dholera-sir-semiconductor-city-banner-dholera-times.webp";
+import hero3 from "@/assets/hero/westwyn-estate-residential-plots-in-dholera-banner.webp";
+import heroM1 from "@/assets/hero/dholera-smart-city-mobile-banner-dholera-times.webp";
+import heroM2 from "@/assets/hero/dholera-sir-semiconductor-city-mobile-banner-dholera-times.webp";
+import heroM3 from "@/assets/hero/westwyn-estate-mobile-banner-dholera-times.webp";
 import BrochureForm from "../BrochureForm";
 
 export default function HOME2() {
@@ -95,7 +95,7 @@ export default function HOME2() {
                   alt={slide.alt}
                   priority={index === 0}
                   fetchPriority="high"
-                  className="object-cover w-[100vw] h-[80vh]"
+                  className=" w-[100vw] h-[80vh]"
                 />
 
                 {/* Clickable area for phone number - Desktop */}
