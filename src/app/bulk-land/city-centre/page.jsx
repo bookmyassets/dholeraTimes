@@ -185,7 +185,7 @@ export default function page() {
                   Key Permissions
                 </h3>
                 <p className="text-gray-700 text-sm md:text-lg font-medium">
-                 Dholera Commercial & Hospitality Development
+                  Dholera Commercial & Hospitality Development
                 </p>
               </div>
               <div className="flex flex-col items-center">
@@ -212,15 +212,18 @@ export default function page() {
             <div>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
                 The City Centre is the heartbeat of Dholera Smart City, blending
-                commerce, governance, and culture. Planned for retail, hotels,
-                corporate towers, and civic spaces, it is the most prestigious
-                hub of Dholera Project.
+                commerce, governance, and culture. As a key part of the Dholera
+                Smart City project, it is planned for retail, hotels, corporate
+                towers, and civic spaces, making it the most prestigious hub of
+                the Dholera Project.
               </p>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 With seamless connectivity to Dholera International Airport, the
                 City Centre ensures maximum visibility, footfall, and
                 global-standard facilities, making it a landmark destination of
-                Dholera, Gujarat.
+                Dholera, Gujarat. This prime urban core highlights the
+                integrated planning and future-ready vision of the Dholera Smart
+                City project.
               </p>
             </div>
           </div>

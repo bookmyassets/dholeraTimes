@@ -191,25 +191,28 @@ export default function page() {
       <div>
         {/* Description Section */}
         <div className="max-w-5xl mx-auto text-justify px-2 md:px-4 py-8">
-          <p className="text-center mb-4 font-semibold text-lg md:text-2xl">Future-Ready Residential Bulk Land in Dholera</p>
+          <p className="text-center mb-4 font-semibold text-lg md:text-2xl">
+            Future-Ready Residential Bulk Land in Dholera
+          </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             {/* Text Content */}
             <div className="space-y-6">
               <div>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-                  Where homes meet opportunity the Residential Zone in Dholera
+                  Where homes meet opportunity, the Residential Zone in Dholera
                   Smart City is designed for people, progress, and prosperity.
-                  It offers modern housing supported by schools, hospitals,
-                  retail outlets, and recreation spaces.
+                  As part of the Dholera Smart City project, it offers modern
+                  housing supported by schools, hospitals, retail outlets, and
+                  recreation spaces.
                 </p>
                 <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                   Built for families, developers, and investors, this zone
-                  provides quality living with profitable growth. As part of
+                  provides quality living with profitable growth. As part of the
                   Dholera Project under DMIC, it promotes sustainable
                   communities with green spaces, infrastructure, and
-                  connectivity to Dholera International Airport and Ahmedabad to
-                  Dholera distance corridor.
+                  connectivity to Dholera International Airport and the
+                  Ahmedabad–Dholera distance corridor.
                 </p>
               </div>
             </div>
@@ -230,7 +233,7 @@ export default function page() {
       </div>
 
       <div>
-        <ResidentialZoneCards/>
+        <ResidentialZoneCards />
       </div>
 
       <BulkLand

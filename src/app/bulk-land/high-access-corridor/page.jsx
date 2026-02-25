@@ -199,15 +199,16 @@ export default function page() {
             <div>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
                 The High Access Corridor is the growth artery of Dholera SIR,
-                offering unmatched connectivity and access to major highways. It
-                is ideal for retail hubs, hotels, corporate offices, and
-                mixed-use housing.
+                offering unmatched connectivity and access to major highways. As
+                part of the Dholera Smart City project, it is ideal for retail
+                hubs, hotels, corporate offices, and mixed-use housing.
               </p>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 With direct access to Dholera International Airport, this zone
                 combines prime frontage, world-class infrastructure, and policy
-                support making it a landmark for business and investment in
-                Dholera Smart City.
+                support, making it a landmark for business and investment in
+                Dholera Smart City. This strategic corridor reflects the
+                integrated mobility vision of the Dholera Smart City project.
               </p>
             </div>
           </div>
@@ -227,7 +228,7 @@ export default function page() {
       </div>
 
       <div>
-        <HighAccessCorridorCards/>
+        <HighAccessCorridorCards />
       </div>
 
       <HorizontalScrollInterlink properties={relatedProperties} />

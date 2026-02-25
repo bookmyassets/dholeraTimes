@@ -201,7 +201,10 @@ export default function page() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 With proximity to Dholera International Airport, this zone
                 ensures high footfall, community engagement, and business
-                opportunities in Dholera Project.
+                opportunities in the Dholera Project. As part of the Dholera
+                Smart City project, it enhances the city’s appeal as a vibrant
+                destination for leisure, tourism, and entertainment-driven
+                growth.
               </p>
             </div>
           </div>

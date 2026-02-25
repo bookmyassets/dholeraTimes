@@ -196,15 +196,17 @@ export default function page() {
             <div>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
                 The Knowledge and IT Zone is the innovation hub of Dholera Smart
-                City, fostering research, learning, and tech enterprises.
-                Designed for IT parks, universities, and startups, it
-                strengthens Dholera digital economy.
+                City, fostering research, learning, and tech enterprises. As
+                part of the Dholera Smart City project, it is designed for IT
+                parks, universities, and startups, strengthening Dholera’s
+                digital economy.
               </p>
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-                Located near Dholera International Airport, it provides
-                world-class infrastructure for IT firms, R&D labs, and
-                educational institutions. This makes Dholera Gujarat a magnet
-                for tech companies and talent.
+                It provides world-class infrastructure for IT firms, R&D labs,
+                and educational institutions. This makes Dholera Gujarat a
+                strong magnet for technology companies and skilled talent,
+                reflecting the forward-looking vision of the Dholera Smart City
+                project.
               </p>
             </div>
           </div>

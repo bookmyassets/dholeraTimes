@@ -204,7 +204,8 @@ export default function page() {
               <p className="text-gray-700 text-base md:text-lg leading-relaxed">
                 Equipped with smart utilities, power, and logistics, this
                 industrial hub positions Dholera Gujarat as a globally
-                competitive manufacturing base.
+                competitive manufacturing base. This growth-driven ecosystem
+                reflects the long-term vision of the Dholera Smart City project.
               </p>
             </div>
           </div>
