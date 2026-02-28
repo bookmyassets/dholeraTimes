@@ -201,6 +201,20 @@ const nextConfig = {
           "/dholera-updates/latest-updates/rohm-tata-semiconductor-partnership-in-dholera",
         permanent: true,
       },
+      {
+        source:
+          "/dholera-sir/dholera-railway-connectivity-update-jan-2026",
+        destination:
+          "/dholera-updates/latest-updates/dholera-railway-connectivity-update-jan-2026",
+        permanent: true,
+      },
+      {
+        source:
+          "/dholera-sir/indigenous-100-seater-aircraft-project-dholera-sir",
+        destination:
+          "/dholera-updates/latest-updates/indigenous-100-seater-aircraft-project-dholera-sir",
+        permanent: true,
+      },
     ];
   },
 };
