@@ -573,7 +573,7 @@ export default async function BlogDetail({ params }) {
           <meta name="publisher" content="Dholera Times" />
           <link
             rel="canonical"
-            href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
+            href={`https://www.dholeratimes.com/dholera-updates/latest-updates/${post.slug.current}`}
           />
 
           <meta name="robots" content="index, follow" />
