@@ -84,6 +84,14 @@ export default async function BlogsPage() {
             quality={85}
             sizes="100vw"
           />
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl md:text-5xl font-bold text-white">
+              About Dholera SIR
+            </h1>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -146,8 +154,8 @@ export default async function BlogsPage() {
             Stay Updated with Dholera SIR
           </h2>
           <p className="text-lg text-gray-300 mb-8">
-            Subscribe to our newsletter for the latest dholera investment opportunities
-            and updates.
+            Subscribe to our newsletter for the latest dholera investment
+            opportunities and updates.
           </p>
           <Link
             href="/contact"

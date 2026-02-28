@@ -82,6 +82,21 @@ const TrendingBlogItem = ({ post }) => {
   );
 };
 
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug, "dholera-times");
+
+  return {
+    title: post?.metaTitle,
+    description: post?.metaDescription,
+    keywords: post?.keywords,
+    alternates: {
+      canonical: `https://www.dholeratimes.com/dholera-updates/blogs/${slug}`,
+    },
+    robots: "index, follow",
+  };
+}
+
 export default async function BlogDetail({ params }) {
   const { slug } = await params;
   const site = "dholera-times";
@@ -566,19 +581,7 @@ export default async function BlogDetail({ params }) {
 
     return (
       <div className="bg-white min-h-screen">
-        <title>{post.metaTitle}</title>
-        <meta name="description" content={post.metaDescription} />
-        <meta name="keywords" content={post.keywords} />
-        <meta name="publisher" content="Dholera Times" />
-        <meta name="robots" content="index, follow" />
-        {/* Sticky Nav Placeholder */}
-        <SchemaMarkup post={post} relatedBlog={relatedBlogs} />
-        <div className="bg-white shadow-sm sticky top-0 z-30" />
-
-        <link
-          rel="canonical"
-          href={`https://www.dholeratimes.com/dholera-updates/blogs/${post.slug.current}`}
-        />
+       
 
         {/* Main content */}
         <main className="max-w-7xl mx-auto px-4 py-8">
