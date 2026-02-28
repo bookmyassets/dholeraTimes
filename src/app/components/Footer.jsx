@@ -116,8 +116,7 @@ export default function Footer() {
                 <p className="font-semibold text-blue-400">Branch Office</p>
 
                 <p className="text-gray-300">
-                  Westgate by true value, B-1110, Sarkhej - Gandhinagar Hwy,
-                  Makarba, Ahmedabad, Gujarat 380015
+                  Office no. 303, 3rd Floor H-110, Sector-63, Noida, Uttar Pradesh 201301
                 </p>
               </div>
 
