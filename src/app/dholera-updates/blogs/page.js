@@ -43,6 +43,7 @@ export default async function BlogsPage() {
         rel="canonical"
         href="https://www.dholeratimes.com/dholera-updates/blogs"
       />
+      <title>Explore Dholera SIR Growth and Updates</title>
       <meta name="robots" content="index, dofollow" />
 
       {/* Hero Section */}

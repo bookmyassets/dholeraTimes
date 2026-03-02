@@ -245,11 +245,7 @@ const nextConfig = {
         destination: "/dholera-sir/connectivity-makes-dholera-the-next-big-investment-hub",
         permanent: true,
       },
-      {
-        source: "/Dholera-Updates/blogs/:slug",
-        destination: "/dholera-updates/blogs/:slug",
-        permanent: true,
-      },
+
       {
         source: "/Dholera-SIR/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
         destination: "/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
