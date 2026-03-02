@@ -172,9 +172,9 @@ const WestWynAboutSection = () => {
 
 
       <div className="text-center">
-              <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
+              <h1 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
                 Pride
-              </h2>
+              </h1>
             </div>
             <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-4">
               {/* Left Section - Header */}

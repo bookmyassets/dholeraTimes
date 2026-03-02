@@ -162,9 +162,9 @@ const WestWynAboutSection = () => {
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#debe6b]/10 rounded-full blur-3xl"></div>
 
       <div className="text-center">
-              <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
+              <h1 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
                 Orchid
-              </h2>
+              </h1>
             </div>
             <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-4">
               {/* Left Section - Header */}
