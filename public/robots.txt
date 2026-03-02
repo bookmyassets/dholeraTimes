@@ -15,6 +15,8 @@ Disallow:/?MD
 Disallow:/contact/sitevisit
 Disallow:/?ND
 Disallow:/?MA
+Disallow:/?SA
+Disallow:/?SD
 Disallow:/_next/static/media/569ce4b8f30dc480-s.p.woff2
 Disallow:/api/placeholder/600/400
 Disallow:/event

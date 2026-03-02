@@ -250,6 +250,11 @@ const nextConfig = {
         destination: "/dholera-updates/blogs/:slug",
         permanent: true,
       },
+      {
+        source: "/Dholera-SIR/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
+        destination: "/dholera-updates/latest-updates/delhi-mumbai-industrial-corridor-set-to-transform-india-with-usd-100-billion-investment",
+        permanent: true,
+      },
     ];
   },
 };
