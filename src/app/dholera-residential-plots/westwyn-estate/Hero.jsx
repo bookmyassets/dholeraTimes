@@ -9,23 +9,30 @@ import BrochureDownload from "../../components/BrochureDownload";
 const FeatureCard = ({ icon, title, value }) => (
   <div className="bg-white rounded-lg p-4 border border-gray-200 text-center">
     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-      {icon}
+      <span className="text-xl">{icon}</span>
     </div>
     <h4 className="font-semibold text-gray-900 text-sm mb-1">{title}</h4>
     <p className="text-[#151f28] font-bold text-lg">{value}</p>
   </div>
 );
 
+const PhoneIcon = () => (
+  <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
+  </svg>
+);
+
+const DocIcon = () => (
+  <svg width="15" height="15" fill="none" stroke="#d3b36b" strokeWidth="2" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+  </svg>
+);
+
 export default function Hero() {
   const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
-  const openBrochureForm = () => {
-    setIsBrochureFormOpen(true);
-  };
-
-  const closeBrochureForm = () => {
-    setIsBrochureFormOpen(false);
-  };
+  const openBrochureForm = () => setIsBrochureFormOpen(true);
+  const closeBrochureForm = () => setIsBrochureFormOpen(false);
 
   const projectFeatures = [
     { icon: "📐", title: "Plot Size", value: "151 and 198 Sq.Yards" },
@@ -46,16 +53,16 @@ export default function Hero() {
         content="WestWyn Estate Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
       />
       <link
-          rel="canonical"
-          href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate"
+        rel="canonical"
+        href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate"
       />
 
-      <div className="bg-gray-100 ">
+      <div className="bg-gray-100">
         <div className="bg-[#151f28] text-white">
           <div className="max-w-7xl mx-auto px-4 py-4">
 
             {/* Image Container */}
-            <div className="relative min-h-[250px] md:min-h-[min(600px,80vh)] ">
+            <div className="relative min-h-[250px] md:min-h-[min(600px,80vh)]">
               {/* Background Image */}
               <Image
                 src={wc}
@@ -65,131 +72,137 @@ export default function Hero() {
                 priority
               />
 
-              {/* Dark overlay for contrast */}
+              {/* Dark overlay */}
               <div className="absolute inset-0 bg-black/30" />
 
-              {/* Bottom Overlay Box - Hidden on mobile, visible on desktop */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 hidden md:block">
-                <div className="bg-white/95 backdrop-blur-md rounded-t-2xl shadow-2xl border border-white/30 max-w-6xl mx-auto w-full">
-                  <div className="grid md:grid-cols-3 gap-6 p-6">
-                    {/* Left Column - Categories & Price */}
-                    <div>
-                      <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
-                          Ongoing
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-[#151f28]">
-                        ₹6,500
-                        <span className="text-sm text-gray-600 ml-1">
-                          /Sq.Yd
-                        </span>
-                      </div>
-                    </div>
+              {/* Desktop Overlay Bar — hidden on mobile */}
+              <div className="hidden md:flex absolute bottom-0 left-0 right-0 bg-[#0d1620]/90 backdrop-blur-sm border-t border-white/10 px-6 py-4 items-center gap-5">
 
-                    {/* Middle Column - Title & Description */}
-                    <div>
-                      <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                        WestWyn Estate
-                      </h1>
-                      {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
-                        {post.description}
-                      </p> */}
-                    </div>
+                {/* Status + Price */}
+                <div className="flex items-center gap-5 shrink-0">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex" style={{ width: 10, height: 10 }}>
+                      <span className="animate-ping absolute inline-flex rounded-full bg-green-400 w-full h-full opacity-75" />
+                      <span className="relative inline-flex rounded-full bg-green-500 w-[10px] h-[10px]" />
+                    </span>
+                    <span className="text-green-400 text-[11px] font-bold tracking-widest uppercase">Ongoing</span>
+                  </div>
 
-                    {/* Right Column - Contact & Buttons */}
-                    <div className="flex flex-col justify-between">
-                      <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                        <a
-                          href="tel:+919958993549"
-                          className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                        >
-                          📞 Site Visit
-                        </a>
-                        <button
-                          onClick={openBrochureForm}
-                          className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                        >
-                          📄 Brochure
-                        </button>
-                      </div>
-                      <div className=" text-[#151f28] text-xl font-semibold">
-                        <p>Immediate Possesion</p>
-                      </div>
+                  <div className="w-px h-9 bg-white/10" />
+
+                  <div>
+                    <div className="text-[#d3b36b] text-[26px] font-extrabold leading-none" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
+                      ₹6,500{" "}
+                      <span className="text-white/35 text-xs font-normal" style={{ fontFamily: "'DM Sans', sans-serif" }}>/Sq.Yd</span>
                     </div>
+                    <div className="text-white/35 text-[10px] tracking-widest uppercase mt-0.5">Starting Price</div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Mobile Only Section - Below Hero Image */}
-            <div className="md:hidden mt-6">
-              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/30 w-full">
-                <div className="grid gap-4 p-4">
-                  {/* Categories & Price */}
-                  <div>
-                    <div className="flex items-center gap-2 flex-wrap mb-3">
-                      <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
-                        Ongoing
-                      </span>
-                    </div>
-                    <div className="text-xl font-bold text-[#151f28]">
-                      ₹6,500
-                      <span className="text-sm text-gray-600 ml-1">/Sq.Yd</span>
-                    </div>
-                  </div>
+                <div className="w-px h-12 bg-white/10 shrink-0" />
 
-                  {/* Title & Description */}
-                  <div>
-                    <h1 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                      WestWyn Estate
-                    </h1>
+                {/* Title */}
+                <div className="flex-1 text-center">
+                  <div className="text-white/40 text-[10px] tracking-[0.2em] uppercase mb-1">Explore Our Latest Project</div>
+                  <h2 className="text-white text-2xl font-bold leading-tight m-0" style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.02em" }}>
+                    WestWyn Estate
+                  </h2>
+                  <div className="text-[#d3b36b]/65 text-xs mt-1" style={{ letterSpacing: "0.03em" }}>
+                    Registry Ready Plot under ₹10 Lakh
                   </div>
+                </div>
 
-                  {/* Contact & Buttons */}
-                  <div className="flex flex-col justify-between">
-                    <div className="flex items-center order-2 gap-2 text-gray-700 text-base py-2">
-                      <a
-                        href="tel:+919958993549"
-                        className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                      >
-                        📞 Site Visit
-                      </a>
-                      <button
-                        onClick={openBrochureForm}
-                        className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                      >
-                        📄 Brochure
-                      </button>
-                    </div>
-                    <div className="text-[#151f28] order-1 text-lg font-semibold">
-                      <p>Registry Ready Plot under ₹10 Lakh</p>
-                    </div>
-                  </div>
+                <div className="w-px h-12 bg-white/10 shrink-0" />
+
+                {/* CTAs */}
+                <div className="flex items-center gap-3 shrink-0">
+                  <a
+                    href="tel:+919958993549"
+                    className="flex items-center gap-2 bg-[#d3b36b] hover:bg-[#c9a558] text-[#0d1620] px-5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 hover:-translate-y-0.5"
+                    style={{ letterSpacing: "0.02em" }}
+                  >
+                    <PhoneIcon />
+                    Site Visit
+                  </a>
+
+                  <button
+                    onClick={openBrochureForm}
+                    className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#d3b36b]/50 text-white px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+                    style={{ letterSpacing: "0.02em" }}
+                  >
+                    <DocIcon />
+                    Brochure
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div>
-          <div className="bg-white border-b">
-            <div className="max-w-7xl mx-auto px-4 py-6">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {projectFeatures.map((feature, index) => (
-                  <FeatureCard key={index} {...feature} />
-                ))}
+
+        {/* Mobile Section */}
+        <div className="md:hidden mt-6 px-4">
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/30 w-full">
+            <div className="grid gap-4 p-4">
+              <div>
+                <div className="flex items-center gap-2 flex-wrap mb-3">
+                  <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
+                    Ongoing
+                  </span>
+                </div>
+                <div className="text-xl font-bold text-[#151f28]">
+                  ₹6,500
+                  <span className="text-sm text-gray-600 ml-1">/Sq.Yd</span>
+                </div>
               </div>
+
+              <div>
+                <h1 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                  WestWyn Estate
+                </h1>
+              </div>
+
+              <div className="flex flex-col justify-between">
+                <div className="text-[#151f28] text-lg font-semibold mb-2">
+                  <p>Registry Ready Plot under ₹10 Lakh</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href="tel:+919958993549"
+                    className="flex-1 text-center bg-[#d3b36b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                  >
+                    📞 Site Visit
+                  </a>
+                  <button
+                    onClick={openBrochureForm}
+                    className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    📄 Brochure
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="bg-white border-b">
+          <div className="max-w-7xl mx-auto px-4 py-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {projectFeatures.map((feature, index) => (
+                <FeatureCard key={index} {...feature} />
+              ))}
             </div>
           </div>
         </div>
       </div>
+
       <AnimatePresence>
         {brochureFormOpen && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[1000]">
             <BrochureDownload
               title="Get the Complete Project Brief"
               buttonName="Download Brochure"
-              onClose={() => closeBrochureForm()}
+              onClose={closeBrochureForm}
               link="https://cdn.sanity.io/files/c3e1h345/projects/ff6834296b06f1a58794fae05302be6507dca8a9.pdf"
             />
           </div>

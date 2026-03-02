@@ -16,6 +16,29 @@ const FeatureCard = ({ icon, title, value }) => (
   </div>
 );
 
+const PhoneIcon = () => (
+  <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z" />
+  </svg>
+);
+
+const DocIcon = () => (
+  <svg
+    width="15"
+    height="15"
+    fill="none"
+    stroke="#d3b36b"
+    strokeWidth="2"
+    viewBox="0 0 24 24"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+    />
+  </svg>
+);
+
 export default function Hero() {
   const [brochureFormOpen, setIsBrochureFormOpen] = useState(false);
 
@@ -64,60 +87,73 @@ export default function Hero() {
               />
 
               {/* Bottom Overlay Box */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 hidden md:block">
-                <div className="bg-white/95 backdrop-blur-md rounded-t-2xl shadow-2xl border border-white/30 max-w-6xl mx-auto w-full">
-                  <div className="grid md:grid-cols-3 gap-6 p-6">
-                    {/* Left Column - Categories & Price */}
-                    <div>
-                      <div className="flex items-center gap-2 flex-wrap mb-3">
-                        <span className="px-3 py-1.5 text-white bg-green-500 rounded-full text-sm font-medium">
-                          Ongoing
-                        </span>
-                      </div>
-                      <div className="text-3xl font-bold text-[#151f28]">
-                        ₹6,500
-                        <span className="text-sm text-gray-600 ml-1">
-                          /Sq.Yd
-                        </span>
-                      </div>
-                    </div>
+              <div className="hidden md:flex absolute bottom-0 left-0 right-0 bg-[#0d1620]/90 backdrop-blur-sm border-t border-white/10 px-6 py-4 items-center gap-5">
+                {/* Status */}
+                <div className="flex items-center gap-2 shrink-0">
+                  <span
+                    className="relative flex"
+                    style={{ width: 10, height: 10 }}
+                  >
+                    <span className="animate-ping absolute inline-flex rounded-full bg-green-400 w-full h-full opacity-75" />
+                    <span className="relative inline-flex rounded-full bg-green-500 w-[10px] h-[10px]" />
+                  </span>
+                  <span className="text-green-400 text-[11px] font-bold tracking-widest uppercase">
+                    Ongoing
+                  </span>
+                </div>
 
-                    {/* Middle Column - Title & Description */}
-                    <div>
-                      <a href="/dholera-residential-plots/westwyn-estate">
-                        <h1 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">
-                          <span className="text-base font-bold text-gray-900">
-                            Explore Our Latest Project
-                          </span>{" "}
-                          <br /> WestWyn Estate
-                        </h1>
-                      </a>
-                      {/* <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
-                        {post.description}
-                        </p> */}
-                    </div>
+                <div className="w-px h-9 bg-white/10 shrink-0" />
 
-                    {/* Right Column - Contact & Buttons */}
-                    <div className="flex flex-col justify-between">
-                      <div className="flex items-center gap-2 text-gray-700 text-base mb-4">
-                        <a
-                          href="tel:+919958993549"
-                          className="flex-1 text-center bg-[#debe6b] hover:bg-[#d3b15c] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                        >
-                          📞 Site Visit
-                        </a>
-                        <button
-                          onClick={openBrochureForm}
-                          className="flex-1 bg-[#151f28] text-[#d3b15c] hover:bg-[#d3b15c] hover:text-[#151f28] px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-                        >
-                          📄 Brochure
-                        </button>
-                      </div>
-                      <div className=" text-[#151f28] text-xl font-semibold">
-                        <p>Registry Ready Plot under ₹10 Lakh</p>
-                      </div>
-                    </div>
+                {/* Title + Subtitle */}
+                <div className="shrink-0 space-y-2">
+                  <Link
+                    href="/dholera-residential-plots/westwyn-estate"
+                    className="text-white text-2xl font-bold leading-tight m-0"
+                  >
+                    WestWyn Estate
+                  </Link>
+                  <div className="text-[#d3b36b] text-xs mt-1">
+                    Registry Ready Plot under ₹10 Lakh
                   </div>
+                </div>
+
+                <div className="w-px h-12 bg-white/10 shrink-0" />
+
+                {/* Price */}
+                <div className="shrink-0">
+                  <div className="text-[#d3b36b] text-[26px] font-extrabold leading-none">
+                    ₹6,500{" "}
+                    <span className="text-white/35 text-xs font-normal">
+                      /Sq.Yd
+                    </span>
+                  </div>
+                  <div className="text-white/35 text-[10px] tracking-widest uppercase mt-0.5">
+                    Starting Price
+                  </div>
+                </div>
+
+                {/* Spacer — pushes buttons to far right */}
+                <div className="flex-1" />
+
+                <div className="w-px h-12 bg-white/10 shrink-0" />
+
+                {/* CTAs — right corner */}
+                <div className="flex items-center gap-3 shrink-0">
+                  <a
+                    href="tel:+919958993549"
+                    className="flex items-center gap-2 bg-[#d3b36b] hover:bg-[#c9a558] text-[#0d1620] px-5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <PhoneIcon />
+                    Site Visit
+                  </a>
+
+                  <button
+                    onClick={openBrochureForm}
+                    className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#d3b36b]/50 text-white px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <DocIcon />
+                    Brochure
+                  </button>
                 </div>
               </div>
             </div>
@@ -140,9 +176,9 @@ export default function Hero() {
 
                   {/* Title & Description */}
                   <div>
-                    <h1 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+                    <Link href="/dholera-residential-plots/westwyn-estate" className="text-xl font-bold text-gray-900 mb-2 leading-tight">
                       WestWyn Estate
-                    </h1>
+                    </Link>
                   </div>
 
                   {/* Contact & Buttons */}
