@@ -19,5 +19,8 @@ Disallow:/_next/static/media/569ce4b8f30dc480-s.p.woff2
 Disallow:/api/placeholder/600/400
 Disallow:/event
 Disallow:/pages/
-Disallow: /cgi-bin/
+Disallow:/cgi-bin/
+Disallow:/Dholera-SIR
+Disallow:/dholera-sir/dholera-SIR-current-Status
+Disallow:/dholera-sir/running-completed-project
 Sitemap: https://www.dholeratimes.com/sitemap.xml

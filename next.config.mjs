@@ -6,9 +6,9 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: '/projects/:slug*',
-        destination: '/dholera-residential-plots/:slug*', 
-        permanent: true
+        source: "/projects/:slug*",
+        destination: "/dholera-residential-plots/:slug*",
+        permanent: true,
       },
       {
         source: "/DholeraSIR/mega-industries",
@@ -28,7 +28,7 @@ const nextConfig = {
       },
       {
         source: "/DholeraSIR/About",
-        destination: "/dholera-sir/dholera-sir",
+        destination: "/dholera-sir/about-dholera-sir",
         permanent: true,
       },
       {
@@ -87,21 +87,20 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/posts/important-tips-for-buying-plots-in-dholera-smart-city",
+        source:
+          "/Dholera-Updates/blogs/important-tips-for-buying-plots-in-dholera-smart-city",
         destination:
           "/dholera-updates/blogs/important-tips-for-buying-plots-in-dholera-smart-city",
         permanent: true,
       },
       {
         source: "/Dholera-SIR/mega-industries",
-        destination:
-          "/dholera-sir/mega-industries-in-dholera",
+        destination: "/dholera-sir/mega-industries-in-dholera",
         permanent: true,
       },
       {
         source: "/Dholera-SIR/abcd-building",
-        destination:
-          "/dholera-sir/the-abcd-building-in-dholera",
+        destination: "/dholera-sir/the-abcd-building-in-dholera",
         permanent: true,
       },
       {
@@ -122,6 +121,21 @@ const nextConfig = {
       {
         source: "/DholeraSIR/Dholera-International-Airport",
         destination: "/dholera-sir/dholera-international-airport",
+        permanent: true,
+      },
+      {
+        source: "/dholera-sir/dholera-sir",
+        destination: "/dholera-sir/about-dholera-sir",
+        permanent: true,
+      },
+      {
+        source: "/dholera-sir/dholera-expressway",
+        destination: "/dholera-sir/ahmedabad-dholera-expressway",
+        permanent: true,
+      },
+      {
+        source: "/dholera-sir/dholera-SIR-current-Status",
+        destination: "/dholera-sir/mega-industries-in-dholera",
         permanent: true,
       },
       {
@@ -175,35 +189,41 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/dholera-updates/latest-news/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        destination: "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
-        permanent: true,
-      },
-      {
-        source: "/dholera-updates/latest-news/dholera-international-airport-latest-news-2025",
-        destination: "/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025",
-        permanent: true,
-      },
-      {
-        source: "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        destination: "/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        permanent: true,
-      },
-      {
-        source: "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
-        destination: "/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        source:
+          "/dholera-updates/latest-news/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
+        destination:
+          "/dholera-updates/latest-updates/gujarat-government-seeks-rs-40-783-crore-grant-from-centre-for-semiconductor-industry",
         permanent: true,
       },
       {
         source:
-          "/dholera-sir/rohm-tata-semiconductor-partnership-in-dholera",
+          "/dholera-updates/latest-news/dholera-international-airport-latest-news-2025",
+        destination:
+          "/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025",
+        permanent: true,
+      },
+      {
+        source:
+          "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        destination:
+          "/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        permanent: true,
+      },
+      {
+        source:
+          "/dholera-updates/latest-updates/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        destination:
+          "/dholera-updates/blogs/india-s-first-semiconductor-fab-construction-begins-in-dholera-gujarat",
+        permanent: true,
+      },
+      {
+        source: "/dholera-sir/rohm-tata-semiconductor-partnership-in-dholera",
         destination:
           "/dholera-updates/latest-updates/rohm-tata-semiconductor-partnership-in-dholera",
         permanent: true,
       },
       {
-        source:
-          "/dholera-sir/dholera-railway-connectivity-update-jan-2026",
+        source: "/dholera-sir/dholera-railway-connectivity-update-jan-2026",
         destination:
           "/dholera-updates/latest-updates/dholera-railway-connectivity-update-jan-2026",
         permanent: true,
@@ -213,6 +233,21 @@ const nextConfig = {
           "/dholera-sir/indigenous-100-seater-aircraft-project-dholera-sir",
         destination:
           "/dholera-updates/latest-updates/indigenous-100-seater-aircraft-project-dholera-sir",
+        permanent: true,
+      },
+      {
+        source: "/dholera-residential-plots/abcd-building",
+        destination: "/dholera-sir/the-abcd-building-in-dholera",
+        permanent: true,
+      },
+      {
+        source: "/dholera-residential-plots/dholera-connectivity",
+        destination: "/dholera-sir/connectivity-makes-dholera-the-next-big-investment-hub",
+        permanent: true,
+      },
+      {
+        source: "/Dholera-Updates/blogs/:slug",
+        destination: "/dholera-updates/blogs/:slug",
         permanent: true,
       },
     ];
