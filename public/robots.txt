@@ -3,10 +3,8 @@ allow:
 
 Disallow:/cgi-bin/
 Disallow:/?NA
-Disallow:/*.webp$
 Disallow:/*.jpg$
 Disallow:/*.jpeg$
-Disallow:/*.png$
 Disallow:/*.svg$
 Disallow:/*.css$
 Disallow:/*.js$
