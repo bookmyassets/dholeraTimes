@@ -195,7 +195,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     blogSchema,
     organizationSchema,
     websiteSchema,
-    breadcrumbSchema
   ];
 
   // Add FAQ schema if available
