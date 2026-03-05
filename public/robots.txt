@@ -5,7 +5,6 @@ Disallow:/cgi-bin/
 Disallow:/?NA
 Disallow:/*.jpg$
 Disallow:/*.jpeg$
-Disallow:/*.svg$
 Disallow:/*.css$
 Disallow:/*.js$
 Disallow:/?MD
