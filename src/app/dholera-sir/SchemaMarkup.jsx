@@ -176,32 +176,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
     }
   };
 
-  // Breadcrumb schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": baseUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "",
-        "item": `${baseUrl}/dholera-sir`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": post.title,
-        "item": postUrl
-      }
-    ]
-  };
-
   // FAQ Schema (if you have FAQ content in your Latest Update)
   const faqSchema = post.faqs ? {
     "@context": "https://schema.org",
@@ -227,28 +201,6 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
   // Add FAQ schema if available
   if (faqSchema) {
     allSchemas.push(faqSchema);
-  }
-
-  // If there are related , add ItemList schema
-  if (relatedBlog && relatedBlog.length > 0) {
-    const relatedBlogSchema = {
-      "@context": "https://schema.org",
-      "@type": "Blogs",
-      "name": "Blog Posting",
-      "itemListElement": relatedBlog.map((post, index) => ({
-        "@type": "Blogs",
-        "position": index + 1,
-        "item": {
-          "@type": "Blog Posting",
-          "headline": post.title,
-          "url": `${baseUrl}/dholera-sir/${post.slug.current}`,
-          "description": post.description,
-          "image": post.mainImage ? urlFor(post.mainImage).width(400).height(250).url() : undefined,
-          "datePublished": post.publishedAt || post._createdAt
-        }
-      }))
-    };
-    allSchemas.push(relatedBlogSchema);
   }
 
   return (
