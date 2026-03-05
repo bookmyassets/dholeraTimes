@@ -1,12 +1,9 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
 import {
-  getblogs,
-  getNews,
   getPostBySlug,
   getProjectInfo,
   getProjects,
-  getUpdates,
 } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";

@@ -46,7 +46,7 @@ const SchemaMarkup = ({ post, relatedBlog = [] }) => {
   };
 
   const baseUrl = "https://dholeratimes.com"; // Replace with your actual domain
-  const postUrl = `${baseUrl}/dholera-updates/latest-updates/${post.slug.current}`;
+  const postUrl = `${baseUrl}/dholera-sir/${post.slug.current}`;
   
   // Main Latest Update post schema
   const blogSchema = {
