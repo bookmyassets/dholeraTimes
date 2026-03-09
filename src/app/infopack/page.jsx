@@ -152,147 +152,106 @@ const WhyDholeraGrowth = () => (
         </p>
       </AnimatedSection>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <div className="space-y-6">
-          <AnimatedSection variants={slideInLeft}>
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🚀 Infrastructure-First Planning
-              </h3>
-              <p className="text-gray-700">
-                Roads, water, and ICT systems already operational in key zones.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection variants={slideInLeft}>
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                💰 High ROI Zone
-              </h3>
-              <p className="text-gray-700">
-                Early investors gaining value as infrastructure advances.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection variants={slideInLeft}>
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🏭 Industrial Magnet
-              </h3>
-              <p className="text-gray-700">
-                Major players like TATA, Jabil, and Vedanta establishing
-                operations nearby.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-
-        <div className="space-y-6">
-
-           <AnimatedSection
-            variants={{
-              hidden: { opacity: 0, x: 60 },
-              visible: {
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
-            className="max-sm:hidden"
-          >
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🎯 Strategic Location
-              </h3>
-              <p className="text-gray-700">
-                Positioned between Ahmedabad and Bhavnagar with rapid
-                connectivity.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection variants={slideInLeft} className="sm:hidden">
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🎯 Strategic Location
-              </h3>
-              <p className="text-gray-700">
-                Positioned between Ahmedabad and Bhavnagar with rapid
-                connectivity.
-              </p>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection
-            variants={{
-              hidden: { opacity: 0, x: 60 },
-              visible: {
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
-            className="max-sm:hidden"
-          >
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🌆 Green & Sustainable
-              </h3>
-              <p className="text-gray-700">
-                India's largest planned solar park and eco-friendly smart grids.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection variants={slideInLeft} className="sm:hidden">
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                🌆 Green & Sustainable
-              </h3>
-              <p className="text-gray-700">
-                India's largest planned solar park and eco-friendly smart grids.
-              </p>
-            </div>
-          </AnimatedSection>
-
-         
-
-          <AnimatedSection
-            variants={{
-              hidden: { opacity: 0, x: 60 },
-              visible: {
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.6, ease: "easeOut" },
-              },
-            }}
-            className="max-sm:hidden"
-          >
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                ✈️ Quality of Life
-              </h3>
-              <p className="text-gray-700">
-                Designed for smart housing, healthcare, and educational
-                institutions.
-              </p>
-            </div>
-          </AnimatedSection>
-
-          <AnimatedSection variants={slideInLeft} className="sm:hidden">
-            <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105">
-              <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
-                ✈️ Quality of Life
-              </h3>
-              <p className="text-gray-700">
-                Designed for smart housing, healthcare, and educational
-                institutions.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
+   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+  {/* Left Column */}
+  <div className="space-y-6">
+    <AnimatedSection variants={slideInLeft}>
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          🚀 Infrastructure-First Planning
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Roads, water, and ICT systems already operational in key zones.
+        </p>
       </div>
+    </AnimatedSection>
+
+    <AnimatedSection variants={slideInLeft}>
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          💰 High ROI Zone
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Investors entering at early-bird stage are securing higher returns on their investment.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <AnimatedSection variants={slideInLeft}>
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          🏭 Industrial Magnet
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Over ₹3 Lakh crore investment by government and global companies like TATA, Tokyo Electron, Tillman Global, etc.
+        </p>
+      </div>
+    </AnimatedSection>
+  </div>
+
+  {/* Right Column */}
+  <div className="space-y-6">
+    <AnimatedSection
+      variants={{
+        hidden: { opacity: 0, x: 60 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      }}
+    >
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          🎯 Strategic Location
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Positioned in the heart of Gujarat with strong connectivity to Ahmedabad, Bhavnagar, Vadodara, and other major cities.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <AnimatedSection
+      variants={{
+        hidden: { opacity: 0, x: 60 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      }}
+    >
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          🌆 Sustainable Smart Living
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Backed by renewable energy vision, and planned infrastructure for housing, healthcare, and education.
+        </p>
+      </div>
+    </AnimatedSection>
+
+    <AnimatedSection
+      variants={{
+        hidden: { opacity: 0, x: 60 },
+        visible: {
+          opacity: 1,
+          x: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      }}
+    >
+      <div className="group bg-white/95 p-6 rounded-xl shadow-lg hover:shadow-2xl hover:shadow-[#d3b36b]/20 transition-all duration-300 border border-[#d3b36b]/20 hover:border-[#d3b36b]/60 hover:scale-105 h-full min-h-[160px] flex flex-col">
+        <h3 className="text-xl font-bold text-[#151f28] mb-4 group-hover:text-[#d3b36b] transition-colors">
+          ⚡ Plug and Play Infrastructure
+        </h3>
+        <p className="text-gray-700 flex-grow">
+          Roads, Underground water lines, electric wires, ICT, and SCADA sensors already installed for industries.
+        </p>
+      </div>
+    </AnimatedSection>
+  </div>
+</div>
     </div>
   </AnimatedSection>
 );
@@ -347,63 +306,34 @@ export default function Page() {
                     smart city challenges, combining digital governance, green energy, 
                     and inclusive growth.
                   </p>
-
-                  <div className="bg-gradient-to-br from-[#151f28] to-[#1a2832] rounded-xl p-6 mb-4">
-                    <h4 className="text-xl font-bold text-[#d3b36b] mb-4 text-center">
-                      Dholera 2040
-                    </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
-                          <div className="text-3xl mb-2 text-center">🏭</div>
-                          <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
-                            Manufacturing Powerhouse
-                          </h5>
-                          <p className="text-white text-xs text-center">
-                            Global hub for electronics, semiconductors, and
-                            defense
-                          </p>
-                        </div>
-                      </AnimatedSection>
-                      <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
-                          <div className="text-3xl mb-2 text-center">✈️</div>
-                          <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
-                            Connectivity Hub
-                          </h5>
-                          <p className="text-white text-xs text-center">
-                            Airport, expressway, and seaport network
-                          </p>
-                        </div>
-                      </AnimatedSection>
-                      <AnimatedSection variants={fadeInUp}>
-                        <div className="bg-white/10 rounded-lg p-4 border border-[#d3b36b]/30 h-36">
-                          <div className="text-3xl mb-2 text-center">💡</div>
-                          <h5 className="font-bold text-[#d3b36b] text-sm mb-2 text-center">
-                            Innovation Zone
-                          </h5>
-                          <p className="text-white text-xs text-center">
-                            Magnet for startups, R&D, and clean-tech
-                          </p>
-                        </div>
-                      </AnimatedSection>
-                    </div>
-                  </div>
                 </div>
               </AnimatedSection>
             </AnimatedSection>
 
             {/* Stats Grid */}
-            <AnimatedSection variants={staggerContainer}>
+            
+          </div>
+        </div>
+      </div>
+
+      {/* Why Dholera Section */}
+      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-7xl mx-auto">
+          <WhyDholeraGrowth />
+        </div>
+      </div>
+
+      <div>
+        <AnimatedSection variants={staggerContainer}>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
                 {[
                   {
-                    value: "7",
-                    label: "Total No. of Projects",
+                    value: "8",
+                    label: "Projects",
                     icon: Building,
                   },
-                  { value: "1000+", label: "Plots Sold Out", icon: BadgeCheck },
-                  { value: "650", label: "Happy Customers", icon: Users },
+                  { value: "1245+", label: "Plots Sold Out", icon: BadgeCheck },
+                  { value: "647+", label: "Happy Customers", icon: Users },
                   { value: "2 Lakh", label: "Sq. Yards Sold", icon: AreaChart },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
@@ -427,20 +357,11 @@ export default function Page() {
                 })}
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </div>
-
-      {/* Why Dholera Section */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-6xl mx-auto">
-          <WhyDholeraGrowth />
-        </div>
       </div>
 
       {/* Projects Grid Section */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-black text-[#d3b36b] mb-4">
               Our Projects
