@@ -197,6 +197,20 @@ const nextConfig = {
       },
       {
         source:
+          "/dholera-updates/latest-news/semiconductor-leader-tokyo-electron-in-dholera",
+        destination:
+          "/dholera-updates/latest-updates/semiconductor-leader-tokyo-electron-in-dholera",
+        permanent: true,
+      },
+      {
+        source:
+          "/dholera-updates/latest-news/nextgen-8800cr-investment-in-dholera-semiconductor-fab",
+        destination:
+          "/dholera-updates/latest-updates/nextgen-8800cr-investment-in-dholera-semiconductor-fab",
+        permanent: true,
+      },
+      {
+        source:
           "/dholera-updates/latest-news/dholera-international-airport-latest-news-2025",
         destination:
           "/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025",

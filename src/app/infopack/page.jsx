@@ -14,7 +14,7 @@ import county1 from "@/assets/residential/westwyn-county-banner.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { FaMapMarkerAlt, FaVideo, FaBuilding } from "react-icons/fa";
-import LatestUpdates from "../components/Latest-updates";
+import LatestUpdates from "./Latest-updates";
 import DholeraCarousel from "./gallery";
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -140,11 +140,16 @@ const WhyDholeraGrowth = () => (
   <AnimatedSection variants={staggerContainer}>
     <div className="bg-gradient-to-br from-[#151f28] via-[#1a2832] to-[#151f28] p-8 rounded-3xl shadow-2xl border-2 border-[#d3b36b]/40">
       <AnimatedSection className="text-center mb-8">
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-4">
+        <h2 className="text-3xl md:text-4xl font-black text-white mb-4">
           Why Dholera is the
-          <span className="text-[#d3b36b]">Future of India</span>
+          <span className="text-[#d3b36b]"> Future of India</span>
         </h2>
-        <div className="h-1.5 w-40 bg-gradient-to-r from-transparent via-[#d3b36b] to-transparent mx-auto rounded-full" />
+        <div className="h-1.5 w-40 mb-4 bg-gradient-to-r from-transparent via-[#d3b36b] to-transparent mx-auto rounded-full" />
+        <p className="text-white leading-relaxed mb-2 text-justify">
+          Dholera offers the perfect balance between government support, 
+          location, and affordability making it the most future-proof 
+          investment destination in India.
+        </p>
       </AnimatedSection>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -320,14 +325,27 @@ export default function Page() {
                     <span className="text-[#d3b36b]">Dholera SIR</span>
                   </h3>
 
-                  <p className="text-gray-700 leading-relaxed mb-6 text-center">
-                    Dholera Special Investment Region is India's flagship smart
-                    city spanning{" "}
-                    <span className="font-bold text-[#d3b36b]">920 sq. km</span>
-                    , developed under the Delhi-Mumbai Industrial Corridor
-                    (DMIC). A self-sustained global hub combining advanced
-                    technology, world-class infrastructure, and sustainable
-                    design - setting the standard for future Indian cities.
+                  <p className="text-gray-700 leading-relaxed mb-2 text-justify">
+                    Dholera Special Investment Region (SIR) is the flagship 
+                    model of India’s smart city vision and the first city 
+                    developed under the Gujarat Special Investment Region 
+                    (SIR) Act. Spread across{" "}
+                    <span className="font-bold text-[#d3b36b]">922.5 sq. km, </span>
+                     it is a greenfield smart city and a key node of the 
+                     Delhi-Mumbai Industrial Corridor (DMIC), being developed 
+                     with strong support from the Government of India and the 
+                     Government of Gujarat.
+                  </p>
+
+                  <p className="text-gray-700 leading-relaxed mb-2 text-justify">
+                    Planned as a self-sustained global hub for manufacturing, 
+                    innovation, and urban living, Dholera brings together 
+                    advanced technology, world-class infrastructure, and sustainable 
+                    design setting the standard for future Indian cities.
+                  </p>
+                  <p className="text-gray-700 leading-relaxed mb-6 text-justify">Dholera isn’t just a project - it’s India’s answer to global 
+                    smart city challenges, combining digital governance, green energy, 
+                    and inclusive growth.
                   </p>
 
                   <div className="bg-gradient-to-br from-[#151f28] to-[#1a2832] rounded-xl p-6 mb-4">
@@ -385,8 +403,8 @@ export default function Page() {
                     icon: Building,
                   },
                   { value: "1000+", label: "Plots Sold Out", icon: BadgeCheck },
-                  { value: "400", label: "Happy Customers", icon: Users },
-                  { value: "5 Lakh", label: "Sq. Yards Sold", icon: AreaChart },
+                  { value: "650", label: "Happy Customers", icon: Users },
+                  { value: "2 Lakh", label: "Sq. Yards Sold", icon: AreaChart },
                 ].map((stat, index) => {
                   const Icon = stat.icon;
                   return (
@@ -448,11 +466,11 @@ export default function Page() {
                         WestWyn Estate - A Smart Investment for Smart Future
                       </h3>
                       <p className="text-[#151f28]">
-                        Located at the 0 KM mark of Dholera SIR, on the
-                        Vadhela–Navda Highway, WestWyn Estate stands as a
-                        landmark plotted community - offering ready-to-register,
-                        NA/NOC-approved plots within the entry zone of India's
-                        most futuristic city.
+                        Located 0 KM from Dholera SIR boundary, on the Vadhela–Navda 
+                        State Highway, WestWyn Estate offers register-ready plots just
+                        5 minutes from Ahmedabad-Dholera Expressway. Investors are 
+                        securing register ready Dholera plots  near the Hebatpur 
+                        Industrial Area, with high ROI potential.
                       </p>
                     </div>
                   </div>
@@ -475,11 +493,12 @@ export default function Page() {
                         WestWyn County - Premium Plots, Promising Returns
                       </h3>
                       <p className="text-[#151f28]">
-                        WestWyn County is a premium plot located along the
-                        Fedra–Pipli Highway in the Dholera region. The project
-                        offers government-approved residential plots ranging
-                        from 150 sq. yds to 325 sq. yds, combining smart design,
-                        connectivity, and long-term appreciation.
+                        WestWyn County is a premium residential plotting 
+                        project located on the Fedra-Pipli State Highway. 
+                        It offers government approved plots (150 sq. yds to 325 sq. yds), 
+                        just 15 minutes from Dholera International Airport. 
+                        WestWyn County stands out as a trusted choice, 
+                        backed by strong location advantage and future growth potential.
                       </p>
                     </div>
                   </div>
@@ -521,7 +540,7 @@ export default function Page() {
                 id="updates-heading"
                 className="bg-[#d3b36b] text-gray-900 text-xl md:text-3xl lg:text-4xl text-center p-3 md:p-5 font-semibold mx-auto rounded-md"
               >
-                Explore Latest Progress Around Dholera
+                Stay Updated with Latest Developments in Dholera Smart City
               </h2>
               <LatestUpdates />
             </section>

@@ -76,50 +76,60 @@ export default function Hero() {
               <div className="absolute inset-0 bg-black/30" />
 
               {/* Desktop Overlay Bar — hidden on mobile */}
-              <div className="hidden md:flex absolute bottom-0 left-0 right-0 bg-[#0d1620]/90 backdrop-blur-sm border-t border-white/10 px-6 py-4 items-center gap-5">
-
-                {/* Status + Price */}
-                <div className="flex items-center gap-5 shrink-0">
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex" style={{ width: 10, height: 10 }}>
-                      <span className="animate-ping absolute inline-flex rounded-full bg-green-400 w-full h-full opacity-75" />
-                      <span className="relative inline-flex rounded-full bg-green-500 w-[10px] h-[10px]" />
-                    </span>
-                    <span className="text-green-400 text-[11px] font-bold tracking-widest uppercase">Ongoing</span>
-                  </div>
-
-                  <div className="w-px h-9 bg-white/10" />
-
-                  <div>
-                    <div className="text-[#d3b36b] text-[26px] font-extrabold leading-none" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-                      ₹6,500{" "}
-                      <span className="text-white/35 text-xs font-normal" style={{ fontFamily: "'DM Sans', sans-serif" }}>/Sq.Yd</span>
-                    </div>
-                    <div className="text-white/35 text-[10px] tracking-widest uppercase mt-0.5">Starting Price</div>
-                  </div>
+             {/* <div className="hidden md:flex absolute bottom-0 left-0 right-0 bg-[#0d1620]/90 backdrop-blur-sm border-t border-white/10 px-6 py-4 items-center gap-5">
+                
+                <div className="flex items-center gap-2 shrink-0">
+                  <span
+                    className="relative flex"
+                    style={{ width: 10, height: 10 }}
+                  >
+                    <span className="animate-ping absolute inline-flex rounded-full bg-green-400 w-full h-full opacity-75" />
+                    <span className="relative inline-flex rounded-full bg-green-500 w-[10px] h-[10px]" />
+                  </span>
+                  <span className="text-green-400 text-[11px] font-bold tracking-widest uppercase">
+                    Ongoing
+                  </span>
                 </div>
 
-                <div className="w-px h-12 bg-white/10 shrink-0" />
+                <div className="w-px h-9 bg-white/10 shrink-0" />
 
-                {/* Title */}
-                <div className="flex-1 text-center">
-                  <div className="text-white/40 text-[10px] tracking-[0.2em] uppercase mb-1">Explore Our Latest Project</div>
-                  <h2 className="text-white text-2xl font-bold leading-tight m-0" style={{ fontFamily: "'Cormorant Garamond', serif", letterSpacing: "0.02em" }}>
+               
+                <div className="shrink-0 space-y-2">
+                  <Link
+                    href="/dholera-residential-plots/westwyn-estate"
+                    className="text-white text-2xl font-bold leading-tight m-0"
+                  >
                     WestWyn Estate
-                  </h2>
-                  <div className="text-[#d3b36b]/65 text-xs mt-1" style={{ letterSpacing: "0.03em" }}>
+                  </Link>
+                  <div className="text-[#d3b36b] text-xs mt-1">
                     Registry Ready Plot under ₹10 Lakh
                   </div>
                 </div>
 
                 <div className="w-px h-12 bg-white/10 shrink-0" />
 
-                {/* CTAs */}
+               
+                <div className="shrink-0">
+                  <div className="text-[#d3b36b] text-[26px] font-extrabold leading-none">
+                    ₹6,500{" "}
+                    <span className="text-white/35 text-xs font-normal">
+                      /Sq.Yd
+                    </span>
+                  </div>
+                  <div className="text-white/35 text-[10px] tracking-widest uppercase mt-0.5">
+                    Starting Price
+                  </div>
+                </div>
+
+         
+                <div className="flex-1" />
+
+                <div className="w-px h-12 bg-white/10 shrink-0" />
+
                 <div className="flex items-center gap-3 shrink-0">
                   <a
                     href="tel:+919958993549"
                     className="flex items-center gap-2 bg-[#d3b36b] hover:bg-[#c9a558] text-[#0d1620] px-5 py-2.5 rounded-lg text-[13px] font-bold transition-all duration-200 hover:-translate-y-0.5"
-                    style={{ letterSpacing: "0.02em" }}
                   >
                     <PhoneIcon />
                     Site Visit
@@ -128,13 +138,12 @@ export default function Hero() {
                   <button
                     onClick={openBrochureForm}
                     className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/15 hover:border-[#d3b36b]/50 text-white px-5 py-2.5 rounded-lg text-[13px] font-semibold transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
-                    style={{ letterSpacing: "0.02em" }}
                   >
                     <DocIcon />
                     Brochure
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

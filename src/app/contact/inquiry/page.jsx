@@ -282,8 +282,7 @@ export default function ContactDetails() {
                             <strong>
                               <FaMapMarkerAlt />
                             </strong>{" "}
-                            Westgate by true value, B-1110, Sarkhej -
-                            Gandhinagar Hwy, Makarba, Ahmedabad, Gujarat 380015
+                            Office no. 303, 3rd Floor H-110, Sector-63, Noida, Uttar Pradesh 201301
                           </p>
                         </h3>
                       </div>

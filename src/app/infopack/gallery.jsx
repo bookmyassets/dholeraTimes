@@ -137,14 +137,14 @@ const galleryImages = [
     <div className="flex items-center justify-center w-full p-2 md:p-4 py-4 md:py-8">
       {/* Carousel Section */}
       <div className="max-w-6xl w-full mx-auto">
-        <div className="relative rounded-2xl w-full max-w-4xl mx-auto aspect-video overflow-hidden shadow-2xl bg-[#151f28]">
+        <div className="relative rounded-2xl w-full max-w-4xl mx-auto overflow-hidden shadow-2xl bg-[#151f28]">
           {/* Main Image Display */}
-          <div className="relative w-full h-full bg-black flex items-center justify-center">
+          <div className="relative h-auto aspect-[3/2] w-full flex items-center justify-center">
             <Image
               src={galleryImages[currentIndex].src}
               alt={galleryImages[currentIndex].alt}
               fill
-              className="object-contain"
+              className="aspect-[3/2]"
               priority
             />
             {/* Image Number Overlay */}
