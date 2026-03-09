@@ -211,6 +211,13 @@ const nextConfig = {
       },
       {
         source:
+          "/dholera-updates/latest-news",
+        destination:
+          "/dholera-updates/latest-updates",
+        permanent: true,
+      },
+      {
+        source:
           "/dholera-updates/latest-news/dholera-international-airport-latest-news-2025",
         destination:
           "/dholera-updates/latest-updates/dholera-international-airport-latest-news-2025",

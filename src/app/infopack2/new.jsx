@@ -140,44 +140,6 @@ export default function Info() {
           <LatestUpdates />
         </section>
 
-        {/* Photo Gallery Section */}
-
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link
-            href="/gallery/Dholera-SIR-progress"
-            className="block bg-white rounded-lg shadow-2xl overflow-hidden transition-transform duration-300 hover:scale-105"
-            aria-label="View photo gallery"
-          >
-            <div className="relative">
-              <Image
-                src={dholeraSIRprogress}
-                alt="dholera sir progress"
-                width={1200}
-                height={600}
-                className="w-full object-cover md:h-full"
-                loading="lazy"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-              />
-            </div>
-          </Link>
-          <Link
-            href="/gallery/siteprogress"
-            className="block bg-white rounded-lg shadow-2xl overflow-hidden transition-transform duration-300 hover:scale-105"
-            aria-label="View photo gallery"
-          >
-            <div className="relative">
-              <Image
-                src={dholeraSite}
-                alt="dholera site progress"
-                width={1200}
-                height={600}
-                className="w-full object-cover md:h-full"
-                loading="lazy"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
-              />
-            </div>
-          </Link>
-        </section>
 
         <section aria-labelledby="updates-heading" className="pt-8">
           <h2
