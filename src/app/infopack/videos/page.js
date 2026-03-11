@@ -53,47 +53,57 @@ export default async function VideosPage() {
   
   const videos = [
   {
-    id: "xPYA-To8_YQ",
-    title: "Dholera International Airport",
-    duration: "3:37",
-  },
-  {
-    id: "tFbTJfNe3y8",
-    title: "Ahmedabad to Dholera in 45 Mins!",
-    duration: "1:08",
-  },
-  {
-    id: "1g_2cNYiDHA",
-    title: "Dholera Water Treatment Plant",
-    duration: "0:51",
-  },
-  {
-    id: "_AN2VE8BiBs",
-    title: "TATA’s ₹91,000 Cr. Semiconductor Revolution Begins!",
-    duration: "1:11",
-  },
-  {
-    id: "5jlnciMfwmk",
-    title: "Dholera Now: WestWyn County",
-    duration: "0:52",
-  },
-  {
-    id: "ha3BffU4gHo",
-    title: "Dholera Activation Area",
-    duration: "0:48",
-  },
-  {
-    id: "o5rSdgmnHyQ",
-    title: "ABCD Building",
-    duration: "unknown",
-  },
-  {
-    id: "byMMCQNP4eo",
+    id: "LUPDj1r7S8k",
     title: "ReNew Solar Plant",
     duration: "unknown",
   },
   {
-    id: "so6bg_0OAWA",
+    id: "ZBdCoZsVKwY",
+    title: "Dholera International Airport",
+    duration: "unknown",
+  },
+  {
+    id: "GonYocb879Y",
+    title: "Dholera Activation Area",
+    duration: "unknown",
+  },
+  {
+    id: "l9TMQRRkLCI",
+    title: "Tata's Hotel",
+    duration: "unknown",
+  },
+  {
+    id: "35K9qo0bBK4",
+    title: "Ahmedabad-Dholera Expressway",
+    duration: "unknown",
+  },
+  {
+    id: "m2JMZYfbJkk",
+    title: "ABCD Building",
+    duration: "unknown",
+  },
+  {
+    id: "YN-GVP12PaI",
+    title: "Water Treatment Plant",
+    duration: "unknown",
+  },
+  {
+    id: "NxsY9u3vfW4",
+    title: "Tata Semiconductor Plant",
+    duration: "unknown",
+  },
+  {
+    id: "j_lFW9i2gb0",
+    title: "Asia's Largest Solar Park",
+    duration: "unknown",
+  },
+  {
+    id: "NDtUDS6Gf3Y",
+    title: "WestWyn County",
+    duration: "unknown",
+  },
+  {
+    id: "APS0hPGGjZU",
     title: "WestWyn Estate",
     duration: "unknown",
   }
