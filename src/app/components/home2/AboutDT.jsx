@@ -1,5 +1,5 @@
 import React from "react";
-import dholeraSite from "@/assets/westwyn-estate-home-image.webp";
+import dholeraSite from "@/assets/residential/estates.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { MapPin, Clock, ArrowRight } from "lucide-react";
