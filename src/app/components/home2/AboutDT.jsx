@@ -7,7 +7,7 @@ import { MapPin, Clock, ArrowRight } from "lucide-react";
 export default function AboutDT() {
   const locationFeatures = [
     { text: "0 km from Dholera SIR Boundary", icon: MapPin },
-    { text: "Direct access to Vadhela-Navda Highway", icon: MapPin },
+    { text: "Direct access to State Highway 117", icon: MapPin },
     { text: "5 minutes from Ahmedabad-Dholera Expressway", icon: Clock },
     { text: "15 minutes from Dholera Activation Area", icon: Clock },
     { text: "25 minutes from Tata Semiconductor Plant", icon: Clock },
@@ -33,12 +33,6 @@ export default function AboutDT() {
 
           {/* Right side - Content */}
           <div className="md:w-1/2 w-full">
-            {/* Small label */}
-            {/*  <div className="inline-block mb-4">
-              <span className="bg-gray-100 text-[#151f28] text-sm font-medium px-3 py-1 rounded-full">
-                About Dholera Times
-              </span>
-            </div> */}
 
             {/* Main heading */}
             

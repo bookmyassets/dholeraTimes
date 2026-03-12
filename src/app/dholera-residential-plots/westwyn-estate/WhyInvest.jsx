@@ -93,7 +93,7 @@ export default function InvestmentBenefits() {
       icon: "📍",
       description:
         "Situated at the entrance of Dholera SIR, near TP 5, WestWyn Estate puts you at the center of the region's fastest-growing corridor.",
-      body: "With the Activation Area just 15 minutes away, this location ensures unmatched convenience and long-term growth potential. Strategically positioned on Navda Highway, 0 km from Dholera SIR and close to TP 5, ensuring you are at the heart of the region's fastest development zone.",
+      body: "With the Activation Area just 15 minutes away, this location ensures unmatched convenience and long-term growth potential. Strategically positioned on State Highway 117, 0 km from Dholera SIR and close to TP 5, ensuring you are at the heart of the region's fastest development zone.",
       image:
         location,
     },
@@ -102,7 +102,7 @@ export default function InvestmentBenefits() {
       icon: "🏗️",
       description:
         "Well-connected to Dholera International Airport, Expressway, and proposed monorail.",
-      body: "WestWyn Estate is well-connected to the upcoming Dholera International Airport, Ahmedabad–Dholera Expressway, and the proposed monorail. With just 25 minutes from the Tata Semiconductor Fab, this area is set to become a hub of industrial and residential activity. Connectivity in Dholera has never been better for investors looking at rapid appreciation.",
+      body: "WestWyn Estates is well-connected to the upcoming Dholera International Airport, Ahmedabad–Dholera Expressway, and the proposed monorail. With just 25 minutes from the Tata Semiconductor Fab, this area is set to become a hub of industrial and residential activity. Connectivity in Dholera has never been better for investors looking at rapid appreciation.",
       image:
         connectivity,
     },
@@ -120,7 +120,7 @@ export default function InvestmentBenefits() {
       icon: "📈",
       description:
         "NA/NOC cleared, Plan pass and title-cleared plots for secure ownership.",
-      body: "All plots in WestWyn Estate are NA/NOC cleared, Plan pass and title-cleared, ensuring complete legal transparency and a safe investment in Dholera SIR.",
+      body: "All plots in WestWyn Estates are NA/NOC cleared, Plan pass and title-cleared, ensuring complete legal transparency and a safe investment in Dholera SIR.",
       image:
         safe,
     },
@@ -129,7 +129,7 @@ export default function InvestmentBenefits() {
       icon: "✅",
       description:
         "Early investors benefit from rapid value growth in a developing region.",
-      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estate offers one of the smartest Dholera SIR investment opportunities.",
+      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estates offers one of the smartest Dholera SIR investment opportunities.",
       image:
         growth,
     },
@@ -243,11 +243,11 @@ export default function InvestmentBenefits() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Why Invest in <span className="text-[#d3b36b]">WestWyn Estate</span>
+            Why Invest in <span className="text-[#d3b36b]">WestWyn Estates</span>
             ?
           </h2>
           <p className="text-lg max-w-3xl mx-auto text-gray-300">
-            Discover the unique advantages that make WestWyn Estate the premier
+            Discover the unique advantages that make WestWyn Estates the premier
             investment opportunity in Dholera SIR.
           </p>
         </motion.div>

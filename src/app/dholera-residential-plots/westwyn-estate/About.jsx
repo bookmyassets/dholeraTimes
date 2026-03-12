@@ -131,7 +131,7 @@ const WestWynAboutSection = () => {
 
       <div className="text-center">
         <h1 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
-          WestWyn Estate -{" "}
+          WestWyn Estates -{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
             Dholera SIR's Newest Landmark
           </span>
@@ -142,11 +142,11 @@ const WestWynAboutSection = () => {
         <div className="text-center mb-8 md:w-1/2">
           <div className="h-full flex flex-col">
             <p className="text-base text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-4">
-              Introducing WestWyn Estate, a premium plotted project in Dholera
+              Introducing WestWyn Estates, a premium plotted project in Dholera
               SIR designed for secure, long-term growth. Strategically located
               near upcoming infrastructure, it offers a smart opportunity to
               invest in India’s first Greenfield Smart City. Backed by the
-              success of our earlier projects, WestWyn Estate continues our
+              success of our earlier projects, WestWyn Estates continues our
               promise of transparency, reliability, and value-driven
               development.
             </p>
@@ -169,7 +169,7 @@ const WestWynAboutSection = () => {
                   Strategic Location Advantage
                 </h3>
                 <p className="text-[#d3b36b] font-medium text-sm md:text-base">
-                  Vadhela-Navda Highway
+                  State Highway 117
                 </p>
               </div>
             </div>

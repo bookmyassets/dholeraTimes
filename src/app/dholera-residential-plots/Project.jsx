@@ -17,11 +17,11 @@ import pride from "@/assets/residential/pride.webp";
 const projectsData = [
   {
     _id: "1",
-    title: "WestWyn Estate",
+    title: "WestWyn Estates",
     slug: { current: "westwyn-estate" },
     mainImage: westwyn_estate,
     description:
-      "Invest in plots in Dholera at WestWyn Estate, 0 km from Dholera SIR, and close to proximity to the activation area at an unbeatable price.",
+      "Invest in plots in Dholera at WestWyn Estates, 0 km from Dholera SIR, and close to proximity to the activation area at an unbeatable price.",
     body: [
       {
         _type: "block",

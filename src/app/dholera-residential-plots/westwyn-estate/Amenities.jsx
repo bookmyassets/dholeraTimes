@@ -101,7 +101,7 @@ const ProjectAmenities = () => {
           </h2>
           <div className="w-20 h-1 bg-[#d3b36b] mx-auto mb-6"></div>
           <p className="text-lg md:text-xl max-w-3xl mx-auto text-[#151f28] leading-relaxed">
-            WestWyn Estate offers comprehensive amenities designed for modern living and secure investment
+            WestWyn Estates offers comprehensive amenities designed for modern living and secure investment
           </p>
         </div>
 

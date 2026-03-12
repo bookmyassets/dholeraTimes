@@ -26,14 +26,6 @@ export default function Dholera() {
 
             {/* Right side - Content */}
             <div className="md:w-1/2 w-full">
-              {/* Small label */}
-              {/*  <div className="inline-block mb-4">
-              <span className="bg-gray-100 text-[#151f28] text-sm font-medium px-3 py-1 rounded-full">
-              About Dholera Times
-              </span>
-              </div> */}
-
-              {/* Main heading */}
 
               {/* Description */}
               <p className="text-gray-600 leading-relaxed text-justify mb-8">

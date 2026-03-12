@@ -4,12 +4,12 @@ import { Plus, Minus, ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
-    question: "Where is WestWyn Estate located?",
+    question: "Where is WestWyn Estates located?",
     answer:
-      "WestWyn Estate is strategically located on the Vadhela–Navda Highway at 0 km from Dholera SIR boundary. It offers strong connectivity to the Dholera Smart City Activation Area, Ahmedabad–Dholera Expressway, and upcoming infrastructure developments.",
+      "WestWyn Estates is strategically located on the State Highway 117. It offers strong connectivity to the Dholera Smart City Activation Area, Ahmedabad–Dholera Expressway, and upcoming infrastructure developments.",
   },
   {
-    question: "What is the price of plots in WestWyn Estate?",
+    question: "What is the price of plots in WestWyn Estates?",
     answer:
       "Plot pricing is designed for early-stage investors in Dholera SIR. Final cost depends on plot size, facing, and location within the project. Contact our team for updated pricing and availability.",
   },
@@ -24,19 +24,19 @@ const faqs = [
       "Simple process: Choose plot → Submit documents → Pay booking amount → Agreement → Registry. Complete support is provided at every step.",
   },
   {
-    question: "Why invest in WestWyn Estate now?",
+    question: "Why invest in WestWyn Estates now?",
     answer:
       "Early investment near Dholera Smart City infrastructure, expressway, activation area, and Tata Semiconductor project offers strong future appreciation potential.",
   },
   {
-    question: "Is WestWyn Estate suitable for NRI investors?",
+    question: "Is WestWyn Estates suitable for NRI investors?",
     answer:
       "Yes. It offers safe, verified plots in Dholera SIR with transparent documentation and hassle-free support for NRI buyers.",
   },
   {
     question: "IHow can Dholera Times help you invest?",
     answer:
-      "Dholera Times provides expert guidance, site visits, and complete assistance to invest confidently in WestWyn Estate and Dholera Smart City.",
+      "Dholera Times provides expert guidance, site visits, and complete assistance to invest confidently in WestWyn Estates and Dholera Smart City.",
   },
 
  
