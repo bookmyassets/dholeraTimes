@@ -224,7 +224,7 @@ export default function Footer() {
                     href="/dholera-residential-plots/westwyn-estate"
                     className="hover:text-white transition"
                   >
-                    WestWyn Estate
+                    WestWyn Estates
                   </a>
                 </li>
                 <li>
