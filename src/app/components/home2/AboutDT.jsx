@@ -17,7 +17,7 @@ export default function AboutDT() {
     <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-[28px] font-bold text-center text-[#151f28] mb-6 leading-tight">
-              WestWyn Estate - Where Smart Location Meets Smart Investment
+              WestWyn Estates - Where Smart Location Meets Smart Investment
             </h2>
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           {/* Left side - Image */}
@@ -25,7 +25,7 @@ export default function AboutDT() {
             <div className="relative">
               <Image
                 src={dholeraSite}
-                alt="WestWyn Estate in Dholera SIR"
+                alt="WestWyn Estates in Dholera SIR"
                 className="w-full h-auto md:h-[400px] object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -39,7 +39,7 @@ export default function AboutDT() {
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed text-justify mb-4">
-              WestWyn Estate is a strategically planned project located right next
+              WestWyn Estates is a strategically planned project located right next
               to Dholera SIR. Designed for secure investment and long-term
               appreciation, the project offers excellent connectivity, legal
               safety, and affordable entry options for buyers looking to invest
@@ -71,7 +71,7 @@ export default function AboutDT() {
             {/* CTA Button */}
             <Link href="/dholera-residential-plots/westwyn-estate" className="block pt-4">
               <button className="w-full md:w-auto bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
-                <span>Explore WestWyn Estate</span>
+                <span>Explore WestWyn Estates</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
