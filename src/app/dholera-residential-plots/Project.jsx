@@ -5,7 +5,7 @@ import LeadForm from "./LeadForm";
 import hero from "@/assets/residential-hero.webp";
 import heroM from "@/assets/residential-mob-view.webp";
 import westwyn from "@/assets/residential/westwyn-county.webp";
-import westwyn_estate from "@/assets/residential/westwyn-estate-residential-plots-in-dholera.webp";
+import westwyn_estate from "@/assets/residential/bmacover2.webp";
 import orchid from "@/assets/residential/orchid.webp";
 import paradise1 from "@/assets/residential/paradise1.webp";
 import paradise2 from "@/assets/residential/paradise2.webp";
