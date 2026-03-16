@@ -6,19 +6,19 @@ import { MapPin, Clock, ArrowRight } from "lucide-react";
 
 export default function AboutDT() {
   const locationFeatures = [
-    { text: "0 km from Dholera SIR Boundary", icon: MapPin },
+    /* { text: "0 km from Dholera SIR Boundary", icon: MapPin }, */
     { text: "Direct access to State Highway 117", icon: MapPin },
-    { text: "5 minutes from Ahmedabad-Dholera Expressway", icon: Clock },
-    { text: "15 minutes from Dholera Activation Area", icon: Clock },
+    { text: "5 minutes from Bhimnath Railway Station", icon: Clock },
+    /* { text: "15 minutes from Dholera Activation Area", icon: Clock },
     { text: "25 minutes from Tata Semiconductor Plant", icon: Clock },
-    { text: "30 minutes from Dholera International Airport", icon: Clock },
+    { text: "30 minutes from Dholera International Airport", icon: Clock }, */
   ];
   return (
     <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-[28px] font-bold text-center text-[#151f28] mb-6 leading-tight">
-              WestWyn Estates - Where Smart Location Meets Smart Investment
-            </h2>
+          WestWyn Estates - Where Smart Location Meets Smart Investment
+        </h2>
         <div className="flex flex-col-reverse md:flex-row items-center gap-12">
           {/* Left side - Image */}
           <div className="md:w-1/2 w-full">
@@ -33,17 +33,18 @@ export default function AboutDT() {
 
           {/* Right side - Content */}
           <div className="md:w-1/2 w-full">
-
             {/* Main heading */}
-            
 
             {/* Description */}
             <p className="text-gray-600 leading-relaxed text-justify mb-4">
-              WestWyn Estates is a strategically planned project located right next
-              to Dholera SIR. Designed for secure investment and long-term
-              appreciation, the project offers excellent connectivity, legal
-              safety, and affordable entry options for buyers looking to invest
-              in India’s first semiconductor smart city.
+              WestWyn Estates is a premium residential plotting project designed
+              for comfortable living and long-term investment. The project
+              offers direct entry from State Highway-117 and is located just
+              minutes from Bhimnath Railway Station, ensuring convenient
+              connectivity. With access to major infrastructure and upcoming
+              developments in the region, WestWyn Estates is a suitable option
+              for those exploring Dholera plots with strong future growth
+              potential.
             </p>
             <div>
               <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -69,7 +70,10 @@ export default function AboutDT() {
             </div>
 
             {/* CTA Button */}
-            <Link href="/dholera-residential-plots/westwyn-estate" className="block pt-4">
+            <Link
+              href="/dholera-residential-plots/westwyn-estate"
+              className="block pt-4"
+            >
               <button className="w-full md:w-auto bg-[#b69b5e] hover:bg-[#d3b36b] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
                 <span>Explore WestWyn Estates</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
