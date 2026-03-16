@@ -4,14 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import westwyn from "@/assets/residential/westwyn-estate-dholera-plots-under-10-lakh.webp";
 
-import {
-  FaWhatsapp,
-  FaMapMarkerAlt,
-  FaRoad,
-  FaPlane,
-  FaIndustry,
-  FaClock,
-} from "react-icons/fa";
+import { FaRoad, FaTrain, FaRoute, FaIndustry, FaPlaneDeparture, FaWhatsapp } from "react-icons/fa";
 import { TbBuildingFactory } from "react-icons/tb";
 
 const WestWynAboutSection = () => {
@@ -82,33 +75,33 @@ const WestWynAboutSection = () => {
   const locationFeatures = [
     {
       icon: FaRoad,
-      text: "0 km proximity to Dholera SIR",
-      highlight: "First project on Vadhela-Navda Highway",
+      text: "Direct Entry from State Highway 117",
+      highlight: "Excellent highway connectivity",
     },
     {
-      icon: FaClock,
-      text: "5 Minutes from Expressway",
-      highlight: "Excellent connectivity",
+      icon: FaTrain,
+      text: "Minutes from Bhimnath Railway Station",
+      highlight: "Easy rail connectivity",
     },
     {
-      icon: FaMapMarkerAlt,
-      text: "15 minutes from Activation Area",
-      highlight: "Prime strategic location",
+      icon: FaRoute,
+      text: "40 Minutes from Ahmedabad–Dholera Expressway",
+      highlight: "Fast access to major corridor",
     },
     {
       icon: FaIndustry,
-      text: "25 minutes from Tata Semiconductor Fab",
-      highlight: "Industrial corridor advantage",
-    },
-    {
-      icon: FaPlane,
-      text: "30 minutes from International Airport",
-      highlight: "International connectivity",
+      text: "45 Minutes from Tata Semiconductor Plant",
+      highlight: "Industrial growth corridor",
     },
     {
       icon: TbBuildingFactory,
-      text: "5 min from hebatpur industrial zone",
-      highlight: "Industrial Area",
+      text: "45 Minutes from Hebatpur Industrial Zone",
+      highlight: "Close to key industrial hub",
+    },
+    {
+      icon: FaPlaneDeparture,
+      text: "50 Minutes from Dholera International Airport",
+      highlight: "Global connectivity",
     },
   ];
 
@@ -142,13 +135,14 @@ const WestWynAboutSection = () => {
         <div className="text-center mb-8 md:w-1/2">
           <div className="h-full flex flex-col">
             <p className="text-base text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-4">
-              Introducing WestWyn Estates, a premium plotted project in Dholera
-              SIR designed for secure, long-term growth. Strategically located
-              near upcoming infrastructure, it offers a smart opportunity to
-              invest in India’s first Greenfield Smart City. Backed by the
-              success of our earlier projects, WestWyn Estates continues our
-              promise of transparency, reliability, and value-driven
-              development.
+              WestWyn Estates is a premium residential plotting project designed
+              for comfortable living and long-term investment. The project
+              offers direct entry from State Highway-117 and is located just
+              minutes from Bhimnath Railway Station, ensuring convenient
+              connectivity. With access to major infrastructure and upcoming
+              developments in the region, WestWyn Estates is a suitable option
+              for those exploring Dholera plots with strong future growth
+              potential.
             </p>
             <div className="flex-grow flex items-center">
               <Image
@@ -187,9 +181,6 @@ const WestWynAboutSection = () => {
                     <p className="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 md:mb-2">
                       {feature.text}
                     </p>
-                    <p className="text-[10px] md:text-xs text-gray-600 leading-relaxed">
-                      {feature.highlight}
-                    </p>
                   </div>
                 </div>
               ))}
@@ -200,8 +191,8 @@ const WestWynAboutSection = () => {
 
       <div className="max-w-5xl mx-auto px-4 pb-8">
         <p className="text-sm md:text-lg text-gray-700 mb-6 md:mb-8 leading-relaxed border-l-4 border-[#d3b36b] pl-3 md:pl-4 italic">
-          "Every Dholera plot is designed as a secure, future-ready investment that
-          grows with Dholera's transformation."
+          "Every Dholera plot is designed as a secure, future-ready investment
+          that grows with Dholera's transformation."
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4">

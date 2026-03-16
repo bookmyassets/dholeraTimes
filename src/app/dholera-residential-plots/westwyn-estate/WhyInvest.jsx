@@ -88,61 +88,39 @@ export default function InvestmentBenefits() {
   };
 
   const benefits = [
-    {
-      title: "Strategic Location Advantage",
-      icon: "📍",
-      description:
-        "Situated at the entrance of Dholera SIR, near TP 5, WestWyn Estate puts you at the center of the region's fastest-growing corridor.",
-      body: "With the Activation Area just 15 minutes away, this location ensures unmatched convenience and long-term growth potential. Strategically positioned on State Highway 117, 0 km from Dholera SIR and close to TP 5, ensuring you are at the heart of the region's fastest development zone.",
-      image:
-        location,
-    },
-    {
-      title: "Strong Connectivity",
-      icon: "🏗️",
-      description:
-        "Well-connected to Dholera International Airport, Expressway, and proposed monorail.",
-      body: "WestWyn Estates is well-connected to the upcoming Dholera International Airport, Ahmedabad–Dholera Expressway, and the proposed monorail. With just 25 minutes from the Tata Semiconductor Fab, this area is set to become a hub of industrial and residential activity. Connectivity in Dholera has never been better for investors looking at rapid appreciation.",
-      image:
-        connectivity,
-    },
-    {
-      title: "Government-Supported Smart City",
-      icon: "⚖️",
-      description:
-        "Part of Dholera Smart City under DMIC, supported by Central and State Governments.",
-      body: "As part of Dholera Smart City under the Delhi–Mumbai Industrial Corridor (DMIC), the project benefits from both Central and State Government support. The government-backed development ensures planned urban growth and a stable investment environment.",
-      image:
-        support,
-    },
-    {
-      title: "Safe and Transparent Investment",
-      icon: "📈",
-      description:
-        "NA/NOC cleared, Plan pass and title-cleared plots for secure ownership.",
-      body: "All plots in WestWyn Estates are NA/NOC cleared, Plan pass and title-cleared, ensuring complete legal transparency and a safe investment in Dholera SIR.",
-      image:
-        safe,
-    },
-    {
-      title: "Exceptional Growth Opportunities",
-      icon: "✅",
-      description:
-        "Early investors benefit from rapid value growth in a developing region.",
-      body: "Early investors can benefit from rapid value growth as residential, industrial, and commercial projects shape the region. With plots in Dholera witnessing increasing demand, WestWyn Estates offers one of the smartest Dholera SIR investment opportunities.",
-      image:
-        growth,
-    },
-    {
-      title: "Lifestyle & Trust Combined",
-      icon: "🤝",
-      description:
-        "A gated community with green landscapes, wide roads",
-      body: "Experience modern living with wide roads, landscaped greenery, and top-notch amenities, delivered by a developer trusted by investors with six projects successfully sold out.",
-      image:
-        lifestyle,
-    },
-  ];
+  {
+    title: "Strategic Location Advantage",
+    icon: "📍",
+    description:
+      "Direct entry from State Highway-117 with Bhimnath Railway Station just minutes away.",
+    body: "WestWyn Estates enjoys a strategic location with direct access from State Highway-117 and close proximity to Bhimnath Railway Station, ensuring convenient regional connectivity and easy travel access for residents and investors.",
+    image: location,
+  },
+  {
+    title: "High ROI Potential",
+    icon: "📈",
+    description:
+      "Early investors benefit from long-term value growth in a rapidly developing region.",
+    body: "As infrastructure, residential developments, and industrial zones expand across the Dholera region, early investors at WestWyn Estates can benefit from significant future value appreciation and strong long-term investment potential.",
+    image: growth,
+  },
+  {
+    title: "Government-Supported Development",
+    icon: "🏗️",
+    description:
+      "Part of the Delhi–Mumbai Industrial Corridor with strong government support.",
+    body: "WestWyn Estates is located in the Dholera region, which is part of the Delhi–Mumbai Industrial Corridor (DMIC). The project benefits from long-term infrastructure planning and support from both Central and State Governments.",
+    image: support,
+  },
+  {
+    title: "Secure & Transparent Investment",
+    icon: "✅",
+    description:
+      "NA/NOC cleared, plan approved, and title-cleared plots.",
+    body: "All plots in WestWyn Estates are NA/NOC cleared, plan approved, and title-cleared, ensuring a secure and transparent ownership process for investors looking for reliable land investment opportunities in Dholera.",
+    image: safe,
+  },
+];
 
   // Animation variants
   const cardVariants = {
