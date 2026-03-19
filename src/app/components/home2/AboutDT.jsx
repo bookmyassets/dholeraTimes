@@ -2,17 +2,27 @@ import React from "react";
 import dholeraSite from "@/assets/residential/estates.webp";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Clock, ArrowRight } from "lucide-react";
+import {
+  MapPin,
+  Clock,
+  ArrowRight,
+  Train,
+  Building2,
+  Plane,
+  Bus,
+  Factory,
+} from "lucide-react";
 
 export default function AboutDT() {
   const locationFeatures = [
-    /* { text: "0 km from Dholera SIR Boundary", icon: MapPin }, */
-    { text: "Direct access to State Highway 117", icon: MapPin },
-    { text: "5 minutes from Bhimnath Railway Station", icon: Clock },
-    /* { text: "15 minutes from Dholera Activation Area", icon: Clock },
-    { text: "25 minutes from Tata Semiconductor Plant", icon: Clock },
-    { text: "30 minutes from Dholera International Airport", icon: Clock }, */
+    { text: "5 Minutes from Bhimnath Railway Junction", icon: Train },
+    { text: "15 Minutes from Dholera SIR boundary", icon: Clock },
+    { text: "15 Minutes from RMS Multi-Specialty Hospital", icon: Clock },
+    { text: "17 minutes from Ahmedabad Dholera Expressway", icon: Clock },
+    { text: "30 minutes from Tata Semiconductor Plant", icon: Clock },
+    { text: "45 minutes from Dholera International Airport", icon: Plane },
   ];
+
   return (
     <div className="bg-gray-50 py-8 px-4">
       <div className="max-w-7xl mx-auto">
@@ -33,24 +43,15 @@ export default function AboutDT() {
 
           {/* Right side - Content */}
           <div className="md:w-1/2 w-full">
-            {/* Main heading */}
-
             {/* Description */}
             <p className="text-gray-600 leading-relaxed text-justify mb-4">
-              WestWyn Estates is a premium residential plotting project designed
-              for comfortable living and long-term investment. The project
-              offers direct entry from State Highway-117 and is located just
-              minutes from Bhimnath Railway Station, ensuring convenient
-              connectivity. With access to major infrastructure and upcoming
-              developments in the region, WestWyn Estates is a suitable option
-              for those exploring Dholera plots with strong future growth
-              potential.
+              WestWyn Estates is a premium residential plotting development
+              located in Polarpur, Dholera, designed with a low-density layout
+              to offer exclusivity and world-class amenities. Starting from ₹10 Lakh, 
+              it caters to premium gentry seeking a smart investment
+              opportunity in Dholera’s most active and high-demand region.
             </p>
             <div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-[#b69b5e]" />
-                Key Location Advantages
-              </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {locationFeatures.map((feature, index) => {
                   const Icon = feature.icon;

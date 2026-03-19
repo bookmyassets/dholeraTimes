@@ -35,9 +35,9 @@ export default function Hero() {
   const closeBrochureForm = () => setIsBrochureFormOpen(false);
 
   const projectFeatures = [
-    { icon: "📐", title: "Plot Size", value: "151 and 198 Sq.Yards" },
+    { icon: "📐", title: "Plot Size", value: "152 and 200 Sq.Yards" },
     { icon: "🏗️", title: "Project Type", value: "Residential Dholera Plots" },
-    { icon: "💰", title: "Starting Price", value: "₹6,500/Sq.Yd" },
+    { icon: "💰", title: "Starting Price", value: "₹6,700/Sq.Yd" },
     { icon: "📍", title: "Location", value: "Dholera SIR" },
   ];
 

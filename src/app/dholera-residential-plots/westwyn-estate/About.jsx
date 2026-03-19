@@ -4,7 +4,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import westwyn from "@/assets/residential/westwyn-estate-dholera-plots-under-10-lakh.webp";
 
-import { FaRoad, FaTrain, FaRoute, FaIndustry, FaPlaneDeparture, FaWhatsapp } from "react-icons/fa";
+import { FaRoad, FaTrain, FaRoute, FaIndustry, FaPlaneDeparture, FaWhatsapp, FaHospital } from "react-icons/fa";
 import { TbBuildingFactory } from "react-icons/tb";
 
 const WestWynAboutSection = () => {
@@ -80,27 +80,27 @@ const WestWynAboutSection = () => {
     },
     {
       icon: FaTrain,
-      text: "Minutes from Bhimnath Railway Station",
+      text: "5 Minutes from Bhimnath Railway Station",
       highlight: "Easy rail connectivity",
     },
     {
+      icon: FaHospital,
+      text: "15 Minutes from RMS Multi-Specialty Hospital",
+      highlight: "Close to key industrial hub",
+    },
+    {
       icon: FaRoute,
-      text: "40 Minutes from Ahmedabad–Dholera Expressway",
+      text: "17 Minutes from Ahmedabad–Dholera Expressway",
       highlight: "Fast access to major corridor",
     },
     {
       icon: FaIndustry,
-      text: "45 Minutes from Tata Semiconductor Plant",
+      text: "30 Minutes from Tata Semiconductor Plant",
       highlight: "Industrial growth corridor",
     },
     {
-      icon: TbBuildingFactory,
-      text: "45 Minutes from Hebatpur Industrial Zone",
-      highlight: "Close to key industrial hub",
-    },
-    {
       icon: FaPlaneDeparture,
-      text: "50 Minutes from Dholera International Airport",
+      text: "45 Minutes from Dholera International Airport",
       highlight: "Global connectivity",
     },
   ];
@@ -169,6 +169,7 @@ const WestWynAboutSection = () => {
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 flex-grow">
+              
               {locationFeatures.map((feature, index) => (
                 <div
                   key={index}
