@@ -81,7 +81,7 @@ export default function Hero() {
               {/* Background Image */}
               <Image
                 src={wc}
-                alt="WestWyn Estate in Dholera Gujarat"
+                alt="WestWyn Estates in Dholera Gujarat"
                 fill
                 className="absolute object-cover aspect-[3/2]"
                 priority
@@ -114,10 +114,10 @@ export default function Hero() {
                     href="/dholera-residential-plots/westwyn-estate"
                     className="text-white text-2xl font-bold leading-tight m-0"
                   >
-                    WestWyn Estate
+                    WestWyn Estates
                   </Link>
                   <div className="text-[#d3b36b] text-xs mt-1">
-                    Registry Ready Plot under ₹10 Lakh
+                    Registry Ready Plot Starting From ₹10 Lakh
                   </div>
                 </div>
 
@@ -182,7 +182,7 @@ export default function Hero() {
                   {/* Title & Description */}
                   <div>
                     <Link href="/dholera-residential-plots/westwyn-estate" className="text-xl font-bold text-gray-900 mb-2 leading-tight">
-                      WestWyn Estate
+                      WestWyn Estates
                     </Link>
                   </div>
 
@@ -203,7 +203,7 @@ export default function Hero() {
                       </button>
                     </div>
                     <div className="text-[#151f28] order-1 text-lg font-semibold">
-                      <p>Registry Ready Plot under ₹10 Lakh</p>
+                      <p>Registry Ready Plot Starting From ₹10 Lakh</p>
                     </div>
                   </div>
                 </div>

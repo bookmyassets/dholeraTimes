@@ -54,14 +54,14 @@ export default function Hero() {
 
   return (
     <>
-      <title>WestWyn Estate Dholera | Premium Plots in Smart City</title>
+      <title>Orchid Dholera | Premium Plots in Smart City</title>
       <meta
         name="description"
-        content="Discover WestWyn Estate Dholera plots exclusively on Dholera Times - premium smart city plots with high investment growth potential in Gujarat."
+        content="Discover Orchid Dholera plots exclusively on Dholera Times - premium smart city plots with high investment growth potential in Gujarat."
       />
       <meta
         name="keywords"
-        content="WestWyn Estate Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
+        content="Orchid Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
       />
       <link
         rel="canonical"
@@ -76,7 +76,7 @@ export default function Hero() {
               {/* Background Image */}
               <Image
                 src={wc}
-                alt="WestWyn Estate in Dholera Gujarat"
+                alt="WestWyn Estates in Dholera Gujarat"
                 fill
                 className="absolute object-cover aspect-[3/2]"
                 priority
@@ -109,10 +109,10 @@ export default function Hero() {
                     href="/dholera-residential-plots/westwyn-estate"
                     className="text-white text-2xl font-bold leading-tight m-0"
                   >
-                    WestWyn Estate
+                    WestWyn Estates
                   </Link>
                   <div className="text-[#d3b36b] text-xs mt-1">
-                    Registry Ready Plot under ₹10 Lakh
+                    Registry Ready Plot Starting From ₹10 Lakh
                   </div>
                 </div>
 
@@ -180,13 +180,13 @@ export default function Hero() {
                   href="/dholera-residential-plots/westwyn-estate"
                   className="text-xl font-bold text-gray-900 mb-2 leading-tight"
                 >
-                  WestWyn Estate
+                  WestWyn Estates
                 </Link>
               </div>
 
               <div className="flex flex-col justify-between">
                 <div className="text-[#151f28] text-lg font-semibold mb-2">
-                  <p>Registry Ready Plot under ₹10 Lakh</p>
+                  <p>Registry Ready Plot Starting From ₹10 Lakh</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <a

@@ -294,22 +294,22 @@ export default function WhyDT() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
             {[
               {
-                value: "7",
-                label: "Total No. of Projects",
+                value: "9",
+                label: "Residential Projects",
                 icon: <Building className="h-8 w-8" />,
               },
               {
-                value: "1000+",
-                label: "Plots Sold Out",
+                value: "544+",
+                label: "Plots Sold",
                 icon: <BadgeCheck className="h-8 w-8" />,
               },
               {
-                value: "400",
+                value: "411+",
                 label: "Happy Customers",
                 icon: <Users className="h-8 w-8" />,
               },
               {
-                value: "5 Lakh Sq. Yards",
+                value: "1.5 Lakh Sq. Yards",
                 label: "Sold",
                 icon: <AreaChart className="h-8 w-8" />,
               },

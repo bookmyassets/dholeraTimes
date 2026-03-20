@@ -159,7 +159,7 @@ export default function Hero() {
                   </span>
                 </div>
                 <div className="text-xl font-bold text-[#151f28]">
-                  ₹6,500
+                  ₹6,700
                   <span className="text-sm text-gray-600 ml-1">/Sq.Yd</span>
                 </div>
               </div>
@@ -172,7 +172,7 @@ export default function Hero() {
 
               <div className="flex flex-col justify-between">
                 <div className="text-[#151f28] text-lg font-semibold mb-2">
-                  <p>Registry Ready Plot under ₹10 Lakh</p>
+                  <p>Registry Ready Plot Starting From ₹10 Lakh</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <a
