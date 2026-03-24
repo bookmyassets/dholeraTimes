@@ -38,7 +38,7 @@ export default function Hero() {
     { icon: "📐", title: "Plot Size", value: "154,179, & 202 Sq.Yards" },
     { icon: "🏗️", title: "Project Type", value: "Residential Dholera Plots" },
     { icon: "💰", title: "Starting Price", value: "₹6,000/Sq.Yd" },
-    { icon: "📍", title: "Location", value: "Pipariya" },
+    { icon: "📍", title: "Location", value: "Pipariya, Dholera" },
   ];
 
   return (
