@@ -103,19 +103,20 @@ const WestWynAboutSection = () => {
       text: "12 Minutes from Ahmedabad–Dholera Expressway",
       highlight: "Fast access to major corridor",
     },
-    {
-      icon: FaIndustry,
-      text: "17 Minutes from Tata Semiconductor Plant",
-      highlight: "Industrial growth corridor",
-    },
+    
     {
       icon: FaHospital,
-      text: "20 Minutes from RMS Multi-Specialty Hospital",
+      text: "17 Minutes from RMS Multi-Specialty Hospital",
       highlight: "Global connectivity",
     },
     {
+      icon: FaIndustry,
+      text: "22 Minutes from Tata Semiconductor Plant",
+      highlight: "Industrial growth corridor",
+    },
+    {
       icon: FaPlaneDeparture,
-      text: "40 Minutes from Dholera International Airport",
+      text: "30 Minutes from Dholera International Airport",
       highlight: "Global connectivity",
     },
     {
