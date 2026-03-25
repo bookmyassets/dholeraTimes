@@ -106,7 +106,7 @@ const WestWynAboutSection = () => {
     
     {
       icon: FaHospital,
-      text: "17 Minutes from RMS Multi-Specialty Hospital",
+      text: "18 Minutes from RMS Multi-Specialty Hospital",
       highlight: "Global connectivity",
     },
     {
