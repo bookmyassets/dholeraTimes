@@ -65,7 +65,7 @@ export default function Hero() {
       />
       <link
         rel="canonical"
-        href="https://www.dholeratimes.com/dholera-residential-plots/westwyn-estate"
+        href="https://www.dholeratimes.com/dholera-residential-plots/orchid"
       />
 
       <div className="bg-gray-100">
