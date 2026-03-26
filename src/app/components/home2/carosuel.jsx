@@ -7,10 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 /* image import */
 import hero1 from "@/assets/hero/dholera-sir-greenfield-smart-city-banner-dholera-times.webp";
 import hero2 from "@/assets/hero/dholera-sir-semiconductor-city-banner-dholera-times.webp";
-import hero3 from "@/assets/hero/westwyn-estate-residential-plots-in-dholera-banner.webp";
+/* import hero3 from "@/assets/hero/westwyn-estate-residential-plots-in-dholera-banner.webp"; */
 import heroM1 from "@/assets/hero/dholera-smart-city-mobile-banner-dholera-times.webp";
 import heroM2 from "@/assets/hero/dholera-sir-semiconductor-city-mobile-banner-dholera-times.webp";
-import heroM3 from "@/assets/hero/westwyn-estate-mobile-banner-dholera-times.webp";
+/* import heroM3 from "@/assets/hero/westwyn-estate-mobile-banner-dholera-times.webp"; */
 import BrochureForm from "../BrochureForm";
 
 export default function HOME2() {
