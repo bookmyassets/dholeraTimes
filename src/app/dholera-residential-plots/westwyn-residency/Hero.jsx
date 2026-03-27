@@ -43,14 +43,14 @@ export default function Hero() {
 
   return (
     <>
-      <title>WestWyn Estates Dholera | Premium Plots in Smart City</title>
+      <title>WestWyn Residency Dholera | Premium Plots in Smart City</title>
       <meta
         name="description"
-        content="Discover WestWyn Estates Dholera plots exclusively on Dholera Times - premium smart city plots with high investment growth potential in Gujarat."
+        content="Discover WestWyn Residency Dholera plots exclusively on Dholera Times - premium smart city plots with high investment growth potential in Gujarat."
       />
       <meta
         name="keywords"
-        content="WestWyn Estates Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
+        content="WestWyn Residency Dholera, Dholera plots, Dholera Smart City, Dholera investment, investment in Dholera"
       />
       <link
         rel="canonical"
