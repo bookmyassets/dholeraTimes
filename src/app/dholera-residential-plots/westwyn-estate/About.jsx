@@ -123,12 +123,12 @@ const WestWynAboutSection = () => {
       <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#d3b36b]/10 rounded-full blur-3xl"></div>
 
       <div className="text-center">
-        <h1 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
+        <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
           WestWyn Estates -{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
             Dholera SIR's Newest Landmark
           </span>
-        </h1>
+        </h2>
       </div>
       <div className="relative md:flex md:items-stretch md:space-x-8 max-w-7xl mx-auto px-4 py-4">
         {/* Left Section - Header */}
