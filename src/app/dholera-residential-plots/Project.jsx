@@ -17,11 +17,33 @@ import pride from "@/assets/residential/pride.webp";
 const projectsData = [
   {
     _id: "1",
+    title: "WestWyn Residency",
+    slug: { current: "westwyn-residency" },
+    mainImage: westwyn_estate,
+    description:
+      "Own premium plots at WestWyn Residency a newly launch project in Polarpur, Dholera. Located near Dholera SIR and major infrastructure, offering well-connected plots with instant registry.  ",
+    body: [
+      {
+        _type: "block",
+        children: [
+          {
+            _type: "span",
+            text: "Premium investment opportunity in the heart of Dholera Smart City. Strategic location with excellent connectivity and growth potential.",
+          },
+        ],
+      },
+    ],
+    categories: [{ title: "Under Construction" }, { title: "Latest" }],
+    location: "Pipariya, Dholera, Gujarat",
+    status: "ongoing",
+  },
+  {
+    _id: "2",
     title: "WestWyn Estates",
     slug: { current: "westwyn-estate" },
     mainImage: westwyn_estate,
     description:
-      "Invest in plots in Dholera at WestWyn Estates, 0 km from Dholera SIR, and close to proximity to the activation area at an unbeatable price.",
+      "Step into Dholera’s growth with WestWyn Estates premium plots in Polarpur. With direct entry from State Highway-117 and just minutes from Bhimnath Railway Station.",
     body: [
       {
         _type: "block",
@@ -38,7 +60,7 @@ const projectsData = [
     status: "ongoing",
   },
   {
-    _id: "2",
+    _id: "3",
     title: "WestWyn County",
     slug: { current: "westwyn-county" },
     mainImage: westwyn,
@@ -60,7 +82,7 @@ const projectsData = [
     status: "sold out",
   },
   {
-    _id: "3",
+    _id: "4",
     title: "Orchid",
     slug: { current: "orchid" },
     mainImage: orchid,
@@ -82,7 +104,7 @@ const projectsData = [
     status: "sold-out",
   },
   {
-    _id: "4",
+    _id: "5",
     title: "Paradise",
     slug: { current: "paradise-1" },
     mainImage: paradise1,
@@ -104,7 +126,7 @@ const projectsData = [
     status: "sold-out",
   },
   {
-    _id: "5",
+    _id: "6",
     title: "Paradise 2",
     slug: { current: "paradise-2" },
     mainImage: paradise2,
@@ -126,7 +148,7 @@ const projectsData = [
     status: "sold-out",
   },
   {
-    _id: "6",
+    _id: "7",
     title: "Maple Township",
     slug: { current: "maple" },
     mainImage: maple,
@@ -148,7 +170,7 @@ const projectsData = [
     status: "sold-out",
   },
   {
-    _id: "7",
+    _id: "8",
     title: "Marina Bay",
     slug: { current: "marina-bay" },
     mainImage: marina,
@@ -170,7 +192,7 @@ const projectsData = [
     status: "sold-out",
   },
   {
-    _id: "8",
+    _id: "9",
     title: "Pride",
     slug: { current: "pride" },
     mainImage: pride,

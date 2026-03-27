@@ -43,14 +43,14 @@ export default function HOME2() {
       desktopClickArea: { left: 160, top: 524, right: 406, bottom: 570 },
       mobileClickArea: { left: 181, top: 856, right: 412, bottom: 898 },
     },
-    {
+    /* {
       desktop: hero3,
       tablet: hero3,
       mobile: heroM3,
       alt:"Dholera Smart City Project",
       desktopClickArea: { left: 159, top: 518, right: 401, bottom: 562 },
       mobileClickArea: { left: 174, top: 861, right: 417, bottom: 902 },
-    },
+    }, */
   ];
 
   const nextSlide = () => {
