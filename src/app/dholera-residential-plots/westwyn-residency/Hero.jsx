@@ -37,7 +37,7 @@ export default function Hero() {
   const projectFeatures = [
     { icon: "📐", title: "Plot Size", value: "124,152, & 187 Sq.Yards" },
     { icon: "🏗️", title: "Project Type", value: "Residential Dholera Plots" },
-    { icon: "💰", title: "Starting Price", value: "₹6,000/Sq.Yd" },
+    { icon: "💰", title: "Price", value: "₹6,000/Sq.Yd" },
     { icon: "📍", title: "Location", value: "Pipariya, Dholera" },
   ];
 
@@ -102,7 +102,7 @@ export default function Hero() {
 
               <div className="flex flex-col justify-between">
                 <div className="text-[#151f28] text-lg font-semibold mb-2">
-                  <p>Registry Ready Plot Starting From ₹10 Lakh</p>
+                  <p>Registry Ready Plot Starting From ₹7.50 Lakh</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <a
