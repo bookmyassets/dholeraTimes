@@ -14,7 +14,7 @@ const FixedNavigation = ({ currentPage = "locations" }) => (
           className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "locations"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-[#151f28] text-white hover:bg-gray-700 border-gray-300"
           }`}
         >
           <FaMapMarkerAlt className="text-sm md:text-lg" />
@@ -26,7 +26,7 @@ const FixedNavigation = ({ currentPage = "locations" }) => (
           className={`group flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "videos"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-[#151f28] text-white hover:bg-gray-700 border-gray-300"
           }`}
         >
           <FaVideo className="text-sm md:text-lg" />
@@ -38,7 +38,7 @@ const FixedNavigation = ({ currentPage = "locations" }) => (
           className={`group flex items-center gap-2 px-2 py-2 md:px-4 md:py-2 rounded-xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 hover:-translate-y-0.5 flex-1 md:flex-none justify-center border font-bold ${
             currentPage === "inventory"
               ? "bg-gradient-to-br from-[#d3b36b] to-[#c4a55d] text-[#151f28] hover:shadow-[#d3b36b]/40 border-[#d3b36b]/40"
-              : "bg-white text-gray-600 hover:bg-gray-50 border-gray-300"
+              : "bg-[#151f28] text-white hover:bg-gray-700 border-gray-300"
           }`}
         >
           <FaBuilding className="text-sm md:text-lg" />
