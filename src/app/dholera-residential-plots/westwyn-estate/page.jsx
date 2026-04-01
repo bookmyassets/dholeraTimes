@@ -40,14 +40,17 @@ export default function page() {
       <div>
         <Hero />
         <div className="md:hidden">
-          <CommonForm title="Get Plots Starting From ₹10 Lakh " />
+          <CommonForm title="Get Complete Details of WestWyn Estates " />
         </div>
         <WestWynAboutSection />
         <div className="max-sm:hidden">
-          <CommonForm title="Get Plots Starting From ₹10 Lakh " />
+          <CommonForm title="Get Complete Details of WestWyn Estates " />
         </div>
         <WestWynEstate />
         <ProjectAmenities />
+         <div className="">
+          <CommonForm title="Looking For Premium Residential Plots in Dholera?" />
+        </div>
         <FAQS />
        
       </div>

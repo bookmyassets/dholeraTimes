@@ -4,7 +4,15 @@ import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import westwyn from "@/assets/residential/westwyn-estate-dholera-plots-under-10-lakh.webp";
 
-import { FaRoad, FaTrain, FaRoute, FaIndustry, FaPlaneDeparture, FaWhatsapp, FaHospital } from "react-icons/fa";
+import {
+  FaRoad,
+  FaTrain,
+  FaRoute,
+  FaIndustry,
+  FaPlaneDeparture,
+  FaWhatsapp,
+  FaHospital,
+} from "react-icons/fa";
 import { TbBuildingFactory } from "react-icons/tb";
 
 const WestWynAboutSection = () => {
@@ -126,7 +134,7 @@ const WestWynAboutSection = () => {
         <h2 className="text-2xl md:text-3xl py-4 pt-4 font-bold text-gray-900">
           WestWyn Estates -{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#d3b36b] to-[#c9992a]">
-            Dholera SIR's Newest Landmark
+            Dholera's Next Investment Landmark
           </span>
         </h2>
       </div>
@@ -135,14 +143,14 @@ const WestWynAboutSection = () => {
         <div className="text-center mb-8 md:w-1/2">
           <div className="h-full flex flex-col">
             <p className="text-base text-gray-600 text-justify max-w-4xl mx-auto leading-relaxed mb-4">
-              WestWyn Estates is a premium residential plotting project designed
-              for comfortable living and long-term investment. The project
-              offers direct entry from State Highway-117 and is located just
-              minutes from Bhimnath Railway Station, ensuring convenient
-              connectivity. With access to major infrastructure and upcoming
-              developments in the region, WestWyn Estates is a suitable option
-              for those exploring Dholera plots with strong future growth
-              potential.
+              WestWyn Estates is a premium residential plotting project in
+              Polarpur, Dholera designed for comfortable living and long-term
+              investment. The project offers direct entry from State Highway-117
+              and is located just minutes from Bhimnath Railway Station,
+              ensuring convenient connectivity. With access to major
+              infrastructure and upcoming developments in the region, WestWyn
+              Estates is a suitable option for those exploring Dholera plots
+              with strong future growth potential.
             </p>
             <div className="flex-grow flex items-center">
               <Image
@@ -163,13 +171,12 @@ const WestWynAboutSection = () => {
                   Strategic Location Advantage
                 </h3>
                 <p className="text-[#d3b36b] font-medium text-sm md:text-base">
-                  State Highway 117
+                  Well Connected to Key Growth Corridors
                 </p>
               </div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 flex-grow">
-              
               {locationFeatures.map((feature, index) => (
                 <div
                   key={index}
@@ -200,7 +207,7 @@ const WestWynAboutSection = () => {
           <a href="https://wa.me/919958993549" className="flex-1">
             <button className="w-full bg-white border-2 border-[#d3b36b] text-[#d3b36b] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg text-sm md:text-base">
               <FaWhatsapp className="w-5 h-5" />
-              Book Site Visit
+              Enquire Now
             </button>
           </a>
         </div>

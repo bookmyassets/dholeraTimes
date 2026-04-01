@@ -221,7 +221,7 @@ const WestWynAboutSection = () => {
           <a href="https://wa.me/919958993549" className="flex-1">
             <button className="w-full bg-white border-2 border-[#d3b36b] text-[#d3b36b] px-6 md:px-8 py-3 md:py-4 rounded-xl font-semibold hover:bg-[#f8f5e6] transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-lg text-sm md:text-base">
               <FaWhatsapp className="w-5 h-5" />
-              Book Site Visit
+              Enquire Now
             </button>
           </a>
         </div>
