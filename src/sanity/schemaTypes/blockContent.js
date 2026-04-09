@@ -71,6 +71,12 @@ export default {
                 title: "URL",
                 type: "url",
               },
+              {
+                name: "title",
+                title: "Title Attribute",
+                type: "string",
+                description: "Text that appears when hovering over the link",
+              },
             ],
           },
           // Button annotation

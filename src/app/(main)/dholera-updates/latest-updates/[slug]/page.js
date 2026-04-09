@@ -12,7 +12,6 @@ import Image from "next/image";
 import SchemaMarkup from "../SchemaMarkup";
 import LeadFormSlug from "./LeadForm";
 
-
 const URLFormatter = (text) => {
   if (!text) return "";
   return text
@@ -249,15 +248,33 @@ export default async function BlogDetail({ params }) {
       },
 
       marks: {
-        link: ({ children, value }) => (
-          <Link
-            href={value.href}
-            rel="noopener noreferrer"
-            className="text-[#d3b36b] hover:text-[#b69b5e] underline decoration-[#b69b5e]/30 hover:decoration-[#b69b5e] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#b69b5e]/5 px-1 py-0.5 rounded"
-          >
-            {children}
-          </Link>
-        ),
+        link: ({ children, value }) => {
+          // Helper function to extract plain text from children
+          const extractText = (node) => {
+            if (typeof node === "string") return node;
+            if (Array.isArray(node)) {
+              return node.map(extractText).join("");
+            }
+            if (node?.props?.children) {
+              return extractText(node.props.children);
+            }
+            return "";
+          };
+
+          const linkText = extractText(children);
+          const titleText = value.title || linkText; // Use provided title or fallback to link text
+
+          return (
+            <Link
+              href={value.href}
+              title={titleText}
+              rel="noopener noreferrer"
+              className="text-[#d3b36b] hover:text-[#b69b5e] underline decoration-[#b69b5e]/30 hover:decoration-[#b69b5e] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#b69b5e]/5 px-1 py-0.5 rounded"
+            >
+              {children}
+            </Link>
+          );
+        },
         strong: ({ children }) => (
           <strong className="font-bold text-gray-900 px-1 py-0.5 rounded">
             {children}

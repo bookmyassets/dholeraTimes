@@ -1,16 +1,11 @@
 import { PortableText } from "@portabletext/react";
 import { urlFor } from "@/sanity/lib/image";
-import {
-  getPostBySlug,
-  getProjectInfo,
-  getProjects,
-} from "@/sanity/lib/api";
+import { getPostBySlug, getProjectInfo, getProjects } from "@/sanity/lib/api";
 import Link from "next/link";
 import Image from "next/image";
 
 import SchemaMarkup from "../SchemaMarkup";
 import LeadFormSlug from "../../dholera-updates/latest-updates/[slug]/LeadForm";
-
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -347,6 +342,7 @@ export default async function BlogDetail({ params }) {
         link: ({ children, value }) => (
           <Link
             href={value.href}
+            title={value.title || ""} // Add the title attribute here
             rel="noopener noreferrer"
             className="text-[#d3b36b] hover:text-[#b69b5e] underline decoration-[#b69b5e]/30 hover:decoration-[#b69b5e] decoration-2 underline-offset-4 transition-all duration-300 hover:bg-[#b69b5e]/5 px-1 py-0.5 rounded"
           >
